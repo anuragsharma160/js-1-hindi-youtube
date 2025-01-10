@@ -803,7 +803,7 @@ function loginUserMessage(username = "sam"){
 // Aur agar aapne pass kar di hai koi value jaise "hitesh" pass kar di to wo value 
 // apne aap overwrite kar di jayegi as follows (see o/p)
 
-console.log(loginUserMessage("hitesh"));
+// console.log(loginUserMessage("hitesh"));
 // o/p -- hitesh just logged in
 
 
@@ -811,3 +811,524 @@ console.log(loginUserMessage("hitesh"));
 
 // return wali agar mistake hai to check kar lena
 // ya to wo return ki baat hai ya console.log(loginUserMessage()); ki baat hai
+
+// ==================== LECTURE END ==========================================================
+
+
+
+
+// ====================== LECTURE CONTINUE ====================================================
+
+// Abhi hum baat karte hai functions k andar ki kis tareh
+// se aap aur tareh k parameter pas karte hai
+
+// Ek jo common situation apke pas ayegi, aage jake
+// aap kuch projects banayege , unn projects k andar
+// aksar ek shopping kart hoti hai, aap e-commerce aap
+// etc yeh sab banayenge , to shopping kart k andar kya
+// hai ki user add kiye hi jata hai samaan, to apko pata
+// nahi hai ki abhi kitna number ya kitne number of items
+// yahan aane wale hai, apko bas sabki price add karni hoti
+// hai
+
+// to aisi situation bahut hi common hai jo apko pata nahi
+// ki kitne argument aane wale hai, to apko uss hisab se
+// apne parameters taiyaar karne hote hai
+
+// yahan -- const result = addTwoNumbers(3, 5) , hume pata hai
+// ki humare pas add karne k liye 2 hi number ayenge
+
+// to yeh situation kaafi common hai isliye suppose kariye
+// humare pas ek function hai calculateCartPrice as follows
+
+// function calculateCartPrice
+
+// function k naam aise dijiye jisko dekh k pata lag jaye ki
+// ki haa yeh function kar kya raha hai
+
+// ab hume kya karna hai ki jo bhi parameter aa raha hai
+// hume usko return karna hai
+
+// function calculateCartPrice(){
+
+// }
+
+// Ab hum yahan -- calculateCartPrice() , parantheses mei
+// agar value likhte hai ki num1 as follows
+
+// function calculateCartPrice(num1){
+
+// }
+
+// to hum usko num1 ko return kar dete hai as follows
+
+function calculateCartPrice(num1){
+    return num1
+}
+
+// to yeh lijiye humne num1 ko return kar diya as above
+
+// ab problem kya hai ki iss tareh k jo method hai
+// usko aapne kaha ki theek hai yeh lijiye parameter (argument)
+// humara value 2 le lijiye as follows
+
+// calculateCartPrice(2)
+
+// console.log(calculateCartPrice(2));
+// o/p 2
+
+// to humne isko run karwa k dekha to 2 vapas mil gaya hai
+// bahut achhi baat hai
+
+// lekin agar maan lijiye humari kart mei aur values add ho rahi hai
+// to, suppose kariye aapne 200 rupees ka samaan liya as follows
+// (in argument)
+
+// console.log(calculateCartPrice(200));
+
+// fir aapne 400 rupees ka samaan liya as follows (in argument)
+
+// console.log(calculateCartPrice(200, 400,));
+
+// aur fir aapne 500 rupees ka samaan liya as follows
+
+// console.log(calculateCartPrice(200, 400, 500));
+// o/p 200
+
+// ab aisi situation kaafi common hai, kaafi aam hai
+// to yahan pe problem kya ati hai ki first item to
+// apke pas yahan aa gaya hai (o/p 200)
+// calculate karne ka logic jab hum loops etc seekhenge
+// tab seekh jayenge, lekin kya problem hai aur kaise
+// solve karein isko
+
+// isko solve karne k liye aapke pas ek rest operator hota hai
+// (rest aur spread pe bhi video class ayegi)
+// but abhi k liye kya hai ki aap bahut sari values
+// (200, 400, 500) pass kar rahe hai in console.log(calculateCartPrice(200, 400, 500));
+// to bahut sari humare pas values hai
+// to hum usko kya karte hai yahan pe ek symbol hota hai
+// dot dot dot i.e. ... as follows
+
+// function calculateCartPrice(...num1){
+//     return num1
+// }
+
+// console.log(calculateCartPrice(200, 400, 500));
+
+// achha problem kya hai yeh jo 3 dots hai isi ko rest operator bola
+// jata hai aur isi ko spread operator bola jata hai
+// bas inke use case pe depend kara jata hai ki kab isko (...num1) rest
+// bolenge aur kab isko (...num1) spread bolenge
+
+// aage detail video ayega , ek bar mei samajh aa jayega
+
+// abhi isko rest bol rahe hai, rest ka simple matlab hai
+// ki jitna bhi item apke pas mila hai i.e. (200, 400, 500)
+// yeh abhi khudra vikreta hai yani ki bahut hi apko khule mei mil
+// raha hai, isko sabko ek bundle mei pack karo aur mujhe de do
+// yehi inn 3 dots (...num1) ka matlab hai
+
+// ab hum run karte hai iss method ko as follows
+
+// function calculateCartPrice(...num1){
+//     return num1
+// }
+
+// console.log(calculateCartPrice(200, 400, 500));
+// o/p [ 200, 400, 500 ]
+
+// iss method ko run karne pe humko kya mila hai
+// ek array in o/p as above
+// ab array humne kaafi detail mei padhe the
+// abhi uska usecase bhi maanenge
+
+// abhi hum kya kar paye hai aap hume jitna chahe
+// maal i.e. (200, 400, 500) bhejiye yahan se i.e. console.log(calculateCartPrice(200, 400, 500)); se
+// kart mei daaliye, hum at least unko ek array i.e. [ 200, 400, 500 ] mei daal
+// paye hai
+
+// ab array k andar hum aage jake loop lagana seekh hi jayenge
+// aur inn sabko [200, 400,500] add kar hi denge, bahut hi asaan
+// baat hai
+
+// abhi humari priority hai ki hum yeh samajh jaye
+// ki yeh jo cheej hai (...num1) , yeh hai rest operator
+// aur function k andar rest operator kaise pass hota hai
+// yani ki function mei multiple values i.e. (200, 400, 500)
+// of console.log(calculateCartPrice(200, 400, 500)); kaise pass hoti
+// hai
+
+// abhi apko jo iccha ho dena ho do , aap 100, 400, 500,
+// 2000 jo apko dena hai dete jayiye as follows
+// aur yahan pe apne aap wo array k andar add ho jata hai
+// as o/p of following console.log
+
+// console.log(calculateCartPrice(200, 400, 500, 2000));
+// o/p [ 200, 400, 500, 2000 ]
+
+// to yehi main ek mudda hai ki kis tarehse parameters (arguments)
+// pass hote hai
+
+// dhyaan rakhiyega sara khel iss dot dot dot ka hai
+// i.e. (...num1) yeh triple dot aapne lagaye, iss tareh se
+// values ho gayi
+
+// ==============================================================
+
+// Achha ek aur case ata hai yahan pe ki kai bar log kya karte
+// hai yahan pe likh dete hai val1, aur fir likh dete hai val2
+// aur fir lagate hai ...num1 as follows
+
+// to ...num1 k andar kya values jayegi
+
+// function calculateCartPrice(val1, val2, ...num1){
+//     return num1
+// }
+
+// console.log(calculateCartPrice(200, 400, 500, 2000));
+// o/p [ 500, 2000 ]
+
+// to ab apke pas aya 500 aur 2000 in o/p
+// kyu yeh to le gaya hai value one (val1) i.e. 200
+// yeh cheej i.e. 400 chali gayi hai value two mei
+// aur rest jitni cheeje hai i.e. 500, 2000 wo chali
+// gayi hai uss array k andar
+
+// to iss tareh se yeh kaam karta hai ab apko complete
+// idea lag gaya hai ki kis tareh se karte hai
+
+// yeh ho gaya basics isko kaise operate karte hai etc
+// yeh jab humara loops ka concept ayega tab isko kaafi in depth
+// hum samjhenge
+
+// ===========================================================
+
+// objects bhi humne discuss kare the to hume objects
+// bhi pata hone chahiye
+
+// jaise ki suppose kariye ek user banate hai yeh ek
+// object hai as follows
+
+// const user = {
+
+// }
+
+// iske andar humare pas username hai as "hitesh"
+// aur uske andar price hai 199 as follows
+
+// const user = {
+//     username: "hitesh",
+//     price: 199
+// }
+
+// Yeh bana liya humne object
+
+// Ab iss object ko function mei kaise pas kiya
+// jata hai aur kaise use kiya jata hai
+
+// to function ka naam hum de dete hai handleObject as follows
+
+// function handleObject(){
+
+// }
+
+// Ab function ka definition likhna to aa gaya hai
+
+// Ab iske (function) andar user jaise hi pas kar diya
+// aapne as follows
+
+// function handleObject(user){
+
+// }
+
+// Ab yeh user kya hai object hai (because humne
+// object ka naam user likha hai i.e. const user = {})
+// to iska (const user = {}) naam hum user nahi likhte hai
+// function mei, hum isko bol dete hai anyobject as follows
+
+// function handleObject(anyobject){
+
+// }
+
+// to anyobject humne iska naam de diya hai taki generic rahe
+// aap iske andar (function handleObject(anyobject){}) yehi
+// object (const user = {}) hi nahi koi bhi object pas kar sakte
+// hai
+
+// Ab iske (function handleObject(anyobject){}) andar jab apko
+// values chahiye hogi tab hum kya karte hai abhi hum console.log
+// likh lete hai kyuki return apko para lag gaya hai kya actually
+// mei uska role hai as follows
+
+// function handleObject(anyobject){
+//     console.log();
+// }
+
+// Aur iss console.log mei hum back tick likh
+// dete hai as follows
+
+// function handleObject(anyobject){
+//     console.log(``);
+// }
+
+// To hum bolte hai usko as follows using ${}
+
+// function handleObject(anyobject){
+//     console.log(`Username is ${} and price is ${}`);
+// }
+
+// To apko pata hai ab problem kya hoti hai
+// dhyan rakhiyega apke function ko nahi pata
+// ki user (const user = {}) aane wala hai, ki
+// hitesh aane wala hai ki, ki API response
+// aane wala hai, wo (function) sab kuch karega
+// iske i.e. (anyobject) aadhaar pe
+
+// to yahan pe hume kya bolna padega i.e.
+// inside string interpolation in ${}
+// anyobject and dot laga k uska access le lenge
+// fir wo suggestion dega as follows
+
+// function handleObject(anyobject){
+//     console.log(`Username is ${anyobject.} and price is ${anyobject.}`);
+// }
+
+// to access hume simply lena padega as a username as follows
+
+// function handleObject(anyobject){
+//     console.log(`Username is ${anyobject.username} and price is ${anyobject.}`);
+// }
+
+// Aur isi tareh se hum next ${} mei bhi bolenge anyobject.price as follows
+
+// function handleObject(anyobject){
+//     console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
+// }
+
+// Ab jab aap function ko call karenge
+// to humne call kiya handleobject as follows
+
+// handleObject()
+
+// aur uske andar (function execution k andar) hume
+// compulsory object (user) hi pas karna hai yahan pe
+// as follows to humara function actually mei chalega
+
+// handleObject(user)
+// o/p Username is hitesh and price is 199
+
+// Yahan (o/p) pe to baat hai theek, lekin problem
+// kab ayegi jab isko username ki jagah price ko prices
+// kar diya as follows
+
+// const user = {
+//     username: "hitesh",
+//     prices: 199
+// }
+
+// ab yahan pe problem aani shuru ho jayegi
+// aur iss tareh k methods aap kaafi handle karenge
+// ki dekhiye price yahan pe undefined aa gayi as follows
+// in o/p
+
+// function handleObject(anyobject){
+//     console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
+// }
+
+// handleObject(user)
+// o/p Username is hitesh and price is undefined
+// to iss tareh k method mei agar aap object handle kar rahe
+// hai to type safety check karni padti hai ki actually mei
+// kya price jo extract hum yaha ${anyobject.price} pe kar rahe hai,
+// wo actually mei available hai ya nahi object mei (const user = {})
+
+// aur jo value ((anyobject) in function handleObject(anyobject)) aap apas kar rahe ho
+// kya uska datatype object hai ya nahi hai, isiliye
+// to log typescript ko pasand karte hai kyuki typescript
+// mei yeh type checking ho jati hai
+
+// vaise JS mei bhi ho jati hai easily, bas thoda sa
+// code jada likhna padta hai , apko if and else k through
+// check karna padega to inn chejo ka dhyan rakhna
+
+// =========================================================================================
+
+// thek hai ab jaruri nahi tha ki apko object iss tareh (previous way) se bana
+// ke hi pas karna tha
+
+const user = {
+    username: "hitesh",
+    prices: 199
+}
+
+function handleObject(anyobject){
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
+}
+
+// isko comment out kar dete hai as follows
+// handleObject(user)
+
+// hum kya kar sakte the direct object bhi pass kar
+// sakte the as follows
+
+// handleObject({})
+
+// enter kar dete hai taki dekhne mei asaan rahe as follows
+
+// handleObject({
+
+// })
+
+// ab hum yahan pe username pas kar dete hai as follows
+
+// handleObject({
+//     username
+// })
+
+// aur username pas kar dete hai jaise "sam"
+
+// handleObject({
+//     username: "sam",
+// })
+
+// aur yahan pas kar dete hai price as 399
+
+handleObject({
+    username: "sam",
+    price: 399
+})
+
+// o/p Username is sam and price is 399
+
+// to aap direct object bhi pas kar sakte the
+// jaruri nahi tha ki usko (object) aap bana k
+// hi pas karein
+
+// ab hum terminal mei run karte hai to o/p aya
+// Username is sam and price is 399
+
+// means humne function ko execute karte time
+// argument mei direct object pass kar diya as above
+
+// ==================================================================================
+
+// Achha iske andar aap arrays bhi isi tareh se pass
+// kar sakte hai, object humne pass karke dekh hi liye
+// array ek bacha hai to wo datatype bhi pass kar hi lete hai
+
+// Arrays banane k liye kya karna hai as follows
+
+// const myNewArray = []
+
+// ab iske andar hum values daal dete hai koi bhi
+// random numbers as follows
+
+// const myNewArray = [200, 400, 100, 600]
+
+// Ab ek function define karna hai jo array ko
+// accept karta hai aur uski second value ko
+// return kar deta hai
+
+// to humne banaya function as follows jo return
+// karega second value array mei se of course
+
+// function returnSecondValue(){
+
+// }
+
+// ab yeh function ek parameter leta hai
+// to isko bol dijiye getArray as follows
+
+// function returnSecondValue(getArray){
+
+// }
+
+// koi bhi naam de dijiye, humne getArray naam
+// de diya hai
+
+// aur return kya karta hai, return kya karega,
+// ab dhyan rakhiyega same object wala concept hai
+// myNewArray k aage square brackets mat lagayiyega
+
+// function returnSecondValue(getArray){
+//     return
+// }
+
+// ab yahan pe myNewArray (inside function) k aage mat likiyega
+// as follows
+
+// function returnSecondValue(getArray){
+//     return myNewArray
+// }
+
+// myNewArray k aage kyu nahi likhna kyuki
+// wo generic naam hai, wo kuch bhi array ho
+// sakta tha upar
+
+// apko sirf dhyan dena hai ki mere pas kya argument (getArray)
+// aa raha hai, to humara pas jo argument aa raha hai wo hai
+// getArray (inside function -- return getArray) as follows
+
+// function returnSecondValue(getArray){
+//     return getArray
+// }
+
+// au uski (getArray) konsi value apko return karni hai
+// apko first value return karni hai to zero index as follows
+
+// function returnSecondValue(getArray){
+//     return getArray[0]
+// }
+
+// secondvalue return karni hai to 1st index as follows
+
+// function returnSecondValue(getArray){
+//     return getArray[1]
+// }
+
+// to iss function ko hum run karenge as follows
+
+// console.log(returnSecondValue());
+
+// aur iske andar pas kar dijiye jo bhi array apko
+// pas karna hai 
+
+// suppose kariye apko pass karna tha myNewArray as follows
+// to apko value mil jayegi as o/p as follows
+
+// console.log(returnSecondValue(myNewArray));
+// o/p 400
+
+// ===================================================
+
+// same jaise object k andar humne pas kiya tha
+// i.e. as follows
+
+// handleObject({
+//     username: "sam",
+//     price: 399
+// })
+
+// usi tareh se same kaam hum yahan pe bhi
+// kar sakte hai as follows
+
+const myNewArray = [200, 400, 100, 600]
+
+function returnSecondValue(getArray){
+    return getArray[1]
+}
+
+// following ko kar dete hai comment out
+
+// console.log(returnSecondValue(myNewArray));
+
+// aur apko array hi pas karna tha to usko
+// variable mei daal k pas kariye , ya chahe
+// direct pas kariye, to apke pas mamla same hi hai,
+// isme koi bhi difference nahi ata hai as follows
+
+console.log(returnSecondValue([200, 400, 500, 1000]));
+// o/p 400
+
+// to value humare pas same 400 hi ayi hai
