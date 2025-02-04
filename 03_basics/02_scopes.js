@@ -464,17 +464,826 @@ if (true) {
 // if k andar kuch ek aur function declare kar rahe ho
 // as follows
 
-let a = 300
-if (true) {
-    let a = 10
-    const b = 20
-    console.log("INNER: ", a);
-    function addnum(){
+// let a = 300
+// if (true) {
+//     let a = 10
+//     const b = 20
+//     console.log("INNER: ", a);
+//     function addnum(){
 
-    }
-}
+//     }
+// }
 
 // iss ttareh se to ek aur scope ( {} ) aa gaya hai
 // (i.e. curly braces {} of addnum)
 // to jitni bar curly braces ayega utni bar scope ayega
 // tab kahani kaise hoti hai
+
+// =========================================================================
+
+// SCOPE SECOND VIDEO
+
+// AB HUM BAAT KARTE HAI NESTED SCOPES K BARE MEI
+
+// Ab nested scopes kaise kaam karte hai suppose kariye
+// ek function as follows
+
+// function one(){
+    
+// }
+
+// function one(){
+//     const username = "hitesh"
+// }
+
+// Ab iske baad aapne function k andar ek aur function likh
+// diya as follows
+
+// function one(){
+//     const username = "hitesh"
+
+//     function two(){
+
+//     }
+// }
+
+// Ab jaruri nahi hai ki function k andar hi
+// function ho, if else k andar bhi function ho
+// sakta hai, loop k andar bhi function ho sakte hai
+// bahut sare use case ho sakte hai
+
+// baat hai ki aap gaur farmaiye iss curly braces se
+// (curly braces of function one), saari kahani wahin se hai
+
+// function one(){
+//     const username = "hitesh"
+
+//     function two(){
+//         const website = "youtube"
+//     }
+// }
+
+// Ab hum kya chahte hai yeh jo console.log hai
+// yeh console.log hona chahiye username ka
+// as follows
+
+// function one(){
+//     const username = "hitesh"
+
+//     function two(){
+//         const website = "youtube"
+//         console.log(username);
+        
+//     }
+// }
+
+// Ab username ka kyu hona chahiye console.log
+// kyu ki hum iss function k andar hai (function two 
+// k andar), to hum dekhna chahte hai ki kya hum iss
+// function (function two) k andar hai
+
+// to kya hum iss username ko access kar sakte hai
+// (const username = "hitesh") , yeh bahut hi
+// interesting baat hai
+
+// Achha ek aur hum yahan pe console.log karte hai
+// aur yeh hum console.log kar rahe hai website ko
+// as follows
+
+// function one(){
+//     const username = "hitesh"
+
+//     function two(){
+//         const website = "youtube"
+//         console.log(username);
+//     }
+//     console.log(website);
+
+
+// }
+
+// Aur hum kya kar rahe hai jaise hi hum
+// aa rahe hai line number 562 pe dhyan se dekhna
+// hum function one mei hi hai, function one se
+// bahar nahi gaye hai, but hum function two se
+// bahar aa chuke hai
+
+// theek hai function two se bahar aake hi humne
+// function two ko execute kar diya -- two() as follows
+
+// function one(){
+//     const username = "hitesh"
+
+//     function two(){
+//         const website = "youtube"
+//         console.log(username);
+//     }
+//     console.log(website);
+
+//     two()
+// }
+
+// theek hai aur yahan pe aake humne function one ko
+// execute kar diya -- one() as follows
+
+// function one(){
+//     const username = "hitesh"
+
+//     function two(){
+//         const website = "youtube"
+//         console.log(username);
+//     }
+//     console.log(website);
+
+//     two()
+// }
+
+// one()
+
+
+// to kaafi kuch execution ho raha hai ek saath
+// ab gaur se dekhiyega jada difficult nahi hai
+
+// Ab ek cheej samajhna, yeh Sir humesha isi tareh
+// samjhate hai, yeh kuch ice-cream lene jaisa hai
+
+// dekhiye chote bachhe bado se ice - cream cheen
+// sakte hai, maang sakte hai, lekin bade agar choto
+// se ice-cream maange ya cheen le to bahut hi kharaab
+// lagta hai, to yeh kuch rule yahan pe bhi apply hota
+// hai
+
+// Yahan pe sabse bada kaun hai -- function one hai
+// theek hai aur yeh jo function two hai , yeh chota hai
+
+// to yeh function two kya kar sakta hai , function one
+// se ice - cream maang sakta hai
+
+// to iske andar (function one) k andar jitne bhi variable
+// hai (jaise, const username = "hitesh") yeh (function two)
+// sab access kar sakta hai, uske liye (function two) to
+// wo hi (function one) hi global hai, to usko (function one)
+// ko access kar sakta hai
+
+// Lekin jaise hi aap yahan pe ( console.log(website); ) aa gaye
+// ab kya hai, iska (function two) ka scope to iske first curly
+// brace se leke iske last curly brace tak hi hai, to jo bhi
+// aapne variable andar declare kare hai (function two k andar)
+// wo bas andar hi khatam ho gaye hai
+
+// aur yahan pe humne iss tareh se run kiya hai means
+// humne console.log(website); kiya hai
+
+// Ab jab function two ko jab humne run kiya ( two() )
+// to hum dekhna chahte hai ki humare pas yeh console.log
+// i.e. const website = "youtube"
+// console.log(username); (inside function two)
+// hota hai ya nahi hota
+
+// theek hai , uske alawa hum yahan pe (console.log(website);) 
+// bhi dekhenge ki humare pas yahan pe (console.log(website);)
+// (after function two) bhi error ati hai ya fir yeh
+// print kar pata hai
+
+// Aur jab function one execute hota hai ( one() ) , tab actually
+// mei kya kya uske andar execute hota hai
+
+// to wo bhi hum sab dekhna chahte hai, to save and run karke
+//  dekhte hai
+
+
+// function one(){
+//     const username = "hitesh"
+
+//     function two(){
+//         const website = "youtube"
+//         console.log(username);
+//     }
+//     console.log(website);
+
+//     two()
+// }
+
+// one()
+
+// o/p error -     console.log(website);
+// ^
+
+// ReferenceError: website is not defined
+
+// to dekhiye error hai, but error se ghabrayiye nahi
+// dekhiye kahan kahan error aya
+
+// Sabse phela error aya wo line 662 i.e.
+// console.log(website) mei aya hai, isne kaha hai
+// ki yeh website ko kahan access kar rahe ho sir...
+
+// yeh website ( (console.log(website)) ) to andar tha
+// i.e. yeh website to function two k andar tha ( as
+// function two k andar -- const website = "youtube" 
+// likha hai)
+
+// Iska scope (function two ka scope) to yahin
+// ( console.log(website) k just ek line phele
+// i.e. line 661) khatam ho gaya hai curly braces
+// k saath
+
+// to isko (console.log(website)) ko yahan (line 662)
+// mei access karoge (i.e. outside scope of function two
+// mei access karoge) to obvious si baat hai problem ayegi 
+// hi ayegi, theek hai
+
+// Lekin aapne gaur farmaya hoga ki line by line
+// execution hota hai
+
+// yeh ( console.log(website) ) yahin pe (means line 662)
+// pe hi error de gaya hai isliye yeh -- two() kabhi
+// execute hua hi nahi
+
+// isne error de diya yahan pe ki -- wesite is not defined
+// to yeh hume samajh mei aa gaya
+
+// to ab hum isko ( console.log(website) ) ko kar dete hai
+// comment out as follows kyuki ab hume yeh nahi chalana hai
+// kyuki ab hum dekhte hai ki aage kis tareh se kahani hoti
+// hai , kyuki error se hi sabse jada seekha jata hai
+
+// jitne errors k saath aap famaliar honge utna hi achha
+// development aap kar payenge
+
+// function one(){
+//     const username = "hitesh"
+
+//     function two(){
+//         const website = "youtube"
+//         console.log(username);
+//     }
+//     console.log(website); isko comment out kar diya hai baki poora function as it is hai
+
+//     two()
+// }
+
+// one()
+
+// Ab run kiya terminal mei
+
+// o/p hitesh
+
+// Ab usne yahan pe (o/p) mei kaha hitesh,
+// kyu kaha hitesh kyu ki function two() jaise
+// hi execute hua, to uske andar kya aya ki
+// aapne kya kara function two k andar --- console.log(username)
+// kiya (see inside function two)
+
+// aur username hitesh tha , (see in function one
+// i.e. const username = "hitesh") to wo execute
+// ho gaya
+
+// Ab yeh function one aapne execute kara i.e. one()
+
+// Achha ab ek interesting cheej dekhiyega, function one
+// jaise hi execute hota hai i.e. one(), uske baad function
+// two bhi yahan execute ho raha hai (i.e. two() , see inside
+// function)
+
+// Agar hum yahan pe two() ko comment out kar de
+// aur baki function as it is hi rehne de as follows
+
+// function one(){
+//     const username = "hitesh"
+
+//     function two(){
+//         const website = "youtube"
+//         console.log(username);
+//     }
+//     console.log(website); isko comment out kar diya hai baki poora function as it is hai
+
+//     two() isko comment out kar diya hai baki poora function as it is hai
+// }
+
+// one()
+
+// To agar hum two() ko iss tareh se comment out
+// kar de (as above) to iss function two(){} ko
+// to kisi ne call hi nahi kara
+
+// to ab agar hum isko run karenge (terminal mei)
+// to yeh execute nahi hoga (i.e. terminal mei koi
+// o/p nahi ayega)
+
+// Theek hai yeh baat to ayegi humko samajh mei
+
+// function one(){
+//     const username = "hitesh"
+
+//     function two(){
+//         const website = "youtube"
+//         console.log(username);
+//     }
+//     console.log(website); isko comment out kar diya hai baki poora function as it is hai
+
+//     two()
+// }
+
+// one()
+
+// Ab kya hai iske andar thodi si kahani aur hoti hai
+// kya hota hai jitni baar bhi function aap iss tareh
+// se declare karte hai (see function two(){} inside
+// this function) aur call karte hai (i.e. see two()
+// inside this function) unke liye alag ek call stack
+// banta hai, yani ki alag ek scope banta hai
+
+// Jitni bar apka function aya wo scope banega uske andar
+// stack mei rakha jata hai
+
+// Iske bare mei hum aur discuss karenge ki kaise yeh
+// ( function two(){} ) memory k andar jata hai, kaise
+// hota hai, uske liye diagrams banayenge achhe se, lekin
+// abhi k liye basic hai yeh
+
+// Isi ko kaafi hadd tak closure bhi kaha jata hai ki
+// apka jo andar ka function hai ( function two(){} )
+// wo bahar k variables (i.e. const username = "hitesh" in function one(){})
+// ko access kar pata hai, but sirf itna hi nahi hai uske
+// peeche aur bhi kaafi detail hai
+
+// Abhi ke liye apko detail itna hai ki nested function jab
+// hote hai to apke jo child function hai (function two(){})
+// wo parent function (function one(){}) k variable 
+// (i.e. const username = "hitesh" in function one(){}) ko
+// access kar pate hai, usually log itna hi jaante hai
+
+// (see closure video in english channel if in hurry
+// otherwise yahan hindi channel mei bhi discuss karenge)
+
+// Theek hai yeh ho gaya basic
+
+// Ab isi tareh se yeh jo hum kar rahe hai na, yehi kaam
+// if else k andar bhi hota hai, dekhiye apko example
+// batate hai yahan pe, kyuki if else k andar bhi to
+// kya hai wo scope hi hai
+
+// to yeh if else hua as follows
+
+// if(){
+
+// }
+
+// Agar aap yahan pe true likh dete hai to if k andar
+// humko aana hi aana hai as follows
+
+// if(true){
+
+// }
+
+// Ab if k andar humne variable declare kara to humne
+// wo hi same username liya aur usko naam de diya hitesh
+// as follows -- const username = "hitesh"
+
+if(true){
+    const username = "hitesh"
+}
+
+// Theek hai, ab uske aapne kaha ek aur if le lete hai
+// as follows
+
+// if(true){
+//     const username = "hitesh"
+//     if(){
+
+//     }
+// }
+
+// iss andar wale if mei bhi hum jayenge hi,
+// to hum kya karte hai isko (andar wale if ko) bol
+// dete hai ki agar username jo hai uski value hai "hitesh"
+// i.e. username === "hitesh" , to obvious si baat hai aap
+// har bar jaoge hi (andar wale if k andar), (chaho to direct true
+// likh do username === "hitesh ki jagah") as follows
+
+// if(true){
+//     const username = "hitesh"
+//     if(username === "hitesh"){
+
+//     }
+// }
+
+// theek hai yeh hum andar aa gaye (andar wale if ke)
+
+// Ab kya chahte hai hum, ki koshish karte hai ek interesting
+// cheej dekhiyega, hum iske andar kya karte hai console.log
+// karke dekhte hai ya fir ek naya website declare kar lete hai
+// const website = " youtube" (ek space deke youtube likh diya
+// kyuki dono ko add karne wale hai) and uske baad hum console.log
+// karte hai as follows
+
+// if(true){
+//     const username = "hitesh"
+//     if(username === "hitesh"){
+//         const website = " youtube"
+//         console.log();
+//     }
+// }
+
+// To console.log kaise karenge, hum karte hai username aur
+// plus kar dete hai iske andar website as follows
+// i.e. username + website
+
+// if(true){
+//     const username = "hitesh"
+//     if(username === "hitesh"){
+//         const website = " youtube"
+//         console.log(username + website);
+//     }
+// }
+
+// to ab kya yeh add ho jayega , bilkul hoga
+// dekhte hai kaise hoga
+
+// Achha yahan pe hum thoda sa errors bhi le lete hai
+// kyu ki errors bhi lene jaruri hai
+
+// iske (andar wale if k) hum bahar ate hai aur sabse
+// phele console.log karte hai hum iss website ko
+// kyuki errors dekhna to jaruri hai , sabse jada jaruri
+// wohi hai as follows
+
+// if(true){
+//     const username = "hitesh"
+//     if(username === "hitesh"){
+//         const website = " youtube"
+//         console.log(username + website);
+//     }
+//     console.log(website);
+// }
+
+// to yeh to humne dekh liya ki kis tareh se website
+// aa rahi hai
+
+// Aur yahan pe (outside if function) hum kya karte hai
+// ki username bhi print karwa lete hai as follows
+// yeh console.log hai aur yeh username (outside if function)
+// as follows
+
+// if(true){
+//     const username = "hitesh"
+//     if(username === "hitesh"){
+//         const website = " youtube"
+//         console.log(username + website);
+//     }
+//     console.log(website);
+// }
+
+// console.log(username);
+
+// Agar apko yeh cheej samajh aa rahi hai to matlab
+// apko yeh scope ka concept, thoda thoda closure ka
+// concept bhi kaafi hadd tak aa gaya ki kahan kahan
+// error aane wali hai
+
+// gaur se dekhiyega yahan (inside if) first line mei
+// humne username declare kara (const username = "hitesh")
+// if statement k andar
+
+// uske andar baad wapas se ek if statement hai (andar wala
+// if statement) uske andar humne ek website declare kari
+// const website = " youtube"
+
+// Ab uss andar wale if statement k bahar aake hum keh rahe
+// hai ki website ka access do ( console.log(website); )
+
+// Aur iss poore if (bahar wala if statement) k bahar aake
+// hum keh rahe hai ki username ka access do ( console.log(username); )
+
+// to isko run karke dekhte hai aur dekhte hai error kahan
+// kahan pe pe ayegi, jitna hum error se famaliar honge
+// utna hi humko coding mei aasaani hogi
+
+// o/p     console.log(website);
+// ^
+
+// ReferenceError: website is not defined
+
+// dekhte hai phela error kahan pe aya, phela error aya
+// ki website (console.log(website) see in error), yeh jo
+// access karne ki koshish kar rahe hai na Sir aap yeh website
+// (console.log(website); just outside andar wala if statement)
+// yeh nahi access hoga, kyu nahi hoga kyuki iska to (website
+// ka) scope hi andar wale if statement k andar tak tha ({}
+// hi to scope hai) to phela error humne remove kar diya
+// means humne console.log(website); jo just outside hai andar
+// wale if statement k isko comment out kar diya as follows
+
+// if(true){
+//     const username = "hitesh"
+//     if(username === "hitesh"){
+//         const website = " youtube"
+//         console.log(username + website);
+//     }
+//     console.log(website); commented out, rest as it is
+// }
+
+// console.log(username);
+
+// Ab dubara run karte hai iss just above function ko
+
+// o/p console.log(username);
+// ^
+
+// ReferenceError: username is not defined
+
+// Isne kaha yeh jo username aap access karne ki koshish
+// kar rahe hai (console.log(username); see in error) yeh nahi
+// hoga access kyu, kyuki username ka scope bahar wale if statement
+// k andar hai , jabki hum console.log(username) bahar wale if
+// statement k bahar likh rahe hai isliye, that's why hum iss
+// console.log(username) jo humne bahar wale if statement k bahar
+// likha hai isko remove kar dete hai means isko comment out kar
+// dete hai as follows
+
+// if(true){
+//     const username = "hitesh"
+//     if(username === "hitesh"){
+//         const website = " youtube"
+//         console.log(username + website);
+//     }
+//     console.log(website); commented out, rest as it is
+// }
+
+// console.log(username); commented out rest as it is
+
+// Ab hum just above function ko run karte hai
+
+// o/p hitesh youtube
+
+// =====================================================================
+
+// Ab ek final ek chota sa example bhi Sir dikhate hai
+// yahan pe, abhi yeh -- hitesh youtube print ho raha
+// hai to Sir iss if function mei iss line -- console.log(username + website);
+// ko comment out kar dete hai as follows taki hume easy rahe
+
+// if(true){
+//     const username = "hitesh"
+//     if(username === "hitesh"){
+//         const website = " youtube"
+//         console.log(username + website); commented out, rest as it is
+//     }
+//     console.log(website); commented out, rest as it is
+// }
+
+// Abhi humare pas file mei kuch bhi run nahi ho raha hai,
+// means terminal mei kuch bhi o/p nahi aa raha hai
+
+// Ek chota sa eg Sir yahan pe bhi denge, yeh bada hi interesting
+// eg hai as follows, iske bare mei hum detail discussion
+// aur karnege
+
+// ++++++++++++++++++++++++++++ interesting example +++++++++++++++++++++
+
+// Ab kya hai bada hi interesting question Sir dete hai, question to kya
+// hai ek concept hai yahan pe
+
+// Suppose kariye ki aapke pas ek function hai, aur yeh
+// function kya karta hai sirf apko ek console.log karta hai
+// ya kuch iss tareh se karta hai, dhyan se dekhiyega ki yeh
+// actually mei ho kaise raha hai, bada hi aasaan hai har bar code
+// chalega iss bar, to itni koi dikkat wali baat nahi hai
+
+// isko hum bolte hai addone as follows, to jo bhi value
+// aa rahi hai uske andar hum one add kar rahe hai as follows
+
+// function addone(){
+
+// }
+
+// theek hai to aapne kya kara, yeh value li as follows
+
+// function addone(value){
+
+// }
+
+// value ki jagah hum num likh dete hai taki easy rahega
+// dekhne mei humare pas num aa gaya as follows
+
+// function addone(num){
+
+// }
+
+// Aur jab bhi hum return karenge, to kya karenge wo jo
+// num hai uske andar hum plus one kar denge as follows
+
+// function addone(num){
+//     return num + 1
+// }
+
+// theek hai bada hi aasaan sa ek function humne banaya
+// hai yahan pe
+
+// Ab iss addone ko humne yahan pe iss tareh se call kiya
+// as follows
+
+// addone()
+
+// Aur uske andar humne value de di 5 as follows
+
+// addone(5)
+
+// o/p kuch nahi aya kyuki only return and not print
+// print ke liye console.log
+
+// Ab isi cheej ko , exactly isi cheej ko aap kai jagah
+// dusri tareh se hote hue dekhenge, kaise wo bhi batate
+// hai apko
+
+// dekhiye aap kya karenge kai log, Sir bhi karte hi hai
+// to humne naam de diya const aur bol diya addTwo as follows
+// iss bar yeh add two karega as follows
+
+// const addTwo 
+
+// Aur yahan pe equals likh ke kaha humne function as follows
+
+// const addTwo = function()
+
+// Aur iss function k andar humne wo hi value le li hai num
+// as follows
+
+// const addTwo = function(num){
+
+// }
+
+// Ab hum kya kar rahe hai return, aur jo bhi apke pas num
+// value aa rahi hai, uske andar ho raha hai add two (+ 2)
+// as follows
+
+// const addTwo = function(num){
+//     return num + 2
+// }
+
+// aur yahan pe humne likh diya ki yeh jo addTwo hai (const addTwo)
+// iske andar value de di hai, suppose kariye 5 hi humne wapas se
+// de di hai
+
+// addTwo(5)
+
+// to apko pata hai dono k andar kya hoga (both functions k andar)
+// lekin kya hai ki dono ko bolne ka tarika kya hai (likhne ka tarika)
+
+// yeh basic function hai (previous example function addone(num)), yeh bhi
+// function hi hai function(num) ( function(num) in const addTwo = function(num)
+// this example), lekin isko addTwo (addTwo in const addTwo = function(num))
+// ko kabhi kabhar expression bhi bol diya jata hai, yeh (addTwo) ek variable
+// ki tareh hai, JavaScript k andar variables bahut jada powerful hai,
+// yeh (variables) kuch bhi hold kar sakte hai -- JSON values ho gayi,
+// functions ho gaya, bahut kuch , kuch bhi hold kar sakte aap variable
+// k andar
+
+// to yeh 2 technique hai , apko iss tareh se bhi functions dikhai
+// denge bante hue (first eg ki tareh -- addone), aur apko iss atreh se
+// bhi functions dikhai denge (const addTwo)
+
+// aage jake aur bhi techniques batayenge apko ki kis tareh se arrow functions
+// hote hai kya , hote hai , but isme koi ghabraane wali baat nahi hai, dono
+// tareh se apko functions bante hue najar ayenge, iss tareh se values hoti
+// najar ayegi
+
+// Achha ab ek interesting cheej , hum inn dono methods ko run karte hai
+// (inn dono functions addone and addTwo ko), haan value hum kuch bhi
+// return nahi karenge to obvious si baat hai print nahi hoga, but
+// dekhiye kya hota hai ki humne isko run kara koi error nahi aya
+// (terminal mei) (koi o/p bhi nahi aya as only return and not print)
+
+// Achha ab kya karte hum yahan pe, yeh jo first humara addone hai
+// ( addone(5) ) isko hum leke jate hai iss function (addone) k declaration 
+// se phele as follows
+
+// addone(5)
+
+// function addone(num){
+//     return num + 1
+// }
+
+// const addTwo = function(num){
+//     return num + 2
+// }
+
+// addTwo(5)
+
+// Ab dekhte hai ki kya run hota hai aur kya value ati hai
+// in terminal
+
+// o/p -- koi error nahi aya terminal o/p mei
+
+// to isne kaha koi problem nahi hai aap addone(5) iss tareh
+// se likh sakte hai (function addone se phele) aur koi error
+// nahi di usne
+
+// aur obvious si baat hai yeh (addone(5)) execute ho hi gaya
+// hoga, chahe to hum ise (addone(5)) ko console.log karke dekh
+// hi sakte hai as follows
+
+// console.log(addone(5));
+// o/p 6
+
+// function addone(num){
+//     return num + 1
+// }
+
+// const addTwo = function(num){
+//     return num + 2
+// }
+
+// addTwo(5)
+
+// to humne dekha ki o/p mei value 6 aa gayi hai
+// (first function ka o/p)
+
+// Ab isko bhi (addTwo(5)) ko bhi hum function declaration se
+// phele le jate hai , (yeh function dusri tareh se declare hua hai)
+// aur isko (addTwo) ko run karke dekhte hai ki actually mei ab kya
+// hota hai as follows
+
+console.log(addone(5));
+// o/p 6
+
+function addone(num){
+    return num + 1
+}
+
+addTwo(5)
+// o/p addTwo(5)
+// ^
+
+// ReferenceError: Cannot access 'addTwo' before initialization
+
+const addTwo = function(num){
+    return num + 2
+}
+
+// to ab error aa gaya, haan yeh bada interesting hai, yeh apko
+// pata bhi hona chahiye ki isne bola ki addTwo ko to mai access
+// hi nahi kar sakta (see error)
+
+// Lekin yahan (first eg i.e. addone) mei to access kar liya tha
+
+// to haan ji yeh problem ati hai jab aap functions ko
+// kis tareh se declare karte hai
+
+// yahan first eg mei as follows
+
+// function addone(num){
+//     return num + 1
+// }
+
+// to humne sirf declaration diya hai
+
+// yahan pe second eg mei as follows
+
+// const addTwo = function(num){
+//     return num + 2
+// }
+
+// humne declare (Right Hand Side) karne k saath usko ek variable
+// (addTwo) mei hold bhi kar diya hai
+
+// (addTwo variable ka naam hai , function ka nahi, jiske andar
+// humne second function ko hold kiya hai)
+
+// (addone function ka naam hai)
+
+// to yeh aage jake ek consept aata hai JavaScript k andar jisko
+// bolte hai hoisting, ki function kaise declare hote hai, kahan
+// unko rakha jata hai, kya unka execution context hai, ya fir kis
+// tareh se variables ko JavaScript treat karti hai
+// kaise ek final tree banati hai jahan pe saare variables rakhe jate hain,
+// saare functions rakhe jate hai, detail mei discussion karenge
+
+// But abhi k liye aap dekhiye dono (both examples) mei antar kya hai
+
+// Abhi hume dono mei difference pata hai ki accha yeh syntax (first eg)
+// bhi hota hai and yeh syntax (second example) bhi hota hai
+
+// Ab hume iss tareh ki koi error dikhegi (Cannot access 'addTwo' before initialization)
+// to aap humesha se uska pata layenge ki shayad hum kahin koi
+// iss tareh se as follows
+
+// addTwo(5)
+
+// const addTwo = function(num){
+//     return num + 2
+// }
+
+// function declare kar rahe hai and usko phele access kar rahe hai
+// (addTwo(5)), uske declaration se phele
+
+// to yehi ek hoisting hota hai jahan execution context banta hai
+// ki aap declaration se phele usko use nahi kar sakte but iss case
+// (first example) mei hum use kar paa rahe hai, iss case (second example)
+// mei hum nahi kar paa rahe use
+
+// aage hum aur in depth jayenge, abhi hum sirf overview dekh rahe hai
+
+// Next videos mei hum execution context and hoisting words se famaliar
+// rahenge
