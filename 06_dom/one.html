@@ -1,0 +1,643 @@
+<!-- dom ko actually mei padhne ke liye apko sabse pehle ek
+file banani padegi to iss file ka naam de dete hai hum one.html-->
+
+<!-- haa ji html file banani padegi taki apko samajh mei aye ki actually mei
+dom hota kya hai -->
+
+<!-- to yeh banayi humne html file -->
+
+<!-- ab jaisa ki humne dekha tha humne humari html series mei
+exclamatory hit karte hai emmet ka shortcut aa jaata hai  -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html> -->
+
+<!-- basic ek head hai humare pas (see boiler plate code) hum kya
+karte hai iss head ke andar hum itni jyada details nahi lenge hum
+yeh viewport etc kyuki hume abhi kaam nahi hai-->
+
+<!-- hum sirf basic dekhna chahte hai ki yeh kaise aate hai to hum
+inn baaki sab ko hata dete hai (2nd and 3rd meta tags ko hata dete hai) -->
+
+<!-- (sir ke mei 2nd meta tag extra hai) -->
+
+<!-- to humne 2nd line meta tag ko hata diya as follows-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<!-- ek meta tag lete hai kyuki sirf samajhne ke liye ek
+bahut hai -->
+
+<!-- ek humne ek title le liya hai (title tag) -->
+
+<!-- iss title ka naam de dete hai hum DOM learning -->
+
+<!-- theek hai title ke andar kuch bhi dijiye -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM learning</title>
+</head>
+<body>
+    
+</body>
+</html> -->
+
+<!-- ab yeh jo body hai iske andar hum kya karte hai ek div 
+lete hai aur uske andar ek class name daalte hai suppose kariye
+bg-black , yeh humne ek class daal di theek hai-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM learning</title>
+</head>
+<body>
+    <div class="bg-black"></div>
+</body>
+</html> -->
+
+<!-- aur iss div ke andar hum kya karte hai simple sa ek h1 lete
+hai aur isko naam de dete hai DOM learning on chai aur code-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM learning</title>
+</head>
+<body>
+    <div class="bg-black">
+        <h1>DOM learning on Chai aur code</h1>
+    </div>
+</body>
+</html> -->
+
+<!-- theek hai ek h1 de diya -->
+
+<!-- aur iske saath saath kya hai iske kuch attributes bhi de dete
+hai (h1 ke) -->
+
+<!-- suppose kariye isko bhi (h1 ko bhi) ek class de dete hai
+isko bol dete hai heading -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM learning</title>
+</head>
+<body>
+    <div class="bg-black">
+        <h1 class="heading">DOM learning on Chai aur code</h1>
+    </div>
+</body>
+</html> -->
+
+<!-- theek hai aur bhi kuch attributes title etc jo
+dene hai wo aap de dijiye -->
+
+<!-- aur iske alawa ek paragraph lete hai paragraph ke andar
+hum jada kaam nahi karenge kuch lorem ke 5 words daal dete hai
+jo bhi wahan pe uska sub title hua -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM learning</title>
+</head>
+<body>
+    <div class="bg-black">
+        <h1 class="heading">DOM learning on Chai aur code</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+</body>
+</html> -->
+
+<!-- aur itna hi basic rakhte hai, theek hai ji yeh ho gaya -->
+
+<!-- ab actually mei DOM kya hai, DOM hai Document Object Model -->
+
+<!-- yaani ki yeh jitna bhi aapne webpage likha hai dekhiye -->
+<!-- 3:19 -->
+
+<!-- end of the day chahe aap react use kare, chahe angular use kare
+ jo aapka document banta hai yeh html banta hai yeh kuch objects se hi to
+ banta hai, ab objects kya ho gaye -- head ho gaya (see above code)
+ body ho gaya (see above code) , iss atreh ke objects hi to hai-->
+
+<!-- to yeh jo DOM hota hai Document Object Model yaani ki aapka jo 
+ document bana hua hai wo kis model se bana hua hai, kya uska structure
+ hai, page kaise dikhta hai, yeh sara agar aapko samajh mei aa gaya,
+ to aap uske andar manipulation bhi karne lag jaoge-->
+
+<!-- aur kyuki hume itna saara reduce samajh liya hai, numbers ko hum
+ add kar sakte hai, to ek bar yeh (DOM) samajh mei aane lag jaye, to
+ hum iss webpage se numbers bhi utha sakta hu cards mei se, unn number ko
+ add bhi kar sakta hu, ek aur naya document ke andar ek object create
+ kar sakta hu, jiska mai naam de sakta hu sum ya fir total -->
+
+<!-- aur uss card ke andar jo uska pricing calculate hua hai wo mai
+ usko samjha ke usko de sakta hu-->
+
+<!-- to bahut saari cheejein hum kar sakte hai agar hum yeh document ko
+ samajh le -->
+
+<!-- iske baad agar hum event ko samajh le to ek button click pe kya
+ hona chahiye, kya process honi chahiye, web server pe request jaani chahiye
+ nahi jaani chahiye, wo saare agar hum event samajh le to mere ko samajh mei
+ aa jayega -->
+
+<!-- to yeh saari jo tayyiyari hai yeh tayyiyari humari project ki taraf jaane
+ ki hai  -->
+
+<!-- lekin aisa nahi hai ki direct sir project dump kar denge, samjha ke karenge
+ achhe se -->
+
+<!-- to pehle hum samajhte hai ki yeh document ka diagram kaise banate hai
+ kyuki diagram samajhna bhi jaruri hota hai -->
+
+<!-- achha iss diagram ke alawa sir ne ek webpage khool rakha hai jo ki
+ humare ek -- Brendan Eich saabh ka jo ki humare JS ke founder hai -->
+
+<!-- iss Brendan Eich wikipedia page pe right click inspect karke aur console
+ (browser console) open kar lete hai -->
+
+<!-- ab console (browser console) ke andar kya hai sabse pehle to baat yeh 
+ dekhiye ki hum yeh console.log karte hai sabse pehle-->
+
+<!-- browser console mei console.log() likh liya -->
+
+<!-- aur conosle.log ke andar ek interesting object ke bare mei hume baat karni hai
+ jo ki hai window -->
+
+<!-- browser console mei console.log(window) likh liya -->
+
+<!-- press enter -->
+
+<!-- to as follows aa jayega -->
+<!-- Window {window: Window, self: Window, document: document, name: '', location: Location, …} -->
+
+<!-- ab window ko jaise hi karte hai (means window pe
+ jaise hi drop down karte hai) -->
+ <!-- 5:03 -->
+
+<!-- to window kya hai ki yeh ek object hai , isko
+ hum dropdown open karte hai to dekhiye bahut sari
+ cheejein aati hai humare pas iske andar -- Redux,
+ Geo, bahut sari cheej,
+ meri location (sir ki location) bhi dikha
+ raha hai jaipur (Geo mei mei city: 'Jaipur' dikha
+ raha hai) jo ki sahi baat hai-->
+
+<!-- uske alawa dekhiye wikipedia bhi kitna track
+  karta hai aapko , iske baad agar aap aur isko
+  scroll karenge to aapko yahan pe (dropdown mei)
+  document bhi dikhega-->
+
+<!-- iske andar (document ke andar) jQuery , location 
+ aur bhi iske andar body bhi hai, yahan pe apke
+ baseURI bhi hai, children hai, childNodes hai-->
+
+<!-- to kaafi kuch hai iss window ke andar (window object
+ ke andar jise dropdown kiya hai) -->
+
+<!-- (ab window object ke dropdown ko sir ne close
+ kar diya) -->
+
+<!-- to yeh window apne aap mei ek complex object hai -->
+
+<!-- halaki windows ke bare mei aap padh sakte hai
+ jitna aap chahe but window ke alawa hume kya hai
+ document ke bare mei jada padhna hota hai kyuki 
+ yeh object hai (window ek object hai) to aapko
+ pata hi hai document aap likh sakte hai ----
+ window.document-->
+
+<!-- to browser console mei console.log(window.document)
+ likh liya and press enter-->
+
+<!-- (window ek object hai and hume document ke
+ bare mei jada padhna hota hai to dot access method
+ use kiya aur console.log(window.document) likh liya) -->
+
+<!-- (object ke andar dot access method hota hai
+ yeh hume pata hi hai) -->
+
+<!-- aur ab aapke pas document ke bare mei saari
+ details aa gayi hai -->
+
+<!-- (dropdown ko open kar liya) -->
+
+<!-- to document mei kya aaya apke pas document type
+ aa gaya hai -- html -- <!DOCTYPE html>  -->
+
+ <!-- head aa gaya hai <head> </head>-->
+
+ <!-- body aa gayi hai see body tag in dropdown open -->
+
+ <!-- yehi to document hota hai humara -->
+
+ <!-- (ab dropdown ko close kar diya sir ne) -->
+
+ <!-- ab yeh itna jada common hai ki apko har
+  bar yeh window.document i.e. console.log(window.document) 
+  nahi likhna padta , actually mei isko pata hai
+  browser ko ki yeh kaafi aap use karne wale hai-->
+
+  <!-- to isliye console.log(document) jab aap
+   karte hai -->
+
+<!-- (browser console mei console.log(document)
+ likh liya and press enter and open dropdown) -->
+
+<!-- to apko direct bhi access mil jata hai -->
+
+<!-- (now close dropdown) -->
+
+<!-- but aapne notice kara hoga jab hum window
+ ke andar jaake (menas window dropdown open
+ karke) yahan pe document ko hum open karte hai
+ to yahan pe jQuery , location , 50 tareh ki cheejein
+ mil rahi thi -->
+
+<!-- (window dropdown close kar diya) -->
+
+
+<!-- par agar hum yahan par jaate hai (means agar
+ hum console.log(document) mei jaate hai and dropdown open karte hai) 
+ to yahan pe humko kya mil raha hai , wo to de hi nahi
+ raha hai (50 tareh ki cheejein de hi nahi raha hai) , sirf yeh html ( <DOCTYPE html> ) etc de raha hai-->
+<!-- kyuki jadatar kaam hum isi mei karte hai -->
+
+<!-- ( console.log(document) dropdown close kar diya ) -->
+
+<!-- but in case agar koi apko ek special kaam ho iss
+ tareh ka to aap kya kar sakte hai-->
+
+ <!-- (browser console mei ctrl + L kar diya
+  and console.log(document) likh liya) -->
+
+ <!-- to aap kya kar sakte hai isko change kar sakte hai-->
+
+ <!-- console.log ki jagah console.dir kar dena -->
+
+ <!-- (console.warning etc bahut saare hote hai) -->
+
+ <!-- (i.e. console.log(document) ko console.dir(document)
+  kar diya and press enter and open dropdown) -->
+
+<!-- to aapko baaki saari information (50 tareh ki cheejein)
+ bhi mil jayegi jo abhi tak aapse chupi hui thi -->
+
+<!-- theek hai yeh to ho gaya basic -->
+
+<!-- 6:32 -->
+
+<!-- now console.dir(document) ka dropdown close
+ kar diya -->
+
+<!-- haa ab aise hi kaam karenge 
+hum aise hi seekhenge , aa... , kuch live pages pe bhi
+seekhenge , kuch pages hum bhi banayenge-->
+
+<!--( ab console.log(document) likh ke enter kiya 
+ and dropdown open kiya)-->
+
+<!-- to abhi hume pata hai console.log(document)
+ yeh  document hai (jo dropdown open kiya hai
+ wo document hai as console.log(document) ko enter
+ karne ke baad document aa raha hai jisko hum
+ dropdown open ya close kar rahe hai)-->
+
+<!-- ab yeh document (jo console.log(document) ko enter karne ke baad aya hai) ka yeh jo poora object bana hua hai
+ yeh kis model pe bana hua hai iska hume diagram bana
+ ke hi seekhna padega-->
+
+ <!-- 6:43 -->
+
+ <!-- console.log(document) ka dropdown close kar diya  -->
+
+<!-- to wapas se aate hai humare one.html pe-->
+
+<!-- to dekhiye yeh humara doctype hai -- <!DOCTYPE html>
+ (see code that we have written so far in one.html)
+theek hai ji , yeh window ke andar hume poora milta hai-->
+
+<!-- (again write code as follows just for understanding) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM learning</title>
+</head>
+<body>
+    <div class="bg-black">
+        <h1 class="heading">DOM learning on Chai aur code</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+</body>
+</html>
+
+<!-- ab uske andar kya hai document hai , document
+ ke andar humara html hai (see from html opening tag
+ till html closing tag) , theek hai yahan se apka
+ actually mei page start hota hai-->
+
+<!-- yeh ( <!DOCTYPE html> ) sirf yeh batane ke liye hai
+ ki aapka jo page type hai wo html5 type hai,
+ document type batata hai, document actually mei start aapka
+ html se ( html opening tag se ) hi hota hai--> 
+
+<!-- theek hai uske baad hume pata hai ek head hai 
+ (head tag) aur ek body hai (body tag) -->
+
+<!-- body ke andar kuch elements hai (jaise div
+ h1 and p tag) -->
+
+ <!-- head ke andar kuch elements hai (jaise meta tag
+  and title tag) -->
+
+<!-- to agar yeh in case hume iska diagram banana
+ pade to kis tareh se banayenge-->
+
+ <!-- 7:14 -->
+
+<!-- to chaliye diagram banane ki try karte hai -->
+
+<!-- 13:42 -->
+
+<!-- thoda sa practice se batate hai yahan pe halaki 
+ kuch aapke kaam ayegi kuch nahi ayegi, eventually jaise
+ jaise project karenge to aapko sir aur bata denge-->
+
+<!-- browser console ko ctrl + L kar liya humne -->
+
+<!-- to suppose kariye abhi tak humne document
+ dekha tha 13:49 -->
+
+<!-- to yeh humne kara ki theek hai ji console.log
+ pe hum aye aur humne bola ki hume kya do document
+ do -- console.log(document) likh liya browser
+ console mei and press enter and dropdown open
+ kiya-->
+
+ <!-- to document diya -->
+
+ <!-- to hume pata hai document ke andar abhi
+  humare pas bahut sari 75 cheejein hai -->
+
+<!-- dropdown close kar diya -->
+
+<!-- lekin sirf itna hi nahi hai actually mei
+ apko iss document (console.log(document) mei
+ jo document hai ) ke dot laga ke apko bahut
+ sari cheejein mil jayegi -->
+
+ <!--( console.log(document.) likh liya
+  browser console mei )-->
+
+<!-- document ke dot laga ke apko bahut sari cheejein
+ mil jayegi location, jQuery, applets, baseURI
+ bahut sari cheejein hai jaise baseURI yahan pe
+ likhte hai -->
+
+ <!--( console.log(document.baseURI) likh liya
+  browser console mei and press enter )-->
+
+<!-- jaise baseURI yahan pe likhte hai to apko
+ kya mil gaya ki theek hai iss webpage ka base URL
+ ya fir URI yeh hai-->
+
+ <!-- theek hai ek kaam to yeh ho gaya -->
+
+ <!-- sirf itna hi nahi aap yahan se bahut sari aur 
+  information bhi le sakte hai jaise hume chahiye
+  iss document mei jitne links hai wo sare links
+  hume de do -->
+
+<!--( console.log(document.links) likh liya
+  browser console mei and press enter )-->
+
+<!-- theek hai ji yeh dekhiye ab dekhne ko apko
+ milega ki theek hai hume sare link mil gaye hai
+ aur mil bhi gaye hai lekin problem yeh hai
+ ki yeh HTML Collection hai , yeh array nahi hai -->
+
+ <!-- bahut sare log yehi galti karte hai ki actually
+  mei jab DOM manipulation seekhtein hai to wo antar
+  nahi pata laga pate ki HTML Collection, node collections
+  aur array yeh alag alag cheejein hai inko array (14:47)
+  mei convert kiya ja sakta hai but yeh by default 
+  array nahi hai-->
+
+<!-- ab by default array nahi hai to inki ( HTML Collection ) 
+jo properties hai -- map , forEach etc wo iske pas ( HTML Collection ke pas )
+available nahi hoti hai -->
+
+<!-- ctrl + L kar diya browser console mei -->
+
+<!-- theek hai but haa yeh jarur aap kar sakte hai
+ ki aap jaise links kyuki array jaisa hi hai to
+ kaafi properties hoti bhi hai jaise apko chahiye
+ ki hume 2nd link batao konsa hai -->
+
+ <!--( console.log(document.links[2]) likh liya
+  browser console mei and press enter )-->
+
+<!-- to yeh bata dega second link yeh hai uski values
+ properties etc dekh ke hum directly wahan pahuch gaye
+ hai, to iss tareh se webpage ko access kiya jaa sakta hai -->
+
+ <!-- aur bahut sari cheejein bhi aap manipulate etc
+  kar sakte hai -->
+
+<!-- achha itna hi nahi hai actually mei apko agar koi
+ cheej select karni hai to apko yahan pe itna bhi
+ jada difficult nahi hai usko select karna document
+ ke through -->
+
+ <!-- ( ctrl + L lar liya browser console mei ) -->
+
+ <!-- jaisa ki sir ne bataya ki apko batana padega
+  ki uski property kya hai wo sab kya hai to apko
+  selection mechanism mil jate hai 15:23-->
+
+<!-- jaise isko select karte hai hum, (means browser
+ console mei elements ke pas arrow sign ko use karte 
+ hai hum - to select an element in the page to inspect
+ it) aur Brendan Eich ko hume select karna hai-->
+
+ <!-- (to jaise hi hum Brendan Eich pe click karenge
+  to automatically elements and styles tab open ho
+  jayenge) -->
+
+<!-- to yahan pe isne hume bol diya hai ki iska jo
+ span hai (to jaise hi hum Brendan Eich pe click karenge
+ to yeh elements tab mei span ko highlight kar dega) 
+ yeh Brendan Eich ka , iske upar yeh title class lagi
+ hui hai ek mw-page-title-main-->
+
+ <!-- agar aap chahe to aur upar (iss highlighted span
+  tag mei aur upar) bhi jaa sakte hai ki iske upar
+  ek title jo h1 hai iske upar ek heading hai isme
+  ek id lagi hui hai firstHeading (id= firstHeading)-->
+
+<!-- to ab dekhne se to yeh lag raha hai ki firstHeading
+ kyuki id hai unique bhi hona chahiye aur kyuki yeh
+ firstHeading obviously makes sense to shayad aur
+ koi element aisa nahi hoga iss webpage ke andar jo
+ firstHeading jaisa ho -->
+
+ <!-- to theek hai chaliye isko copy karke dekhte hai
+  (firstHeading ko) -->
+
+<!-- ( to ab wapas se elements tab se console tab mei
+ aa gaye ) -->
+
+ <!-- aur kuch selector elements hote hai
+ to hum kya kar sakte hai seedha likh sakte hai
+yahan pe (console tab mei) ki yeh document hai na
+( means browser console mei document likh liya )
+iske upar (jo document likh hai) bahut saare methods hai
+inpe sab pe hum charcha karnege 16:03-->
+
+<!-- to apke pas ek method hota hai getElementById -->
+
+<!-- (to document.getElementById likh liya) -->
+
+<!-- to abhi humne id hi to copy kari hai to isko
+ select karke means yeh -- ( document.getElementById()
+ likh ke ) likh ke aap wo id de sakte hai-->
+
+ <!-- to id humare pas kya thi firstHeading dekhte hai
+  kya value ayi -->
+
+ <!-- (to document.getElementById('firstHeading') likh
+  liya browser console mei and press enter)-->
+
+  <!-- achha to yeh first pora ka pora h1 tag isne
+   search karke mujhe de diya yahan pe -->
+
+<!-- ab aap chahe na to iske upar aap manipulation
+ bhi kar sakte hai -->
+
+ <!-- ab kyuki jaise sir ne apko bataya tha uske andar
+  nodes hoti hai, to bahut sari aur properties bhi hoti
+  hai -->
+
+<!-- to yahan pe ( document.getElementById('firstHeading') )
+ jaise hi aap dot lagayenge i.e. yeh --
+ document.getElementById('firstHeading'). likhenge
+ to apko bahut sare yahan pe dekh sakte hai bahut
+ sari cheejein break, class, yeh (16:34)
+ 75 cheejein apke pas to bahut sari by default available bhi hai
+ -->
+
+ <!-- kuch jo apko nahi available hai wo bhi use kar
+  sakte hai jo ki sir apko batayenge aage jake -->
+
+<!-- jaise suppose kariye ek yahan pe hoti hai
+ inner aur HTML sara caps mei likhiyega jaruri hai
+ compulsory hai varna nahi chalega -->
+
+<!--( document.getElementById('firstHeading').innerHTML
+ likh liya browser console mei )-->
+
+ <!-- theek hai to innerHTML ko hum replace karna chah
+  rahe hai , to kis se replace karna chah rahe hai
+  wo value aap de dijiye -->
+
+<!--( document.getElementById('firstHeading').innerHTML =
+ likh liya browser console mei )-->
+
+<!-- to suppose kariye hum usko dena chah rahe hai ki
+ yeh string ke andar value le lijiye to yeh lijiye
+ string -->
+
+ <!--( document.getElementById('firstHeading').innerHTML = ""
+ likh liya browser console mei )-->
+
+ <!-- ab iske andar kya kariye yeh -- <> humara opening
+  bracket (opening tag)  aur yeh -- </>  closing tag-->
+
+<!--( document.getElementById('firstHeading').innerHTML = "<></>"
+ likh liya browser console mei )-->
+
+ <!-- aa.. h1 le lete hai waise to kaafi bada hai h1 
+  but theek hai h1 humne le liya to theek hai-->
+
+<!--( document.getElementById('firstHeading').innerHTML = "<h1></h1>"
+ likh liya browser console mei )-->
+
+ <!-- ab h1 ke andar dena kya chahte ho -- hum 
+  dena chahte hai yahan pe -- Chai aur code-->
+
+<!--( document.getElementById('firstHeading').innerHTML = "<h1>Chai aur code</h1>"
+ likh liya browser console mei and press enter )-->
+
+ <!-- jaise hi isko run kara to obvious si baat hai
+  humara yeh Chai aur code execute ho gaya hai aur
+  page (webpage) manipulate ho gaya hai
+  (Chai aur code Brendan Eich ko replace
+  kar dega webpage mei) -->
+
+<!-- yehi hota hai aapka DOM manipulation -->
+
+<!-- ab dekhiye sirf itni si padhai karke ki achha 
+ DOM ke andar iss tareh se manipulation kiya jata hai
+ aise DOM banaya jata hai, aise uske ( DOM ke ) 
+ elements ko pakda jata hai-->
+
+ <!-- to agar hum usko change kar sakte hai
+  (jaise Brendan Eich ki jagah Chai aur code kar diya) 
+  to obvious si baat hai hum uski values ko bhi change
+  kar sakte hai, hata bhi sakte hai , laga bhi sakte
+  hai, naye elmenets la sakte hai, purane elements
+  hata sakte hai , filtering kar sakte hai, bahut
+  kuch kar sakte hai, JavaScript se hi karte hai
+  sara ka sara but yeh ho gaya basic core tarika -->
+
+  <!-- yeh means -- document.getElementById('firstHeading').innerHTML = "<>Chai aur code</>" -->
+
+  <!-- ab bahut se log kya karte hai yeh core tarike
+   nahi seekhte hai seedhe React pe khood padte hai 
+   wahan pe ( React pe ) bhi yehi kaam hota hai par
+   tumko under the hood pata hi nahi hai kya ho raha hai
+   to kal ko agar React ho gaya gayab market se to unki
+   job bhi ho jayegi gayab aur fir kahaenge AI sari
+   job khaa gaya, aisa to nahi hai-->
+
+   <!-- Now browser console is closed by sir -->
+
+   <!-- class end -->
