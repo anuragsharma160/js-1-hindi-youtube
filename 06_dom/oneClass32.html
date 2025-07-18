@@ -1,0 +1,1164 @@
+<!-- Next class 32 starts from following -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>DOM Learning</title>
+  </head>
+  <body>
+    <div class="bg-black">
+      <h1 class="heading">DOM Learning on Chai aur code</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </body>
+</html> -->
+
+<!-- above html code ke alawa hum wikipedia page pe
+ bhi jayenge wo to obvious si baat hai jaana hi hai
+ kyuki kaafi kuch testing etc to wahin (wikipedia page)
+ ki jaati hai -->
+
+<!-- to wiki link khol lete hai humare JavaScript ka -->
+<!-- Search wiki JavaScript on google -->
+
+<!-- (Now go on JavaScript wikipedia webpage) -->
+
+<!-- theek hai apka jo man kare wo link khol lijiye
+ kyuki wikipedia ke andar sabse achhi baat yeh hai ki uska
+ structure bahut achha hai jaise history yahan pe hai 
+ (see javascript wikipedia page) , iss tareh ke titles etc jo
+ bhi apko chahiye hote hai wo easily mil jaate hai-->
+
+<!-- Lekin hum kya chahte hai wikipedia pe practice karenge,
+ lekin thodi practice hum apne hisab se humare apne page (jo html code
+ likha hai) pe bhi to kare-->
+
+<!-- to iss video ke andar hum thoda sa dekhenege ki aur bhi elements
+ ko kaise hum pakad sakte hai unko kaise manipulate kar sakte hai
+ kya kya use kar sakte hai elements ko pakadne ke liye kyuki dekhiye
+ React etc mei aap aise nahi karenge kyu ki wahan pe already apke liye
+ attack (attach) kar deti hai JavaScript khud hi uss elements ko aur capture
+ kar leti hai lekin yahan pe hume khud karna hai manually -->
+
+<!-- 2:10 -->
+
+<!-- isliye to khete hai sir JavaScript ki skills humesha kaam ayegi,
+ React to aaj hai nahi hai kal ho sakta hai Angular popular ho,
+ kal ho sakta hai Swelt popular ho , to yeh hum basic karenge -->
+
+<!-- ab kya hai humne class to yahan pe heading de di hai (h1 tag mei,
+ see html code) , ek id bhi de dete hai yahan pe, aur uss id ka naam kya
+ rakhe yahan pe, aa..., title rakh dete hai as follows -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <title>DOM Learning</title>
+  </head>
+  <body>
+    <div class="bg-black">
+      <h1 id="title" class="heading">DOM Learning on Chai aur code</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </body>
+</html>
+
+
+<!-- theek hai aapka jo man kare aap naam rakh lijiye -->
+
+<!-- yeh humne basic rakh liya hai aur isko save kar lete hai
+ aur isko open kar lete hai hum humare live server pe -->
+
+<!-- right click and open on live server -->
+
+<!-- Agar aap yeh wala syntax use nahi kar rahe hai jo github ka
+ sir use karte hai to agar aap normal kar rahe hai VS code mei
+ to bhi aap kar sakte hai -->
+
+<!-- 2:52 -->
+
+<!-- Ab dekhiye yeh (webpage background ko) thoda sa
+  dark hum kar lete hai kyuki kaafi jada light hai yeh to
+  obvious si baat hai aankhein to hum kharab karnege nahi-->
+
+<!-- to title tag ke just below style tag deke aur ek
+ class hum target kar lete hai -- .bg-black {} -->
+
+<!-- aur yahan pe hum background colour de dete hai 
+ aur color de dete hai-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="bg-black">
+      <h1 id="title" class="heading">DOM Learning on Chai aur code</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </body>
+</html> -->
+
+<!-- 3:20 -->
+
+<!-- Hum kya karte hai iss div se class ko hata ke
+ (jo body ke andar sabse bada div hai) poori body pe
+ (body tag) pe hi laga dete hai taki , eye problem
+ nahi ho-->
+
+<!-- (means bg-black class ko div se hata ke body pe
+ laga diya) -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div>
+      <h1 id="title" class="heading">DOM Learning on Chai aur code</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </body>
+</html>
+
+<!-- theek hai ab hum kya karte hai ki hume
+ iss element ( DOM Learning on Chai aur code )
+ ko select karna hai -->
+
+<!-- dekhiye ek bar element select karna aa gaya hai
+ aur uski poori strategy humne samajh li hai uske
+ baad methods ka naam pata karna uske baad koi chinta 
+ wali baat hi nahi hai -->
+
+<!-- 3:46 -->
+
+<!-- to wo hi humara kaam right click  karke pehle
+ isko inspect karte hai ki maajra kya hai-->
+
+<!-- (right click -- DOM Learning on Chai aur code
+ pe kiya hai) -->
+
+<!-- to hum dekh rahe hai yahan pe (browser mei
+ elements tab mei) (h1 tag mei) title hai (id = title)
+ aur class (class = heading) bhi de rakhi hai -->
+
+<!-- 3:53 -->
+
+<!-- Hum dono tareh se target kar sakte hai pehle ek
+ hum id se seekhte hai ki id se kaise kar hai (id = title) 
+ uske baad class se bhi seekh jayenge -->
+
+<!-- theek hai to sabse pehle console (browser console) ke
+ andar jaate hai -->
+
+<!-- aur console (browser console) ke andar humare pas
+ sabse pehla jo method hum seekhenge yahan pe wo
+ koi bhi element aapko target karna hai to uske liye kya kariye -->
+
+<!-- sabse pehle aap likhiye yahan pe (console tab mei) -- document -->
+
+<!-- (to document likh liya browser console mei) -->
+
+<!-- to poora document select kar liya hai aur uske andar
+ (document ke andar , jo document likha hai) 
+ aapke pas alag alag methods hai-->
+
+<!-- (to document. likh liya browser console mei) -->
+
+<!-- to ek jo method aapko milega wo milega getElementById -->
+
+<!-- ab kya hota ( 4:23 ) ki yahan pe (browser console mei)
+  to easily select kar lete hai lekin jab isko likhte hai to bahut
+  sari gadbad ho jati hai kyuki E capital hai, B capital hai,
+  aur I capital hai to please iska dhyan rakhiyega, aa.. getElementById
+  humare pas yeh name hai-->
+
+<!-- aur bhi hai humare pas jaise by name bhi hum le sakte hai --
+ getElementsByName, by class name bhi hum le sakte hai -- 
+ getElementsByClassName , getElementsByTagName bhi hai bahut sare hai-->
+
+<!-- abhi hum thoda sa focus karenge humare getElementById pe -->
+
+<!-- ab yeh getElementById ek method hai to method humne
+ already function pad rakhe hai ki paranthesis aise -- document.getElementById()
+ lagana padta hai-->
+
+<!--( to document.getElementById() likh liya browser console mei )-->
+
+<!-- lekin isko ( document.getElementById() ko ) ek parameter bhi dena padta hai ki konsa
+ id wala element select karu -->
+
+<!-- to hum select karte hai suppose kariye humne yahan pe isko
+ title de rakha hai to aap simply kya kariye 2 strings ke andar
+ title pas kar dijiye -->
+
+<!--( to document.getElementById('title') likh liya browser console mei 
+ and press enter )-->
+
+<!-- aur yahan pe hume wo element mil gaya hai ( h1 tag ) -->
+
+<!-- theek hai koi dikkat wali baat hi nahi hai , kayi bar multiple
+ elements aate hai uspe bhi hum charcha karenge lekin 
+ abhi iske upar dekhte hai -->
+
+<!-- theek hai ab getElementById aapne select kar liya hai -->
+
+<!-- (to document.getElementById('title') likh liya browser console mei )-->
+
+<!-- hover over h1 tag in browser console -->
+
+<!-- to apko yeh jo pora value (pora h1 tag i.e. from h1 opening tag to
+  h1 closing tag) hai yeh pora value mila hai (hover over h1 tag in 
+  browser console) -->
+
+<!-- theek hai to return expression jo bhi hota hai uspe dhyan rakhiyega ki
+ actually mei apko value kya mili hai ( 5:15 )-->
+
+<!-- ab iske andar ( document.getElementById('title') ) kya hai aap
+dot lagakar iske ( document.getElementById('title') ) alag alag elements
+ko access kar sakte hai jaise suppose kariye hum isme dot laga ke id
+bol sakte hai yahan pe-->
+
+<!-- ( to document.getElementById('title').id likh liya browser console mei 
+ and press enter )-->
+
+<!-- to jab id bolenge to usne kaha ki id ki value bata do mujhe kya hai -->
+
+<!-- haa maine target id se hi kiya tha getElementId ( ( document.getElementById('title') ) ) 
+ lekin mai ho sakta hai ki class (classes / class se) select kar raha hu
+to yeh jo methods hai ( document.getElementById('title').id ) 
+yeh apke almost takriban same hi rehte hai ( 5:34 ) -->
+
+<!-- to iss tareh se sir ne usko bola ki mujhe id batao kya hai -- document.getElementById('title').id -->
+
+<!-- achha id nahi ho sakta hai aap bolte ki mujhe to class batao 
+ tab kya hota -->
+
+<!-- document.getElementById('title').class likh liya browser console mei
+ and press enter -->
+
+<!-- undefined aya -->
+
+<!-- means isne bola ki nahi class to aise nahi bataunga -->
+
+<!-- haa ji iske bare mei bhi hum charcha karenge -->
+
+<!-- lekin agar hum usko bolte hai class name batao -->
+
+<!-- document.getElementById('title').className likh liya
+  browser console mei and press enter -->
+
+<!-- heading aya -->
+
+<!-- haa usne className bata di hai -->
+
+<!-- to ek cheej to hum samajh gaye ki aisa nahi hai ki jo mai chahu
+( document.getElementById('title').class )  wo hi ho kayi bar values
+ ka name alag hota hai ( document.getElementById('title').className ) -->
+
+<!-- 5:54 -->
+
+<!-- Hum humesha yahan pe (see h1 tag in browser console -- class = heading)
+class hi likhte hai, lekin jab document apko portray karta hai to actually mei
+ behind the scene apko dikhayega bhi yahan pe elements mei 
+ (elements tab mei aa gaye hum) usko class hi (see h1 tag in elements tab
+ class = heading) (ab wapas console tab mei aa gaye) 
+ lekin behind the scene jo document usko samajh raha hai wo 
+ className samajhta hai ( see className in document.getElementById('title').className ) 
+ aur aise ( document.getElementById('title').className ) hi likha jata hai-->
+
+<!-- isliye jab css... yeh JavaScript mei aap likhte hai yeh html
+ especially React ke andar jisko JSX bolte hai to hum class nahi
+ likhte hai ( document.getElementById('title').class )
+ className likhte hai ( document.getElementById('title').className ) -->
+
+<!-- pehli baat to yeh conflict karta hai className se (class name)
+ dusri baat DOM ke andar jab structure banate hai to hum usko
+ className ( document.getElementById('title').className ) hi likhte hai -->
+
+<!-- to React jab padhoge tab yahan pe wapas se yaad karoge sir ko
+ ki haa isiliye hum wahan pe className likhte hai -->
+
+<!-- theek hai achha sirf itna hi nahi hai aap sirf className hi nahi
+ aap yahan se poore attributes nikaal sakte ho ki kya kya aur
+ attributes hai to wahan pe getAttribute aap likh sakte ho -->
+
+ <!-- ( document.getElementById('title').getattribute likh liya
+   browser console mei and press enter) -->
+
+ <!-- aur aap saare ke saare attributes de sakte ho ki getAttribute -->
+
+<!-- achha getAttribute kaise kaam karta hai aapne enter kiya to
+ dekhiye apko mila kya getAttribute ek function hai -- ( ƒ getAttribute() ) 
+ theek hai ji-->
+
+ <!-- 6:49 -->
+
+<!-- theek hai ji yeh bhi kar lete hai yeh lijiye function pass kiya -->
+
+<!--( document.getElementById('title').getAttribute() likh liya
+ browser console mei and press enter )-->
+
+<!-- usne kaha nahi nahi aise to nahi chalunga (error ayi) -->
+
+<!-- to dekhiye getAttribute mei apko usko batana padega ki konsa wala
+ attribute apko chahiye ya fir konsa wala attribute apko chahhiye -->
+
+<!-- to dekhiye dubara se isko run karte hai getAttribute -->
+
+<!--( document.getElementById('title').getAttribute() likh liya
+ browser console mei )-->
+
+<!-- ab iss getAttribute ke andar apko batana padega ki mujhe konsa
+ wala attribute chahiye, mujhe chahiye attribute id -->
+
+<!--( document.getElementById('title').getAttribute('id') likh liya
+ browser console mei and press enter )-->
+
+<!-- to aapne bola ki id attribute , to uski value title hai-->
+
+<!-- agar aapne bola ki mujhe attribute konsa chahiye -- class chahiye 
+ to usne bola class heading-->
+
+<!--( document.getElementById('title').getAttribute('class') likh liya
+ browser console mei and press enter )-->
+
+<!-- to yeh bhi ek tarika hota hai aap usse attribute bhi maang sakte ho
+ attribute ki humesha value dega -->
+
+<!-- apko key pass karni hai apko value milegi, bahut hi aasaan tha
+ basic tha -->
+
+<!-- achha itna hi nahi hai aap iske andar aur attributes bhi
+ select kar sakte ho set kar sakte ho -->
+
+<!-- jaise getAttribute hai vaise setAttribute bhi hota hai to setAttribute
+ ke andar kya hota hai hum get ki jagah set kar dete hai, achha 
+ setAttribute kya karna hai mujhe class set karna hai attribute -->
+
+<!--( document.getElementById('title').setAttribute('class') likh liya
+ browser console mei )-->
+
+<!-- class already hai but fir bhi iske upar... , to sirf class hi nahi
+ uski ek value bhi set karni padegi to value kya denge hum yahan pe usko
+ test de dete hai ek value -->
+
+<!-- document.getElementById('title').getAttribute('class', 'test') likh
+ liya browser console mei and press enter -->
+
+<!-- just for fun to humne isko diya test , isne bola undefined -->
+
+<!-- theek hai lekin agar hum elements ke andar jaake dekhe (elements tab
+ mei see h1 tag see class = test) to dekhiye class ke andar kya set ho gaya
+ hai -- test set ho gaya hai, yeh humesha over write karega , yeh baat
+ gaur se dhyan dekhiyega, yahan pe (in code editor see h1 tag class = heading)
+ jo humne diya hai class yahan pe (in code editor) heading thi but wo
+heading yahan pe (elements tab mei) gayab ho gayi hai kyu kyuki
+wo atrribute wapas se uske andar aya hai (ab console tab mei aa gaye)
+ aur bola hai ki 'class' ke andar 'test' set kar do
+ ( i.e. document.getElementById('title').getAttribute('class', 'test') )-->
+
+ <!-- Agar apko heading bhi set karni thi to aap yahan pe class ke andar test
+  bhi bolte ( i.e. document.getElementById('title').getAttribute('class', 'test') )
+  aur usko bolte mujhe heading bhi set karni hai -->
+
+<!-- document.getElementById('title').setAttribute('class', 'test heading')
+ likh liya browser console mei and press enter -->
+
+ <!-- 8:10 -->
+
+<!-- ab isko aap doge to dekhiye ( ab elements tab mei aa gaye ,
+ see h1 tag class = test heading ) test bhi set ho gaya hai , heading
+ bhi set ho gayi hai ( class mei in h1 tag ) , to yeh sabse important
+ ek baat hai jo ki kayi log attribute set karte time bhool jaate hai
+ wo kya karte hai previous jo attribute hai usko over write kar dete hai
+ galti se-->
+
+<!-- aage jaake hum projects karenge, wahan pe aisi mistakes hogi
+ aap bhi karenge , sir bhi karnege, theek hai, to aisa hota rehta hai-->
+
+<!-- wapas console tab mei aa gaye -->
+
+<!-- achha ab hum kya karte hai to hum kya karte hai wapas se jaate hai
+ humare getElementById pe , getElementById title-->
+
+<!-- document.getElementById('title') likh liys browser console mei
+ and press enter -->
+
+ <!-- iski (document.getElementById('title')) value yeh (h1 tag)
+   aa rahi hai humare pas -->
+
+<!-- ab hum isko ( document.getElementById('title') ) store kar lete
+  hai ek variable ke andar -->
+
+<!-- to hum de dete hai isko const title -->
+
+<!-- const title = document.getElementById('title') likh liya browser
+ console mei and press enter-->
+
+<!-- to ab humare pas abhi ek easy access ke liye ek title variable
+aa gaya hai jisko hum easily usse (title variable se) values nikalwa sakte hai -->
+
+<!-- ctrl + L in browser console -->
+
+<!-- title likh liya browser console mei and press enter-->
+
+<!-- (h1 tag aa gaya) -->
+
+<!-- theek hai lekin , ab iske andar hum bahut kuch aur kaam bhi
+ kar sakte hai -->
+
+<!-- theek hai sabse easy aur interesting kaam kya hai iss title
+ ko le sakte ho aap aur iske andar aur bhi style elements aap insert
+ kar sakte ho kyuki yeh sara ka sara ek bada object hi hai, object ke
+ andar aapke pass class name hai ids hai to dot se hum access kar sakte
+ hai , to vaise (hi) ek element hota hai aapke pass style,
+ to yeh lijiye humare pass style ek element hai-->
+
+<!-- title.style likh liya browser console mei -->
+
+<!-- ab style ke andar jab aap likhte hai to kaise likhte hai, sabse
+ pehle hum code mei dekhte hai ki actually mei hum likhte kaise hai
+ (one.html pe aa gaye) -->
+
+<!-- to code mei (yaani html file mei) hume likhna hota hai yahan pe
+kabhi bhi styling to hum kya karte hai kuch iss tareh se style likhte
+hai ( <h1 style="" ) fir uske andar hum key value pair daalte hai string
+ke andar , to humare pas key kya hoti hai sabse pehle jaise suppose
+kariye color ek key hai humare pas , to uski value aap red daal dete hai
+ya blue ya hexcode value mei daal dete hai , isi tareh se hum likhte hai-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div>
+      <h1 style="color: red;" id="title" class="heading">DOM Learning on Chai aur code</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </body>
+</html> -->
+
+<!-- to exactly same syntax hume wahan (browser console mei) bhi follow
+ karna hota hai -->
+
+<!-- to yahan pe hum gaye (browser console mei) title.style
+ ab konsi style apko lagani hai jaise suppose kariye mujhe iske upar
+ lagana hai -- background color-->
+
+ <!-- title.style.backgroundColor likh liya browser console mei -->
+
+ <!-- to yahan pe to suggestion mil jata hai but kayi bar code editor 
+  mei suggestion nahi milta hai , to hum yahan pe lete hai
+  background color-->
+
+<!-- to bg color kya apko set karna hai suppose kariye hume bg color set
+ karna hai wahan pe, uss color ka aap naam de dijiye ya fir hexcode
+ value de dijiye, abhi sir isko de dete hai -- green -->
+
+<!-- title.style.backgroundColor = 'green' likh liya browser console mei
+ and press enter-->
+
+<!-- waise to achhi baat nahi hai aise colors dena but theek hai -->
+
+<!-- 10:08 -->
+
+<!-- to yeh jaise hi humne green diya dekhiye by instant hum dekh sakte
+ hai ki wahan pe green color aa gaya hai aur wo apki styling set ho
+ gayi hai -->
+
+<!-- aap chahein to aur bhi de sakte hai jitni bhi iss tareh ki values
+ hoti hai styling ki aap iss tareh se de sakte hai -->
+
+<!-- (means linear gradient, font size. font color, etc de sakte hai) -->
+
+<!-- to ek aur style hum dete hai hume sabko pata hai ki style ek
+ padding bhi hai, single quote , double quote koi bhi le sakte hai,
+ suppose kariye hume 15 px ki padding chahiye -->
+
+<!-- title.style.padding = "15px" likh liya browser console mei and
+ press enter -->
+
+ <!-- ab agar aap isko border radius bhi dena chahte hai, aur agar
+  wo apply hoga to wo bilkul ho jayega-->
+
+<!-- title.style.borderRadius = "15px" likh liya browser console mei and
+ press enter-->
+
+<!-- to yeh ho gaya aapka basic , abhi sir ko lagta hai sabhi ko
+ samajh mei aa gaya hai ki kaise values ko hume grab karna hai
+ atleast getElementById to clear ho gaya hai ki apko kya kya aur values
+ wahan pe milti hai-->
+
+<!-- aur bhi cheejon ke baare mei baat karenge lekin usse pehle hum
+ kya kar lete hai ek chota sa interesting dekh lete hai jo aap bahut
+ jada use karne wale ho -->
+
+<!-- to haa ji gaur se dekhiyega aur time stamp likh dena ki yahan se
+ interesting start hone wala hai kyuki yahan pe ab hum dekhenge
+ kaise content ko add kiya jata hai  11:26-->
+
+<!-- Ctrl + L kar liya browser console mei -->
+
+<!-- to dekhiye abhi humare pas yeh title hai basic , to title likh
+ liya browser console mei and press enter, to h1 tag aa gaya-->
+
+<!-- theek hai title ke andar humne jo bhi radius (styling) etc
+ sab lagaya hai (see h1 tag in browser console)-->
+
+<!-- ab kya hai iss title se kayi bar apko values nikalni hoti hai,
+ humne attributes dekh liya kaise nikalte hai class aur id but actually
+ mei content bhi to nikalna jaruri hai-->
+
+<!-- ( ab elements tab mei aa gaye, see h1 tag ) abhi hume lag raha hai
+  ki uska (h1 tag ka) content kya hai -- DOM Learning on Chai aur code ,
+  yeh humara content hai (ab wapas console tab mei aa gaye) dekhte hai
+  ek bar karke-->
+
+<!-- to sabse pehle content nikalne ke liye aapke pass jo 
+ values hai wo hai text content -->
+
+<!-- title.textContent likh liya browser console mei and press enter -->
+
+<!-- theek hai ab textContent jaise hi aap nikaalte hai to aapko
+ content ( 'DOM Learning on Chai aur code' ) mil jata hai-->
+
+<!-- theke hai ji ab iske saath saath aap dekhenge ki sirf textContent
+ hi nahi ayhan pe 2-3 values aur hai, ek hai apke pas innerHTML -->
+
+<!-- title.innerHTML likh liya browser console mei and press enter -->
+
+<!-- yeh bhi apko exact same value ( 'DOM Learning on Chai aur code' )
+ de raha hai -->
+
+<!-- theek hai ji textContent bhi yeh de raha hai, achha ek aur hai
+ sirf itna hi nahi hai ek aur hai yahan pe innerText -->
+
+<!-- title.innerText likh liya browser console mei and press enter -->
+
+<!-- to innerText bhi yehi value ( 'DOM Learning on Chai aur code' ) de
+ raha hai -->
+
+<!-- to agar yeh bhi (title.textContent) bhi yeh ( 'DOM Learning on Chai aur code' )
+  hi cheej hai-->
+
+<!-- yeh bhi (title.innerHTML) bhi yeh ( 'DOM Learning on Chai aur code' )
+  hi cheej hai-->
+
+<!-- aur yeh bhi (title.innerText) bhi yeh ( 'DOM Learning on Chai aur code' )
+  hi cheej hai-->
+
+<!-- to fir antar kya hai innerHTML bhi eyh hi value deta hai aur
+ textContent bhi yeh hi value deta hai yeh to kaise hoga aise kaise
+ chalega, nahi inn mei actually mei difference hai-->
+
+<!-- pehle sir apko difference batate hai innerContent (textContent) aur
+  innerText mei , innerHTML ka to bahut hi aesy difference hai sabhi
+  bata dete hai koi usme problem wali baat hi nahi hai-->
+
+<!-- Ctrl + L kar liya browser console mei -->
+
+<!-- ek hai humare pas innerText -->
+
+<!-- title.innerText likh liya browser console mei and press enter -->
+
+<!-- aur ek hai humare pas (innerContent) textContent -->
+
+<!-- title.textContent likh liya browser console mei and press enter -->
+
+<!-- inn dono ke beech mei antar dekhte hai , abhi hume dono same
+ values ('DOM Learning on Chai aur code') de rahe hai -->
+
+<!-- thoda sa change karke dekhte hai (one.html pe aa gaye) 
+ hum kya karte hai Chai aur code ke baad (see h1 tag) ek span add
+ kar lete hai aur uss span ke andar likhte hai -- test text-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div>
+      <h1 id="title" class="heading">DOM Learning on Chai aur code <span>test text</span></h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </body>
+</html> -->
+
+<!-- theek hai ji aur yahan pe -- test text , jaise hi humne add kara -->
+<!-- 13:14 -->
+
+<!-- to test text show ho gaya hai -->
+
+<!-- to abhi agar hum lete hai yahan pe values -- title.textContent likh
+ liya browser console mei and press enter -->
+
+<!-- 'DOM Learning on Chai aur code test text' mil raha hai -->
+
+<!-- title.innerText likh liya browser console mei and press enter -->
+
+<!-- 'DOM Learning on Chai aur code test text' mil raha hai -->
+
+<!-- theek hai gaur se dekhiyega ab kya karte ab kya karte hai sir
+ yahan pe jaake (one.html mei jaake) ek styling add karte hai iss
+ span ke andar , theek hai ek style add karte hai jisko bolte hai
+ display aur isko kar dete hai hum none-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div>
+      <h1 id="title" class="heading">DOM Learning on Chai aur code 
+        <span style="display: none;">test text</span></h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </body>
+</html> -->
+
+<!-- ab display none yahan pe styling dene se kya hoga wo test text 
+ gayab ho gaya-->
+
+ <!-- theek hai ji ab wapas se isko print karke dekhte hai iska
+  innerText kya hai-->
+
+<!-- title.innerText likh liya browser console mei and press enter -->
+
+<!-- 'DOM Learning on Chai aur code' aa gaya -->
+
+<!-- aur iska textContent kya hai -->
+
+<!-- title.TextContent likh liya browser console mei and press enter -->
+
+<!-- 'DOM Learning on Chai aur code test text' aa gaya -->
+
+<!-- theek hai antar pata lag gaya apko dono ke beech mei ki jab aapne
+innerText kaha to aapke pass sirf wo text aya jo actually mei visible
+hai -->
+
+<!-- but kyuki uske andar abhi aur bhi text hai jo ki kuch display
+ properties se ya css properties se aapne hata diya hai lekin textContent
+ ke andar aapko sara ka sara content milta hai (14:09) -->
+
+<!-- achha yeh jaruri nahi ki koi sahi hai ya koi galat hai depend karta hai
+ usecase pe apko kabhi lagega ki yar mujhe to sara value chahiye (ab elements
+ tab mei aa gaye) ho sakta hai koi element display iske andar hidden ho 
+ rakha ho (see h1 tag display none) ya aisa ho to mujhe wo bhi chahiye
+ (ab console tab mei aa gaye) to obvious si baat hai tab mai textContent
+ use karunga ki sara textContent do mujhe-->
+
+<!-- aur agar mujhe lagta hai nahi nahi jo dikh raha hai bas usi ke hisab
+ se mujhe visual changes karne hai to mai innerText use karunga -->
+
+<!-- to yeh nahi hai kuch galat hai kuch sahi hai bas dono ke usecase
+ alag hai -->
+
+ <!-- 14:33 -->
+
+<!-- achha itna to aa gaya samajh mei , achha ab kya karna hai hume,
+ ab hume teesre wale ke baare mei bhi jaan na hai ki theek hai
+ innerText aur innerContent (textContent) samajh mei aa gaya hai
+ lekin sir ne bataya tha yeh innerHTML bhi hai -->
+
+<!-- title.innerHTML likh liya browser console mei and press enter -->
+
+<!-- 'DOM Learning on Chai aur code <span style="display: none;">test text</span>'
+ aa gaya -->
+
+<!-- yeh to (innerHTMK) exact same value de raha hai -->
+
+<!-- Lekin ab aap iska (innerHTML) bhi gaur se dekhiye innerHTML kya
+ de raha hai apko , poora html ka value de raha hai, to uske andar
+ agar koi html aapne likh rakha hai to wo bhi apko milega iss case mei
+ wapas, yeh hi sabse bada antar hota hai innerHTML mei-->
+
+<!-- ki yeh jab aap values ko set karte ho tab bhi aap kayi bar dekhte hai
+ innerHTML ki jagah innerContent (textContent) ki jagah innnerHTML set
+ karte ho kyuki hume h1 tag h2 tag wo sab bhi saamne dene hai -->
+
+<!-- to innerHTML tags (innerHTML) aapke html tags ko bhi support
+karta hai but agar aapko innerContent (textContent) ya text (innerText)
+lena hai to wo html tags ko support nahi karta hai, bas itni si
+baat hai-->
+
+<!-- theek hai to yeh to ho gaya humara basic -->
+
+<!-- ab sir thoda sa aapko inn tags (or text) ko select karne ke bare mei
+ thodi si aur values aur, aur baatein batate hai ki aur kaise-kaise
+ kar sakte hai to isko hum kar dete hai clean (Ctrl + L kar liya
+ browser console mei) -->
+
+<!-- theek hai ab kya karna hai hume sabse pehle ek aur query selector
+ samajhna hai dekhiye select karne ke bahut saare tarike hai getElementById
+ getElementByClass hai, aap sab par likh sakte hai ki document dot
+ (document.) aap dekhenge aap jaise hi get likhte hai (document.get likhte hai)
+ to getELementById bhi hai (suggestion list pop up mei) getElementByClassName
+ bhi hai, className bhi exactly same chalta hai jaise humara element chala
+ (ById) vaise uski jagah hume className pass karna hota hai
+ (document.getElementByClassName karna hota hai)-->
+
+<!-- karke bhi dekh lete hai theek hai ji yeh className hai-->
+
+<!-- document.getElementsByClassName('') likh liya browser console mei -->
+
+<!-- ab iske andar humne classes konsi lagayi thi wo aap pass kar dijiye-->
+
+<!-- (one.html mei dekh liya h1 tag mei class = heading) 
+ to yeh humne class isme lagayi thi heading, to heading pass kar dijiye
+ itna to aap samajh hi gaye hai abhi tak-->
+
+<!-- document.getElementsByClassName('heading') likh liya 
+ browser console mei and press enter-->
+
+ <!-- yeh lijiye heading pass kar di ab aapko HTMLCollection mil gaya hai
+  jisko dropdown open and close karke dekh liya -->
+
+<!-- ab HTMLCollection kya hota hai aur Nodelist kya hoti hai uspe
+ abhi hum charcha karenge chinta mat karo but abhi ke liye hume pata hai
+ ki yeh heading mil gayi hai (HTMLCollection [h1#title.heading, title: h1#title.heading])
+ aur yahan pe hume kuch iss tareh se mil gaya hai ki theek hai (HTML Collection
+ ko dropdown open close karke dekh liya) yeh zero kaafi kuch elements deta
+ hai-->
+
+<!-- theek hai to iske baare mei hum charcha karnege lekin uspe charcha
+ karne se pehle hum kuch achhe query selector samajh le jo ki actually
+ mei aap use karnege real world mei-->
+
+<!-- to dekhiye sabse pehla jo query selector aap use karnege wo use
+ karnege document by dot (document.) query selector -->
+
+ <!-- document.querySelector -->
+
+ <!-- yeh direct hi apko query selector de rakha hai ( suggestion list
+  pop up mei ), achha querySelector aur querySelectorAll (see suggestion
+   list pop up) dono mei bahut difference hai theek hai-->
+
+ <!-- document.querySelector likh liya browser console mei-->
+
+ <!-- theek hai to sir ne use kara querySelector aur yeh sir ne 
+  querySelector ke saamne aise () likh diya-->
+
+ <!-- document.querySelector() likh liya browser console mei-->
+
+ <!-- to simply sir ne isko bola h1 mujhe de do select karke -->
+
+ <!-- document.querySelector('h1') likh liya browser console mei and
+  press enter-->
+
+<!-- to page pe jitne bhi h1 honge apko sare h1 de diye jayenge, 
+ achha sorry sare nahi apko first h1 diya jayega --> 
+
+ <!-- (befor 17:00) -->
+
+<!-- (hover over h1 in browser console, ( apko first h1 diya jayega ) ) -->
+
+<!-- ab isko aur samjahne ke liye hum kya karte hai ek do h1 aur
+ h2 aur add kar lete hai taki hume samajh mei aye (to one.html mei 
+ aa gaye)-->
+
+<!-- to yeh lijiye ek h2 bhi add kar lete hai, sike andar kuch Lorem ke
+ 3-4 words daal dete hai -->
+
+ <!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div>
+      <h1 id="title" class="heading">DOM Learning on Chai aur code <span style="display: none;">test text</span></h1>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </body>
+</html> -->
+
+ <!-- aise hi 2 aur h2 le lete hai just for fun-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div>
+      <h1 id="title" class="heading">DOM Learning on Chai aur code <span style="display: none;">test text</span></h1>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </body>
+</html> -->
+
+
+<!-- to ab hume queryselector achhe se aur samajh mei ayega jab hum
+ h2 ko lete hai -->
+
+ <!-- document.querySelector('h2') likh liya browser console mei and
+  press enter -->
+
+<!-- to dekhiye h2 ne kya kara apko first (first h2) sirf select karke
+ diya hai kyuki querySelectorAll nahi hai, ek aur aisa hi method hota
+ hai querySelectorAll but usne sirf apko ek (first h2) select karke de
+diya hai-->
+
+<!-- theek hai ab hum kya chahte hai ki ab hum chahte hai ki hum
+ id ko select karein (see one.html h1 tag id = title) jo bhi
+ title hai -->
+
+<!-- to aap querySelector se direct queries likh sakte hai, 
+ yeh kya hai jQuery se bada famaliar syntax hai pehle ke time pe jQuery bahut
+ popular hoti thi jaise aaj ke time pe React hai, to wo sare syntax
+ yahan follow karte hai (17:31)-->
+
+ <!-- to jo aap css mei likhte ho exactly wo hi syntax hai
+  to isse (# se) hum select karte hai id, to humari id kya thi ek
+  bar sir dubara dekhte hai one.html mei title (see in one.html
+  in h1 tag id = title) to aap hash (#) likh ke aur title likh dijiye
+  jaise css mei select karte hai-->
+
+<!-- document.querySelector('#title') likh liya browser console mei
+ and press enter -->
+
+ <!-- h1 tag aa gaya -->
+
+ <!-- to apko id mil gayi -->
+
+<!-- apko isi tareh se class select karna hai , to humne ek class
+ wahan pe (one.html mei h1 tag mei class = heading) likhi thi heading -->
+
+<!-- to class apko select karni hai to isko hata do #title ko
+ aur aap dot se likh dijiye dot aur yeh heading -->
+
+ <!-- document.querySelector('.heading') likh liya browser console mei
+  and press enter -->
+
+<!-- h1 aa gaya -->
+
+<!-- to yeh logo ko kaafi achha lagta hai kyuki isme actually mei
+ apke css ke hi jo selectors hote hai wo hi kaam karte hai jaise hash # ho
+ gaya, dot . ho gaya, basic iss tareh ke selectors aapke select hote hai-->
+
+<!-- achha isme kya hota hai, aap aur bhi selectors de sakte hai
+ agar aapne css padhi hogi, css selectors achhe se padha hoga to aap
+ aur bhi kaam kar sakte hai -->
+
+<!-- jaise suppose kariye apko input elements select karna tha
+ to aap input bhi iss tareh se de sakte hai as follows -->
+
+ <!-- document.querySelector('input') likh liya browser console mei
+  and press enter -->
+
+ <!-- apko koi input ka attribute select karna tha to aap iss tareh se
+  yahan pe square bracket laga ke input[] jaise hum css  mei dete hai
+  vaise attribute likh sakte hai jaise ki humara tha ki input type konsa
+  hona chahiye jaise type hona chahiye humara input ka password
+  input[type="password"] suppose kariye aap password field select kar
+  rahe hai to aap password field select kar lijiye-->
+
+<!-- document.querySelector('input[type="password"]') likh liya browser
+ console mei and press enter -->
+
+ <!-- abhi obvious si baat hai humare usme (one.html mei) koi aisa 
+  (password jaisa) input field hai hi nahi jahan pe password ho to
+  obvious si baat hai null ayega-->
+
+<!-- 18:36 -->
+
+<!-- Lekin hum yahan pe (one.html mei) jaake agar ek input field
+ add kar dete hai , input field jo ki type hai password , theek hai
+ ji yeh humne add kar diya hai as follows-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div>
+      <h1 id="title" class="heading">DOM Learning on Chai aur code <span style="display: none;">test text</span></h1>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <input type="password" name="" id="">
+    </div>
+  </body>
+</html> -->
+
+<!-- to agar hum usko wapas se likhte hai in browser console as follows -->
+
+<!-- document.querySelector('input[type="password"]') likh liya browser
+ console mei and press enter -->
+
+<!-- to abhi hume wo input tag select ho gaya hai ( as we hover
+ over input tag in browser console then input field of webpage will be
+ highlighted ) -->
+
+ <!-- achha itna hi nahi isme aap jaise chahein waise querySelector daal
+  dijiye , sir jada detail pe to nahi jayenge but fir bhi apko
+  just batane ke liye ki aap baaki saare jiss tareh se bhi css selectors
+  likhte hai wo sab yahan pe support karte hai-->
+
+<!-- jaise apko kuch chahiye ki suppose kariye hum koi image select kar
+ rahe hai ya fir koi paragraph select kar rahe hai kisi div ke andar
+ jo ki first child hai to aap iss tareh se first-child etc wo sab bhi
+ likh sakte hai yeh aapke css selectors ki skills pe depend karta
+ hai ki kitna aapne css selector padha hai par yeh kaafi kuch humare pass
+ kaam mei aata hai -->
+
+<!-- document.querySelector('p:first-child') likh liya browser console
+ mei and press enter -->
+
+<!-- achha iske andar ek cheej aur sir apko bata de thoda sa aur hum
+ advance yahan pe jaatein hai -->
+
+ <!-- 19:30 -->
+
+ <!-- to yahan pe ek jo usecase aata hai usko bhi hum dekhte hai -->
+
+ <!-- (one.html mei aa gaye) dekhiye suppose kariye aapke pass
+  yahan pe ek unordered list hai (ul) uss list ke andar aapke
+  pass list items hai suppose kariye teen (3) aapke pass items hai
+  jinke andar hum one , two, three likh dete hai-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div>
+      <h1 id="title" class="heading">DOM Learning on Chai aur code <span style="display: none;">test text</span></h1>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <input type="password" name="" id="">
+
+      <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+      </ul>
+    </div>
+  </body>
+</html> -->
+
+<!-- theek hai ab suppose kariye hume iss first item ka (first list item ka
+ i.e. one ka ) color change karna hai-->
+
+<!-- theek hai to yeh humare pass one two three aa gaye in webpage -->
+
+<!-- 20:02 -->
+
+<!-- ab query selector se kya hum iss element (document.querySelector('#title')
+  ko select kar sakte hai -->
+
+<!--( iss element means (document.querySelector('#title') likh ke enter and
+ ke hover kiya and jo highlight hua webpage pe uss element ko select karne
+ ki baat ho rahi hai ) -->
+
+<!-- haa ji bilkul kar sakte hai (iss just above element ko select) -->
+
+<!-- aap direct hi values de dijiye na wahan pe (one.html mei ul mei) koi id hai na class hai,
+ to aap bol dijiye ki hume kya select karna hai, to dekhiye hume
+ select karna hai poora ka poora unordered list (see one.html) -->
+
+<!-- to theek hai ji yeh lijiye ul de diya -->
+
+<!-- document.querySelector('ul') likh liya browser console mei and press
+ enter -->
+
+<!-- to ul humare pass poora aa gaya hai (iss ul ko dropdown open
+ and close karke dekh liya) uske andar jitne bhi list item the wo sab bhi
+ select ho gaye hai , (as you hover over ul in browser console then
+ ul and its li items will also bhi highlighted / selected)-->
+
+<!-- theek hai isko ( document.querySelector('ul') ) ek variable mei
+  store kar lete hai -->
+
+<!-- chaliye ji isko bol dete hai -- myul ( my unordered list ) -->
+
+<!-- const myul = document.querySelector('ul') likh liya browser console
+ mei and press enter -->
+
+<!-- theek hai ji yeh humne de diya, abhi humare pass variable ke andar
+ hai -->
+
+<!-- (means abhi yeh -- document.querySelector('ul') humare pass variable
+ const myul ke andar hai) -->
+
+<!-- iss variable (const myul) pe aap further queries bhi chala sakte hai 
+ jaise ki suppose kariye aa... , myul humne de rakha hai to (myul likh liya
+ browser console mei) iske (myul ke) upar bhi aap chala sakte hai dot
+ (myul. likh liya browser console mei) querySelector , 
+ (to myul.querySelector likh liya browser console mei)-->
+
+ <!-- querySelectorAll pe abhi baat nahi kar rahe hai querySelector pe
+  kar rahe hai -->
+
+<!-- myul.querySelector() likh liya browser console mei -->
+
+<!-- yeh lijiye querySelector , ab isme ( myul.querySelector() ) se kya
+ select karna hai apko, ho sakta hai apke pas uske andar querySelector ke
+ andar ya fir koi paragraph aapne select kara hai ya koi div hi select
+ kara hai aapne, uske andar ( myul.querySelector() ) ho sakta hai paragraphs the, images the,
+ links the, to aap wapas se tag de dijiye ki uske andar ( myul.querySelector() )
+ se mujhe kya kariye list item laa ke dijiye-->
+
+<!-- myul.querySelector('li') likh liya browser console mei and press
+ enter -->
+
+<!-- to apke pass obvious si baat hai querySelector first hi item select
+ karta hai to usne querySelector apko de diya  -->
+
+ <!-- ab aap chahein to isko ( myul.querySelector('li') ) bhi wapas
+   se ek value ke andar store kar sakte hai ek variable ke andar-->
+
+  <!-- to suppose kariye isko ( myul.querySelector('li') hum de dete hai
+  const turnGreen kyuki isko hume green mei convert karna hai-->
+
+<!-- const turnGreen =  myul.querySelector('li') likh liya browser console
+ mei  -->
+
+<!-- to yeh lijiye kar diya and undefined aya -->
+
+<!-- ab kyuki humari purani knowledge jo thi turnGreen wali jo humne
+ styles etc ki di thi wo hum yahan pe bhi kaam mei le sakte hai-->
+
+<!-- turnGreen likh liya browser console mei -->
+
+ <!-- jaise dot style hum yahan laga sakte hai (21:25)-->
+
+<!-- turnGreen.style likh liya browser console mei -->
+
+<!-- aur wo hi uska background color -->
+
+<!-- turnGreen.style.backgroundColor likh liya browser console mei -->
+
+<!-- aur usko value de dete hai hum yahan pe green -->
+
+<!-- turnGreen.style.backgroundColor = "green" likh liya
+browser console mei and press enter-->
+
+<!-- to webpage mei one green color ka ho jayega -->
+
+<!-- aur isi ke saath saath agar hume aur bhi dena hai ki hume
+ suppose kariye padding deni hai kuch 10px ki to hum yahan pe pading
+ bhi de denge-->
+
+<!-- turnGreen.style.padding = "10px" likh liya browser console mei
+ and press enter -->
+
+<!-- to yeh lijiye padding aa gayi, to dekha kitna aasaan hai
+ values ko select karna agar aap uske andar content bhi dena chahte
+ hai, wo bhi kuch dena chahte hai to wo bhi de sakte hai, to apko
+ chahiye ki nahi hume to yeh turnGreen jo hai iska hume aur kuch values
+ chahiye -->
+
+<!-- turnGreen ke andar hume chahiye iska innerText chahiye -->
+
+<!-- turnGreen.innerText likh liya browser console mei and press enter -->
+
+<!-- yeh lijiye innerText aa gaya apke pass (one)-->
+
+<!-- ab iss innerText ko aap chahein to suppose kariye one ki jagah
+ hum to one nahi chahte yahan pe, aa... , kisi reason se five hona chahiye -->
+
+ <!-- turnGreen.innerText = "five" likh liya browser console mei and
+  press enter , to webpage mei one ki jagah five aa jayega -->
+
+<!-- to yeh lijiye five ho gaya hai one ki jagah -->
+
+<!-- to dekha kitna easy hai DOM ko manipulate karna agar apko yeh
+ samajh mei aa jaye ki hum usko kaise select kar sakte hai, kaise values
+ ko le sakte hai -->
+
+ <!-- 22:19 -->
+
+
