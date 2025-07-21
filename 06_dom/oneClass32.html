@@ -1161,4 +1161,510 @@ browser console mei and press enter-->
 
  <!-- 22:19 -->
 
+<!-- achha yeh to abhi tak humne jitni baat kari wo sari baat thi ki
+ hum ek individual element ko kaise select karte hai, theek hai 
+ itna samajh mei aa gaya bada hi asaan tha-->
 
+<!-- theek hai ab hum ate hai humare dusre selector pe -->
+
+<!-- theek hai to abhi humare pas html hum utna hi rakhenge lekin
+ ek aur cheej pe hum baat karenge ki abhi tak humne jitna bhi kaam
+ kara wo aap dekh sakte hai ki humare pas jo tha wo tha querySelector -->
+
+<!-- ab querySelector kya hai ki aapko ek hi value deta hai lekin humare
+ pas iss tareh ka nahi hai humare pas aur bhi values hai jisse hum aur
+ bhi selectors ko use kar sakte hai , theek hai to sir ne Ctrl + L 
+ kar liya browser console mei-->
+
+<!-- ab hume kya chahiye dusra value select karni hai to suppose
+ kariye hum wapas se yeh list item (see one.html) se select karte hai -->
+
+<!-- to wo hi wapas se same document (document. likh liya browser console
+ mei) lekin iss bar querySelector nahi , iss bar querySelectorAll
+ (document.querySelectorAll likh liya browser console mei)-->
+
+<!-- theek hai querySelectorAll kiya aur hume sare list items select
+ karke do, to pehle to ek hi list item select ho raha tha, abhi humne
+ kaha hume sare list item do -->
+
+<!-- (document.querySelectorAll('li') likh liya browser console mei
+ and presss enter) -->
+
+ <!-- NodeList(3) [li, li, li] aa gaya -->
+
+<!-- to apko mila hai NodeList jisko dropdown open close karke dekh
+ liya -->
+
+<!-- achha ji node list dikhne mei to lag raha hai array mila hai,
+ theek hai ji iske pas bhi prototype hai (open dropdown of nodelist
+ and then open dropdown of prototype), to iss prototype mei gaur se
+ dekhiyega ki ek forEach de rakha hai apko, lekin forEach to de rakha hai
+ , ab humne padha hai ki jab bhi yeh array hota hai (nodelist ki taraf cursor
+ kiya sir ne jo ki array jaisa dikhta hai) (nodelist dropdown ko close kar diya) 
+ to iss array (nodelist jo array jaisa dikhta hai) ke andar hum loop
+  laga sakte hai , yahan pe (array pe) maps call kar sakte hai, to kya hum 
+  yahan pe (nodelist jo array jaisa dikhta hai) bhi kar sakte hai-->
+
+<!-- to suppose karte hai isko (document.querySelectorAll('li') ko) 
+ ek variable mei hold karte hai, isko bolte hai hum const tempLiList
+ theek hai aur -->
+
+<!-- const tempLiList = document.querySelectorAll('li') likh liya
+ browser console mei and press enter -->
+
+<!-- theek hai ji to yeh humne select kar liya hai -->
+
+<!-- ab obvious si baat hai iske andar apke pas kya aya -- undefined -->
+
+<!-- to ab aapke pas tempLiList hai , yeh lijiye tempLiList ,
+ to tempLiList likh liya browser console mei and press enter-->
+
+<!-- but yaad rakhiyega bahut se log jab DOM padhte hai usme yeh hi
+  sabse badi galti karte hai ki isko (NodeList ko) wo array samajh lete hai
+  dekhiye jo NodeList hai aur HTMLCollection hai yeh aapke pure array
+  nahi hai-->
+
+<!-- Ctrl + L kar liya browser console mei -->
+
+<!-- aur sabse easy jo tarika hai wo Sir ne abhi apko bataya ki jab bhi aap
+ iss tareh se likhiye , (to tempLiList likh liya browser console mei
+ and press enter) to pehle uski properties check kariye , (to NodeList
+ dropdown open karke check kar liya properties ko) especially prototype kya kya values
+ apko available hai (nodelist ka prototype dropdown open kar liya to check properties / values available)
+ to yahan pe apko forEach to available hai lekin kahin pe bhi map
+ available nahi hai , arrays ke andar apko by default yeh map etc
+ sab milte hai isliye aap map laga paate ho (prototype dropdown closed
+ and nodelist dropdown closed)-->
+
+<!-- kaise are abhi bata dete hai apko, to yeh lijiye aapne ek array liya
+ hai -- const myArr likh liya browser console mei aur yeh lijiye uske
+ andar [1,2,3,4] value daali and press enter-->
+
+<!-- const myArr = [1, 2, 3, 4] likh liya browser console mei and press
+ enter -->
+
+<!-- undefined mil gaya -->
+
+<!-- aur jaise hi aapne myArr array ko lenge wahan pe (means myArr likh
+ liya browser console mei and press enter) -->
+
+<!-- (4) [1, 2, 3, 4] mil gaya , to aap jaise hi isko dropdown open
+ karke dekhenge and prototype dropdown open karke dekhenge , to aapko
+ value dikhegi wahan pe ki kis tareh se dekhiye yahan pe apke pas yeh lijiye
+ yeh map hai apke pas, yeh push hai, isliye to aap sari values ko laga paa
+ rahe hai kyuki uske prototype mei uske andar define hai ki aap yeh yeh kaam
+ kar sakte ho-->
+
+ <!-- 25:15 -->
+
+<!-- chaliye wapas se aate hai humari kahani pe jo ki hum kar rahe the -->
+
+<!-- Ctrl + L kar liya browser console mei -->
+
+<!-- tempLilist pe -->
+
+<!-- tempLiList likh liya browser console mei and press enter -->
+
+<!-- to tempLiList aapki kya hai NodeList hai, ab node list hota hai
+ na yeh aise kaam nahi karti hai iske andar thoda sa changes aate hai
+  jaise aap kya sakte hai, abhi suppose kariye aap bol rahe the ki
+  tempLiList hai (to tempLiList likh liya browser console mei wapas)-->
+
+<!-- iske andar (tempLiList ke andar) kya karo style element add kar do
+ (to tempLiList.style likh liya browser console mei) -->
+
+<!-- aur style ke andar hum kya karein color add kar dete hai 
+ (to tempLiList.style.color likh liya browser console mei)-->
+
+<!-- aur uss color ko de do green, green hi dete aa rahe hai abhi tak hum
+ (to tempLiList.style.color = 'green' likh liya browser console mei and
+ press enter) -->
+
+<!-- Lekin wo green ho jayega kya , nahi hoga, isne kaha yeh kaam mai
+ aise nahi kar sakta kyuki wo NodeList hai , haa array jaisa hai ,
+ but aise kaam nahi kar sakta -->
+
+<!-- ek bar webpage ko referesh kar liya taki humare pas basic wapas se
+ aa jaye jo bhi elements the -->
+
+<!-- theek hai to yeh kaam ( tempLiList.style.color = 'green' ) humare pas
+ nahi ho sakta , theek hai samajh mei aa gaya-->
+
+<!-- achha yeh kaam ( tempLiList.style.color = 'green' ) agar karna ho
+ to kaise , dekhiye nodelist hai lekin iska matlab yeh nahi ki array se
+ bilkul hi alag hai , haa milta jhulta hai, to wahan pe aapko batana
+ padega kyuki bahut sare elements aapne le rakhe hai select -->
+
+ <!-- (means yeh tempLiList ek nodelist hai as jab tempLiList likh ke
+  enter karnege tab dropdown mei bahut sare elements hai jinko
+  humne ek saath select kar rakha hai) -->
+
+<!-- tempLiList.style.color = 'green' likh liya browser console mei -->
+
+<!-- to aapko batana padega ki dekho jo first element hai na usko aap green
+ kar do -->
+
+<!-- tempLiList[0].style.color = 'green' likh liya browser console mei 
+ and press enter-->
+
+<!-- Lekin isne kaha ki yeh jo hai yeh to define hi nahi hai abhi tak -->
+
+<!-- achha ek bar hum wapas se dekh lete hai ki humara yeh jo tempLiList
+ hai wo hai bhi kya humare pas-->
+
+<!-- to tempLiList likh ke dekh liya , suggestion list mei nahi aa raha
+ hai tempLiList-->
+
+<!-- to wapas se back aate hai , Ctrl + L kar liya browser console mei -->
+
+<!-- aur isko ek bar wapas se hum karte hai, to thoda sa peeche jaate hai -->
+
+<!-- const tempLiList = document.querySelectorAll('li') likh liya browser
+ console mei and press enter -->
+
+<!-- abhi humare pas hai kya tempLiList, to tempLiList likh liya browser
+ console mei and press enter, haa ji abhi to hai (suggestion list mei
+ aa raha hai tempLiList)-->
+
+<!-- wapas se wo hi code chalate hai , tempLiList.style.color = 'green'
+ likh liya browser console mei and press enter -->
+
+ <!-- isne kaha nahi kar sakte -->
+
+<!-- ab humne kaha ki theek hai to yeh first element ka green kar
+ dijiye -->
+
+<!-- tempLiList[0].style.color = 'green' likh liya browser console mei
+and press enter -->
+
+<!-- to webpage mei one ka color green ho gaya -->
+
+<!-- to yaad rakhiyega array jaisa dikhta hai (nodelist), array hai nahi,
+ but array se kaafi khoobiyan iski milti bhi jaati hai-->
+
+<!-- achha yeh example sir ne aapko kyu diya kyuki iss example mei
+ kaafi log galti karte hai -->
+
+<!--( clear kar liya browser console )-->
+
+<!-- jaise ki hum kya karte hai ek aur yahan pe naya hi variable
+ likh lete hai, to iske andar likh dete hai hum const myH1 ,
+ aur iske andar likhte hai ki kya karo iss document dot querySelectorAll
+ hi use karna hai hume to , const myH1 = document.querySelectorAll likh
+ liya browser console mei , aur querySelectorAll ke andar hume kya karo
+ ek h1 la ke de do-->
+
+<!-- const myH1 = document.querySelectorAll('h1') likh liya browser console mei
+ and press enter -->
+
+<!--( undefined aya )-->
+
+<!-- theek hai h1 la ke de diya -->
+
+<!-- ab myH1 ke andar hai kya wapas se nodelist hai, 
+ to myH1 likh liya browser console mei and press enter -->
+
+ <!-- nodelist ko dropdown open karke dekh liya -->
+
+<!-- theek hai kyu ki page pe ek hi h1 hai to aap abhi bhi jaake yeh
+ nahi kar sakte ki myH1 lo (myH1 likh liya browser console mei),
+ iske andar kya karo seedha style lo (myH1.style likh liya browser console mei)
+ aur uske andar color change kar do (myH1.style.color likh liya browser console mei)
+ aur color kya dena hai hume yahan pe suppose karo hume yahan pe isko bhi
+ green dena hai (myH1.style.color = 'green' likh liya browser console mei
+ and press enter)-->
+
+ <!-- yeh lijiye green , (error aya) , problem hogi kyu, kyuki nodelist
+   mili hai apko (means myH1 ek nodelist hai as jab aapne myH1 likh
+   ke enter kiya browser console mei to nodelist aya tha)-->
+
+<!-- to basic foundation wo hi rahega, ki yahan pe (myH1.style.color = 'green') 
+ bhi jo element hai usko batana padega konsa wala element, to sir ne kaha
+ zeroth element jo hai usko green kar do to green hoga-->
+
+<!-- myH1[0].style.color = 'green' likh liya browser console mei and
+  press enter-->
+
+<!-- to DOM Learning on Chai aur code green ho gaya -->
+
+<!-- 27:48 -->
+
+<!-- to yeh hi ek major difference hota hai querySelector aur 
+ querySelectorAll mei ki wo kaisa datatype apko return kar rahe hai-->
+
+ <!-- theek hai achha abhi kya karte hai wapas se jaate hai , clear
+  kar liya browser console mei-->
+
+<!-- ab itna to samajh mei aa gaya hai ki forEach hai forEach mei
+ hume charcha karne ki jarurat hi nahi hai bahut achhe se humne indepth
+ padha tha uske andar, to dekhiye wapas se aate hai hum yeh tempLiList
+ ke upar -->
+
+<!-- tempLiList likh liya browser console mei and press enter -->
+
+<!-- to yeh ji tempLiList mili thi apko (nodelist dropdown open karke
+ dekh liya) achha tempLiList ke andar jaise hi hume pata laga ki
+ achha hume yahan pe forEach loop de rakha hai (nodelist ke prototype
+ dropdown ko open karke dekh liya) bas ho gaya kaam kyuki forEach to
+ humne bahut achhe se padha hai (now nodelist dropdown close kar diya)-->
+
+<!-- to hum kya karenge tempLiList haa ji aa jayiye (tempLiList likh liya
+ browser console mei) , aap boliye forEach yeh lijiye forEach lag gaya
+ (tempLiList.forEach likh liya browser console mei) , ab forEach lagana
+ hai to uske andar kya karna padta hai ek callback dena padta hai 
+ (tempLiList.forEach() likh liya browser console mei) hume pata hai
+ callback to function hai aur kuch hai hi nahi jiska naam nahi hai,
+ bas itni si baat hai (means callback / callback function ek aisa 
+ function hai jiska naam nahi hai)-->
+
+<!-- arrow function dijiye ya basic function dijiye aapka jo man kare
+ wo dijiye koi dikkat wali baat hi nahi hai, to yeh lijiye humne diya
+ function ( tempLiList.forEach(function ) likh liya browser console mei )
+ iss fucntion ke andar kya hoga har ek item yahan pe 
+ (yahan pe means fucntion ke () mei ) aata jayega-->
+
+<!-- tempLiList.forEach(function ()) likh liya browser console mei -->
+
+<!-- to isko (isko means jo function ke () mei ayega) bol dijiye-->
+
+<!-- 28:36 -->
+
+<!-- to isko (isko means jo function ke () mei ayega) bol dijiye l
+ bol dijiye for li-->
+
+<!-- tempLiList.forEach(function (l)) likh liya browser console mei -->
+
+<!-- theek hai ji aur yahan pe yeh lijiye curly braces start kara ,
+ end kara, -->
+
+<!-- tempLiList.forEach(function (l) {}) likh liya browser console mei-->
+
+<!-- tempLiList.forEach(function (l) {
+ 
+}) likh liya browser console mei and press enter (shift daba ke enter
+ karna hota hai means curly braces {} ke andar jaake shift + enter karna
+ hota hai)-->
+
+<!-- undefined aa gaya -->
+
+<!-- to iske andar kya karna hai, aa... , har ek l ko lo , -->
+
+<!-- tempLiList.forEach(function (l) {
+    l
+}) likh liya browser console mei -->
+
+<!-- aur uske andar kuch changes karo, kya change karte hai, chaliye
+ style ko change kar lete hai -->
+
+<!-- tempLiList.forEach(function (l) {
+    l.style
+}) likh liya browser console mei -->
+
+<!-- style.backgroundColor -->
+
+<!-- tempLiList.forEach(function (l) {
+    l.style.backgroundColor
+}) likh liya browser console mei -->
+
+<!-- aur backgroundColor konsa kar dena hai, wo hi humara favourite
+ green -->
+
+<!-- tempLiList.forEach(function (l) {
+    l.style.backgroundColor = "green"
+}) likh liya browser console mei and press enter-->
+
+<!-- to one two three ka bgc green ho jayega -->
+
+<!-- haa uski value (one jo pehle se green tha) gayab ho gayi hai
+ yahan pe kyuki jo humne pehle jo karname kiye the uski vajeh se
+ gayab ho gayi but theek hai-->
+
+<!-- basics humara itna hi hai -->
+
+<!-- webpage referesh kar liya wapas se isi ko dekhne ke liye -->
+
+<!-- abhi direct nahi chala sakte (same callback function) as tempLiList ke andar kuch hai
+ hi nahi kyuki referesh ho gaya hai to value wahan pe flush out
+ ho gayi, lekin hum ek do values peeche jaake wahan pe le sakte hai -->
+
+<!-- achha abhi hum chalte hai aur ek aur cheej pe jiske baare mei
+ thodi si charcha humne chord di thi -->
+
+<!-- theek hai to hum kya karte hai document (document likh liya browser
+ console mei) nodelist aapko samajh mei aa gaya hai, achha tarike bhi hote
+ hai nodelist ko convert karne ke basic array mei taki aap usko array ki
+ tareh treat kar sako but jadatar jab aap nodelist loge iss tareh se
+ to koshish karna forEach loop use karo , kyu , kyuki wo (nodelist) array
+ nahi hai, wahan pe (nodelist pe) map nahi laga sakte , agar map etc wo
+ functionality chahiye to nodelist se convert karna padega array mei (30:00)
+ aur array ke upar aap jo chahe wo lagayiye-->
+
+<!-- theek hai to abhi hum aate hai dusre method pe, to yeh humara
+ ho gaya ek aur method agar aapne suna hoga getElementByClassName-->
+
+<!-- document.getElementByClassName likh liya browser console mei -->
+
+<!-- theek hai getElementByClassName , lekin usko lagane se pehle
+ kya karte hai hum list item humare pas yeh 3 hai (see one.html)
+ 4 kar lete hai just for fun , (four kar liya one.html mei) aur humare ko
+ sabke upar class lagani hai-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div>
+      <h1 id="title" class="heading">DOM Learning on Chai aur code <span style="display: none;">test text</span></h1>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <input type="password" name="" id="">
+
+      <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+        <li>four</li>
+      </ul>
+    </div>
+  </body>
+</html> -->
+
+<!-- theek hai to sabke (one to four ke li tag) li ke opening tag mei hum
+  kya karte hai class laga lete hai aur sabke upar class hai , aa... ,
+  konsi class lagaye, list-item laga lete hai-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div>
+      <h1 id="title" class="heading">DOM Learning on Chai aur code <span style="display: none;">test text</span></h1>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <input type="password" name="" id="">
+
+      <ul>
+        <li class="list-item">one</li>
+        <li class="list-item">two</li>
+        <li class="list-item">three</li>
+        <li class="list-item">four</li>
+      </ul>
+    </div>
+  </body>
+</html> -->
+
+<!-- theek hai ji to yeh list-item humne sabke upar class laga rakhi
+ hai -->
+
+<!-- ab yahan pe (browser console mei) agar hume element select karna hai
+ (webpage refresh kar liya varna wo propogate nahi hoga effect) ,
+ ab hume chahiye document.getElementsByClassName(), suppose kariye
+ hum isko use karna chahte hai -->
+
+<!-- document.getElementsByClassName() likh liya browser console mei -->
+
+<!-- to kya likhenge , hume sare element laake do jiske andar class
+ konsi lagi ho (30:56) class lagi hui ho, abhi dekhiye apko return type
+ kya mil raha hai HTMLCollection jo ki different hota hai aapke
+ NodeList se, antar hai dono mei, bahut important antar hai-->
+
+<!-- to humne kaha ki hume do list-item -->
+
+<!-- document.getElementsByClassName('list-item') likh liya browser console
+  mei and press enter-->
+
+<!-- HTMLCollection mil gaya -->
+
+<!-- theek hai ji humne de diya aapko list-item, ab HTMLCollection
+ aapko mila hai (HTMLCollection dropdown open karke dekha) iske
+ andar bhi dekhte hai prototype hai kya (prototype droprdown open
+ karke dekha) (31:16) , to iske andar (prototype ke andar) kya hai
+ item hai, length hai, namedItem hai, theek hai ji lekin yahan pe
+ kuch looping ka to option hi nahi de rakha yahan pe-->
+
+<!-- (ab neeche wala ek aur prototype dropdown open karke dekha) haa yeh to 
+ (jo neeche wale prototype dropdown mei de rakha hai) sabko
+ milega kyuki sab kuch object hi hota hai , yeh to theek hai baat 
+ (ab neeche wale prototype dropdown ko close kar diya)-->
+
+ <!-- 31:26 -->
+
+<!-- Lekin loop karne ka to yahan pe (upar wale prototype mei) kuch aisa de
+hi nahi rakha ki yar yeh loop agar hume karna hai ya fir yahan pe agar
+loop lagana hai , to kaise lagayenge HTMLCollection pe loop (ab HTMLCollection
+dropdown close kar diya)-->
+
+<!-- forEach laga ke dekhein, kaam hi nahi karega, chaliye laga ke dekh
+ bhi lete hai (31:41) kyuki ab aap keh hi rahe hai to lagana to padega hi-->
+
+<!-- to isko ( document.getElementsByClassName('list-item') ) kya karte hai 
+ hum ek value mei store kar lete hai , const , isko bolte hai, tempClassList-->
+
+<!-- const tempClassList = document.getElementsByClassName('list-item')
+ likh liya browser console mei and press enter -->
+
+<!-- undefined aa gaya -->
+
+<!-- ab HTMLCollection to hai humare pas yeh tempClassList ke andar -->
+
+<!-- tempClassList likh liya browser console mei and press enter -->
+
+<!-- HTMLCollection aa gaya -->
+
+<!-- Lekin kya hum ispe forEach laga sakte hai , abhi laga ke dekh lete hai,
+ yeh lijiye forEach ( tempClassList.forEach() likh liya browser console mei ) -->
+
+<!-- aur hum iske andar ek function likh lete hai, yeh lijiye function -->
+
+<!-- ( tempClassList.forEach(function ()) likh liya browser console mei ) -->
+
+<!-- aur sabko kya bol dete hai (means function ke () mei kya likhte hai)
+ li bol dete hai, theek hai ji -->
+
+<!-- ( tempClassList.forEach(function (li)) likh liya browser console mei ) -->
+
+<!-- aur {} laga ke, {} ke andar aake shift ke saath enter kar diya -->
+
+<!-- ( tempClassList.forEach(function (li) {
+  
+}) likh liya browser console mei ) -->
+
+<!-- console.log hi karke dekh lete hai ki li mei aa kya raha hai -->
+
+<!-- console.log() aur bol diya ki mujhe to kya karo ki yeh jo bhi li aa raha hai
+ wo bas likh ke bata do kya aa raha hai -->
+
+<!-- ( tempClassList.forEach(function (li) {
+  console.log(li)
+}) likh liya browser console mei and press enter) -->
+
+<!-- error aya -->
+
+<!-- run karte hai isne bolta hai dekhiye yeh jo tempClassList hai na
+ iske pas yeh forEach naam ki koi cheej hi nahi hai -->
+
+<!-- 32:32 -->
