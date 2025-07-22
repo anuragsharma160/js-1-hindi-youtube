@@ -1668,3 +1668,223 @@ dropdown close kar diya)-->
  iske pas yeh forEach naam ki koi cheej hi nahi hai -->
 
 <!-- 32:32 -->
+
+<!-- to jaise humne pehle padha tha wo hi ka wo hi same haal hai -->
+
+<!-- achha agar iss tareh ki values (jo error aya hai) agar ho jaati hai
+ to kya kiya jaye, wo hi karenge jaisa abhi sir ne aapko bataya tha
+ ki agar NodeList ke upar agar map use karna hai to kaise karoge,
+ convert karna padega na (HTMLCollection ko array mei convert karna padega)-->
+
+<!-- to vaise hi same kaam hai, HTMLCollection ko bhi convert karna padega
+ pehle , to HTMLCollection ko convert kaise kiya jaye-->
+
+<!-- clear in browser console -->
+
+<!-- to dekhiye ek bahut hi simple sa method hota hai jiske through
+ aap convert kar sakte hai, to dekhiye humare pas yeh hai tempLiList -->
+
+<!-- tempLiList likh liya broser console and press enter -->
+
+<!-- isko hume convert karna hai (array mei) -->
+
+<!-- aap chahe to direct bhi kar sakte the but isko
+ (HTMLCollection ko) convert kar sakte hai -->
+
+<!-- kaise, aap Array ko use kar sakte hai, capital A ke saath kariyega
+ varna kahoge ki humara kaam hua nahi-->
+
+<!-- Array likh liya browser console mei -->
+
+<!-- 33:09 -->
+
+<!-- to dekhiye Array ke andar kya hota hai ek method hota hai
+ dot from -->
+
+<!-- Array.from likh liya browser console mei -->
+
+<!-- ki kahan se hum array ko convert, ... matlab koi value do aur
+ usko mai array mei convert kar dunga, to yeh lijiye -->
+
+<!-- Array.from() likh liya browser console mei -->
+
+<!-- from, from kisse karna hai yeh humara jo tempClassList hai
+ isse-->
+
+<!-- Array.from(tempClassList) likh liya browser console mei 
+ and press enter-->
+
+<!-- theek hai to yeh humne diya, abhi humare pas jo values
+ hai wo hai array -->
+
+<!-- result dropdown open karke dekha -->
+
+<!-- ab isko agar aap open karke dekhoge (prototype dropdown open
+ karke dekh liya) dekhiye wo hi jaani pehchani cheej hai sari,
+ dekhiye flat map bhi hai apke pas, forEach bhi aa gaya hai,
+ kaam to humara forEach se hi ho jayega but aapke pas map bhi aa gaya hai
+ (scroll down and see map in prototype dropdown) push bhi aa gaya hai-->
+
+<!-- to yeh baat to fact hai ki ab humne array ke andar convert kar
+ liya hai iss tempClassList ko -->
+
+ <!-- jo result mei array aya hai uske dropdown ko close kar diya-->
+
+<!-- ab chahein to aap iske upar ek variable hold kar lijiye,
+ to suppose kariye hum yahan pe dete hai const myConvertedArray,
+ const myConvertedArray likh liya browser console mei
+ aur iske andar humne kaha ki dubara se ek kaam karo yeh Array lo ,
+ const myConvertedArray = Array likh liya browser console mei
+ aur from ,
+ const myConvertedArray = Array.from() likh liya browser console mei,
+ kahan se convert karna hai, to humari wo hi purani tempClassList
+ wo le lo aur isko hold kar lo (variable mei)-->
+
+ <!-- const myConvertedArray = Array.from(tempClassList) likh liya 
+  browser console mei and press enter-->
+
+<!-- undefined aa gaya -->
+
+<!-- to ab humare pas technically myConvertedArray ke andar
+ yeh array aa gaya -->
+
+<!-- myConvertedArray likh liya browser console mei and press enter -->
+
+<!-- clear kar liya browser console mei -->
+
+<!-- achha ab sabse interesting baat kyuki ab humare pas uss (wo) sare methods
+(jo prototype dropdown mei available the) etc available hai to kya hum
+use kar sakte hai (34:16) -->
+
+<!-- just for fun forEach hi use kar lete hai, aap chahein to map
+ use kar lijiye, (34:19) to dekhiye ab humare pas forEach available hai
+ suggestion mei bhi aa raha hai-->
+
+<!-- myConvertedArray.forEach() likh liya browser console mei -->
+
+<!-- yeh lijiye ab humne kaha function lo, theek hai ji le liya
+ aur yeh lijiye function -->
+
+<!-- myConvertedArray.forEach(function() {
+ 
+}) likh liya browser console mei (use shift + enter in {})-->
+
+<!-- yeh lijiye ab kya karo iss function() ke andar 
+ (function ke paranthesis () ke andar) har ek value jayegi , to theek hai
+ ji usko (har ek value jo function ke () mei jayegi) hum li bol lete
+ hai wapas se-->
+
+<!-- myConvertedArray.forEach(function(li) {
+ 
+}) likh liya browser console mei -->
+
+<!-- aur li ke andar kya karo (means is function ke andar kya karo) 
+ yeh li liya (means function ke andar li likha)-->
+
+<!-- myConvertedArray.forEach(function(li) {
+  li
+}) likh liya browser console mei -->
+
+<!-- aur iske andar (li ke andar) style lijiye-->
+
+<!-- myConvertedArray.forEach(function(li) {
+  li.style
+}) likh liya browser console mei -->
+
+<!-- aur uss style ka sirf color hi change kar lete hai , bahut time
+ ho gaya green green karte hue thoda sa orange karte hai ab isko-->
+
+<!-- myConvertedArray.forEach(function(li) {
+  li.style.color = 'orange'
+}) likh liya browser console mei and press enter-->
+
+<!-- one two three four ka color orange ho gaya (see webpage) -->
+
+<!-- theek hai to iss tareh se HTMLCollection ko use kiya jata hai
+ aur isi tareh se values hoti hai -->
+
+<!-- to ab sabse important cheej aap yeh yaad rakhiyega ki jab bhi aap 
+ querySelector use karein , class use karein to iss tareh se (as follows)-->
+
+<!-- myConvertedArray.forEach(function(li) {
+  li.style.color = 'orange'
+})-->
+
+<!-- values ko liya jata hai aur change kiya jata hai -->
+
+<!-- ab hum chalenge kahan pe obvious si baat hai humari javascript wale
+ jo wikipedia page hai uske upar chalenge (35:10) kyuki wahanpe bhi to koi
+ fun karke dekhna padega-->
+
+ <!-- to JavaScript wikipedia page pe gaye -->
+
+<!-- to dekhiye hume lag raha hai yeh jo rise of javascript , growth,
+ standard, adoption by microsoft, to yeh creation at netscape (just below
+ history) isko select karke aur inspect karke dekhte hai ki kya hai
+ iska mamla-->
+
+<!-- to yeh (creation at netscape) jo hai humare h3 hai values sari ki sari,
+(see in elements tab) theek hai to sare h3 ko select karke dekhein (35:30)
+ek bar-->
+
+<!-- karke dekhte hai (ab console tab mei aa gaye) -->
+
+<!-- theek hai to yeh hua humara document , (document likh liya browser
+ console mei) dot , ab hume pata hai hum confidently use karenge sare ke
+ sare (prototype wale methods ko)-->
+
+<!-- document. likh liya browser console mei -->
+
+<!-- to yeh lijiye querySelectorAll -->
+
+<!-- document.querySelectorAll() likh liya browser console mei -->
+
+<!-- to querySelectorAll() ke andar kya laake de do, h2 laake de do
+ hume sare-->
+
+<!-- document.querySelectorAll('h2') likh liya browser console mei 
+ and press enter-->
+
+<!-- quotes ( 'h2' ) lagana jaruri hai-->
+
+<!-- to yeh lijiye yeh h2, kya mila NodeList mili hai (NodeList ko
+ dropdown open karke dekha) , NodeList ke andar hume pata hai 
+ selected options hai , (2 ko dropdown open karke dekha) ,
+ sabke andar humare pas values hai , (2 ko dropdown close karke dekha)
+ bahut sari values ayi hai (35:57) theek hai (ab nodelist dropdown ko
+ close kar diya)-->
+
+<!-- ek kaam karte hai iske andar ( document.querySelectorAll('h2') ) bolte hai
+ki isko ( document.querySelectorAll('h2') ) ek variable mei hold kar lete hai -->
+
+<!-- const allH2 = document.querySelectorAll('h2') likh liya browser console
+ mei and press enter -->
+
+<!-- undefined aa gaya -->
+
+<!-- aur kya karte hai allH2 jo hai, uska hum kya bolte hai ki first
+ element ( allH2[0] likh liya browser console mei )-->
+
+<!-- uska (first element ka) hume innerText lake do-->
+
+<!-- allH2[0].innerText likha browser console mei and press enter -->
+
+<!-- '' aa gaya -->
+
+<!-- to yehi to baat thi humare pas ki javascript ke andar humare pas
+ yeh j (jo) hai Creations (Creation at Netscape) aur contents ('' jo
+ aya hai, 'contents sir ka aya hai') , to abhi tak to humare pas 
+ value nahi pahauchi hai innerText ke andar theek hai (as h3 ki jagah
+ h2 le liya browser conosle mei ?) (jab humne javascript wikipedia page
+ pe verify kiya Creation at Netscape mei jo hume '' mila hai browser console
+ mei)-->
+
+<!-- to agar first value leke dekhein to kya hoga -->
+
+<!-- allH2[1].innerText likha browser console mei and press enter -->
+
+<!-- 'History' aa gaya-->
+
+<!-- to humare pas 'History' aa rahi hai -->
+
+<!-- 36:37 -->
