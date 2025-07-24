@@ -1879,7 +1879,7 @@ ki isko ( document.querySelectorAll('h2') ) ek variable mei hold kar lete hai --
  pe verify kiya Creation at Netscape mei jo hume '' mila hai browser console
  mei)-->
 
-<!-- to agar first value leke dekhein to kya hoga -->
+<!-- to agar first value (2nd value) leke dekhein to kya hoga -->
 
 <!-- allH2[1].innerText likha browser console mei and press enter -->
 
@@ -1888,3 +1888,300 @@ ki isko ( document.querySelectorAll('h2') ) ek variable mei hold kar lete hai --
 <!-- to humare pas 'History' aa rahi hai -->
 
 <!-- 36:37 -->
+
+<!-- second value (3rd value) kya aa rahi hai -->
+
+<!-- allH2[2].innerText likha browser console mei and press enter -->
+
+<!-- 'Trademark' aa gaya -->
+
+<!-- to theek hai values to aa rahi hai, aa... , konsi values aa rahi
+ hai wo dekhna padega hume -->
+
+<!-- achaa to hume yeh sare h2s aur yeh sare (jo table of contents
+ icon mei de rakhe hai) to yeh bhi hume, to humne to dekha hi nahi
+ tha ki yahan pe (adoption by microsoft in js wikipedia page) values hai kya -->
+
+<!-- to yahan pe (adoption by microsoft in js wikipedia page) bhi h2 
+ etc values yahan pe bhi aa rahi hai, theek hai to kayi bar aisa bhi
+ hoga jab aap select karnege-->
+
+<!-- theek hai to wapas se jaate hai elements ke andar aur dekhte
+ hai elements ke andar aur kya kya hai (to elements tab mei aa gaye) -->
+
+<!-- to yeh wali jo class hai 37:03 (sir ke mei creation at netscape wala
+ element span tag mei wrap hai aur iss span tag ki hi class aur id hai
+ aur id ka naam creation at netscape hai, aur sir iss span tag ki class ko
+ hi select kar rahe hai , but humare mei aisa nahi hai, to hum div ki class
+ mw-heading mw-heading3 ko select karke dekhenge)-->
+
+<!-- to yeh wali jo class hai (mw-heading mw-heading3) 37:03 yeh wali class
+  kuch kaam ki ho sakti hai , chaliye karke dekhte hai isko bhi 
+  (to iss class (mw-heading mw-heading3) ko copy kar liya and wapas
+  console tab mei aa gaye)-->
+
+<!-- to hum isko bolte hai ki kya karo ki document.querySelector
+ aur yeh wali class chahiye (jo elements tab se copy kari hai) -->
+
+<!-- document.querySelector('') likh liya browser console mei-->
+
+<!-- to class ke liye kya dot lagate hai -->
+
+<!-- document.querySelector('.') likh liya browser console mei-->
+
+<!-- aur jo class copy kari hai paste kar di (sir ki class thi mw-headline) 
+ (humari class hai mw-heading mw-heading3)-->
+
+<!-- document.querySelector('.mw-heading mw-heading3') likh liya
+  browser console mei and press enter-->
+
+<!-- 37:19 -->
+
+<!-- document.querySelectorAll('.mw-heading') likh liya browser console mei
+ and press enter -->
+
+<!-- to Nodelist mil gaya -->
+
+<!-- to abhi hume jo NodeList mili hai kaafi badi mili hai lekin uske andar
+ dekhiye humare pas nodelist (56) ayi hai (sir ki nodelist (40) ayi hai)-->
+
+<!-- ji kaafi sari headings hai yahan pe to -->
+
+<!-- to isko ( document.querySelectorAll('.mw-heading') ) bhi hold kar lete
+ hai ek const myH2 ke andar -->
+
+<!-- const myH2 = document.querySelectorAll('.mw-heading') likh liya
+ browser console mei and press enter -->
+
+<!-- undefined aa gaya -->
+
+<!-- theek hai ji, wapas se jaate hai ab myH2 ke upar -->
+
+<!-- myH2 likh liya browser console mei -->
+
+<!-- aur bolte hai ki aapka jo first element hai -->
+
+<!-- myH2[0] likh liya browser console mei -->
+
+<!-- uska mujhe innerText do -->
+
+<!-- myH2[0].innerText likh liya browser console mei and press enter -->
+
+<!-- 'History' aa gaya -->
+
+<!-- to ab aapke pas wapas se wo hi 'History' etc to shayad uske andar
+  bhi classes lagi hui hai to theek hai-->
+
+<!-- achha ab hum kya chahte hai ki theek hai itna to hume samajh mei aa
+ gaya, lekin ab hum chahte hai ki jitna bhi yeh jo myH2 humne select
+ kara hai usko hum background green dena chahte hai, bada hi basic sa kaam
+ hai -->
+
+<!-- to yeh lijiye myH2, kaise denge isko, abhi dekhiye myH2 humne rakh ke
+ dekha (myH2 likha browser console mei and press enter) -->
+
+<!-- to obvious si baat hai, yeh bahut sari values ayi hai yahan pe
+ (span ke andar aur yeh sari sir ki values ayi hai) humari div ke andar ayi
+ hai values-->
+
+<!-- to kya yeh nodelist hai ( nodelist (56) ) abhi humne just jo padha tha
+ wo sari humari values etc sab kaam karegi kya dekhte hai ek bar-->
+
+<!-- clear kar liya browser console mei -->
+
+<!-- to yeh myH2 hai iske upar kya hum forEach laga sakte hai -->
+
+<!-- myH2.forEach() likh liya browser console mei -->
+
+<!-- haa ji bilkul laga sakte hai kyuki jo aapne basic padha hai exact
+ wo ka wo hai -->
+
+<!-- to yeh lijiye ab iske andar kya likhna hai function likhna hai,
+ yeh function likh diya humne -->
+
+<!-- myH2.forEach(function (){}) likh liya browser console mei -->
+
+<!-- ab function ke andar kya hoga , wapas se ek ek H2 ayega aapke pas
+ (means function ke andar ek ek H2 function ke () ke andar ayega)-->
+
+<!-- to usko (wo ek ek H2 jo function ke () mei ayega) bol dete hai aa... ,
+ h hi bol dete hai usko hum -->
+
+<!-- myH2.forEach(function (h){
+    
+}) likh liya browser consle mei (shift + enter) -->
+
+<!-- theek hai ji aur uss h ke andar kya karo uss h ke andar ek style
+ add kar do (38:36) , theek hai ab gaur se dekhiyega yahan
+ problem ayegi thodi si dekhte rahiyega-->
+
+<!-- myH2.forEach(function (h){
+    h.style
+}) likh liya broser console mei -->
+
+<!-- aur style kya karo uska color hi change kar lete hai -->
+
+<!-- myH2.forEach(function (h){
+    h.style.color
+}) likh liya browser console mei -->
+
+<!-- aur uss color ko kya kar do aap red kar do -->
+
+<!-- myH2.forEach(function (h){
+    h.style.color = 'red'
+}) likh liya browser console mei and press enter -->
+
+<!-- to yeh humne color liya aur add kar diya -->
+
+<!-- 38:48 -->
+
+<!-- to 'History' , creation at netscape, Adoption by Microsoft , etc sab
+ red color ke ho gaye-->
+
+<!-- to ab dekhiye aapne jitni bhi values select kari thi wo sari ki sari yahan
+ pe red ho gayi hai-->
+
+<!-- achha yeh yahan se (js wikipedia webpage heading se) History aa raha tha 
+ yahan se (table of contents icon) nahi aa raha tha (History)-->
+
+<!-- to dekha thoda sa haa obvious si baat hai sir bhi aapke saamne hi
+ kar rahe hai -->
+
+<!-- yeh creation at netscape, etc jo sab aa rahe the yeh bhi yahan pe 
+ ho gaye hai-->
+
+<!-- theek hai ab yeh red to thoda achha nahi lag raha to hum isko wapas
+ se black kar dete hai -->
+
+<!-- myH2.forEach(function (h){
+    h.style.color = 'black'
+}) likh liya browser console mei -->
+
+<!-- ab jaruri thodi na hai ek hi line ka code chalayenge, jada bhi multiple
+ bhi chala sakte hai -->
+
+<!-- to yahan semicolon ; daliye as follows -->
+
+<!-- myH2.forEach(function (h){
+    h.style.color = 'black';
+}) likh liya browser console mei -->
+
+<!-- aur boliye ki h jo hai, uske andar ek style aur add karni hai hume
+ (shift + enter) -->
+
+<!-- myH2.forEach(function (h){
+    h.style.color = 'black';
+    h.style
+}) likh liya browser console mei -->
+
+<!-- aur style kya add karni hai , backgroundColor -->
+
+<!-- myH2.forEach(function (h){
+    h.style.color = 'black';
+    h.style.backgroundColor = 
+}) likh liya browser console mei -->
+
+<!-- aur bgc konsa add karna hai 'green' -->
+
+<!-- myH2.forEach(function (h){
+    h.style.color = 'black';
+    h.style.backgroundColor = 'green';
+    
+}) likh liya browser console mei (semicolon) (shift + enter) -->
+
+<!-- aur padding bhi add kar dein, ( iss liye ; lagaya hai upar ) -->
+
+<!-- chaliye padding  bhi add kar dete hai -->
+
+<!-- h.style.padding = '10px' -->
+
+<!-- myH2.forEach(function (h){
+    h.style.color = 'black';
+    h.style.backgroundColor = 'green';
+    h.style.padding = '10px'
+}) likh liya browser console mei and press enter -->
+
+<!-- see changes in webpage in History , Creation at Netscape, etc -->
+
+<!-- lijiye aap dekhiye kis tareh se manipulate kar paa rahe hai sari
+ values ko, theek hai, easy tha -->
+
+<!-- to haa ji page values ko inn sab ko hum manipulate karna to seekh
+ gaye hai ki kaise kar sakte hai hum inn sabko -->
+
+<!-- theek hai achha agar hum isko yahan pe yeh sab (as follows) -->
+
+<!-- myH2.forEach(function (h){
+    h.style.color = 'black';
+    h.style.backgroundColor = 'green';
+    h.style.padding = '10px'
+}) -->
+
+<!-- to hum karte hi karte aur saath mei bol dete ki iske baad kya karo
+ semicolon ; ek lagao yahan pe ( and shift + enter )-->
+
+<!-- myH2.forEach(function (h){
+    h.style.color = 'black';
+    h.style.backgroundColor = 'green';
+    h.style.padding = '10px';
+    
+}) likh liya browser console mei-->
+
+<!-- aur bolo ki h ke andar jo innerText hai , usko manipulate kar
+ sakte hai kya aise -->
+
+<!-- myH2.forEach(function (h){
+    h.style.color = 'black';
+    h.style.backgroundColor = 'green';
+    h.style.padding = '10px';
+    h.innerText
+}) likh liya browser console mei -->
+
+<!-- ki innerText jo hai usko "Hitesh" de do yahan pe -->
+
+<!-- myH2.forEach(function (h){
+    h.style.color = 'black';
+    h.style.backgroundColor = 'green';
+    h.style.padding = '10px';
+    h.innerText = "Hitesh"
+}) likh liya browser console mei and press enter -->
+
+<!-- ab History , Creation at netscape , etc mei Hitesh aa gaya -->
+
+<!-- haa ji manipulate ho raha hai -->
+
+<!-- to dekha kitni achhe se apko ab values ko lena bhi aa gaya hai aur unko
+ manipulate bhi karna aa gaya -->
+
+<!-- 40:20 -->
+
+<!-- aur apko yeh bhi samajh mei aa gaya ki values ko andar hume 
+ HTMLCollection agar mil raha hai to hum usko kaise handle karenge ,
+ agar hume Nodelist mil rahi hai to hum kaise handle karenge, 
+ to yehi to JavaScript ka impact hai-->
+
+<!-- ab yeh jitna humne kaam kiya hai abhi hum console (browser console) 
+ ke andar kar rahe hai -->
+
+<!-- Lekin eventually aage jaake kya karnege, hum jaye ge yahan pe
+  code ke andar (ab sir one.html pe aa gaye code editor mei)
+  ek script tag open karenge ya fir apni script file banayenge aur sara
+  ka sara values ko iss tareh se select (ul ko select kar liya from ul
+  opening tag to ul closing tag) karnege aur manipulate karnege-->
+
+<!-- ho sakta hai database se koi value ayi ho, aapne usko array mei store
+ kar rakha ho, abhi humne naye elememts create karna nahi seekha hai,
+ wo bhi hum seekhenge but agar suppose kariye sir list item aapko
+ de de bahut sare 10 list item 10 values ayi hai database se aur sir
+ apko kahein ki list item lijiye aur inko jo bhi existing list item hai
+ usko update kar dijiye to aap fataak se loop chalaoge, sare (list item) query selector
+ se select karoge, forEach laga ke sari values bhar doge uske andar-->
+
+<!-- 41:08 -->
+
+<!-- easy hai -->
+
+<!-- step by step chalenge to aasaan bhi rahega aur maja bhi ayega-->
+
+<!-- Class End -->
+
