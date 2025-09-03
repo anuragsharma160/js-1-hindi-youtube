@@ -1,0 +1,1559 @@
+<!-- to wo hi basic humara exclamatory throw karte hai -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html> -->
+
+<!-- aur do tab ke baad yahan pe likh dete hai DOM , aur DOM kiske saath aap
+ padh rahe hai obvious si baat hai Chai aur code ke saath padh rahe hai
+ theek hai ji -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body>
+    
+</body>
+</html> -->
+
+<!-- ab yahan pe hume kya karna hai, jaise hi aapke pas body aye 3:05 
+ to aap iske andar ek div add kariye uski class de dijiye parent -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body>
+    <div class="parent">
+        
+    </div>
+</body>
+</html> -->
+
+<!-- ab iske andar bhi hum kya karte hai ki kuch elements add karte hai,
+ basically parent to humne kar liya hai, lekin Sir ko kya pasand hai
+ weeks ke days pasand hai kyuki easily logo ko samajh mei aa jata hai aur
+ relation bhi kar paate hai-->
+
+<!-- to yahan pe aap chahein to parent class rakh lijiye , chahein
+ to week class rakh lijiye jaisa bhi aapko theek lage, Sir parent
+ hi rakhenge kyuki samjhaane mei thoda aasaan rehta hai -->
+
+<!-- uske baad Sir ne ek class rakhi hai day aur iske 4 values le
+ lete hai as follows -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="day"></div>
+        <div class="day"></div>
+        <div class="day"></div>
+        <div class="day"></div>
+    </div>
+</body>
+</html> -->
+
+<!-- to pehla to Monday hi lenge obviously,
+ fir Tuesday, fir Wednesday, fir Thursday -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+</html> -->
+
+<!-- achha ab kya karenge isko save karke open karte hai live server pe -->
+
+<!-- ye humare pas values aa gayi live server pe Monday , --- , Thursday -->
+
+<!-- For eyesight hum body pe styling add kar dete hai , sabse pehle bgc
+ color add kar lete hai #212121 aur color bhi use kar lete hai color #fff
+ halaki jo humne text likha hai usse koi khaas matlab hai nahi hume wahan pe,
+ but theek hai dikhna to chahiye na atleast tabhi to maja ayega -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+</html> -->
+
+<!-- ab hum kya karte hai actually mei screen divider two parts kar lete hai
+ taki side by side hum dekh paye-->
+
+<!-- mostly hum console log (browser console) mei hi dekhenge -->
+
+<!-- to itni koi jada problem wali baat nahi hai, 
+ aur folder file side bar ko bhi hata dete hai ( Ctrl + B ) taaki
+ aap code dekh payein aasaani se, code pe focus
+ kariyega thoda sa -->
+
+<!-- then webpage pe blank space pe right click karke inspect element
+ kar lijiye -->
+
+<!-- achha ek cheej aur humara jo console hai iske andar thodi si
+ apko problems dikhegi (click on >> i.e. more tools and click on
+ console )
+ 
+ ki yeh dev tools nahi hai yeh sab sir ne
+ extensions kar rakhe hai kyuki obvious si baat hai React , Next Js
+ unmei bhi kaam karte hai sir to unki extension hai ,
+ aap unki chinta mat kariye, aap inn errors ko sabko ignore kar dijiye
+ jo bhi values yahan pe aa rahi hai, hume sirf jo hum console
+ kara rahe hai uspe focus kariyega, programmers ka focus to achha
+ hona hi chahiye na 5:13 -->
+
+<!-- ( circle prohibit sign ( 0 ) pe click karke error warnings clear
+ kar diya sir ne ) -->
+
+<!-- theek hai ab hum kya karenge iss body ke baad hi seedha 
+ hum humari scripting open kar lete hai-->
+
+<!-- to yeh jaise hum upar head tag mei kayi bar html ke liye style
+ open karte hai to hum yahin scripting as follows -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+
+</script>
+</html> -->
+
+<!-- ab aap isko (script ko) alag file mei likhiye ya yahin pe (two.html)
+ mei likh dijiye ek hi baat hai koi aisi problem hai hi nahi -->
+
+<!-- ab ek ek karke hum yahan pe humare targets achieve karte hai -->
+
+<!-- 5:30 -->
+
+<!-- pehla target hai ki iss parent element ko select karo aur pata
+ lagao uske andar kya kya values apke pas aati hai, theek hai ji
+ to parent element select karna to bahut aasaan hai aap sabhi agar
+ series (js playlist) dekh rahe hai to aasaani se kar lenge-->
+
+<!-- document.querySelector() likh liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    document.querySelector()
+</script>
+</html> -->
+
+<!-- all (querySelectorAll) ki abhi jarurat nahi hai kyuki abhi
+  ek hi parent hai-->
+
+<!-- yeh lijiye class kaise likhte hai haa ji dot ke saath
+ likhte hai, to yeh lijiye dot parent -->
+
+<!-- document.querySelector('.parent') likh liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    document.querySelector('.parent')
+</script>
+</html> -->
+
+<!-- class likh di -->
+
+<!-- isko ( document.querySelector('.parent') ) ek variable mei store
+ kar lete hai-->
+
+<!-- yeh lijiye isko ( document.querySelector('.parent') ) parent bol
+ dete hai -->
+
+<!-- const parent = document.querySelector('.parent') likh liya
+ code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+</script>
+</html> -->
+
+<!-- ho gaya store kuch bhi tha hi nahi itna bada kaam -->
+
+<!-- theek hai ji ab isko console.log bhi kara lete hai taaki dekhein
+to sari actually mei parent ke andar value kya hai humare pas -->
+
+<!-- console.log(parent) likh liya code editor mei and save it-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+</script>
+</html> -->
+
+<!-- to yahan pe ( browser console mei ) jaate hai  -->
+
+<!-- ( toggle device toolbar icon (square inside square) 
+ pe click kar liya )-->
+
+<!-- dekhiye yeh top (see top down arrow , in browser console) 
+ ke andar humare pas value (div class = "parent") hai -->
+
+<!-- isko (div class = "parent") humne open kara (dropdown open kara), 
+ to parent ke andar hume kya mila saare days mil gaye hai-->
+
+<!-- parent dropdown close kar diya -->
+
+<!-- theek hai ji itna to chaliye investigation humara ho gaya
+ ki aise (like in code editor) karke parent lete hai to parent (like
+ in browser console) ke andar sari value milti hai -->
+
+<!-- ab ek interesting baat yeh hai ki yeh (console.log(parent);) to hua parent, lekin
+ ek aur property hai jo aap kaafi jagah use karenge (6:26)
+ wo hai iss parent ke andar apko kitne children mile hai
+ yeh children bahut hi interesting property hai -->
+
+<!-- console.log(parent.children) likh liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children);
+</script>
+</html> -->
+
+<!-- isko ( console.log(parent.children); ) save karte hai aur
+ lete hai yahan pe -->
+
+<!-- to dekhiye pehli bar to apko yeh parent class mil rahi thi
+ in browser console (jisko dropdown open close karke dekha tha) -->
+
+<!-- dusri bar apko mila hai HTMLCollection -->
+
+<!-- haa ji HTMLCollection ke andar apko yeh sari values mili hai
+ yahan pe (open dropdown of HTMLCollection) obvious si baat hai
+ jitne bhi days the wo sare chaaro days aa gaye hai length yahan pe uski
+ 4 aa gayi apke pas, to theek hai-->
+
+<!-- HTMLCollection dropdown close kar diya -->
+
+<!-- Lekin interesting baat yeh hai ki yahan pe hume mila hai
+ HTMLCollection jo ki almost array like property hai (6:52) -->
+
+<!-- to kayi bar aap bhi iss tareh se parent ko select karenge,
+ ho sakta hai aap koi list element lagana chahte hai, agar ya to (fir) 
+ parent ke andar kuch lagana chahte hai to yeh
+ bahut hi interesting information hai
+ jo ki aage jaake humare liye kaam mei ayegi-->
+
+<!-- achha ab kisi bhi element ko agar access karna hai to kaise kar 
+ sakte hai-->
+
+<!-- obvious si baat hai array like element hai (HTMLCollection array
+ like element hai) to array ki kuch properties to milti hai , loops itne
+ nahi milte hai (loops property itni nahi milti hai HTMLCollection ki
+ array se) but aap first element ko iss tareh se
+ console.log(parent.children[1]); access kar sakte hai (7:11)-->
+
+<!-- console.log(parent.children[1]); likh liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children);
+    console.log(parent.children[1]);
+</script>
+</html> -->
+
+<!-- to Tuesday wala div aa gaya browser console mei -->
+
+<!-- to humare pas yeh pora ka pora div aa gaya hai jo ki Tuesday
+ ko represent kar raha hai -->
+
+<!-- zero to Monday hoga na to Tuesday aa gaya yahan pe -->
+
+<!-- theek hai ab kyuki yeh element ( console.log(parent.children[1]); )
+  humare pas iss tareh se
+ ( console.log(parent.children[1]); ) hai to aap
+  isko ( console.log(parent.children[1]); ) dot innerHTML bhi
+  aap iska print karwa sakte hai -->
+
+<!-- console.log(parent.children[1].innerHTML likh liya code editor
+ mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children);
+    console.log(parent.children[1]);
+    console.log(parent.children[1].innerHTML);
+</script>
+</html> -->
+
+<!-- to innerHTML humare pas aa gaya hai Tuesday in browser console -->
+
+<!-- ab inn sabse humne kya jaana ki humare pas jitne bhi yeh
+ elements hote hai sabke koi na koi children hote hai -->
+
+<!-- isi tareh se aap parent bhi find kar sakte hai abhi wo bhi batayenge
+ apko sir lekin abhi humare pas... -->
+
+<!-- achha itna ho gaya hai to humare ko pata hai ab HTMLCollection
+ hume mil gaya hai to loop laga sakte hai -->
+
+<!-- ab aap kahenge loop to lagega hi nahi, array mei convert karna
+ padega , are theek hai wo baat bhi aapki sahi hai ki array mei convert
+ karna padega-->
+
+<!-- but humara classic jo for loop hai wo to chalega hi, wo to
+ HTML jaisa (HTMLCollection jaisa) ya array jaisa kuch bhi dikhega
+ to uske upar chalega hi chalega 7:57 -->
+
+<!-- for loop likh liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children);
+    console.log(parent.children[1]);
+    console.log(parent.children[1].innerHTML);
+
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        
+    }
+</script>
+</html> -->
+
+<!-- to index ko short mei i kar dete hai (in for loop) -->
+
+<!-- 8:00 -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children);
+    console.log(parent.children[1]);
+    console.log(parent.children[1].innerHTML);
+
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        
+    }
+</script>
+</html> -->
+
+<!-- ab yeh (for loop) direct array (see array in for loop) 
+ pe nahi chalega-->
+
+<!-- kyuki hume obvious si baat hai parent chahiye (jo parent humne
+ html mei likha hai)-->
+
+<!-- to parent likh liya for loop mei array ki jagah-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children);
+    console.log(parent.children[1]);
+    console.log(parent.children[1].innerHTML);
+
+    for (let i = 0; i < parent.length; i++) {
+        const element = parent[i];
+        
+    }
+</script>
+</html> -->
+
+<!-- Lekin parent hume thodi na deta hai HTMLCollection ,
+ parent.children deta hai (kya deta hai HTMLCollection deta hai)-->
+
+<!-- to parent.children likh liya for loop mei array ki jagah -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children);
+    console.log(parent.children[1]);
+    console.log(parent.children[1].innerHTML);
+
+    for (let i = 0; i < parent.children.length; i++) {
+        const element = parent.children[i];
+        
+    }
+</script>
+</html> -->
+
+<!-- 8:11 -->
+
+<!-- theek hai to parent.children ho gaya humare pass yahan pe -->
+
+<!-- length tak humne chalaya (parent.children.length see in for loop) -->
+
+<!-- i++ see in for loop -->
+
+<!-- aur console.log karte hai yeh (const element = parent.children[i]; see for loop)
+ nahi karenge hum -->
+
+<!-- to isko ( const element = ) hatate hai aur ith value ( parent.children[i]; see in for loop)
+ ko hum kya karte hai , aa... , ith value nahi uski innerHTML lete hai-->
+
+<!-- to parent.children[i].innerHTML likh liya for loop mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children);
+    console.log(parent.children[1]);
+    console.log(parent.children[1].innerHTML);
+
+    for (let i = 0; i < parent.children.length; i++) {
+        parent.children[i].innerHTML;
+        
+    }
+</script>
+</html> -->
+
+<!-- aur yeh wrap kar diya yahan pe ( means parent.children[i].innerHTML
+ ko () mei wrap kar diya ) aur bol diya usko console.log kar do
+ ji isko -->
+
+<!-- console.log(parent.children[i].innerHTML); likh liya for loop mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children);
+    console.log(parent.children[1]);
+    console.log(parent.children[1].innerHTML);
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+        
+    }
+</script>
+</html> -->
+
+<!-- 8:34 -->
+
+<!-- ab isko save karte hai -->
+
+<!-- to dekhiye (in browser console) humare pas sari values aa gayi -->
+
+<!-- Tuesday Monday tuesday wednesday thursday yeh order kaise badal gaya
+  in browser console -->
+
+<!-- order nahi badla actually mei purani kuch values hai
+ jo apko confuse kar rahi hai to
+ usko hum comment out kar dete hai yahan pe -->
+
+<!-- to as follows
+ 
+    console.log(parent);
+    console.log(parent.children);
+    console.log(parent.children[1]);
+    console.log(parent.children[1].innerHTML);
+    
+    ko comment out kar diya jo bhi for loop ke pehle tha 
+    except const parent = document.querySelector('.parent')-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent); commented out
+    console.log(parent.children); commented out
+    console.log(parent.children[1]); commented out
+    console.log(parent.children[1].innerHTML); commented out
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+        
+    }
+</script>
+</html> -->
+
+<!-- 8:42 -->
+
+<!-- ab isko dekhte hai to obvious si baat hai (in browser console)
+ apko sari values... , array tha to aur kya hi expect karte hai,
+ loop lagaya , values print kar di bas itna hi to tha 
+ Monday Tuesday Wednesday Thursday (see in browser console)-->
+
+<!-- 8:54 -->
+
+<!-- to dekhiye ab aap loop ke saath kitne comfortable hai -->
+
+<!-- theek hai thodi si styling bhi karke dekhte hai -->
+
+<!-- to humne kya dekha ki jaise yeh parent hai 
+ (to parent likh liya code editor mei)
+ iske (parent ke)
+ andar aap children ko access kar sakte hai (to parent.children likh
+ liya code editor mei) aur suppose kariye first children hi le lete hai
+ (parent.children[1] likh liya code edotor mei) 
+ iske (parent.children[1]) andar agar hume koi styling change karni hai
+ to hum styling change kar sakte hai kya, ha kar sakte hai no problem,
+ to yeh lijiye color , konsa color lagana hai yahan pe -- orange
+ (parent.children[1].style.color = "orange" likh liya code edotor mei)-->
+
+<!-- to parent likh liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent); commented out
+    console.log(parent.children); commented out
+    console.log(parent.children[1]); commented out
+    console.log(parent.children[1].innerHTML); commented out
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+        
+    }
+    parent.children[1].style.color = "orange"
+</script>
+</html> -->
+
+<!-- to Tuesday orange ho gaya browser mei -->
+
+<!-- aa... , thoda sa iske andar aur bhi kuch values add karein
+ aa..., nahi padding kar sakte hai chahein to -->
+
+<!-- achha ab ek interesting cheej sir apko batate hai jo apke kaafi
+ kaam ayegi -->
+
+<!-- yeh console.log karte hai iss value ko bhi, dekhiye parent apko
+ mila hua hai (to console.log(parent) likha code editor mei) 
+ lekin yeh parent ke andar sirf children hi nahi kuch aur properties bhi
+ hoti hai jo ki bahut interesting hai
+ (to console.log(parent.) likha code editor mei) -->
+
+<!-- first jo property apko pata honi chahiye wo honi chahiye 
+ firstElementChild 
+ (to console.log(parent.firstElementChild) likha code editor mei)-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent); commented out
+    console.log(parent.children); commented out
+    console.log(parent.children[1]); commented out
+    console.log(parent.children[1].innerHTML); commented out
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+        
+    }
+    parent.children[1].style.color = "orange"
+    console.log(parent.firstElementChild)
+</script>
+</html> -->
+
+<!-- haa ji yeh firstElementChild jaise hi aap print karenge to dekhiye
+ yeh yahan pe (browser console mei) sabse end mei Monday wala div aa gaya-->
+
+<!-- abhi iss for loop ko wapas se comment out kar dete hai, kyuki
+  loop ki to jarurat hai nahi ab taki dekh to payein values kya aa
+  rahi hai humare pas browser console mei-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent); commented out
+    console.log(parent.children); commented out
+    console.log(parent.children[1]); commented out
+    console.log(parent.children[1].innerHTML); commented out
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+        
+    } commented out
+    parent.children[1].style.color = "orange"
+    console.log(parent.firstElementChild)
+</script>
+</html> -->
+
+<!-- to dekhiye firstElementChild jaise hi humne likha to humare pas
+ value konsi aa gayi pora ka pora wo jo Monday wala child tha
+ obvious si baat hai wo hi (Monday wala div) first child hai
+ to yahan pe humare pas select hoke aa gaya hai,
+ ab iske (Monday wale div ke) andar innerHTML agar apko change
+ karna hai nahi karna wo alag baat hai (10:25) lekin yeh property
+ (firstElementChild) kaafi interesting hoti hai aur kaafi kaam aati hai-->
+
+<!-- yeh (firstElementChild) sirf ek property nahi hai jaise firstElementChild
+ hai waise aap lastElementChild bhi select kar sakte hai -->
+
+<!-- console.log(parent.lastElementChild) likh liya code editor mei-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent); commented out
+    console.log(parent.children); commented out
+    console.log(parent.children[1]); commented out
+    console.log(parent.children[1].innerHTML); commented out
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+        
+    } commented out
+    parent.children[1].style.color = "orange"
+    console.log(parent.firstElementChild)
+    console.log(parent.lastElementChild)
+</script>
+</html> -->
+
+<!-- yeh aage jaake bahut kaam mei aati hai JavaScript se jab aap
+ kisi ko target kar rahe ho koi element ko uska first value aapko
+ lena hai aapne bahar ka parent to target kar liya hai , inner tak
+ jaane ki jagah aap usi jo target ho chuka hai ek bar aa chuka hai
+ usi ke saath firstElement , lastElement laga ke easily aap kar 
+ sakte hai iss tareh se (as above)-->
+
+<!-- 10:48 -->
+
+<!-- achha sirf itna hi nahi hai hota hai actually mei jaise hum 
+ parent se child pe move kar rahe hai dekhiye 
+ firstelementChild ( console.log(parent.firstElementChild) ),
+ lastelementChild ( console.log(parent.lastElementChild) )
+ yeh kar kya rahe hai yeh hume parent se child pe move kara rahe hai-->
+
+<!-- isi tareh se aap child se parent pe bhi move kar sakte hai (11:01) -->
+
+<!-- to aisa nahi hai har bar wo selector etc likhna pade, kaafi 
+ save ho jata hai kaam -->
+
+<!-- to aap kya kar sakte hai jaise suppose kariye document dot
+ (document. likh liya code editor mei) querySelector 
+ (document.querySelector() likh liya code editor mei) 
+ ab aapne querySelector diya hai kis cheej ka dot day ka (class ka naam day hai)
+ (document.querySelector('.day') likh liya code editor mei)
+ to obvious si baat hai day hi select hoga aur querySelector hai
+ na ki querySelectorAll to jo first value mil jayegi bas wo hi hume de
+ dega -->
+
+<!-- to const aur isko ( document.querySelector('.day') ) bol dete hai dayOne -->
+
+<!-- const dayOne = document.querySelector('.day') likh liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent); commented out
+    console.log(parent.children); commented out
+    console.log(parent.children[1]); commented out
+    console.log(parent.children[1].innerHTML); commented out
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+        
+    } commented out
+    parent.children[1].style.color = "orange"
+    console.log(parent.firstElementChild);
+    console.log(parent.lastElementChild);
+
+    const dayOne = document.querySelector('.day')
+</script>
+</html> -->
+
+<!-- yeh ho gaya humara dayOne select theek hai ji 
+ ab kya karte hai isko (firstElementChild lastElementChild line ko) thoda sa 
+ hum comment out kar dete hai taki hume dikhe actually mei kya value
+ ayi hai-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent); commented out
+    console.log(parent.children); commented out
+    console.log(parent.children[1]); commented out
+    console.log(parent.children[1].innerHTML); commented out
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+        
+    } commented out
+    parent.children[1].style.color = "orange"
+    console.log(parent.firstElementChild); commented out
+    console.log(parent.lastElementChild); commented out
+
+    const dayOne = document.querySelector('.day')
+</script>
+</html> -->
+
+<!-- save karte hai aur ise ( const dayOne = document.querySelector('.day') )
+ console.log karvate hai aur isko bolte hai ki kya kariye dayOne-->
+
+<!-- console.log(dayOne) likh liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent); commented out
+    console.log(parent.children); commented out
+    console.log(parent.children[1]); commented out
+    console.log(parent.children[1].innerHTML); commented out
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+        
+    } commented out
+    parent.children[1].style.color = "orange"
+    console.log(parent.firstElementChild); commented out
+    console.log(parent.lastElementChild); commented out
+
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne)
+</script>
+</html> -->
+
+<!-- yeh lijiye dayOne kya print hoga to yeh dayOne jo print hua hai
+ humare pas wo
+ Monday hua hai kyuki Monday hi target kara hai-->
+
+<!-- to Monday wala div aa gaya browser console mei -->
+
+<!-- Lekin suppose kariye aapke pas dayOne already agar rakha hai kisi
+ variable mei aur uske through aap chahte hai ki nahi (11:46) mujhe to
+ ab parent pe jaana hai to bar bar yeh querySelector , querySelector
+ itna aasaan nahi hai thoda sa expensive operation hai poora performance
+ kar raha hai thread ke through jaa raha hai, aakhir hai kya DOM poora
+ ka poora ek tree structure hai to pore tree ko traverse karna ,
+ fir aap kahenge dekhiye yahan pe wapas se DSA ki baat shuru kar di,
+ obvious si baat hai lekin pehle product hai samajh mei aa raha hai ki
+ DOM kyu hai tabhi to DSA ka importance samajh mei ayega (12:06)-->
+
+<!-- direct hi tree ko traverse karne lag gaye ek tree ko bina matlab
+ gali dene lag agye, ek tree ko bol rahe hai nahi yeh bahut achha hai
+ are aise thodi na hota hai, samajh mei ayega ki haa yahan pe hum usko
+ use kar rahe hai pora tree model hai traverse kar rahe hai to
+ querySelector mei time lagta hai 12:19-->
+
+<!-- lekin ab pata hai ki mai uske seedhe parent pe hi jaana chahta
+ hu seedhe , parent pe hi jump karna hai, to wapas se kyu poora
+ tree traverse karana hai, thoda sa optimize kar lete hai isko-->
+
+<!-- to wapas se hum aate hai console.log() pe -->
+
+<!-- console.log() likh liya code editor mei -->
+
+<!-- aur bolte hai ki theek hai aapke pas dayOne to tha hi -->
+
+<!-- console.log(dayOne) likh liya code editor mei -->
+
+<!-- ab dayOne se aap kya kar sakte hai simply aap iske (dayOne ke) 
+ parent
+ par chal jayiye -->
+
+<!-- to isko bol dete hai ki aap mujhe parentElement bata dijiye
+ kya hai (12:38) -->
+
+<!-- console.log(dayOne.parentElement) likh liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent); commented out
+    console.log(parent.children); commented out
+    console.log(parent.children[1]); commented out
+    console.log(parent.children[1].innerHTML); commented out
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+        
+    } commented out
+    parent.children[1].style.color = "orange"
+    console.log(parent.firstElementChild); commented out
+    console.log(parent.lastElementChild); commented out
+
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne);
+    console.log(dayOne.parentElement);
+</script>
+</html> -->
+
+<!-- save and run -->
+
+<!-- dekhiye yeh parentElement batayega -->
+
+<!-- to yeh lijiye aapke pas pora parentElement (parent wala div) 
+ aa gaya hai yahan pe (browser console mei) (12:43) -->
+
+<!-- parentElement ko dropdown open karke dekh liya -->
+
+<!-- aur aapko jo chahiye wo aap kar sakte hai -->
+
+<!-- parentElement ka dropdown close kar diya -->
+
+<!-- theek hai -->
+
+<!-- 12:49 -->
+
+<!-- achha sirf itna hi nahi hai aisa nahi hai
+  ki sirf parent hi aap track kar sakte hai , aapke pas ek aur option
+  hota hai ki aap chahein to wahan pe nextElementSibling pe bhi
+  ja sakte hai-->
+
+<!-- console.log(dayOne.nextElementSibling) likh liya code editor mei-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent); commented out
+    console.log(parent.children); commented out
+    console.log(parent.children[1]); commented out
+    console.log(parent.children[1].innerHTML); commented out
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+        
+    } commented out
+    parent.children[1].style.color = "orange"
+    console.log(parent.firstElementChild); commented out
+    console.log(parent.lastElementChild); commented out
+
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne);
+    console.log(dayOne.parentElement);
+    console.log(dayOne.nextElementSibling);
+</script>
+</html> -->
+
+<!-- Sibling matlab bhai to obvious si baat hai Monday (dayOne ka) ka
+ bhai Tuesday, Tuesday ka bhai Wednesday (13:04) -->
+
+<!-- to yeh nextElementSibling pe jaise hi hum jaate hai to obvious si
+ baat hai yahan pe dekhiye humare pas yeh Tuesday aa gaya hai with jo
+ bhi humne uske upar properties add kari thi styling colors etc jo
+ bhi hume karne mei maja aa raha tha to wo Tuesday aapne iss tareh se
+ select kar liya -->
+
+<!-- to browser console mei Tuesday wala div aa gaya -->
+
+<!-- achha ek do cheej aur batana chahenge aapko yahan pe jo
+ shayad aapko thoda sa surprise karegi , maja bhi ayega obvious si
+ baat hai theek hai -->
+
+<!-- to yahan pe kya hai ek console.log() aapko karke dikhate hai -->
+
+<!-- console.log() likh liya code editor mei aur isme likhte hai hum
+ simply yahan pe NODES 
+to console.log("NODES") likh liya code editor mei, 
+theek hai aur colon : aise kar lete hai
+to console.log("NODES: ",) likh liya code editor mei, -->
+
+<!-- ab hum yahan pe kya dete hai yahan pe , dekhiye yeh parent
+ humne select kar rakha tha
+ to console.log("NODES: ", parent) likh liya code editor mei ,
+ to iss parent ki kitni nodes hai, to yahan pe ek option aapko
+ milta hai childNodes
+ to console.log("NODES: ", parent.childNodes) likh liya code editor mei ,
+ iska... (childNodes) yeh bahut hi interesting option hai aur iske bare
+ mei achhe se pata hona chahiye-->
+
+<!-- yeh jitne console.log() karaye the (upar) yeh dekhiye kisi kaam ke
+ to hai nahi to matlab kaam ke to hai but abhi hume padhne ke liye nahi
+ chahiye to inn upar wale console.log() ko comment out kar diya and
+ console.log("NODES: ", parent.childNodes) likh liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent); commented out
+    console.log(parent.children); commented out
+    console.log(parent.children[1]); commented out
+    console.log(parent.children[1].innerHTML); commented out
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+        
+    } commented out
+    parent.children[1].style.color = "orange"
+    console.log(parent.firstElementChild); commented out
+    console.log(parent.lastElementChild); commented out
+
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne); commented out
+    console.log(dayOne.parentElement); commented out
+    console.log(dayOne.nextElementSibling); commented out
+
+    console.log("NODES: ", parent.childNodes)
+</script>
+</html> -->
+
+<!-- save and run -->
+
+<!-- ab dekhiye ab kya dikh raha hai apko (browser console mei) 
+ yeh NodeList (browser console mei) -->
+
+<!-- apko NodeList mei value kitni dikh rahi hai -- 9 
+ (browser console mei)  -->
+
+<!-- ab apko surprise hoga jab hum isko open karenge kyuki
+ aap soch rahe honge isme Monday Tuesday ... hoga -- nahi , aisa
+ nahi hota hai -->
+
+<!-- to NodeList(9) dropdown ko open kar liya (browser console mei) -->
+
+<!-- 14:07 -->
+
+<!-- NodeList ya childNodes jitne bhi hai wo actually mei poora
+ ek complex tree structure hai , jaise sir ne apko bataya tha
+ ki haa aapne turant samajh liya ki achha HTML hai uske andar
+ ek head hai, ek body hai, ab aap soch rahe honge achha day hai (.day class)
+ to iske (.day class ke) chaar (4) nodes (Monday to Thursday ,see code) 
+ honge , aa..., ki ek Monday, ek Tuesday, ek Wednesday , ek Thursday-->
+
+<!-- aisa nahi hai bahut sari cheejein alag hoti hai bahut sari cheejein
+ change hoti hai -->
+
+<!-- 14:28 -->
+
+<!-- to dekhiye yahan pe dikha raha hai 9 (in browser console)
+ NodeList(9) -->
+
+<!-- humare pas to yeh Monday Tuesday Wednesday Thursday (see in html code) 
+ yeh chaar (4) hi hai achha yeh hua kaise-->
+
+<!-- dekhiye document sir ne jab apko kaha Document Object Model (DOM)
+ to yeh pora ek tree structure hai har ek cheej ki ek importance hai -->
+
+<!-- jaise ki aap parent ke iss div ke baad (see html code) aapne
+ ek line break diya hai as follows
+ 
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+        
+to wo (line break) bhi ek node element hai (line break line number 1319
+and line number 1320 ke beech wala hai) 14:45-->
+
+<!-- uske baad yahan pe (Monday see html code) aapne jo values di hai
+ fir yahan pe bhi aake line number 1320 pe bhi ek enter hua hai
+ uske baad next line mei likha hai , wo bhi ek text node (node element)
+hai-->
+
+<!-- to yeh (line break) sare ke sare NodeList hoti hai -->
+
+<!-- to har ek parent ya har ek element hai uske andar aapki
+ node... childNodes hoti hai ( console.log("NODES: ", parent.childNodes) see code) , 
+ usse (childNodes) hume pata lagta hai ki
+ actually mei yeh itna sa jo tree... aa... (as follows)
+ 
+     <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+    
+aapne yeh kiya hai to browser behind the scene kitna complex tree structure 
+bana raha hai , tabhi to log kehte hai hume aur optimize JavaScript
+chahiye, kyuki web (web browser) itna optimize hai hi nahi, aur hoga bhi nahi kabhi
+kyuki bahut sara kaam karta hai lekin behind the scene karta hai-->
+
+<!-- 15:16 -->
+
+<!-- to dekhiye sabse pehle kya aya isne bola ek zero text element hai 
+ (see dropdown of NodeList(9) 0: text)-->
+
+<!-- zero text element kyu hai kyuki yahan pe as follows 
+
+     <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+
+ yahan pe (means line 1361 pe) aapne ek enter kara, to uss enter ko
+ wo count kar raha hai text element se-->
+
+<!-- fir usne kara div.day (see dropdown of NodeList(9) 1: div.day) 
+haa ji div.day hai yeh pora ka pora (Monday wali line 1362)
+lekin iska (Monday wali line 1362) bhi complex structure hai jo ki
+aap kholenge yahan pe (browser console mei 1 ko dropdown open
+karenge) open karenge to dikhayi dega ki kya kya cheejein isne null di hai
+(see dropdown of 1:div.day) , obvious si baat hai values to sari
+ho sakti thi, humne nahi di hai wo baat alag hai (scroll down to see
+dropdown of 1: div.day)-->
+
+<!-- 15:37 -->
+
+<!-- to dekhiye yahan pe (1 ke dropdown mei) kitne hai apke pas 
+ iske bhi (1 ke dropdown) childNodes hai further aur children hai 
+ iske (children ke) andar bhi HTMLCollection hai
+ aap chahein to isko (children ko) bhi open kar sakte hai, abhi 
+ kuch bhi nahi hai iske (children ke) andar-->
+
+<!-- aur bhi values hai hidden hai (hidden: false) 
+ ids hai (id: "") , innerHTML hai (innerHTML: "Monday"),
+ innerText hai jo bhi values hum dekh (likh) rahe the wo sari yahan pe
+ (1 ke dropdown mei) available hai-->
+
+<!-- 1 ke dropdown ko close kar diya -->
+
+<!-- uske baad aapne ek enter kara (Monday line 1362 pe enter kara)
+ fir se text aa gaya (browser console mei 2:text)-->
+
+<!-- fir ek div.day aya (Tuesday wali line 1363 div.day) (3: div.day
+ see browser console) (see browser console and code together)-->
+
+<!-- fir text aya (4: text) (enter kiya isliye)
+ (see browser console and code together)-->
+
+<!-- fir div.day aya (5: div.day) (see browser console and code together)-->
+
+<!-- to iss tareh se apke pas total 9 elements hai 
+ (see browser console and code together)-->
+
+<!-- 16:00 -->
+
+<!-- achha jaise hi aap kya karenge suppose kariye aapne kaha hai
+ ki mai to ek aur line enter kar dunga (just after class = "parent") 
+ as follows -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent); commented out
+    console.log(parent.children); commented out
+    console.log(parent.children[1]); commented out
+    console.log(parent.children[1].innerHTML); commented out
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+        
+    } commented out
+    parent.children[1].style.color = "orange"
+    console.log(parent.firstElementChild); commented out
+    console.log(parent.lastElementChild); commented out
+
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne); commented out
+    console.log(dayOne.parentElement); commented out
+    console.log(dayOne.nextElementSibling); commented out
+
+    console.log("NODES: ", parent.childNodes)
+</script>
+</html> -->
+
+<!-- ab kitni values ayegi (see browser console) dekhiye wapas se 9
+ NodeList(9) kyuki html mei ek line break to count hota hai uske baad
+ aap kitne bhi line break dijiye, browser usko render pe nahi jaata hai-->
+
+<!-- but suppose kariye ek aap yahan pe comment likh dete hai 
+ (just after class = "parent")-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+    this is a comment commented out   
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent); commented out
+    console.log(parent.children); commented out
+    console.log(parent.children[1]); commented out
+    console.log(parent.children[1].innerHTML); commented out
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+        
+    } commented out
+    parent.children[1].style.color = "orange"
+    console.log(parent.firstElementChild); commented out
+    console.log(parent.lastElementChild); commented out
+
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne); commented out
+    console.log(dayOne.parentElement); commented out
+    console.log(dayOne.nextElementSibling); commented out
+
+    console.log("NODES: ", parent.childNodes)
+</script>
+</html> -->
+
+<!-- yeh lijiye comment likh diya -->
+
+<!-- ab kitne elements aa jayenge node (16:20) kyuki node mei aapne
+ ek comment bhi add kar diya to obvious si baat hai ab 9 se seedha 11
+ ho gaye hai (see browser console NodeList(11))-->
+
+<!-- kyu 11 ho gaye hai 
+( NodeList(11) dropdown open karke dekh liya ) 
+kyuki ek line break extra aa gaya hai (0:text pe hover kiya sir ne browser console mei)
+ (parent pe enter fir uske baad ek aur line break extra) uske baad
+ ek comment aya (1: comment see browser console) (this is a comment) 
+ uske baad text aya (2: text see browser console) (this is a comment)-->
+
+<!-- 16:29 -->
+
+<!-- to har ek element har ek value ka yahan pe ek significance hai
+ importance hai-->
+
+<!-- timestamp (16:37) ki yahan pe hum NodeList ke bare mei
+ discussion kar rahe hai-->
+
+<!-- NodeList(11) dropdown ko close kar diya -->
+
+<!-- aur yeh hi jo apke childNodes hai na ( console.log("NODES: ", parent.childNodes) see code )
+  yeh aage jaake logo ko
+ bahut confuse karte hai -->
+
+<!-- Infact aapka jitna bhi React bana hua hai na wo 
+ isi childNodes ( console.log("NODES: ", parent.childNodes) see code )
+ ke upar agar aap React ka kabhi github open karke dekhenge to wahan pe
+ bahut sare manipulation memory ke andar daal ke childNodes ke
+ through hi karte hai-->
+
+<!-- to agar react ka kabhi aapko open source contribution karna hai behind
+ the scene dekhna hai to wo yahan se (childNodes se) hota hai ,
+ kabhi fursat mei discuss karenge uska (React ka) behind the scene bhi
+ ki kaise bana hai kya karega agar aap sir ko request karenge to -->
+
+<!-- 17:01 -->
+
+<!-- theek hai ab yeh samajh mei aa gaya ab childNodes kaise hote hai
+ kya hote hai kaafi achha discussion ho gaya humara -->
+
+<!-- ab yeh to traversing ho gayi ki parent se child pe,
+ child se parent pe, sibling pe, past sibling pe , next sibling pe,
+ yeh sab to hume samajh mei aa gaya aur NodeList bhi samajh mei
+ aa gaya -->
+
+<!-- ab hum kya karte hai ab thoda sa seekhte hai ki yeh jo NodeList
+ hai hum programmitically kaise create karte hai (17:18) -->
+
+<!-- theek hai to open karte hai folder file side bar ko 
+ aur ek aur nayi file bana lete hai 06_dom ke andar
+ thoda sa separate rahe mamla to achha rahega notes padhne
+ mei-->
+
+<!-- to three.html file bana li 06_dom folder ke
+ andar and move on to three.html file -->

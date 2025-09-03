@@ -1,0 +1,883 @@
+<!-- 17:29 -->
+
+<!-- yeh humara ho gaya basic-->
+
+<!-- emmet likh liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html> -->
+
+<!-- aur body ke andar hum kuch bhi nahi likhenge -->
+
+<!-- Lekin yahan pe (title tag mei) Chai aur code
+ jarur likhenge-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body>
+    
+</body>
+</html> -->
+
+<!-- ab isko bhi right click open with live server 
+ kar liya browser mei -->
+
+<!-- 17:52 -->
+
+<!-- two.html ke body ki style tag se css copy paste
+ kar li -->
+
+<!-- 18:09 -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;"></body>>
+    
+</body>
+</html> -->
+
+<!-- chaliye to ab hum yahan pe kuch bhi nahi likhne 
+ wale hai iske andar yeh as it is hi rakhenge hum body
+ ko, hum seedha chalte hai body ke neeche-->
+
+<!-- theek hai to abhi body ke andar kuch bhi inject 
+ nahi kar rahe hai-->
+
+<!-- aa... actually mei yeh sari values 
+ (body ki css style values) hume thodi si
+ problem karegi kyuki hum direct uski values ke andar
+ colors etc abhi inject nahi kar rahe but uske bare mei
+ baad mei dekhenge -->
+
+<!-- 18:29 -->
+
+<!-- pehle ek add karte hai humara script tag -->
+
+<!-- to script tag likh liya body tag ke neeche -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;"></body>>
+    
+</body>
+<script></script>
+</html> -->
+
+<!-- folder file side bar ko hide kar lete hai -->
+
+<!-- theek hai ab script tag ke andar kya karna hai, apko create karna
+ hai ek div element , bada hi basic sa hai element konsa div element -->
+
+<!-- to agar hum document ke andar jaise getElementById aa... querySelector
+ yeh sab hume pata hai, to agar ek bar pata lag jaye ki element kaise 
+ create karna hai uske baad to hum loop bhi laga lenge, function mei
+ bhi usko rakh denge sara kaam kar lenege, theek hai-->
+
+<!-- to yeh aap likhte hai sabse pehle document -->
+
+<!-- to document likh liya code editor mei in script tag -->
+
+<!-- ab uske upar (document jo likha hai script tag ke andar uske upar) 
+ ek method apko hai (document.c likha code editor mei),
+ (suggestion list mei createAttribute show kar raha hai) 
+ dekhiye jaise createAttribute hai vaise hi ek createElement bhi hai-->
+
+<!-- to document.createElement() likh liya code editor mei  -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;"></body>>
+    
+</body>
+<script>
+    document.createElement()
+</script>
+</html> -->
+
+<!-- theek hai konsa element create karna hai bas uska naam de dijiye
+ h1 create karna hai ( document.createElement('h1') ) 
+ ya apko div create karna hai ( document.createElement('div') )
+ apka jo man kare wo aap create kar sakte hai -->
+
+<!-- to document.createElement('div') likh liya code editor mei -->
+
+<!-- theek hai ab isko ( document.createElement('div') ) hum kya
+ karte hai ek variable mei hold kar lete hai -->
+
+<!-- isko ( document.createElement('div') ) div hi bol dete hai -->
+
+<!-- const div = document.createElement('div') likh liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;"></body>>
+    
+</body>
+<script>
+    const div = document.createElement()
+</script>
+</html> -->
+
+<!-- yeh lijiye variable mei hold kar liya -->
+
+<!-- ab aapke div variable ke andar actually mei hai kya , haa ji yeh to
+ jaan ne layak baat hai-->
+
+<!-- console.log(div) likh liya code editor mei-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;"></body>>
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+</script>
+</html> -->
+
+<!-- console.log() to karke dekhna hi padega -->
+
+<!-- dekhiye right click karke inspect kiya and browser console mei gaye-->
+
+<!-- dekhiye ye raha (in browser console) humara div element aa gaya hai-->
+
+<!-- achha div ki jagah agar hum iske andar h1 create karte to
+ kya hota -->
+
+<!-- yeh lijiye h1 karke dekh lete hai -->
+
+<!-- const div = document.createElement('h1') likh liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;"></body>>
+    
+</body>
+<script>
+    const div = document.createElement('h1')
+    console.log(div);
+</script>
+</html> -->
+
+<!-- h1 element aa gaya hai browser console mei -->
+
+<!-- 19:45 -->
+
+<!-- theek hai achha element abhi bhi yahan pe (webpage pe) hume
+  webpage pe hume nahi dikh raha hai-->
+
+<!-- theek hai wo koi baat nahi dikh jayega itni koi badi baat hai hi nahi -->
+
+<!-- abhi isko ( const div = document.createElement('h1') ) wapas se
+ hum div kar dete hai kyuki variable ka naam bhi div hai -->
+
+<!-- const div = document.createElement('div') likh liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;"></body>>
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+</script>
+</html> -->
+
+<!-- theek hai, ab kya karna hai hume iss div element ke andar peoperties / attributes
+ add karni hai jaise ki kabhi aapko class name add karna hota hai,
+ kabhi id add karna hota hai to jaisa ki humne dekha NodeList ke andar
+ ki har ek element jo hai individually wo ek pora NodeList hai,
+ uske andar values sari available hai, ArialText se leke, aapke ids,
+ classes sab kuch , lekin wo set nahi hai values-->
+
+<!-- 20:13 -->
+
+<!-- to hum kya kar sakte hai iss div (const div) ke upar seedha bol
+ sakte hai ki div ek kaam karo (div. likh liya code editor mei)
+ mujhe ek class name set karna hai to obvious si baat hai className
+ (sirf class mat karna className karna)
+ (div.className likh liya code editor mei)
+ theek hai to className konsi add karni hai -- "main" kar dete hai
+ iske (const div , div.) upar-->
+
+<!-- (div.className = "main" likh liya code editor mei) -->
+
+<!-- main koi div hai yeh theek hai ji (means ek aisa div jiski class
+ ka naam main hai) -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;"></body>>
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = "main"
+</script>
+</html> -->
+
+<!-- iske (const div) upar ek id add karni hai,
+ to div.id likh liya code editor mei,
+ ab aap chahein to id ko iss tareh se kar sakte hai -- "myId" yeh lijiye -->
+
+<!-- div.id = "myId" likh liya code editor mei-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;"></body>>
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = "main"
+    div.id = "myId"
+</script>
+</html> -->
+
+<!-- yeh add kar diya humne to dekhiye (see in browser console) 
+ uske upar (div element ke upar) sari class bhi add ho gayi , id bhi add ho gayi-->
+
+<!-- 20:38 -->
+
+<!-- thoda sa fun karein JavaScript ke saath, to hum kya chahte hai
+ ki iss id ( div.id = "myId" ) ko hum iss tareh ( div.id = "myId" )
+ se naa karke hum Math library use karenge aur Math.random de dete hai -->
+
+<!-- div.id = Math.random likh liya div.id = "myId" ki jagah code
+ editor mei -->
+
+<!-- aur function hai (means Math.random function hai) by default
+ function hai Sir nahi define kar rahe , to yeh Math.random() ho
+ gaya hai-->
+
+<!-- div.id = Math.random() likh liya div.id = "myId" ki jagah code
+ editor mei -->
+
+<!-- to id ke andar ( div.id = Math.random() ) ke andar value konsi aa 
+ gayi hai -- 0.8092... jo bhi bada sa number hai-->
+
+<!-- theek hai -->
+
+<!-- 20:56 -->
+
+<!-- theek hai isko ( div.id = Math.random() ) kya karte hai hum
+ seedha sa , aa... multiply kar dete hai isko ( div.id = Math.random() ) 
+ 10 se (Math.random ki range ko apne anusar modify karne ke liye, 
+ 10 se multiply kar diya for convinience)-->
+
+<!-- div.id = Math.random() * 10 likh liya div.id = "myId" ki jagah code
+ editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;"></body>>
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = "main"
+    div.id = Math.random() * 10
+</script>
+</html> -->
+
+<!-- ab obvious si baat hai ek decimal place Sir ne sarka diya hai
+ yahan pe, theek hai save kar lete hai, jitni bar bhi aap 
+ save karenge utni bar nayi ids generate ho rahi (see in browser console)
+ as bada sa decimal number har bar change ho raha hai browser console mei
+ jo ki har bar save karne par hota hai Math.random ke case mei-->
+
+<!-- kyu kar rahe hai pata nahi just for fun maja aa raha hai kar rahe
+ hai -->
+
+<!-- to iske ( div.id = Math.random() * 10 ) andar ek + 1 bhi
+ kar lete hai taki zero element kabhi naa aye (Math.random ki range
+ ko again modify kar liya apne anusar for convinience + 1 karke
+ taki Math.random ki range mei 0 nahi aye)
+ 
+ kyu bas karne ka man tha-->
+
+<!-- div.id = Math.random() * 10 + 1 likh liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;"></body>>
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = "main"
+    div.id = Math.random() * 10 + 1
+</script>
+</html> -->
+
+<!-- achha iss library ( Math.random() * 10 + 1 in div.id = Math.random() * 10 + 1 )
+ke alawa aap kya kar sakte hai , 
+aap isko ( Math.random() * 10 + 1 in div.id = Math.random() * 10 + 1 )
+round off bhi kar sakte hai -->
+
+<!-- to yeh lijiye humne isko ( Math.random() * 10 + 1 ) bracket
+ mei wrap kar diya-->
+
+<!-- div.id = (Math.random() * 10 + 1) likh liya code editor mei -->
+
+<!-- aur uske baad hum isko ( (Math.random() * 10 + 1) ) kya karte hai 
+ fir se library use kar lete hai (just eg) Math.round (round off karne
+ ke liye)-->
+
+<!-- div.id = Math.round(Math.random() * 10 + 1) likh liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;"></body>>
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = "main"
+    div.id = Math.round(Math.random() * 10 + 1)
+</script>
+</html> -->
+
+<!-- to dekhiye iss library Math.round(Math.random() * 10 + 1) / Math.round
+ ke bare mei aur bhi baad mei baat karenge par dekhiye ab apke pas
+ id 1 hai save karne ke baad , wapas save karo to ab apke
+ pas id 7 hai (Math.random mei ek range mei har bar new random number 
+ generate hota hai har bar save karne ke baad) -->
+
+<!-- 21:37 -->
+
+<!-- to just for fun humne ek random id yahan pe insert kar di
+ isi tareh se ab database mei bhi agar koi random hume generate karna
+ hai to hum add karke generate karke database mei save kar dete hai
+ koi bada kaam nahi hai wo bhi hum kar hi denge seekhenge hi wo to -->
+
+<!-- chaliye theek hai yeh to ho gaya hansi majak -->
+
+<!-- ab aapko aur attribute select karne hai to kaise karein dekhiye yeh
+ kuch attributes to by default hote hai kyuki humesha kaam aate hai 
+ className ids but baaki aur agar attributes ya custom attributes 
+ set karne hai to uske liye aapke pas direct ek method hai 
+ div. jo bhi aapne div set kar rakha hai 
+ (div ka naam, const div = document.createElement('div') ,see code)
+ uske baad hai humare pas setAttribute-->
+
+<!-- div.setAttribute likh liya code editor mei -->
+
+<!-- setAttribute kya karta hai apko attribute dene hai bas ki
+ kon konse attribute hai key aur value mei-->
+
+<!-- div.setAttribute() likh liya code editor mei -->
+
+<!-- to maine kaha ki mujhe title set karna hai -->
+
+<!-- div.setAttribute("title") likh liya code editor mei -->
+
+<!-- aur title ki value kya set karni hai mujhe ki aa...
+ -- generated title -->
+
+<!-- div.setAttribute("title", "generated title") likh liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;"></body>>
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = "main"
+    div.id = Math.round(Math.random() * 10 + 1)
+    div.setAttribute("title", "generated title")
+</script>
+</html> -->
+
+<!-- 22:19 -->
+
+<!-- theek hai kyu karni hai theek hai aap kuch aur bhi kar sakte hai 
+ chai aur code dijiye jo aapka man kare-->
+
+<!-- to dekhiye ab div ho gaya hai ( const div = document.createElement('div') )
+  class aa gayi ( div.className = "main" )
+  id aa gayi ( div.id = Math.round(Math.random() * 10 + 1) ) (22:26) 
+  title bhi aa gaya ( div.setAttribute("title", "generated title") ) 
+  aur bhi kuch aapko dena hai to aur bhi kuch de sakte hai-->
+
+<!-- styling add kar sakte hai kya iske andar haa ji bilkul
+ styling karenge hi karenge kyu nahi karenge -->
+
+<!-- to hum kya karte hai aa... div.style likh liya code editor mei -->
+
+<!-- div.style.backgroundColor = "green" likh liya code editor mei-->
+
+<!-- achha lagega green black ke upar -->
+
+<!-- thodi paddiing bhi de dete hai -->
+
+<!-- div.style.padding = "12px" likh liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;"></body>>
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = "main"
+    div.id = Math.round(Math.random() * 10 + 1)
+    div.setAttribute("title", "generated title")
+    div.style.backgroundColor = "green"
+    div.style.padding = "12px"
+</script>
+</html> -->
+
+<!-- but mudde ki baat yeh hai ki humne yeh sab to de liya aur yeh sab hume
+ dikhayi bhi de raha hai ki theek hai aapne sab kuch de diya (see in browser console) but
+ wo yahan pe page pe (webpage pe) display kyu nahi ho raha -->
+
+<!-- kyuki aapne ek div create kara wo div abhi memory ke andar hai ,
+ hai na , memory ke andar hai , page (webpage) ke upar nahi aya-->
+
+<!-- page pe (webpage pe) kaise attach hoga jab document ko aap
+ bolenge ki iss child ko attach to karo apne pas to wo attaching kaise
+ hoti hai wo bhi dekh lete hai hum -->
+
+<!-- 23:21 -->
+
+<!-- theek hai -->
+
+<!-- to sabse pehle kya hai dekhiye ek aur cheej bata dete hai Sir
+ isse pehle thodi optimization ki , ki uss div ke andar actually mei humne
+ kuch likha hi nahi -->
+
+<!-- to aap sochenge ki div.innerText ya div.innerHtml use kar leta
+ hu aur iske andar likh denge seedha sa "Chai aur code"-->
+
+<!-- div.innerText = "Chai aur code" likh liya code editor mei-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;"></body>>
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = "main"
+    div.id = Math.round(Math.random() * 10 + 1)
+    div.setAttribute("title", "generated title")
+    div.style.backgroundColor = "green"
+    div.style.padding = "12px"
+    div.innerText = "Chai aur code"
+</script>
+</html> -->
+
+<!-- yeh lijiye Chai aur code likh diya aapne-->
+
+<!-- aur uske andar (browser console mei) Chai aur code aa bhi gaya-->
+
+<!-- isko (Chai aur code) hum print bhi kar denge -->
+
+<!-- Lekin actually mei kya hai kayi jagah jab aap books padhenge
+ optimization dekhenge kayi talks bhi dekhenge kayi achhe developers
+ ki to wo bolte hai ki dekhiye jahan pe aapke pas yeh option nahi
+ hai available jaise yahan pe id (see code div.id) ke andar ya attribute (setAttribute see code)
+ ke andar
+ yeh wala option ( div.setAttribute("title", "generated title") )
+ log jada prefer karte hai kyu kyuki yeh jo dot className hai (see code)
+ ya fir yeh jo dot innerText hai (see code) yeh actually mei kya
+ karta hai over-write karta hai values ko, jo bhi values wahan pe hai
+ usko select karke lata hai pehle aur fir aap usme set kar rahe hai to
+ values ko set karta hai (jaise div.innerText = "Chai aur code")-->
+
+<!-- 24:09 -->
+
+<!-- Lekin yeh jo setAttribute hai ( div.setAttribute("title", "generated title") ) 
+ yeh pehle uss value ko leke nahi aata, yeh direct hi uske andar set karta hai
+ to ek round trip bachta hai wahan pe-->
+
+<!-- to innerText ( div.innerText = "Chai aur code" ) kya hai
+ usi tareh se hai ki pehle uss values ko leke ayega (24:19) uska reference,
+ fir uske baad over-write karega-->
+
+<!-- to log aksar prefer kya karte hai, log prefer karte hai ki aap
+ seedhe kya kariye aa..., document lijiye -->
+
+<!-- document likh liya code editor mei -->
+
+<!-- aur uske (document) andar kya kariye seedha createTextNode
+ ek value hai humare pas ki text ki node banani hai humne NodeList mei
+ dekha tha kaafi sari NodeList thi-->
+
+<!-- document.createTextNode likh liya code editor mei -->
+
+<!-- to TextNode isne ( document.createTextNode ) seedha hi create kar di -->
+
+<!-- document.createTextNode() likh liya code editor mei -->
+
+<!-- aur TextNode ke andar likh diya Chai aur code -->
+
+<!-- document.createTextNode("Chai aur code") likh liya code editor mei -->
+
+<!-- isko ( div.innerText = "Chai aur code" ) hum comment out kar lete hai 
+ kyuki abhi hum uske innerText mei nahi jaa rahe hai hum khud apna Node
+ create kar rahe hai TextNode -->
+
+<!-- 24:47 -->
+
+<!-- theek hai ji yeh TextNode aapka create ho gaya 
+ isko ( document.createTextNode("Chai aur code") ) ek variable mei
+ hold kar lijiye 24:51-->
+
+<!-- isko ( document.createTextNode("Chai aur code") ) bol dete hai 
+ hum const addText , jo bhi text aapko add karna hai-->
+
+<!-- const addText = document.createTextNode("Chai aur code") likh
+ liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;"></body>>
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = "main"
+    div.id = Math.round(Math.random() * 10 + 1)
+    div.setAttribute("title", "generated title")
+    div.style.backgroundColor = "green"
+    div.style.padding = "12px"
+    div.innerText = "Chai aur code" commented out
+    const addText = document.createTextNode("Chai aur code")
+</script>
+</html> -->
+
+<!-- ab kya karenge yeh TextNode create ho gaya ab iss node
+ ko hum add kar denge div ke andar -->
+
+<!-- to div ko bolenge ki aap ek append karo child ko kyuki dekha
+ tha humne bahut sare children the -->
+
+<!-- div.appendChild likh liya code editor mei -->
+
+<!-- isliye to wo sare children wahan pe padha rahe the sir aapko -->
+
+<!-- isko seedha humne append kara child ko -->
+
+<!-- div.appendChild() likh liya code editor mei -->
+
+<!-- aur seedha bola ki aap -- addText kar do -->
+
+<!-- div.appendChild(addText) likh liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;"></body>>
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = "main"
+    div.id = Math.round(Math.random() * 10 + 1)
+    div.setAttribute("title", "generated title")
+    div.style.backgroundColor = "green"
+    div.style.padding = "12px"
+    div.innerText = "Chai aur code" commented out
+    const addText = document.createTextNode("Chai aur code")
+    div.appendChild(addText)
+</script>
+</html> -->
+
+<!-- ab dekhiye iske upar bahut debate hai -->
+
+<!-- kuch log kehte hai itna as follows 
+ 
+    const addText = document.createTextNode("Chai aur code")
+    div.appendChild(addText)
+
+kyu karna hai seedhe hi 
+ innerText ( div.innerText = "Chai aur code" )
+ ko likh dijiye yahan pe ( div.innerText = "Chai aur code" ) bhi
+ to 2 hi round trip ho rahe hai-->
+
+<!-- 25:20 -->
+
+<!-- kuch log kehte hai yahan pe as follows 
+
+    const addText = document.createTextNode("Chai aur code")
+    div.appendChild(addText)
+
+bhi to 2 hi step mei kaam ho raha hai -->
+
+<!-- pehle aapne textNode create kara as follows 
+
+const addText = document.createTextNode("Chai aur code")
+
+-->
+
+<!-- fir usko (textNode ko) attach kara as follows 
+ 
+div.appendChild(addText)
+
+-->
+
+<!-- kaam to wo hi ho raha hai -->
+
+<!-- to iss debate pe hum kabhi aur jayenge ki konsa optimized 
+ approach hai konsa nahi hai jab DSA etc ki kabhi baat karenge
+ tab actually mei real world DSA ki baat karenge wo sirf theoritical
+ link list etc ki hi baat nahi karenge inke ( link list ) real
+ implementation bhi dekhenge 25:37-->
+
+<!-- abhi ke liye hum dekhte hai abhi ke liye choice sir apke
+ upar chordte hai yeh bhi as follows 
+ 
+ ( div.innerText = "Chai aur code" )
+ 
+ sahi hai-->
+
+<!-- aur yeh bhi as follows
+
+    const addText = document.createTextNode("Chai aur code")
+    div.appendChild(addText)
+
+sahi hai-->
+
+<!-- aur aksar aap bhi debate karenge apne seniors ke saath 
+ juniors ke saath ki yeh karo yeh nahi karo -->
+
+<!-- achha finally aa jayein kyuki abhi tak kuch aaya nahi humare pas -->
+
+<!-- to finally ab hum isko add kar dete hai ya fir attach kar dete hai
+ document ke upar (25:55) -->
+
+<!-- to document pe kaise attach karenge, document liya -->
+
+<!-- document likh liya code editor mei -->
+
+<!-- uski (document ki) body li-->
+
+<!-- document.body likh liya code editor mei -->
+
+<!-- aur body pe hum usko bolenge ki aap kya kariye ek child ko
+ append kariye -->
+
+<!-- document.body.appendChild likh liya code editor mei -->
+
+<!-- theek hai jaise humne yeh div.appendChild(addText) likha tha
+  vaise hi hum document ko bol rahe hai ki aapki body ke andar
+  ek child append kar lo-->
+
+<!-- document.body.appendChild() likh liya code editor mei -->
+
+<!-- wo child kya hai -- div hai -->
+
+<!-- document.body.appendChild(div) likh liya code editor mei -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;"></body>>
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = "main"
+    div.id = Math.round(Math.random() * 10 + 1)
+    div.setAttribute("title", "generated title")
+    div.style.backgroundColor = "green"
+    div.style.padding = "12px"
+    div.innerText = "Chai aur code" commented out
+    const addText = document.createTextNode("Chai aur code")
+    div.appendChild(addText)
+
+    document.body.appendChild(div)
+</script>
+</html> -->
+
+<!-- to yeh lijiye humne jaise hi save kara to aapke pas ek naya element
+ yahan pe (webpage mei) generate ho gaya 
+ (Chai aur code white text green bgc)-->
+
+<!-- bas itna hi kaam hai dekhiye ab aapko document traverse karna bhi aa gaya
+ uske behind the scene details bhi aati hai, usko select karna bhi aa gaya,
+ usko generate karna bhi gaya-->
+
+<!-- 26:24 -->
+
+<!-- ab dekhiye ek bar aapka yeh agar div (as follows) ban gaya hai 
+ (as follows)
+ 
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = "main"
+    div.id = Math.round(Math.random() * 10 + 1)
+    div.setAttribute("title", "generated title")
+    div.style.backgroundColor = "green"
+    div.style.padding = "12px"
+    div.innerText = "Chai aur code" commented out
+    const addText = document.createTextNode("Chai aur code")
+    div.appendChild(addText)
+
+
+    to isko aap ek function mei wrap kar sakte ho create a new div
+    theek hai
+    -->
+
+<!-- uss function mei aap argument pass kar sakte ho ki aapko text 
+ yahan pe kya dena hai ya background color kya dena hai
+ -->
+
+<!-- aaram se kar loge ek function ke andar -->
+
+<!-- ab ek loop chala sakte ho aur uss loop ko bol sakte ho ki
+ tum 5 bar chalo, yeh yeh color le raha hu , ya fir yeh yeh / yeh color
+ ka array de raha hu , itne colors ke background use karo
+ aur yeh yeh text use karo -->
+
+<!-- 26:46 -->
+
+<!-- dekha iske baad (above div) ke baad to kuch bhi nahi hai
+ iske baad to sirf thodi mehnat hai kyuki logic to bas
+ itna sa (as follows) 
+ 
+     const div = document.createElement('div')
+    console.log(div);
+    div.className = "main"
+    div.id = Math.round(Math.random() * 10 + 1)
+    div.setAttribute("title", "generated title")
+    div.style.backgroundColor = "green"
+    div.style.padding = "12px"
+    div.innerText = "Chai aur code" commented out
+    const addText = document.createTextNode("Chai aur code")
+    div.appendChild(addText)
+
+    document.body.appendChild(div)
+
+sa hi hai jo aapko samajh mei aa gaya aur jo ki jada difficult
+ tha hi nahi kabhi
+ -->
+
+<!-- 26:56 -->
+
+<!-- maja aya hoga ki kis tareh se values ko add hoti hai 
+ kaise kaise DOM manipulate hota hai kya kya uske andar hum kar
+ sakte hai-->
+
+<!-- Class End -->
+
+
+
