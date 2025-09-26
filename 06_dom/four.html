@@ -1,0 +1,2024 @@
+<!-- Edit and remove elements in DOM -->
+
+<!-- basic exclamatory hit and tab 2 times and 
+ write Chai aur code in title tag , aur Chai aur code
+ ke saath hum DOM ke bare mei baat kar rahe hai-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    
+</body>
+</html> -->
+
+<!-- theek hai ji -->
+
+<!-- ab kya karte hai hum yahan pe body ke andar ayenge ,
+ iss body ke andar hum kya karte hai sabse pehle ek unordered list lete hai
+ uski (ul ki) hum class lagate hai language-->
+
+<!-- aur uske (ul ke) andar hum ek list item add karte hai
+ aur iss list item ke andar hum kya likhenge obvious si baat hai
+ javascript hi likhenge, aur to kya likheneg to yeh lijiye
+ humne javascript likh diya -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+</html> -->
+
+<!-- ab yeh dikhega kahan pe , obvious si baat hai right click
+ and open with live server -->
+
+<!-- thoda sa body ko bhi change kar lete hai (styling) -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+</html> -->
+
+<!-- ab humare ko kaam kya karna hai, humare ko jaana hai 
+ sabse pehle styling section mei-->
+
+<!-- to body ke neeche style tag likh liya -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<style>
+
+</style>
+</html> -->
+
+<!-- aap chahein to alag se javascript lagayiye (separate file .js file
+ for javascript) ya yahan pe load kariye (four.html mei) 
+ ya head mei load kariye (four.html mei) -->
+
+<!-- iske bare mei kabhi baad mei charcha karenge jab hum projects
+ banayenge abhi hum aate hai yahan pe (jo body ke neeche style tag
+ likha hai uspe) -->
+
+<!-- theek hai to abhi hume kaam kya karna hai, bada hi basic sa ek
+ target hai - ki apko ek aur list item add karna hai -->
+
+<!-- 2:20 -->
+
+<!-- ab aap kahaenge yeh to bada aasaan hai pichle video mei hi just
+ seekha tha list item add karna kuch bhi nahi hai , hum parent ko
+ select kar denge , uss parent ke andar hum ek aur list item add kar denge
+ bada hi basic sa hai-->
+
+<!-- dekhiye list item ko yahan pe add karne ke 2-3 tarike ho sakte hai -->
+
+<!-- sabse pehle hum kya karte hai ki kyuki list item kayi bar
+ aap add karaoge, abhi javascript language add karayi hai, 
+ fir python add karaoge , fir typescript add karaoge,
+ fir ho sakta hai ruby add karawaoge, koi na koi aur language
+ aap add karwaoge-->
+
+<!-- to kaisa rahega agar mai iska ek function hi design kar lu -->
+
+<!-- 2:46 -->
+
+<!-- obvious si baat hai function padhe bhi hai humne to
+ revision bhi ho jayega  -->
+
+<!-- to theek hai isko hum lete hai ek function ki tareh -->
+
+<!-- correction kar liya body ke neeche style tag ki jagah script
+ tag likh liya and iss script tag ke andar function likh liya -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function
+</script>
+</html>  -->
+
+<!-- 3:03 -->
+
+<!-- ab iss function ka naam hai humare pas addLanguage
+ yeh lijiye yeh function ho gaya design -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(){}
+</script>
+</html>  -->
+
+<!-- 3:09 -->
+
+<!-- ab iss function ke andar ab kya hoga (function ke () ke andar) 
+ aap language ka name pass karoge (function ke () ke andar)-->
+
+<!-- to isko le lete hai langName (function ke () ke andar)
+ theek hai short mei language name le lete hai -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+
+    }
+</script>
+</html>  -->
+
+<!-- theek hai ab iss function ko actually mei design kaise karoge 
+ sabse pehli cheej to-->
+
+<!-- 3:20 -->
+
+<!-- to sabse pehli cheej kya karoge , apko ek list item
+ create karna hai sabse pehle, theek hai ji list item create ho jayega -->
+
+<!-- fir kya karna hai mujhe iss language ul jo hai ( <ul class="language"> )
+    unordered list hai isko ( <ul class="language"> ) select karna hai-->
+
+<!-- aur iske ( <ul class="language"> ) andar mujhe isko (jo list item
+    hum create karenge usko) append karna hai -->
+
+<!-- theek hai to jo bhi element hai wo rahenge ( <li>Javascript</li> )
+ aur uske sabse end mei yeh (jo list item hum create karenge) append
+ ho jayega-->
+
+<!-- theek hai ji karke dekhte hai -->
+
+<!-- to sabse pehle kya karo ek element create karo , theek hai
+ ji -->
+
+<!-- yeh lijiye document.createElement() last class mei
+ humne padha tha ki createElement aise ( document.createElement() ) 
+ create ho jaate hai -->
+
+<!-- document.createElement() likh liya in function -->
+
+<!-- to konsa element create karna hai , list item create karna hai-->
+
+<!-- document.createElement('li') likh liya in function -->
+
+<!-- yeh lijiye ho gaya -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        document.createElement('li')
+    }
+</script>
+</html>  -->
+
+<!-- ek variable mei hold kar lein isko ( document.createElement('li') ko) -->
+
+<!-- theek hai ji -->
+
+<!-- to yeh lijiye const , aur isko ( document.createElement('li') ko)
+ li bol lete hai -->
+
+<!-- const li = document.createElement('li') likh liya in function -->
+
+<!-- to yeh lijiye list item humare pas create ho gaya hai -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+    }
+</script>
+</html>  -->
+
+<!-- theek hai bada hi basic -->
+
+<!-- 4:01 -->
+
+<!-- ab list item ke andar koi value bhi add karni hai, haa ji add
+ karni hai, uska naam kya hai -- langName , theek hai ji -->
+
+<!-- 4:06 -->
+
+<!-- kaise add karein  , bahut hi aasaan hai humne padha tha just
+ ki uske innerHTML mei add kar do -->
+
+<!-- 4:11 -->
+
+<!-- theek hai thodi si charcha bhi kari thi ki kahan innerHTML 
+ sahi hai kahan nahi hai, uske bare mei bhi aur detail 
+ charcha karenge but sabse basic yeh hi dimag mei aata hai ki
+ li lo aur uske andar innerHTML iss tareh se add kar do-->
+
+<!-- li.innerHTML likh liya function ke andar -->
+
+<!-- aur kya add karna hai innerHTML ke andar (li.innerHTML) , 
+ yeh jo bhi langName aya hai ( function addLanguage(langName) ) -->
+
+<!-- to hum back ticks use kar lete hai humare -->
+
+<!-- li.innerHTML = `` likh liya function ke andar -->
+
+<!-- aur yeh lijiye variable -- ${}
+ ( variable inject karte hai string interpolation ke andar using $ sign ) -->
+
+<!-- li.innerHTML = `${}` likh liya function ke andar -->
+
+<!-- chahein to aap direct bhi de sakte the but theek hai -->
+
+<!-- li.innerHTML = `${langName}` likh liya function ke andar -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+    }
+</script>
+</html>  -->
+
+<!-- abhi hum jada testing nahi kar rahe hai ki uss / wo string hi pas
+  kara hai ya nahi kara , koi number , jo bhi pas kar raha hai hum
+  as it is add kar rahe hai ( `${langName}` ) -->
+
+<!-- itne se as follows 
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}` 
+
+kaam ho jayega , obvious si baat hai nahi hoga kyuki abhi to
+ yeh (const li and li.innerHTML) hawa mei hai , aur hawa mei agar list item hai , uske andar
+ value bhi add hai to kya fayeda , console.log() kara sakte hai
+ but abhi wo kahin bhi attach nahi hue hai -->
+
+<!-- to attach kahan pe karne hai unko, language ke andar attach 
+ karne hai jo class name hai humare pas yeh unordered list 
+ ( <ul class="language"> , see html code , class name is language,
+    isliye language ke andar attach karne hai ) 
+    
+    iss language ke andar attach karne hai hume -->
+
+<!-- to kaise karenge sabse pehle inko select karna padega -->
+
+<!-- to yeh lijiye hum kaise select karenge inko -->
+
+<!-- 4:58 -->
+
+<!-- document.querySelector() -->
+
+<!-- document.querySelector() likh liya function ke andar-->
+
+<!-- konsi querySelector yahan pe use karenge , class wali ( language
+ class ka naam hai ) obvious si baat hai-->
+
+<!-- to .language -->
+
+<!-- document.querySelector(.language) likh liya function ke andar-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language')
+    }
+</script>
+</html>  -->
+
+<!-- theek hai ji add kar di -->
+
+<!-- ab isko ( document.querySelector('.language') ) ek variable mei
+ hold karein fir wapas se karein usse achha hai ki abhi humare pas 
+ yahan pe (above code mei) values to aa hi gayi hai -->
+
+<!-- ab uske ( document.querySelector('.language') ) saath seedha
+ hi hum dot laga dete hai
+ 
+ document.querySelector('.language'). likh liya in function
+ 
+ aur bol dete hai append child kar do -->
+
+<!-- document.querySelector('.language').appendChild() likh liya in function -->
+
+<!-- konsa child append karna hai, aa... , bahut hi basic hai ki humne
+ yeh jo li design kar rakha hai upar line number 381 ke andar 
+ ( const li = document.createElement('li') ) bas usko append kar do -->
+
+<!-- 5:23 -->
+
+<!-- document.querySelector('.language').appendChild(li) likh liya in function -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+</script>
+</html>  -->
+
+<!-- ab jaise hi usko save kara kuch bhi nahi hoga-->
+
+<!-- 5:24 -->
+
+<!-- kyuki sirf yeh to function ki definition hai -->
+
+<!-- yaad hai padha tha definitions load hoti hai pora kaise kaise engine
+ work karta hai shayad yaad hi hoga apko (execution context)-->
+
+<!-- lekin ab kya karna hai ab iss method (method means function
+ wale method i.e. addLanguage ko) ko hume chalana hai -->
+
+<!-- to yeh ho gaya humara addLanguage() -->
+
+<!-- addLanguage() likh liya outside function -->
+
+<!-- yeh ( addLanguage() ) humne run kar diya , parameter chahiye -->
+
+<!-- ab kya pas karein iske andar, hum pas kar dete hai -- "python" -->
+
+<!-- addLanguage("python") likh liya outside function -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+</script>
+</html>  -->
+
+<!-- yeh lijiye, aapne jaise python pas kara, uske andar python
+ add ho gayi (see browser) -->
+
+<!-- bahut hi basic sa kaam -->
+
+<!-- ek aur language add kar le , chaliye ek aur add kar lete hai
+ aap khete hai to, ek aur language hum yahan daal dete hai -->
+
+<!-- addLanguage("typescript") likh liya outside function -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+</script>
+</html>  -->
+
+<!-- yeh lijiye typescript bhi add kar di -->
+
+<!-- theek hai to humare pas abhi teen languages ho gayi hai -->
+
+<!-- yeh as follows 
+ 
+function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+
+    hai aapka bada hi basic tarika jo ki sabse pehle usually logo ke dimag
+    mei aata hai ki li create karo ( const li = document.createElement('li') )
+
+    uske ( const li = document.createElement('li') ) andar 
+    innerHTML ( li.innerHTML = `${langName}` ) daal do
+-->
+
+<!-- theek hai ab element create ho gaya hai ( li ) 
+ ab usko attach karna hai wahin attach kar do document mei attach
+ kar do, koi parent select karke uske andar attach kar do jahan bhi 
+ aapko attach karna hai wahan pe appendChild() kar do-->
+
+<!-- 6:20 -->
+
+<!-- lekin iska (above tarike ka) kya hai ki ek problem hai chota sa -->
+
+<!-- abhi dekhiye abhi humare pas yeh list item ke andar ek hi value thi 
+ i.e. <li>Javascript</li> (see above code inside ul)-->
+
+<!-- theek hai -->
+
+<!-- ab ek hi value thi lekin jab bhi aap bolte hai uske andar ki
+ appendChild() kar do iss tareh se appendChild(li) aur wo element (created element i.e. li) ko select
+ karke yahan pe ( document.querySelector('.language').appendChild(li) ) aap kaam mei lete hai to kya hota hai ki wo sara ka sara
+ tree usko traverse karna padta hai document ke andar -->
+
+<!-- ab yahan pe to ek tha (ek tree tha) theek hai chal gaya kaam
+ ek hazaar hota to problem hoti, ek laakh hota to aur jada problem
+ hoti kyuki aap ek dum end mei jana chah rahe ho aur pore ko traverse 
+ karte hue jaa rahe ho har bar , to jitni bar yeh method (just above function wala method / tarika)
+ chal raha hai utni bar har bar yeh pora ka pora tree traverse kar
+  raha hai wahan pe
+  -->
+
+<!-- jo ki itni theek baat nahi hai vaise karwa ljiye koi problem nahi hai
+ lekin kayi bar optimization issue aa jata hai -->
+
+<!-- 7:00 -->
+
+<!-- to jab large scale ke aap projects dekhenge to wahan pe yeh method
+ (just above function wala method / tarika) exact same method hi define
+ kar rahe hai , thoda sa optimize approach mei kar rahe hai, thoda sa
+ DSA ka use kar rahe hai basically behind the scene -->
+
+<!-- to theek hai yeh humne use kara function -->
+
+<!-- function likh liya -->
+
+<!-- aur isko bola ki iss bar hum language add karna chahate hai
+ lekin optimized way mei karna chahte hai -->
+
+<!-- function addOptiLanguage() likh liya -->
+
+<!-- optimized tarike se language add karna hai -->
+
+<!-- wo hi same parameter lenge langName theek hai ji -->
+
+<!-- function addOptiLanguage(langName) likh liya -->
+
+<!-- theek hai ji langName le liya -->
+
+<!-- function addOptiLanguage(langName){} likh liya -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName){
+
+    }
+</script>
+</html>  -->
+
+<!-- ab iss approach ke andar kaam wo hi karna hai lekin thoda sa
+ alag tarike se hum karenge -->
+
+<!-- kaise karenge sabse pehle hum kya karte hai wo hi createElement -->
+
+<!-- to dekhiye first method (function wala method) jo rahega
+ line number 598 wo to rehne wala hai exact ( exact same) 
+ kyuki list item banana hai, yeh to banana hi padega koi chara hi nahi hai
+ -->
+
+<!-- to theek hai yeh bana lete hai document.createElement() -->
+
+<!-- haa ji konsa element create karein -- li create kar lete hai -->
+
+<!-- document.createElement('li') likh liya in function addOptiLanguage(langName){} -->
+
+<!-- variable mei bhi hold karna hi padega, to yahan pe usko bol dete hai
+ const li -->
+
+<!-- const li = document.createElement('li') likh liya in function addOptiLanguage(langName){} -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+    }
+</script>
+</html>  -->
+
+<!-- 7:51 -->
+
+<!-- achha ek cheej sir apko dubara se revision karwana chahenge -->
+
+<!-- yahan pe as follows
+
+function addOptiLanguage(langName){
+        const li = document.createElement('li')
+    } 
+
+bhi variable li hai -->
+
+<!-- yahan pe as follows
+
+function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+
+bhi variable li hai -->
+
+<!-- isliye to functions ke andar sir ne apko scope padhaya tha -->
+
+<!-- 8:00 -->
+
+<!-- ki iske as follows 
+
+function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+
+andar jo bhi kaam ho raha hai jo bhi variable declare hote hai
+bahar (iss function ke bahar) kisi ke pas access nahi hai
+-->
+
+<!-- yahan pe as follows 
+ 
+function addOptiLanguage(langName){
+        const li = document.createElement('li')
+    }
+
+wapas se hum li declare kar paa rahe hai kyuki bahar se 
+(iss function ke bahar se) uska (iss function ke li ka) koi
+natedari hi nahi hai, kuch rishtedari hi nahi hai
+-->
+
+<!-- to sara kuch bhi yahan pe as follows
+
+function addOptiLanguage(langName){
+        const li = document.createElement('li')
+    }
+
+humare pas concentrated separately rahega
+-->
+
+<!-- theek hai -->
+
+<!-- achha ab jo cheej aati hai humare pas wo kya aati hai  -->
+
+<!-- ki yeh jo li hai na (function addOptiLanguage wala li )
+ aapne innerHTML ki jagah agar aapko yaad ho to sir ne ek
+ dusra method bhi aapko bataya tha aap kya kariye uske andar
+ (li ke andar) appendChild kar dijiye-->
+
+<!-- yeh lijiye li ke andar sir ne bola appendChild -->
+
+<!-- li.appendChild() likh liya inside function-->
+
+<!-- achha appendChild kya karna hai ki uske andar ek naya node
+ create karna hai-->
+
+<!-- to agar apko yaad ho to hum node create kar rahe the 
+ document.textnode create kar rahe the yaad hai , 
+ to usko aap direct yahan ( li.appendChild() ) kar dijiye -->
+
+<!-- li.appendChild(document.createTextNode) likh liya in function-->
+
+<!-- haa ji yeh textNode create kari aur textNode ke andar direct hi
+ yeh langName humne add kar diya -->
+
+<!-- li.appendChild(document.createTextNode(langName)) likh liya
+  in function-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+    }
+</script>
+</html>  -->
+
+<!-- theek hai ab aap chahte to isko ( document.createTextNode(langName)
+ in li.appendChild(document.createTextNode(langName)) ) alag line
+ mei kar sakte the-->
+
+<!-- aap chahein to isko ( document.createTextNode(langName)
+ in li.appendChild(document.createTextNode(langName)) )
+ cut karke yahan pe le aate as follows in const addText -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        const addText = document.createTextNode(langName)
+        li.appendChild(addText)
+    }
+</script>
+</html>  -->
+
+<!-- aur fir li.appendChild(addText) likhte as above -->
+
+<!-- yeh bhi kar sakte the (as above) -->
+
+<!-- lekin jab aapko practice ho hi gayi hai itni to aap kya kariye
+ seedha hi yeh jo values hai pora ( document.createTextNode(langName) ) 
+ isko cut karke yahan ( li.appendChild() ) likh lijiye as follows-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+    }
+</script>
+</html>  -->
+
+<!-- ek chota sa variable (addText) humne save kar liya , kuch 
+ itna jada bada kaam bhi nahi kiya hai ki jisse hum keh dein ki are ab
+ to hum DSA ke master ho gaye kyuki humne problem solve kar li ,
+ nahi nahi aisa kuch nahi kiya hai-->
+
+<!-- 9:29 -->
+
+<!-- thoda sa space save kar liya hai bas yahan pe aur thoda sa 
+ easy bhi hai samajhna ki hum kar kya rahe hai-->
+
+<!-- to humne ek li liya ( li.appendChild(document.createTextNode(langName)) )
+ uske andar appendChild kara, konsa child append kara hai uske
+ andar humne ki ek naya textNode create kara aur direct uske andar
+ inject kar diya -->
+
+<!-- theek hai to abhi tak yeh jo kaam as follows 
+
+function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+
+ kar rahe the do (2) lines (as above) -->
+
+<!-- yeh hi exact kaam (9:45) yahan pe as follows 
+
+function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+
+ho raha hai, lekin yeh (as above) thoda sa optimized kaam hai -->
+
+<!-- theek hai yeh to ho gaya -->
+
+<!-- ab kya karna hai ab hume kya karna hai same kaam karna hai
+ yeh jo hai yeh wala kaam as follows
+ 
+function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}` 
+ 
+ to exact same rehne wala hai -->
+
+<!-- kahan pe isko append karna hai -->
+
+<!-- to sabse pehle kya kariye document se querySelector le lijiye -->
+
+<!-- document.querySelector() likh liya inside function -->
+
+<!-- konsa querySelector lena hai - dot humare pas hai language 
+ (ul ki class ka name language hai)-->
+
+<!-- document.querySelector('.language') likh liya inside function -->
+
+<!-- yeh lijiye language le liya -->
+
+<!-- ab iske ( document.querySelector('.language') ) andar hum kya 
+ karenge wapas se wo hi appendChild, yeh lijiye-->
+
+<!-- document.querySelector('.language').appendChild() likh liya inside function -->
+
+<!-- konsa child append karna hai yeh lijiye -- li -->
+
+<!-- document.querySelector('.language').appendChild(li) likh liya inside function -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+</script>
+</html>  -->
+
+<!-- 10:17 -->
+
+<!-- ab iske andar bhi isko run kara ke dekh lete hai -->
+
+<!-- function execute karenge addOptiLanguage() -->
+
+<!-- addOptiLanguage() likh liya outside function-->
+
+<!-- konsi language add karein batayiye , aa..., golang add kar de-->
+
+<!-- addOptiLanguage('golang') likh liya outside function-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+</script>
+</html>  -->
+
+<!-- to dehiye kaam wo ka wo hi ho raha hai aap dekh sakte hai
+ isse as follows 
+ 
+ function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+  bhi humne value add kari -->
+
+<!-- isse as follows 
+
+function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+bhi humne value add kari -->
+
+<!-- bas antar sirf itna sa hai ki yeh approach as follows 
+
+function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+approach thoda sa optimized hai-->
+
+<!-- kyu optimized hai kyuki yahan pe as follows 
+
+function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+ aapko pora ka pora jo tree (10:37) hai usko traverse nahi karna pad
+  raha hai-->
+
+<!-- aap seedhe ki seedhe ek li aapne create kara ( const li = document.createElement('li') )
+ aapne uske andar ek text node insert kari ( li.appendChild(document.createTextNode(langName)) ) 
+ aur seedha kaam ho gaya hai-->
+
+<!-- lekin yahan pe as follows 
+
+function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+jab aap innerHTML ( li.innerHTML = `${langName}` ) etc use karte hai
+to poore ke poore elements ko poore ke poore ki traversing hoti hai
+-->
+
+<!-- halaki basic project mei aapko itna jada kuch nahi hoga lekin
+ bade projects ke liye sir aapko yeh approach as follows 
+ 
+ function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+    recommend karenge ki aap humesha innerHTML ke peeche mat bhagiye,
+
+    humesha jayiye appendChild ( li.appendChild(document.createTextNode(langName)) )
+     ke upar
+ 
+ -->
+
+<!-- jab aap koi bada code likhenge kisi company mei jayenge to wo bhi
+ appreciate karenge ki aapne achhi jagah se seekha hai aur aap
+ achhi approach use karte hai -->
+
+<!-- ab itna sa hi antar hai yahan pe as follows 
+ 
+function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+    
+    humne seedhe li liya ( li.innerHTML = `${langName}` ) aur
+    uske andar seedha innerHTML daal diya-->
+
+<!-- yahan as follows
+ 
+function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+humne bola li uske andar ek child append kar diya bas    
+( li.appendChild(document.createTextNode(langName)) )
+ 
+itna sa hi antar hai-->
+
+<!-- jada kuch isme baat nahi hai ki are koi bahut gambhir kaam kar
+ diya aapne, itna jada bhi kuch nahi kiya hai -->
+
+<!-- theek hai ab hum kya karte hai hum thode se inn elements ke andar
+ thode se changes karke dekhte hai -->
+
+<!-- theek hai yahan tak (just above tak means golang wali line tak) 
+ to humne jo code likha hai
+ usse value sirf add ho rahi hai -->
+
+<!-- jitni bar aur chahein aap run kar sakte hai-->
+
+<!-- ab hum baat karte hai inn values ke edit ki,
+ remove ki bhi baat karenge (11:34) -->
+
+<!-- achha mujhe koi value edit karni hai to kaise edit karein -->
+
+<!-- dekhiye edit karne ke liye pehle values ka select hona to jaruri
+ hai (11:40) -->
+
+<!-- theek hai select kaise karenge -->
+
+<!-- to hum kya karte hai wapas se hi humare document ko bolte hai
+ aur bolte hai querySelector -->
+
+<!-- document.querySelector() likh liya -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+    Edit
+    document.querySelector()
+</script>
+</html>  -->
+
+<!-- querySelector dekhiye aya to jQuery mei tha but bahut hi jada
+ powerful selector hai iske andar bahut sare apke css ke selectors 
+ bhi same kaam karte hai, jQuery ke selector bhi same kaam karte hai,
+ JavaScript ke to kar hi rahe hai yahan pe , theek hai-->
+
+<!-- to ab kya chahte hai hum , li ko select karna chahte hai kyuki
+ sare li's (plural of li) hai -->
+
+<!-- document.querySelector("li") likh liya -->
+
+<!-- lekin hum li ka konsa value yahan pe select karna chahte hai
+ 12:05-->
+
+<!-- to suppose kariye mere ko second select (second li) karna hai ,
+ yeh python (python select karna hai) -->
+
+<!-- to hum kya kar sakte hai basic yahan pe likh sakte hai,
+ aa... , mujhe chahiye nth-child , yeh lijiye-->
+
+<!-- document.querySelector("li:nth-child") likh liya -->
+
+<!-- aur second value select kar lete hai , nth-child etc ko
+ aap padh lijiyega ksi tareh se hota hai jaise css hai exactly 
+ vaise hi-->
+
+<!-- document.querySelector("li:nth-child(2)") likh liya -->
+
+<!-- theek hai isko ( document.querySelector("li:nth-child(2)") ) 
+ ek value mei hold kar lete hai-->
+
+<!-- to isko ( document.querySelector("li:nth-child(2)") ) bol
+ dete hai hum yahan pe const secondLang -->
+
+<!-- const secondLang = document.querySelector("li:nth-child(2)") likh liya -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+    Edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+</script>
+</html>  -->
+
+<!-- theek hai second language humne select kar li hai -->
+
+<!-- theek hai ji -->
+
+<!-- ab iss language ko mere ko change karna hai -->
+
+<!-- to change karne ke dekhiye kaafi tarike hai -->
+
+<!-- ab wapas se aapke dimag mei aa raha hoga kya karo fatafat
+ yahan pe jaao , aa... , second langage ko lo aur iska (second langage ka)
+ innerHTML lo i.e. secondLang.innerHTML-->
+
+<!-- aur fatafat uss innerHTML ko replace kar do "Mojo" se
+ as follows-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+    Edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    secondLang.innerHTML = "Mojo"
+</script>
+</html>  -->
+
+<!-- theek hai yeh aapne mojo liya fatafat kar diya -->
+
+<!-- lekin wapas se wo hi baat ayi, kya yeh optimized hai,
+ are aap to wapas se innerHTML ke peeche bhaag gaye,
+ acchi baat to nahi hai -->
+
+<!-- wapas se poora traversing karna padega, poori problem hogi -->
+
+<!-- to yeh approach as follows
+ 
+Edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    secondLang.innerHTML = "Mojo"
+
+halaki kaam karti hai koi problem nahi hai-->
+
+<!-- Lekin (13:05) kum isko use kijiye kyuki yeh optimized approach
+ nahi hai-->
+
+<!-- Hum kaam mei lenge (yeh approach) project banayenge jab
+ bejijhak kaam mei le lenge koi dikkat wali baat nahi hai -->
+
+<!-- kyuki kabhi dekhiye humesha optimized ki baat nahi ho sakti
+ kabhi kuch baatein aisi bhi hoti hai ki project khatam karna hai 
+ wahan pe sirf to as such abhi koi dikkat wali baat hi nahi hai-->
+
+<!-- 13:20 -->
+
+<!-- secondLang.innerHTML = "Mojo" ko comment out kar diya -->
+
+<!-- chaar (4) values mei kya hi optimize karenge, theek hai 
+ itne to humare system achhe hai -->
+
+<!-- theek hai to ab hum kya karte hai dusra approach dekhte hai -->
+
+<!-- dusre approach mei kya karte hai wo hi wapas se element ko
+ create karna pasand karte hai (13:30) -->
+
+<!-- to sabse pehle kya karo createElement theek hai-->
+
+<!-- document.createElement() likh liya -->
+
+<!-- konsa element create karna hai, haa ji mujhe li create karna hai -->
+
+<!-- document.createElement('li') likh liya -->
+
+<!-- theek hai ji li create kar liya , variable mei hold kar
+ le isko ( document.createElement('li') ) -->
+
+<!-- const newLi = document.createElement('li') likh liya -->
+
+<!-- yeh lijiye -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+    Edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    secondLang.innerHTML = "Mojo" commented out
+    const newLi = document.createElement('li')
+</script>
+</html>  -->
+
+<!-- ab iss newLi ke saath kya karna hai, ek textContent hume yahan pe
+ add karna hai (13:46) -->
+
+<!-- to newLi. aur uske baad mei hum add kar dete hai yahan pe
+ek textContent -->
+
+<!-- newLi.textContent likh liya -->
+
+<!-- aap chahein to yahan pe appendChild as follows
+ 
+function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+
+    aur yeh sab bhi use kar sakte hai agar aapko karna hai
+(function addOptiLanguage(langName) ki second line bhi use kar sakte hai)
+    -->
+
+<!-- textContent bhi aap use kar sakte hai -->
+
+<!-- dekhiye textContent ( newLi.textContent ) mei aur innerHTML ( secondLang.innerHTML = "Mojo" )
+ mei itna jada koi khaas antar nahi aane wala hai 14:01-->
+
+<!-- theek hai sir ko jo cheej samjhaani thi aap shayad samajh gaye hai -->
+
+<!-- ab sir ispe aur charcha nahi karenge varna aur confusion ho jayega -->
+
+<!-- theek hai to textContent aap add kar dijiye, 
+ textContent kya hai , sir sirf ab aapko alag alag tarike bata rahe hai 
+ add karne ke -->
+
+<!-- newLi.textContent = "Mojo" likh liya -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+    Edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    secondLang.innerHTML = "Mojo" commented out
+    const newLi = document.createElement('li')
+    newLi.textContent = "Mojo"
+</script>
+</html>  -->
+
+<!-- ab isse ( newLi.textContent = "Mojo" ) add ho jayega kya -->
+
+<!-- nahi abhi to yeh cheej hawa mei hai (14:19) -->
+
+<!-- kyuki li banaya , uske andar textContent add kar diya,
+ but abhi kahin pe add nahi kara hai usko, hawa mei hai wo -->
+
+<!-- to isko add karne ke liye kya karna padega bahut hi aasaan
+ kaam hai -->
+
+<!-- hum kya karenge humne yeh jo secondLanguage (secondLang) hai isko
+ select kar hi rakha hai , to yeh lijiye secondLanguage -->
+
+<!-- secondLang likh liya -->
+
+<!-- ab yahan pe ek naya method hai jo ki bolta hai replaceWith -->
+
+<!-- secondLang.replaceWith() likh liya -->
+
+<!-- replaceChild nahi replaceWith -->
+
+<!-- replaceChild bhi humare pas method hai usko bhi sir use karke
+ dikha denge , lekin yeh ho gaya humare pas replaceWith -->
+
+ <!--kisse replace karna hai kyuki poora hi content aapne bana rakha
+ hai, to bas usse replace kar dijiye -->
+
+<!-- to yeh jo newLi hai humare pas isse replace kar dete hai -->
+
+<!-- secondLang.replaceWith(newLi) likh liya -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+    Edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    secondLang.innerHTML = "Mojo" commented out
+    const newLi = document.createElement('li')
+    newLi.textContent = "Mojo"
+    secondLang.replaceWith(newLi)
+</script>
+</html>  -->
+
+<!-- yeh humne save kara -->
+
+<!-- to obvious si baat hai ab humare pas Mojo aa gaya hai python ki 
+ jagah (see 2nd list item in browser)-->
+
+<!-- to dekha kaafi tarike hai aur, kuch optimized approach hai
+ kuch nahi hai (15:02) -->
+
+<!-- again yahan pe discussion bhi ho sakta hai bahut ki are nahi nahi
+ yeh jo textContent hai (newLi.textContent = "Mojo") yeh to aur
+ bhi jada kharaab hai, innerHTML (secondLang.innerHTML = "Mojo") 
+ isse (newLi.textContent = "Mojo") jada better hai -->
+
+<!-- to haa wo optimization approach kayi bar discussion ke part 
+ hote hai -->
+
+<!-- but aapke jo senior aapko bole ya aapko jo theek lage aap wo
+ kariye yahan pe koi dikkat wali baat nahi hai -->
+
+<!-- dubara se revision kara dete hai sir aapka -->
+
+<!-- humne sabse pehle kya kara yeh secondLang ( const secondLang = document.querySelector("li:nth-child(2)") ) jo hai
+ (see code just below commented out Edit heading) isko 
+ select kara, to yeh poora ka poora li 
+ yahan ( const secondLang = document.querySelector("li:nth-child(2)") ) par 
+ select ho gaya hai (see browser means poora second list item
+ mei jo python likh raha tha mojo ki jagah wo 2nd list item
+ select ho gaya hai)-->
+
+<!-- agar jahan bhi aapko confusion lage na ek console.log()
+ fatafat wahan pe kar dijiye as follows -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+    Edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang);
+    secondLang.innerHTML = "Mojo" commented out
+    const newLi = document.createElement('li')
+    newLi.textContent = "Mojo"
+    secondLang.replaceWith(newLi)
+</script>
+</html>  -->
+
+<!-- ki yeh secondLang hai isko yahan pe console.log() karke dekhte hai
+ (as just above) ki kya humare pas value aati hai -->
+
+<!-- right click and inspect in browser console ki 
+ browser console mei kya value aati hai -->
+
+<!-- to dekhiye poora li select hua hai python ka i.e. <li>python</li>
+ see browser console -->
+
+<!-- 15:35 -->
+
+<!-- ab agar aap isko replace kar dete hai yahan pe 
+ to kya hota hai agar yahan pe sirf innerHTML ( secondLang.innerHTML = "Mojo" ) laga ke
+ yeh aap sirf replace kar dete hai to kya hoga sirf
+ uska innerHTML hoga  -->
+
+<!-- agar aap innerHTML ( secondLang.innerHTML = "Mojo" ) ki jagah
+ yahan pe sirf textContent ( newLi.textContent = "Mojo" ) change kar dete hai
+ to select to poora hua hai ( <li>python</li> see browser console )
+ (textContent ke case mei select to poora hua hai)
+ uski jagah sirf wo values ho jayegi-->
+
+<!-- to dhyan se replace kariyega ki kis tareh se values hoti hai 
+ as such koi jada problem wali baat hi nahi hai -->
+
+<!-- yeh bhi ( secondLang.innerHTML = "Mojo" ) value humare pas
+ easily kaam kar rahi thi , koi dikkat wali baat hi nahi thi -->
+
+<!-- humne fir kya kara socha ki are innerHTML banane ki jagah
+ ek naya poora element banate hai ( const newLi = document.createElement('li') )
+ aur usko append karwate hai (append nahi replace karwate hai)-->
+
+<!-- to humne yeh naya poora element banaya 
+
+    const newLi = document.createElement('li')
+    newLi.textContent = "Mojo"
+
+ textContent etc sab add kara humne  
+-->
+
+<!-- aur uske baad bola ki yeh ( secondLang.replaceWith(newLi) ) jo hai
+ abki baar hum kya chahte hai wo querySelector etc yeh jo hum
+ kar rahe the as follows 
+ 
+ function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+
+i.e. ( document.querySelector('.language').appendChild(li) yeh kar rahe the ) 
+
+function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+
+i.e. (document.querySelector('.language').appendChild(li) yeh kar rahe the)
+
+itna sara yeh (querySelector as above) na kare
+
+ -->
+
+<!-- sirf usko replace kar de ( secondLang.replaceWith(newLi) ) 
+ kyuki uska reference ( const secondLang = document.querySelector("li:nth-child(2)") )
+  to humare pas hai hi-->
+
+<!-- to bas humne usko replace kar diya hai -->
+
+<!-- theek hai -->
+
+<!-- yahan pe as follows 
+ 
+function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+
+    i.e. document.querySelector('.language').appendChild(li) pe
+
+    kya hai humare pas reference nahi tha uska
+
+    yahan pe ( document.querySelector('.language').appendChild(li) )
+    hume querySelector se wapas usko select karna pada
+
+    fir uske andar ek naya child add (appendChild) karna pada
+    ( document.querySelector('.language').appendChild(li) )
+-->
+
+<!-- agar reference hota uss element ka to bas replace aaraam 
+ se ho jata hai -->
+
+<!-- aur kyuki element exist karta hai isliye uska (existing element ka) 
+ reference lena bhi bahut hi aasaan hai -->
+
+<!-- theek hai -->
+
+<!-- ab hum (16:32) kya krte hai yahan se ab humko 'golang' ko
+ yahan pe remove karna hai (see browser and code)-->
+
+<!-- ya fir hum kya karte hai ek aur ek element dekh lete hai 
+ aa..., ek aur ek edit ka ek example dekh lete hai pehle 
+ remove se pehle -->
+
+<!-- theek hai ab kya karna hai hume, first jo hai Javascript 
+ usko replace karna hai typescript se -->
+
+<!-- theek hai kar le -->
+
+<!-- to bahut hi aasaan hai wapas se yeh lijiye 
+ const firstLang -->
+
+<!-- const firstLang = likh liya -->
+
+<!-- theek hai -->
+
+<!-- ab isko select kaise karenge, wo hi humare pas document.querySelector
+ usme to koi baat hai hi nahi -->
+
+<!-- const firstLang = document.querySelector() likh liya -->
+
+<!-- 17:00 -->
+
+<!-- ab yeh query select kaise hogi, aa..., first child chahiye
+ (first child isliye chahiye kyuki hume Javascript jo ki first child hai 
+ list item ka usko typescript se replace karna hai ) -->
+
+<!-- to theek hai li ka mujhe kya de do first-child -->
+
+<!-- const firstLang = document.querySelector("li:first-child") likh liya -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+    Edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang);
+    secondLang.innerHTML = "Mojo" commented out
+    const newLi = document.createElement('li')
+    newLi.textContent = "Mojo"
+    secondLang.replaceWith(newLi)
+
+    edit
+    const firstLang = document.querySelector("li:first-child")
+</script>
+</html>  -->
+
+<!-- theek hai de diya ji first child apko 17:09 -->
+
+<!-- ab isko (li ke first child ko) replace kaise karna hai-->
+
+<!-- theek hai ab iss first child ki values ko change karna hai
+ to kya kijiye yeh lijiye firstLang-->
+
+<!-- firstLang likh liya -->
+
+<!-- aur ek aur method hai humare pas hum kya kar sakte hai 
+ poora ka poora outer html hi change kar sakte hai-->
+
+<!-- firstLang.outerHTML likh liya -->
+
+<!-- theek hai outerHTML ko change karne ke liye kya karna padega,
+ poora outerHTML dena padega -->
+
+<!-- firstLang.outerHTML = '' likh liya -->
+
+<!-- to yahan pe kya karna padega , haa iss tareh se li likhna padega
+'<li></li>' jo ki sir ko jada pasand nahi hai but dena to padega -->
+
+<!-- firstLang.outerHTML = '<li></li>' likh liya -->
+
+<!-- fir iske ( '<li></li>' ) andar Typescript likh diya-->
+
+<!-- firstLang.outerHTML = '<li>Typescript</li>' likh liya -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+    Edit commented out
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang);
+    secondLang.innerHTML = "Mojo" commented out
+    const newLi = document.createElement('li')
+    newLi.textContent = "Mojo"
+    secondLang.replaceWith(newLi)
+
+    edit commented out
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>Typescript</li>'
+</script>
+</html>  -->
+
+<!-- to obvious si baat hai aapko iss tareh se jab aap save karenge 
+ to yahan pe (browser mei) first value humare pas Typescript aa gayi hai-->
+
+<!-- aa,... to kaafi tarike humne yahan pe dekh liye 
+ innerHTML se bhi change ho sakta hai ( secondLang.innerHTML = "Mojo" ) 
+ ki uska sirf html change kar lo -->
+
+<!-- Humne poora ka poora element bana ke bhi dekh liya as follows 
+ 
+const newLi = document.createElement('li')
+    newLi.textContent = "Mojo"
+
+    ek tarika ki replaceWith() use kar lo ( secondLang.replaceWith(newLi) )
+    
+-->
+
+<!-- Humne yahan pe outerHTML bhi dekh liya 
+
+const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>Typescript</li>'
+
+-->
+
+<!-- to kaafi 2-3 tarike dekh liye aapko jo bhi theek lage aap 
+ wo tarika use kariye kyuki sabse pehli jo approach hai ki 
+ project kaam karna chahiye -->
+
+<!-- theek hai chaliye -->
+
+<!-- ab hum thoda sa remove ka bhi dekh lete hai -->
+
+<!-- to wo remove kaise karna hai dekhiye remove sabse simple hai -->
+
+<!-- to hum kya karte hai golang ko hatate hai -->
+
+<!-- to isko bolte hai const lastLang -->
+
+<!-- const lastLang likh liya -->
+
+<!-- ab isko ( const lastLang ko ) kaise select karenge , wo hi basic
+ aa..., document hi karenge aur kya karenge , document.querySelector() -->
+
+<!-- const lastLang = document.querySelector() likh liya -->
+
+<!-- ab last child (li ka last child / sibling ) chahiye to kya
+ kariye -->
+
+<!-- isko bol dijiye ki li jo hai uska last-child de do -->
+ 
+<!-- const lastLang = document.querySelector('li:last-child') likh liya -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+    Edit commented out
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang);
+    secondLang.innerHTML = "Mojo" commented out
+    const newLi = document.createElement('li')
+    newLi.textContent = "Mojo"
+    secondLang.replaceWith(newLi)
+
+    edit commented out
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>Typescript</li>'
+
+    remove commented out
+    const lastLang = document.querySelector('li:last-child')
+</script>
+</html>  -->
+
+<!-- theek hai ji to querySelector hopefully aapko last child de dega -->
+
+<!-- aur uske baad kya karna hai aapke pas reference to aa hi gaya hai ab
+ lastLang ka 
+ (lastLang ka reference aa hi gaya hai)-->
+
+<!-- to simply si yahan pe bol do ki ek kaam karo usko remove kar do -->
+
+<!-- lastLang.remove() likh liya -->
+
+<!-- haa ji bas itna hi tha -->
+
+<!-- yeh lijiye yahan pe aa gaya hai lastLang -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+    Edit commented out
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang);
+    secondLang.innerHTML = "Mojo" commented out
+    const newLi = document.createElement('li')
+    newLi.textContent = "Mojo"
+    secondLang.replaceWith(newLi)
+
+    edit commented out
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>Typescript</li>'
+
+    remove commented out
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+</script>
+</html>  -->
+
+<!-- save karte hai , to golang humar epas remove ho gaya hai
+ (see in browser)-->
+
+<!-- theek hai to yeh ho gaye humare sare ke sare element
+ isme aapne dekh liya hai to ab tak humne DOM ke andar, 
+ DOM kaise kaam karta hai , kya uske behind the scene secrets hai,
+ kya kya optimized approach hoti hai, poora tree structure kaise hota hai,
+ Nodelist kya kya aati hai, ek ek cheej kaise traverse hoti hai,
+ Nodelist hi to actually mei poora Document Object Model hai humare pas,
+ wo bhi dekha humne, traversing bhi dekhi parent child (parent se child)
+ kaise jaate hai, child kaise jaate hai (child to parent kaise jaate hai),
+ child ke sibling kaise jaate hai, aa... child se parent pe kaise jaate hai
+ wo bhi sab humne dekha -->
+
+<!-- naye elements bhi banane seekhe , unki padding styling margin 
+ sab humne karna seekh liya -->
+
+<!-- uske baad humne iss video ke andar dekh liya ki kaise hum 
+ querySelector se thodi practice kari humne nth child etc ke through-->
+
+<!-- aap aur bhi chahein to w3school, mdn se aur practice kar sakte hai
+ querySelectors ki -->
+
+<!-- uske baad humne edit karna bhi seekh liya, kaafi tarike se 
+ seekha edit to humne 2-3 tarike se outerHTML to shayad aapko sabse
+ easy laga hoga, innerHTML bhi hai humare pas edit karne ke liye-->
+
+<!-- uske alawa humne delete (remove) bhi dekha jo ki sabse easy tha
+ remove -->
+
+<!-- to yeh ho gaya humare poore ke poore DOM ki kahani -->
+
+<!-- DOM ke andar bas itna hi hai aap chahein to aur bhi depth
+ mei jaa sakte hai ki ek ek element traverse kar sakte hai,
+ browser tools pe jaa sakte hai but abhi ke liye sir ko lagta hai
+ aapke liye itna bahut hai -->
+
+<!-- ab hum move kar sakte hai humare project pe -->
+
+<!-- haa ji ab thoda sa obvious si baat hai project mei aisa thodi
+ na hai ki yeh ka yeh copy paste ayega , project mei thoda sa 2-3 nayi
+ cheejein seekhenge isliye to project bana rahe hai -->
+
+<!-- to wahan pe hum thoda sa ek achha sa project bana ke dekhte hai
+ styling pe sir focus nahi karenge abhi kyuki dekhiye css ka tutorial
+ to hai nahi aur styling to vasise bhi sir aapke liye videos
+  add kar denge apne tailwind etc taki aap aaraam se usse kar sake -->
+
+<!-- sir bhi jadatar wo hi prefer karte hai ki bane banaye buttons etc
+ tailwind se lijiye aur seedha add kariye -->
+
+<!-- to hum jo yahan pe project banayenge wo dikhega sundar nahi 
+ wo sundarta ki jimmedari aapke upar jayegi, lekin wo kaam karega
+  functionality aur hume javascript ke andar confidence dega achhe se 
+  aur project build karne ke liye-->
+
+<!-- Class End -->
