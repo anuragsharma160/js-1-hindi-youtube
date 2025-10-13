@@ -982,6 +982,1490 @@ usko chahe multiply karu , divide karu jo bhi mai kar raha hu wo koi jada bada p
 
 <!-- dusra hai yahan pe humare pas result line 24 
 
+(<div id="results"></div>)
+
 27:59-->
 
+<!-- ab result kya hai ki abhi aap dekhenge result to jaise aap yahan pe (<div id="results"></div>) likhte hai hitesh (<div id="results">hitesh</div>) to yeh aapke pas hitesh hai (website ke right side mei) (stackblitz website ke browser mei calculate button and BMI Weight Guide ke beech mei) iss tareh ka result aata hai by default 
+iske (<div id="results"></div>) andar kuch bhi nahi hai 
+but yahan pe hum replace kar denge-->
 
+<!--( (<div id="results"></div>) mei hitesh backspace kar diya )-->
+
+<!-- to DOM mei humne padha tha kaise hum innerHTML innerText bahut sari values ko leke hum 
+yahan pe (<div id="results"></div>) inject kar sakte hai theek hai bahut asaan hai wo bhi kar denge -->
+
+<!-- aur yeh jo guide hai as follows (line 25)
+
+<div id="weight-guide">
+          <h3>BMI Weight Guide</h3>
+          <p>Under Weight = Less than 18.6</p>
+          <p>Normal Range = 18.6 and 24.9</p>
+          <p>Overweight = Greater than 24.9</p>
+        </div>
+        
+        yeh sirf aapke liye hai ya fir user ke liye jo bhi use karega, isse hume koi itna matlab hai nahi -->
+
+<!-- to dekha dikhne mei bada complex lag raha tha (28:24)  but jaise hi aapne thoda sa analyze kara to dekha ki isme kuch tha hi nahi itna bada-->
+
+<!-- to theek hai chalte hai , ab jaise hi sir ne yahan index.html mei save kara to project fork ho gaya hai but actually mei fork hua nahi hai kyuki sir sign in hi nahi hai uske andar to koi problem wali baat hi nahi hai -->
+
+<!-- to chalte hai project-2 ke chaiaurcode.js ke upar -->
+
+<!-- sabse pehle kya karna padega , hume sabse pehle iss form ko select karna padega -->
+
+<!-- achha form ko kyu select karna padega kyuki dekhiye form poora hi select karna padega kyuki uss form ke andar hi aapke pas submit button hai (28:48) -->
+
+<!-- jaise hi aap yahan jayenge BMI (stackblitz website ke right side mei browser mei project 2 pe click karenge) yeh jo calculate button hai , yeh actually mei submit button hai , form ko submit karte time (28:54) -->
+
+<!-- to yahan pe hum jo event ke baare mei baat karenge wo karenge ek submit type ka event , yahan pe click wala event nahi hai kyuki form hai isliye keh raha tha ki thoda sa patience rakhiye jaise hi hum events ke baare mei padhenge to aur jada aapko sahuliyat rahegi but koi baat nahi kuch cheejein hum chalte bhi seekh sakte hai -->
+
+<!-- theek hai to sabse pehle kya kariye
+
+yeh lijiye humare pas aa gaya document -->
+
+<!-- project 2 ke chaiaurcode.js file mei document likh liya -->
+
+<!-- iske baad querySelector -->
+
+<!-- document.querySelector() likh liya project-2 ke chaiaurcode.js file mei -->
+
+<!-- querySelector ke andar direct hi de dijiye , class id ki jarurat hi nahi hai , aap yeh lijiye form -->
+
+<!-- document.querySelector('form') likh liya project-2 ke chaiaurcode.js file mei -->
+
+<!-- isko ( document.querySelector('form') ) ek variable mei hold kar lein, yeh lijiye kar liya -->
+
+<!-- const form = document.querySelector('form') likh liya project-2 ke chaiaurcode.js file mei -->
+
+<!-- theek hai to form to humare pas aa gaya hai, theek hai ji itni kahani to hume clear hai ekdum, index.html mei dekh liya form opening tag se form closing tag tak pora form humare pas aa gaya hai (29:30) -->
+
+<!-- wapas chaiaurcode.js file mei aa gaye -->
+
+<!-- theek hai ab form kya hota hai jab bhi submit hota hai to aapne shayad padha hoga ya to post type se submit hota hai form ya fir get type se submit hota hai -->
+
+<!-- Lekin jab bhi submit hota hai to uski values url mei ya fir server ke pas chali jaati hai , usko hume rokna padega kyuki hum server pe to bhej nahi rahe hai, to jo bhi default action hai form ka wo rok lo yahin pe 
+theek hai ji -->
+
+<!-- wo rokne ke liye kya karna padega ek aapko events ke upar hi method milta hai -->
+
+<!-- to dekhiye form hai -->
+
+<!-- form likh liya chaiaurcode.js file mei -->
+
+<!-- iske (form ke) upar bhi aap wo hi same apna addEventListener, haa yeh same rahega sab jagah addEventListener-->
+
+<!-- form.addEventListener() likh liya chaiaurcode.js file mei -->
+
+<!-- to iss bar konse event ko dekh rahe hai aap , 
+wo hi humara click-->
+
+<!-- form.addEventListener('click') likh liya chaiaurcode.js file mei -->
+
+<!-- nahi wo click event nahi dekh rahe hai , hum iss bar submit event dekh rahe hai -->
+
+<!-- click backspace kar diya 
+form.addEventListener('click') mei se -->
+
+<!-- form.addEventListener('submit') likh liya chaiaurcode.js file mei -->
+
+<!-- const form = document.querySelector('form') 
+
+     form.addEventListener('submit')
+-->
+
+<!-- achha inn events ki list kahan se milegi, 
+are abhi to bataya hai ki yeh to patience rakhna padega jab hum events ke baare mei baat karenge tab dekhna padega -->
+
+<!-- 30:18 -->
+
+<!-- theek hai wapas se wo hi aapko ek callback milta hai to yeh lijiye callback le liya -- function -->
+
+<!-- 30:24 -->
+
+<!-- const form = document.querySelector('form') 
+
+     form.addEventListener('submit', function)
+-->
+
+<!-- callback ke andar kya milega -- e event chai suoerman jo bhi aap bolna chahein -->
+
+<!-- to callback function ke parameter mei e likh liya 
+i.e. callback function ke () mei e likh liya -->
+
+<!-- const form = document.querySelector('form') 
+
+     form.addEventListener('submit', function(e){
+
+     } )
+-->
+
+<!-- theek hai to sabse pehla kaam kya hota hai , e ke saath hum usko bolte hai ki preventDefault yani ki aapka jo bhi default action hai wo pehle ek minute ke liye aap roko , kahin submit vubmit mat kar do, theek hai-->
+
+<!-- const form = document.querySelector('form') 
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+     } )
+-->
+
+<!-- ab kya hai ki ab hume chahiye values , konsi values chahiye , bahut hi aasaan hai dekhna 
+
+project 2 ke index.html mei aa gaye -->
+
+<!-- ek to hume chahiye yeh height (index.html ke line 21 ke p tag ke label ke input ki id = height) -->
+
+<!-- 30:44 -->
+
+<!-- aur ek chahiye hume yeh weight (index.html ke line 22 ke p tag ke label ke input ki id = weight) -->
+
+<!-- theek hai ji ab wapas chaiaurcode.js mei aa gaye -->
+
+<!-- ab kya hai ki har bar jab aap form ke andar event aye 
+( form.addEventListener('submit', function(e){} mei 
+form.addEventListener ) 
+tab unn values (id= height and id = weight) ko select karein
+
+kuch log kya karte hai ki yahin 
+( const form = document.querySelector('form') ya iske just baad and form.addEventListener('submit', function(e){} ke just pehle) 
+select kar lete hai -->
+
+<!-- achha antar hai bahut pehle sir aapko likh ke batate hai yahan pe 
+( form.addEventListener('submit', function(e){} )
+ kaise unko (unn values ko i.e. id = height and id = weight) select karenge but uske baad discuss karenge ki difference kya hai-->
+
+<!-- 30:59 -->
+
+<!-- to hum kya karenge simply bolenge humara yeh jo document hai -->
+
+<!-- const form = document.querySelector('form') 
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     document
+
+     } )
+-->
+
+<!-- iske (document) andar ek querySelector laga do -->
+
+<!-- const form = document.querySelector('form') 
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     document.querySelector()
+
+     } )
+-->
+
+<!-- querySelector laga ke hume kya chahiye id hai humare pas (id= height and id= weight) -->
+
+<!-- to id de dete hai hum aapko yeh lijiye , aa... id pehle kya de height de ya weight de 
+
+height de dete hai-->
+
+<!-- const form = document.querySelector('form') 
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     document.querySelector('#height')
+
+     } )
+-->
+
+<!-- yeh lijiye height de di -->
+
+<!-- achha height dene ke baad aapko kya karna hai sirf dot value likhni hai uski 
+
+to aapko value mil jayegi 
+
+bada hi easy DOM hai to input
+
+(see stackblitz website browser right side mei 
+height in cm and weight in kg ke aage input field hai )
+
+ ki values iss tareh 
+ ( document.querySelector('#height').value )
+  se aapko mil jaati hai-->
+
+<!-- const form = document.querySelector('form') 
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     document.querySelector('#height').value
+
+     } )
+-->
+
+<!-- 31:22 -->
+
+<!-- theek hai lekin jo value aapko milti hai wo kaisi milti hai -- string mei aur yaad hai sabse pehle jab aap series ko boring samajh rahe the , haa... tab humne sikhaya tha ki string ke andar se kaise aap usko int (integer mei) mei pas kar sakte hai , float mei pas kar sakte hai vaise -->
+
+<!-- to yeh lijiye humne isko
+( document.querySelector('#height').value )
+ kar diya wrap -->
+
+<!-- const form = document.querySelector('form') 
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     (document.querySelector('#height').value)
+
+     } )
+-->
+
+<!-- aur isko
+(document.querySelector('#height').value)
+bola kya karo tum isko simply parseInt kar dijiye
+ -->
+
+<!-- const form = document.querySelector('form') 
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     parseInt(document.querySelector('#height').value)
+
+     } )
+-->
+
+<!-- to ab jo bhi value aapko string mei mili hai wo integer mei parse ho gayi hai -->
+
+<!-- 31:46 -->
+
+<!-- theek hai yahan pe humne checking nahi kari hai ki abhi (31:49) wo parse ho sakti hai ya nahi ho sakti kisi ne a likh diya ya kya likh diya uske bare mei abhi chinta nahi , aur complex project banayenge tab chinta karen ge iski-->
+
+<!-- isko 
+( parseInt(document.querySelector('#height').value) ) hold kar lete hai yeh lijiye isko bol dete hai hum height -->
+
+<!-- const form = document.querySelector('form') 
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+
+     } )
+-->
+
+<!-- ui se hume matlab nahi hai ui kuch bhi ho (website browser right side mei jo project 2 dikh raha hai usse koi matlab nahi hai) -->
+
+<!-- ek aur copy le lete hai iski 
+( const height = parseInt(document.querySelector('#height').value) ) 
+uss copy ko weight likh dete hai const weight = 
+aur id mei bhi weight likh dete hai #weight-->
+
+<!-- const form = document.querySelector('form') 
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+
+     } )
+-->
+
+<!-- achha ab difference kya hai ki agar yeh height aapne yahan likha (yahan means form.addEventListener('submit', function(e){} ke scope ke andar)
+
+ versus yeh height agar aapne form 
+ (means form.addEventListener('submit', function(e){} ke scope ke andar)
+  ke bahar likha to kya hoga (32:29) as follows-->
+
+<!-- const form = document.querySelector('form') 
+
+     const height = parseInt(document.querySelector('#height').value)
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+
+     } )
+-->
+
+<!-- 32:29 -->
+
+<!-- dekhiye actually mei kya hai jab aap click ( 'click' nahi 'submit'
+ i.e. form.addEventListener('submit', function(e){} , see website browser right side project 2 ke Calculate button pe click karna chah rahe hai ek dum usi time pe values ko lena chah rahe hai)
+ karna chah rahe hai ek dum usi
+ ( form.addEventListener('submit', function(e){} )
+  time pe aap unn values ( see website browser right side height in cm weight in kg ) ko lena chah rahe hai  -->
+
+<!-- uss event
+( form.addEventListener('submit', function(e){} )
+ ke upar aap values ko lena chah rahe hai , kyuki kya hoga 
+ 
+ agar aap uss values ko bahar (jaise const height = ....
+ likha hai 
+ 
+  form.addEventListener('submit', function(e){} 
+ 
+ ke scope ke bahar ) likh denge yahan pe to kya hoga jaise hi page load hoga , aapki script to run ho gayi hai, aur jaise hi page load hua to wo empty value (see website browser right side height in cm) aapke iss height ( jo const height = ... 
+ 
+ form.addEventListener('submit', function(e){} ke scope ke bahar likha hai) ke andar store ho jayegi-->
+
+<!-- 32:49 -->
+
+<!-- to empty value chahte ho ki uske andar (const height = ...) kuch value chahte ho ,
+
+
+aapke upar hai usecase hai , humara usecase abhi kya hai ki hum uss values (const height = ... and const weight = ...
+form.addEventListener('submit', function(e){} ke andar likha hai
+) ke andar jo bhi values hai submit ( Calculate button pe click karne ke baad ) karne ke baad , tab hum unn values ko extract karna chahte hai , khaali values nahi chahiye-->
+
+<!-- to yahan pe ( const height = ... 
+form.addEventListener('submit', function(e){} ke bahar likh hai
+) agar aap likhenge to wo ho jayega galat-->
+
+<!-- to kya hoga as follows -->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+
+     } )
+-->
+
+<!-- Sir ne bahut saare logo ko dekha kayi courses etc ke andar kayi companies ke liye padhaya to wahan pe log kya hai isi ke andar bas pareshan hote rehte hai ki are humari values to ek dum empty aa rahi hai aur kaise ab karein usko
+
+kyuki iske baad ka code to bahut easy hai iske baad to kuch hai hi nahi actually mei-->
+
+<!-- 33:24 -->
+
+<!-- theek hai thoda sa aapko Sir yeh bhi bata dete hai ki abhi jo height aur weight (const height and const weight 
+form.addEventListener('submit', function(e){} ke andar likh hai )
+
+li hai iske upar calculation karke humara code kya hai fat sakta hai poora ka poora to hum thode se checks laga lete hai
+
+aa..., jada to checks abhi sir discuss nahi karenge aap se kyuki abhi hum uss position pe nahi hai itna complex code ki but thode se positions ke bare mei baat kar lete hai -->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     if(){
+     
+     }
+
+     } )
+-->
+
+<!-- to theek hai hum kya karte hai aa,... 
+
+humare pas actually mei agar aap dekhenge to humare pas ek results bhi hai (see index.html of project 2 
+<div id="results"></div>) -->
+
+<!-- hai na to results ko abhi humne nahi liya hai usko bhi lenge hum
+
+ yahi pe le hi lete hai actually mei agar aap dekhenge gaur se (see index.html of project 2 
+<div id="results"></div>) to yeh humne baat kari thi iske bare mei thodi si ki results id hai isko bhi le hi lete hai taki hum results ko bhi le payein-->
+
+<!-- results ko bhi hum lete hai yahan pe -->
+
+<!-- to isko bol dete hai results const weight = ... ko copy paste kar liya and const results = ... likh liya -->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = parseInt(document.querySelector('#weight').value)
+     
+     if(){
+     
+     }
+
+     } )
+-->
+
+<!-- aur querySelector ke throough hum le lete hai ,
+dot value (.value) ki jarurat ab hai nahi 
+
+( const results = parseInt(document.querySelector('#weight').value) )
+
+aur id mei #results likh diya #weight ki jagah
+-->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = parseInt(document.querySelector('#results'))
+     
+     if(){
+     
+     }
+
+     } )
+-->
+
+<!-- aur parseInt karne ki bhi jarurat nahi hai kyuki wo sirf ek element hai to yeh lijiye as follows-->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if(){
+     
+     }
+
+     } )
+-->
+
+<!-- 34:19 -->
+
+<!-- theek hai ab hum kya karenge thoda sa apna check karenge agar wo check sare sahi nikalte hai to kya karenge results ke andar hum values add kar denge
+
+to values add karne ke liye hume pata hai innerHTML
+
+to results.innerHTML likh liya if ke andar -->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if(){
+        results.innerHTML =
+     }
+
+     } )
+-->
+
+<!-- to values add karne ke liye hume pata hai innerHTML
+
+bahut hi aasaan hai , aap chahein to innerText wo discussion hum kar chuke hai dubara nahi karenge -->
+
+<!-- to hum kya karenge yahan pe 
+( results.innerHTML = "" )
+ usko yeh likh denge ki -- "Please give a valid height"
+ kyuki height pe checks (checks means if) laga rahe hai
+ as it is copy kar lenge fir isko
+ -->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if(){
+        results.innerHTML = "Please give a valid height"
+     }
+
+     } )
+-->
+
+<!-- achha kon kon se checks laga sakte hai (means ab if ki consition ki baat kar rahe hai hum means ab if ke () mei aa gaye hai hum )
+
+to dekhiye height aapke pas aa gayi hai parse hoke int mei
+(to if ke () mei height likh liya) 
+
+to sabse pehle to kya hai wo (jo height if ke () mei likhi hai ) empty nahi honi chahiye, theek hai
+
+(to height === '' likh liya if ke () mei
+
+single quotes without anything inside it i.e. '' means empty ) -->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if(height = ''){
+        results.innerHTML = "Please give a valid height"
+     }
+
+     } )
+-->
+
+<!-- theek hai aur... 
+
+aur dusri condition kyuki Sir bol rahe hai aur dusri condition to OR value laga dijiye yeh lijiye -->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if(height = '' || ){
+        results.innerHTML = "Please give a valid height"
+     }
+
+     } )
+-->
+
+<!-- 35:00 -->
+
+<!-- aur kya check karna chahenge , to aur kon konsi values hai, aur kya kya chahte hai 
+
+agar zero se kum de raha hai to bhi mai nahi chahta
+
+height < 0 -->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if(height = '' || height < 0){
+        results.innerHTML = "Please give a valid height"
+     }
+
+     } )
+-->
+
+<!-- aur (OR i.e. ||) agar wo not a number hai yani ki number hi nahi hai to bhi kya hai
+
+achha yahan pe kya hai ek purani technique aur nayi technique hai-->
+
+<!-- kayi log kya check karte hai ki if height is equals to ya not equals to iss tareh se 
+
+aa..., jaise check karte hai is not equals to is tareh se 
+height != NaN , yeh  actually mei purani technique hai isko use mat kariyega as follows-->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if(height = '' || height < 0 || height != NaN){
+        results.innerHTML = "Please give a valid height"
+     }
+
+     } )
+-->
+
+<!-- Sir aapko better technique batate hai jo aajkal bhi use hoti hai aur actually mei jo javascript ki updated technique hai, recommended hai documentation mei -->
+
+<!-- wo kya bolte hai ki aap isNaN method i.e. isNaN()
+ ko use kariye aur iske andar aap de dijiye height ko
+ i.e. isNaN(height)-->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if( height = '' || height < 0 || isNaN(height) ){
+        results.innerHTML = "Please give a valid height"
+     }
+
+     } )
+-->
+
+<!-- 35:40 -->
+
+<!-- to agar wo ( isNaN(height) ) true hoga to true height agar true hogi matlab number mei convertible hogi, Not a Nummber nahi hogi, 
+
+number mei hogi convertible to aapko iska ( isNaN(height) ) value true mil jayega 
+
+to koi problem hi nahi hai 35:49-->
+
+<!-- aur agar false milta hai ( means isNaN(height) ki value false milti hai ) to hum aage badhna bhi nahi chahte hai
+
+(means false case mei hum if ke andar nahi jayenge) -->
+
+<!-- theek hai to yeh aapko mil jayega basically -->
+
+<!-- theek hai to isko hum kar dete hai save kyuki itna kaam to pehle save kar lein -->
+
+<!-- to dekhiye ab humne diya Calculate (means website browser mei project 2 ke Calculate button pe click kiya) , to isne kaha (diya) -- Please give a valid height 
+
+means yeh message ( Please give a valid height ) display ho jayega calculate button pe click karne ke baad -->
+
+<!-- theek hai abhi yeh scroll ho  raha hai (project 2 right side mei horizontal scroll) theek hai koi baat nahi-->
+
+<!-- aur iske baad hum kya de sakte hai 
+
+yahan pe maan lijiye hum height ko dete hai ek a 
+(to project 2 right side mei height input field mei a likh liya)
+jo (a) ki convert nahi ho sakta ,
+
+isko dete hai calculate (means height a dene ke baad calculate button pe click karte hai) 
+
+to wo aapko aise bolega ki -- Please give a valid height -->
+
+<!-- aur agar mai yahan pe (height input field mei) 3 de deta hu aur calculate karta hu (means calculate button pe click karte hai) to yeh kuch nahi bolega
+
+abhi humne usko (usko means humne if wale code ko) reset nahi kara hai theek hai wo baat hai -->
+
+<!-- aa..., but agar mai chahu to yahan pe (if wale code pe)
+ek height ki value bhi de sakta hu -->
+
+<!-- to isko ("Please give a valid height") chahein to hum back ticks mei convert kar sakte hai taki aap dekh sakein ki actually mei yeh value jo hai change ho rahi hai-->
+
+<!-- to yeh lijiye dollar ke saath de diya hai 
+`Please give a valid height ${}` aur 
+ `Please give a valid height ${height}`
+ 
+ jo bhi height ki value hai wo height ki value bhi yahan pe de dete hai -->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if( height = '' || height < 0 || isNaN(height) ){
+        results.innerHTML = `Please give a valid height ${height}`
+     }
+
+     } )
+-->
+
+<!-- save kiya -->
+
+<!-- to suppose kariye a diya (height field mei a diya)
+
+Calculate kiya
+
+to isne bola -- Please give a valid height NaN 
+
+( Please give a valid height(Not a Number) )-->
+
+<!-- dekha aa gaya ek dum -->
+
+<!-- aur agar mai yahan pe de deta hi isko agar 3 (height input field mei 3 de diya)
+
+Calculate kiya 
+
+to isne bola -- Please give a valid height NaN -->
+
+<!-- aa..., actually mei hum usko (if wale code ko) change kar hi nahi rahe
+
+kyuki if yeh condition (if wala code) to tab hi run hogi ,
+yeh value tab hi set hogi jab yeh run hoga
+-->
+
+<!-- theek hai code logic bhi aap samajh hi rahe hai -->
+
+<!-- 36:56 -->
+
+<!-- varna kya karo isko height pe hi set kar do, theek hai ji just dekhne ke liye
+as follows -->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if( height = '' || height < 0 || isNaN(height) ){
+        results.innerHTML = `Please give a valid height ${height}`
+     }
+     results.innerHTML = `${height}`
+     } )
+-->
+
+<!-- to save karte hai to hum yahan pe karte hai 4
+(height input field mei 4 likh diya)
+
+Calculate kiya
+
+to dekhiye 4 set ho gaya 
+
+(4 likha hua aa gaya right side website browser mei Calculate button pe click karne ke baad) -->
+
+<!-- Lekin bolte hai 4aaa 
+(height input field mei 4aaa likh diya)
+
+Calculate kiya
+
+to wo bhi 4 mei convert ho jata hai
+
+(4 likha hua aa gaya right side website browser mei Calculate button pe click karne ke baad)-->
+
+<!-- Lekin agar aap aaa karte hai 
+(height input field mei aaa likh diya)
+
+Calculate karte hai
+
+to NaN
+
+(NaN likha hua aa gaya right side website browser mei Calculate button pe click karne ke baad)-->
+
+<!-- 37:12 -->
+
+<!-- yeh sara ka sara discussion Sir ne starting mei aapko karwaya tha ummeed hai aapko yaad hoga-->
+
+<!-- theek hai ji to chaliye yeh samajh mei aa gaya -->
+
+<!-- ab hum weight ke andar bhi exact same karenge
+
+abhi yeh ( results.innerHTML = `${height}` jo if ke baad (bahar) likha hai) to sirf sir ne aapko samjhaane ke liye kiya tha 
+
+to isko ( results.innerHTML = `${height}` jo if ke baad (bahar) likha hai) Sir ne backspace kar diya-->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if( height = '' || height < 0 || isNaN(height) ){
+        results.innerHTML = `Please give a valid height ${height}`
+     }
+     
+     } )
+-->
+
+<!-- Copy paste kar lete hai isko (if wale code ko)
+yeh lijiye -->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if( height = '' || height < 0 || isNaN(height) ){
+        results.innerHTML = `Please give a valid height ${height}`
+     }
+     
+     if( height = '' || height < 0 || isNaN(height) ){
+        results.innerHTML = `Please give a valid height ${height}`
+     }
+     
+     } )
+-->
+
+<!-- ab isi tareh se weight ka bhi check kar lijiye , weight mei bhi same hi checks hai ki weight empty nahi hona chahiye  (weight === '') 
+
+weight less than zero (weight < 0) 
+
+OR 
+
+isNaN(weight) 
+
+as follows-->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if( height = '' || height < 0 || isNaN(height) ){
+        results.innerHTML = `Please give a valid height ${height}`
+     }
+     
+     if( weight = '' || weight < 0 || isNaN(weight) ){
+        results.innerHTML = `Please give a valid weight ${weight}`
+     }
+     
+     } )
+-->
+
+<!-- theek hai to yeh humare pas weight aa gaya hai
+
+(if code for weight)  -->
+
+<!-- ok to yahan pe hum weight ko bhi likhte hai -->
+
+<!-- theek hai ji to itna kaam to humare pas abhi ho gaya hai ekdum perfect ki humare pas height bhi (if code for height) hai aur humare pas weight bhi hai (if code for weight) -->
+
+<!-- theek hai ji ab hum kya karte hai ki agar sara ka sara kaam yahan pe achha ho raha hai ki agar humare pas height bhi hai (if code for height) 
+
+to hum yahan pe kya karte hai (38:04) else if laga dete hai actually mei kyuki height bhi check ho jayegi (if code of height) , weight bhi check ho jayega (if code of weight)  -->
+
+<!-- vaise to iss code (if code of height) (if code of weight) mei koi dikkat wali baat hai nahi 
+
+but theek hai ek achhe syntax ke liye hum laga dete hai (else if laga dete hai)
+
+aur isko (if code of weight) ko le jaate hai hum same line pe as follows -->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if( height = '' || height < 0 || isNaN(height) ){
+        results.innerHTML = `Please give a valid height ${height}`
+     } else if ( weight = '' || weight < 0 || isNaN(weight) ){
+        results.innerHTML = `Please give a valid weight ${weight}`
+     }
+     
+     } )
+-->
+
+<!-- to else if , to weight bhi check kar liya hai (as above) -->
+
+<!-- to theek hai agar yeh sara check ho gaya hai to fir hum else case mei kya karenge yahan pe -->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if( height = '' || height < 0 || isNaN(height) ){
+        results.innerHTML = `Please give a valid height ${height}`
+     } else if ( weight = '' || weight < 0 || isNaN(weight) ){
+        results.innerHTML = `Please give a valid weight ${weight}`
+     } else {
+     
+     }
+     
+     } )
+-->
+
+<!-- ki theek hai sab badhiya agar aa raha hai to kya karo BMI calculate kar lo -->
+
+<!-- 38:26 -->
+
+<!-- ab BMI calculate karne ke liye chahiye formula -->
+
+<!-- ab dekhiye formula pe Sir aapko jada pareshaan nahi karenge yahan pe kyuki formula to dekhiye aap jaise chahe  likh sakte hai -->
+
+<!-- Sir aapko formula direct hi de dete hai -->
+
+<!-- yeh lijiye Sir ne notes mei likh rakha hai to yeh humare pas formula hai -->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if( height = '' || height < 0 || isNaN(height) ){
+        results.innerHTML = `Please give a valid height ${height}`
+     } else if ( weight = '' || weight < 0 || isNaN(weight) ){
+        results.innerHTML = `Please give a valid weight ${weight}`
+     } else {
+        (weight / ((height*height)/10000)).toFixed(2)  
+     }
+     
+     } )
+-->
+
+<!-- 38:39 -->
+
+<!-- theek hai formula kya kheta hai ki jaise ki abhi humne dekha tha 
+-- how to find BMI index (browser mei search kiya tha --
+how to find BMI index formula) 
+
+(see browser result) to weight in kilograms divided by height in meters squared-->
+
+<!-- to wo hi same exact hai (see formula written in else)
+
+weight hai humare pas , aur uske baad height jo hai wo humne multiply kar di hai kyuki wo hume uss value mei chahiye thi exact aur height squared matlab height * height, theek hai humne wo le liya hai aur 
+
+toFixed(2) isliye kiya hai kyuki multiply divide karne ke baad kayi bar jo number hai wo bahut hi jada long aa jata hai decimal ke baad
+
+hume itna nahi chahiye to humne toFixed(2) usko laga diya hai yahan pe ki do (2) decimal value tak dikha do iske baad mujhe requirement nahi hai -->
+
+<!-- to yeh humara ho gaya formula (39:13) -->
+
+<!-- ab dekhiye isi tareh se aap chahein to apna temperature etc bhi bana sakte hai to formula hai wo lag jayega wo mathematical part hai itna coding part nahi hai actually mei -->
+
+<!-- to isko (else ke formula ko) hum le lete hai ek const, isko (else ke formula ko) bol dete hai bmi , 
+
+to yeh ho gaya humare pas bmi as follows-->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if( height = '' || height < 0 || isNaN(height) ){
+        results.innerHTML = `Please give a valid height ${height}`
+     } else if ( weight = '' || weight < 0 || isNaN(weight) ){
+        results.innerHTML = `Please give a valid weight ${weight}`
+     } else {
+        const bmi = (weight / ((height*height)/10000)).toFixed(2)  
+     }
+     
+     } )
+-->
+
+<!-- yeh ho gaya bmi calculate ho gaya hai ab -->
+
+<!-- ab kya karna hai iss bmi ko result (results , see index.html) mei display karana hai -->
+
+<!-- to show the result (commented out) likh liya as follows -->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if( height = '' || height < 0 || isNaN(height) ){
+        results.innerHTML = `Please give a valid height ${height}`
+     } else if ( weight = '' || weight < 0 || isNaN(weight) ){
+        results.innerHTML = `Please give a valid weight ${weight}`
+     } else {
+        const bmi = (weight / ((height*height)/10000)).toFixed(2)
+        show the result commented out
+     }
+     
+     } )
+-->
+
+<!-- theek hai ab result kaise show karenge bahut hi aasaan hai, yeh humne liya humara results -->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if( height = '' || height < 0 || isNaN(height) ){
+        results.innerHTML = `Please give a valid height ${height}`
+     } else if ( weight = '' || weight < 0 || isNaN(weight) ){
+        results.innerHTML = `Please give a valid weight ${weight}`
+     } else {
+        const bmi = (weight / ((height*height)/10000)).toFixed(2)
+        show the result commented out
+        results
+     }
+     
+     } )
+-->
+
+<!-- theek hai aur uske (results) andar kya karein innerHTML add kar dein
+results.innerHTML -->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if( height = '' || height < 0 || isNaN(height) ){
+        results.innerHTML = `Please give a valid height ${height}`
+     } else if ( weight = '' || weight < 0 || isNaN(weight) ){
+        results.innerHTML = `Please give a valid weight ${weight}`
+     } else {
+        const bmi = (weight / ((height*height)/10000)).toFixed(2)
+        show the result commented out
+        results.innerHTML
+     }
+     
+     } )
+-->
+
+<!-- to innerHTML iss bar hum kya karte hai back ticks lage span mei add karte hai kyuki aage jaake kaam ayega
+
+haa aage ek project hai jahan pe hum iss tareh (above tareh as follows) ki values likhenge to thodi practice abhi se ho jaye to jada achha hai -->
+
+<!-- 39:56 -->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if( height = '' || height < 0 || isNaN(height) ){
+        results.innerHTML = `Please give a valid height ${height}`
+     } else if ( weight = '' || weight < 0 || isNaN(weight) ){
+        results.innerHTML = `Please give a valid weight ${weight}`
+     } else {
+        const bmi = (weight / ((height*height)/10000)).toFixed(2)
+        show the result commented out
+        results.innerHTML = `<span></span>`
+     }
+     
+     } )
+-->
+
+<!-- theek hai yeh lijiye yeh span mei humne likha aur span ke andar values inject kar dete hai to yeh lijiye dollar sign ke saath yeh lijiye aur bol diya yeh lijiye bmi aapki inject ho gayi hai 
+
+results.innerHTML = `<span>${bmi}</span>`-->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if( height = '' || height < 0 || isNaN(height) ){
+        results.innerHTML = `Please give a valid height ${height}`
+     } else if ( weight = '' || weight < 0 || isNaN(weight) ){
+        results.innerHTML = `Please give a valid weight ${weight}`
+     } else {
+        const bmi = (weight / ((height*height)/10000)).toFixed(2)
+        show the result commented out
+        results.innerHTML = `<span>${bmi}</span>`
+     }
+     
+     } )
+-->
+
+<!-- 40:08 -->
+
+<!-- theek hai ji bas itna hi to kaam karna tha yeh kiya humne save -->
+
+<!-- aur bola ki theek hai 180 cm kisi ki height hai 
+(180 likh liya height ke input field mei ) 
+
+aur 65 , ficticious values hi de rahe hai 
+
+(65 likh liya weight ke input field mei)-->
+
+<!-- Calculate kariye bmi 
+
+(Calculate button pe click kar liya) -->
+
+<!-- to usne calculate kar diya 
+
+20.06 aa gaya-->
+
+<!-- agar 65 ki jagah aap a de dete hai 
+
+(a likh liya weight ke input field mei)
+
+calculate karte hai
+
+(Calculate button pe click kar liya)
+
+to isne kaha
+
+Please give a valid heught NaN-->
+
+<!-- achha message change nahi kara kya humne
+
+dekhiye message change nahi kara -->
+
+<!-- results.innerHTML = `Please give a valid weight ${weight}` 
+
+likh liya (weight ke else if mei) -->
+
+<!-- const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if( height = '' || height < 0 || isNaN(height) ){
+        results.innerHTML = `Please give a valid height ${height}`
+     } else if ( weight = '' || weight < 0 || isNaN(weight) ){
+        results.innerHTML = `Please give a valid weight ${weight}`
+     } else {
+        const bmi = (weight / ((height*height)/10000)).toFixed(2)
+        show the result commented out
+        results.innerHTML = `<span>${bmi}</span>`
+     }
+     
+     } )
+-->
+
+<!-- to yeh weight de dete hai wapas se
+
+theek hai wapas se to 160 cm (40:36) 
+
+(height input field mei 160 cm likh diya)
+
+aur yahan pe (weight input field mei) de diya q
+
+Calculate button pe click kiya-->
+
+<!-- to isne bola ki are -- Please give a valid weight NaN -->
+
+<!-- 40:40 -->
+
+<!-- achha sorry galti ho gayi to theek hai valid weight de dete hai kisi ka 88
+
+(88 likh liya weight input field mei) 
+
+aur height field mei 160 hai hi-->
+
+<!-- Calculate button pe click kiya -->
+
+<!-- 34.38 aa gaya -->
+
+<!-- ab aap kya kar sakte hai based on yeh aapka task hai aapka assignment hai ki based on yeh Sir ne aapko range de rakhi hai na (underweight normal range overweight see website browser) to iss basis pe aapko ek aur message yahan pe print karna hai iss innerHTML 
+
+(results.innerHTML = `<span>${bmi}</span>`)
+
+ke andar (40:56) ek line break ke baad
+
+ki yeh jo aapka value hai 34.38 yeh actually mei underweight hai ki normal range hai ki overweight hai-->
+
+<!-- 41:02 -->
+
+<!-- yeh based on aapko yahan pe (code mei) print karna hai
+
+theek hai to itna sa assignment to aap kar hi loge -->
+
+<!-- ab aapko yeh code bhi chahiyega -->
+
+<!-- theek hai to yahan pe aate hai wapas se hum aur jaate hai humare chrome ke upar aur yahan pe yeh project 2 (means markdown file ke andar) -->
+
+<!-- markdown file mei aa jaate hai -->
+
+<!-- to isko hum ek aur add kar dete hai -->
+
+<!-- isko bol dete hai hum ## project 2 solution -->
+
+<!-- ## project 2 solution -->
+
+<!-- wo hi humara triple back ticks, yeh isliye likh rahe hai taki aapko easy rahe thoda sa copy paste easily kar paao aap jab wahan pe github ke upar dekho -->
+
+<!-- ## project 2 solution
+
+```javascript
+
+
+``` -->
+
+<!-- aur code copy paste kar diya as follows -->
+
+<!-- ## project 2 solution
+
+```javascript
+const form = document.querySelector('form') 
+
+     this usecase will give you empty value commented out   
+     const height = parseInt(document.querySelector('#height').value) commented out
+
+     form.addEventListener('submit', function(e){
+     e.preventDefault()
+
+     const height = parseInt(document.querySelector('#height').value)
+     
+     const weight = parseInt(document.querySelector('#weight').value)
+     
+     const results = document.querySelector('#results')
+     
+     if( height = '' || height < 0 || isNaN(height) ){
+        results.innerHTML = `Please give a valid height ${height}`
+     } else if ( weight = '' || weight < 0 || isNaN(weight) ){
+        results.innerHTML = `Please give a valid weight ${weight}`
+     } else {
+        const bmi = (weight / ((height*height)/10000)).toFixed(2)
+        show the result commented out
+        results.innerHTML = `<span>${bmi}</span>`
+     }
+     
+     } )
+
+``` -->
+
+<!-- to yeh lijiye paste kar diya hai to kitna achhe se aapke pas aa raha ahi project 1 
+
+project 2 solution  (see markdown preview)
+
+theek hai-->
+
+<!-- theek hai bada achhe se assignment bhi included hai yahan pe to please dhayaan rakhiyega uska -->
+
+<!-- save kar dete hai markdown file ko aur code push kar dete hai apne github account pe -->
+
+<!-- 42:04 -->
+
+<!-- ab stackblitz website pe chaiaurcode.js ko close kar diya and refresh (reload) kar diya , to values ho jayegi gayab (as it is not forked) -->
+
+<!-- ==================================================== -->
+
+<!-- Project 3 -->
+
+<!-- ab stackblitz website mei aa gaye -->
+
+<!-- ab yahan se chalte hai home pe (website browser pe home button pe click kar liya) theek hai ji home pe aa gaye hai-->
+
+<!-- index.html file ko close kar diya -->
+
+<!-- to humara bmi calculator bhi ho gaya hai -->
+
+<!-- ab ek karenge easy sa project bahut hi easy isse easy project aapne kiya hi nahi hoga but actually mei yeh jo timming wala khel hai na javascript ke andar yeh bada hi complex hai bahut hi interesting hai kabhi ispe bhi baat karenge charcha karenge-->
+
+<!-- ab aate hai humare digital clock pe -->
+
+<!-- 42:37 -->
+
+<!-- website browser right side pe project 3 pe click kar liya -->
+
+<!-- to yeh ho gaya humara digital clock -->
+
+<!-- kya karna hai yahan pe aapko local time display karana hai theek hai ji bada hi easy hai-->
+
+<!-- to project 3 ke index.html mei aa gaye -->
+
+<!-- ab index.html ke andar kya hai ki yeh to css likhi thi theek hai humare pas ek center div hai line 37
+
+(<div class="center">)
+
+ flexbox etc laga rakha hai sir ne yahan pe -->
+
+<!-- aur yeh humare pas banner hai local time ka
+
+line 38 <div id="banner">-->
+
+<!-- aur yeh humne ek id de di clock ki
+
+      <div id="clock"></div> line 39
+
+      jo ki orange mei display ho rahi hai
+
+      (see website browser right side)
+ -->
+
+<!-- to bas itna sa hi hai time display kara do-->
+
+<!-- theek hai ji to yeh chaiaurcode.js file mei aa gaye hum project 3 ke-->
+
+<!-- ab time kaise display karaye -->
+
+<!-- sabse pehle time display karane ke liye kuch chahiyega to sari ki kahan display karau -->
+
+<!-- to kya karo clock ko le lo reference
+
+      <div id="clock"></div> line 39 of index.html
+ 
+ 
+ aur yahan pe display kara do-->
+
+<!-- achha ab clock ko kaise lu reference mei -->
+
+<!-- 43:21 -->
+
+<!-- chaiaurcode.js file mei aa gaye -->
+
+<!-- isko le lete hai document.querySelector nahi iss bar hum naya use karte hai document.getElementById()
+
+theek hai
+
+just for fun aap chahein to kuch bhi use kariye koi dikkat wali baat hi nahi hai 43:29 -->
+
+<!-- document.getElementById() likh liya chaiaurcode.js mei -->
+
+<!-- document.getElementById() -->
+
+<!-- 43:29 -->
