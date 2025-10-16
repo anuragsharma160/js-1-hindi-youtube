@@ -2469,3 +2469,839 @@ just for fun aap chahein to kuch bhi use kariye koi dikkat wali baat hi nahi hai
 <!-- document.getElementById() -->
 
 <!-- 43:29 -->
+
+<!-- theek hai yeh humne le liya getElementById aur bola Id kya do to yahan pe clock de denge 
+
+(see line 39 of index.html)-->
+
+<!-- document.getElementById('clock') -->
+
+<!--  -->
+
+<!-- theek hai agar kisi ko dikkat ho rahi hai to wo kya kar sakte hai ki document.querySelector -->
+
+<!-- document.getElementById('clock') -->
+
+<!-- document.querySelector() -->
+
+<!-- Sir kya hai ki aapko alag alag tarike se batate hai kyuki aap jo code padhenge wo bhi alag alag tarike se padhenge to yeh lijiye querySelector -->
+
+<!-- querySelector mei kya karna hai aapko kuch nahi , id de dijiye -->
+
+<!-- document.getElementById('clock') -->
+
+<!-- document.querySelector('#clock') -->
+
+<!-- theek hai yeh clock de diya ab aapka jo man kare usse aap lijiye (dono methods mei se koi sa bhi ek use kariye), -->
+
+<!-- variable mei bhi store kar lete hai to 
+isko ( document.getElementById('clock') ) bol dete hai 
+const clock -->
+
+<!-- const clock = document.getElementById('clock') -->
+
+<!-- const clock = document.querySelector('#clock') -->
+
+<!-- dono mat lena kisi ek ko comment out kar dena
+hum first wala use karte hai and second wale ko comment out kar dete hai -->
+
+<!-- dono mei ek hi value aane wali hai ab itna to hum jaan hi chuke hai koi badi baat hai hi nahi -->
+
+<!-- achha ab kya karna hai ki ek clock display karani hai -->
+
+<!-- achha clock aise hi nahi display karani yeh digital clock hai , to har second pe change honi chahiye-->
+
+<!-- dekhiye clock agar aapko chahiye to aap bahut hi aasaani se le sakte hai usme to kuch nahi karna 
+
+let date-->
+
+<!-- const clock = document.getElementById('clock') -->
+
+<!-- const clock = document.querySelector('#clock') 
+
+let date -->
+
+<!-- aur date kya leni hai aapko , simply date ko le lijiye new Date
+
+date ek apne pas direct hi object hai-->
+
+<!-- const clock = document.getElementById('clock') -->
+
+<!-- const clock = document.querySelector('#clock') 
+
+let date = new Date()-->
+
+<!-- theke hai aa gayi ab humare pas date -->
+
+<!-- achha iss date ko agar aapko display karana hai to kya kar sakte ho 
+
+to aap kar sakte ho console.log() aur bol dijiye ki yeh jo date hai ( console.log(date) ) iske (date) upar ek method hota hai toLocalString, toDateString bhi hai (toDateString bhi ek method hai) hum time string (toLocalTimeString) 
+use karenge 
+
+console.log(date.toLocalTimeString)
+
+aur yeh method -- console.log(date.toLocalTimeString()) -->
+
+<!-- const clock = document.getElementById('clock') -->
+
+<!-- const clock = document.querySelector('#clock') 
+
+let date = new Date()
+
+console.log(date.toLocalTimeString())-->
+
+<!-- bas that's it ho gaya aapka kaam -->
+
+<!-- achha problem kya hai ki abhi yeh (yeh method) yahan pe (website browser right side mei orange clock mei) nahi aya hai -->
+
+<!-- jab mai console open karta hu to (stackblitz website console open karte hai bottom right side se) to yeh mere pas time aa gaya hai -- 2:16:16 PM (website console mei ek time dikha dega) 
+
+mai jitni bar isko (iss code ko) save karunga to utni bar kya hai mere pas time aa jayega-->
+
+<!-- theek hai jitni bar page refresh hoga yeh (website browser right side pe page reload hoga ) utni bar updated time aata rahega mere pas (website console mei 2:16:29 PM) -->
+
+<!-- Lekin mai kya chahta hu yeh jo date hai as follows
+
+let date = new Date()
+
+console.log(date.toLocalTimeString())
+
+yeh har bar run ho -->
+
+<!-- website console close kar diya -->
+
+<!-- yeh as follows
+
+let date = new Date()
+
+console.log(date.toLocalTimeString())
+
+bar bar run ho aur yahan pe (website browser right side mei orange clock mei) yeh update hota hi rahe -->
+
+<!-- 45:14 -->
+
+<!-- ab aisa koi method agar mere ko pata ho javascript ke andar jo ki har moment pe hi run ho ya fir mai control kar saku ki mai aapko 1 second baad 2 second baad run karna chahte hu , har bar run karna chahta hu to kaise karein-->
+
+<!-- to kuch log yahan pe bahut extra intelligent ayenge aur bolenge crone job laga do are crone job kya baat kar rahe hai aap abhi itna advance pahunch gaye hai kya aap server ke upar pahunch gaye hai ki aap crone job lagayenge yahin pe aap interview ko fail kar jaate hai -->
+
+<!-- kyuki pooch wo aap se raha hai choti si baat ,
+
+sui ke bare mei baat ho rahi hai aap apni talwar nikaal rahe hai
+
+aise to kaise chalega-->
+
+<!-- to yahan pe kya karna hai aapko ek chota sa method pata hona chahiye jo ki javascript ke events control karta hai wo hai aapka setInterval method -->
+
+<!-- yeh (setInterval) aapko deta hai ki aap ek koi bhi method mujhe (setInterval) de dijiye aur interval bata dijiye ki kitne interval baad mai (setInterval) usko continuously run karta jaunga-->
+
+<!-- jab tak aapka program chalega tab tak ya jab tak yeh open hogi script (chaiaurcode.js) tab tak run karunga (setInterval) -->
+
+<!-- 46:02 -->
+
+<!-- const clock = document.getElementById('clock') -->
+
+<!-- const clock = document.querySelector('#clock') commented out
+
+let date = new Date()
+
+console.log(date.toLocalTimeString())
+
+setInterval()-->
+
+<!-- iske ( setInterval() ) bare mei bhi aur discuss karenge kyuki yeh ( setInterval() ) javascript ke bahut sare interviews ko fail karwata hai-->
+
+<!-- haa ji discuss karenge ispe ( setInterval() ) abhi but abhi aapko pata lag gaya-->
+
+<!-- to do (2) parameter hai yeh lijiye function() aur yeh function ki body -- function (){}-->
+
+<!-- const clock = document.getElementById('clock') -->
+
+<!-- const clock = document.querySelector('#clock') commented out
+
+let date = new Date()
+
+console.log(date.toLocalTimeString())
+
+setInterval(function(){})-->
+
+<!-- aur comma , laga ke (function(){} ke baad comma , laga ke) dusra parameter aur yeh hai time miliseconds mei hota hai 
+
+
+1000 dijiye 1 second , 2000 de dijiye (2 seconds) 46:20-->
+
+<!-- const clock = document.getElementById('clock') -->
+
+<!-- const clock = document.querySelector('#clock') commented out
+
+let date = new Date()
+
+console.log(date.toLocalTimeString())
+
+setInterval(function(){}, 1000)-->
+
+<!-- (1000 means time i.e. 1000 mili seconds) -->
+
+<!-- isko (above code ko i.e. setInterval(function(){}, 1000) ) humesha isi tareh se (setInterval(function(){},1000)  likhna
+
+agar isko isi tareh se nahi likha to pakka hai ki syntax mei gadbadi karoge aur jahan pe aapko yeh code highlight etc nahi milte jo ki kayi interviews mei nahi milte hai
+
+haa ji kayi interviews aise hote hai jahan pe code highlight, color highlight nahi milta hai wahan pe pakka gadbad karoge-->
+
+<!-- to yaad rakhna isko (setInterval(function(){},1000) isi tareh se (setInterval(function(){},1000) likhna hai
+
+ki aapko kya karna hai yeh setInterval() likha 
+
+uske baad do (2) parameter hote hai 
+
+pehla first parameter likhiye iss tareh se yeh function likha -- function()
+
+function() ki body ( {} ) likhi iske baad humne function(){} 
+
+setInterval(function(){})
+
+comma , laga ke yahan pe humne 1000 de diya
+
+setInterval(function(){}, 1000)-->
+
+<!-- agar 2000 dena ho to 2 second ke liye jaisa bhi interviewer aapse pooch raha hai, jo bhi aapka task hai -->
+
+<!-- const clock = document.getElementById('clock') -->
+
+<!-- const clock = document.querySelector('#clock') commented out
+
+let date = new Date()
+
+console.log(date.toLocalTimeString())
+
+setInterval(function(){
+
+}, 1000)-->
+
+<!-- achha ab karna kya hai , karna to kuch bhi nahi hai hume 
+
+yeh (as follows)
+
+let date = new Date()
+
+console.log(date.toLocalTimeString())
+
+ hi to karna tha (see code) -->
+
+<!-- to theek hai isko (as follows) 
+
+let date = new Date()
+
+console.log(date.toLocalTimeString())
+
+ko hum karte hai cut
+
+-->
+
+<!-- aur isko (setInterval mei) de dijiye -->
+
+<!-- const clock = document.getElementById('clock') -->
+
+<!-- const clock = document.querySelector('#clock') commented out
+
+setInterval(function(){
+   let date = new Date()
+
+   console.log(date.toLocalTimeString())
+
+}, 1000)-->
+
+<!-- 46:59 -->
+
+<!-- achha ab humare pas yeh jo values (jo setInterval mei likha hai) hai humare pas har 1 second mei ayegi (1000 ms) -->
+
+<!-- to save karke dekhte hai (47:04) -->
+
+<!-- to console (website console) ke andar mai dekhta hu to dekhiye ab har second pe mere pas yeh values aa rahi hai 
+
+2:15:26 
+2:15:27 
+2:15:28 
+2:15:29 
+
+26, 27, 28 to itna kaam to mere pas ho gaya hai-->
+
+<!--( jitni bar save karoge utni bar new values aa ti jayegi website console mei )-->
+
+<!-- but mujhe acually mei yeh (2:15:26 , 2:15:27 ,...) console (website console) ke andar kabhi chalani hi nahi thi yeh 
+(2:15:26 , 2:15:27 ,...)-->
+
+<!-- to isko stop kar dete hai hum (prohibit button pe click karke website console mei and website console ko close kar diya) ek second ke liye -->
+
+<!-- to console mei mujhe kabhi isko chalni hi nahi thi -->
+
+<!-- to isko
+
+( console.log(date.toLocalTimeString()) )
+
+ kar dete hai comment out -->
+
+ <!-- mujhe kahan chalani thi , mujhe yeh document (jo project 2 ka website view dikh raha hai right side website browser mei) update karna tha, uska jo node hai wo update karna tha har second, theek hai wo kar dete hai isme kya baat hai -->
+
+<!-- to yeh lijiye -- clock -->
+
+<!-- const clock = document.getElementById('clock') -->
+
+<!-- const clock = document.querySelector('#clock') commented out
+
+setInterval(function(){
+   let date = new Date()
+
+   console.log(date.toLocalTimeString()) commented out
+   clock
+}, 1000)-->
+
+<!-- uska (clock) kya kariye innerHTML, innerText jo bhi aapko lena hai , Sir innerHTML le lete hai
+
+ -->
+
+<!-- const clock = document.getElementById('clock') -->
+
+<!-- const clock = document.querySelector('#clock') commented out
+
+setInterval(function(){
+   let date = new Date()
+
+   console.log(date.toLocalTimeString()) commented out
+   clock.innerHTML =
+}, 1000)-->
+
+<!-- usko kya kariye yeh lijiye -- jo upar likha tha (see code) -- date 
+
+date.
+
+bahut sare methods hai iske (date) andar-->
+
+<!-- const clock = document.getElementById('clock') -->
+
+<!-- const clock = document.querySelector('#clock') commented out
+
+setInterval(function(){
+   let date = new Date()
+
+   console.log(date.toLocalTimeString()) commented out
+   clock.innerHTML = date.
+}, 1000)-->
+
+<!-- to Sir use kar lete hai toLocalTimeString -->
+
+<!-- const clock = document.getElementById('clock') -->
+
+<!-- const clock = document.querySelector('#clock') commented out
+
+setInterval(function(){
+   let date = new Date()
+
+   console.log(date.toLocalTimeString()) commented out
+   clock.innerHTML = date.toLocalTimeString();
+}, 1000);-->
+
+<!-- aur yeh lijiye bas itna sa hi to kaam karna tha -->
+
+<!-- bas ab humare pas date aa gayi hai jo ki har second pe update ho rahi hai (see right side website browser orange clock) -->
+
+<!-- 47:47 -->
+
+<!-- kyu update ho rahi hai kyuki yeh method (setInterval) har second run kar raha hai ( har second isliye kyuki humne 1000 mili second yani 1 second liya hai setInterval ke liye ) -->
+
+<!-- 47:49 -->
+
+<!-- theek hai to bas itna sa chota sa project tha -->
+
+<!-- Lekin kaafi interestnig tha -->
+
+<!-- ab chalte hai humare bade project pe -->
+
+<!-- 48:03 -->
+
+<!-- iss code ko copy kar lete hai aur chalte hai humare markdown file pe aur yahan pe (markdown file mei) ek aur dena hai aapko theek hai ji ek aur de dete hai aapko code as follows -->
+
+<!-- yeh hai humare pas project 3 -- ## project 3 solution code -->
+
+<!-- ## project 3 solution code -->
+
+<!-- yeh lijiye back ticks aur wo hi javascript
+
+``` javascript -->
+
+<!-- ## project 3 solution code 
+
+``` javascript-->
+
+<!-- ha agar aapko kabhi  khud ke bhi kaam mei lena hai to aap javascript ki jagah aap chahte hai ki nahi mujhe python ka code likhna hai to aap python ka code bhi likh sakte hai wo bhi code highlight ho jate hai yahan pe 
+
+```python
+
+```
+
+bus aapko language dena hai as follows-->
+
+<!-- ## project 3 solution code 
+
+``` python
+
+```-->
+
+<!-- jaise ki suppose kariye print() , haa python mei bhi bahut code likhte hai sir -- print("hitesh") -->
+
+<!-- ## project 3 solution code 
+
+``` python
+print("hitesh")
+
+```-->
+
+<!-- to dekhiye python ka code bhi aa jata hai (se md priview) aur jab aap github pe dekhenge to wo bhi code copy paste ho jata hai, java, python wqbka aata hai-->
+
+<!-- abhi javascript pe focus kar rahe hai , just for extra knowledge sir ne bata diya-->
+
+<!-- ## project 3 solution code 
+
+``` javascript
+const clock = document.getElementById('clock') -->
+
+<!-- const clock = document.querySelector('#clock') commented out
+
+setInterval(function(){
+   let date = new Date()
+
+   console.log(date.toLocalTimeString()) commented out
+   clock.innerHTML = date.toLocalTimeString();
+}, 1000);
+
+```-->
+
+<!-- yeh lijiye ab aapke pas aa gaya hai project 3 ka bhi solution code vaise to bahut aasaan tha -->
+
+<!-- now github pe push kar denge -->
+
+<!-- 49:33 -->
+
+<!-- ab chalte hai humare bade project pe yeh project thoda sa bada hoga thoda sa time consuming hoga lekin yeh koi complex project nahi hai -->
+
+<!-- dekhiye itna code likhne ke baad aap samajh hi gaye honge logic ek ke baad ek aap lagate jaate hai itna bhi nahi hota hai ki uske andar humare pas problem ho jaye-->
+
+<!-- 49:54 -->
+
+<!-- ================================================= -->
+
+<!-- Project 4 -->
+
+<!-- to yeh jo project 4 hai iske andar humare pas code kaafi jada hai lekin complex nahi hai -->
+
+<!-- complex nahi hai bahut hi chota sa if else etc hum lagayenge aur kaam ho jayega -->
+
+<!-- haa document ke andar values kaafi sari select karni padegi but dekhiye ek value select karo , do (2) value select karo ya 20 value select karo document ke andar wo hi method lagane hai wo hi querySelector hai to itna jada koi complex  kaam hai nahi-->
+
+<!-- lengthy hai yeh maante hai time lagega to theek hai -->
+
+<!-- yeh kya hai (project 4) guess the number (folder file side bar se project 4 pe click kar liya stackblitz website mei) bada hi simple sa game aapne bhi khela hoga to yeh guess the number hai-->
+
+<!-- website browser right side mei project 4 open kar liya -->
+
+<!-- isme kya hai ki aapke pas try and guess the number between 1 and 100 (see website browser right side project 4)-->
+
+<!-- theek hai (see website browser) -- you have 10 attempts to show the numbers (you have 10 attempts to guess the right number) theek hai and guess the right number-->
+
+<!-- to Guess a number aapko karna hai (see website browser) -->
+
+<!-- yahan pe (see input field) (see website browser) aapko ek number enter karna hai-->
+
+<!-- submit (submit guess button, see website browser) jaise hi karoge to wo number evaluate hoga aur aapko check karna hai ki wo number actually mei sahi hai ya nahi hai ,
+
+to random number bhi generate karna padega theek hai ji-->
+
+<!-- aur Previous Guesses: (see website browser) to hum kya rahe hai ek array bana rahe hai jiske andar user ne jo bhi previous guesses diye hai apne wo sab hum ek array ke andar store karte jayenge aur wo bhi user ko hum display karate jayenge-->
+
+<!-- aur saath mei yeh jo Guesses Remaining (see website browser) hai usko bhi hume lower down karna hai -->
+
+<!-- to  har ek click pe hume wo guess ka jo number hai wo lower down karna hai 
+
+ki ab aapke pas 9 attempts reh gaye hai, 5 attempts reh gaye hai 
+
+to iss tareh se karna padega-->
+
+<!-- 51:02 -->
+
+<!-- theek hai to kaafi kuch hai iske andar but complex nahi hai fir se keh rahe hai Sir complex nahi hai -->
+
+<!-- ek ek karke isko study karte hai kyuki bada hi achha project hai bada hi maja ayega aapko iske andar -->
+
+<!-- to dekhiye code kaafi hai (project 4 ke index.html mei aa gaye) code se mat ghabraiyega -->
+
+<!-- to dekhiye aa...,  yahan pe hai humare pas ek form
+
+<form class="form"> line 24 of index.html 
+
+form opening tag to form closing tag-->
+
+<!-- theek hai ji aur yeh hai humare pas ek result
+
+<div class="resultParas"> line 30 
+
+opening tag to closing tag -->
+
+<!-- theek hai koi dikkat wali baat hi nahi hai -->
+
+<!-- ab form ke andar bhi mujhe pata hai ki mere pas ek 51:22 to guessField hai 
+
+<label2 for="guessField" id="guess">Guess a number</label> (see index.html line 25) ki Guess a number (see index.html)  theek hai-->
+
+<!-- uske baad ek input hai (line 26 index.html) jo ki kya hai guessField hai (id=guessField) aur wahan se mai ek input hai kyuki wahan se values nikaal sakta hu to theek hai wo bhi nikaal lunga-->
+
+<!-- aur uske baad mere pas kya hai ek input type submit (<input type="submit" see line 27 index.html) 
+
+
+ab yeh jo input type submit hai na yeh actually mei button hai yeh , haa ji form ke andar jaruri nahi hai ki humesha button ko hi type submit likho ,
+
+aap input ko bhi type = submit likh sakte ho (see line 27 index.html) -->
+
+<!-- theek hai to yeh jo button hai yeh iss tareh ka (see website browser right side -- Submit guess button)
+
+ab aise (see website browser right side) scenarios aate hai isliye yeh yahan pe (see index.html) scenario diya hua hai -->
+
+<!-- aur yeh jo humara div hai 
+(<div class="resultParas"> see line 30 of index.html) yeh wala neeche wala div hai iske andar Previous Guesses (see website browser right side) hai humare pas theek hai to hum yeh bhi easily le lenge guesses (class = guesses see line 31 of index.html) naam se -->
+
+<!-- 52:00 -->
+
+<!-- aur lastResult jo hai humare pas 
+(see index.html line 32 class = lastResult) wo bhi easily hum le lenge 10 
+(website browser right side Guesses Remaining: 10) ke andar se -->
+
+<!-- theek hai to itna jada difficult wali baat nahi hai -->
+
+<!-- to values to hum le lenge yahan pe -->
+
+<!-- theek hai ab jaise humare pas ek id hai yahan pe , aa..., actually mei kahan gaya yeh rahi submit 
+(id = subt , line 27 of index.html) to subt humne isko likh rakha hai to yeh actually mei kya hoga yeh humara majorly click event hoga , yahan pe hume event ko listen karna padega-->
+
+<!-- theek hai baki Sir aapko aur karke dikhaate hai , thoda sa aur aapko idea lagega (chaiaurcode.js file mei aa gaye) -->
+
+<!-- theek hai to sabse pehle to humara jo challenge hai wo hai ek random number 1 se leke 100 ke beech mei -->
+
+<!-- to random number kaise generate hota hai, aa...,
+
+random number generate karne ke liye Math library ka use kar lete hai aur Math.random() use karte hai , theek hai ji -->
+
+<!-- Math.random() likh liya chaiaurcode.js file mei-->
+
+<!-- ab Math.random ko hum kya karte hai console.log() kara dete hai taaki aapko pata rahe chalta rahe ki actually mei kya kya hum kare jaa rahe hai kya kya karname ho rahe hai yahan pe, to yeh lijiye console.log(Math.random()) -->
+
+<!-- console.log(Math.random()) likh liya chaiaurcode.js file mei -->
+
+<!-- console ko open kar lete hai (website console ko open kar liya) yeh lijiye-->
+
+<!-- ab dekhiye jitni bar mai isko (iss code ko) save kar raha hu , aa..., jitni bar mai page ko refresh kar raha hu 
+(website browser ko reload kar rahe hai bar bar) utni bar mujhe ek naya number mil raha hai (website console mei naya number mil raha hai har bar website browser ko reload karne par) -->
+
+<!-- but aap gaur se dekhenge to yeh number kya hai 
+0.54840300...
+
+theek hai (53:01) -->
+
+<!-- to ab kyuki decimal ke baad sari values aa rahi hai 
+(0.54840300...) to 1 se leke 100 tak agar mujhe chahiye agar suppose kariye mujhe 10 tak chahiye hoti hai to decimal se idhar (idhar means decimal ko right side shift karna hai) kisi ko jump karane ke liye kya karna hota hai ,
+
+are kuch nahi multiply by 10 kar do, are basic mathematics-->
+
+<!-- console.log(Math.random()*10) likh liya chaiaurcode.js file mei -->
+
+<!-- to multiply by 10 kara to ek number jump karke idhar aa gaya (see website browser console right side 6.55902....) -->
+
+<!-- theek hai ab jitni bar isko refresh karoge (website browser ko reload karoge) utni bar ek number to idhar jump karke rahega hi rahega (means decimal right side shift ho gaya hai 10 se multiply karne ke baad) -->
+
+<!-- theek hai ab ek number aapne jump yahan pe 
+( console.log(Math.random()*10) ) 
+kar diya to iss tareh se 
+
+( console.log(Math.random()*10) )
+ -->
+
+<!-- ab aapko 100 chahiye hota to do (2) number jump kara do idhar ( means isko console.log(Math.random()) 100 se multiply kar do) -->
+
+<!-- kyuki 99 tak hi to chahiye theek hai-->
+
+<!-- console.log(Math.random()*100) likh liya chaiaurcode.js file mei -->
+
+<!-- website console mei 51.4596... aa gaya -->
+
+<!-- ab iski ek cheej aur khaas baat hoti hai yeh 
+
+( console.log(Math.random()*100) )
+
+aapko number sare dega (see website console after website browser reload again and again)
+
+lekin kayi bar ho sakta hai yeh 
+
+( console.log(Math.random()*100) )
+
+aapko zero bhi de de 
+
+kyu ki 0 se 99 dega (see Math.random() default range for revision)-->
+
+<!-- ab mujhe 0 to chahiye nahi to mai kya karta hu yahan pe 
+
+( console.log(Math.random()*100) )
+
+simply aake isko 
+
+( console.log(Math.random()*100) )
+
+ bol deta hu ki aap + 1 kar do yar
+ -->
+
+<!-- console.log(Math.random()*100 + 1) likh liya chaiaurcode.js file mei -->
+
+<!-- to yeh lijiye + 1 kiya -->
+
+<!-- to ab guaranteed hai ki number aapka 100 ho sakta hai lekin 0 nahi hoga -->
+
+<!-- theek hai to aap jitna chahe refresh karke dekh lijiye (website browser reload) ab to exact 0 (100) lana to possible hai nahi iss randomness mei (website console mei) but theek hai -->
+
+<!-- achha itna hi nahi mai chahta hu ki ab yeh jo decimal aa raha hai (see website console 86.7133....) mujhe yeh decimal nahi chahiye, mujhe to integer chahiye -->
+
+<!-- to yeh lijiye hum isko wrap karte hai 
+
+console.log((Math.random()*100 + 1))
+
+jo ki humne pichle video mei just kiya tha aur simply bol dijiye isko parseInt
+
+ -->
+
+ <!-- console.log(parseInt(Math.random()*100 + 1)) likh liya chaiaurcode.js file mei -->
+
+ <!-- to parseInt kiya to obvious si baat hai ab aapko pata hai kya aa gaya value (see website console reload website browser again and again to see 100 in website console in randomness)
+ 
+to exact humne iss tareh se ek 1 se leke...
+
+ dekhiye 100 bhi aa gaya hai (see website console)
+ 
+ theek hai to aur bhi values aa jayegi (reload again and again)-->
+
+<!-- to ek problem to ho gayi hai solve ki kis tareh se random number generate kiya jata hai (54:24) -->
+
+<!-- to ab iss random number 
+
+( console.log(parseInt(Math.random()*100 + 1)) )
+
+ ko console mei kyu likha jaye 
+ 
+ isko 
+ 
+ ( console.log(parseInt(Math.random()*100 + 1)) )
+ 
+ ek value mei hold karte hai-->
+
+<!-- to isko bolte hai simply 
+
+const randomNumber = parseInt(Math.random()*100 + 1)-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) likh liya chaiaurcode.js file mei -->
+
+<!-- 54:35 -->
+
+<!-- theek hai ji random number aa gaya hai ek problem to ho gayi solve -->
+
+<!-- Lekin ab ek problem kya hai bahut sari values ko hume lena hai document mei -->
+
+<!-- to document.querySelector() likha chaiaurcode.js file mei
+
+querySelector mei abhi humne padha ki humare pas ek kya hai
+
+(index.html file open kar li)
+
+pehla to hum yeh le lete hai yeh wala 
+(line 27 id="subt" of index.html) 
+
+jo bhi submit hai (input type = submit line 27 of index.html)
+
+kyuki ispe (line 27 id="subt" of index.html) kaafi events etc lagenge,
+
+to yeh lijiye isko (line 27 id="subt" of index.html) le liya (querySelector ke andar) as follows-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+document.querySelector('#subt')
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- aa..., isko kya kar lete hai submit button ya fir submit bol lete hai isko (document.querySelector('#subt')) (55:04) -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- yahan pe to hum achhe variable ke naam de hi sakte hai, html mei nahi diye to koi baat nahi -->
+
+<!-- theek hai achha dusra kya lena padega , user ka input bhi lena padega, to user ka input kahan se lenge
+
+yeh guessField (line 26 of index.html id = guessField) se lenge , obvious si baat hai iski 
+(line 26 of index.html id = guessField)
+value chahiye hume-->
+
+<!-- to copy karte hai 
+(line 26 of index.html id = guessField)
+
+aur isko 
+
+const submit = document.querySelector('#subt')
+
+duplicate kar lete hai
+
+ -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const submit = document.querySelector('#subt')
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- querySelector hume chahiye yeh guessField wala -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const submit = document.querySelector('#guessField')
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- aur yeh 
+
+( document.querySelector('#guessField') )
+
+kya hai user ka input hai -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- ab obvious si baat hai yahan pe to hume kya hai ki itne mei kaam chalega nahi mujhe actually mei iski value leni padegi to aap chahein to yahin pe uski dot value (.value) karke aap le sakte hai aur chahein to hum later on bhi le sakte hai , aapko jaisa theek lage-->
+
+<!-- 55:40 -->
+
+<!-- abhi ke liye Sir isko yahin rakh lete hai kyuki Sir sare selectors likh rahe hai actually mei exact value nahi parse kar rahe hai Sir 
+
+kyuki value jahan bhi chahiye hogi Sir wahan pe usko kya karenge dot value karke wahan pe likh lenge
+
+ab aapke upar hai ki aap konsi approach use karna chahte hai  (55:53)-->
+
+<!-- Sir abhi ke liye yeh wali approach ke saath ek bar chalte hai uske baad dekh lenge ki hum kaisi approach ke saath jayenge aage (55:58)-->
+
+<!-- to aage chalte hai aur values ko theek hai aapko agar yeh thoda sa problematic lag raha hai to dot value 
+(as follows)
+
+abhi humne karke dekha hai just project mei (previous mei) to itna pareshan to nahi honge aap -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField').value
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- backspace kar diya .value ko -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- theek hai to aur bhi values le lete hai
+
+Ctrl Shift D kar liya cont userInput = ... ko -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const userInput = document.querySelector('#guessField')
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- theek hai yeh aa gaya hai humare pas userInput aa gaya hai (as above), 
+
+ab hum chahte hai userInput ke baad chaliye aage chalte hai yeh lijiye guess slot hum le lete hai 
+(line 31 of index.html class = guesses) 
+
+to hum user ke yeh jo guesses 
+
+(line 31 of index.html class = guesses)
+
+hai hum yahan pe Previous Guesses 
+
+(line 31 of index.html class = guesses)
+
+yahan pe lenge
+
+to isko bhi bol dete hai
+
+(56:23)
+-->
+
+<!-- to yeh
+
+const userInput = document.querySelector('#guessField') (second wala)
+
+ wala jo hai humare pas , aa..., dot ke saath kyuki class hai
+ 
+ const userInput = document.querySelector('#guessField') (second wala) ko 
+ const userInput = document.querySelector('.guesses') likh liya
+ 
+ to yeh guesses to isko guessSlot bol dete hai hum
+ 
+ const guessSlot = document.querySelector('.guesses') likh liya
+ 
+ kyuki yeh slots hum bharte jayenge , arrays honge humare pas (56:36)-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- achha aur kya hai hume lastResult bhi show karna hai hume user ka ki aapne lastResult kya yahan pe diya hai to usko bhi hum actually mei le lete hai-->
+
+<!-- lastResult jo value hai humare pas wo ayegi humare pas lastResult (line 32 of index.html) sahi hai yeh bhi class hai
+(line 32 of index.html , class = lastResult)
+ 
+ to theek hai isko 
+(line 32 of index.html , class = lastResult)
+
+bhi le lete hai koi dikkat wali baat hi nahi hai -->
+
+<!-- to isko bol dete hai hum ki aap yeh lastResult yeh 
+
+const guessSlot = document.querySelector('.lastResult')
+(Ctrl + Shift + D)
+
+aur same naam de dete hai iska bhi -- const remaining 
+
+const remaining = document.querySelector('.lastResult')
+
+-->
+ 
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- 56:59 -->
