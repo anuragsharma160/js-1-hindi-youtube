@@ -3305,3 +3305,246 @@ const remaining = document.querySelector('.lastResult')
 likh liya chaiaurcode.js file mei -->
 
 <!-- 56:59 -->
+
+<!-- last slot matlab kitna remaining bacha hua hai -->
+
+<!-- isko save kar lete hai -->
+
+<!-- achha koi problem ho gayi hai yahan pe kyuki load nahi ho raha hai means kuch na kuch to humne kiya hai -->
+
+<!-- ek bar save and refresh karke dekh lete hai (reload website browser) haa ji koi problem to hai -->
+
+<!-- ek second dijiye isko sir select karke dekh lete hai ki kya problem aa rahi hai yahan pe debugg karte hai isko -->
+
+<!-- haa jo to check karne ke baad aa..., sir ko isko refresh karna pada, refresh karte time dhyaan rakhiyega agar aapne yeh sara code nahi save kara hai ya fork nahi kara hai to wo udd jayega, isi tareh se sandbox designed hai yeh playgrounds designed hai -->
+
+<!-- to sir ne yeh sabko (above code ko) select karke wapas se copy paste kar diya to ab bhi koi problem aa nahi rahi to as such sir ko laga nahi koi issue tha but theek hai -->
+
+<!-- theek hai achha yahan pe (index.html) humare pas aur bhi kuch values hai unko bhi hum le lete hai-->
+
+<!-- to dekhiye humare pas yeh paragraph bhi hai ek 
+lowOrHi (index.html line 33 <p class="lowOrHi"></p>) isko bhi hum use karenge to iska bhi hum querySelector ek bar le lete hai
+
+copy kar liya lowOrHi ko 
+(index.html line 33 <p class="lowOrHi"></p>)-->
+
+<!-- 57:57 -->
+
+<!-- aa..., ki hum batayenge wo values ko ki (57:58) yeh low value hai ki high value hai-->
+
+<!-- const remaining = ... ko Ctrl + Shift + D kar liya-->
+
+<!-- to isko hum lete hai lowOrHi 
+
+const remaining = document.querySelector('.lowOrHi')
+
+aur isko le lete hai lowOrHi bol lete hai isko
+
+const lowOrHi = document.querySelector('.lowOrHi')-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- thee k hai itna ho gaya humare pas -->
+
+<!-- achha ek aur cheej hum lenge yahan pe , yeh jo resultParas (index.html line 30 <div class="resultParas">)
+
+hai yeh actually mei users ko hum yeh sari values hum tab hi dikhayenge jab humare pas... 
+
+ya fir hum kya hai ki yahan pe inn values (resultParas ke children paragraphs) ko shayad hide karenge (58:24) yeh sab karenge to hum yeh sab bhi kaam karne wale hai abhi -->
+
+<!-- aur agar user ne maan lijiye sare guesses apne le liye hai to ab usko previous guess (Previous Guesses see website browser right side) , remaining guess (Guesses Remaining see website browser right side) etc kuch nahi dikhayenge usko bolenge seedha start over karo (58:34) -->
+
+<!-- to ek bar ke liye isko 
+(class = resultParas line 30 index.html) hold kar lete hai 
+
+fir hum discuss karenge aur ki kya karna hai iske
+(class = resultParas line 30 index.html) saath-->
+
+<!-- to yeh lijiye const lowOrHi = ... ko Ctrl + Shift + D kar liya, aur yeh humne li thi class (class = resultParas) to theek hai yeh lijiye class aa gayi 
+
+const lowOrHi = document.querySelector('.resultParas')
+
+aur isko bhi hum hold kar lete hai variable mei 
+const startOver ke liye 
+
+const startOver = document.querySelector('.resultParas')-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- theek hai startOver messages hum yahan pe
+( const startOver = document.querySelector('.resultParas') )
+ de denge -->
+
+<!-- theek hai ji aur kuch hum values insert karenge to actually mei hum usko bhi le lete hai
+
+ek paragraph le lete hai kyuki hum kayi jagah inject karne wale hai isko (paragraph) aage jaake fir sir aapko batayenge hum strategy kya follow kar rahe hai
+
+to const p = document.createElement()
+
+konsa element create karna hai, kuch nahi ek paragraph create kar do bas, theek hai ji 
+
+const p = document.createElement('p')-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- 59:11 -->
+
+<!-- ab karte hai strategy ki baat ki actually mei kya kya chahiyega hume to unn unn variables ko lete hai -->
+
+<!-- to sabse pehle to hume chahiyega ek prevGuess (previous guess)
+
+to let prevGuess likh liya -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- yeh (let prevGuess) kya hoga ek array hoga 
+
+let prevGuess = [] likh liya-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- theek hai kyu hoga (let prevGuess =[] array kyu hoga) yeh array kyuki iske andar hum kya karenge jo bhi user submit karega values unn values ko hum store kar lenge aur iss poore ke poore array ( let prevGuess = [] ) ko hi user ko dikha denge taki user ko pata rahe ki atleast wo jo same guessed value hai usko (guessed value)  dubara se wo guess na kare -->
+
+<!-- 59:35 -->
+
+<!-- theek hai uske (guessed value) liye humne yeh le liya ek 
+(array let prevGuess = [] ) -->
+
+<!-- achha uske baad hume kya track karna padega ki kitne (59:40) attempts wo (user) mar chuka hai-->
+
+<!-- to uske (user ke) number of guesses hai ya fir usko numGuess bol lete hai (number of guesses) 
+
+let numGuess
+
+wo bhi hum lete hai start karte hai 1 se 
+
+let numGuess = 1 
+
+ki aapka yeh ( let numGuess = 1 ) pehla guess hai-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- theek hai start karenge 1 se ( let numGuess = 1 ) aur jaise hi wo (user) 10 pe jata hai to uske baad hum block kar denge ki ab wo (user) submit (Submit guess button see right side website browser) ko nahi kar sakta to submit 
+(Submit guess button) ko hum disable kar denge , theek hai uske (Submit guess button , ke andar property add kar denge disable ki) andar property add kar denge (59:59)-->
+
+<!-- theek hai aur ek variable bhi hum yahan pe le lete hai jisko bolte hai -- let playGame 
+
+aur playGame ko kya kar denge -- true
+
+let playGame = true-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- achha jab bhi aap iss tareh ke games etc design karenge to humesha iss tareh ka ek variable to hota hi hai playGame (let playGame = true) jo ki aapko allow karta hai game khelne ke liye -->
+
+<!-- ab suppose kariye aapke events poore ho gaye hai , aapke coins khatam ho gaye hai ya kuch bhi aisa hai to iss condition (let playGame = true) ko check kare bagair aage kuch bhi nahi badhta hai , isi tareh (let playGame = true) se games ka design hota hai (1:00:23)-->
+
+<!-- theek hai to yeh to ho gaya humara basic ki yeh yeh values hume chahiye 
+(const submit =... , ---- const startOver = ...) 
+aur itna humara 
+
+yeh to kaam tha jitna bhi kaam tha humara yeh to sirf tha cheejon ko collect karna 
+
+(const submit =... , ---- const startOver = ... and rest of code) 
+
+aur preparation karna-->
+
+<!-- abhi tak humne code ka kuch bhi logic likha hi nahi hai  (1:00:35)-->
+
+<!-- theek hai to ab hum likhte hai thode se functions ki aur functions ko define karenge ki kaise kaise usme kaam hoga -->
+
+<!-- to pehla function to chahiyega mujhe wo chahiyega validateGuess
+
+function validateGuess(){} -->
+
+<!-- achha iss validateGuess ke andar kya ayega ek mujhe guess do (guess likh liya function ke parameter mei i.e. function ke () mei)
+
+function validateGuess(guess){}
+
+-->
+
+<!-- aur 1:00:49 -->
