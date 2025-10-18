@@ -3543,8 +3543,361 @@ function validateGuess(){} -->
 
 <!-- achha iss validateGuess ke andar kya ayega ek mujhe guess do (guess likh liya function ke parameter mei i.e. function ke () mei)
 
-function validateGuess(guess){}
+function validateGuess(guess){
+
+}
 
 -->
 
-<!-- aur 1:00:49 -->
+<!-- aur (1:00:49) mai usko (jo guess function ke parameter mei likha hai usko) validate kar dunga-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+function validateGuess(){
+
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- theek hai achha yeh (function validateGuess (){}) kyu hai , yeh (function validateGuess (){}) isliye hai kyuki mujhe pehle dekhna hai ki kya usne (user ne) ek valid number guess kara hai ki nahi kara 
+
+a b c de diya hai to kya hoga , obvious si baat hai uske baad kya dekhenge aap ki value jo hai wo humari 1 se less to nahi de raha hai kahin wo (user), negative values to nahi de raha hai -->
+
+<!-- ya fir kyuki humne game hi 1 se 100 tak banaya hai agar wo (user) 500 value de raha hai to bhi theek baat nahi hai-->
+
+<!-- to yeh sara jo validate karne ka kaam hai guesses ko yeh sara hum iss method (function validateGuess(){} ) ke andar karenge, theek hai-->
+
+<!-- 1:01:14 -->
+
+<!-- theek hai ji to yeh kaam to ho gaya humara iss 
+method (function validateGuess(){} ) ke andar -->
+
+<!-- ab iske baad kya karna hai hume aa..., uske baad hume karna hai ek aur method (function(){}) chahiyega jisko hum bolenge checkGuess
+
+function checkGuess(){} -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+function validateGuess(){
+//
+}
+
+function checkGuess(){}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- achha yeh checkGuess ke andar bhi aapko guess dalna padega (function checkGuess ke () mei guess as parameter dalna padega) 
+
+function checkGuess(guess){}
+
+-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+function validateGuess(){
+//
+}
+
+function checkGuess(guess){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- ab aap kahenge ki are validate to ho gaya hai 
+(function validate(){}) ab isko check karne ki kya jarurat hai -->
+
+<!-- dekhiye validate to ho gaya hai lekin wahan se sirf aapko validation mila hai ki wo values (jo user de raha hai) upar hai ki neeche , humne koi message usse print nahi karwa paya hai (1:01:40)-->
+
+<!-- to hum kya karenge ek message print karwana chahenge ki aapka jo value hai (jo user de raha hai) ya jo guessed value hai wo correct hai low hai ya high hai,
+
+to wo jo check ka kaam hai wo yahan pe hoga 
+(function checkGuess(guess){})
+
+validation aur check dono almost same hai aap chahein to usko aur bhi koi naam de sakte hai mere ko yeh naam (check and validate) abhi theek lag rahe hai -->
+
+<!-- 1:01:55 -->
+
+<!-- achha iske alawa kya hoga kyuki checkGuess 
+(function checkGuess(guess){}) mei aap wo message print kara rahe hai , to aap chahein to directly uske 
+(function checkGuess(guess){}) andar hi kara sakte hai -->
+
+<!-- but mai kya karunga ek aur method (function (){} ) yahan pe bana leta hu jisko bolunga displayMessage
+
+function displayMessage(){} -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+function validateGuess(){
+//
+}
+
+function checkGuess(guess){
+//
+}
+
+function displayMessage(){
+
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- to kya hoga iss method ( function displayMessage(){} ) ke andar  jaise hi display message hoga to aap iske 
+( function displayMessage(){} ) andar bas ek message pas kar do ya fir apna guess pas kar do 
+
+guess likh liya function displayMessage(){} ke parameter ke andar
+
+function displayMessage (guess){}
+
+ -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+function validateGuess(){
+//
+}
+
+function checkGuess(guess){
+//
+}
+
+function displayMessage(guess){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- aur mai aapko message seedha
+
+yeh wala method ( function displayMessage(guess){} ) kya karega seedha DOM ke saath interact karega, 
+
+theek hai to display message kar denge bahut hi easy sa hai -->
+
+<!-- 1:02:24 -->
+
+<!-- kuch nahi karenge hum user ki jo input value hai aa..., usko hum wapas se ek to empty kar denge
+
+kyuki obvious si baat hai usko (user ko) next guess karna hai 
+
+aur uske saath saath kya karenge hum humare jo innerHTML hai uske andar apna guess ko add kar denge 
+
+theek hai aur kya karenge 
+
+aapke numbers ko kum (less) kar denge yeh jo numbers hai 
+(Guesses Remaining: 10 see website browser right side)
+(1:02:40) -->
+
+<!-- to sara ka sara jo html... DOM ke saath jitna manipulation hai wo sara displayMessage 
+(function displayMessage(guess){} ) ke andar hum kar denge -->
+
+<!-- theek hai to yeh ho gaya humara displayMessage -->
+
+<!-- theek hai ji achha iske 
+(function displayMessage(guess){} ) andar (1:02:51) guess nahi hum actually mei ek message lenge user se
+
+(function displayMessage(message){} )-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+function validateGuess(){
+//
+}
+
+function checkGuess(guess){
+//
+}
+
+function displayMessage(message){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- to hum user se simply message lenge aur jo bhi message hoga wo hum wahan pe print karwa denge -->
+
+<!-- achha theek hai itna displayMessage ho gaya to ek method (function(){}) aur bhi bana lete hai jo ki sara ka sara 
+aur / OR ka kaam kar lega
+
+usko bol dete hai guess display karane ke liye
+
+function displayGuess(){}
+
+usko de denge guess method 
+
+function displayGuess(guess){}-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+function validateGuess(){
+//
+}
+
+function checkGuess(guess){
+//
+}
+
+function displayGuess(guess){
+//
+}
+
+function displayMessage(message){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- 1:03:18 -->
+
+<!-- aur yahan pe dekhenge aur bhi iss tareh ke methods ho jayenge -->
+
+<!-- theek hai to abhi ke liye ek bar summarize kar lein thoda sa confusion ho gaya hoga to -->
+
+<!-- validate jo guess method hai 
+(function validateGuess(){}) wo kya karne wala hai humare pas yeh kuch bhi nahi karega jada
+
+aa..., yeh simply guess ka... validation karega ki value 1 ke aur 100 ke beech mei hai ya nahi hai aur actually mei value hai ya nahi hai-->
+
+<!-- inn sare methods 
+(remaining functions after (function validateGuess(){})) ka bhi yahan pe hum andar (function validateGuess(){} ke andar) use karenge 
+
+but abhi major role yeh hi hai (1:03:39) 
+(jo (function validateGuess(){} ka role bataya hai line 3856 pe)-->
+
+<!-- uske baad humare pas ayega checkGuess
+(function checkGuess(guess){})
+
+checkGuess kya hoga ki kahin wo value jo hai random number ke equal to nahi hai 
+
+agar equal hai to iss displayMessage 
+(function displayMessage(message){}) ka use karke usko bolo ki aap jeet gaye ho game -->
+
+<!-- agar low hai to bolo low hai
+
+high hai to high hai usko bolo -->
+
+<!-- aur displayGuess ( function displayGuess(guess){} ) ke andar kya hoga ki yeh jo displayGuess hai yeh kuch nahi karega
+
+aapki ek to values ko clean karega 
+(see input field below 'Guess a number' website browser right side) theek hai kyuki next value bhi input karni hai same value nahi lena hai
+
+uske alawa kya karega ki aapke jitne yeh guess hai 
+(Previous Guesses: see website browser right side) yahan pe 
+
+(Previous Guesses: see website browser right side)
+
+jo arrays hai inko 
+
+(Previous Guesses: see website browser right side)
+
+ bhi update karega 
+
+aapke jo guess remaining (Guesses Remaining: 10 see website  browser right side) hai isko bhi update karega-->
+
+<!-- 1:04:09 -->
+
+<!-- aur displayMessage 
+
+(function displayMessage(message){})
+
+kya karega yahan jada kuch nahi hoga , 
+
+infact yeh jo low aur high humne yahan pe liya hai ek 
+const lowOrHi = ... (1:04:14)-->
