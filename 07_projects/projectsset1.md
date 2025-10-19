@@ -3899,5 +3899,836 @@ aapke jo guess remaining (Guesses Remaining: 10 see website  browser right side)
 
 kya karega yahan jada kuch nahi hoga , 
 
-infact yeh jo low aur high humne yahan pe liya hai ek 
-const lowOrHi = ... (1:04:14)-->
+infact yeh jo low aur high humne yahan pe liya hai  
+(const lowOrHi = ...) (1:04:14) yeh querySelector 
+(const lowOrHi = ...) iske andar 
+(const lowOrHi = ... or (function displayMessage(message){})) hum message ek pas karenge aur wo message as it is print kar denge 
+
+(const lowOrHi = ... mei ek message pas karenge aur
+(function displayMessage(message){}) mei as it is message print kar denge)
+-->
+
+<!-- theeh hai itna to aa gaya aapko samajh mei -->
+
+<!-- achha ab hume ek method (function(){}) chahiyega ki hum kya karna chahte hai game ko end bhi karna chahte hai aur ek new game bhi start karna chahte hai -->
+
+<!-- theek hai to yeh lijiye function
+
+function (){}
+
+sabse pehle kya kariye yeh lijiye newGame
+
+function newGame(){}
+
+yeh humare pas aa gaya hai newGame, yeh newGame humne start kar diya hai
+
+function newGame(){
+//
+}
+
+-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+function validateGuess(){
+//
+}
+
+function checkGuess(guess){
+//
+}
+
+function displayGuess(guess){
+//
+}
+
+function displayMessage(message){
+//
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- aur yeh lijiye ek function
+
+function (){}
+
+, isko bolte hai endGame 
+
+function endGame (){}
+
+yeh aapne game end kar diya hai
+
+function endGame(){
+//
+}
+
+-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+function validateGuess(){
+//
+}
+
+function checkGuess(guess){
+//
+}
+
+function displayGuess(guess){
+//
+}
+
+function displayMessage(message){
+//
+}
+
+function newGame(){
+//
+}
+
+function endGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- ok ji kaafi methods (function(){}) ho gaye hai , bola tha thode complex hote hai projects aur aapko thode se bade videos bhi chahiye the to theek hai-->
+
+<!-- theek hai abhi ho gaya hai humare pas itna kaam -->
+
+<!-- yeh newGame (function newGame(){}) endGame 
+(function endGame(){}) yeh bade hi easy se method 
+(function (){}) hai
+
+
+aap chahein jisko kahin pe rakh lijiye -->
+
+<!-- ek kaam karte hai hum pehle endGame rakh lete hai taaki aapko flow easy samajh mei aye vaise to method 
+(function (){}) kahin pe bhi rakhiye koi farak nahi padta hai but theek hai samjhne ke liye
+
+endGame (function endGame(){}) kara aur uske baad ek newGame (function newGame(){}) bhi kar sakte hai as follows-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+function validateGuess(){
+//
+}
+
+function checkGuess(guess){
+//
+}
+
+function displayGuess(guess){
+//
+}
+
+function displayMessage(message){
+//
+}
+
+function endGame(){
+//
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- theek hai ji ab baat karte hai ki kaise inn methods (function (){}) ko design kiya jaata hai-->
+
+<!-- sabse pehle to aap check kariye ki aap game khelne ke liye bhi available hai ya nahi hai (let playGame = true) -->
+
+<!-- theek hai wo kaise check karenge sabse pehle dekhna padega if ko , yeh lijiye aapka if method aa gaya 
+
+if(){} likh liya let playGame = true ke baad-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(){}
+
+function validateGuess(){
+//
+}
+
+function checkGuess(guess){
+//
+}
+
+function displayGuess(guess){
+//
+}
+
+function displayMessage(message){
+//
+}
+
+function endGame(){
+//
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- ab if ke andar kya hai agar playGame hai 
+(let playGame = true) 
+
+(if(playGame){} likh liya)
+
+to wo true aur false apne aap evaluate ho jayega
+
+agar hai (let playGame = true) to game kheliye 
+(means if(playGame){} ke andar jayiye) 
+
+agar nahi to mat kheliye
+(means if(playGame){} ke andar mat jayiye) 
+ -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+
+}
+
+function validateGuess(){
+//
+}
+
+function checkGuess(guess){
+//
+}
+
+function displayGuess(guess){
+//
+}
+
+function displayMessage(message){
+//
+}
+
+function endGame(){
+//
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- achha agar game aap khel paa rahe hai to kya karna hai aapko -->
+
+<!-- to yeh jo humne submit liya hai yeh lijiye
+
+if(playGame){
+   submit
+}
+
+ yeh jo submit liya hai yahan pe yaad hai yeh submit 
+ (const submit = ...) 
+ liya tha-->
+
+<!-- 1:05:33 -->
+
+<!-- to iske (if ke andar ke submit ke) upar mujhe sunna padega (event sunna padega if ke andar ke submit 
+(const submit = ...) ke upar) -->
+
+<!-- to yahan pe (if ke andar ke submit pe) ek addEventListener lagana padega
+
+if(playGame){
+   submit.addEventListener()
+}
+
+ -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener()
+}
+
+function validateGuess(){
+//
+}
+
+function checkGuess(guess){
+//
+}
+
+function displayGuess(guess){
+//
+}
+
+function displayMessage(message){
+//
+}
+
+function endGame(){
+//
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- kya eventListener lagana padega , bada hi easy hai -- 'click' lagana padega
+
+if(playGame){
+   submit.addEventListener('click')
+}
+-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener('click')
+}
+
+function validateGuess(){
+//
+}
+
+function checkGuess(guess){
+//
+}
+
+function displayGuess(guess){
+//
+}
+
+function displayMessage(message){
+//
+}
+
+function endGame(){
+//
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- aur yeh lijiye aapka function 
+
+if(playGame){
+   submit.addEventListener('click', function())
+}
+
+aur yeh lijiye
+
+if(playGame){
+   submit.addEventListener('click', function(){
+   
+   })
+}
+-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener('click', function(){
+   
+   })
+}
+
+function validateGuess(){
+//
+}
+
+function checkGuess(guess){
+//
+}
+
+function displayGuess(guess){
+//
+}
+
+function displayMessage(message){
+//
+}
+
+function endGame(){
+//
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- theek hai ab iss function 
+(if (playGame){} ke function ke andar) ke andar aapko pata hai ki ek event milta hai aapko -- e, chai , haa ji discuss kiya tha
+
+to yeh lijiye aapko event i.e. e yahan pe mil gaya hai as follows (means if(playGame){} ke function ke () mei e as parameter mil gaya hai)
+
+if(playGame){
+   submit.addEventListener('click', function(e){
+   
+   })
+}
+
+-->
+
+<!-- theek hai ab aapko agar event mil gaya hai (1:05:55) to yeh form (see index.html and chaiaurcode.js) hai to form ke saath kya karna padta hai wo value server pe chal jayegi ya fir jahan pe bhi koi usko (value ko) bula raha hai wahan chal jayegi-->
+
+<!-- to event (e) ko sabse pehle prevent default karna padega (e.preventDefault()) 
+
+if(playGame){
+   submit.addEventListener('click', function(e){
+      e.preventDefault()
+   })
+}
+
+ki nahi nahi values ko kahin mat leke jao roko yahin pe mai (e) yahan pe lunga
+
+(form ka default hai values ko server pe ya jahan values ko bulaya ja raha hai wahan pe bhejna isliye prevent default kiya hai)
+-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+   })
+}
+
+function validateGuess(){
+//
+}
+
+function checkGuess(guess){
+//
+}
+
+function displayGuess(guess){
+//
+}
+
+function displayMessage(message){
+//
+}
+
+function endGame(){
+//
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- theek hai ab dusri cheej kya hai ki aapka yeh jo guess number hai yeh aapko chahiyega (1:06:11)
+
+ab humne jab apna yeh jo selectors 
+(const submit = ... se leke const startOver = ... tak) 
+design kiye the
+
+to userInput (const userInput = ...) jo liya tha to humne actually mei wo userInput liya nahi tha user se , hai na (1:06:19) 
+
+usko ( userInput ko i.e. const userInput = ...) humne sirf ek select kar liya tha ( userInput ko i.e. const userInput = ... ko sirf querySelector se select kar liya tha )
+
+to uski ( userInput ki i.e. const userInput = ...) values ab humne select karni padegi to bahut aasaan hai hum kya kar sakte hai userInput.value as follows 
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      userInput.value
+   })
+}
+
+aap chahein to wahan pe (const userInput = ...) bhi likh sakte hai koi problem wali baat hi nahi hai
+
+(const userInput = ... mei .value likh sakte the koi problem wali baat hi nahi hai)
+-->
+
+<!-- 1:06:28 -->
+
+<!-- Lekin iss value (userInput.value) ko parseInt bhi to karna padega , haa ji shayad bhul gaye the aap
+
+yeh lijiye parseInt kar diya hai
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      parseInt(userInput.value)
+   })
+}
+
+-->
+
+<!-- ab iss value ( parseInt(userInput.value) ) ko kya kariye aap hold kar lijiye ek variable mei
+
+yeh lijiye hold bhi kar liya hai
+
+const guess = parseInt(userInput.value)
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+   })
+}-->
+
+<!-- achha abhi yeh game complete ho gaya kya -->
+
+<!-- dekhiye ab mujhe kuch nahi karna hai, mujhe as it is isko pas kar dena hai next pe -->
+
+<!-- yeh lijiye validateGuess() 
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      validateGuess()
+   })
+}
+
+aur yeh lijiye maine aapko number pas kar diya hai 
+
+(validateGuess(guess) i.e. guess i.e. number pas kar diya hai)
+
+ mera itna hi kaam tha
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      validateGuess(guess)
+   })
+}
+
+chote chote functions mei design kariye (1:06:56)
+-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      validateGuess(guess)
+   })
+}
+
+function validateGuess(){
+//
+}
+
+function checkGuess(guess){
+//
+}
+
+function displayGuess(guess){
+//
+}
+
+function displayMessage(message){
+//
+}
+
+function endGame(){
+//
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- to yeh mera kaam to ho gaya hai -->
+
+<!-- to theek hai yeh play wala if ka condition as follows
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      validateGuess(guess)
+   })
+}
+
+to ho gaya hai ki dekho aa..., maine check kar liya hai ki user allow tha game khelne ke liye ( if(playGame){} )
+
+( if(playGame){} means if(playGame===true){} as 
+let playGame = true)
+-->
+
+<!-- uske baad usne (user ne) ek number enter kar diya 
+(see input field below Guess a number in website browser right side) 
+
+maine yahan se 
+(see input field below Guess a number in website browser right side / website browser) 
+number pick bhi kar liya aur uss number ko maine yahan pe 
+as follows
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      validateGuess(guess)
+   })
+}
+
+display bhi kara diya 
+
+(means if mei validateGuess(guess) kara diya)-->
+
+<!-- 1:07:09 -->
+
+<!-- aur agar aap chahein to mai usko console.log() bhi kara deta hu ki number sahi se aa raha hai ki nahi aa raha to console.log() ke andar maine yeh guess (const guess) likh diya hai
+
+console.log(guess)-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      console.log(guess)
+      validateGuess(guess)
+   })
+}
+
+function validateGuess(){
+//
+}
+
+function checkGuess(guess){
+//
+}
+
+function displayGuess(guess){
+//
+}
+
+function displayMessage(message){
+//
+}
+
+function endGame(){
+//
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- theek hai to ab isko ek bar karke dekh lete hai ki itna to kaam ho raha hai na humara (1:07:20) -->
+
+<!-- website console open kar liya -->
+
+<!-- to suppose kariye maine yahan pe (website browser right side mei input field mei) 6 likha 
+
+submit guess button pe click kiya-->
+
+<!-- to website console mei 6 aa gaya hai -->
+
+<!-- lekin obvious si baat hai abhi mai checking nahi kar raha wo checking mai (sir) ek bar already aapko sikha chuka hu ki kaise aapko select karna hai ki empty to nahi hai, Not A Number... to wo sara aapko de chuke hai sir
+
+to ek hi cheej ko to dekhiye 10 bar repeat karke to koi sense hai nahi -->
+
+<!-- (1:07:35) -->
+
+<!-- to abhi mai jo bhi numbers ko yahan pe (input field mei) guess kar raha hu to mera event listener yeh method 
+(if(playGame){}) badhiya se kaam kar raha hai-->
+
+<!-- input field mei 11 type kiya and submit guess button pe click kiya to website console mei 11 aa gaya -->
+
+<!-- website console ko close kar diya -->
+
+<!-- theek hai itna to ho gaya hai clean -->
+
+<!-- ab yeh validate jo guess hai 
+(function validateGuess(){}) 
+
+iss validation ke andar hum check kar lete hai ki actually mei number sahi se diya hai ya nahi diya hai-->
+
+<!-- aap chahein to yahan pe 
+( if(playGame){} mei console.log(guess) ke near ) bhi check kar sakte the but kyuki ek validateGuess method 
+(function validateGuess(){})  bata hi rakha hai to validation laga hi lete hai-->
+
+<!-- dekhiye achha ek cheej aur bata dete hai aapko yeh jo validation method (function validateGuess(){}) hai na yeh bahut likhne wale hai aap 
+
+kyuki kya hoga backend jab aap likhenge kisi bhi application ka to wahan pe suppose kariye username aya, email aya to wahan pe bhi especially aise methods (function(){}) banaye jaate hai jahan pe validation kiya jata hai ki email ke andar @ to hai na,
+
+@ aage koi word to hai na
+
+kya wo database ke andar already to nahi hai username
+
+kya wo valid email hai 
+
+kya wo unique email hai
+
+to aise (function validateGuess(){}) bahut saare validation aap bhi karoge (1:08:17) -->
