@@ -5082,3 +5082,200 @@ function validateGuess(guess){
 <!-- aapko yaad ho to yeh ek humne liya tha number of guesses (let numGuess = 1)-->
 
 <!-- 1:10:36 -->
+
+<!-- iske (let numGuess = 1) through check kar sakta hu , haa ji bilkul kar sakte hai-->
+
+<!-- ki agar yeh jo number of guesses hai (let numGuess = 1)  
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess){}
+   }
+}
+
+isko (let numGuess = 1) mai increase karta jaunga aur kyuki global scope mei maine isko (let numGuess = 1) daal rakha hai yaad rakhiye scoping bhi hum use kar rahe hai yeh global scope pe maine isko (let numGuess = 1) daal rakha hai (see code global scope (let numGuess = 1) means (let numGuess = 1) ko global scope mei declare kar rakha hai)
+-->
+
+<!-- to number of guesses (let numGuess = 1) agar uska (user) 11th hai 
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){}
+   }
+}
+
+to ab nahi karna hai hume kaam (1:10:52)
+-->
+
+<!-- aap chahein to less than , greater than 10 wo bhi aap check kar sakte hai greater than equal to 10 yeh jaisa bhi aapko karna hai ek hi baat hai -->
+
+<!-- theek hai to hume kya karna hai, to hum kya karenge ki agar wo uske barabar hai ( if(numGuess === 11){} ) to humare pas ek message hai yeh displayMessage() (see suggestion list)
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayMessage()
+      }
+   }
+}
+
+-->
+
+<!-- aa..., pehle displayGuess() kara lete hai ek bar ki wo jo bhi display usne (user) karaya hai wo to actually uske (user) pas ho 
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess()
+      }
+   }
+}
+
+-->
+
+<!-- to displayGuess() ko hum ek guess method (argument) de denge -- displayGuess(guess)
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+      }
+   }
+}
+
+ab wo ( displayGuess(guess) ) kaise display karta hai yeh mujhe abhi headache nahi hai usko bas display kara lo (1:11:19)
+
+-->
+
+<!-- iske ( displayGuess(guess) ) baad ek displayMessage() bhi kara lete hai 
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+         displayMessage()
+      }
+   }
+}
+
+ab displayMessage() ko ek message chahiye , to theek hai ji message bhi de dete hai usko (displayMessage())
+
+to displayMessage() ko ek back ticks ke saath hum message de dete hai ki -- `Game Over`
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+         displayMessage(`Game Over`)
+      }
+   }
+}
+
+ab wo ( displayMessage(`Game Over`) ) kaise display karata hai wo uski ( displayMessage(`Game Over`) ) headache hai
+-->
+
+<!-- 1:11:30 -->
+
+<!-- theek hai aur random number bhi usko bata hi dete hai user ko kyuki ab game over ( displayMessage(`Game Over`) ) ho hi gaya hai to 
+
+theek hai to bol hi dete hai usko -- Random number was 
+
+"was" kyuki ab ho hi chuka tha ( displayMessage(`Game Over`) )
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+         displayMessage(`Game Over. Random number was`)
+      }
+   }
+}
+
+-->
+
+<!-- to yeh lijiye 
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+         displayMessage(`Game Over. Random number was ${}`)
+      }
+   }
+}
+
+(1:11:43)
+
+-->
