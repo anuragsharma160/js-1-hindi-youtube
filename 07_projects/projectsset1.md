@@ -4659,7 +4659,7 @@ if(playGame){
    })
 }
 
-function validateGuess(){
+function validateGuess(guess){
 //
 }
 
@@ -4723,7 +4723,7 @@ iss validation ke andar hum check kar lete hai ki actually mei number sahi se di
 
 kyuki kya hoga backend jab aap likhenge kisi bhi application ka to wahan pe suppose kariye username aya, email aya to wahan pe bhi especially aise methods (function(){}) banaye jaate hai jahan pe validation kiya jata hai ki email ke andar @ to hai na,
 
-@ aage koi word to hai na
+@ ke aage koi word to hai na (1:08:10)
 
 kya wo database ke andar already to nahi hai username
 
@@ -4732,3 +4732,353 @@ kya wo valid email hai
 kya wo unique email hai
 
 to aise (function validateGuess(){}) bahut saare validation aap bhi karoge (1:08:17) -->
+
+<!-- theek hai to abhi hum check karte hai to sabse pehle check karte hai if consition laga ke yeh lijiye 
+
+function validateGuess(guess){
+   if(){}
+}
+
+-->
+
+<!-- to if condition ke andar bhi kya sir ne aapko bataya tha is Not A Number ( isNaN() ) aajkal ek method hai jiske through hum check kar lete hai number hai ya nahi 
+
+function validateGuess(guess){
+   if(isNaN()){}
+}
+
+-->
+
+<!-- to kyuki yeh guess aapko yahan mila hi hai 
+
+(function validateGuess(guess){} mei (guess))
+
+to yeh lijiye guess aapko mil gaya hai 
+
+function validateGuess(guess){
+   if(isNaN(guess)){}
+}
+
+-->
+
+<!-- aur alert laga dete hai 
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert()
+   }
+}
+
+ -->
+
+ <!-- vaise to sir prefer karte hai ki ek text message hi wahan pe jaye but theek hai sir aage proceed hi nahi karne dena chahte aur thoda sa bhi easy kar lete hai
+ 
+ (isliye alert() use kiya)
+ 
+ to yahan pe de dete hai usko ek alert message 
+ 
+ function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   }
+}
+
+ -->
+
+<!-- ab iss message 
+( alert('Please enter a valid number') )
+ko hum kayi jagah use karne wale hai -->
+
+<!-- theek hai achha aur kya kya check karna chahoge chaliye ek aur check kar lete hai
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(){}
+}
+
+-->
+
+<!-- ek aur check kar lete hai ki humara jo ek (yeh) guess hai ( function validateGuess(guess){} mei (guess) )
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess){}
+}
+
+kya yeh (guess) less than 1 hai kya
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){}
+}
+
+(1:09:02)
+-->
+
+<!-- agar one (1) wala case hai (guess < 1) to aap kya karo yeh ( alert('Please enter a valid number') ) hi copy kar lo 
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a valid number')
+   }
+}
+
+yeh lo ji yeh ho gaya humara
+-->
+
+<!-- achha ab kya kar sakte hai isko 
+
+else if(guess < 1){
+      alert('Please enter a valid number')
+   }
+
+duplicate kar sakte hai yeh lijiye copy kara aur isko 
+(else if ko) paste kar diya
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a valid number')
+   }
+   } else if(guess < 1){
+      alert('Please enter a valid number')
+   }
+}
+
+ -->
+
+<!-- ab kya check karna chahte ho kya wo (guess) 100 se bada hai kya obvious si baat hai yeh bhi to check karoge hi 
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a valid number')
+   }
+   } else if(guess > 100){
+      alert('Please enter a valid number')
+   }
+}
+
+agar wo (guess) 100 se bada hai to bhi kya karenge -- please number chahiye, achha hi message de dete hai chaliye -- 'Please enter a number less than 100'
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a valid number')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   }
+}
+
+-->
+
+<!-- aur yahan pe (guess < 1) likh dete hai -- 
+'Please enter a number more than 1' 
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   }
+}
+
+bada hi basic sa tha
+-->
+
+<!-- theek hai itna kaam to ho gaya hai -->
+
+<!-- 1:09:43 -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      console.log(guess)
+      validateGuess(guess)
+   })
+}
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   }
+}
+
+function checkGuess(guess){
+//
+}
+
+function displayGuess(guess){
+//
+}
+
+function displayMessage(message){
+//
+}
+
+function endGame(){
+//
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- achha agar yeh sab aapne check kar liya hai to aage kya karna chahoge
+
+to else case mei aa jaoge aap obvious si baat hai 
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+   
+   }
+}
+
+-->
+
+<!-- ab else case mei sabse pehle kya chahoge , sabse pehle to mai chahunga ki yeh jo hai aapka jo number hai kahin aapka iske baad aa..., sabse pehle to isko array mei push kar lete hai-->
+
+<!-- 1:09:56 -->
+
+<!-- theek hai yeh humne diye the previous guess 
+( let prevGuess = [] )-->
+
+<!-- to previous guess ( let prevGuess = [] ) ke andar isko push kar lete hai -->
+
+<!-- to yeh humare pas hai previous guess 
+( let prevGuess = [] )
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess  
+   }
+}
+
+-->
+
+<!-- kaise push karte hai array ke andar yeh lijiye 
+dot push -- prevGuess.push() 
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push()
+   }
+}
+
+-->
+
+<!-- aur aapka yeh guess 
+( function validateGuess(guess){} mei (guess) ) ho gaya hai push -- prevGuess.push(guess)
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+   }
+}
+
+kyuki ab khel hi paa raha hai (else{} wala case) number (user) to uska (user) number (guess) to add kar hi lo
+
+(means prevGuess.push() mei guess add kar liya i.e.
+prevGuess.push(guess))-->
+
+<!-- (1:10:12) -->
+
+<!-- achha yeh to ho gaya hai ki aapne push to kar liya , ab ho sakta hai uska (user) wo last attempt ho, 
+
+ho sakta hai yeh just uska 10th attempt ho , iske baad 
+(10th attempt) mai nahi karne dena chahta
+
+(Guess Remaining: 10 see website browser right side)
+
+-->
+
+<!-- to yahan pe validation 
+( function validateGuess(guess){} ) ke baad mujhe sabse pehle check karna padega ki kahin uska game over to nahi ho gaya hai 
+
+to if(){}
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(){}
+   }
+}
+
+ yeh jo number hai ab kaise check kar paunga ki uska game over to nahi ho gaya hai-->
+
+ <!-- 1:10:33 -->
+
+<!-- aapko yaad ho to yeh ek humne liya tha number of guesses (let numGuess = 1)-->
+
+<!-- 1:10:36 -->
