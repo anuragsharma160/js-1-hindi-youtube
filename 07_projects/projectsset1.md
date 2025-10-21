@@ -5257,7 +5257,7 @@ function validateGuess(guess){
 
 -->
 
-<!-- to yeh lijiye 
+<!-- to yeh lijiye -- ${}
 
 function validateGuess(guess){
    if(isNaN(guess)){
@@ -5279,3 +5279,505 @@ function validateGuess(guess){
 (1:11:43)
 
 -->
+
+<!-- aur kyuki global scope mei tha to random number 
+(const randomNumber = ... , global scope mei declare tha, see code) ko mai access kar sakta hu -- ${randomnumber}
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+         displayMessage(`Game Over. Random number was ${randomNumber}`)
+      }
+   }
+}
+
+-->
+
+<!-- 1:11:47 -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      console.log(guess)
+      validateGuess(guess)
+   })
+}
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+         displayMessage(`Game Over. Random number was ${randomNumber}`)
+      }
+   }
+}
+
+function checkGuess(guess){
+//
+}
+
+function displayGuess(guess){
+//
+}
+
+function displayMessage(message){
+//
+}
+
+function endGame(){
+//
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- theek hai agar uska (user) game over ho gaya tha to ek aur condition ( if(numGuess === 11){} ) humne check kar li ki uss number ko hi push kara diya 
+( else {prevGuess.push(guess)} ) 
+
+ab uska game over ( if(numGuess === 11){} means user ke guess 11 ho gaye hai but Guess Remaining: 10 see website browser right side means user ne guess limit exceed kar li isliye user ka game over ho gaya hai ) ho chuka hai to display kara do message usko ( displayMessage(`Game Over. Random number was ${randomNumber}`) ) (1:11:58) aur usko (user) yeh 
+( displayGuess(guess) ) bhi kara do -->
+
+<!-- aur kya karo game bhi khatam kar do to yeh lijiye endGame -- endGame() -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      console.log(guess)
+      validateGuess(guess)
+   })
+}
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+         displayMessage(`Game Over. Random number was ${randomNumber}`)
+         endGame()
+      }
+   }
+}
+
+function checkGuess(guess){
+//
+}
+
+function displayGuess(guess){
+//
+}
+
+function displayMessage(message){
+//
+}
+
+function endGame(){
+//
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- ab kaise khatam karna hai wo mujhe nahi pata -->
+
+<!-- to endGame() bhi humne call ( endGame() ) kar diya -->
+
+<!-- ab wo ( endGame() ) kaise end kar raha hai wo hum baad mei dekhenge abhi wo headache nahi hai humari -->
+
+<!-- theek hai ji itna kaam ho gaya hai -->
+
+<!-- Lekin agar aap iske else case mei hai (further hum 
+else{} likhenge) yani ki abhi wo number 11 pe to nahi hai 
+( if(numGuess === 11){} ) , 11 ke to equal nahi hai , to iss else case (jo else{} hum further likhenge) mei hum kya kar sakte hai as follows
+
+obvious si baat hai ab yahan pe aa hi gaye hai to wo number 11 se to chota hi hai kyuki bada (11 se bada) to hum hone hi nahi de rahe usko pehle hi (1:12:28) check 
+( if(numGuess === 11){} as Guesses Remaining: 10 ) kar de rahe hai -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      console.log(guess)
+      validateGuess(guess)
+   })
+}
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+         displayMessage(`Game Over. Random number was ${randomNumber}`)
+         endGame()
+      } else{
+      
+      }
+   }
+}
+
+function checkGuess(guess){
+//
+}
+
+function displayGuess(guess){
+//
+}
+
+function displayMessage(message){
+//
+}
+
+function endGame(){
+//
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- aap chahein to wo bhi range base bhi check kar sakte hai ki 1 se 10 ke beech mei hai wo bhi aap laga sakte hai koi buri baat nahi hai uss logic mei bhi (1:12:35) -->
+
+<!-- to sabse pehle kya karna hai usko display ek guess karana padega , guess to display har haal mei hi karana hai usko -- displayGuess() 
+
+else{
+   displayGuess()
+}
+-->
+
+<!-- usko (kuch) batana to hai hi ki yeh number aapne insert kara tha aur ek guess list mei aapke chala gaya hai (1:12:45) -->
+
+<!-- theek hai ji to hum kya karte hai yahan pe guess de dijiye -- displayGuess(guess)
+
+else{
+   displayGuess(guess)
+}
+
+-->
+
+<!-- dekhiye number to guess list mei usme list mei array mei jaa hi raha hai ( prevGuess.push(guess) )
+
+but display bhi usko karana hi hai as follows 
+
+else{
+   displayGuess(guess)
+}
+
+( i.e. displayGuess(guess)) 
+
+theek hai ji yeh kara diya hai-->
+
+<!-- ab uske baad kya karna hai ki check karna padega ki aapka jo guess tha wo sahi tha ya nahi to kya karte hai hum checkGuess() ke andar 
+
+else{
+   displayGuess(guess)
+   checkGuess()
+}
+
+uss method (argument as -- guess) ko pass kar dete hai -- checkGuess(guess)
+
+else{
+   displayGuess(guess)
+   checkGuess(guess)
+}
+
+-->
+
+<!-- ab hum kya hai ki abhi yeh displayMessage() 
+( displayMessage(`Game Over. Random number was ${randomNumber}`) ) 
+
+abhi use nahi karenge kyuki yahan pe 
+( displayMessage(`Game Over. Random number was ${randomNumber}`) ) 
+ 
+ to hum sure the ki usko message display hi display karna hai
+ -->
+
+ <!-- Lekin agar checkGuess(guess) i.e. 
+ 
+ else{
+   displayGuess(guess)
+   checkGuess(guess)
+} 
+
+wale checkGuess(guess) ke andar hum aa jate hai to hume yahan pe abhi message display karne ki jarurat nahi hai
+ 
+ -->
+
+<!-- hume kya hai checkGuess(guess) i.e. 
+
+else{
+   displayGuess(guess)
+   checkGuess(guess)
+} 
+
+wale checkGuess(guess) ( ya function checkGuess(guess){} ) ke andar message display karna padega ki aapka jo value aapne kari hai wo actually mei higher hai ya lower hai , to yeh hum wahan pe ( checkGuess(guess) ) 
+( ya function checkGuess(guess){} )
+decide karenge theek hai-->
+
+<!-- 1:13:23 -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      console.log(guess)
+      validateGuess(guess)
+   })
+}
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+         displayMessage(`Game Over. Random number was ${randomNumber}`)
+         endGame()
+      } else{
+         displayGuess(guess)
+         checkGuess(guess)
+      }
+   }
+}
+
+function checkGuess(guess){
+//
+}
+
+function displayGuess(guess){
+//
+}
+
+function displayMessage(message){
+//
+}
+
+function endGame(){
+//
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- theek hai to yeh ho gaya humara validateGuess
+( function validateGuess(guess){} )
+ iska theek hai ji-->
+
+<!-- 1:13:24 -->
+
+<!--  ab aate hai hum checkGuess ke andar 
+( function checkGuess(guess){} )-->
+
+<!-- ab checkGuess ( function checkGuess(guess){} ) ke andar kya karna hai , actually mei check karna hai ki wo random value ( const randomNumber = ... ) ke equal hai lower hai ya high hai 
+
+based on pe hum message usko display karane wale hai-->
+
+<!-- theek hai ji to check karte hai laate hai humara if else case to yeh lijiye humara yeh if aa gaya theek hai ji -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      console.log(guess)
+      validateGuess(guess)
+   })
+}
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+         displayMessage(`Game Over. Random number was ${randomNumber}`)
+         endGame()
+      } else{
+         displayGuess(guess)
+         checkGuess(guess)
+      }
+   }
+}
+
+function checkGuess(guess){
+   if(){}
+}
+
+function displayGuess(guess){
+//
+}
+
+function displayMessage(message){
+//
+}
+
+function endGame(){
+//
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- ab if(){} ke andar hume kya karna hai sabse pehle, sabse pehle hum kya karte hai if ke andar hum check karte hai ki guess haa ji guess aap hume de rahe ho -- if(guess){}
+
+function checkGuess(guess){
+   if(guess){}
+}
+
+to kya wo guess equal hai humare randomNumber ke 
+(const randomNumber = ...)
+
+function checkGuess(guess){
+   if(guess === randomNumber){}
+}
+
+-->
+
+<!-- theek hai agar randomNumber (const randomNumber = ...) ke equal hi ho gaya , to theek hai ji yeh to kaam hi khatam ho gaya endGame() ho gaya aapne guess kar liya hai ek bar ke andar hi
+
+to uss case mei kya karo displayMessage() ko call karo aur ek message de dete hai usko 
+
+function checkGuess(guess){
+   if(guess === randomNumber){
+      displayMessage()
+   }
+}
+
+kya message denge ki (back ticks) -- `You guessed it right`
+(1:14:10) -->
