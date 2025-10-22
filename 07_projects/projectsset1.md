@@ -5780,4 +5780,534 @@ function checkGuess(guess){
 }
 
 kya message denge ki (back ticks) -- `You guessed it right`
-(1:14:10) -->
+(1:14:10) 
+
+function checkGuess(guess){
+   if(guess === randomNumber){
+      displayMessage(`You guessed it right`)
+   }
+}
+
+-->
+
+<!-- theek hai ji aapne guess kar liya hai ekdum right aur endGame() kar do kyuki ab wo (user) samajh hi chuka hai to kya hi khele aur 
+
+function checkGuess(guess){
+   if(guess === randomNumber){
+      displayMessage(`You guessed it right`)
+      endGame()
+   }
+}
+
+-->
+
+<!-- theek hai to endGame() kar do -->
+
+<!-- achha agar randomNumber (const randomNumber = ...) ke equal nahi hai to kya hoga chota hoga usse theek hai ji to yeh bhi check kar lete hai -- else if (){} 
+
+function checkGuess(guess){
+   if(guess === randomNumber){
+      displayMessage(`You guessed it right`)
+      endGame()
+   }
+} else if (){} 
+
+if ( else if (){} ) jo guess aapne hume diya hai --
+else if (guess){} 
+
+function checkGuess(guess){
+   if(guess === randomNumber){
+      displayMessage(`You guessed it right`)
+      endGame()
+   }
+} else if (guess){} 
+
+agar wo (guess) less than hai randomNumber se
+(const randomNumber = ...) -- 
+else if (guess < randomNumber){} 
+
+function checkGuess(guess){
+   if(guess === randomNumber){
+      displayMessage(`You guessed it right`)
+      endGame()
+   }
+} else if (guess < randomNumber){} 
+
+to bhi ek message usko display karana padega , to yeh diplayMessage() le lete hai copy karke 
+( displayMessage(`You guessed it right`) ) isko paste kar dete hai
+
+function checkGuess(guess){
+   if(guess === randomNumber){
+      displayMessage(`You guessed it right`)
+      endGame()
+   }
+} else if (guess < randomNumber){
+   displayMessage(`You guessed it right`)
+} 
+
+-->
+
+<!-- to isko ( displayMessage(`You guessed it right`) ) kya bole -- number is low
+
+to actually mei kya karenge number is low ki jagah bolenge -- Number is TOOO low 
+
+function checkGuess(guess){
+   if(guess === randomNumber){
+      displayMessage(`You guessed it right`)
+      endGame()
+   }
+} else if (guess < randomNumber){
+   displayMessage(`Number is TOOO low`)
+}
+
+thoda sa confuse bhi to karenge
+( displayMessage(`Number is TOOO low`) )
+ game mei aise hi itna easy thodi kar denge just ki kum hote hi bas low likh diya , TOOO low bolenge taki wo (user) dubara se aur try kar paye
+-->
+
+<!-- 1:14:55 -->
+
+<!-- theek hai achha yeh ( else if (guess < randomNumber){} ) to ho gaya humara, copy kar lete hai 
+( else if (guess < randomNumber){} ) isi ko
+( else if (guess < randomNumber){} ) wapas se paste kar lete hai
+
+function checkGuess(guess){
+   if(guess === randomNumber){
+      displayMessage(`You guessed it right`)
+      endGame()
+   }
+} else if (guess < randomNumber){
+   displayMessage(`Number is TOOO low`)
+}
+} else if (guess < randomNumber){
+   displayMessage(`Number is TOOO low`)
+}
+
+-->
+
+<!-- agar wo (guess) jada bada hai randomNumber se 
+(const randomNumber = ...) --
+else if (guess > randomNumber)
+
+function checkGuess(guess){
+   if(guess === randomNumber){
+      displayMessage(`You guessed it right`)
+      endGame()
+   }
+} else if (guess < randomNumber){
+   displayMessage(`Number is TOOO low`)
+}
+} else if (guess > randomNumber){
+   displayMessage(`Number is TOOO low`)
+}
+
+to -- Number is TOOO high
+
+function checkGuess(guess){
+   if(guess === randomNumber){
+      displayMessage(`You guessed it right`)
+      endGame()
+   }
+} else if (guess < randomNumber){
+   displayMessage(`Number is TOOO low`)
+}
+} else if (guess > randomNumber){
+   displayMessage(`Number is TOOO High`)
+}
+-->
+
+<!-- theek hai ji to yeh ho gaya humara check 
+( function checkGuess(guess){} )
+
+validation ho gaya hai 
+( function validateGuess(guess){} )
+
+aur yeh checkGuess ( function checkGuess(guess){} ) bhi ho gaya hai
+
+aur humne message bhi print kara diye hai
+( function validateGuess(guess){} ) aur 
+( function checkGuess(guess){} ) ke andar-->
+
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      console.log(guess)
+      validateGuess(guess)
+   })
+}
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+         displayMessage(`Game Over. Random number was ${randomNumber}`)
+         endGame()
+      } else{
+         displayGuess(guess)
+         checkGuess(guess)
+      }
+   }
+}
+
+function checkGuess(guess){
+   if(guess === randomNumber){
+      displayMessage(`You guessed it right`)
+      endGame()
+   }
+} else if (guess < randomNumber){
+   displayMessage(`Number is TOOO low`)
+}
+} else if (guess > randomNumber){
+   displayMessage(`Number is TOOO High`)
+}
+
+function displayGuess(guess){
+//
+}
+
+function displayMessage(message){
+//
+}
+
+function endGame(){
+//
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- achha theek hai ab humare pas actually mei jo baat aati hai wo (1:15:19) aati hai displayGuess ki 
+(function displayGuess(guess){})-->
+
+<!-- ab dekhiye yeh jo displayMessage() 
+( displayMessage(`Number is TOOO High`) etc )
+to humne kayi jagah use kara 
+
+lekin yeh jo 
+displayGuess() ( displayGuess(guess) )
+hai yeh actually mei kaam kya kar raha hai -- yeh (ki) tareh se hum display karana chahte hai user ko-->
+
+<!-- 1:15:28 -->
+
+<!-- to dekhiye displayGuess
+(function displayGuess(guess){})
+ ke andar sabse pehla jo humara kaam hai ki yeh jo displayGuess (function displayGuess(guess){}) hai usme kya karenge ki yeh jo userInput 
+ (const userInput = ...)
+ liya hai humne 
+ 
+ function displayGuess(guess){
+   userInput
+}
+
+iski ( userInput (const userInput = ...) ) jo value hai
+ 
+function displayGuess(guess){
+   userInput.value
+}
+ 
+ wo ( userInput.value ) hum update kar denge ab
+ -->
+
+ <!-- update kisse karenge -- empty string se -- 
+ (userInput.value = '')
+ 
+ function displayGuess(guess){
+   userInput.value = ''
+}
+
+taaki ek bar aapne value submit kar di hai 
+(Submit guess Button)
+
+ab submit hone ke baad value ke saath kuch to ho hi raha hai
+ 
+(1:15:45)
+
+ to dekhiye displayGuess() yahan pe 
+ ( function validateGuess() ke last else mei --
+ displayGuess(guess) ) bhi run ho hi raha hai
+ 
+ displayGuess() yahan pe ( function validateGuess() ke 
+ if(numGuess === 11){ displayguess(guess)} ) bhi run ho raha hai
+ 
+ to actually mei value to khaali karni hi hai to yeh kaam (value khaali karne ka kaam) to hume karna hi karna hai to ek (yeh) cleanUp bhi bol sakte hai isko 
+ ( function displayGuess(guess){} ) hum displayGuess 
+ ( function displayGuess(guess){} ) ki jagah cleanUp method (function cleanUp(){}) bhi bol sakte hai
+ 
+ theek hai yeh kaam humara ho gaya hai (1:15:56)-->
+
+<!-- (empty string deke value khaali kar di -- 
+userInput.value = '' ) -->
+
+<!-- lekin ab kya karna hai jo aapka jo guessSlot hai yeh aapne jo liya tha ( const guessSlot = ... ) 
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot
+}
+
+iske (guessSlot) andar hume innerHTML add karni hai
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML
+}
+
+-->
+
+<!-- ab yeh jo guessSlot ( const guessSlot = ... ) humne liya tha (index.html mei aa gaye) agar aapko yaad ho, actually mei (chaiaurcode.js mei aa gaye) ki yeh jo guessSlot humne liya hai ( const guessSlot = ... ) yeh ( const guessSlot = ... ) kya hai humara yeh guesses hai humare 
+( const guessSlot = document.querySelector('.guesses') mei 
+'.guesses' ) 
+
+theek hai
+
+ab yeh guesses
+( const guessSlot = document.querySelector('.guesses') mei 
+'.guesses' )
+ aa kahan se rahe hai-->
+
+<!-- yeh humare guesses hai 
+(index.html mei line 31 class = guesses ) 
+
+to iske (index.html mei line 31 or span tag) andar humara jo innerHTML hai wo hum add karana chahte hai
+
+ to yeh jo span humne liya hai (index.html mei line 31 span) 
+ yeh humne
+ (span opening tag to span closing tag line 31 index.html) select kar liya hai (mouse drag karke) 
+ (span opening tag to span closing tag line 31 index.html)-->
+
+ <!-- 1:16:28 -->
+
+<!-- ab iss span (index.html line 31 span) ke andar hum kuch values add karna chah rahe hai (1:16:31) 
+
+theek hai yeh kaam hum karna chah rahe hai -->
+
+<!-- to yahan pe aate hai (chaiaurcode.js) to yeh guessSlot liya (const guessSlot = ...) humne iska (guessSlot ka) innerHTML liya
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML
+}
+
+to iss innerHTML ( guessSlot.innerHTML ) ke andar kya karenge hum add karte jayenge 
+
+to +=
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML +=
+}
+
+kya add karna hai hume -- (back ticks le liye)
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += ``
+}
+
+hum kya karenge ek variable add karte jayenge
+ -->
+
+<!-- to yeh lijiye dollar $ aur uske andar lete hai yahan pe yeh lijiye values -- ${} 
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${}`
+}
+
+aur isko bol dete hai guess -- `${guess}`
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${guess}`
+}
+
+-->
+
+<!-- to jo bhi guess ki values hai uske andar usko wo update nahi kar raha hai usko wo push karte jaa raha hai -->
+
+<!-- 1:16:57 -->
+
+<!-- theek hai aur kya karna hai hume iske alawa hume yahan pe aa hi gaye hai to humare jo number of guesses i.e. numGuess ( let numGuess = 1 ) 
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${guess}`
+   numGuess
+}
+
+isko numGuess ( let numGuess = 1 )  bhi ++ kar dete hai , yeh to badhaana (increase karna) hi hai na
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${guess}`
+   numGuess++;
+}
+
+-->
+
+<!-- kyuki aap dekhein gaur se yeh jo humare pas hai yeh numGuess ( let numGuess = 1 ) yeh ( let numGuess = 1 ) humne 1 se start kara hai but yeh badhna (increase hona) bhi to chahiye
+
+yeh ( let numGuess = 1 ) kab badhega jab aap yeh cleanUp 
+(function displayGuess(guess){}) kar rahe hai ki value user ne de di hai , uska (user ka) value chala gya hai to value ko clean bhi kar do (empty string -- userInput.value = '')
+
+aur uss value ko show bhi kar do yahan pe 
+(guessSlot.innerHTML += `${guess}`)
+
+aur uss value ko add bhi kar do
+(numGuess++;)
+ update bhi kar do-->
+
+<!-- 1:17:24 -->
+
+<!-- Lekin ek kaam aur hai yeh jo remaining guesses hai 
+(Guesses Remaining: 10 see website browser right side) iski values ko bhi hum change kar lete hai -->
+
+<!-- ab remaining guesses (Guesses Remaining: 10) hai wo humne kaise kar rakha hai (index.html mei aa gaye) 
+
+to dekhiye yahan pe remaining guesses 
+(line 32 index.html) to humne yeh text alag likh rakha hai 
+(line 32 index.html see after p opening tag -- 
+Guesses Remaining -- text hai)
+
+lekin yeh span ke andar (index.html line 32 span tag) humne yahan pe lastResult (class = lastResult line 32 index.html) yahan pe value 10 de rakhi hai (line 32 index.html) 
+
+(1:17:37)
+
+to isko (10 ko) to update karna to bahut hi aasaan hai
+
+(chaiaurcode.js mei aa gaye)
+
+yahan pe (as follows)
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${guess}`
+   numGuess++;
+}
+
+ jab ek value update ho gayi hai to simply kya karo yeh remaining lo ( const remaining = ... , as Guesses Remaining: 10 ki baat chal rahi hai )
+
+ function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${guess}`
+   numGuess++;
+   remaining
+}
+
+iske (remaining i.e. const remaining = ...) andar kya karo yeh innerHTML liya
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${guess}`
+   numGuess++;
+   remaining.innerHTML 
+}
+
+aur iss innerHTML ke andar values calculate kar lete hai , to back ticks ke saath 
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${guess}`
+   numGuess++;
+   remaining.innerHTML = ``
+}
+
+-->
+
+<!-- achha har bar values ko hum layein calculate karein isse achha yahin ki yahin calculate kar lete hai
+
+to javascript allow karta hai hume , to kar lete hai yeh lijiye dollar sign ${} liya 
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${guess}`
+   numGuess++;
+   remaining.innerHTML = `${}`
+}
+
+achha ab isko kaise calculate karenge , aa..., 11 mei se minus kar dete hai jitne bhi aapke guesses ho gaye hai, to yeh numGuess ( let numGuess = 1 ) -- 
+remaining.innerHTML = `${11 - numGuess}`
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${guess}`
+   numGuess++;
+   remaining.innerHTML = `${11 - numGuess}`
+}
+
+-->
+
+<!-- 1:18:06 -->
+
+<!-- to obvious si baat hai ab aapke pas jaise 11 mei se zero tak to jaana nahi hai kyuki...
+(remaining.innerHTML = `${11 - numGuess}`) 
+
+to hum kya karenge 11 se minus kar denge
+(remaining.innerHTML = `${11 - numGuess}`) 
+aa..., ek bar liya to aapka 10 hai (Guesses Remaining: 10 see website browser right side) , to ab 9 ho jayega (ek bar guess karne ke baad Guesses Remaining: 10 se Guesses Remaining: 9 reh jayenge) ek value to hum direct allow karnege 
+(Guesses Remaining: 10 see website browser right side) uske baad... 
+
+aap chahein to 10 
+
+( (remaining.innerHTML = `${11 - numGuess}`) mei 11 ki jagah 10 )
+
+se bhi kar sakte the jaisa aapko theek lage
+
+sir ko 11 se hi theek lag raha hai 
+(remaining.innerHTML = `${11 - numGuess}`)-->
+
+<!-- 1:18:20 -->
+
+<!-- to agar aapko confusion ho raha hai to yeh lijiye 10 se kar dijiye 
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${guess}`
+   numGuess++;
+   remaining.innerHTML = `${10 - numGuess}`
+}
+
+konsi badi baat hai, abhi isko aage bhi hum check kar lenge abhi sir 11 rakh dete hai
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${guess}`
+   numGuess++;
+   remaining.innerHTML = `${11 - numGuess}`
+}
+
+-->
+
+<!-- to 11 mei se numGuess minus hue 
+ (remaining.innerHTML = `${11 - numGuess}` )
+jo bhi value ayegi wo value as it is yahan pe 
+(Guesses Remaining: 10 see website browser right side) print ho jayegi (1:18:32) -->
