@@ -6311,3 +6311,554 @@ function displayGuess(guess){
  (remaining.innerHTML = `${11 - numGuess}` )
 jo bhi value ayegi wo value as it is yahan pe 
 (Guesses Remaining: 10 see website browser right side) print ho jayegi (1:18:32) -->
+
+<!-- theek hai to bas itna sa hi hai aap chahein to isko (function displayGuess(guess){}) displayGuess 
+(function displayGuess(guess){})
+ki jagah isko cleanUpGuess 
+(function cleanUpGuess(guess){})
+bhi rakh sakte hai shayad aapko wo jada comfortable lage-->
+
+<!-- achha itna kaam to ho gaya -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      console.log(guess)
+      validateGuess(guess)
+   })
+}
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+         displayMessage(`Game Over. Random number was ${randomNumber}`)
+         endGame()
+      } else{
+         displayGuess(guess)
+         checkGuess(guess)
+      }
+   }
+}
+
+function checkGuess(guess){
+   if(guess === randomNumber){
+      displayMessage(`You guessed it right`)
+      endGame()
+   }
+} else if (guess < randomNumber){
+   displayMessage(`Number is TOOO low`)
+}
+} else if (guess > randomNumber){
+   displayMessage(`Number is TOOO High`)
+}
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${guess}`
+   numGuess++;
+   remaining.innerHTML = `${11 - numGuess}`
+}
+
+function displayMessage(message){
+//
+}
+
+function endGame(){
+//
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+
+<!-- ab aate hai humare naye method (function (){}) pe (1:18:41) -->
+
+<!-- theek hai ji ab naya method (function (){}) kya hai yeh hai displayMessage (function displayMessage(message){}) -->
+
+<!-- to dekhiye displayMessage 
+(function displayMessage(message){}) kya hai aapko agar yaad ho to yahan pe humne ek value li thi 
+lowOrHi (const lowOrHi = ...) -->
+
+<!-- yeh ( lowOrHi (const lowOrHi = ...) ) kya kar raha tha -->
+
+<!-- yeh jo lowOrHi hai (index.html mei aa gaye) yeh simply ek paragraph hai (index.html line 33 class = lowOrHi) jiske andar kuch bhi nahi hai to simply bas isi ke andar to message print karana hai-->
+
+<!-- aur message aapko yahan pe 
+(function displayMessage(message){}) pas ho hi raha hai , to bas bahut aasaan hai (1:19:00)-->
+
+<!-- kya karo yeh lowOrHi (const lowOrHi = ...) isko lo 
+
+function displayMessage(message){
+   lowOrHi
+}
+
+aur bolo ki hum aapke innerHTML mei koi value add karna chahte hai
+
+function displayMessage(message){
+   lowOrHi.innerHTML
+}
+
+-->
+
+<!-- kya value add karna chahte hai , to yeh lijiye ab aap iske andar kya kariye back ticks lijiye 
+
+function displayMessage(message){
+   lowOrHi.innerHTML = ``
+}
+
+aur h2 ya h3 jo bhi aapko theek lage hum h2 hi le lete hai chaliye
+
+function displayMessage(message){
+   lowOrHi.innerHTML = `<h2></h2>`
+}
+
+yeh lijiye h2 liya ab iske andar values print kara dijiye, to value kya print karani hai sab log apna message achhe se bana ke de hi rahe hai to as it is message ko pass kar do -- 
+${message}
+
+function displayMessage(message){
+   lowOrHi.innerHTML = `<h2>${message}</h2>`
+}
+
+(1:19:25)
+-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      console.log(guess)
+      validateGuess(guess)
+   })
+}
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+         displayMessage(`Game Over. Random number was ${randomNumber}`)
+         endGame()
+      } else{
+         displayGuess(guess)
+         checkGuess(guess)
+      }
+   }
+}
+
+function checkGuess(guess){
+   if(guess === randomNumber){
+      displayMessage(`You guessed it right`)
+      endGame()
+   }
+} else if (guess < randomNumber){
+   displayMessage(`Number is TOOO low`)
+}
+} else if (guess > randomNumber){
+   displayMessage(`Number is TOOO High`)
+}
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${guess}`
+   numGuess++;
+   remaining.innerHTML = `${11 - numGuess}`
+}
+
+function displayMessage(message){
+   lowOrHi.innerHTML = `<h2>${message}</h2>`
+}
+
+function endGame(){
+//
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+
+
+<!-- to yeh lijiye ho gaya aapka kaam, theek hai ab aati hai baat endGame() ( function endGame(){} ) aur newGame()
+( function newGame(){} ) karne ki -->
+
+<!-- to endGame() ( function endGame(){} ) bhi karna padega to ek bar pehle itna to hum karke dekh lete hai
+
+theek hai to humne isko refresh 
+(website browser ko reload kiya) kiya to hopefully... -->
+
+<!-- to suppose karo mai yahan pe (input field mei) 3 number deta hu to submit guess karta hu (Submit guess button pe click karte hai) to yeh bol raha hai -- Number is TOOO low
+
+Previous guesses: 3
+Guesses Remaining: 9 
+
+aur humara input bhi clean ho gaya hai
+
+1:19:42
+-->
+
+<!-- agar mai isko deta hu yahan pe suppose kariye 99 
+(input field mei 99 likh diya) aur submit karta hu (submit guess button pe click karte hai )
+
+to yeh wapas se check kar raha hai 
+
+Number is TOOO High
+Previous guesses: 3 99
+Guesses Remanining: 8
+
+ab kya ho raha hai actually mei thodi si yahan pe problem ho rahi hai to dekhiye aapne pehle 3 diya tha (input field mei) fir 99 diya tha (input field mei) to inke beech mei actually mei spaces nahi aa rahi hai 
+
+Previous guesses: 3 99
+
+-->
+
+<!-- 1:19:56 -->
+
+<!-- theek hai to humne actually mei yeh yahan pe displayGuess ( function displayGuess(guess){} ) ke andar yeh += jo humne guess diya hai isko hume thoda sa adjust karna padega (1:20:04) 
+
+(guessSlot.innerHTML += `${guess}`)
+
+to hum kya karte hai yahan pe += `${guess}` ke baad thoda sa spacing de dete hai -- += `${guess} `
+
+(guessSlot.innerHTML += `${guess} `)
+
+chahein to comma , bhi de sakte hai aap but itna debugging to aap bhi karnege hi
+-->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      console.log(guess)
+      validateGuess(guess)
+   })
+}
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+         displayMessage(`Game Over. Random number was ${randomNumber}`)
+         endGame()
+      } else{
+         displayGuess(guess)
+         checkGuess(guess)
+      }
+   }
+}
+
+function checkGuess(guess){
+   if(guess === randomNumber){
+      displayMessage(`You guessed it right`)
+      endGame()
+   }
+} else if (guess < randomNumber){
+   displayMessage(`Number is TOOO low`)
+}
+} else if (guess > randomNumber){
+   displayMessage(`Number is TOOO High`)
+}
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${guess}  `;
+   numGuess++;
+   remaining.innerHTML = `${11 - numGuess}`;
+}
+
+function displayMessage(message){
+   lowOrHi.innerHTML = `<h2>${message}</h2>`
+}
+
+function endGame(){
+//
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+
+<!-- theek hai to yeh wapas se try karte hai ek bar refresh kar lete hai (website browser ko reload kar liya) -->
+
+<!-- to dete hai ek bar 3 (input field mei 3 likh liya) aur submit karte hai (submit guess button click kar liya)
+
+Number is TOOO low
+
+Previous Guesses: 3
+Guesses Remaining: 9 -->
+
+<!-- ab dete hai isko 66 (input field mei 66 likh liya) submit karte hai (submit guess button click kar liya)
+
+Number is TOOO low
+
+Previous Guesses: 3 66
+Guesses Remaining: 8
+-->
+
+<!-- dekhiye ab thoda sa spacing aa gaya 
+Previous Guesses: 3 66 (3 and 66 ke beech mei spacing aa gaya)-->
+
+<!-- agar aapko iss tareh se nahi hai to aap chahein to comma , bhi de sakte hai 
+
+(guessSlot.innerHTML += `${guess}  `; pe `${guess} ` ke baad space ki jagah comma , bhi de sakte hai)
+
+aur bhi de sakte hai sir space se kaam chala lete hai-->
+
+<!-- abhi kyuki theek hi lag raha hai space , chahein to aur spaces de dijiye 
+
+(guessSlot.innerHTML += `${guess}      `;
+
+to easy lagega
+
+4 diya (input field mei 4) submit guess button pe click kiya
+
+Number is TOOO low
+
+Previous Guesses: 4
+Guesses Remaining: 9
+
+33 diya
+
+33 diya (input field mei 33) submit guess button pe click kiya
+
+Number is TOOO low
+
+Previous Guesses: 4 33
+Guesses Remaining: 8
+
+
+22 diya (input field mei 22) submit guess button pe click kiya
+
+Number is TOOO low
+
+Previous Guesses: 4 33 22
+Guesses Remaining: 7-->
+
+<!-- to dekhiye sari list aapko yahan 
+(Previous Guesses: 4 33 22)
+dekhne ko mil rahi hai-->
+
+<!-- agar aap chahtein hai iske andar aur innerHTML 
+
+(guessSlot.innerHTML += `${guess}      `;)
+
+ke andar thoda sa aur karna hai isko paragraph mei display karna hai ya fir iske saath comma , mei display karna hai to aap wo bhi kar sakte hai koi badi baat nahi hai kyuki += hai
+(guessSlot.innerHTML += `${guess}      `;)
+
+to wo kabhi change nahi hoga
+-->
+
+<!-- ab aapko yeh 
+
+(guessSlot.innerHTML += `${guess}  `;)
+
+theek nahi lag raha aap chahte hai yeh
+
+(guessSlot.innerHTML += `${guess};  `;)
+
+ karenge hum to iske saath mei to aap save kar lijiye aur isko bhi try kar lete hai 
+ 
+ 
+ to 5 in input field
+
+ submit guess button click
+
+ Number is TOOO low
+
+ Previous Guesses: 5
+ Guesses Remaining: 9
+
+ uske baad 4 in input field
+
+ submit guess button click
+
+ Number is TOOO low
+
+ Previous Guesses: 5; 4;
+ Guesses Remaining: 8
+ 
+ iss tareh ( Previous Guesses: 5; 4; ) se aap chahtein hai
+ -->
+
+<!-- aap chahtein hai mujhe to comma , values chahiye, comma jada achha lagta hai 
+
+(guessSlot.innerHTML += `${guess},  `;)
+
+to yeh choti choti baatein hai isme itna load lene ki baat hi nahi hai
+
+-->
+
+<!-- 1:21:12 -->
+
+<!-- to yeh ho gaya basic -->
+
+<!-- achha ji ab hum endGame (function endGame(){}) aur newGame (function newGame(){}) ke upar focus karein kyuki aise to user khelta hi jayega-->
+
+<!-- to end to karna hi padega na kyuki yahan 
+(function validateGuess(){} mei as follows)
+
+else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+         displayMessage(`Game Over. Random number was ${randomNumber}`)
+         endGame()
+      }
+
+ to aapne likh diya ki endGame() kar dijiye
+ 
+ par kabhi endGame (function endGame(){}) to humne kiya hi nahi hai
+ 
+ to endGame (function endGame(){}) ke upar bhi charcha kar lete hai ki endGame kaise hoga-->
+
+ <!-- to dekhiye endGame (function endGame(){}) karne ke liye kya hoga sabse pehle to aapko ek button banana padega-->
+
+ <!-- theek hai ab button kya hai humare pas ek button lenge hum ek second yahan pe (index.html mei) ayiye
+ 
+ to hum kya karenge ek naya button yahan pe (index.html) create kar lete hai abhi to yahan pe submit 
+ (line 27 index.html) hi hai 
+ 
+ but actually mei hume ek naya button lagega jiske upar hum bana sakein yeh sara ka sara ki endGame kar rahe hai to newGame ka bhi usko (user) option dena padega wahan pe to pehle wo karte hai hum yahan pe (index.html)-->
+
+ <!-- 1:21:54 -->
+
+ <!-- haa ji to ab hum kya karte hai sabse pehle focus karte hai humare endGame (function endGame(){}) ke upar  -->
+
+ <!-- achha endGame (function endGame(){}) kaise karna padega to dekhiye sabse pehla jo kaam hai wo to sabse pehle kariye ki jitne bhi input field hai unko clear kar dijiye, endGame kar hi rahe hai to clear to karna hi padega 
+ 
+ to yeh userInput (const userInput = ...) 
+ 
+function endGame(){
+   userInput
+}
+ 
+iske ( userInput (const userInput = ...) ) andar jo value hai
+yeh lijiye value -- userInput.value
+
+function endGame(){
+   userInput.value
+}
+
+aur yeh ho gayi value clean -- '' (empty string) --
+userInput.value = ''
+
+function endGame(){
+   userInput.value = ''
+}
+
+that's it kuch jada isme difficult to tha hi nahi
+ -->
+
+<!-- theek hai achha value ho gayi hai clean 
+
+ab kya kariye ki uske andar jo userInput 
+(const userInput = ...) hai uske (userInput) andar wo (user) aur values add na kar paye , to wo kaise karenge-->
+
+<!-- to userInput (const userInput = ...) hai 
+
+function endGame(){
+   userInput.value = ''
+   userInput
+}
+
+uske (userInput) andar kya kariye ki aap kuch iss tareh se kariye ki uske andar ek attribute set ho jaye, to hume pata hai attribute kaise set karte hai yeh lijiye setAttribute
+
+function endGame(){
+   userInput.value = ''
+   userInput.setAttribute()
+}
+
+aur setAttribute ke bare mei humne kaafi charcha kari thi
+
+konsa attribute aap uske andar set karna chahhenge, mai uske andar ek hi attribute set karunga jo ki hoga -- 'disabled'
+
+function endGame(){
+   userInput.value = ''
+   userInput.setAttribute('disabled')
+}
+-->
+
+<!-- ab disabled aap akele set nahi kar sakte actually mei aa..., key value pair mei set hote hai (1:22:48)
+
+waise to agar input (input field) mei disabled word aap likh dete hai to wo disabled ho jata hai but yahan pe aapke andar problem aa sakti hai iske andar to kya kariye (1:22:54) -->
+
