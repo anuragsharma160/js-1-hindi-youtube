@@ -6850,7 +6850,7 @@ function endGame(){
 
 aur setAttribute ke bare mei humne kaafi charcha kari thi
 
-konsa attribute aap uske andar set karna chahhenge, mai uske andar ek hi attribute set karunga jo ki hoga -- 'disabled'
+konsa attribute aap uske andar set karna chahenge, mai uske andar ek hi attribute set karunga jo ki hoga -- 'disabled'
 
 function endGame(){
    userInput.value = ''
@@ -6860,5 +6860,153 @@ function endGame(){
 
 <!-- ab disabled aap akele set nahi kar sakte actually mei aa..., key value pair mei set hote hai (1:22:48)
 
-waise to agar input (input field) mei disabled word aap likh dete hai to wo disabled ho jata hai but yahan pe aapke andar problem aa sakti hai iske andar to kya kariye (1:22:54) -->
+waise to agar input 
+(input field i.e. userInput i.e. const userInput = ...) mei ek disabled word aap likh dete hai to wo disabled ho jata hai but yahan pe aapke andar problem aa sakti hai iske andar to kya kariye (1:22:54) 
 
+uss second jo parameter hai uske andar kuch bhi add mat kariye (as follows)
+
+(second parameter means jo 'disabled' ke baad ke comma , ke baad i.e. empty string i.e. '' )
+
+function endGame(){
+   userInput.value = ''
+   userInput.setAttribute('disabled', '')
+}
+
+to key value pair ( ('disabled', '') ) hai , aapka kaam ho gaya hai
+
+theek hai ji itna kaam bhi ho gaya hai
+-->
+
+<!-- to yeh ho gaya humara endGame (function endGame(){}) 
+
+ab kya kariye ki hume ek start button bhi to karwana padega
+
+to kya kariye wo jo ek paragraph hai aa..., jo humne starting mei liya tha ( const p = document.createElement('p') ) 
+
+function endGame(){
+   userInput.value = ''
+   userInput.setAttribute('disabled', '')
+   p
+}
+
+uske ( const p = document.createElement('p') ) andar ek classList add kara dete hai -- classList.add() --
+p.classList.add()
+
+function endGame(){
+   userInput.value = ''
+   userInput.setAttribute('disabled', '')
+   p.classList.add()
+}
+
+theek hai classList konsi add kara rahe hai hum uske andar dekhiye uss class ka koi kaam nahi hai
+
+to hum uske andar add kara dete hai ek button
+
+function endGame(){
+   userInput.value = ''
+   userInput.setAttribute('disabled', '')
+   p.classList.add('button')
+}
+
+(1:23:24)
+
+theek hai to wo button ki tareh behave karne lag jayega kyuki classes aapne iss tareh se likhi hai ki button ki tareh behave kare wo
+-->
+
+
+<!-- theek hai abhi usse kaam hua nahi hai 
+
+ab uss paragraph ( const p = document.createElement('p') ) ke andar hume kya hai ki ek innerHTML bhi add karna padega theek hai ji
+
+to paragraph ko lijiye 
+( const p = document.createElement('p') ) 
+
+function endGame(){
+   userInput.value = ''
+   userInput.setAttribute('disabled', '')
+   p.classList.add('button')
+   p
+}
+
+aur usko boliye ki aapke andar ek innerHTML bhi hum add kara dete hai
+
+function endGame(){
+   userInput.value = ''
+   userInput.setAttribute('disabled', '')
+   p.classList.add('button')
+   p.innerHTML = 
+}
+
+theek hai innerHTML kya add karayenge, aap chahein to paragraph le sakte hai , div le sakte hai, span le sakte hai, jo bhi kuch le usme koi itna jada badi baat hai nahi
+
+(back ticks likh liya)
+
+function endGame(){
+   userInput.value = ''
+   userInput.setAttribute('disabled', '')
+   p.classList.add('button')
+   p.innerHTML = ``
+}
+
+to mai uske andar kya chahta hu ki ek h1 select kara dete hai yeh lijiye h1 ya h2 le lete hai h1 kaafi bada ho jayega
+
+function endGame(){
+   userInput.value = ''
+   userInput.setAttribute('disabled', '')
+   p.classList.add('button')
+   p.innerHTML = `<h2></h2>`
+}
+
+yeh lijiye h2 le liya
+
+ab iss h2 ke andar kya karna hai mujhe , aa..., ek id bhi add kara dete hai , yeh lijiye
+
+function endGame(){
+   userInput.value = ''
+   userInput.setAttribute('disabled', '')
+   p.classList.add('button')
+   p.innerHTML = `<h2 id=""></h2>`
+}
+
+-->
+
+<!-- id kiski karayein -- newGame , kyuki newGame 
+(function newGame(){}) mei bhi hum isi button ko kaam mei le lenge , chaar (4) button lagane ki jada jarurat hai nahi hume 
+
+function endGame(){
+   userInput.value = ''
+   userInput.setAttribute('disabled', '')
+   p.classList.add('button')
+   p.innerHTML = `<h2 id="newGame"></h2>`
+}
+
+1:24:15
+-->
+
+<!-- theek hai ji isko bol dete hai -- Start new Game
+
+kyuki endGame (function endGame(){}) ho gaya hai to ab yeh button bhi usko mil jaye 
+
+function endGame(){
+   userInput.value = ''
+   userInput.setAttribute('disabled', '')
+   p.classList.add('button')
+   p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+}
+
+-->
+
+<!-- ab yeh sara button 
+(p.classList.add('button'))
+jo hai na yeh hawa mei jhool raha hai abhi iska koi itna mahatatv hai nahi
+
+theek hai uss paragraph (const p = ...) ke andar aapne ek add bhi kara diya button ( p.classList.add('button') ) 
+aur uske andar ek innerHTML bhi de diya hai
+( p.innerHTML = `<h2 id="newGame">Start new Game</h2>`; )
+ki theek hai , to itna kaam to humara ho gaya-->
+
+<!-- 1:24:31 -->
+
+<!-- theek hai ji ab kya karna hai abhi aapko yaad ho to humne ek startOver ( const startOver = ... ) bhi liya tha yaad hai yeh startOver ( const startOver = ... )-->
+
+<!-- 1:24:40 -->
