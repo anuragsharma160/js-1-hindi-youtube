@@ -7007,6 +7007,1558 @@ ki theek hai , to itna kaam to humara ho gaya-->
 
 <!-- 1:24:31 -->
 
-<!-- theek hai ji ab kya karna hai abhi aapko yaad ho to humne ek startOver ( const startOver = ... ) bhi liya tha yaad hai yeh startOver ( const startOver = ... )-->
+<!-- theek hai ji ab kya karna hai agar aapko yaad ho to humne ek startOver ( const startOver = ... ) bhi liya tha yaad hai yeh startOver ( const startOver = ... )
+
+jo ki resultParas
+( const startOver = document.querySelector('.resultParas') )
+le rahe the
+-->
 
 <!-- 1:24:40 -->
+
+<!-- to yeh jo humare pas resultParas hai 
+(index.html line 30) yeh poora ka poora humne liya hai
+(i.e. from resultParas opening tag to closing tag) 
+
+function endGame(){
+   userInput.value = ''
+   userInput.setAttribute('disabled', '')
+   p.classList.add('button')
+   p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+   startOver
+}
+
+-->
+
+<!-- ab iss resultParas ke andar hum kya karenge hum iske innerHTML ke andar wapas se change karenge , actually mei append kar lete hai-->
+
+<!-- pehle mai soch raha tha ki poori sari values 
+(jo resultParas ke andar values hai see index.html line 30) ko hata deta hu aur kar deta hu but fir maine socha ki yar ek kaam karte hai ki appendChild hi use kar lete hai taki uske 
+( resultParas index.html line 30 ) andar ek naya child add ho jaye
+
+function endGame(){
+   userInput.value = ''
+   userInput.setAttribute('disabled', '')
+   p.classList.add('button')
+   p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+   startOver.appendChild()
+}
+
+-->
+
+<!-- theek hai konsa naya child add karein , yeh lijiye paragraph humne add kar diya hai -- p -- 
+startOver.appendChild(p)
+
+( const p = document.createElement('p') )
+
+function endGame(){
+   userInput.value = ''
+   userInput.setAttribute('disabled', '')
+   p.classList.add('button')
+   p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+   startOver.appendChild(p)
+}
+-->
+
+<!-- theek hai ji ab paragraph uske
+( resultParas index.html line 30 )
+ andar easily available hai
+ 
+ paragraph i.e. p yaad rakhiyega global scope mei tha
+ ( const p = document.createElement('p') )
+
+ to yeh
+ ( const p = document.createElement('p') )
+ paragraph hai
+
+ to humne element create kar rakha tha
+ ( const p = document.createElement('p') )
+
+ uske 
+ ( const p = document.createElement('p') )
+ andar kuch rakha nahi tha
+ -->
+
+<!-- yahan pe (as follows)
+
+function endGame(){
+   userInput.value = ''
+   userInput.setAttribute('disabled', '')
+   p.classList.add('button')
+   p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+   startOver.appendChild(p)
+} 
+
+mei
+
+   p.classList.add('button')
+   p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+
+aake humne uske
+( const p = document.createElement('p') )
+ andar rakh diya hai 
+ 
+ki humne ek class bhi add kar di
+( p.classList.add('button') )
+ uske 
+ ( const p = document.createElement('p') )
+ andar button
+ 
+ aur ek newGame ki id bhi add kar di 
+ ( p.innerHTML = `<h2 id="newGame">Start new Game</h2>`; )
+ aur usko
+ ( const p = document.createElement('p') )
+ append 
+ ( startOver.appendChild(p) )
+ bhi kar diya hai-->
+
+<!-- 1:25:20 -->
+
+<!-- theek hai ji itna kaam ho gaya hai ab kya karna hai yeh to ho gaya endGame ( function endGame(){} ) ka kaam
+
+aur usko ( function endGame(){} ) bol dijiye ki ab kya hai ki iske baad newGame ( function newGame(){} ) chal jaye (as follows)
+
+(to newGame function ( function newGame(){} ) ko call kar liya as follows)
+
+function endGame(){
+   userInput.value = ''
+   userInput.setAttribute('disabled', '')
+   p.classList.add('button')
+   p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+   startOver.appendChild(p)
+   newGame()
+} 
+
+-->
+
+<!-- achha theek hai ab newGame ( function newGame(){} ) kab chalega jab achha ek cheej aur bhool gaye hum yahan pe 
+
+ki yaad rakhiye ki iske ( let playGame = true; ) bagair kuch nahi hoga yeh jo playGame ( let playGame = true; ) hai isko 
+( let playGame = true; )
+bhi to change karna hai kyuki ab game end 
+( function endGame(){} )
+ isi se ( let playGame = true; ) to hoga actually mei-->
+
+<!-- 1:25:40 -->
+
+<!-- to playGame ( let playGame = true; ) ko kya kariye usko ( let playGame = true; ) false kar dijiye
+
+(endGame ( function endGame(){} ) hai to 
+( let playGame = true; ) ko false karna padega , 
+newGame ( function endGame(){} ) mei ( let playGame = true; ) ko true karna padega)
+
+function endGame(){
+   userInput.value = ''
+   userInput.setAttribute('disabled', '')
+   p.classList.add('button')
+   p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+   startOver.appendChild(p)
+   playGame = false
+   newGame()
+} 
+ 
+haa ji yeh ( playGame = false ) to bhool hi gaye the hum bahut hi jaruri tha
+ -->
+
+<!-- theek hai ab jitna bhi kaam hai new method ( i.e. jo newGame() likha hai i.e. jo newGame() ko call kiya hai function endGame(){} ke andar ) ko run kar lijiye wo , wo dekhiye kaise run karega humari chinta nahi hai 
+yahan pe ( function endGame(){} ) -->
+
+<!-- 1:25:51 -->
+
+<!-- const randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      console.log(guess)
+      validateGuess(guess)
+   })
+}
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+         displayMessage(`Game Over. Random number was ${randomNumber}`)
+         endGame()
+      } else{
+         displayGuess(guess)
+         checkGuess(guess)
+      }
+   }
+}
+
+function checkGuess(guess){
+   if(guess === randomNumber){
+      displayMessage(`You guessed it right`)
+      endGame()
+   }
+} else if (guess < randomNumber){
+   displayMessage(`Number is TOOO low`)
+}
+} else if (guess > randomNumber){
+   displayMessage(`Number is TOOO High`)
+}
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${guess}  `;
+   numGuess++;
+   remaining.innerHTML = `${11 - numGuess}`;
+}
+
+function displayMessage(message){
+   lowOrHi.innerHTML = `<h2>${message}</h2>`
+}
+
+function endGame(){
+   userInput.value = '';
+   userInput.setAttribute('disabled', '');
+   p.classList.add('button');
+   p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+   startOver.appendChild(p);
+   playGame = false;
+   newGame();
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- theek hai ji ab isko save karte hai ab ek bar ke liye hum kya karte hai values yahan pe (input field mei) deke dekhte hai
+
+aa..., hopefully values guess na ho to hum choti choti values hi denge 
+
+yeh 2 submit kara (1:26:00) 
+
+input field mei 2 likha
+
+Submit guess button click
+
+Number is TOOO low
+
+Previous Guesses: 2,
+Guesses Remaining: 9
+
+wapas se hi 2 submit kar dete hai
+
+input field mei 2 likha
+
+Submit guess button click
+
+Number is TOOO low
+
+Previous Guesses: 2, 2
+Guesses Remaining: 8
+
+3 submit kar dete hai
+
+input field mei 3 likha
+
+Submit guess button click
+
+Number is TOOO low
+
+Previous Guesses: 2, 2, 3
+Guesses Remaining: 7
+
+4 kar dete hai
+
+input field mei 4 likha
+
+Submit guess button click
+
+Number is TOOO low
+
+Previous Guesses: 2, 2, 3, 4
+Guesses Remaining: 6
+
+5 kar dete hai
+
+input field mei 5 likha
+
+Submit guess button click
+
+Number is TOOO low
+
+Previous Guesses: 2, 2, 3, 4, 5
+Guesses Remaining: 5
+
+5 values ho gayi (input field mei) , 5 aur de dete hai fatafat
+
+8 de diya
+
+input field mei 8 likha
+
+Submit guess button click
+
+Number is TOOO low
+
+Previous Guesses: 2, 2, 3, 4, 5, 8
+Guesses Remaining: 4
+
+6 de diya
+
+input field mei 6 likha
+
+Submit guess button click
+
+Number is TOOO low
+
+Previous Guesses: 2, 2, 3, 4, 5, 8, 6
+Guesses Remaining: 3
+
+7 de diya
+
+input field mei 7 likha
+
+Submit guess button click
+
+Number is TOOO low
+
+Previous Guesses: 2, 2, 3, 4, 5, 8, 6, 7
+Guesses Remaining: 2
+
+9 de dete hai
+
+input field mei 9 likha
+
+Submit guess button click
+
+Number is TOOO low
+
+Previous Guesses: 2, 2, 3, 4, 5, 8, 6, 7, 9
+Guesses Remaining: 1
+
+11 de dete hai
+
+input field mei 11 likha
+
+Submit guess button click
+
+Number is TOOO low
+
+Previous Guesses: 2, 2, 3, 4, 5, 8, 6, 7, 9, 11
+Guesses Remaining: 0
+
+ab aapke guesses remaining hai 0 (Guesses Remaining: 0)
+
+to 0 matlab ek aur to 1 de dete hai
+
+input field mei 1 likha
+
+Submit guess button click
+
+Number is TOOO low
+
+Previous Guesses: 2, 2, 3, 4, 5, 8, 6, 7, 9, 11, 1
+Guesses Remaining: -1
+
+Game Over. Random number was 22
+Start new Game
+
+to dekhiye ab kya hua ab mai yahan pe (input field) click nahi kar sakta hu, yahan pe (input field) nahi hai 
+
+sari values 
+( Previous Guesses: 2, 2, 3, 4, 5, 8, 6, 7, 9, 11, 1 )
+aapke pas aa gayi hai
+
+remaining guess -1 pe pahuch gaya hai (Guesses Remaining: -1),
+to actually mei zero pe rok dena chahiye tha vaise to
+(i.e. Guesses Remaining ko 0 pe rok dena chahiye tha)
+
+but theek hai random values bhi aapko mil rahi hai ki 22 tha (Game Over. Random number was 22)
+
+aur Start new Game 
+(Game Over. Random number was 22
+Start new Game)
+
+ab yeh start new game kasie karu yahan pe to click hi nahi ho raha hai ( Start new Game mei to click hi nahi ho raha hai )
+
+
+(1:26:42)
+
+to yahan pe (Start new Game) ek clickEventListener
+
+ab jaruri nahi hai aap button pe hi eventListener banaye aap h1 pe bhi daal sakte hai evenetListener
+
+to eventListener wala ab new game (function newGame(){}) wala kaam karna hai itna game to humara sahi chal raha hai
+
+theek hai kaafi dhoor pahuch gaye hai
+-->
+
+<!-- (1:26:53) -->
+
+<!-- to sabse pehle kya karte hai iska
+(function endGame(){})
+ yeh jo button hai na 
+   
+   p.classList.add('button');
+   p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+ 
+ iska 
+ 
+   p.classList.add('button');
+   p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+ 
+ reference lete hai
+ 
+ theek hai-->
+
+<!-- to wo hi simple apna document.querySelector() 
+
+function newGame(){
+   document.querySelector()
+}
+
+querySelector ke andar kya karo ek id add kari thi humne, aa..., vaise to class se bhi le sakte hai but theek hai id se le lete hai
+
+to hum kya karte hai yahan pe ek id hai humare pas konsi id hai -- #newGame
+
+   ( p.classList.add('button');
+     p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+     see code)
+
+function newGame(){
+   document.querySelector('#newGame')
+}
+
+theek hai ji, to yeh ( document.querySelector('#newGame') ) aa gaya hai ab isko ek variable mei hold kar lete hai
+
+to isko bolte hai const newGameButton
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+}
+-->
+
+<!-- ab dekhiye button jaruri nahi hai ki button, button jaisa hi dikhe humesha ho sakta hai h1 pe click karke aapko button jaisa ho chahein to css mei usko change bhi kar sakte hai-->
+
+<!-- 1:27:28 -->
+
+<!-- theek hai ji ab kya karna hai yeh jo newGameButton 
+( const newGameButton = document.querySelector('#newGame') )
+aapke pas aya hai uspe listen to karna padega (event)
+
+to wo hi simple si kahani addEventListener()
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener()
+}
+
+theek hai ji
+
+kis event ko listen karein yeh lijiye click ko listen kar liya hai
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click',)
+}-->
+
+<!-- kya karna padega, batate hai ji abhi aapko function to likhiye, yeh lijiye function 
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(){
+   
+   })
+}
+-->
+
+<!-- theek hai function ke andar kya hoga event to ayega hi aapke pas theek hai ji 
+
+( click wale function ke parameter mei i.e. function ke () mei event to ayega hi apke pas)
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+   
+   })
+}
+
+theek hai ji event 
+( newGameButton.addEventListener('click', function(e){} mei (e) )
+aa hi gaya hai humare pas
+
+(event ko (e) bol diya)-->
+
+<!-- (1:27:52) -->
+
+<!-- theek hai ab iss event
+( newGameButton.addEventListener('click', function(e){} mei (e) )
+ ko vaise to aap chahein lijiye ya nahi lijiye kyuki iss event
+ ( newGameButton.addEventListener('click', function(e){} mei (e) )
+ ka itna kaam nahi hai kyuki yeh jaise hi event hoga matlab yeh 
+ ( newGameButton.addEventListener('click', function(e){} mei (e) )
+ click hoga, iss event
+ ( newGameButton.addEventListener('click', function(e){} mei (e) )
+ se hume koi matlab nahi hai,
+
+ hume humare variables reset karne hai
+
+ haa ji main kahani wahin se hai
+ -->
+
+<!-- to sabse pehle to kya karo, playGame
+ ( let playGame = true; )
+ ko andar kar do 
+ 
+ to yeh jo playGame ( let playGame = true; ) aapne laga rakha hai isko true kar do , game to aapka wahin se start ho gaya
+ 
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      playGame = true  
+   })
+} 
+ -->
+
+<!-- (1:28:14) -->
+
+<!-- but playGame ( let playGame = true; ) ko itni jaldi aap mat kariyega kyuki actually mei pehle sare variables reset kariyega uske baad aap allow kariyega user ko (uske baad aap allow kariyega user ko game khelne ke liye 
+( let playGame = true; ) ) 
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      
+      
+      
+      playGame = true  
+   })
+}
+
+-->
+
+<!-- to kya kya karna hai , to sabse pehle to naya randomNumber lena padega (const randomNumber = ...)
+
+to randomNumber lijiye
+( const randomNumber = parseInt(Math.random()*100 + 1) )
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber     
+      
+      
+      playGame = true  
+   })
+}
+
+wapas se kyu quote karna hai, randomNumber 
+( const randomNumber = parseInt(Math.random()*100 + 1) )
+jab pata hai yahan pe iss tareh se 
+( parseInt(Math.random()*100 + 1) in 
+( const randomNumber = parseInt(Math.random()*100 + 1) ) )
+ liya hai to...
+
+ aur actually mei hum isko 
+ ( parseInt(Math.random()*100 + 1) in 
+( const randomNumber = parseInt(Math.random()*100 + 1) ) )
+ 
+ change bhi kar de to jada theek rahega kyuki yeh randomNumber 
+ ( const randomNumber = parseInt(Math.random()*100 + 1) )
+ dubara se kar rahe hai to yeh const 
+ ( i.e. 
+ const randomNumber = parseInt(Math.random()*100 + 1) ) mei const )
+
+ problem karega to isko
+ ( i.e. 
+ const randomNumber = parseInt(Math.random()*100 + 1) ) mei const )
+ let kar dete hai ab
+
+ (1:28:39)
+-->
+
+<!-- let randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      console.log(guess)
+      validateGuess(guess)
+   })
+}
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+         displayMessage(`Game Over. Random number was ${randomNumber}`)
+         endGame()
+      } else{
+         displayGuess(guess)
+         checkGuess(guess)
+      }
+   }
+}
+
+function checkGuess(guess){
+   if(guess === randomNumber){
+      displayMessage(`You guessed it right`)
+      endGame()
+   }
+} else if (guess < randomNumber){
+   displayMessage(`Number is TOOO low`)
+}
+} else if (guess > randomNumber){
+   displayMessage(`Number is TOOO High`)
+}
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${guess}  `;
+   numGuess++;
+   remaining.innerHTML = `${11 - numGuess}`;
+}
+
+function displayMessage(message){
+   lowOrHi.innerHTML = `<h2>${message}</h2>`
+}
+
+function endGame(){
+   userInput.value = '';
+   userInput.setAttribute('disabled', '');
+   p.classList.add('button');
+   p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+   startOver.appendChild(p);
+   playGame = false;
+   newGame();
+}
+
+function newGame(){
+//
+}
+
+likh liya chaiaurcode.js file mei -->
+
+<!-- aur logic
+( parseInt(Math.random()*100 + 1) in
+let randomNumber = parseInt(Math.random()*100 + 1))
+
+ wo hi rahega same -->
+
+<!-- to yeh copy kar lete hai 
+( parseInt(Math.random()*100 + 1) in
+let randomNumber = parseInt(Math.random()*100 + 1) ko copy kar liya)
+-->
+
+<!-- aur yahan pe (as follows)
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber     
+      
+      
+      playGame = true  
+   })
+
+aa jate hai to -- randomNumber =
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber =    
+      
+      
+      playGame = true  
+   })
+
+yeh lijiye --
+
+randomNumber = parseInt(Math.random()*100 + 1)
+
+(jo copy kiya wo randomNumber = ke aage paste kar diya)
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      
+      
+      playGame = true  
+   })
+
+yeh
+( randomNumber = parseInt(Math.random()*100 + 1) as above)
+ randomNumber generate ho gaya hai
+-->
+
+<!-- 1:28:49 -->
+
+<!-- aa..., jo previous guess ( let prevGuess = [] ) hai 
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      prevGuess 
+      
+      playGame = true  
+   })
+
+
+usko ( let prevGuess = [] ) aapko ek ek karke remove karne ki jarurat nahi hai usko 
+
+( let prevGuess = [] )
+
+yeh lijiye reset -- [] -- i.e. prevGuess = []
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      prevGuess = []
+      
+      playGame = true  
+   })
+
+bas ho gaya reset
+-->
+
+<!-- ab aapko jitni bhi iske ( let prevGuess = [] ) andar values di thi , aa..., previous guess ( let prevGuess = [] ) ke andar wo bas empty ho gayi dubara se reset ho gaya hai-->
+
+<!-- 1:29:02 -->
+
+<!-- theek hai ji -->
+
+<!-- ab uske baad kya karna hai yeh jo aapke 
+number of guesses ( let numGuess = 1 ) hai 
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      prevGuess = []
+      numGuess
+      
+      playGame = true  
+   })
+
+usko ( let numGuess = 1 ) bhi start kar dijiye ki theek hai abhi aap first guess le rahe hai -- 
+
+numGuess = 1 likh liya
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      prevGuess = []
+      numGuess = 1
+      
+      playGame = true  
+   })
+
+-->
+
+<!-- 1:29:08 -->
+
+<!-- aur uske alawa kya kariye yeh jo guessSlot 
+( const guessSlot = document.querySelector('.guesses') )
+liya tha
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      prevGuess = []
+      numGuess = 1
+      guessSlot
+
+      playGame = true  
+   })
+
+uske ( guessSlot ) innerHTML jo hai
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      prevGuess = []
+      numGuess = 1
+      guessSlot.innerHTML
+
+      playGame = true  
+   })
+
+usko (guessSlot.innerHTML) bhi yeh lijiye empty kar diya hai
+-- '' 
+
+guessSlot.innerHTML = '' likh liya
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      prevGuess = []
+      numGuess = 1
+      guessSlot.innerHTML = ''
+
+      playGame = true  
+   })
+
+ -->
+
+<!-- 1:29:16 -->
+
+<!-- achha wo disabled field bhi hatana padega
+
+( userInput.setAttribute('disabled', ''); )
+
+ , remaining bhi hatana padega 
+
+ ( const remaining = document.querySelector('.lastResult') )
+
+ haa ji to yeh jo remaining hai humare pas
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      prevGuess = []
+      numGuess = 1
+      guessSlot.innerHTML = ''
+      remaining
+
+      playGame = true  
+   })
+
+iske (remaining) andar jo innerHTML hai
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      prevGuess = []
+      numGuess = 1
+      guessSlot.innerHTML = ''
+      remaining.innerHTML
+
+      playGame = true  
+   })
+
+iske (remaining.innerHTML) andar kya kariye ki aapki values jo hai ab wapas se wo hi logic hum use kar sakte hai jo humne yahan 
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${guess}  `;
+   numGuess++;
+   remaining.innerHTML = `${11 - numGuess}`;
+}
+
+mei -- remaining.innerHTML = `${11 - numGuess}`;
+
+use kara tha
+
+haa ji remaining...
+
+actually mei yeh 
+
+( remaining.innerHTML = `${11 - numGuess}`; )
+
+poora ka poora use kar sakte hai hum
+
+to isko ( remaining.innerHTML = `${11 - numGuess}`; ) copy kar lijiye kyuki upar wali value 
+
+(i.e. function newGame(){} mei remaining.innerHTML = )
+
+select ho hi gayi hai to
+ 
+ yeh lijiye 
+
+ -- remaining.innerHTML = `${11 - numGuess}`; likh liya function newGame(){} mei
+ 
+ function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      prevGuess = []
+      numGuess = 1
+      guessSlot.innerHTML = ''
+      remaining.innerHTML = `${11 - numGuess}`;
+
+      playGame = true  
+   })
+
+(1:29:40)
+
+wapas se calculate ho gaya hai 
+( remaining.innerHTML = `${11 - numGuess}`; )
+kyu dubara karna hai
+ -->
+
+<!-- haa userInput (const userInput = ...) se hume wo hatana hai
+
+( userInput.setAttribute('disabled', ''); in 
+function endGame(){} )
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      prevGuess = []
+      numGuess = 1
+      guessSlot.innerHTML = ''
+      remaining.innerHTML = `${11 - numGuess}`;
+      userInput
+
+      playGame = true  
+   })
+
+removeAttribute() hum use kar sakte hai yahan pe 
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      prevGuess = []
+      numGuess = 1
+      guessSlot.innerHTML = ''
+      remaining.innerHTML = `${11 - numGuess}`;
+      userInput.removeAttribute()
+
+      playGame = true  
+   })
+
+konsa wala attribute remove karna hai, ek hi hai -- 'disabled'
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      prevGuess = []
+      numGuess = 1
+      guessSlot.innerHTML = ''
+      remaining.innerHTML = `${11 - numGuess}`;
+      userInput.removeAttribute('disabled')
+
+      playGame = true  
+   })
+
+
+yeh lijiye yeh attribute bhi humne hata diya hai
+
+aur , aur kya karna hai
+-->
+
+<!-- ek humare pas aapko yaad ho to startOver 
+(const startOver = ) bhi tha
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      prevGuess = []
+      numGuess = 1
+      guessSlot.innerHTML = ''
+      remaining.innerHTML = `${11 - numGuess}`;
+      userInput.removeAttribute('disabled')
+      startOver
+
+      playGame = true  
+   })
+
+yaad hai startOver
+( const startOver = document.querySelector('.resultParas') )
+ yeh jo resultParas, 
+ 
+ yeh humne jo liya tha resultParas 
+ (class = resultParas index.html line 30)
+ 
+ yeh poori ki poori (from resultPoras opening tag to closing tag) values hai
+ 
+ yahan pe (chaiaurcode.js) humne ek child append kar diya tha,
+ (startOver.appendChild(p); in function endGame(){})
+  
+  haa ji wo hi wo hi 
+  
+  to yahan se ek child remove bhi to karna padega ab 
+  
+  haa ji add hi thodi na karenge 
+  
+  to removeChild()
+  
+  function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      prevGuess = []
+      numGuess = 1
+      guessSlot.innerHTML = ''
+      remaining.innerHTML = `${11 - numGuess}`;
+      userInput.removeAttribute('disabled')
+      startOver.removeChild()
+
+      playGame = true  
+   })
+  
+  konsa wala child remove karna hai
+  -->
+
+<!-- ek hi hai humare pas yeh paragraph (i.e. p)
+
+( const p = document.createElement('p') )
+
+hata dijiye 
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      prevGuess = []
+      numGuess = 1
+      guessSlot.innerHTML = ''
+      remaining.innerHTML = `${11 - numGuess}`;
+      userInput.removeAttribute('disabled')
+      startOver.removeChild(p)
+
+      playGame = true  
+   })
+
+-->
+
+<!-- theek hai jo paragraph
+
+( const p = document.createElement('p') )
+
+upar tha uska reference isko
+
+( startOver.removeChild(p) )
+
+ mil jayega -->
+
+<!-- aur uske baad aap yeh playGame true kar dijiye (jo pehle hi likh liya tha humne) 
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      prevGuess = []
+      numGuess = 1
+      guessSlot.innerHTML = ''
+      remaining.innerHTML = `${11 - numGuess}`;
+      userInput.removeAttribute('disabled')
+      startOver.removeChild(p)
+
+      playGame = true  
+   })
+
+to umeed hai aapka game chalu ho jayega
+-->
+
+<!-- theek hai ji kaafi lengthy tha but interesting tha aisa kuch complex humne nahi kiya hai bas step by step hum chalte gaye -->
+
+<!-- let randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      console.log(guess)
+      validateGuess(guess)
+   })
+}
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+         displayMessage(`Game Over. Random number was ${randomNumber}`)
+         endGame()
+      } else{
+         displayGuess(guess)
+         checkGuess(guess)
+      }
+   }
+}
+
+function checkGuess(guess){
+   if(guess === randomNumber){
+      displayMessage(`You guessed it right`)
+      endGame()
+   }
+} else if (guess < randomNumber){
+   displayMessage(`Number is TOOO low`)
+}
+} else if (guess > randomNumber){
+   displayMessage(`Number is TOOO High`)
+}
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${guess}  `;
+   numGuess++;
+   remaining.innerHTML = `${11 - numGuess}`;
+}
+
+function displayMessage(message){
+   lowOrHi.innerHTML = `<h2>${message}</h2>`
+}
+
+function endGame(){
+   userInput.value = '';
+   userInput.setAttribute('disabled', '');
+   p.classList.add('button');
+   p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+   startOver.appendChild(p);
+   playGame = false;
+   newGame();
+}
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      prevGuess = []
+      numGuess = 1
+      guessSlot.innerHTML = ''
+      remaining.innerHTML = `${11 - numGuess}`;
+      userInput.removeAttribute('disabled')
+      startOver.removeChild(p)
+
+      playGame = true  
+   })
+
+likh liya chaiaurcode.js file mei -->
+
+
+
+<!-- theek hai ji ek aur bar khelke dekh lete hai -->
+
+<!-- to 2 submit kar lete hai
+
+2 in input field
+
+Submit guess button click
+
+Number is TOOO low
+
+Previous Guesses: 2,
+Guesses Remaining: 9
+
+fir 3 submit kar lete hai
+
+3 in input field
+
+Submit guess button click
+
+Number is TOOO low
+
+Previous Guesses: 2, 3
+Guesses Remaining: 8
+
+11
+
+11 in input field
+
+Submit guess button click
+
+Number is TOOO low
+
+Previous Guesses: 2, 3, 11
+Guesses Remaining: 7
+
+wapas 11
+
+11
+
+11 in input field
+
+Submit guess button click
+
+Number is TOOO low
+
+Previous Guesses: 2, 3, 11, 11
+Guesses Remaining: 6
+
+22
+
+22 in input field
+
+Submit guess button click
+
+Number is TOOO low
+
+Previous Guesses: 2, 3, 11, 11, 22
+Guesses Remaining: 5
+
+33
+
+33 in input field
+
+Submit guess button click
+
+Number is TOOO low
+
+Previous Guesses: 2, 3, 11, 11, 22, 33
+Guesses Remaining: 4
+
+44
+
+44 in input field
+
+Submit guess button click
+
+Number is TOOO low
+
+Previous Guesses: 2, 3, 11, 11, 22, 33, 44
+Guesses Remaining: 3
+
+55
+
+55 in input field
+
+Submit guess button click
+
+Number is TOOO High
+
+Previous Guesses: 2, 3, 11, 11, 22, 33, 44, 55
+Guesses Remaining: 2
+
+aa..., TOOO High , theek hai hum high pe hi jaana chahte hai
+
+66
+
+66 in input field
+
+Submit guess button click
+
+Number is TOOO High
+
+Previous Guesses: 2, 3, 11, 11, 22, 33, 44, 55, 66
+Guesses Remaining: 1
+
+hum dekh hi nahi rahe hume jeetna hai hi nahi
+
+(means hum iss tareh ke messages -- Number is TOOO High , etc ko dekh ke agla guess input field mei likh nahi rahe because we are just checking the code, we are not trying to win the game)
+
+77
+
+77 in input field
+
+Submit guess button click
+
+Number is TOOO High
+
+Previous Guesses: 2, 3, 11, 11, 22, 33, 44, 55, 66, 77
+Guesses Remaining: 0
+
+aur ek aur value -- 88
+
+88
+
+88 in input field
+
+Submit guess button click
+
+Previous Guesses: 2, 3, 11, 11, 22, 33, 44, 55, 66, 77, 88
+Guesses Remaining: -1
+
+Game Over. Random number was 53
+
+Start new Game
+
+->
+
+<!-- theek hai yeh sara ho gaya hai , aa..., random number 53 tha , remaining guess -1 hai , aap isko 
+(Guesses Remaining: -1)
+change bhi kar sakte hai
+
+yeh itna sa assignment aapke liye 
+
+Start over kar dete hai , (means -- Start new Game , pe click kar dete hai)
+
+to sari values fir se ho gayi, mai wapas se yahan pe 
+(input field) mei enter kar sakta hu-->
+
+<!-- to dekha maja aya projects mei -->
+
+<!-- iss code ko hum karet hai copy aur move karte hai markdown file pe taki yeh code bhi to dena hai aapko -->
+
+<!-- theek hai to yeh humara hai project 4 solution-->
+
+<!-- ## project 4 solution-->
+
+<!-- ``` javascript
+
+``` -->
+
+<!-- ## project 4 solution 
+
+``` javascript
+
+
+```
+
+-->
+
+<!-- ## project 4 solution 
+
+``` javascript
+
+let randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      console.log(guess)
+      validateGuess(guess)
+   })
+}
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+         displayMessage(`Game Over. Random number was ${randomNumber}`)
+         endGame()
+      } else{
+         displayGuess(guess)
+         checkGuess(guess)
+      }
+   }
+}
+
+function checkGuess(guess){
+   if(guess === randomNumber){
+      displayMessage(`You guessed it right`)
+      endGame()
+   }
+} else if (guess < randomNumber){
+   displayMessage(`Number is TOOO low`)
+}
+} else if (guess > randomNumber){
+   displayMessage(`Number is TOOO High`)
+}
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${guess}  `;
+   numGuess++;
+   remaining.innerHTML = `${11 - numGuess}`;
+}
+
+function displayMessage(message){
+   lowOrHi.innerHTML = `<h2>${message}</h2>`
+}
+
+function endGame(){
+   userInput.value = '';
+   userInput.setAttribute('disabled', '');
+   p.classList.add('button');
+   p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+   startOver.appendChild(p);
+   playGame = false;
+   newGame();
+}
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      prevGuess = []
+      numGuess = 1
+      guessSlot.innerHTML = ''
+      remaining.innerHTML = `${11 - numGuess}`;
+      userInput.removeAttribute('disabled')
+      startOver.removeChild(p)
+
+      playGame = true  
+   })
+
+
+```
+
+-->
+
+<!-- save kar dete hai isko github pe push kar dete hai iss markdown file ko -->
+
+<!-- Class End -->
+
+<!-- let randomNumber = parseInt(Math.random()*100 + 1) 
+
+const submit = document.querySelector('#subt')
+const userInput = document.querySelector('#guessField')
+const guessSlot = document.querySelector('.guesses')
+const remaining = document.querySelector('.lastResult')
+const lowOrHi = document.querySelector('.lowOrHi')
+const startOver = document.querySelector('.resultParas')
+
+const p = document.createElement('p')
+
+let prevGuess = []
+let numGuess = 1
+
+let playGame = true;
+
+if(playGame){
+   submit.addEventListener('click', function(){
+      e.preventDefault()
+      const guess = parseInt(userInput.value)
+      console.log(guess)
+      validateGuess(guess)
+   })
+}
+
+function validateGuess(guess){
+   if(isNaN(guess)){
+      alert('Please enter a valid number')
+   } else if(guess < 1){
+      alert('Please enter a number more than 1')
+   }
+   } else if(guess > 100){
+      alert('Please enter a number less than 100')
+   } else {
+      prevGuess.push(guess)
+      if(numGuess === 11){
+         displayGuess(guess)
+         displayMessage(`Game Over. Random number was ${randomNumber}`)
+         endGame()
+      } else{
+         displayGuess(guess)
+         checkGuess(guess)
+      }
+   }
+}
+
+function checkGuess(guess){
+   if(guess === randomNumber){
+      displayMessage(`You guessed it right`)
+      endGame()
+   }
+} else if (guess < randomNumber){
+   displayMessage(`Number is TOOO low`)
+}
+} else if (guess > randomNumber){
+   displayMessage(`Number is TOOO High`)
+}
+
+function displayGuess(guess){
+   userInput.value = ''
+   guessSlot.innerHTML += `${guess}  `;
+   numGuess++;
+   remaining.innerHTML = `${11 - numGuess}`;
+}
+
+function displayMessage(message){
+   lowOrHi.innerHTML = `<h2>${message}</h2>`
+}
+
+function endGame(){
+   userInput.value = '';
+   userInput.setAttribute('disabled', '');
+   p.classList.add('button');
+   p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+   startOver.appendChild(p);
+   playGame = false;
+   newGame();
+}
+
+function newGame(){
+   const newGameButton = document.querySelector('#newGame')
+   newGameButton.addEventListener('click', function(e){
+      randomNumber = parseInt(Math.random()*100 + 1)   
+      prevGuess = []
+      numGuess = 1
+      guessSlot.innerHTML = ''
+      remaining.innerHTML = `${11 - numGuess}`;
+      userInput.removeAttribute('disabled')
+      startOver.removeChild(p)
+
+      playGame = true  
+   }) -->
