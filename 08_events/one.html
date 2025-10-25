@@ -1,0 +1,914 @@
+<!-- boiler plate code likh liya -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html> -->
+
+<!-- basic document humare pas aa gaya hai aur isko naam
+ bhi de dete hai hum ki html ke Events hai jinke bare mei hum baat
+ karenge -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events</title>
+</head>
+<body>
+    
+</body>
+</html> -->
+
+<!-- theek hai basics itna theek hai -->
+
+<!-- ab body ke andar kya hai kuch notes bhi sir aapke
+ liye likh denge jo aapko easy rahenge actually mei 
+ dekhne ke liye kaam ke liye -->
+
+<!-- kuch kuch notes sir yahan pe dekhte jayenge aapke liye
+ but pehle kuch aapke liye html elements le aate hai jo 
+ sir ne already likh rakhe hai-->
+
+<!-- html elements mei ab koi problem nahi honi chahiye kisi ko bhi kyuki
+ bahut hi basic hai -->
+
+<!-- to sir ne body mei html elements copy paste kar liye jo pehle se sir
+ ke pas likh rakhe the -->
+
+<!-- sabse pehle humare pas h2 hai jisme hai Amazing image -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body>
+    <h2>Amazing image</h2>
+</body>
+</html> -->
+
+<!-- aur uske baad humne ek div create kara,
+ uske andar ek unordered list banaya -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body>
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="image"></ul>
+    </div>
+</body>
+</html> -->
+
+<!-- 3:07 -->
+
+<!-- ab uss unordered list ke andar kya hai humare pas ,
+ bahut sare list items hai-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body>
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="image">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html> -->
+
+<!-- uske baad har list item ke andar ek image hai, yeh image
+ sir leke aye pexels se , to wahan se hum images le aye hai-->
+
+<!-- ( means li tag ke andar img tag likha and pexels website pe
+   kisi bhi image pe right click karke copy image link kiya and img tag
+   ke source attribute (src) mei copied image link paste kar diya ) -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body>
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="image">
+            <li><img src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt=""></li>
+            <li><img src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html> -->
+
+<!-- uske baad img tag mei id = photoshop, id = japan , id = river, id = owl, id = prayer
+ and width = 200 px likh liya  -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body>
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="image">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt=""></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html> -->
+
+<!-- 3:32 -->
+
+<!-- uske baad first img tag mei alt = photoshop likh liya -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body>
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="image">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html> -->
+
+<!-- ab gaur se dekhiyega ki yeh jo photos hai har ke saath 
+ ek alt tag sir ne introduce kara hai jaise alt = photoshop hai
+ (first img tag) 
+ 
+ sab ke saath ek id bhi introduce kara hai-->
+
+<!-- alt tag mei sirf first wale mei hi photoshop hai yeh abhi 
+ hum use karenge isliye (3:43)-->
+
+<!-- sabke andar id hai iske (first) andar photoshop likha hua hai id
+ isme (2nd id) japan likha hua hai, isme (3rd id) river hai, 
+ isme (4th id) owl hai, isme (5th id) prayer hai-->
+
+<!-- aur sabse last mei ek list item hai jahan pe humare pas kya hai,
+ ek google naam se link humne bana rakha hai kyuki yeh samajhne mei
+ kaam ayega -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body>
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="image">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+</html> -->
+
+<!-- ab isko hum live server mei open kar lete hai aur dekhte hai
+ to yeh kuch iss tareh se dikh raha hai koi css use nahi kar rahe 
+ kuch bhi nahi kar rahe-->
+
+<!-- aa..., thoda sa hum kya karte hai iss body ke andar kuch 
+ styling laga lete hai -->
+
+<!-- bgc #414141 ; color aliceblue in body opening tag-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="image">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+</html> -->
+
+<!-- theek hai achha iske alawa kya hai ki humara jo yeh link tag hai
+ yeh thoda sa dekhne mei hume problem ho rahi hai to kya karte hai seedha
+ sa yahan pe (link tag) jate hai aur iski styling kar lete hai -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="image">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+</html> -->
+
+<!-- ab humara jo goal hai wo yeh nahi hai ki hum css pe focus karein
+ humara goal hai ki javascript ke bare mei thodi si charcha ki jaye -->
+
+<!-- body ke baad script tag open kar lete hai aur yahin pe aapko saare
+ basics sir karke dikhayenge -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="image">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+
+</script>
+</html> -->
+
+<!-- achha sabse pehli cheej agar aap notes mei likh rahe hai 
+ to yeh cheej likhiyega ki javascript ke andar jitna bhi code hai... 
+ 
+ to dekhiye sabse pehli cheej jo aapko pata honi chahiye ki 
+ javascript ke andar jitne bhi events hote hai wo sequentially hi run hote hai
+ 
+ kuch exceptions hai , unn hi exceptions ko hum baat karne aye hai
+ 
+ but javascript ek sequentially run language hai-->
+
+<!-- 5:24 -->
+
+<!-- but kayi bar kya hota hai inn sequentially ko hum thoda sa ignore karke
+ bhi jaate hai jaise asynchronous programming mei hum synchronous ki jagah 
+ kuch kaam deviate kar dete hai fir wapas aata hai-->
+
+<!-- aise hi ek exception aapke browser ke events bhi hai jinke
+ baare mei hum padh rahe hai
+ 
+ yeh events kya karte hai ki aapko kisi activity pe invoke hote hai
+ 
+ aisa nahi hai ki bas humesha sequentially file mei likh diya to wo 
+ execute ho jayega-->
+
+<!-- 5:43 -->
+
+<!-- koi na koi activity hogi -- aapne mouse hilaya, keyboard press kara,
+ keyboard press kara, ya fir mouse press kara, mouse hataya, drag and drop kiya
+ to bahut sare events ki list hai unke basis pe sara kaam chalta hai-->
+
+<!-- to browser ke jitne bhi events hote hai na inki sari activities hoti hai
+ unn hi activities ke bare mei hum thoda sa discuss karenge ki kaise kaise kar
+ sakte hai aur kya kya approach hai humare pas inko kaise kaise kar sakte hai  -->
+
+<!-- 6:05 -->
+
+<!-- theek hai ek approach jo aapko sabse jada milegi to chaliye hum chalte hai
+ iss owl ke pas (4th id = owl) -->
+
+<!-- ( web browser pe aa gaye ) -->
+
+<!-- ab dekhiye yeh id (4th id = owl) isliye likh rakha hai taki hume pata rahe
+ ki achha yeh wala owl hai ispe hum kaam kar rahe hai (6:15)-->
+
+<!-- to sabse pehla aur jo common cheej aapko milegi ki log kya karte hai
+ simply aate hai aur iss image (4th id = owl) pe mujhe on click lagana hai 
+ to iss image tag (4th id = owl) ke andar ayenge aur suppose kariye yahan pe
+ (4th img tag alt attribute ke baad ke baad) aate hai alt ke baad
+ 
+ aur bolte hai ki theek hai yahan pe hume ek -- onclick laga lete hai-->
+
+<!-- to aap laga sakte ho koi dikkat wali baat nahi hai -- 
+ yeh ho gaya aapka onclick (as follows)-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="image">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt="" onclick=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+
+</script>
+</html> -->
+
+<!-- ab iss onclick ke andar kya karna hai, suppose kariye 
+ mujhe karna hai -- "alert()" -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="image">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt="" onclick="alert()"></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+
+</script>
+</html> -->
+
+<!-- aur mujhe likhna hai -- owl -- 
+ yeh lijiye owl likh diya -- "alert('owl')"-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="image">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt="" onclick="alert('owl')"></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+
+</script>
+</html> -->
+
+<!-- ab isme koi dikkat wali baat hai kya , dikkat to koi nahi hai
+ 
+mai yahan pe (web browser owl image) jaake click kar sakta hu,
+
+owl image (web browser owl image) pe click karein to , alert mei owl likha hua
+bhi aa jayega (owl image pe click karte hi alert dialog box appear hoga jisme owl
+likha hoga)-->
+
+<!-- Lekin yeh approach actually mei aa..., kayi log use karte hai but yeh
+ approach ( onclick="alert('owl')" ) bilkul bhi achhi nahi hai -->
+
+<!-- kyu achhi nahi hai kyuki dekhiye yeh jo event humne iss style 
+ ( onclick="alert('owl')" ) mei likha hai yahan pe onclick likh ke,
+  yeh ek feasible approach nahi hai, jab scale karega aapka application tab
+  bahut jada problem hogi iss approach ke andar-->
+
+<!-- to iss approach ( onclick="alert('owl')" ) ko usually avoaid kariye
+ ki aap html ke andar inject mat kariye
+ 
+ achha react ka scenario alag hota hai isse
+ 
+ react ke andar wo ( onclick="alert('owl')" ) scalable code hota hai
+ jab aap onclick directly buttons pe laga dete hai
+ 
+ wahan pe (react) hume wo alag framework library hai javascript ki to uski chinta
+ mat kijiye-->
+
+<!-- kya hota hai ki kayi bar humara canvas thoda painted hota hai,
+ thodi si knowledge pehle se hoti hai to usko hum yahan (react nahi javascript) mix kar dete hai aur 
+ fir confuse ho jaate hai to usse confuse mat hoyiyega , abhi hum sirf pure
+ javascript ki baat kar rahe hai-->
+
+<!-- 7:29 -->
+
+<!-- to yeh ( onclick="alert('owl')" ) wali approach hume pata hai chalti 
+ hai code kaam karta hai lekin aage jaake yeh approach aapko thoda sa 
+ problem degi-->
+
+<!-- ( onclick="alert('owl')" ) ko backspace kar diya -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="image">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+
+</script>
+</html> -->
+
+<!-- to iss ( onclick="alert('owl')" ) approach ki jagah sir aapko second 
+ approach batate hai ki second approach kya kar sakte hai-->
+
+<!-- second approach ke andra hum kya kar sakte hai simple se
+ apna document lete hai
+ 
+ (document likh liya script tag ke andar)
+ 
+ aur uske (document) andar mujhe pata hai ki mai likh sakta hu getElementById
+ 
+ (document.getElementById likh liya script tag ke andar)
+ 
+ aur mere ko pata hai iski (4th li id = owl) id maine owl de rakhi hai yahan pe
+ 
+ to owl ki id select karna bahut hi aasaan hai, 
+ 
+ mai yahan pe bol deta hu isko ki theek hai yeh lijiye owl ki id select
+ ho gayi
+ 
+ (document.getElementById('owl') likh liya script tag ke andar)-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="image">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl')
+</script>
+</html> -->
+
+<!-- 7:55 -->
+
+<!-- ab iske ( document.getElementById('owl') ) upar aap
+  laga denge ek onclick event 
+  
+  to yeh humne lagaya onclick event
+
+  ( document.getElementById('owl').onclick likh liya script tag ke andar )-->
+
+<!-- aur iss onclick event ke saath hum ek function bhi likh dete hai
+ yeh function likh diya 
+ 
+ ( document.getElementById('owl').onclick = function(){} likh liya script tag ke andar )
+
+ -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="image">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){}
+</script>
+</html> -->
+
+<!-- aur yeh lijiye basic humara function kuch aisi baat hai nahi aur
+ simply ek alert bhi likh dete hai 
+ 
+ document.getElementById('owl').onclick = function(){
+    alert()
+ }
+  
+ likh liya script tag ke andar
+ -->
+
+<!-- alert() ke andar kya likhein -- "owl clicked" likh dete hai --
+ yeh lijiye -- alert("owl clicked") (8:19) 
+ 
+ document.getElementById('owl').onclick = function(){
+    alert("owl clicked")
+ }
+  
+ likh liya script tag ke andar
+ 
+ -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="image">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    }
+</script>
+</html> -->
+
+<!-- ab iske andar koi problem hai kya nahi iss approach mei
+ bhi koi problem nahi hai -->
+
+<!-- yahan (web browser owl image) jaake mai owl pe click karta hu,
+ wapas se owl clicked aa gaya hai (alert dialog box mei)-->
+
+<!-- achha iss approach mei bhi problem hai (8:29) -->
+
+<!-- yeh approach kya hai dikhne mei bahut achhi hai lekin
+ kya hai aap id pe ( document.getElementById('owl') )
+ jab onclick event laga rahe hai
+ ( document.getElementById('owl').onclick )
+ 
+ to onclick event ke andar kuch problems ho sakti hai-->
+
+<!-- kyuki aapko bahut jada information nahi milti hai, 
+ aapko actually mei eventListeners use karne chahiye
+ 
+ kyu , kyuki eventListeners aapko sirf onclick functionality
+ nahi, aapko propogation ki ability bhi dete hai-->
+
+<!-- ab yeh propogation kya hota hai, haa propogation pe baat 
+ karenge hum , isi video mei karenge but thoda sa 2-3 minute baad-->
+
+<!-- 8:53 -->
+
+<!-- to yeh yaad rakhiye aap iske 
+( document.getElementById('owl').onclick ) 
+andar koi problem nahi hai 
+
+but yeh 
+( document.getElementById('owl').onclick )
+aapko features kum (less) deta hai-->
+
+<!-- ab obvious si baat hai modern jamaana hai modern tarika hai
+ to features bhi achhe hi use karenge na, to yeh 
+ ( document.getElementById('owl').onclick ) 
+ wala kyu use karenge
+ -->
+
+<!-- to iss wale ( document.getElementById('owl').onclick ) 
+ approach ko hum kar dete hai comment out 
+ 
+ kyuki aapko chahiyega code file baad mei-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="image">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } commented out
+</script>
+</html> -->
+
+<!-- ab hum use karte hai humari third aur best approach
+ jo abhi ke time mei market mei chal rahi hai (9:14)
+ 
+ ho sakta hai aane wale 3-4 saal baad kuch aur approach aa jaaye,
+ approaches badalti rehti hai-->
+
+<!-- to uske (3rd approach) andar hum kya karte hai simply
+ document.getElementById()
+ itna kaam humara same rahega, elements dekhiye pakadne hi padenge
+ usme koi exception nahi hai 
+
+ ab aap id se pakadiye, class se pakadiye, tag se pakadiye, koi dikkat wali
+ baat nahi hai
+ 
+ document.getElementById('owl') likh liya script tag ke andar-->
+
+<!-- yahan pe hum kya kar sakte hai addEventListener laga sakte hai 
+ 
+document.getElementById('owl').addEventListener() likh liya script tag ke andar-->
+
+<!-- ab yeh jo EventListener hai na, yeh bahut hi bahut hi interesting ,
+ bahut hi powerful hai -->
+
+<!-- ab EventListener kya karta hai bahut sare events ko listen kar sakta hai,
+ 
+aapke keyboard ke events ko, mouse ke events ko, drag and drop, 
+kabhi banaya hai travello etc ka clone type ka socha hai kabhi 
+iss bare mei banane ka, 
+
+to wahan pe drag events kab chord (leave) rahe hai, konsa element pakad
+rahe hai to yeh (EventListener) bahut sare / sari activities aapko dekhte (dikhti) hai-->
+
+<!-- infact interviews mei bhi bahut bar pocha jaata hai ki
+ EventListeners ko detail mei karo aur infact jo task milte hai wo bhi
+ EventListeners se hi jadatar complete hote hai-->
+
+<!-- 9:59 -->
+
+<!-- to EventListener ko aap jaise hi dekhoge  
+ mouse hover pe (as follows)-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="image">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } commented out
+
+    document.getElementById('owl').addEventListener()
+</script>
+</html> -->
+
+<!--( mouse hover addEventListener() in document.getElementById('owl').addEventListener() 
+ fir dialog box appear ho jayega)-->
+
+<!-- to dekhiye bahut sare html EventListeners hai aap chaho
+ to iske (EventListeners) bare mei aur jaake bhi padh sakte ho-->
+
+<!-- (10:07) -->
+
+<!-- to iske (EventListeners) bare mei undefined (see dialog box) etc
+ bahut kuch hai , abhi nahi dekhte uske bare mei -->
+
+<!-- achha event ka jo naam likhna hai, 
+ ( document.getElementById('owl').addEventListener() ke () mei event ka jo naam likhna hai )
+  konsa event aap listen kar rahe ho wo aapko strings ke andar likhna hai
+  aise quote ke andar
+  
+  document.getElementById('owl').addEventListener('')
+  
+  likha script tag ke andar-->
+
+<!-- to yeh aapne likha -- 'click' 
+ 
+document.getElementById('owl').addEventListener('click') likha script tag ke andar-->
+
+<!-- abhi mai click events ko dekh raha hu, 
+ aap events ke naam mdn pe dekh sakte ho , double click events bhi hai, 
+ keyboard press bhi hai, keyboard down bhi hai, keyboard up bhi hai 
+ bahut sare events hai
+ 
+ abhi hum click 
+ ( document.getElementById('owl').addEventListener('click') )
+ pe baat karte hai kyuki uske (dusre events) bare mei kabhi aur charcha karenge-->
+
+<!-- yeh likha function(){}
+
+document.getElementById('owl').addEventListener('click', function(){}) 
+
+likha script tag ke andar
+ 
+achha ab ek third aur bahut hi important yahan pe 
+
+( document.getElementById('owl').addEventListener('click', function(){}),)
+
+parameter bhi hota hai jiske 
+bare mei abhi 2-4 minute mei hum charcha karenge
+
+ki jab aap yahan pe
+
+( document.getElementById('owl').addEventListener('click', function(){},))
+
+likhte hai to actually mei ek false bhi likhna hota hai
+
+document.getElementById('owl').addEventListener('click', function(){}, false)
+
+likh liya script tag ke andar
+-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="image">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } commented out
+
+    document.getElementById('owl').addEventListener('click', function(){}, false)
+</script>
+</html> -->
+
+<!-- default bhi false 
+
+( document.getElementById('owl').addEventListener('click', function(){}, false) ) 
+
+hi hota hai , iske (false) bare mei charcha karenge-->
+
+<!-- 10:48 -->
+
+<!-- but yeh (false) aksar interviews mei pocha jaata hai ki achha yeh 
+ third parameter (i.e. false)
+ 
+ ( document.getElementById('owl').addEventListener('click', function(){}, false) ) 
+
+ kis liye hai aur kyu kaam mei liya jaata hai
+ -->
+
+<!-- ab kyuki 3rd parameter (false)
+
+( document.getElementById('owl').addEventListener('click', function(){}, false) ) 
+
+default false hi hai to isko (false)
+
+ko likhne ki jarurat bhi nahi hai 
+
+(to false ko backspace kar diya)
+
+document.getElementById('owl').addEventListener('click', function(){})
+
+likh liya script tag ke andar
+-->
+
+<!-- to isliye jadatar log aapko yeh hi
+
+( document.getElementById('owl').addEventListener('click', function(){}) )
+
+batayenge aur yeh hi
+
+( document.getElementById('owl').addEventListener('click', function(){}) )
+
+hota hai actually mei
+-->
+
+<!-- 11:00 -->
