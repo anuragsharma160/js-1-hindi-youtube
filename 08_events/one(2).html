@@ -8,7 +8,7 @@
 <body style="background-color: #414141; color: aliceblue;">
     <h2>Amazing image</h2>
     <div>
-        <ul id="image">
+        <ul id="images">
             <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
             <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
             <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
@@ -23,6 +23,13 @@
     //     alert("owl clicked")
     // } commented out
 
-    document.getElementById('owl').addEventListener()
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false)
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked")
+        e.stopPropagation()
+    }, false)
 </script>
 </html>
