@@ -2602,3 +2602,1170 @@ mei-->
 <!-- isko ( e.stopPropogation() ) agar aap execute kar denge jaise apna
  preventDefault() hota hai vaise hi aapka stopPropogation() bhi hota hai
  (23:34)-->
+
+<!-- to yeh jaise hi aapne likha ab kya karenge owl (owl image) pe jaise hi click kara
+ to aapka event bubble hoke upar ke element pe nahi jayega 
+ 
+ browser console mei -- "owl clicked" likha hua aa gaya-->
+
+<!-- interesting hai na
+ 
+haa ji kaafi interesting hai-->
+
+<!-- to chaliye achha isi tareh se ab hum aur aage jaate hai
+ 
+theek hai itni cheej to aapko ho gayi ek dum clear-->
+
+<!-- achha isi tareh se humare pas kya hai ki jaise event ka stopPropogation 
+ (e.stopPropogation()) likha hai aise preventDefault() bhi hota hai -->
+
+<!-- preventDefault() ka example bahut hi easy hai hum kya karenge yeh jo 
+ google hai (google link in html)
+ (<li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>) 
+ 
+ isko track kar lete hai iska maine id de rakha hai google (id="google")
+ to isko track karke iska default behaviour change kar denge -->
+
+<!-- abhi to kya hai iska defalut behaviour ki mai yahan pe google pe jaata hu
+ (click on google link in browser)
+ click karta hu to obvious si baat hai mujhe google website pe le jaata hai yeh,
+ mai nahi chahta au=isa ho (google link pe click karke wapas back to project aa gaye
+ browser mei) -->
+
+<!-- kyu nahi chahta wo to pata nahi but haa nahi chahte aisa ho -->
+
+<!-- to hum kya karenge seedha sa document lete hai
+ 
+document likh liya in script tag
+
+isko bolte hai getElementById()
+
+document.getElementById() likh liya in script tag
+
+id kya hai hume pata hai google hai (id=google)
+to yeh lijiye google
+
+document.getElementById('google') likh liya in script tag-->
+
+<!-- theek hai aur uspe ( document.getElementById('google') ) kya karenge 
+ addEventListener() laga dete hai ek
+ 
+document.getElementById('google').addEventListener() likh liya in script tag
+
+konsa event listen kar rahe hai -- yeh lijiye -- 'click' event listen kar rahe hai
+
+document.getElementById('google').addEventListener('click') likh liya in script tag-->
+
+<!-- achha click ke alawa aur kya karna hai aur hume ek basic sa function 
+ likhna hai yahan pe , callback (callback function) ,arrow function jo aapka man kare
+
+document.getElementById('google').addEventListener('click', function(){}) likh liya in script tag 
+ 
+core javascript mei aap functions hi likhna pasand karte hai Sir -->
+
+<!-- aur event propogation sir chahte hai ki bubbling format mei ho 
+ (to iske (above line) liye false likh liya) 
+ 
+document.getElementById('google').addEventListener('click', function(){}, false) likh liya in script tag 
+ 
+ -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } commented out
+
+    attachEvent() commented out
+    jQuery - on commented out
+
+    type, timeStamp, defaultPrevented commented out
+    target, toElement, srcElement, currentTarget commented out
+    clientX, clientY, screenX, screenY commented out
+    altkey, ctrlkey, shiftkey, keyCode commented out
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false)
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked")
+        e.stopPropogation()
+    }, false)
+
+    document.getElementById('google').addEventListener('click', function(){}, false)
+    
+</script>
+</html> -->
+
+<!-- theek hai ab iske andar function ke andar kuch nahi karna aapko pehle
+ to capture karna hai jo aapka event aya wo 
+
+ (to function ke parameter mei i.e. function ke () mei e likh liya)
+ 
+ document.getElementById('google').addEventListener('click', function(e){
+ 
+ }, false)
+ 
+ to yeh event capture kar liya ,(means uss event ko e se denote kar diya
+ inside function ke () mei i.e. function (e){})-->
+
+<!-- aur uske baad bola ki event (i.e. e) ka jo hai wo default kar do prevent 
+
+(e.defaultPrevented() likh liya function ke andar)
+ 
+document.getElementById('google').addEventListener('click', function(e){
+    e.defaultPrevented()
+ }, false) 
+ 
+ likh liya script tag ke andar
+
+ to aapka default prevented ho gaya
+
+ yeh (defaultPrevented) ek method (function wala method) hai to isko aise ( defaultPrevented() )
+ run kar dijiyega
+-->
+
+<!-- save kara -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } commented out
+
+    attachEvent() commented out
+    jQuery - on commented out
+
+    type, timeStamp, defaultPrevented commented out
+    target, toElement, srcElement, currentTarget commented out
+    clientX, clientY, screenX, screenY commented out
+    altkey, ctrlkey, shiftkey, keyCode commented out
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false)
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked")
+        e.stopPropogation()
+    }, false)
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.defaultPrevented()
+    }, false)
+    
+</script>
+</html> -->
+
+<!-- ab yahan pe gaye (browser mei) obvious si baat hai ek console.log()
+ bhi kar lete hai (code editor mei aa gaye)-->
+
+<!-- theek hai to console.log() bhi kar lete hai
+ 
+yeh lijiye console.log() aur bol dete hai isko -- "google clicked"-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } commented out
+
+    attachEvent() commented out
+    jQuery - on commented out
+
+    type, timeStamp, defaultPrevented commented out
+    target, toElement, srcElement, currentTarget commented out
+    clientX, clientY, screenX, screenY commented out
+    altkey, ctrlkey, shiftkey, keyCode commented out
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false)
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked")
+        e.stopPropogation()
+    }, false)
+
+    document.getElementById('google').addEventListener('click', function(e){
+        console.log("google clicked")
+        e.defaultPrevented()
+    }, false)
+    
+</script>
+</html> -->
+
+<!-- to hum click hi chahte hai aur to theek hai isko (web browser) humne
+ refresh kar liya, browser console clean kar liya
+ to abhi hum google (google link) pe click karenge
+ to obvious si baat hai ooppps lagta hai kuch mis ho gaya yahan pe
+ 
+ (as google link pe click karne se google search home page open ho gaya)-->
+
+<!-- to ek bar chalke dekhte hai (in code editor) 
+ 
+to humne pehle console.log kara aur yeh humare pas function hai click
+
+to getElementById('google') -- yeh humara google click hua
+
+addEventListener humne kiya
+
+basic humne function kiya 
+
+conosle.log kiya , achaa pehle console.log se pehle yeh
+aa..., waise to hum baad mei bhi kar sakte hai
+
+but theek hai hum isko pehle hi prevent kar dete hai
+
+uske baad humara console.log etc karenge aur basic...-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } commented out
+
+    attachEvent() commented out
+    jQuery - on commented out
+
+    type, timeStamp, defaultPrevented commented out
+    target, toElement, srcElement, currentTarget commented out
+    clientX, clientY, screenX, screenY commented out
+    altkey, ctrlkey, shiftkey, keyCode commented out
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false)
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked")
+        e.stopPropogation()
+    }, false)
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.defaultPrevented()
+        console.log("google clicked")
+    }, false)
+    
+</script>
+</html> -->
+
+<!-- 26:01 -->
+
+<!-- to i think ab yeh kaam karna chahiye ,
+ 
+ek bar refresh bhi karke dekh lete hai (web browser ko)
+
+google link pe click karte hai
+
+to haa abki bar ho gaya humara but ek exception bhi aaya aur uske baad
+yeh google pe click hona shuru ho gaya 
+
+(google home search page open ho gaya abhi bhi mistake hai code mei)
+
+to i think kuch problem ho raha hai wahan pe-->
+
+<!-- to sir debugg kar lete hai ki yeh problem aa kyu rahi hai ,
+ sir jara check karke batate hai-->
+
+<!-- oh bahut hi basic tha (26:26) kayi bar padhate padhate kayi bar kya hota
+ hai aap explain kar rahe hote ho itna... to bugs aa hi jaate hai
+ (26:30)  
+ 
+ to yeh defaultPrevented() nahi hai wo actually mei preventDefault() hai
+ but aise bugs to chalte rehte hai...-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } commented out
+
+    attachEvent() commented out
+    jQuery - on commented out
+
+    type, timeStamp, defaultPrevented commented out
+    target, toElement, srcElement, currentTarget commented out
+    clientX, clientY, screenX, screenY commented out
+    altkey, ctrlkey, shiftkey, keyCode commented out
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false)
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked")
+        e.stopPropogation()
+    }, false)
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault()
+        console.log("google clicked")
+    }, false)
+    
+</script>
+</html> -->
+
+<!-- sav ekarte hai wapas se browser pe jaate hai
+ 
+right click inspect then browser console clear kar liya
+
+aur isko google (google link) pe click karte hai to abki bar
+humare pas "clicked inside the ul" (see browser console -- yeh 2nd hai)
+
+"google clicked" (see browser console -- yeh 1st hai)-->
+
+<!-- to ul ke andar hi hai wo ( means ul ke andar google anchor tag link hai ) 
+ to wo event to hoga hi (26:55)-->
+
+<!-- (code editor mei aa gaye) agar aap chahte hai ki nahi mai to isko 
+ bubbling up nahi karna chahta to default bhi prevent kar dijiye
+ ( e.preventDefault() )
+
+ aur uss event (i.e. e) ke andar bol dijiye
+
+ ( to e likh liya below e.preventDefault() )
+
+ ki mere ko yeh propogation bhi stop karna hai
+
+ ( to e.stopPropagation() likh liya below e.preventDefault() )
+
+ to yeh lijiye aapka propagation bhi stop ho gaya hai (27:05)
+ -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } commented out
+
+    attachEvent() commented out
+    jQuery - on commented out
+
+    type, timeStamp, defaultPrevented commented out
+    target, toElement, srcElement, currentTarget commented out
+    clientX, clientY, screenX, screenY commented out
+    altkey, ctrlkey, shiftkey, keyCode commented out
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false)
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked")
+        e.stopPropogation()
+    }, false)
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault()
+        e.stopPropagation()
+        console.log("google clicked")
+    }, false)
+    
+</script>
+</html> -->
+
+<!-- save karte hai (browser mei aa gaye) browser console ko clean kar liya
+ 
+aur yeh click kiya aapne google pe (google link pe) 
+
+aur yeh ab bubbling bhi nahi ho rahi hai event ki
+
+(means browser console mei -- "google clicked" aa gaya)
+
+(27:14)-->
+
+<!-- to important concept hai -->
+
+<!-- achha ab hum kya karte hai chota sa humara yeh basics
+  to ho gaya hai cover , to ab hum chota sa aur kaam karenge-->
+
+<!-- achha yeh sara code sir aapke liye rakh denge kyuki isme jada 
+ kuch ho bhi nahi raha hai , to yeh sara code sir aapke liye comment out 
+ karke rakh dete hai -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } commented out
+
+    attachEvent() commented out
+    jQuery - on commented out
+
+    type, timeStamp, defaultPrevented commented out
+    target, toElement, srcElement, currentTarget commented out
+    clientX, clientY, screenX, screenY commented out
+    altkey, ctrlkey, shiftkey, keyCode commented out
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false) commented out
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked")
+        e.stopPropogation()
+    }, false) commented out
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault()
+        e.stopPropagation()
+        console.log("google clicked")
+    }, false) commented out
+    
+</script>
+</html> -->
+
+<!-- easily aapko yeh sara ka sara code mil jaye
+ 
+theek hai basics ho gaya hai cover-->
+
+<!-- ab hum kuch activities kuch project style mei kaam kar lete
+ hai taaki usse kya hai samajh actually mei jada achhi aati hai -->
+
+<!-- (27:42) -->
+
+<!-- achha to hum kya hai ek goal lete hai chota sa ek chota sa 
+ example lete hai uske through karenge ki mai kya chata hu 
+ 
+ (web browser mei aa gaye)
+
+ ki jitne bhi li's (li -- list items) hai yeh images hai 
+ (see browser from top to bottom PS to prayer) 
+ mai ispe (inn images pe in browser) click karu aur yeh image gayab ho jaye 
+ bas itna sa kaam karna hai (27:55) -->
+
+<!-- ab dekhne mei to yeh bahut chota sa kaam hai but yahan pe
+ problems bahut hoti hai iss kaam ke andar -->
+
+<!-- kaise hoti hai wo batate hai ab -->
+
+<!-- ab aap thoda sa real world scenario ko dekhiye judge kariye 
+ (code editor mei aa gaye)-->
+
+<!-- achha to sabse pehle kya karna hai obvious si baat hai aapko
+ sari images select karni hai
+ 
+ to ek ek karke sari image pe to mai id etc lagaunga nahi wo thoda sa 
+ basic boring approach ho jayega ki aap ispe (1st image PS see browser)
+ bhi li laga rahe ho , uska (1st image PS see browser) bhi id dekh rahe
+  ho ki iska (1st image PS see browser) photoshop hai (id = photoshop) 
+  
+  iska (2nd image see browser) japan hai (id= japan) aise karke
+  
+aa..., karne ko kar sakte ho ek ek element aur uska (ek ek image ka) hi event aap track kar
+sakte ho but obvious si baat hai itna kitna abhi to 10-5 image hai,
+
+200 images ho gayi to kaise karoge
+
+(code editor mei aa gaye)-->
+
+<!-- to uske liye better approach kya rahegi hum uske (image ke) 
+ basic main target ko kar lein (28:30) aa..., isko ul ko
+ (ul id = "images") 
+ 
+ to hum ul ko approach lete hai yahan pe bahut hi basic hai
+
+ (28:35)-->
+
+<!-- itna kaam aapne kar hi rakha hai, to isko bhi hum le lete hai
+ to isko seedha bolte hai yahan se document
+ 
+ document likh liya script tag ke andar
+ 
+ aur dot querySelector le lete hai
+ 
+ document.querySelector() likh liya script tag ke andar
+ 
+ ab querySelector ke andar kya likhna hai, to querySelector ke andar
+ hume ek id search karni hai jiska naam images hai (#images)
+ 
+ document.querySelector('#images') likh liya script tag ke andar
+ -->
+
+<!-- theek hai images select ho gayi, ab sabke (all images i.e. ul id = image) upar hi 
+ aap addEventListener() laga do 
+ 
+ document.querySelector('#images').addEventListener() likh liya script tag ke andar
+ 
+ theek hai addEventListener() laga diya-->
+
+<!-- ab konsa event track kar rahe hai ji hum 'click' wala event track kar rahe hai 
+ ('click' event isliye track kar rahe hai kyuki hum image pe click karenge fir image
+ gayab hogi)
+ 
+document.querySelector('#images').addEventListener('click') likh liya script tag ke andar-->
+
+<!-- (29:06) -->
+
+<!-- achha uske baad kya kar rahe hai hum yahan pe aa..., function likh rahe hai ek
+ yeh lijiye function likh diya 
+ 
+document.querySelector('#images').addEventListener('click', function(){}) 
+likh liya script tag ke andar 
+
+aur event propagation -- false jo default hai wo hi rakh rahe hai
+
+document.querySelector('#images').addEventListener('click', function(){}, false) 
+likh liya script tag ke andar 
+(29:17) -->
+
+<!-- theek hai jadatar code ke andar aap dekhoge sir bhi iss tareh se false 
+
+( document.querySelector('#images').addEventListener('click', function(){}, false) )
+
+kum hi likhte hai kyuki sir ko pata hai event propagation ke bare mei 
+
+aap abhi basic hai beginner hai to aap false likhiye , thoda achha lagega aapko
+bhi
+
+(sir ne false ko backspace kar diya)
+
+document.querySelector('#images').addEventListener('click', function(){
+
+})
+
+likh liya script tag ke andar-->
+
+<!-- theek hai achha ab karna kya hai yahan pe, dekhiye sabse pehle to 
+ console.log() karte hai ki humare pas event aa raha hai ya nahi aa raha hai 
+ 
+ document.querySelector('#images').addEventListener('click', function(){
+    consoel.log()
+ })
+
+likh liya script tag ke andar
+ 
+ -->
+
+<!-- to yeh function ke andar sir ne event liya (function ke () mei e likha,
+ event ko apni man marji se e se denote kar diya, kuch aur se bhi denote kar 
+ sakte hai) 
+
+document.querySelector('#images').addEventListener('click', function(e){
+    consoel.log()
+ })
+
+likh liya script tag ke andar
+
+aur console.log() karke event hi print karaya
+
+document.querySelector('#images').addEventListener('click', function(e){
+    consoel.log(e)
+ })
+
+ likh liya script tag ke andar
+-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } commented out
+
+    attachEvent() commented out
+    jQuery - on commented out
+
+    type, timeStamp, defaultPrevented commented out
+    target, toElement, srcElement, currentTarget commented out
+    clientX, clientY, screenX, screenY commented out
+    altkey, ctrlkey, shiftkey, keyCode commented out
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false) commented out
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked")
+        e.stopPropogation()
+    }, false) commented out
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault()
+        e.stopPropagation()
+        console.log("google clicked")
+    }, false) commented out
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e)
+    })
+    
+</script>
+</html> -->
+
+<!-- (29:38) theek hai ab yahan pe (browser mei) jaate hai ab maine
+ yahan pe (1st image PS) click kara to ek event aya (Pointerevent see browser console) 
+ 
+ yahan pe (3rd image ) click kara to ek event aya (Pointerevent see browser console)
+ 
+ yahan pe (4th image PS) click kara to ek event aya (Pointerevent see browser console)
+ 
+ (29:42)-->
+
+<!-- to har bar event to aa raha hai, theek hai koi chinta wali baat nahi hai -->
+
+<!-- achha event ke andar ek value aap aur dekhoge event. (i.e. e.) target
+ (i.e. e.target) 
+ 
+ jo humne abhi dekha tha ki bahut sare methods hote hai aur sir ne kuch padhne ko
+ bhi aapko diye the (upar commented out mei), to target bhi aap iss tareh se
+ (i.e. e.target) le sakte hai
+ -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } commented out
+
+    attachEvent() commented out
+    jQuery - on commented out
+
+    type, timeStamp, defaultPrevented commented out
+    target, toElement, srcElement, currentTarget commented out
+    clientX, clientY, screenX, screenY commented out
+    altkey, ctrlkey, shiftkey, keyCode commented out
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false) commented out
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked")
+        e.stopPropogation()
+    }, false) commented out
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault()
+        e.stopPropagation()
+        console.log("google clicked")
+    }, false) commented out
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target)
+    })
+    
+</script>
+</html> -->
+
+<!-- 29:56 -->
+
+<!-- to ab mai yahan pe (browser mei) jata hu isko (browser console ko)
+ clean karta hu
+ 
+ and first image pe click karte hai
+ 
+ to dekhiye event ka mere pas target aa raha hai ki kis target (1st image) se yeh event
+ occur ho raha hai (see browser console)
+ 
+ (30:02)
+ 
+ ( means see browser console, img tag of 1st image aa gaya in browser console 
+  jisko hum target bol rahe hai)
+  
+ (iss img tag of 1st image ke src in browser console pe mouse hover
+  kiya to image show ho jayegi) to iss bar yeh 
+ (img tag of first image in browser console)  photoshop event 
+ (photoshop event nahi, photoshop image)
+  se ho raha hai-->
+
+ <!-- owl image pe click kiya
+  
+ (img tag of owl img aa gaya browser console mei)
+ 
+ yahan pe yeh (img tag of owl image in browser console) owl wali image
+ se ho raha hai 
+ 
+ iss img tag of owl image in browser console ke src pe mouse hover kiya
+ to owl image dikh jayegi-->
+
+<!-- prayer image pe click kiya
+
+(img tag of prayer image aa gaya in browser console )
+
+yahan pe yeh 
+(img tag of prayer image in browser console )
+prayer wali image se ho raha hai
+
+iske (img tag of prayer image in browser console ) src pe mouse hover
+then image dikh jayegi-->
+
+<!-- (30:08) -->
+
+<!-- to humare ko ab itna pata lag gaya hai -->
+
+<!-- theek hai ab kuch cheejein aapko aur aage kaam mei aane wali hai
+ unke bare mei bhi bata dete hai ki target to aap iss tareh se
+ ( console.log(e.target) ) le sakte hai
+  
+ Lekin target ( console.log(e.target) ) ke baad bhi aur bahut sari values
+  aap le sakte hai,
+ jaise ek value hai aapke pas -- parentNode
+ 
+ ( console.log(e.target.parentNode) )
+
+ (target ke baad means target dot -- target.)
+ -->
+
+<!-- to kayi bar kya hota hai aise scenarios hote hai ki aapko
+ target to mil gaya hai but aap uske parent ko select karna chahte hai -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } commented out
+
+    attachEvent() commented out
+    jQuery - on commented out
+
+    type, timeStamp, defaultPrevented commented out
+    target, toElement, srcElement, currentTarget commented out
+    clientX, clientY, screenX, screenY commented out
+    altkey, ctrlkey, shiftkey, keyCode commented out
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false) commented out
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked")
+        e.stopPropogation()
+    }, false) commented out
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault()
+        e.stopPropagation()
+        console.log("google clicked")
+    }, false) commented out
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.parentNode)
+    })
+    
+</script>
+</html> -->
+
+<!-- 30:33 -->
+
+<!-- browser mei aa gaye -->
+
+<!-- jaise ki hume jo remove karna hai to image (see images in web browser)
+  thodi na remove karni hai
+ agar aap gaur se dekhein yahan pe (code editor)
+ 
+ to hume to yeh poora li (li tag) remove karna padega
+ (jis li ke andar img tag hai ( of all images )-- see html code)
+ 
+ varna image to gayab ho jayegi but wo list ka bullet point
+ wahan reh jayega, wo hum nahi chahte hai to poora li... (li tag)-->
+
+<!-- to yeh (see li and img tag inside li tag) jo target hua 
+ iska hume parentNode chahiye tha -->
+
+<!-- ( web browser mei aa gaye ) -->
+
+<!-- web browser mei empty space pe click kiya
+ to ul tag aa gaya in browser console-->
+
+<!-- browser console ko clear kiya -->
+
+<!-- 1st image pe click kiya
+ 
+yeh photoshop ka li aa gaya (li tag in browser console)
+
+owl image pe click kiya
+
+yeh owl ka li aa gaya (li tag in browser console)-->
+
+<!-- agar photoshop ka li (li tag in browser console) 
+ dropdown open kiya 
+ 
+ to dekhiye yeh humare pas li aa gaya hai-->
+
+<!-- agar owl ka li (li tag in browser console) 
+ dropdown open kiya 
+ 
+ to dekhiye yeh humare pas owl ka li aa gaya hai
+ 
+ ( src pe mouse hover karke dekh lena both li
+ dropdown images ko )
+ 
+ close dropdown-->
+
+<!-- 31:03 -->
+
+<!-- theek hai to itna kaam ho gaya aur mujhe ab samajh mei
+ aa gaya ki mai sirf ek cheej hi nahi
+ 
+ mai yahan pe ( console.log(e.target.parentNode) )
+ 
+ kaafi cheejein le sakta hu-->
+
+<!-- theek hai kaafi cheejon ke bare mei hum yahan pe
+ ( console.log(e.target.parentNode) )
+ aur discuss karenge -->
+
+<!-- Lekin ab itna to samajh mei aa gaya mujhe ki console.log()
+ ( console.log(e.target.parentNode) )
+ ho raha hai -->
+
+<!-- ab isko hataun kaise mai, agar mujhe isko remove karna hai
+ to kaise hataun -->
+
+<!-- to bahut hi basic hai iska naam le lete hai hum removeIt
+ 
+(let removeIt likh liya script tag ke andar)
+
+kyuki isko hatana hai
+
+aur isko kya karna hai e.target.parentNode
+
+(let removeIt = e.target.parentNode likh liya script tag ke andar)
+
+parentNode humne select kar liya ab isko (parentNode) remove kaise karna hai
+2 tarike hai aapke pas dono hi theek hai koi buri baat nahi hai-->
+
+<!-- removeIt ke andar aap dekhenge (removeIt.) to aap seedha
+ hi isko remove kar sakte hai
+ 
+ yeh lijiye remove kar diya isko humne
+ 
+ (let removeIt = e.target.parentNode 
+ removeIt.remove()
+ 
+ likh liya script tag ke andar)-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } commented out
+
+    attachEvent() commented out
+    jQuery - on commented out
+
+    type, timeStamp, defaultPrevented commented out
+    target, toElement, srcElement, currentTarget commented out
+    clientX, clientY, screenX, screenY commented out
+    altkey, ctrlkey, shiftkey, keyCode commented out
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false) commented out
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked")
+        e.stopPropogation()
+    }, false) commented out
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault()
+        e.stopPropagation()
+        console.log("google clicked")
+    }, false) commented out
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.parentNode)
+        let removeIt = e.target.parentNode 
+        removeIt.remove()
+    })
+    
+</script>
+</html> -->
+
+<!-- 31:42 -->
+
+<!-- theek hai pehla approach to yeh hai humare pas ki humne isko
+ remove kar diya -->
+
+<!-- (browser mei aa gaye) browser console ko clear kar liya
+ and browser reload-->
+
+<!-- to humne owl (iwl image) pe click kara to owl remove ho gaya hai
+(gayab) 
+
+(li tag of owl aa gaya in browser console)-->
+
+<!-- 31:50 -->
+
+<!-- yeh prayer pe click kara prayer bhi remove ho gaya (gayab) 
+(li tag of prayer aa gaya in browser console) 
+-->
+
+<!-- code editor mei aa gaye -->
+
+<!-- ek aur tarika hota hai dono tarike same hi hai koi difference
+ wali baat nahi hai but kayi jagah aapko iss tareh ka code bhi dikhega
+ 
+ to usko bhi sir aapko basic bata dete hai
+ 
+ removeIt.remove() ko comment out kar liya-->
+
+<!-- to yeh jo aapke pas removeIt hai ( let removeIt = e.target.parentNode )
+ 
+iske andar log kya karte hai ki yeh humne removeIt liya
+
+removeIt likh liya script tag mei-->
+
+<!-- ab iska (removeIt) aap parent access karna chahte hai
+ 
+removeIt.parentNode likh liya script tag mei-->
+
+<!-- achha parent access karne ke baad aap kya karenge
+ parent access karne ke baad ek method hota hai aapke pas jo
+ ki hai removeChild() 
+ 
+ removeIt.parentNode.removeChild() likh liya script tag mei-->
+
+<!-- theek hai ab removeChild() uss parent ka konsa child remove karna hai
+ jo aapne select kara tha removeIt 
+ 
+ (let removeIt = e.target.parentNode)
+ 
+ 
+ removeIt.parentNode.removeChild(removeIt) likh liya script tag mei-->
+
+<!-- achha yeh thoda sa confusing hota hai logo ke liye 
+ kyuki actually mei jo method available hai wo hai removeChild()
+ 
+ ab yeh event ka target se karke parentNode liya
+ (let removeIt = e.target.parentNode mei e.target.parentNode)
+
+ to usme to li mil gaya hume
+ 
+ -->
+
+ <!-- Lekin li ke andar agar mai bolunga removeChild() ( li.removeChild() ) to wo sirf
+  image hata dega (but hume li hatana hai jiske andar img tag hai
+  because of bullet poin tof li) 
+  
+  to ek aur level upar jaana padega (img tag se li tag pe jaana padega)-->
+
+<!-- to jab maine yahan bola removeIt ka parentNode do
+( removeIt.parentNode.removeChild(removeIt) ) 
+
+tab usne mujhe li se ul diya (as removeIt means li)
+
+aur fir uss ul 
+( removeIt.parentNode.removeChild(removeIt) mei removeIt.parentNode)
+
+ko maine bola ki removeChild(), konsa child remove karo jo 
+removeIt
+( let removeIt = e.target.parentNode )
+ke andar mere pas aaya hai
+
+( removeIt.parentNode.removeChild(removeIt) )
+-->
+
+<!-- 32:48 -->
