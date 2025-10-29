@@ -3753,7 +3753,7 @@ removeIt.parentNode likh liya script tag mei-->
   to ek aur level upar jaana padega (img tag se li tag pe jaana padega)-->
 
 <!-- to jab maine yahan bola removeIt ka parentNode do
-( removeIt.parentNode.removeChild(removeIt) ) 
+( removeIt.parentNode.removeChild(removeIt) mei removeIt.parentNode) 
 
 tab usne mujhe li se ul diya (as removeIt means li)
 
@@ -3769,3 +3769,676 @@ ke andar mere pas aaya hai
 -->
 
 <!-- 32:48 -->
+
+<!-- kaafi jagah common hota hai kyuki yeh remove method 
+( removeIt.parentNode.removeChild(removeIt) )
+comparitively thoda sa naya hai 
+
+to aap jo bhi method use karna chahein wo aap use kar sakte hai
+aisi koi dikkat wali baat nahi hai
+
+sir isko 
+( removeIt.parentNode.removeChild(removeIt) )
+ end mei rakh dete hai abhi hum yeh remove method
+ removeIt.remove()
+ hi use kar lete hai thoda aasaan hai samajhne mei-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } commented out
+
+    attachEvent() commented out
+    jQuery - on commented out
+
+    type, timeStamp, defaultPrevented commented out
+    target, toElement, srcElement, currentTarget commented out
+    clientX, clientY, screenX, screenY commented out
+    altkey, ctrlkey, shiftkey, keyCode commented out
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false) commented out
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked")
+        e.stopPropogation()
+    }, false) commented out
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault()
+        e.stopPropagation()
+        console.log("google clicked")
+    }, false) commented out
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.parentNode)
+        let removeIt = e.target.parentNode 
+        removeIt.remove() commented out
+        removeIt.parentNode.removeChild(removeIt)
+    })
+    
+</script>
+</html> -->
+
+<!-- end mei rakh diya isko 
+ ( removeIt.parentNode.removeChild(removeIt) )
+  and commented out-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } commented out
+
+    attachEvent() commented out
+    jQuery - on commented out
+
+    type, timeStamp, defaultPrevented commented out
+    target, toElement, srcElement, currentTarget commented out
+    clientX, clientY, screenX, screenY commented out
+    altkey, ctrlkey, shiftkey, keyCode commented out
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false) commented out
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked")
+        e.stopPropogation()
+    }, false) commented out
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault()
+        e.stopPropagation()
+        console.log("google clicked")
+    }, false) commented out
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.parentNode)
+        let removeIt = e.target.parentNode 
+        removeIt.remove()
+    })
+    
+    removeIt.parentNode.removeChild(removeIt) commented out
+
+</script>
+</html> -->
+
+<!-- 33:00 -->
+
+<!-- web browser mei aa gaye -->
+
+<!-- browser console ko clean kar liya -->
+
+<!-- 1st image pe click kiya wo remove (gayab) ho gayi
+ 
+and 1st image ka li tag aa gaya in browser console-->
+
+<!-- owl image pe click kiya wo remove (gayab) ho gayi
+ 
+and owl image ka li tag aa gaya in browser console-->
+
+<!-- theek hai bada basic tha ho gaya remove -->
+
+<!-- code editor mei aa gaye -->
+
+<!-- Lekin problem kya aayi hai kyuki humne yeh remove method kara hai
+ ab gaur se dekhiyega jab mai yeh google (google link in browser)
+ ke pas yahan (google link ke just pas empty space mei) click karta hu
+ to are... sab kuch hi gayab ho gaya 
+ 
+ and ul tag aa gaya in browser console-->
+
+ <!-- yeh sab kuch kaise gayab ho gaya, kyuki aapne agar yeh to
+  image (all images like photoshop image, owl image) pe click
+  kara tab to theek hai
+  
+  Lekin agar aapne list item pe click kar diya to list item ka
+  parent kon, uska (li ka) ul (unordered list)
+  
+  (code editor mei aa gaye)
+
+  to yahan pe (33:32)
+  ( console.log(e.target.parentNode) mei .parentNode , see code)
+  
+  aapke pas parentNode mei aya kya -- li ka parent i.e. ul
+
+  aur aapne kaha iss ul ko remove kar do
+  ( removeIt.remove() , see code)
+  -->
+
+<!-- to poora hi aapke list item hi remove ho gayi (33:42)-->
+
+<!-- (web browser mei aa gaye) -->
+
+<!-- to aap yahan pe (web browser ko) refresh (reload) karenge,
+ abhi tak to theek hai 
+ 
+ lekin jaise hi aapne kisi li pe click
+ kar diya (means kisi li ke bullet dot point pe click kar diya), 
+ 
+ to poora ka poora unordered list hi gayab ho gaya 
+ 
+ ( and ul tag aa gaya in browser console )-->
+
+<!-- 33:49 -->
+
+<!-- ( code editor mei aa gaye ) -->
+
+<!-- to aisa to nahi karna hai, to iske liye thoda sa aur badhna padega
+ ki actually mei cheejein ho kaise rahi hai aur kya values aa rahi hai -->
+
+<!-- theek hai to hum kya kar sakte hai yahan pe kuch aur yahan pe hum
+ checks laga sakte hai strict checks aap inko bol sakte hai -->
+
+<!-- to hum kya kar sakte hai simply ek if statement laga sakte hai
+ aur usko (if statement ko) bolte hai ki yeh jo event ka jo target hai
+ 
+ i.e. e.target
+ 
+        if(e.target){
+        
+        }
+ 
+ -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } commented out
+
+    attachEvent() commented out
+    jQuery - on commented out
+
+    type, timeStamp, defaultPrevented commented out
+    target, toElement, srcElement, currentTarget commented out
+    clientX, clientY, screenX, screenY commented out
+    altkey, ctrlkey, shiftkey, keyCode commented out
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false) commented out
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked")
+        e.stopPropogation()
+    }, false) commented out
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault()
+        e.stopPropagation()
+        console.log("google clicked")
+    }, false) commented out
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.parentNode)
+        if(e.target){
+        
+        }
+        let removeIt = e.target.parentNode 
+        removeIt.remove()
+    })
+    
+    removeIt.parentNode.removeChild(removeIt) commented out
+
+</script>
+</html> -->
+
+<!-- achha pehle yeh to bata de aapko ki hum karne kya wale hai
+ 
+(if statement ko backspace kar diya)-->
+
+<!-- theek hai to jaise aapne parentNode dekha 
+( console.log(e.target.parentNode) mei parentNode , see code)
+ 
+vaise hi aap actually mei tagName , sir ne kaha tha na, event ko jitna
+padhoge utna kaam aasaan ho jayega, to yeh tagName bhi ek value hoti hai
+
+console.log(e.target.tagName) likh liya console.log(e.target.parentNode) 
+ki jagah code mei
+-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } commented out
+
+    attachEvent() commented out
+    jQuery - on commented out
+
+    type, timeStamp, defaultPrevented commented out
+    target, toElement, srcElement, currentTarget commented out
+    clientX, clientY, screenX, screenY commented out
+    altkey, ctrlkey, shiftkey, keyCode commented out
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false) commented out
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked")
+        e.stopPropogation()
+    }, false) commented out
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault()
+        e.stopPropagation()
+        console.log("google clicked")
+    }, false) commented out
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName)
+        
+        let removeIt = e.target.parentNode 
+        removeIt.remove()
+    })
+    
+    removeIt.parentNode.removeChild(removeIt) commented out
+
+</script>
+</html> -->
+
+<!-- web browser mei aa gaye -->
+
+<!-- ab yahan pe jayenge to hum kya hai 
+ tag name ko bhi dekh sakte hai (browser console mei) -->
+
+<!-- to dekhiye yahan (2nd image pe) click kara 
+ 
+to browser console mei IMG likha hua aa gaya-->
+
+<!-- yahan (owl image pe) click kara 
+ 
+to browser console mei IMG (2IMG) likha hua aa gaya-->
+
+<!-- (34:27) -->
+
+<!-- Google (google link) ke pas empty space mei click kara to LI aya
+ (in browser console) -->
+
+<!-- to mujhe select kya karna hai -- IMG -->
+
+<!-- to theek hai to mai ek basic sa if else yahan pe laga
+ sakta hu, bahut hi aasaan hai ab to 
+ 
+ (code editor mei aa gaye)-->
+
+<!-- ki jo event hai (e) uska target hai (e.target)
+ 
+if(e.target){
+
+}
+
+uska (e.target) jo tagName hai (e.target.tagName)
+
+if(e.target.tagName){
+
+}
+
+agar wo (e.target.tagName) equal hai kiske equal hai IMG ke
+caps (capital mei) mei hi likhna 
+(browser console mei capital mei hi hai IMG, LI etc)
+
+if(e.target.tagName === 'IMG'){
+
+}
+
+to kya karo, to humara yeh (see code)
+
+    let removeIt = e.target.parentNode 
+    removeIt.remove()
+
+jitna bhi kaam hai yeh 
+
+    let removeIt = e.target.parentNode 
+    removeIt.remove()
+
+sara kaam karo
+-->
+
+<!-- to isko 
+
+    let removeIt = e.target.parentNode 
+    removeIt.remove()
+
+    cut kar lete hai and if ke andar paste kar lete hai
+
+    isko
+
+    let removeIt = e.target.parentNode 
+    removeIt.remove()
+
+    tab hi execute karayenge hum (jab if ki condition true hogi)
+
+-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } commented out
+
+    attachEvent() commented out
+    jQuery - on commented out
+
+    type, timeStamp, defaultPrevented commented out
+    target, toElement, srcElement, currentTarget commented out
+    clientX, clientY, screenX, screenY commented out
+    altkey, ctrlkey, shiftkey, keyCode commented out
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false) commented out
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked")
+        e.stopPropogation()
+    }, false) commented out
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault()
+        e.stopPropagation()
+        console.log("google clicked")
+    }, false) commented out
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName)
+        
+        if (e.target.tagName === 'IMG') {
+            let removeIt = e.target.parentNode 
+            removeIt.remove()    
+        }
+    })
+    
+    removeIt.parentNode.removeChild(removeIt) commented out
+
+</script>
+</html> -->
+
+<!-- (34:54) -->
+
+<!-- agar aapko chahiye to basically aap yahan pe usko print
+ bhi kara sakte ho ki iska id kya hai to id se hume kya hai 
+ easily pata lag jayega 
+ 
+ to ek console.log() yahan pe
+ 
+        if (e.target.tagName === 'IMG') {
+            let removeIt = e.target.parentNode 
+            removeIt.remove()    
+        }
+
+    bhi kara lete hai
+ 
+        if (e.target.tagName === 'IMG') {
+            console.log()
+            let removeIt = e.target.parentNode 
+            removeIt.remove()    
+        }
+        
+        likh liya script tag ke andar
+ -->
+
+<!-- to event (e) ka jo target hai (e.target) uska (e.target)
+ id print kar do (e.target.id)
+ 
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id)
+            let removeIt = e.target.parentNode 
+            removeIt.remove()    
+        }
+        
+        likh liya script tag ke andar
+ 
+        aa..., bahar bhi kara sakte hai but theek hai yahin
+        (if ke andar) kara ke dekhte hai ek bar (35:16)
+ -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Elements</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } commented out
+
+    attachEvent() commented out
+    jQuery - on commented out
+
+    type, timeStamp, defaultPrevented commented out
+    target, toElement, srcElement, currentTarget commented out
+    clientX, clientY, screenX, screenY commented out
+    altkey, ctrlkey, shiftkey, keyCode commented out
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul")
+    }, false) commented out
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked")
+        e.stopPropogation()
+    }, false) commented out
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault()
+        e.stopPropagation()
+        console.log("google clicked")
+    }, false) commented out
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName)
+        
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id)
+            let removeIt = e.target.parentNode 
+            removeIt.remove()    
+        }
+    })
+    
+    removeIt.parentNode.removeChild(removeIt) commented out
+
+</script>
+</html> -->
+
+<!-- browser mei aa gaye -->
+
+<!-- to ab kya hoga -->
+
+<!-- yeh photoshop image pe click kara (image gayab ho gayi)
+ 
+(browser console mei IMG and photoshop likha aa gaya)-->
+
+<!-- agar li pe click karta hu to kya aya
+
+(means agar google link ke pas empty space mei click karte hai to kya hoga)
+
+(35:24)
+
+sirf LI print ho gaya (LI browser console mei print ho gaya)
+but wo remove nahi hua 
+(means wo li element brpwser mei gayab nahi hua as if ki condition IMG pe thi
+LI pe nahi thi)
+
+(35:27)
+-->
+
+<!-- aur isi tareh se aap chaho to aur bhi isme functionalities add kar sakte ho
+ river ki prayer ki
+ 
+ owl pe click kara 
+ 
+ (browser console mei IMG and owl likha aa gaya)
+ 
+ river pe click kara 
+ 
+ (browser console mei IMG and river likha aa gaya)
+ 
+ prayer pe click kara 
+ 
+ (browser console mei IMG and prayer likha aa gaya)
+ 
+ japan image pe click kara 
+ 
+ (browser console mei IMG and japan likha aa gaya)-->
+
+<!-- ab yahan pe (google link ke pas empty space mei) maine
+  click kara to LI aa gaya browser console mei -->
+
+<!-- Google link pe click karte hai to browser console mei
+ A (anchor tag i.e. a tag ) likha aa jayega  
+ 
+ and google home search page khul jayega
+ 
+ Google anchor tag ke andar hai and anchor tag li tag ke andar hai -->
+
+<!-- obvious si baat hai execute ho gaya hai wo wahan pe
+ (means google home search page khul gaya)
+ 
+ kyuki humne upar wala sara code comment out kar diya, 
+ koi default prevent humne nahi kara tha (neeche wale code mei)-->
+
+<!-- event propagation ,bubbling discuss ho gaya-->
+
+<!-- humne dekha event spill over kya hota hai jaise yahan pe
+ 
+document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName)
+
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id)
+            let removeIt = e.target.parentNode 
+            removeIt.remove()    
+        }
+
+        
+        
+    })
+
+
+spill over ho raha tha to humne ek ek functionality check kari (just above code mei
+ek ek functionality check kari)
+
+aage jaake projects mei bhi yehi sab karne wale ho
+yehi sab basic hai
+
+-->
+
+<!-- Class End -->
+
