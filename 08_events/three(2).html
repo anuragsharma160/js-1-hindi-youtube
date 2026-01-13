@@ -1,0 +1,593 @@
+<!-- 13:00 -->
+
+<!-- sabse pehle to script ko clean karte hai yeh script chahiye hi
+ nahi hume
+ 
+ to script tag ke andar sab kuch backspace kar liya-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    
+</script>
+</html> -->
+
+<!-- Chai aur code ki jagah ab hum kya likh lete hai
+ 
+Chai aur Javascript
+
+taaki pata rahe dusri file mei kaam kar rahe hai-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    
+</script>
+</html> -->
+
+<!-- ab yeh stop button bhi hai ,
+ 
+to ek start button bhi to chahiye-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    
+</script>
+</html> -->
+
+<!-- to start and stop 2 button ho gaye
+ 
+open with live server-->
+
+<!-- 13:25 -->
+
+<!-- yeh lijiye 2 button aa gaye aur right click inspect
+ karke browser console mei bhi chal jaate hai 
+ 
+ kyuki kahani to console mei hi hai saari-->
+
+<!-- 13:30 -->
+
+<!-- theek hai yeh humare javascript ke 2 button hai 
+ kuch kaam kar nahi rahe hai -->
+
+<!-- theek hai ab hum baat karte hai humare pas ek naye tareh ke
+ method ki yahan pe -->
+
+<!-- to abhi humne setTimeout to dekh hi liya hai uski charcha nahi
+ karte hai ab -->
+
+<!-- aise hi ek hai aapke pas setInterval -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    setInterval()
+</script>
+</html> -->
+
+<!-- ab yeh jo setInterval sahab hai na inka kya hai kuch aisa hi
+ kaam hai ki dekhenge aap to wo hi humare pas same hi aata hai
+ 
+ ( hover over setInterval() )
+ 
+ki ek handler hai aur ek timeout hai (2 parameter hai iss setInterval()
+functional method ke) 
+
+(13:54)-->
+
+<!-- to handler aur timeout to hai, lekin iska working thoda sa 
+ different hai -->
+
+<!-- yeh dekhiye bahut easy hai ek baar dekhenge uske baad to
+ kuch dikkat hi nahi hai samajh hi jayenge -->
+
+<!-- yeh function hai 
+ 
+setInterval(function(){})
+
+aur bola ki kya karo 1 second i.e. 1000 milliseconds baad kaam karo
+
+setInterval(function(){}, 1000)-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    setInterval(function(){
+        
+    }, 1000)
+</script>
+</html> -->
+
+<!-- kya kaam karna hai theek hai ji console.log() karke dekhte hai
+ to console.log("") aur kya karo wo hi same Hitesh
+ 
+ console.log("Hitesh")-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    setInterval(function(){
+        console.log("Hitesh");
+    }, 1000)
+</script>
+</html> -->
+
+<!-- save kara jaise hi aapne, (see browser console) 
+ to har ek second baad ab kya hai dekhiye 2, 3, 4, ... 
+ 
+ i.e. Hitesh ke pas timer in seconds chal raha hai-->
+
+<!-- ab yahan pe (browser console mei) 2, 3, 4, ... isliye aa raha hai
+ kyuki wo Hitesh hi Hitesh print karaye jaa raha hai har baar 
+ 
+ dekhna thoda sa mushkil hai-->
+
+<!-- to kya karte hai iske saath saath hum kuch aur bhi print kara lete
+ hai
+ 
+ isko bol dete hai ek kaam karo aap yeh Date.now()
+ 
+ i.e. console.log("Hitesh", Date.now())-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    setInterval(function(){
+        console.log("Hitesh", Date.now());
+    }, 1000)
+</script>
+</html> -->
+
+<!-- isse ( Date.now() ) kya hai exact date aa jaati hai number
+ format mei (milliseconds mei date aa jati hai Date.now() se)
+ 
+ date ki apni alag kahani hai javascript mei-->
+
+<!-- but isko ( console.log("Hitesh", Date.now()); ) 
+ karne se kya hai aapko constantly wo print dikhta jayega 
+ ki yahan pe Hitesh print ho gaya hai and milliseconds bhi saath mei
+ print hote jaa rahe hai
+ 
+ 14:38-->
+
+<!-- ab dekhiye thoda sa browser lag kar raha hai yahan pe kyuki
+ yeh event chalta hi jayega isko koi rok nahi raha hai ab 
+ yahan pe (see browser console)-->
+
+<!-- theek hai ji ab kya karte hai wo hi same kahani iss function
+ 
+    function(){
+        console.log("Hitesh", Date.now());
+    }
+        
+ko hum yahan se cut karte hai aur ek variable bana lete hai
+
+const sayDate =
+
+-->
+
+<!-- theek hai ji aur yeh function as it is yahan de diya hai isko
+ 
+    const sayDate = function(){
+        console.log("Hitesh", Date.now());
+    }
+
+-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayDate = function(){
+        console.log("Hitesh", Date.now());
+    }
+    
+    setInterval(, 1000)
+</script>
+</html> -->
+
+<!-- 14:57 -->
+
+<!-- theek hai ji ab iska (function ka) reference pass kar dijiye 
+ 
+( means setInterval mei iss function ka reference pass kar dijiye
+
+only reference pass karna hai execute nahi karna 
+
+i.e. sayDate karna hai sayDate() nahi karna inside setInterval() )-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayDate = function(){
+        console.log("Hitesh", Date.now());
+    }
+
+    setInterval(sayDate, 1000)
+</script>
+</html> -->
+
+<!-- 14:59 -->
+
+<!-- yeh lijiye sayDate
+ 
+to yeh date aapki obvious si baat hai wo hi same kaam hone wala hai
+
+see browser console-->
+
+<!-- 15:04 -->
+
+<!-- ab isme kya hai ki actually mei yeh jo setInterval hai na,
+ yahan pe ( setInterval(sayDate, 1000) ) parameters 
+ bhi pass ho jaate hai-->
+
+<!-- to jaise suppose kariye maine isko ( setInterval(sayDate, 1000) )
+  bola ki ek "hi" ya fir "Hitesh" ya fir kuch bhi iss tareh se
+  "hi" bhi le lijiye aap 
+  
+  
+  setInterval(sayDate, 1000, "hi")-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayDate = function(){
+        console.log("Hitesh", Date.now());
+    }
+
+    setInterval(sayDate, 1000, "hi")
+</script>
+</html> -->
+
+<!-- to aap kya kar sakte hai ki ab aap yahan pe iss variable 
+(const sayDate =) 
+
+ka aap ("Hitesh") ki jagah hum yahan pe
+
+    const sayDate = function(){
+        console.log("Hitesh", Date.now());
+    }
+        
+    pehle parameter lena bhi to padega 
+    ( i.e. just above function mei pehle parameter lena bhi to padega )-->
+
+<!-- to isko (as follows)
+ 
+    const sayDate = function(){
+        console.log("Hitesh", Date.now());
+    }
+
+bol dijiye ek str aa rahi hai humare pas string (as follows)
+
+    const sayDate = function(str){
+        console.log("Hitesh", Date.now());
+    }
+        
+    jo bhi string hai aapki
+    
+    -->
+
+<!-- aur usko as it is print kara dete hai
+ 
+    const sayDate = function(str){
+        console.log(str, Date.now());
+    }
+
+    jo bhi number aa raha hai ya jo bhi print aa raha hai
+    as it is print kara dete hai
+-->
+
+<!-- 15:34 -->
+
+<!-- (means ek parameter str le liya aur function ko execution call
+ dete waqt uss parameter ki argument value "hi" de di) -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayDate = function(str){
+        console.log(str, Date.now());
+    }
+
+    setInterval(sayDate, 1000, "hi")
+</script>
+</html> -->
+
+<!-- 15:30 -->
+
+<!-- to aap dekhiyega yahan pe (browser console mei) "hi" print
+ ho raha hai ("hi" and milliseconds print ho rahe hai) -->
+
+<!-- to third parameter bhi hota hai iske andar 
+ 
+(third parameter bhi hota hai setInterval functional method ke andar) -->
+
+<!-- theek hai ji itna kaam ho gaya (15:38) -->
+
+<!-- ab obvious si baat hai, yeh chale hi jaa raha hai,
+ chale hi jaa raha hai (see browser console) 
+ 
+ to ab isko bhi rokne ka tarika to aana chahiye na-->
+
+<!-- to isko rokne ka tarika bhi bahut aasaan hai -->
+
+<!-- jaise humare pas setInterval hai, vaise hi humare pas
+ clearInterval bhi hai -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayDate = function(str){
+        console.log(str, Date.now());
+    }
+
+    setInterval(sayDate, 1000, "hi")
+
+    clearInterval()
+</script>
+</html> -->
+
+<!-- 15:49 -->
+
+<!-- ab aap kahenge clearInterval to hai, but clearInterval bhi to
+ kuch na kuch id (argument) maangega 
+ 
+ haa ji uska reference maangega-->
+
+<!-- to yahan pe ( setInterval(sayDate, 1000, "hi") ) ek reference
+  le lijiye iska ( setInterval(sayDate, 1000, "hi") ) -->
+
+<!-- to const isko bol dete hai intervalId
+ 
+const intervalId = setInterval(sayDate, 1000, "hi")
+
+yeh lijiye intervalId-->
+
+<!-- ab rukega thodi na itne mei kyuki intervalId pass to kiya hi nahi
+ hai
+ 
+ to copy karke isko pass kar dijiye
+ 
+ clearInterval(intervalId)-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayDate = function(str){
+        console.log(str, Date.now());
+    }
+
+    const intervalId = setInterval(sayDate, 1000, "hi")
+
+    clearInterval(intervalId)
+</script>
+</html> -->
+
+<!-- 16:05 -->
+
+<!-- save -->
+
+<!-- jaise hi aap isko pass karenge, ab ek bar bhi run nahi karega
+ (see browser console) 
+ 
+ kyu kyuki aapne bola ki ab to isko rok dijiye 
+ 
+ ( clearInterval(intervalId) )
+  
+ clearInterval kar dijiye, to jitna bhi tha sab flush out ho gaya hai 
+ memory garbage collection sab ho gaya hai-->
+
+<!-- to ab kya hai vaise to garbage collection hota nahi hai
+ but theek hai samajhne ke liye bol sakte hai -->
+
+<!-- to theek hai yeh ho gaya humara kaam -->
+
+<!-- 16:24 -->
+
+<!-- ab actually mei target kya tha karne ka yeh 2 button lagaane
+ ke peeche raaj yeh tha ki mai chahta hu aap yeh kaam karein (assignment)
+ 
+ ki jaise hi mai start dabaaun yahan pe , to yahan pe (browser console)
+ printing start ho jaye -- jo mera naam hai "Hitesh" aur wo jo date print
+ ho rahi hai , wo start ho jaye-->
+
+<!-- 16:38 -->
+
+<!-- aur jaise hi mai stop karun to wo stop bhi ho jaye -->
+
+<!-- to yeh wala task sir dete hai aapko 
+ 
+aur jo ek tough hai isse wala task wo karte hai sir taaki aapka
+project bhi ho jaye ek-->
+
+<!-- 16:48 -->
+
+<!-- ===================================================== -->
+
+<!-- ab sir apna stackblitz ka account khoolte hai -->
+
+<!-- sir ne aapke liye aur ek project add kar diya hai -->
+
+<!-- to yahan pe project 6 already aapke liye rakh liya hai
+ 
+project - 6 - Unlimited Colors-->
+
+<!-- project 5 bhi hai wo bhi karenge but pehle project 6 
+ karenge kyuki yeh unlimited colors hai
+ 
+ isko (project 6 ko) jaise hi click karenge , almost same kaam hume
+ karna hai
+ 
+ start karte hi yahan pe ek background color aa jaana chahiye
+ aur continuously har second pe background color change hona chahiye-->
+
+<!-- 17:29 -->
+
+<!-- jaise hi aap stop dabayenge to wo background color jo jaisa hai
+ wo wahan pe reh jaaye ab kuch change na ho -->
+
+<!-- 17:34 -->
+
+<!-- to pata ag raha hai bydefault ki haa setInterval kuch use 
+ karna padega kyuki har time pe kuch karna hai 
+ 
+ (hand cirlcling kiya sir ne)-->
+
+<!-- setTimeout use nahi kar sakta kyuki wo to ek hi baar run karega -->
+
+<!-- to aisa to nahi karna hai 
+ 
+ab setInterval 
+
+to usecases hai aisa nahi hai ki kuch kharaab hai kuch achha hai ,
+usecases hai, ab yahan pe usecase aisa hai ki har ek second baad ek naya
+background chahiye to setInterval hi chahiyega-->
+
+<!-- 17:54 -->
+
+<!-- but aisa nahi hai ki aate hi yahan pe (website browser right side mei)
+ chaalu ho jaye
+ 
+ start hoga (start button pe click hoga)
+ 
+ uske baad wo background color change karna shuru karega aur
+ uske baad fir humara kaam hoga-->
+
+<!-- 18:00 -->
+
+<!-- theek hai ji to ab chalte hai ki isko actually mei
+ solve kaise kiya jaye -->
+
+<!-- 18:31 -->
+
+<!-- go to 6.md file in 6-unlimitedColors folder for further explanation-->
+

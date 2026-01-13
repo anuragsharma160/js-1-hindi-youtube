@@ -1,0 +1,987 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+</html> -->
+
+<!-- script hum sari ki sari yahin pe html mei
+ hi likh lenge -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    
+</script>
+</html> -->
+
+<!-- ab sabse pehle to kya karna hai thoda sa hume inn functions 
+ ke bare mei dekhna hai ki yeh functions hote kya hai  -->
+
+<!-- to sabse pehla jo sabse basic function hai wo hai humara
+ set time out, 
+ 
+ ab set time out humne yahan pe likha-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    setTimeout
+</script>
+</html> -->
+
+<!-- to set time out kaise kaam karta hai, yeh ek method hai 
+ -- setTimeout()-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    setTimeout()
+</script>
+</html> -->
+
+<!-- aa... actually mei method hi hai lekin yeh method kya karta hai
+ ek API ko bhi call karta hai, to wo bhi ek interesting aur important
+ aspect hai uska -->
+
+<!-- ek bar browser console mei jaise hi aap ek window object dekhenge
+ type window , press enter in browser console, dropdown and see -->
+
+<!-- to window object ke andar aapke pas kaafi kuch options milte hai
+ yahan pe -->
+
+<!-- to aap dekhenge aapke pas yeh bahut saare , s ke andar jaate hai
+ hopefully, scroll down and see set interval hai , set time out hai
+ , yeh actually mei function hi hai (dropdown both and see)
+ 
+ lekin sirf core function nahi hai (set time out , set interval) yeh
+ browser ke through aapko milte hai-->
+
+<!-- aur bhi APIs mei available hai aapke pas aur bhi browser ke 
+ runtime environment hai (4:26) , lekin yeh core javascript ke part
+ nahi hai, 
+ 
+ jaisa ki humne dekha tha javascript engine mei aapke pas basically
+ kya hai ek call stack hai ek memory (memory heap) hai 
+ 
+ lekin yeh (set time out , set time interval) jaise hi call hote hai
+  to humare pas bahar jaata hai 
+  (execution js engine se web api ki taraf jaata hai)
+  
+  fir event queue (task queue) ke through wapas se access milta hai uska
+  to yeh dono (set time out, set time interval) isi tareh ke hai-->
+
+<!-- Iske alawa aap dekhoge kuch aur functions bhi aapko yahan pe
+(window dropdown mei) milte hai 
+
+jaise ki clearInterval ho gaya, clearTimeout ho gaya, 
+
+yeh (clearInterval , clearTimeout ) actually mei part hi hai 
+unn dono ke (setTimeout , set TimeInterval)-->
+
+<!-- aap sirf unn dono (setTimeout , set TimeInterval) ko padh rahe
+ hai aur inn dono ko (clearInterval , clearTimeout ) ko nahi padh
+ rahe hai , 
+ 
+ interview ke liye tayiyari nahi kar rahe hai 
+ 
+ aur obvious si baat hai fasoge aapge jaake interview mei
+ 
+ to aisa mat karo (4:55)-->
+
+<!-- browser console ko clean kar liya -->
+
+<!-- code editor mei aa gaye -->
+
+<!-- kyuki basically jo mudda hai wo iska nahi hai itna
+ yeh kuch bhi yahan pe dikhaya yeh itna jada problem nahi hai to
+ basic humare pas do (2) aa gaya-->
+
+<!-- 5:15 -->
+
+<!-- ab set time out karta kya hai, iske upar aap jaise hi hover 
+ karoge (set time out () in code editor ke upar)
+ 
+ to aapko dikhega ki sabse pehle to isko chahiye handler-->
+
+<!-- dekhiye handler ek javascript ke andar bahut hi interesting 
+ term hai , handler , callback, function , yeh almost hai sab hi same hi
+ 
+ kisi ka naam hai, kisi ka nahi hai, kisi ka reference hai bas itna hi
+ hai -->
+
+<!-- handler ek callback hi hai, ek function jiska naam nahi hai
+ 
+(callback function ka naam nahi hota)
+
+bas basically itna hi hai (5:34)-->
+
+<!-- but jaruri nahi hai ki har bar uska naam na ho
+ 
+ho sakta hai function kahin aur likha hua ho uska reference de rahe ho
+
+to wo bhi theek hai ek hi baat hai-->
+
+<!-- (5:39) -->
+
+<!-- baat samajh mei aani chahiye bolo usko kuch bhi kya farak padta hai -->
+
+<!-- aur dusra chahiye uska ( setTimeout() ka ) timeout (hover over set timeout ()) 
+ jo ki ek number mei milta hai -->
+
+<!-- (5:44)
+ 
+(means 2 parameter hote hai setTimeout() functional method ke --
+ek handler yani function aur dusra timeout jo ki number mei milta hai)-->
+
+<!-- to yeh lijiye sabse pehle humne likha ek function
+ 
+yeh lijiye aapke function ki definition aa gayi , naam ki jarurat hi nahi padi
+(function ke naam ki jarurat hi nahi padi) 
+
+kyuki yahin likha hai, handler hai , callback hai-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    setTimeout(function(){})
+</script>
+</html> -->
+
+<!-- aur setTimeout ke andar kitna , ek time chahiye , time millisecond
+ mei hota hai to hum kya karte hai 2 second ka time de dete hai 
+ 
+ (2000 milli seconds)-->
+
+<!-- yeh lijiye de diya -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    setTimeout(function(){}, 2000)
+</script>
+</html> -->
+
+<!-- (5:59) -->
+
+<!-- ab 2 second baad kya karwana chahte ho, obvious si baat hai
+ console.log() hi karwayenge, javascript hai to aur kya hi karwayenge -->
+
+<!-- to sir ka naam print karwa lein theek hai -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    setTimeout(function(){
+        console.log("Hitesh");
+    }, 2000)
+</script>
+</html> -->
+
+<!-- to save and 2 second baad naam Hitesh browser console mei
+ print ho gaya -->
+
+<!-- ab mai kitni bhi der baad wait karu yeh naam to ek hi baar print
+ hoga , 
+ 
+ kyuki setTimeout jo function hai jo uska (setTimeout ka) naam keh raha hai
+ timeout, aap timeout le rahe ho ki itni der ka time mujhe do, 
+ uske baad kuch kaam karenge
+ 
+ (6:29)-->
+
+<!-- to maine kaha 2 second ka mujhe time do (see code 2000 milliseconds)
+ 
+setTimeout(function(){
+        console.log("Hitesh");
+    }, 2000)
+
+aur uske baad jo bhi aap bologe wo mai execute kar dunga 
+
+(means pehle 2 second wait kara fir 
+console.log("Hitesh") ko print karwaya)-->
+
+<!-- (6:33) -->
+
+<!-- yeh hi usne kiya , bada hi basic sa tha itna kuch difficult tha
+ hi nahi -->
+
+<!-- aur iski tareh (setTimeout ki tareh) ek setInterval function
+ bhi hai wo (setInterval function) uska (setTimeout ka) just thoda
+ sa opposite to nahi kahunga bas isse (setTimeout se) different
+ hota hai
+ 
+ (6:42)-->
+
+<!-- wahan (setInterval function) kya hai interval (time in milliseconds)
+ aap maangte hai ki mujhe 2 seconds ka interval do (6:45)
+ 
+ aur mai continuously cheej ko karta hi jaunga, karta hi jaunga-->
+
+<!-- interval (setInterval function) ka matlab hai ek break point 
+ le raha hai wo ki itna time to mujhe do aur har utne time ke baad
+ mai uss cheej ko karta hi jaunga-->
+
+<!-- Lekin setTimeout() kya bolta hai dekho itna time do ,
+ 
+uske baad mai ek bar aapka kaam kar dunga,
+
+aise bar bar nahi laga rahunga mai aapke kaam ke liye-->
+
+<!-- (7:01) -->
+
+<!-- achha ab kya kar sakte hai ki yeh jo function na as follows
+ 
+    (function(){
+        console.log("Hitesh");
+    }
+        
+iss function ko yahan se as (follows se)
+
+    setTimeout(function(){
+        console.log("Hitesh");
+    }, 2000)
+    
+uthaao aur cut kar do as follows-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    setTimeout(, 2000)
+</script>
+</html> -->
+
+<!-- kar sakte hai koi dikkat wali baat hai hi nahi -->
+
+<!-- aur iske andar kya bolte hai ek variable declare kar lete hai
+ isko bolte hai const sayHitesh aur yeh lijiye function as it is 
+ wahan pe hai as follows
+ 
+ const sayHitesh = function(){
+    console.log("Hitesh")
+ }
+ setTimeout(,2000)   -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayHitesh = function(){
+        console.log("Hitesh");
+    }
+    
+    setTimeout(, 2000)
+</script>
+</html> -->
+
+<!-- tika diya theek hai ho gaya kaam -->
+
+<!-- ab iss function (sayHitesh) ka aap reference bhi de sakte hai,
+ 
+execute mat kara dijiyega, reference dijiyega
+
+yeh to ho jayega execute -- sayHitesh() as follows
+
+    const sayHitesh = function(){
+        console.log("Hitesh");
+    }
+    
+    setTimeout(sayHitesh(), 2000)
+    
+yeh nahi karna hai reference dena hai uska handler hai na,
+to reference dena hai as follows
+
+    const sayHitesh = function(){
+        console.log("Hitesh");
+    }
+    
+    setTimeout(sayHitesh, 2000)-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayHitesh = function(){
+        console.log("Hitesh");
+    }
+
+    setTimeout(sayHitesh, 2000)
+</script>
+</html> -->
+
+<!-- to reference de diya ,
+ 
+aur ab 2 second baad kya hoga aapko pata hi hai, Hitesh print ho jayega
+in browser console
+
+code koi naya thodi na leke aya hu magically (7:36)-->
+
+<!-- wo hi ka wo hi code liya hai aur  as it is maine kaam kara diya hai -->
+
+<!-- theek hai ji -->
+
+<!-- ab kya karte hai ki mai kya chahta hu yeh to kaam ho gaya
+ ab yahan pe aate hai (just next to function) -->
+
+<!-- aur kya mai iss h1 ka naam change kar sakta hu , jo Chai aur code
+ aa raha hai uski jagah best javascript series , haa theek hai thoda
+ promotion chalta hai kar sakte hai kya -->
+
+<!-- to kar to sakte hai dekhiye aapne kaha document
+ aur document ke baad isko (h1 Chai aur code ko) kaise loge -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayHitesh = function(){
+        console.log("Hitesh");
+    }
+    document
+
+    setTimeout(sayHitesh, 2000)
+</script>
+</html> -->
+
+<!-- 7:58 -->
+
+<!-- querySelector se le lete hai -->
+
+<!-- document.querySelector() -->
+
+<!-- querySelector ko bolte hai ki kya dijiye hume, h1 de do
+ ek hi h1 hai koi dikkat wali baat hi nahi hai-->
+
+<!-- document.querySelector('h1') -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayHitesh = function(){
+        console.log("Hitesh");
+    }
+    document.querySelector('h1')
+
+    setTimeout(sayHitesh, 2000)
+</script>
+</html> -->
+
+<!-- 8:04 -->
+
+<!-- aur uska ( document.querySelector('h1') ka ) jo innerHTML hai
+ 
+aa... vaise to aajkal naye methods bhi aaye hai by the way 
+kabhi aur batayenge aapko jaise setHTML etc but abhi itna browser 
+support nahi hai but batayenge aapko kabhi uske baare mei bhi
+
+-->
+
+<!-- innerHTML le lijiye 
+ 
+document.querySelector('h1').innerHTML
+
+-->
+
+<!-- aur innerHTML ke andar kya likhein -- "best JS series"-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayHitesh = function(){
+        console.log("Hitesh");
+    }
+    document.querySelector('h1').innerHTML = "best JS series"
+
+    setTimeout(sayHitesh, 2000)
+</script>
+</html> -->
+
+<!-- ab likhte hi wo series change ho gaya hai (see browser)-->
+
+<!-- (8:28) -->
+
+<!-- theek hai jaise hi aap save karoge , to aapko humesha best JS series
+ hi dikhega kyuki usko time nahi hai -->
+
+<!-- ab yeh to nahi chahta mai -->
+
+<!-- mai chahta hu ki do (2) second baad yeh kaam ho theek hai-->
+
+<!-- ab 2 second baad agar yeh kaam ho 
+ 
+(yeh kaam -- document.querySelector('h1').innerHTML = "best JS series")
+
+to isko kaise kiya ja sakta hai-->
+
+<!-- bahut hi aasaan hai isko 
+ 
+(document.querySelector('h1').innerHTML = "best JS series")
+
+aap kijiye cut aur usko boliye const (boliye const)
+
+isko (const ko) boliye aap changeText
+
+const changeText
+
+aur changeText ko aap ek function bana dijiye
+
+const changeText = function(){}-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayHitesh = function(){
+        console.log("Hitesh");
+    }
+    const changeText = function(){}
+
+    setTimeout(sayHitesh, 2000)
+</script>
+</html> -->
+
+<!-- aur yeh lijiye function ban gaya aur function ke andar aap
+ yeh kaam kara dijiye (menas jo cut kiya tha usko paste kar dijiye)
+ as follows  
+ 
+ const changeText = function(){
+    document.queryselector('h1').innerHTML = "best JS series"
+ }-->
+
+<!-- 8:55 -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayHitesh = function(){
+        console.log("Hitesh");
+    }
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS series"
+    }
+
+    setTimeout(sayHitesh, 2000)
+</script>
+</html> -->
+
+<!-- ki document dot jo bhi hai... -->
+
+<!-- save it -->
+
+<!-- ab iss function ko jab tak aap call nahi karenge tab tak wo (h1)
+ Chai aur code hi rehne wala hai-->
+
+<!-- 9:00 -->
+
+<!-- theek hai itna to padh hi chuke hai isme koi difficult wali baat
+ hi nahi hai -->
+
+<!-- ab kya kar sakte ho setTimeout ( setTimeout(sayHitesh, 2000) )
+ 
+ko yeh jo sayHitesh (const sayHitesh) 
+ keh rahe the uski jagah iska (const changetext) reference de dete hai
+ 
+ ( setTimeout(sayHitesh, 2000)  mei changeText kar dete hai sayHitesh 
+  ki jagah )
+  
+  ki aap kya karo changeText kar do 
+  
+  kitni der baad , 2 second baad-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayHitesh = function(){
+        console.log("Hitesh");
+    }
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS series"
+    }
+
+    setTimeout(changeText, 2000)
+</script>
+</html> -->
+
+<!-- to mai isko jaise hi save karunga aur 2 second ho jayenge uske
+ baad automatically  yeh code execute hoga aur aapko best JS series
+ mil jayegi -->
+
+<!-- 9:18 -->
+
+<!-- ab aapne bahut jagah dekha hoga website pe kya hai thodi der website
+ pe rehte hai uske baad koi pop up aata hai ya fir ek top se bar aa 
+ jaati hai (top to bottom) 
+ 
+ ki humara discount chal raha hai course khareed lo bahut saste mei
+ mil raha hai
+ 
+ ya product khareed lo mobile pe discount... 
+ 
+ to aise kaam hote rehte hai-->
+
+<!-- 9:31 -->
+
+<!-- Lekin problem pata hai kya hai aksar tutorial yahin khatam
+ ho jaate hai 
+ 
+ aur yeh ek problematic situation hai ki aapne agar ek setTimeout
+ laga diya hai (see code)
+ 
+ to aapko yeh bhi pata hona chahiye ki uss timeout ko mai rok kaise 
+ sakta hu -->
+
+<!-- agar utni der mei wo event nahi hua hai to mere pas ek option
+ hona chahiye ya fir ho sakta hai aisi situation aaye
+ 
+ ki mai uss event ko rokna chahta hu 
+ 
+ (9:50)-->
+
+<!-- to kaise karoge 
+ 
+ab yeh Stop button isilye diya tha ki agar mai 2 seconds se pehle
+Stop button pe click kar du, to wo Chai aur code hi rahe 
+
+(best JS series na ho)-->
+
+<!-- ab yeh isliye kyuki hume padhna hai aage 
+ 
+yahan pe setTimeout hai (see code)
+
+to ek clearTimeout bhi ek function hota hai (10:05)-->
+
+<!-- ab dekhiye clearTimeout ka kya hai (10:08) 
+ 
+ki aap yeh lijiye clearTimeout()-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayHitesh = function(){
+        console.log("Hitesh");
+    }
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS series"
+    }
+
+    setTimeout(changeText, 2000)
+
+    clearTimeout()
+</script>
+</html> -->
+
+<!-- ab yeh clearTimeout() iss tareh se karne se kaam nahi chalne wala hai -->
+
+<!-- iss tareh se clearTimeout() execute nahi hota hai -->
+
+<!-- clearTimeout() ko chahiye reference 
+ 
+ki aap konse wale jo setTimeout hai ( setTimeout(changeText, 2000) ) 
+usko aap hataana chahte hai
+
+kyuki bahut saare setTimeout ho sakte hai, to uska 
+(particular setTimeout ka) reference lena padega-->
+
+<!-- achha ek cheej aur aapko bata du,
+ 
+sirf agar aap uska (particular setTimeout ka) reference le rahe hai jaise ki
+ki suppose kariye mai isko (setTimeout ko) bolna chah raha hu,
+
+aa... reference ke andar kya le iska reference lete hai (setTimeout ka)
+-- changeMe
+
+const changeMe = setTimeout(changeText, 2000)
+
+changeMe naam se iska reference hold kar lete hai , variable declare
+kar rahe hai basically, 
+
+ab aap usko constant boliye , variable boliye
+
+aam general programming bhaasha mei usko constant ko sabko
+variable hi bola jaata hai
+
+to ek variable mei maine usko (setTimeout ko) hold kar liya hai
+box mei
+-->
+
+<!-- 10:50 -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayHitesh = function(){
+        console.log("Hitesh");
+    }
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS series"
+    }
+
+    const changeMe = setTimeout(changeText, 2000)
+
+    clearTimeout()
+</script>
+</html> -->
+
+<!-- ab sirf maine isko (setTimeout ko) ek box (variable mei) mei 
+ hold kara hai iska matlab yeh nahi ki wo execute hona 
+ (h1 text badalna) band ho gaya -->
+
+<!-- setTimeout to apne daur pe nikal chuka hai (10:56)
+ 
+wo engine se bahar (js engine se bahar web API ki taraf) 
+aur wahan jaake callback mei aa raha hai 
+
+(ghoom ke call stack mei aa raha hai)-->
+
+<!-- 10:58 -->
+
+<!-- ab kya hai ki iss reference (const changeMe) 
+ ko aap pass on kar sakte hai -- clearTimeout() mei
+ 
+clearTimeout(changeMe) -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayHitesh = function(){
+        console.log("Hitesh");
+    }
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS series"
+    }
+
+    const changeMe = setTimeout(changeText, 2000)
+
+    clearTimeout(changeMe)
+</script>
+</html> -->
+
+<!-- jaise hi aapne yeh reference pass out kar diya
+ 
+to yahan pe ( const changeMe = setTimeout(changeText, 2000) mei 2000 ms ) 
+jo time ho raha hai uske andar se clearTimeout()
+ ( clearTimeout(changeMe) ) jaise hi
+pahuchega
+
+wo bolega are... 
+
+wo jo aapke pas jitna bhi callback etc (11:10) queue mei (task queue mei)
+rakha hai na usko sabko hata do ab uski jarurat nahi hai
+
+-->
+
+<!-- to aap kitni bhi der yahan baithiye (web browser mei) 
+ 
+wo nahi hoga (h1 ka text change nahi hoga)-->
+
+<!-- Lekin iss tareh se karna bhi to theek nahi hai kyuki
+ yeh to fayeda kya hua ki jab setTimeout bhi lagaya (see code)
+ 
+ aur clearTimeout laga diya (see code)-->
+
+<!-- 11:20 -->
+
+<!-- to koi event pe lagana chahta hu mai isko-->
+
+<!-- to isko ( clearTimeout(changeMe) ) hatate hai yahan se
+ aur kisi event pe lagate hai-->
+
+<!-- ab event konsa hai -- aapko pata hi hai button laga rakha hai
+ humne -->
+
+<!-- to document ke andar jo queryselector hai
+ document.querySelector('')
+ 
+ isko boliye ki ek button dhundh ke layiye humare liye
+ 
+ button ka id humne stop de rakha hai
+ 
+ document.querySelector('#stop')-->
+
+ <!-- uske ( document.querySelector('#stop') )
+  upar ek event listener laga lete hai 
+  
+document.querySelector('#stop').addEventListener()
+
+-->
+
+<!-- konsa event listen karna chahoge ek click event listen kar lo 
+ 
+document.querySelector('#stop').addEventListener('click')-->
+
+<!-- aur uske baad ek function de dete hai wo hi handler callback ...
+ 50 naam hai aajkal ji...
+ 
+document.querySelector('#stop').addEventListener('click', function(){})-->
+
+<!-- 11:55-->
+
+<!-- aur iske andar boliye -- clearTimeout() i.e. clearTimeout(changeMe) 
+ 
+(clearTimeout(changeMe) i.e. jo cut kiya tha usko paste kar diya)-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayHitesh = function(){
+        console.log("Hitesh");
+    }
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS series"
+    }
+
+    const changeMe = setTimeout(changeText, 2000)
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe)
+    })
+</script>
+</html> -->
+
+<!-- 11:57 -->
+
+<!-- ek console.log() bhi laga lete hai taki hume to pata rahe
+aur ek stop likh dete hai yahan pe (console.log() mei) 
+
+console.log("STOPPED")-->
+
+<!-- yeh lijiye console.log("STOPPED") -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayHitesh = function(){
+        console.log("Hitesh");
+    }
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS series"
+    }
+
+    const changeMe = setTimeout(changeText, 2000)
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe)
+        console.log("STOPPED");
+    })
+</script>
+</html> -->
+
+<!-- ab kya hoga ki abhi to yeh kaam kar raha hai Chai aur code
+ se best JS series ho gaya 2 second mei-->
+
+<!-- Lekin jaise hi mai isko dubara se save karta hu, 
+ 
+mai agar yahan pe jaake isko stop button pe click kar deta hu
+
+to obvious si baat hai ab maine uss event ko hone se rok liya hai-->
+
+<!-- 12:18 -->
+
+<!-- dekha easy tha na , to yeh hi kaam hota hai saara ka saara
+ 
+jitna humne theory mei padha tha wo saara ka saara yeh hi hai ki
+kis tareh se aapka setTimeout hota hai, ek koi bhi aap kaam kara sakte hai
+
+ab jo bhi function mei aapne kaam likh rakha hoga saara hi hoga,
+ab ek kaam hai 10 kaam hai 20 kaam hai jo bhi hai wo saara ka saara
+hi ho jayega-->
+
+<!-- 12:34 -->
+
+<!-- aa... ek aur file banate hai kyuki sir ko pata hai aapko
+ interest to aa hi raha hai to -->
+
+<!-- chaliye ek aur file banate hai yahan pe isme sir 
+ assignment denge aapko thoda sa 
+ 
+ to new file banayi humne three.html
+ 
+ move on to three.html-->
+
+ <!-- 12:48 -->
+
+ <!-- aur three.html ke andar bhi two.html ka
+  saara material copy paste kar lete hai -->
+
