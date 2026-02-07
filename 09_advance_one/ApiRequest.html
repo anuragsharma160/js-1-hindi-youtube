@@ -130,3 +130,580 @@ uska koi abhi lena dena nahi hua aapne request open kari aur
 bhej di request
 
 (10:13)-->
+
+<!-- ab HEADERS_RECEIVED hai (see 2 point under value) 
+ yani ki (description) aapne jo request bheji thi (send() , see in description)
+ uske header to aa gaye, lekin status etc nahi aya ki bhai data mila hai
+ nahi mila , request khoo gayi , kuch to aya hai pata nahi kya aya hai
+ abhi -->
+
+<!-- third state hoti hai LOADING (see 3 under Value) yani ki
+(description) 10:27
+obvious si baat hai aapka response aya hai to kitna bada data hai poora
+aa gaya nahi aa gaya to yeh sab states ke through maintain hota tha
+
+aaj bhi states ke through hi maintain hota hai, aapki React etc mei states
+ke through hi maintain hota hai-->
+
+<!-- aa... but theek hai ab yeh numbers (see under Value 0 1 2 3 4 in table) 
+ hone band ho gaye state (see under State in table) directly
+ call ho jaati hai bas itna sa antar hai -->
+
+<!-- aur jaise hi status aapka 4 ho jaata hai (see 4 under Value)
+(State - Done) 
+to
+ (description) wo bolta hai operation complete ho gaya hai data humari
+ (uski) taraf se to jaa chuka hai, ab dekh lo aapko mila hai nahi mila
+ hai, konsa response code mila hai, kya hua hai wo aapki jimmedari hai,
+ aapki headache hai-->
+
+<!-- (scroll down in readyState webpage) -->
+
+<!-- to isi tareh se documentation mei se padhte hai kuch example
+ bhi yahan de rakhe hai hum bhi apna ek example banayenge karenge
+ but theek hai abhi ke liye itna hi hum documentation padhte hai 
+ 
+ aate hai yahan pe (code editor mei aa gaye)-->
+
+<!-- 11:03 -->
+
+<!-- move on to ApiRequest(2).html for code part -->
+
+<!-- to yeh ho gaya humara basic as follows-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html> 
+
+likh liya ApiRequest(2).html file mei-->
+
+<!-- ek kaam karte hai hum inn sari states 
+ (readyState webpage mei pori table) 
+ ko le hi aate hai yahan pe taki aap kabhi padh hi lenge
+ kyuki mujhe pata hai documentation mei to kum hi jaane wale hai aap
+ log to atleast yahan pe rahenge to itna padh hi lenge
+ 
+ (readyState webpage mei se table ko copy paste kar liya as follows)-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- aur bhi kya karte hai isko hum styling kar dete hai thodi si
+ bgc #212121 -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- theek hai to yeh ho gaya humare pas background aur headers aa gaye
+(means table aa gayi) 
+-->
+
+<!-- ab hum chalte hai humare mudde ki baat pe jahan pe hai humare pas
+ script -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- 11:37 -->
+
+<!-- achha yahan pe ab kis tareh se kaam hota hai kya hota hai
+ gaur se dekhiyega 
+ 
+ to yahan pe kya hota hai ki xml ki yeh jo request bheji jaati hai
+ ajax request jisko bolte hai, yeh aap jada kaam mei nahi lene wale but
+ fir bhi aapko knowledge rahegi to jitni knowledge utna badiya-->
+
+<!-- to isme kya hota hai sabse pehle aap ek object banate ho, kisse
+ object banate ho , aapke pas hota hai yeh XMLHttpRequest-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    XMLHttpRequest
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- yeh (XMLHttpRequest) apne aap mei ek method hai (XMLHttpRequest())
+ jiske andar yeh sari readystates etc sab hoti hai
+ (hover over XMLHttpRequest to see dialog box pop up) 
+ 
+ aur isi ke (XMLHttpRequest) through aap apna data request send kar sakte
+ ho aur 
+ receive kar sakte ho (hover over XMLHttpRequest to see dialog box pop up)
+ aur bhi tarike hai but yeh (XMLHttpRequest) sabse jada use hota hai
+ aur isko (XMLHttpRequest) iss tareh (XMLHttpRequest()) se use karte hai
+ ki iska (XMLHttpRequest) ek method (XMLHttpRequest()) hota hai-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    XMLHttpRequest()
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- 12:21 -->
+
+<!-- ab yeh (XMLHttpRequest()) aap keh sakte hai almost ek class hai
+ to isse (XMLHttpRequest()) ek object
+ banana padta hai, ab uss object banane ke liye kya hai pehle ek
+ new keyword use karte hai taaki hum ek fresh object bana rahe hai usse
+ (XMLHttpRequest())
+
+ new XMLHttpRequest()-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    new XMLHttpRequest()
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- aur koi jada meaning nahi hai iska ( new XMLHttpRequest() ) 
+ itna hi hai bas ki haa hum usse ( XMLHttpRequest() ) ek
+ reference chah rahe hai , aa... uska ek object chah rahe hai -->
+
+<!-- usko ( new XMLHttpRequest() ) ek variable mei store kar lete hai 
+ jo marji aye variable ko boliye mai bol deta hu isko xhr
+ 
+ const xhr = new XMLHttpRequest()
+ 
+ kyuki xhr request hi hai ( XMLHttpRequest ) -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const xhr = new XMLHttpRequest()
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- theek hai aap chahein to siko superman boliye koi aisa problem hai
+ nahi -->
+
+<!-- ab humne dekha tha ki bar bar documentation mei ek charcha ho rahi thi
+ (readyState webpage mei aa gaye) 
+ ki yeh open open karke kuch hai 
+ (see open() in 1 under Description in table) -->
+
+<!-- to haa ji yeh open (see open() in 1 under Description in table)
+ hi actually mei request ko bhejta hai, yeh open() aapko available
+ tab hoga jab aap xmlhttprequest type bana lenge -->
+
+<!-- to humne jaise hi bola xhr -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const xhr = new XMLHttpRequest()
+    xhr
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- iske (xhr ke) baad jaise hi aap dot likhenge (xhr.)
+ to aapko saare method mil jayenge (see suggestion list pop up)
+ DONE , HEADER_RECEIVED yeh 
+ (DONE , HEADER_RECEIVED, etc) (see suggestion list pop up) 
+ sare to properties hai 
+ 
+ but yeh methods bhi (addEventListener, etc yeh to nahi hai) 
+ open hai, ontimeout, onreadystatechange , yeh sare methods aapko
+ mil jaate hai (see suggestion list pop up) -->
+
+<!-- 13:14 -->
+
+<!-- sabse pehle to open
+ 
+xhr.open()
+
+iske ( open() ) andar do (2) parameters lagte hai, ek to method (function)
+aur ek string
+ab method ka matlab hai ki kis type ki request bhejna chahte ho
+'GET' 'POST' 'PUT'/'PORT' jo bhi aapko bhejni hai wo bhej do
+
+xhr.open('GET')-->
+
+<!-- aur iske ( 'GET' 'POST' 'PUT'/'PORT' ) alawa bhi aap aur bhej
+  sakte ho yahan pe -- pay loads etc, but hum yahan pe basic karte hai
+  
+  13:31-->
+
+<!-- (github api webpage mei aa gaye)
+  ab hum jaate hai yahan pe aur hum dekhte hai ki yahan pe hume
+  yeh data mil jaata hai 
+  (to github webpage ka url copy kar liya)
+  
+  https://api.github.com/users/anuragsharma160-->
+
+<!-- to yeh data ab hume chahiye code ke andar
+ (code editor mei aa gaye)
+ to yeh humne kiya hardcode string 
+ 
+ xhr.open('GET', '')
+ 
+ xhr.open('GET', 'https://api.github.com/users/anuragsharma160')
+ 
+ usually to variable ya constant mei upar hardcode string jaani
+ chahiye thi but chaliye yahan pe hi daal dete hai
+ 
+ (means const firstName = "Anurag" iss tareh se upar declare hona
+ chahiye tha but theek hai yahan pe
+ xhr.open('GET', 'https://api.github.com/users/anuragsharma160')
+ hi daal dete hai)
+ -->
+
+<!-- 13:44 -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', 'https://api.github.com/users/anuragsharma160')
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- isko bol dete hai requestUrl 
+const requestUrl 
+aur isko bana dete hai string
+const requestUrl = ''
+const requestUrl = 'https://api.github.com/users/anuragsharma160'
+
+to thodi si achhi practices bhi follow kar lete hai, itni koi jada
+badi baat hai nahi, to isko bol dete hai requestUrl
+
+const requestUrl = 'https://api.github.com/users/anuragsharma160'
+const xhr = new XMLHttpRequest()
+xhr.open('GET', requestUrl)-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/anuragsharma160'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- 13:57 -->
+
+<!-- theek hai ji, ab yahan se ( xhr.open('GET', requestUrl) )
+ request karne se actually mei request
+ jaati nahi hai 
+ aapne yahan pe (readyState webpage mei in table under Value 1,
+ see Description -- open() has been called)
+ bhi dekha hoga ki yeh bhi bol raha hai ki theek hai open() has not been called
+ (open()) open has not been called 
+ ( see Description -- open() has been called )
+  
+ to open ko call karna padega-->
+
+<!-- 14:07 -->
+
+<!-- achha ji open ko call karega kaun aur kaise call hota hai -->
+
+<!-- code editor mei aa gaye -->
+
+<!-- actually mei open apne aap mei call nahi hota hai, aapko bolna
+ padta hai -- xhr
+ 
+ xhr.send()
+ 
+ kyuki isme (open() mei in suggestion list pop up) aur bhi properties etc 
+ add hoti rehti hai to jaise hi aap
+ send bolte ho ( xhr.send() ) tab aapka actually mei wo ( open() )
+ call hota hai-->
+
+<!-- 14:22 -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/anuragsharma160'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.send()
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- isko ek bar right click karke open with live server karke
+ dekhte hai ki kya ho raha hai 
+ 
+ yeh lijiye isse (jo body tag mei table copy paste kari hai
+ readystate webpage se) koi matlab hai nahi hume
+ 
+ right click karke inspect karte hai-->
+
+<!-- 14:33 -->
+
+<!-- yeh 
+(jo body tag mei table copy paste kari hai
+ readystate webpage se and #212121 bgc) 
+to sirf isliye rakha hai taki hum pareshaan na ho aankhon pe -->
+
+<!-- browser console open kar liya -->
+
+<!-- ab dekhiye console mei kuch print karne ke liye bola hi nahi hai
+ to prin thoga hi kya
+ (means humne code editor mei console.log() karaya hi nahi to
+ browser console mei print hoga hi kya) -->
+
+<!-- par ek bar yahan pe (code editor) aake hum dekh lete hai ki 
+ xhr aapne yeh open ( xhr.open('GET', requestUrl) ) etc kar liya
+ to yeh kya ho raha hai kya
+ yahan tak hum pahuche bhi hai kya
+ 
+ console.log() 
+ aur isko bol dete hai "HERE" kyuki ek hi console.log hai but theek hai-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/anuragsharma160'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    console.log("HERE")
+    xhr.send()
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- 14:55 -->
+
+<!-- to hum yahan pe (browser console mei) isko dekhte hai to
+ HERE humare pas atleast aa to gaya 
+ 
+theek hai to mamla chal to raha hai, kuch to ho raha hai pata nahi
+kya hua hai but kuch to o raha hai-->
+
+<!-- ab actually mei kya hota hai , isko console.log("HERE") ko
+ hatate hai (backspace kar diya)
+  -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/anuragsharma160'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    
+    xhr.send()
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+
+<!-- jaise hi aapne yeh request ( xhr.open('GET', requestUrl) )
+  bheji hai tab aapki kya hai ki yeh request jo hai
+ na yeh change hoti hai yaani ki yeh jo aapke pas status codes 
+ (readystate webpage mei table hai -- Value State Description)
+ hai yeh sare change hote hai (see table)
+ 
+ yeh 0 state mei, 1 state mei, 2 state mei , (see table under Value)
+ yeh sare change hote rehte
+ hai continuously 
+ 
+ (15:21)-->
+
+<!-- (code editor mei aa gaye)
+ dekh lete hai change ho rahe hai ya aise hi bol rahe ho hawa mei hi
+ nahi hawa mei nahi bolte , actually mei change hote hai (status codes) 
+ 
+ console.log()
+ 
+ aa... to isko bolte hai xhr.
+ console.log(xhr.)
+ 
+ aur yahan pe humare pas jo value aati hai wo aati hai -- readyState
+ console.log(xhr.readyState) 15:33-->
