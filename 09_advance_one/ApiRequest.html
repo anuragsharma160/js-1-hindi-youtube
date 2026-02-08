@@ -1199,3 +1199,145 @@ XMLHttpRequest.send
  (in browser console responseText nahi aa raha hai , error aa rahi hai)-->
 
 <!-- 19:12 -->
+
+<!-- ab aap kahenge yeh responseText ( console.log(responseText) )
+ actually mei hai kya , yeh ( responseText ) variable etc to kabhi
+ declare hua hi nahi tha, 
+ to mere function
+ 
+ ( xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            console.log(responseText)
+        }
+    } )
+        
+ ko pata kaise lagega ki responseText ( console.log(responseText) )
+ naam ki koi cheej hai (19:22)-->
+
+<!-- mai iski jagah responseText ( console.log(responseText) ) 
+ ki jagah superman bhi to likh
+ sakta tha, haa bilkul likh sakte the -->
+
+<!-- dekhiye actually mei yeh pata karne ke liye ki 
+ iss particular object 
+
+ ( xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            console.log(responseText)
+        }
+    } )
+
+ ke upar ya iss particular function
+
+ ( xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            console.log(responseText)
+        }
+    } )
+
+ke andar hi mujhe chahiye yeh ( console.log(responseText) ) 
+to isi ( console.log(responseText) ) ka ek actually mei aapko
+ bolna padega this.responseText (as follows)
+ 
+  xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            console.log(this.responseText)
+        }
+    } 
+        
+matlab isi context 
+
+( xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            console.log(this.responseText)
+        }
+    } mei scope of function)
+
+ki mai baat kar raha hu -->
+
+<!-- this ke bare mei aur hum charcha karenge prototype ke andar
+ aage aur
+ aa... but actually mei jaise hi aapne yeh this lagaya
+ ( console.log(this.responseText) ) to ab yahan pe (see browser console)
+  kaam ho gaya
+  humare pas yeh login details etc sab aa gaya
+  (see browser console)
+  
+  19:46-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/anuragsharma160'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            console.log(this.responseText)
+        }
+    }
+    xhr.send();
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- 19:46 -->
+
+<!-- aa... , this ( console.log(this.responseText) )
+ ke liye mat ghabrayiye, mere pas intejaam hai uska bhi
+ chinta mat kijiye aaye hai to javascript poori sikha ke jayenge
+ 
+ this ( console.log(this.responseText) ) ki charcha hum karenge
+ prototype mei, tab aapko actually mei samajh mei ayega ki yeh context
+ hota kya hai, to advance part mei aaye hai just
+ 
+ iss portion ( console.log(this.responseText) mei this. ko)
+ ko abhi ignore kar dijiye, aapko yeh this lagana padega,
+ aa..., solution itna sa hai ki mai current context
+ 
+ ( xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            console.log(this.responseText)
+        }
+    } mei scope of function)
+        
+ki baat kar raha hu aur jab bhi aap current context ki baat karte
+hai to usi context pe this lagaya jaata hai
+( console.log(this.responseText) )-->
+
+<!-- 20:09 -->
+
+<!-- theek hai baaki ab samjhayenge aapko aur
+ achha ab aapke pas aa gaya hai responseText (see browser console) 
+ to aap kahenge are wah responseText to aa gaya hai,
+ 
+ to agar mujhe chahiye ki hitesh choudhary ke followers dekhne hai
+ mujhe, aa..., kahan pe dekhne hai github pe 
+ (scroll down to see followers in browser console)
+ to followers hai kya yahan pe milte hai kya,
+ haa ji followers yeh rahe
+ (scroll down to see followers in browser console)
+ 
+ "followers": 0,
+
+ 20:25-->
