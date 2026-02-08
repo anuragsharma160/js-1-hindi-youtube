@@ -705,5 +705,497 @@ likh liya ApiRequest(2).html file mei -->
  aa... to isko bolte hai xhr.
  console.log(xhr.)
  
- aur yahan pe humare pas jo value aati hai wo aati hai -- readyState
+ aur yahan pe humare pas jo value aati hai wo hai -- readyState
  console.log(xhr.readyState) 15:33-->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/anuragsharma160'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    console.log(xhr.readyState)
+    xhr.send()
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- to ek bar readyState ko print kara ke dekhte hai humare pas
+ actually mei change ho rahe hai ya nahi ho rahe hai , 
+ to wapas se shrink kar lete hai 
+ (browser window ko horizontally shrink kar liya sir ne) -->
+
+<!-- to dekhiye (see in browser console)
+  readyState abhi humare pas 1 hai , isko hum reload kar lete hai
+  (browser ko reload kar liya) 
+ (browser console mei 1 likha hua aa gaya) -->
+
+<!-- to yeh humare pas readyState jo print hui hai wo 1 print ho
+ rahi hai (see in browser console 1 likha hua hai) -->
+
+<!-- 15:47 -->
+
+<!-- theek hai ji, har bar hi 1 print ho rahi hai (see in browser console)
+ aa... nahi actually mei aisa nahi hai, isko 
+ (readyState / jo 1 likha hua hai in browser console)
+ hum track kar sakte
+ hai kyuki jaise hi humare readyState 0 se 1 hui
+ 
+ aa... bas theek hai uske baad ek hi bar to aap usko console.log
+ (console.log(xhr.readyState))
+ kar rahe hai to yahan tak (16:01)
+ ( xhr.open('GET', requestUrl) ) 
+ jab tak pahucha to wo (readyState) 1 ho gayi thi-->
+
+<!-- 16:02 -->
+
+<!-- uske baad continuosly to aapne bola hi nahi na track karni hai
+ (readyState),
+ continuously track karni hai kya -- haa
+ to usko batana padega ki continuously track karni hai sirf itne
+ mei hi humara kaam nahi chalega 
+ 
+ to continuously track kar lete hai
+ 
+ 16:12-->
+
+<!-- ( to xhr.open('GET', requestUrl) ko comment out kar diya sir ne ) -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/anuragsharma160'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl) commented out
+    console.log(xhr.readyState)
+    xhr.send()
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- to continuously track karne ke liye xhr aapko bolta hai
+ 
+xhr.
+
+ki aap kya karo uski state change kar lo, 
+to onreadystatechange aapko deta hai
+(means xhr aapko onreadystatechange deta hai)
+
+xhr.onreadystatechange
+
+achha by the way yeh jo onreadystate ( onreadystatechange ) aur 
+iss tareh ke hai na yeh subscriber models etc aage jaake
+aap jaise work karoge firebase ke andar ya appwrite ke andar ya
+unme to wahan pe bhi aapko aisi states milti hai jo
+continuously cheejon ko monitor karti hai
+
+16:33
+
+yeh lijiye onreadystate (onreadystatechange)
+
+xhr.onreadystatechange()-->
+
+<!-- ab isko ( xhr.onreadystatechange() mei onreadystatechange() ko)
+ kya kya chahiye
+ 
+ isko ( onreadystatechange() ko ) actually mei itni koi hajaar
+ cheejein chahiye nahi yeh actually mei iss tareh
+ ( xhr.onreadystatechange() )
+ se nahi
+ 
+ xhr.onreadystatechange
+ 
+ yeh x.onreadystate (xhr.onreadystatechange) kya hai yeh actually mei ek
+ function leta hai ki jab state ko change ho to kya karna hai
+ mere ko wo to batao mujhe ( mujhe means onreadystatechange ko )
+ 
+ xhr.onreadystatechange = -->
+
+<!-- to uske liye aapko ek function likhna padta hai yeh lijiye
+ humne function likh diya
+ 
+ xhr.onreadystatechange = function(){
+ 
+ }
+
+ 16:52
+ -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/anuragsharma160'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl) commented out
+    xhr.onreadystatechange = function(){
+    
+    }
+    console.log(xhr.readyState)
+    xhr.send()
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- 16:52 -->
+
+<!-- ab iss function ke
+ 
+( xhr.onreadystatechange = function(){
+    
+    } )
+
+andar console.log karke dekhte hai
+ chaliye ji
+ 
+ to iss console.log ( console.log(xhr.readyState) ) ko 
+ yahin
+ 
+ ( xhr.onreadystatechange = function(){
+    
+    } )
+
+ likh dete hai kyuki bahar likh ke bhi kya hi karenge
+ 
+ 16:59-->
+
+<!-- theek hai yeh lijiye -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/anuragsharma160'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl) commented out
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+    }
+    xhr.send()
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- 17:00 -->
+
+<!-- save 
+ to ab isko wapas se aate hai 
+ (go to browser console)
+ yahan pe ab hum aaye aur isko kara refresh
+ (browser console ko reload kar liya)-->
+
+<!-- to ab humare pas actually mei readystate...
+ actually mei kuch aya hi nahi hai data humare pas i think,
+ theek hai ji
+ 
+ clear browser console and reload kar liya browser console ko-->
+
+<!-- error in browser console
+ 
+Uncaught InvalidStateError: Failed to execute 'send' on 'XMLHttpRequest': The object's state must be OPENED.
+    at ApieRequest(2).html:60:9
+(anonymous)	@	ApieRequest(2).html:60
+-->
+
+<!-- achha kuch problem hui yahan pe ( xhr.send() )
+ semicolon ; bhi add kar lete hai vaise to nahi hona chahiye-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/anuragsharma160'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl) commented out
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+    }
+    xhr.send();
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- 17:22 -->
+
+<!-- same error ayi 
+Uncaught InvalidStateError: Failed to execute 'send' on 'XMLHttpRequest': The object's state must be OPENED.
+    at ApieRequest(2).html:60:9
+(anonymous)	@	ApieRequest(2).html:60 
+-->
+
+<!-- i think maine yahan pe kuch to 
+ onreadystatechange... = function(){}... 
+ chaliye ek second dijiye mai jara pata karta hu ki 
+ actually mei kya issue aya hai iske andar-->
+
+<!-- ofho... issue kuch bhi nahi tha, bas 
+ yahan pe
+ ( xhr.open('GET', requestUrl) commented out )
+ maine galti se isko 
+ ( xhr.open('GET', requestUrl) commented out )
+ comment out kar diya
+-->
+
+<!-- 17:39 -->
+
+<!-- aap mei se kayi logo ne already dekh liya hoga,
+ ( to isko ( xhr.open('GET', requestUrl) commented out )
+ comment on kar liya )
+ 
+ to actually mei aapne request bheji hi nahi kabhi
+ ( xhr.open('GET', requestUrl) commented out )
+ to track kisko hi karein ab
+ 
+ theek hai to chaliye, yeh ho gaya humara basic-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/anuragsharma160'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+    }
+    xhr.send();
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- 17:47 -->
+
+<!-- ab chalte hai wapas se (go to browser console)
+ dekhte hai track ho rahi hai kya
+ to haa ji ab request humari track ho rahi hai
+ (browser console mei 2 3 4 aa gaya)
+ 
+ isko ek bar refresh kar lete hai (browser ko reload kar liya)-->
+
+<!-- to dekhiye humare pas 2 3 4 (see in browser console)
+1 to obvious si baat hai wo (1 to) to first stage hai uske baad
+to check ho hi nahi raha tha (17:57)
+-->
+
+<!-- to ab dekhiye continuously jaise hi aapki 
+ steady change ho rahi hai
+ ( xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+    } mei xhr.onreadystatechange )
+ 
+ to humara yeh function 
+ ( xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+    } mei function(){} )
+     
+execute ho raha hai bar bar-->
+
+<!-- jaise hi state change hoti hai, har bar 
+ yeh function 
+ 
+ ( xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+    } mei function(){} )
+     
+execute hota hai
+
+18:06-->
+
+<!-- tab hi to isko asynchronous programming bolte hai ki aapko
+ koi na koi bata raha hai ki are kuch kaam ho gaya hai callback
+ mei wapas lag jaao (hand revolve kiya sir ne) 
+ wapas usko kuch kaam hai -->
+
+<!-- to yeh humara ho gaya basic -->
+
+<!-- achha ab isse kar kya kya sakte hai, 
+ ab theek hai itna to samajh mei aa gaya ki state change ho rahi hai
+ to kya state ko detect kar sakte ho , 
+ bilkul kar sakte hai ji isme kya baat hai
+ 
+ if(condition){
+ 
+ }-->
+
+<!-- to hum kya karte hai basically aake state ko bolte hai
+ ki humara kaam to ho raha hai state jab 4 pe pahuch jaati hai
+ 18:27 -->
+
+<!-- to kya kariye, yeh jo xhr hai 
+
+if(xhr){
+ 
+ } 
+
+iski (xhr ki, jo xhr if mei likha hai) jab yeh readystate jo hai
+
+if(xhr.readyState ){
+ 
+ }
+
+agar yeh 4 ho jaati hai to mere ko kuch kaam karna hai 
+
+if(xhr.readyState === 4){
+ 
+ }
+
+18:36 -->
+
+<!-- kya kaam karna hai
+ aa..., console.log() karna hai mujhe, 
+ 
+ if(xhr.readyState === 4){
+    console.log()
+ }
+ 
+ kya console.log() karna hai
+ actually mei yeh aapko jo return milta hai wo aapko
+ milta hai ek response
+ 
+ if(xhr.readyState === 4){
+    console.log(response)
+ }-->
+
+<!-- to isko bola jaata hai kuch bhi bol dijiye responseText bol
+ lete hai yeh lijiye responseText
+ 
+ if(xhr.readyState === 4){
+    console.log(responseText)
+ }
+ (iss function se jo return milta hai usko responseText 
+ bol lete hai/ bola jata hai)
+ 
+ 18:52-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/anuragsharma160'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            console.log(responseText)
+        }
+    }
+    xhr.send();
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- 18:52 -->
+
+<!-- to console.log() karke dekhte hai responseText ko,
+ (see browser console)
+ 
+ to dekhiye abhi humare pas kuch console.log (browser console) ke andar 
+ yeh responseText ( console.log(responseText) )
+ aa nahi raha hai
+ 
+ ( error
+ 
+ Uncaught ReferenceError: responseText is not defined
+    at xhr.onreadystatechange (ApieRequest(2).html:60:25)
+xhr.onreadystatechange	@	ApieRequest(2).html:60
+XMLHttpRequest.send		
+(anonymous)	@	ApieRequest(2).html:63 )-->
+
+<!-- ek bar refresh karte hai isko (browser ko reload kar liya) 
+ theek hai ji aapke pas yeh saari states (2 3 4 in browser console) 
+ aa gayi hai lekin yeh responseText...
+ 
+ haa ji responseText ( console.log(responseText) ) to theek hai
+ but yeh responseText ( console.log(responseText) ) aa nahi raha hai
+ (in browser console responseText nahi aa raha hai , error aa rahi hai)-->
+
+<!-- 19:12 -->
