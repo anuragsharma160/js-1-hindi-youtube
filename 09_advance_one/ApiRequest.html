@@ -1341,3 +1341,460 @@ hai to usi context pe this lagaya jaata hai
  "followers": 0,
 
  20:25-->
+
+<!-- to kyuki yeh object hai
+(see browser console , "followers": 0 jiske andar hai
+wo ek object hai, means console.log(this.responseText) object print
+kara raha hai browser console mei as this.responseText object hai) 
+
+to mai yahan pe (in code editor) to
+easily dekh sakta hu 
+( console.log(this.responseText) mei this.responseText )
+
+to agar mai kya karu iss this.responseText 
+ ( console.log(this.responseText) mei this.responseText )
+  ko cut karu aur ek variable mei hold kar lu
+  const data naam se
+  
+  const data = this.responseText
+  to yeh poora ka poora aa gaya ab mere pas object data ke andar
+  (means data variable mei this.responseText object aa gaya)-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/anuragsharma160'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            const data = this.responseText 
+            console.log()
+        }
+    }
+    xhr.send();
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- 20:41 -->
+
+<!-- to mai kya kar sakta hu -- data. 
+ console.log(data.)
+ 
+ followers
+ 
+ console.log(data.followers)
+ to hum ne liya data.followers aur isko mai le sakta hu-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/anuragsharma160'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            const data = this.responseText 
+            console.log(data.followers)
+        }
+    }
+    xhr.send();
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- 20:51 -->
+
+<!-- theek hai ji baat sahi hai kyuki padh ke to yeh hi aye the
+ ki object mei se data nikaalna ho to dot karke nikaal sakte ho
+ ( console.log(data.followers) )-->
+
+<!-- ha ji theek hai, save , par yahan pe (see in browser console)
+ aap dekh rahe ho yeh
+ neeche aa raha hai undefined 
+ (browser console mei 2 3 4 ke neeche undefined aa raha hai)-->
+
+<!-- achha ji yeh kya hua mamla, refresh karte hai theek hai ji
+ (browser ko reload karte hai) theek hai ji states saari change
+ ho rahi hai (2 3 4 in browser console) aur yeh undefined aa raha hai
+ (2 3 4 undefined in browser console)
+ 
+ yeh undefined 
+ (2 3 4 undefined in browser console)
+ kyu aa raha hai , data to hai mere pas 
+ ( const data = this.responseText )
+  
+ agar mai console.log karke dekhu data
+ ( const data = this.responseText ) ko
+ to hopefully data 
+ ( const data = this.responseText )
+ hona chahiye mere pas 
+ 
+ console.log(data)-->
+
+<!-- yeh ( console.log(data) ) bhi karke dekh lete hai -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/anuragsharma160'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            const data = this.responseText 
+            console.log(data)
+            console.log(data.followers)
+        }
+    }
+    xhr.send();
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- haa ji data ( const data = this.responseText ) bhi hai
+ bilkul 
+ (browser console mei o/p is 2 3 4 , data object bada wala -- {},
+ then undefined)
+ 
+ to yeh undefined 
+ (browser console mei o/p is 2 3 4 , data object bada wala -- {},
+ then undefined)
+ kyu aa raha hai-->
+
+<!-- 21:18 -->
+
+<!-- undefined 
+(browser console mei o/p is 2 3 4 , data object bada wala -- {},
+ then undefined) 
+isliye aa raha hai kyuki -- type of
+karke dekhna padega ki yeh data
+(const data = this.responseText)
+ka type kya aa raha hai
+
+(means console.log(data) mei typeof karke dekhna padega
+ki data (const data = this.responseText) ka type kya aa raha hai, 
+means console.log(data) ko console.log(typeof data) karna padega
+)-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/anuragsharma160'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            const data = this.responseText 
+            console.log(typeof data)
+            console.log(data.followers)
+        }
+    }
+    xhr.send();
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- o/p in browser console (2 3 4 string undefined)
+ 
+are data (const data = this.responseText) ka type to string hai
+aapne to bola tha sir object hai
+
+21:26-->
+
+<!-- jab bhi aapke pas response (hand right to left hilaya sir ne)
+  aata hai url se wo string mei hi aata hai, most of the time
+  string mei hi aata hai, kuch cases mei aa jata hai direct object
+  but most of the time string aata hai-->
+
+<!-- to ab iss string 
+ ( console.log(typeof data) / const data = this.responseText ) 
+ ko convert kaise karna padega 
+ 
+ ( console.log(typeof data) mei typeof ko backspace kar liya)
+  
+ haa ji yeh to humne seekha hi nahi hai-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/anuragsharma160'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            const data = this.responseText
+            console.log( data)
+            console.log(data.followers)
+        }
+    }
+    xhr.send();
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- ... haa ji yeh to humne seekha hi nahi hai 
+ 
+21:40
+seekha hai abhi seekh lete hai just
+isko ( const data = this.responseText mei this.responseText ko )
+pehle wrap kar dijiye paranthesis se
+
+const data = (this.responseText)
+
+yeh lijiye wrap kar diya, ab iske andar kya hota hai paranthesis
+se jaise hi wrap kar diya to aapko yaad ho to maine bataya tha
+aapko early days classes mei jab aap keh rahe the 
+are bada hi boring chal raha hai, haa usi dauraan maine aapko
+sikhaya tha ki number mei aise convert karte hai (as follows)
+
+const data = Number(this.responseText)
+
+string mei aise convert karte hai (as follows)
+
+const data = String(this.responseText)
+
+to isi tareh se aap isko ( const data = (this.responseText) )
+json mei bhi convert kar sakte hai
+
+yeh ( const data = (this.responseText) ) dikhne mei object hai
+(see in browser console o/p of console.log( data) )
+but aisa nahi ki aake Object laga do yahan pe as follows
+
+const data = Object(this.responseText)
+(means aisa nahi ki isko ( const data = (this.responseText) )
+object mei convert karne ke liye 
+const data = Object(this.responseText) kar do)-->
+
+<!-- 22:06 -->
+
+<!-- yeh 
+ ( ( const data = (this.responseText) ) / const data = Object(this.responseText)) 
+json data hai actually mei
+
+ab json data mei convert karne ke liye aap JSON use karte ho all
+caps mei
+
+const data = JSON(this.responseText)
+
+uske baad ek method hota hai dot parse (.parse)
+
+const data = JSON.parse(this.responseText)
+
+parse kya karta hai string ko JSON mei convert kar deta hai
+22:18
+
+haa ji datatype hi hai bas yeh ho gaya aapka kaam
+(JSON datatype hi hai)-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/anuragsharma160'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText)
+            console.log( data)
+            console.log(data.followers)
+        }
+    }
+    xhr.send();
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- ab actually mei agar mai type of dekhta hu iska 
+ (const data = JSON.parse(this.responseText))
+ (means console.log( data) ko console.log(typeof data)
+ karta hu)-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/anuragsharma160'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText)
+            console.log(typeof data)
+            console.log(data.followers)
+        }
+    }
+    xhr.send();
+</script>
+</html> 
+
+likh liya ApiRequest(2).html file mei -->
+
+<!-- to ab mujhe pata hai yeh
+( const data = JSON.parse(this.responseText) ) 
+object ban gaya hai 
+(see browser console o/p 2 3 4 object 0
+
+0 means followers 0)-->
+
+<!-- ab object ban gaya to mai data
+( const data = JSON.parse(this.responseText) ) 
+ke andar se followers bhi nikaal paya 
+( console.log(data.followers) ) ,
+ to mere pas yeh followers aa gaye (see 0 in browser console)-->
+
+<!-- ab aapka kaam itna sa hai ki followers to maine aapke liye nikaal
+ diye hai, aap kya kariye, iss object 
+ ( const data = JSON.parse(this.responseText) ) 
+  mei se photo bhi nikaaliye meri (sir ki) 
+  photo ka url milta hai aur followers bhi nikaliye
+  aur ek card banayiye, haa ji yeh assignment hai aapka
+  aur yahan se
+  ( const requestUrl = 'https://api.github.com/users/anuragsharma160' )
+  jaise hi data aapke pas aa jaye
+  to ek button pe click kariye aur banda wo data le sakta hai
+  
+  to mera (sir ka) wahan pe photo aana chahiye aur mera
+  (sir ka) followers count aana chahiye
+  
+  22:56-->
+
+<!-- to yahan pe (inside body tag) jo body hai iske andar ek
+ object create karo, aa... poora javascript se create karna hai,
+ basic card koi sa bhi card le lo jiski height width kuch bhi ho,
+ ek photo wahan pe place kara do , 
+ neeche ek followers count place kara do
+ itna to kar hi sakte ho ab -->
+
+<!-- 23:07 -->
+
+<!-- theek hai ji to yeh rahi poori kahani poori charcha
+ humari xmlhttp request ki, fetch ki kahani bhi hogi par
+ fetch ke liye pehle promises etc thoda bahut padhna padega
+ uske baad karenge
+ achha chaliye yahan pe time stamp note kar dijiyega koi bhi
+ kyuki ab iske baad hum baat karne wale hai console.log ki
+ 
+ 23:22-->
+
+<!-- ab dekhiye humne kayi jagah yahan pe (above code mei) 
+ console kiya , console.log (console.log(typeof data);) console.log
+ (console.log(data.followers);)
+ but aapko shayad yeh jaan ke hairaani hogi ki actually
+ mei jo console.log hai ya poora console hai wo aap javascript ki
+ poori dekhenge recommendation mei ya guidelines mei standardization
+ mei wahan nahi milta hai-->
+
+<!-- achha kya console javascript ka part hai (23:41)
+ technically hai aur technically nahi bhi hai
+ 
+ console aur bahut sari aisi APIs jo javascript ke part hi nahi hoti
+ specially jaise aapne dekha hoga document,
+ document.getElementById, aa..., document se humne
+ bahut kuch kiya-->
+
+<!-- Lekin document bhi actually mei core javascript 
+ ka part hi nahi hai (23:56)
+ core javascript ke andar basic airthmetic operations kuch
+ functions executions loops etc yeh sab hota hai
+ 
+ yeh jo excesive API hai kyuki console.log hai kya actually mei
+ ek debugging tool hai debugger hai aapke browser ka dev tool hai
+ (24:09) developer tool-->
