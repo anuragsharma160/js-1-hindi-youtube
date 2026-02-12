@@ -1798,3 +1798,228 @@ ke andar se followers bhi nikaal paya
  yeh jo excesive API hai kyuki console.log hai kya actually mei
  ek debugging tool hai debugger hai aapke browser ka dev tool hai
  (24:09) developer tool-->
+
+<!-- haa ji to yeh (console.log()) aapko wahan nahi milta , yeh 
+ actually mei runtime jo hota hai javascript ka wo
+ (runtime / console.log) inject karta hai 
+ (console.log ko / runtime ko) -->
+
+<!-- achha ji hitesh yeh kya kya bol rahe ho , yeh sab kahan se kaise 
+ aaya , kyuki sir soch rahe the aapko thoda sa aur advance leke
+ jaye aapko bataye javascript under the hood kaise kaam karti hai-->
+
+<!-- to uske liye hume jaana padega yahan pe, thoda sa aapko advance
+ bata rahe hai kyuki maja aa raha hai to aap bhi maja lijiye thoda sa
+ 
+ (browser mei aa gaye)-->
+
+<!-- ab humne yeh to dekh liya tha ki javascript chalta kaise hai
+ haa ji runtime environment hote hai node js (node.js) etc chalate hai,
+ humne dekha ki bahut sara browser bhi chalta hai
+ 
+ node.js bhi kya hai ek tareh se ek implementation hi hai V8 engine ka
+ (browser mei -- github.com/v8 , open kar liya)-->
+
+<!-- 24:42 -->
+
+<!-- bahut sare engines hai jo javascript ko run karte hai ,
+ to usme se ek engine hai v8 engine 
+ 
+ ab iss v8 engine engine ki repository available hai, 
+ (browser mei -- github.com/v8 , mei Overview ke neeche
+ Pinned ke neeche v8 (clickable link hai) uspe click karke
+ open kar liya)
+ 
+ poora engine C++ mei likha hai , aur sabse jada powerful 
+ baat bhi javascript ki yeh hi hai ki javascript actually mei
+ run C++ se hi hoti hai-->
+
+<!-- ab iska matlab yeh nahi ki C++ best language hai javascript
+ kuch bhi nahi hai, nahi nahi aapki python bhi run to aise hi hoti hai
+ kyuki core language yeh (C++) hi hai, sab uske upar wrapper bane hue hai,
+ wrapper hai to hai, ab isme kya baat hai-->
+
+<!-- 25:07 -->
+
+<!-- to yahan pe (browser mei github repository mei) 
+ jo yeh v8 engine hai , yeh kya karta hai aapko yeh saare debugging
+ tools kuch APIs access yeh sab deta hai aapko ki aap actually mei
+ kaam kar paao
+ 
+ to console.log yeh bhi yahin pe (browser mei github repository mei)
+ available hota hai, actual implementation yahin hai,
+ javascript ka runtime hi aapko yeh sab deta hai
+ 
+ 25:22-->
+
+<!-- ab yahan pe (browser mei github repository mei)
+ jaise hi iske repository khoolenge , to aapko milega yahan pe
+ ek source (scroll down to see src folder)
+ 
+ openly publicly available hai github.com/v8/v8 pe (25:31)
+ ab iske andar aap yeh source open karenge (src folder karenge)
+ to yeh raha poora source code (jo src open hone ke baad dikh raha hai)
+ 
+ jayiye aur padh lijiye-->
+
+<!-- ab jitne log kehte hai ki haa mujhe to C++ aati hai mai padh lunga
+ isko (source code ko, jo src folder pe click karne ke baad khula hai)
+ nahi padh paoge sir nahi padh paoge yeh to guaranteed hai 
+ 
+ kyuki sir ko bhi C++ kaafi saalo se aati hai lekin sir bhi recently 
+ hi inko (source code ko, jo src folder pe click karne ke baad khula hai)
+ padh paya hu, recently matlab kuch 4 - 5 saal mei hi ki actually mei
+ kaise explore kiya jaata hai inn repositories ko kaise contribute kiya
+ jaata hai, kuch bugs hai issues hai to apne level pe kaise fix kiya
+ jaata hai
+ 
+ 25:57-->
+
+<!-- to iske andar jaise hi source ke andar ayein 
+(src folder ke andar) 
+to dekhiye bahut saara aapko source ke (src ke) andar bhi milega
+aapke pas APIs hai, ab aap sochenge achha APIs hai
+to kya APIs yahin se (src) milti hai 
+(see api folder inside src folder)
+yeh (see api folder inside src folder) wo API nahi hai
+
+sir ne bataya na API ka matlab sirf yeh nahi hai ki data hi aa raha
+hai, ya do (2) system 
+(26:09)
+yahan pe (see api folder inside src folder)
+jo system baat kar rahe hai, wo aapka C++ syatem aur javascript system 
+baat kar rahe hai
+(click on api folder inside src folder)-->
+
+<!-- to iss apis (src folder ke andar ke api folder ke andar) 
+ ke andar bhi aapke pas kaafi hai ki arguments kaise aate hai 
+ (api-arguments-inl.h),
+ macros kaise run hote hai , natives kaise run hote hai (api-natives.h)
+ 
+ haa ji kaafi alag level ka C++ hai lekin
+ 
+ (now back to src folder aa gaye)
+ 
+ lekin isme (src folder mei) ek aapke pas hai folder hai d8 karke
+ (click on d8 folder)
+ yeh jo d8 hai na yeh bada hi interesting folder hai, 
+ iss d8 folder ke andar bahut saare bahut saare kaam hote hai,
+ -->
+
+<!-- iss d8 ke andar hi aapko yahan dikhega ek 
+ d8-console.cc (d8-console.cc)
+ aur ek d8-console.headers (d8-console.h) 
+ 
+ (26:38)
+ 
+ iske andar yeh jo console.cc (d8-console.cc) hai na
+ (click on d8-console.cc) yehi actually mei console.log hai
+ 
+ haa ji yahan se 
+ (inside d8-console.cc)
+ aapka console.log actually mei aata hai-->
+
+<!-- implementation aapka obvious si baat hai C++ mei hai 
+(see "src/d8/d8-console.h" in #include "src/d8/d8-console.h") 
+but poora javascript hi actually mei wrapper hai ek C++ ke upar
+isliye to bada interesting programming language hai javascript-->
+
+<!-- to yahan pe 
+(inside d8-console.cc)
+aapko yeh ek implementation deta hai ki aap console.log kar paao
+aur poora aapka write file 
+( void WriteToFile(const char* prefix, FILE* file, Isolate* isolate, ) 
+ achha yeh jo write file hoti hai na jis tareh se aap bolte hai ki
+ print f karane ke baad screen pe likh do,
+ usi tareh se aapko usko
+ bol sakte hai ki kahin aur bhi likh do 
+ 
+ to yeh kyuki poora ka poora engine browser ke andar jaata hai
+ to browser ko bolta hai ki aapko aise directly print nahi kar deta hai,
+ mai aapko ek dev tool ki space batata hu development tool jo ki
+ hai aapki inspect element ke andar console mei to wahan pe aap
+ likhiye
+ 
+ 27:18-->
+
+<!-- to wahan pe actually mei yeh poori files 
+(void WriteToFile(const char* prefix, FILE* file, Isolate* isolate,) 
+likhi jaati hai aur usi tareh se kaam hota hai
+
+vaise to aap chahein to easily isko 
+(inside d8-console.cc)
+chapgpt pe daal ke poora dekh bhi sakte hai kaafi achhe 
+comments etc bhi hai 
+(  // Flush the file to avoid output to pile up in a buffer. Console output is
+  // often used for timing, so it should appear as soon as the code is executed.)
+
+(scroll down inside inside d8-console.cc to see) -->
+
+<!-- ab interesting cheej kya hai jaise hi aap isme thoda sa aur
+ scroll karenge 
+ (scroll down inside inside d8-console.cc to see)
+ (27:30)
+ 
+ to aapko dikhega kuch thoda sa yeh raha
+ ( 
+ void D8Console::Log(const debug::ConsoleCallArguments& args,
+                    const v8::debug::ConsoleContext&) {
+  WriteToFile(nullptr, stdout, isolate_, args);
+} 
+  
+see line 84 )
+ 
+to aapka jo actually mei jo console.log hai wo technically yeh hi
+( 
+ void D8Console::Log(const debug::ConsoleCallArguments& args,
+                    const v8::debug::ConsoleContext&) {
+  WriteToFile(nullptr, stdout, isolate_, args);
+} 
+  
+see line 84 )
+
+hai write to file to upar dekha hi tha
+ (WriteToFile(nullptr, stdout, isolate_, args);)
+ method define tha wo actually mei responsible hai usko write karne ke
+ liye but actual implementation yeh hi hai
+ 
+ ( void D8Console::Log mei ::Log)
+  -->
+
+<!-- 27:46 -->
+
+<!-- yeh jo D8 console hai 
+ 
+(void D8Console::Log(const debug::ConsoleCallArguments& args,)
+yeh hi aapka name space hai aur yeh hi aapko console.log pe jaata hai
+(void D8Console::Log(const debug::ConsoleCallArguments& args,)
+-->
+
+<!-- aur yahin pe aapka file hai ki console.log aise hota hai 
+ (void D8Console::Log(const debug::ConsoleCallArguments& args,)
+ 
+ console.error iss tareh se aata hai
+ (void D8Console::Error(const debug::ConsoleCallArguments& args,)
+ 
+ console.warning iss tareh se aata hai
+ (void D8Console::Warn(const debug::ConsoleCallArguments& args,)
+ 
+ console.info iss tareh se aata hai
+ (void D8Console::Info(const debug::ConsoleCallArguments& args,)
+ 
+ console.debug
+ (void D8Console::Debug(const debug::ConsoleCallArguments& args,)
+ 
+ console.profile
+ ( void D8Console::Profile(const debug::ConsoleCallArguments& args,
+                        const v8::debug::ConsoleContext&) {
+  if (!profiler_) {
+    profiler_ = CpuProfiler::New(isolate_);
+  }
+  profiler_active_ = true;
+  profiler_->StartProfiling(String::Empty(isolate_), CpuProfilingOptions{});
+} )
+  
+console.profile to kher nahi hota hai
+
+(28:02)-->
