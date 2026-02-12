@@ -2020,6 +2020,156 @@ yeh hi aapka name space hai aur yeh hi aapko console.log pe jaata hai
   profiler_->StartProfiling(String::Empty(isolate_), CpuProfilingOptions{});
 } )
   
-console.profile to kher nahi hota hai
+console.profile to nahi hota hai kher
 
-(28:02)-->
+(28:02)
+
+wahan pe implementation-->
+
+<!-- but i think aapko ab shayad thoda sa samajh mei aa gaya hoga
+ ki kis tareh se values aati hai
+ 
+ timestamp jab aap print karte hai to kya karte hai
+ 
+ ( void D8Console::TimeStamp(const debug::ConsoleCallArguments& args,
+                          const v8::debug::ConsoleContext&) {
+  if (i::v8_flags.correctness_fuzzer_suppressions) return;
+  std::optional label = GetTimerLabel(args);
+  if (!label.has_value()) return;
+  base::TimeDelta delta = base::TimeTicks::Now() - origin_;
+  printf("console.timeStamp: %s, %f\n", label.value().c_str(),
+         delta.InMillisecondsF());
+} )
+         
+-->
+
+<!-- aur bhi bahut achha achha iske andar hai
+ (left mei d8 dropdown ko close kar diya sir ne)
+ 
+ kabhi fursat mei aapko aur bhi cheejein batayenge ki konsi
+ cheej kahan se aati hai 
+ 
+ ab aapko lagta hai ki nahi mujhe thoda sa aur iske bare mei
+ dekhna hai to dekhiye bada achha sa tarika batate hai sir
+ aapko yahan pe-->
+
+<!-- ab hume pata hai ki humara yeh jo main method hai write to file
+ 
+( void WriteToFile(const char* prefix, FILE* file, Isolate* isolate,
+                 const debug::ConsoleCallArguments& args) {
+  if (prefix) fprintf(file, "%s: ", prefix);
+  for (int i = 0; i < args.Length(); i++) {
+    HandleScope handle_scope(isolate);
+    if (i > 0) fprintf(file, " ");
+
+    Local<Value> arg = args[i];
+    Local<String> str_obj;
+
+    if (arg->IsSymbol()) arg = Local<Symbol>::Cast(arg)->Description(isolate);
+    if (!arg->ToString(isolate->GetCurrentContext()).ToLocal(&str_obj)) return;
+
+    v8::String::Utf8Value str(isolate, str_obj);
+    size_t n = fwrite(*str, sizeof(**str), str.length(), file);
+    if (n != str.length()) {
+      printf("Error in fwrite\n");
+      base::OS::ExitProcess(1);
+    }
+  }
+  fprintf(file, "\n");
+  // Flush the file to avoid output to pile up in a buffer. Console output is
+  // often used for timing, so it should appear as soon as the code is executed.
+  fflush(file);
+} ) 
+  
+actually mei saara kaam to yeh (above code block) hi kar raha hai
+
+to aap kya kar sakte hai aajkal bahut saare tools etc available hote
+hai jaise chatgpt etc , sir pieces use karte hai kyuki wo
+thoda sa better hai
+
+but chalte hai chaliye chatgpt ke upar, actually mei sir open karte
+hai isko chatgpt ko, thoda sa off screen open karna padega kyuki
+ho sakta hai kuch company ke important assets ho aur sir usko
+open kar lein-->
+
+<!-- theek hai ji to yeh aa gaye hum chapgpt pe
+ chatgpt 4 pe dekhenge 
+ (-- chat.openai.com/?model=gpt-4 in browser and enter)
+  
+ aur isko (iss ai search ko) bol denge chaliye
+ -- (type in ai search of chatgpt following line and code)
+ 
+ please explain this code to me:
+ 
+ void WriteToFile(const char* prefix, FILE* file, Isolate* isolate,
+                 const debug::ConsoleCallArguments& args) {
+  if (prefix) fprintf(file, "%s: ", prefix);
+  for (int i = 0; i < args.Length(); i++) {
+    HandleScope handle_scope(isolate);
+    if (i > 0) fprintf(file, " ");
+
+    Local<Value> arg = args[i];
+    Local<String> str_obj;
+
+    if (arg->IsSymbol()) arg = Local<Symbol>::Cast(arg)->Description(isolate);
+    if (!arg->ToString(isolate->GetCurrentContext()).ToLocal(&str_obj)) return;
+
+    v8::String::Utf8Value str(isolate, str_obj);
+    size_t n = fwrite(*str, sizeof(**str), str.length(), file);
+    if (n != str.length()) {
+      printf("Error in fwrite\n");
+      base::OS::ExitProcess(1);
+    }
+  }
+  fprintf(file, "\n");
+  // Flush the file to avoid output to pile up in a buffer. Console output is
+  // often used for timing, so it should appear as soon as the code is executed.
+  fflush(file);
+}
+  
+and press enter (shift enter for during search)-->
+
+<!-- ab chatgpt hai to AI se dar ke thodi bhaagenge, usko use karenge
+ aur kya karenge -->
+
+<!-- to yeh lijiye ab hopefully sir ne thoda paid version use kara hai
+ kyuki thoda jaldi ho jaye kaam, to yeh poora de raha hai ki written
+ in C++ hai , APIs hai V8 engine ki google open source javascript
+ engine, 
+ iska purpose hai to write javascript values to a file along with an
+ optional prefix
+ 
+ "Lets break down the function" ko one by one bata raha hai to aap
+ poora yahan pe dekh sakte hai 
+ kya prefix aa rahe hai kaisi values aa
+ rahi hai, (see prefix bullet point)
+ konsi file mei likhega, (see file bullet point)
+ isolate kya kar raha hai (see isolate bullet point)-->
+
+ <!-- to use kijiye AI kaafi achhe se bata raha hai aapko ki kya
+  ek ek cheej ho rahi hai, abhi to nahi karte hai ispe 
+  
+  (sir ne stop generating pe click kar diya in paid version of chatgpt
+  and bahar aa gaye chapgpt se)
+  
+  abhi charcha nahi karenge aur bhi kyuki sir think kaafi ho gaya
+  hai iske andar
+  
+  (wapas https://github.com/v8/v8/blob/main/src/d8/d8-console.cc
+  mei aa gaye)-->
+
+<!-- aapko kaafi detail mil gayi hai iske andar, to isiliye sir
+ kehte hai ki haa ji yeh baat to tay hai ki videos thode se late
+ aate hai aur obvious si baat hai ayenge kyuki itna material hoga 
+ itna indepth jayenge to uski preparation mei time to lagta hai
+ 
+ but bahut achha lagta hai jab aap log itna kehte hai ki aur
+ videos layiye fatafat layiye
+ 
+ achhe se dekha ki APIs kya hoti hai, kaise kaam mei aati hai
+ aur kis tareh se humne console.log ko bhi study kara in depth
+ ki kis tareh se hota hai
+ 
+ kabhi aur bhi charcha karenge iske bare mei-->
+
+ <!-- Class End -->
