@@ -219,3 +219,539 @@
 // ab sab kuch hai yeh polyfill se leke sab kuch hai aapko koi chinta ki
 // jarurat nahi hai (Polyfill point 4 see stackoverflow website)
 // (10:05)
+
+// ( https://blog.kuzzle.io/bluebird-vs-native-vs-async/await-state-of-promises-performances-in-2019
+// link open kar liya google search bar mei )
+
+// but ab kyuki iski baat aa hi gayi hai BlueBird ki aur Q library
+// ki to kayi bar log kya hai performance ko abhi bhi evaluate karte
+// hai ki performance kaisa hai BlueBird library kahin abhi bhi
+// jada powerful to nahi hai , to as such nahi hai aapne 
+// Doxbee etc kayiyon ke benchmark etc dekhoge 
+// (see Doxbee benchmark heading in website) 
+// (see Promises performances graph)
+// to nodejs ke andar (see x axis) jo 
+// native promises (Promise Native in graph) lage huye hai 
+// unka performance (see tall red bar) abhi bhi
+// aa... performance kaafi high hai (10:24)
+
+// memory consumption bhi high hai but 
+// (see Promises memory consumption graph) abhi yeh Node.js10,
+// 11 bahut purani baatein hum kar rahe hai yahan pe
+// (see Node.js 10 heading etc)
+
+// Lekin asli baat to yeh hi hai ki ab aapko inn libraries ki
+// jarurat nahi hai (BlueBird aur Q ki)
+
+// agar fir bhi aapko BlueBird inn libraries ka agar dekhna hai
+// to github pe abhi bhi available hai 
+// (bluebird promise github in google search bar)
+// (click on src folder then click on bluebird.js)
+// aap chahein to ek bar source code etc check kar sakte hai
+// ki kis tareh se pehle inko then ables banaya jaata tha (10:42)
+// ( "use strict"; )
+// aur inke saath hum libraries etc use karte the 
+// (var old to last line)
+
+// 10:45
+
+// aapko yeh code jaan ne ki samajhne ki jarurat nahi hai but
+// aapko sirf batana chahta hu ki haa kya kya features hume available
+// the , 
+// (bluebirdjs.com/docs/getting-started.html open kar liya google mei)
+// haa hum npm install ( npm install bluebird ) karke bluebird 
+// install kar lete the, require karke ( var Promise = require("bluebird"); )
+// aur uske baad hume features milte the
+
+// API Reference bluebird open kar liya google mei
+// ( http://bluebirdjs.com/docs/api-reference.html )
+// yeh humare kuch feature library thi , hum .then bhi use karte the
+// (see .then under Core), spread (.spread), catch (.catch) yeh sab
+// aa... bind (.bind) etc ab to bind kum use aata hai (11:03)
+
+// aa... but yeh sab (under Core) hum use karte the 
+// aur uss time pe yeh sab chalta tha, abhi bhi kar sakte hai
+// but ab jarurat nahi hai kyuki humari library 
+// khud itni powerful hai ab, theek hai to yeh to rahi humari history
+// ki baat, ab chalte hai humare code ke upar
+
+// 11:13
+
+// mujhe pata hai aapko history mei aur inn sab mei bada interest
+// aata hai jab mai aapse purani baatein karta hu ki haa aise bhi
+// kabhi hota tha, language ka achha knowledge milta hai ki haa
+// hum purane time se use kar rahe hai aur pehle kya use karte the
+// wo bhi pata hona chahiye
+
+// (code editor mei aa gaye)
+
+// const promiseOne = new Promise()
+
+// likh liya promises(2).js file mei
+
+// to yahan pe dekhiye promises jo hai na 
+// ( const promiseOne = new Promise() mei new Promise() )
+// isi tareh se bante hai ab aap promise banana seekh rahe hai
+
+// do (2) part hote hai 
+// ek consume karna promise ko,
+// ek promises ko create karna
+
+// ab koi usko consume kar raha hai to kisi ne to create
+// kara hoga na, to wo hi hum jaan na chah rahe hai ki actually
+// mei creation samajh mei aa jayega , to consumption bhi hume
+// samajh mei aa jayega aur next video mei hum jab fetch ke bare
+// mei baat karenge, tab aapko detail pata lagegi ki achha
+// behind the scene itna kuch hota hai fetch ke andar (11:46)
+
+// to prmoise hum yahan pe ( const promiseOne = new Promise() ) 
+// jaate hai, yeh Promise ( new Promise() ) jo hai na 
+// yeh apne aap ke andar ek callback leta hai, 
+
+// aur infact aage jaake aap dekhenge ki promise ( new Promise() )
+// ek tareh se callback hell jo ho jaata hai, ki
+// callback ke andar callback hai , uske andar bhi ek callback hai,
+// uske andar bhi ek callback hai, usko bhi reduce karta hai (11:59)
+
+// actually mei yeh jo promise hai ( new Promise() ) , iske andar aap
+// dete ho ek function , ab aap arrow function do, basic function do
+// aapke upar hai koi dikkat wali baat hai nahi
+
+// const promiseOne = new Promise(function())
+
+// likh liya promises(2).js file mei
+
+// iss function ( new Promise(function(){}) ) ke do (2) part hote hai
+// aa... pehla part hota hai resolve
+
+// const promiseOne = new Promise(function(resolve))
+
+// likh liya promises(2).js file mei
+
+// aur dusre part ko bola jaata hai reject
+
+// const promiseOne = new Promise(function(resolve, reject))
+
+// likh liya promises(2).js file mei
+
+// dekhiye promise ya to poora hoga ya nahi hoga jaise aapne
+// kaha ki Hitesh Sir videos leke ayiye javascript ke
+// ya to uss din mai (Sir) launga ya to ek hafte baad launga
+
+// 12:21
+
+// to ya to eventually resolve hoga ya fir maine (Sir ne)
+// series (JS playlist) banani hi band kar di, vaise to
+// hoga nahi but ho sakta hai, chances hai ki band kar dein
+// series banana (JS playlist) ki nahi students subscribe etc
+// nahi kar rahe hai, koi share kar nahi raha ,to kyu hi itni
+// mehnat karni, chalo isko chord dete hai
+// to aisa bhi ho sakta hai rejection bhi aa sakta hai
+
+// but promises ke do (2) hi part hai -- resolve aur rejection
+
+// const promiseOne = new Promise(function(resolve, reject){
+
+// })
+
+// likh liya promises(2).js file mei
+
+// abhi hum pehle yaad karte hai ki kya kya aise kaam ho sakte hai
+// to yahan pe (inside function) aake aap saare ke saare simply
+// Do an async task
+
+// const promiseOne = new Promise(function(resolve, reject){
+    // Do an async task
+// })
+
+// likh liya promises(2).js file mei
+
+// 12:49
+
+// ab async task aapke kya kya ho sakte hai,
+// aa... aapke pas DB calls ho sakte hai 
+// (database call kiya, connect kiya, kuch data inject kiya,
+// receive kiya , kuch bhi kar sakte hai)
+
+// const promiseOne = new Promise(function(resolve, reject){
+    // Do an async task
+    // DB calls
+// })
+
+// likh liya promises(2).js file mei
+
+// ya fir aapke crypto ke kuch task ho sakte hai 
+// cryptography related
+
+// const promiseOne = new Promise(function(resolve, reject){
+    // Do an async task
+    // DB calls, cryptography
+// })
+
+// likh liya promises(2).js file mei
+
+// 13:04
+
+// graphy ( cryptography ) poora likh du varna log
+// crypto kuch aur samajh lenge
+
+// theek hai to cryptography related ho gaya
+
+// aur kya ho sakte hai network call ho sakte hai aapke,
+// to network related jo bhi aapko kaam karna hai
+// wo kar sakte hai , 
+
+// const promiseOne = new Promise(function(resolve, reject){
+    // Do an async task
+    // DB calls, cryptography, network
+// })
+
+// likh liya promises(2).js file mei
+
+// abhi hum yahan pe koi network call
+// wo sab nahi karenge , aap chahein to laga sakte hai
+// wo same code yahin pe, but abhi hum yahan pe ek dusra
+// function use kar lete hai jisko humne kaafi use kara 
+// setTimeout()
+
+// const promiseOne = new Promise(function(resolve, reject){
+    // Do an async task (commented out)
+    // DB calls, cryptography, network (commented out)
+    // setTimeout()
+// })
+
+// likh liya promises(2).js file mei
+
+// 13:21
+
+// setTimeout() se kya hoga koi function hai
+// jo ki execute hoga, 
+
+// const promiseOne = new Promise(function(resolve, reject){
+    // Do an async task (commented out)
+    // DB calls, cryptography, network (commented out)
+    // setTimeout(,)
+// })
+
+// likh liya promises(2).js file mei
+
+// (means setTimeout(,) mei comma , ke pehle koi function
+// ha jo ki execute hoga)
+
+// kitne time baad, suppose kariye
+// ek second baad (1000 ms)
+
+// const promiseOne = new Promise(function(resolve, reject){
+    // Do an async task (commented out)
+    // DB calls, cryptography, network (commented out)
+    // setTimeout(, 1000)
+// })
+
+// likh liya promises(2).js file mei
+
+// to humne yahan pe milliseconds mei de diya (13:29)
+
+// ab kya execute karana chahte ho, mai chahta hu
+// yahan pe ( setTimeout(, 1000) ) ek function ho
+// yeh iss tareh se
+
+// const promiseOne = new Promise(function(resolve, reject){
+    // Do an async task (commented out)
+    // DB calls, cryptography, network (commented out)
+    // setTimeout(function(){
+    // 
+    // }, 1000)
+// })
+
+// likh liya promises(2).js file mei
+
+// aur yeh function (setTimeout ke andra wala function)
+// simply bole ki aap kya kariye console.log() kariye
+// aur console.log kya kariye , koi bhi jo bhi
+// humara Async task tha (jo upar commented out likhe hai)
+// -- console.log('Aynnc task is complete') (13:43)
+
+// const promiseOne = new Promise(function(resolve, reject){
+    // Do an async task (commented out)
+    // DB calls, cryptography, network (commented out)
+    // setTimeout(function(){
+    //     console.log('Aynnc task is complete')
+    // }, 1000)
+// })
+
+// likh liya promises(2).js file mei
+
+// yeh lijiye aapka task complete ho gaya
+
+// achha ab ek cheej agar aapke dimag mei nahi aa rahi hai
+// to aani chahiye thi , kya cheej hai,
+// theek hai humne iss promise ke andar 
+// ( new Promise(function(resolve, reject){ ) bol diya
+// ki resolve aur reject hai 
+// ek second baad humara kaam ho gaya
+// ( console.log('Aynnc task is complete') )
+
+// iss resolve aur reject ne kiya kya
+// ( new Promise(function(resolve, reject){ )
+
+// aisa kar kya raha hai yeh resolve aur reject
+// ( new Promise(function(resolve, reject){ )
+// ki hum isko (resolve aur reject ko) use kar
+// rahe hai
+// (14:03)
+
+// haa yeh badi sochne ki interesting baat hai
+// ab dekhiye aapne promiseOne 
+// ( const promiseOne = new Promise(function(resolve, reject){ )
+// kiya, ab isko promise ko ( const promiseOne ) consume bhi karna hoga
+
+// promise actually mei jo create ho raha hai na
+// ( ( new Promise(function(resolve, reject){ ) )
+// isko (promise ko) humne ek variable mei hold kar
+// rakha hai, 
+// ( const promiseOne = new Promise(function(resolve, reject){ )
+// aapko jarurat nahi hai 
+// (variable mei hold karne ki jarurat nahi hai promise ko)
+
+// aap chahein to direct aise bhi likh sakte the as follows
+
+//   new Promise(function(resolve, reject){
+    // Do an async task (commented out)
+    // DB calls, cryptography, network (commented out)
+    // setTimeout(function(){
+    //     console.log('Aynnc task is complete')
+    // }, 1000)
+// })
+
+// wo bhi syntax abhi bataunga
+
+// 14:16
+
+// but abhi mai isko (promise ko) ek variable mei hold kar raha
+// hu,
+
+// ab kyuki promise create ho gaya hai to isko consume
+// karna hai, 
+// ab consumption kasie hota hai yeh -- promiseOne
+// ya jo bhi aapne variable mei usko hold kara hai
+
+// const promiseOne = new Promise(function(resolve, reject){
+    // Do an async task (commented out)
+    // DB calls, cryptography, network (commented out)
+    // setTimeout(function(){
+    //     console.log('Aynnc task is complete')
+    // }, 1000)
+// })
+
+// promiseOne
+
+// likh liya promises(2).js file mei
+
+// uske (jo promiseOne likha hai) baad hum laga sakte hai
+// dot then (.then)
+
+// promiseOne.then()
+
+// .then() ka jo hai seedha relation hai aapke resolve ke saath
+// ( const promiseOne = new Promise(function(resolve, reject){ )
+// kisi aur ke saath nahi hai, seedha connection hai resolve ke saath
+// ab kaise hai kya hai yeh agle video mei mai aapko
+// aur samjhaunga aur indepth ki actually mei behind the
+// scene kya hota hai but abhi ke liye itna samajh lete hai
+// ki resolve ( const promiseOne = new Promise(function(resolve, reject){ )
+// ka connection hai .then() ke saath ( promiseOne.then() )
+
+// const promiseOne = new Promise(function(resolve, reject){
+    // Do an async task (commented out)
+    // DB calls, cryptography, network (commented out)
+    // setTimeout(function(){
+    //     console.log('Aynnc task is complete')
+    // }, 1000)
+// })
+
+// promiseOne.then()
+
+// likh liya promises(2).js file mei
+
+// theek hai ji .then() ke andar kya milta hai aapko
+// 14:46
+// ek callback milta hai yani ki ek function milta hai
+// jiske saath aap jo bhi kaam kar sakte hai
+
+// const promiseOne = new Promise(function(resolve, reject){
+    // Do an async task (commented out)
+    // DB calls, cryptography, network (commented out)
+    // setTimeout(function(){
+    //     console.log('Aynnc task is complete')
+    // }, 1000)
+// })
+
+// promiseOne.then(function)
+
+// likh liya promises(2).js file mei
+
+// yeh function ( promiseOne.then(function) ) automatically
+// ek argument (parameter) receive karta hai jiska kaam hai
+// ki jo bhi yahan se as follows
+
+// setTimeout(function(){
+    //     console.log('Aynnc task is complete')
+    // }, 1000)
+
+// se kaam hoke hua hai (14:56), jo bhi aapko values 
+// deni hai wo value return hoti hai yahan pe 
+// inside following function as follows
+
+// promiseOne.then(function(){
+
+// })
+
+// 14:59
+
+// const promiseOne = new Promise(function(resolve, reject){
+    // Do an async task (commented out)
+    // DB calls, cryptography, network (commented out)
+    // setTimeout(function(){
+    //     console.log('Aynnc task is complete')
+    // }, 1000)
+// })
+
+// promiseOne.then(function(){
+
+// })
+
+// likh liya promises(2).js file mei
+
+// achha ab kya karte hai yeh value return karte hai
+// to console.log karte hai aur isko bolte hai
+// -- "Promise consumed"
+// console.log("Promise consumed")
+
+// const promiseOne = new Promise(function(resolve, reject){
+    // Do an async task (commented out)
+    // DB calls, cryptography, network (commented out)
+    // setTimeout(function(){
+    //     console.log('Aynnc task is complete')
+    // }, 1000)
+// })
+
+// promiseOne.then(function(){
+        // console.log("Promise consumed")
+// })
+
+// likh liya promises(2).js file mei
+
+// 15:10
+
+// theeh hai ji promise consume bhi kar liya, ab isko
+// run bhi karke dekhte hai file ko, aa... node se hi run
+// kar lete hai hum yahan pe
+// node ke andar 09_advance_one ke andar promises(2).js
+// naam se humari file hai
+
+// (type -- node '.\09_advance_one\promises(2).js' in terminal)
+
+// humne wait kara 1 second baad seedha isne bola -- Async task is completed
+// (o/p in terminal)
+// 15:26
+// achha Async task aapka ho gaya hai complete lekin kya aapne actually mei
+// properly iss promise ( const promiseOne = new Promise(function(resolve, reject){ )
+// ko create kara ya nahi kara kyuki yeh setTimeout (as follows)
+
+    // setTimeout(function(){
+    //     console.log('Aynnc task is complete')
+    // }, 1000)
+
+// to kya hai ek second baad execute ho gaya hai aapka actually mei
+// agar isko (promise ko) 
+// ( const promiseOne = new Promise(function(resolve, reject){ )
+// aapko properly consume karna hi tha yahan pe...
+
+// achha aapne yahan pe dekha promise is consumed ( "Promise consumed" )
+
+// ( // promiseOne.then(function(){
+        // console.log("Promise consumed")
+// }) )
+
+// yeh ( console.log("Promise consumed") ) aya kya kabhi bhi
+
+// node '.\09_advance_one\promises(2).js' in terminal and enter
+// o/p Async task is completed
+
+// dekhiye yeh to abhi tak aya hi nahi (see terminal)
+// to aapne async task (i.e. setTimeout)
+
+// ( // setTimeout(function(){
+    //     console.log('Aynnc task is complete')
+    // }, 1000) )
+
+// to complete kara diya lekin yeh jo promise hai 
+// ( console.log("Promise consumed") ) as follows
+
+// ( promiseOne.then(function(){
+        // console.log("Promise consumed")
+// }) )
+
+// yeh kabhi poora hi nahi kara
+
+// kehne ka yeh matlab hai ki aapne yeh jo resolve hai
+// ( const promiseOne = new Promise(function(resolve, reject){ )
+// aur yeh .then() hai
+
+// ( // promiseOne.then(function(){
+        // console.log("Promise consumed")
+// }) )
+
+// inko (resolve and .then() ko) kabhi connect hi nahi kara
+// aapas mei
+
+// agar inko (resolve and .then() ko) connect karna chahte hai
+// kya karna padega isresolve ek method hai yeh, 
+// aa... iss method ko aapko call karna padega,
+// yeh bada hi interesting method hai iske andar bahut sari
+// cheejein hoti hai parameters etc , yeh kuch cheejon ko set
+// bhi karta hai behind the scene, theek hai to yeh aapne
+// resolve connect kar diya -- resolve()
+
+// const promiseOne = new Promise(function(resolve, reject){
+    // Do an async task (commented out)
+    // DB calls, cryptography, network (commented out)
+    // setTimeout(function(){
+    //     console.log('Aynnc task is complete')
+    //     resolve() 
+    // }, 1000)
+// })
+
+// promiseOne.then(function(){
+        // console.log("Promise consumed")
+// })
+
+// likh liya promises(2).js file mei
+
+// 16:09
+
+// ab yeh jab resolve (resolve()) execute hoga, (jo resolve() likha hai)
+// jaise hi resolve() execute hoga, aap isme values bhi
+// pas kar sakte hai wo bhi karke dekhenge, tab yeh (resolve() / setTimeout) /
+// ( const promiseOne = new Promise(function(resolve, reject){ mei resolve )
+// actually mei connect hua hai .then() se
+
+// ( // promiseOne.then(function(){
+        // console.log("Promise consumed")
+// }) )
+
+// 16:18
+
+// ab kya hoga ab jaise hi mai isko save karta hu aur run karte hai
+// isko run karte hai dubara, 
+
+// node '.\09_advance_one\promises(2).js' in terminal
+// o/p Async task is completed
+// Promise consumed
+
+// to dekhiye Async task is completed aur Promise consumed (see o/p in terminal)
+
+// achha promise consumed kabhi bhi pehle nahi ayega 
+// (see o/p serial order / chronology)
+
+// kyuki pehle yeh task complete hua hai (16:32)
