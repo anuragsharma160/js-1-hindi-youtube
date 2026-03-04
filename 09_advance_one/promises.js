@@ -751,7 +751,416 @@
 
 // to dekhiye Async task is completed aur Promise consumed (see o/p in terminal)
 
-// achha promise consumed kabhi bhi pehle nahi ayega 
+// achha Promise consumed ( console.log("Promise consumed") )
+// kabhi bhi pehle nahi ayega 
 // (see o/p serial order / chronology)
 
-// kyuki pehle yeh task complete hua hai (16:32)
+// kyuki pehle yeh task (as follows)
+
+// ( // setTimeout(function(){
+    //     console.log('Aynnc task is complete')
+    //     resolve() 
+    // }, 1000) )
+
+// complete hua hai (16:32)
+// jo bhi aapka Aysnc tha ( console.log('Aynnc task is complete') )
+// fir aapne jaise hi yeh resolve() kiya (as follows)
+
+// ( // setTimeout(function(){
+    //     console.log('Aynnc task is complete')
+    //     resolve() 
+    // }, 1000) )
+
+// uske (resolve() ke) baad usne (as follows)
+
+// ( // promiseOne.then(function(){
+        // console.log("Promise consumed")
+// }) )
+
+// kaha ki achha ab mai resolve
+// ho gaya hu matlab mera ( ( // promiseOne.then(function(){ mei .then() as .then() ka link resolve() se hai) 
+// time aa gaya hai chalne ka tab yeh
+// Promise consumed part ( // console.log("Promise consumed") )
+// aapka run karega
+
+// 16:41
+
+// theek hai yeh basic aapko samajh mei aa gaya hai ab
+// kis tareh se hoti hai
+
+// theek hai ab hum thoda sa aur aage chalte hai ki yeh saara
+// kaam to humne ek ek variable mei step by step kiya
+
+// aapko kayi jagah yeh kaam iss tareh se (as follows) bhi hota milega
+// ki suppose kariye aapne kya kara ki mujhe ek promise banana hai
+// to yeh lijiye -- new Promise()
+
+// new Promise() 
+
+// likh liya promises(2).js file mei
+
+// maine aapko bataya tha ki variable mei store karna usko ( new Promise() )
+// jaruri nahi hai
+
+// ab hume yeh bhi pata hai ki Promise ( new Promise() )
+// ke andar ek function hota hai
+
+// new Promise(function()) 
+
+// likh liya promises(2).js file mei
+
+// iska ( new Promise(function()) mei function() ka )
+// part hota hai ek resolve aur ek part hota hai reject
+
+// new Promise(function(resolve, reject)) 
+
+// likh liya promises(2).js file mei
+
+// reject pe bhi baat karenge , chinta mat kijiye
+// uspe bhi karenge, to yeh ho gaya humara resolve aur reject
+// achha theek hai, ab yeh aa gaya hai humare pas method
+
+// new Promise(function(resolve, reject){
+
+// }) 
+
+// likh liya promises(2).js file mei
+
+// vapas se ho hi setTimeout use kar lete hai, yeh lijiye
+// setTimeout()
+
+// new Promise(function(resolve, reject){
+    //    setTimeout() 
+// }) 
+
+// likh liya promises(2).js file mei
+
+// setTimeout() ke andar maine kaha ki ek second (1000 ms) baad aap
+// wapas se jo bhi karna tha wo kar lijiye
+
+// new Promise(function(resolve, reject){
+    //    setTimeout(, 1000) 
+// }) 
+
+// likh liya promises(2).js file me
+
+// ( means setTimeout(, 1000) mei 1 second ke baad jo ,
+// ke pehle likhenge wo kar lijiye )
+
+// yeh likha humne function(){} , yeh lijiye bada hi basic sa
+// koi dikkat hai hi nahi isme to badi basic si baat hai
+
+// new Promise(function(resolve, reject){
+    //    setTimeout(function(){
+    // 
+    // }, 1000) 
+// }) 
+
+// likh liya promises(2).js file me
+
+// 17:32
+
+// theek hai ab iske andar kya karenge , wo hi saara kaam
+// karte hai, aa... console.log() kara lete hai ek to
+// isko ( console.log() ko ) bol dete hai ki aa... 
+// -- "Async task 2"
+
+// new Promise(function(resolve, reject){
+    //    setTimeout(function(){
+    //        console.log("Async task 2")  
+    // }, 1000) 
+// }) 
+
+// likh liya promises(2).js file me
+
+// theek hai ji aapka task 2 bhi ho gaya hai (17:47)
+// ab ki bar mai bhulunga nahi ki mujhe pata hai ki mujhe resolve()
+// ko bhi call karana hai , to yeh lijiye aapne resolve() ko
+// call kara diya -- resolve()
+
+// new Promise(function(resolve, reject){
+    //    setTimeout(function(){
+    //        console.log("Async task 2")
+    //        resolve()    
+    // }, 1000) 
+// }) 
+
+// likh liya promises(2).js file me
+
+// ab directly hum kya hai kyuki humne 
+// isko ( new Promise(function(resolve, reject){ )
+// kisi variable mei store hi nahi kara hai
+// to mai kya bol sakta hu isko ki -- .then()
+// yeh lijiye .then() aapne bol diya
+
+// new Promise(function(resolve, reject){
+    //    setTimeout(function(){
+    //        console.log("Async task 2")
+    //        resolve()    
+    // }, 1000) 
+
+// }).then() 
+
+// likh liya promises(2).js file me
+
+// .then() ke andar kya milega aapko -- ek function
+// milta hai, to yeh lijiye ek function
+
+// new Promise(function(resolve, reject){
+    //    setTimeout(function(){
+    //        console.log("Async task 2")
+    //        resolve()    
+    // }, 1000) 
+
+// }).then(function) 
+
+// likh liya promises(2).js file me
+
+// 18:03
+
+// aur yeh humne function liya aur yeh kaam kara
+// diya humne
+
+// new Promise(function(resolve, reject){
+    //    setTimeout(function(){
+    //        console.log("Async task 2")
+    //        resolve()    
+    // }, 1000) 
+
+// }).then(function(){
+
+// }) 
+
+// likh liya promises(2).js file me
+
+// ab yahan pe bhi hum console.log() kar sakte hai
+// to yeh lijiye console.log() kar diya
+// -- Async 2 resolved
+
+// new Promise(function(resolve, reject){
+    //    setTimeout(function(){
+    //        console.log("Async task 2")
+    //        resolve()    
+    // }, 1000) 
+
+// }).then(function(){
+//     console.log("Async 2 resolved") 
+// }) 
+
+// likh liya promises(2).js file me
+
+// ab isse kya hua ki actually mei ab do (2)
+// part mei karne ki bajaye jaisa ki humne pehle
+// kiya tha (see promiseOne example -- promiseOne.then()) (18:20)
+// ab humne ek hi part mei sara kar diya
+// (see this example) (as follows)
+
+// ( // new Promise(function(resolve, reject){
+    //    setTimeout(function(){
+    //        console.log("Async task 2")
+    //        resolve()    
+    // }, 1000) 
+
+// }).then(function(){
+//     console.log("Async 2 resolved") 
+// })  )
+
+// ki ek new Promise humne create kara (see this example)
+// (as follows)
+
+// ( // new Promise(function(resolve, reject){
+    //    setTimeout(function(){
+    //        console.log("Async task 2")
+    //        resolve()    
+    // }, 1000) 
+
+// }).then(function(){
+//     console.log("Async 2 resolved") 
+// })  )
+
+// 18:23
+
+// ab yeh Promise ( new Promise(function(resolve, reject){ )
+// ho sakta hai network request laa raha ho
+// ( i.e. network request in place of setTimeout )
+// ho sakta hai file handling kar raha ho 
+// ( i.e. file handling in place of setTimeout )
+// kuch bhi kar raha ho , hume koi matlab nahi hai 
+// ek second , do (2) second baad (see 1000 ms of setTimeout) 
+// jab bhi yeh eventually complete hoga 
+// (jab bhi yeh setTimeout eventually complete hoga)
+// to wo saara kaam ho jayega (setTimeout ka saara kaam ho jayega / setTimeout ke console.log ka saara kaam ho jayega)
+// uske baad yeh resolve() (setTimeout ka resolve()) inform
+// kar dega automatically .then() ko,
+
+// ( // }).then(function(){
+//          console.log("Async 2 resolved") 
+// }) ko )
+
+// , aap kaam kar loge
+
+// to ek bada hi basic example hai (18:40)
+
+// thoda sa dikhne mei syntax ho sakta hai aapko weird
+// lag raha ho kyuki jab humne last time baat kari thi
+// (ApiRequest.html file mei aa gaye)
+// tab hum yeh iss tareh se likh rahe the (as follows)
+
+// (     const requestUrl = 'https://api.github.com/users/anuragsharma160'
+    //   const xhr = new XMLHttpRequest();
+    //   xhr.open('GET', requestUrl)
+    //   xhr.onreadystatechange = function(){
+    //     console.log(xhr.readyState);
+    //     if (xhr.readyState === 4) {
+    //         const data = JSON.parse(this.responseText)
+    //         console.log(typeof data);
+    //         console.log(data.followers);
+    //     }
+    // }
+    // xhr.send(); )
+
+// ki yeh saara kaam khud hi ho raha hai requestUrl bana
+// rahe hai (const requestUrl)
+// fir yeh sab open kar rahe hai (xhr.open())
+// fir onreadystatechange , usko check kar rahe hai jaise
+// hi equals to ho jaa rahi hai ( if (xhr.readyState === 4) { )
+// (18:52) wo sab ho rahe hai,
+
+// yahan pe (promises.js file mei aa gaye) utna kaam nahi
+// karna pad raha , yahan pe simple sa hai 
+// Promise banao ( new Promise(function(resolve, reject){ )
+// (see second example) uske andar hume pata hai
+// resolve reject hoga ( new Promise(function(resolve, reject){ )
+
+// jaise hi resolve() (see resolve() of setTimeout of 2nd example) 
+// hoga to mujhe yeh part (.then() part) (as follows)
+
+// ( // }).then(function(){
+//     console.log("Async 2 resolved") 
+// })  )
+
+// mil jayega
+
+// (19:00)
+
+// theek hai to yeh hota hai bada basic aapka
+// consumption, aap isko chalao to run
+// karke dekh lo bar bar run karna mujhe itna
+// achha nahi lagta kyuki thoda sa hum deviate ho jaate hai
+
+// node '.\09_advance_one\promises(2).js' in terminal and enter
+// o/p Async task is completed
+// Promise consumed
+// Async task 2
+// Async 2 resolved
+
+// to dekhiye aapka async task complete ho gaya (see o/p)
+// fir aapka Promise consume ho gaya (see o/p)
+// fir task 2 aapka async hua (see o/p)
+// aur uske baad async 2 resolve ho gaya (see o/p)
+
+// 19:16
+
+// ab banate hai hum ek aur promise to uske andar aur
+// cheejein dekhte hai ki kaise kaise karte hai,
+// to ab hum banate hai apna second promise ya fir
+// third promise banate hai
+
+// actually mei aap isko (2nd example ko) second (second Peomise)
+// maan lijiye (19:32) , ab hum third promise
+// banate hai apna , theek hai ji, chaliye
+
+// to yeh banate hai hum promiseThree 
+// (two to ho gaya hai already i.e. promiseTwo)
+
+// const promiseThree
+
+// likh liya promises(2).js file mei
+
+// ab promise three ke andar kya kar rahe hai hum
+// wapas se wo hi new Promise(), yeh lijiye promise banaya
+
+// const promiseThree = new Promise()
+
+// likh liya promises(2).js file mei
+
+// aur aapne kaha tha uske ( new Promise() ) andar 
+// ek resolve hota hai
+// aur ek reject hota hai
+
+// const promiseThree = new Promise(resolve, reject)
+
+// likh liya promises(2).js file mei
+
+// theek hai ji maan li aapki baat, aa... promise
+// kar diya, achha isi tareh se karna hai kya
+// yeh resolve aur reject, haa test le raha tha thoda sa
+// (sir test le rahe the thoda sa)
+// kyuki syntax mujhe pata hai kayi log bhul gaye hai
+// (upar 1st example mei dekh liya syntax)
+
+// to resolve aur reject ko kariye yahan se cut
+// aur hume pata hai yeh callback hai ,
+// (means new Promise() ke andar ek callback function ayega)
+// to function likhiye, yeh likha
+
+// const promiseThree = new Promise(function(){})
+
+// likh liya promises(2).js file mei
+
+// aur yeh lijiye resolve reject iske andar daal dijiye
+
+// const promiseThree = new Promise(function(resolve, reject){})
+
+// likh liya promises(2).js file mei
+
+// aur yeh aapka ho gaya function yahan pe
+
+// const promiseThree = new Promise(function(resolve, reject){
+
+// })
+
+// likh liya promises(2).js file mei
+
+// theek hai ji yeh to ho gaya hai basic humara kaam
+// ki kis tareh se values aa rahi hai, 
+// kis tareh se values ja rahi hai
+// yeh lijiye
+
+// 20:13
+
+// achha ab nayi cheej hum kya dekhenge ki maine
+// aapse kaha tha ki yeh jo resolve hai
+// ( // const promiseThree = new Promise(function(resolve, reject){ )
+// yeh directly connected hai humare then ke andar (.then())
+
+// to sirf itna to kaam karunga nahi ki har bar setTimeout setTimeout
+// karunga aur console.log karaunga (20:26)
+
+// ho sakta hai network se koi data aya ho wo data
+// bhi to mujhe pass karna padega to wo bhi seekhna
+// padega kaise karte hai
+
+// bahut aasaan hai wapas se wo hi humara ghisa pita
+// setTimeout() hi use karne wale hai hum, uski to chinta
+// mat kijiye
+
+// const promiseThree = new Promise(function(resolve, reject){
+//     setTimeout() 
+// })
+
+// likh liya promises(2).js file mei
+
+// to yeh lijiye ek second (1000 ms) baad jo bhi ho
+// raha hai
+
+// const promiseThree = new Promise(function(resolve, reject){
+//     setTimeout(, 1000) 
+// })
+
+// likh liya promises(2).js file mei
+
+// (menas setTimeout(, 1000) mei 1000 ke pehle comma , se pehle
+//  jo bhi ho raha hai, wo kaam 1 second (1000 ms) baad hoga )
+
+// 20:39
