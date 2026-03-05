@@ -1164,3 +1164,604 @@
 //  jo bhi ho raha hai, wo kaam 1 second (1000 ms) baad hoga )
 
 // 20:39
+
+// aur yahan pe ( setTimeout(, 1000) ) humara function
+
+// const promiseThree = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+// 
+// }, 1000) 
+// })
+
+// likh liya promises(2).js file mei
+
+// ab suppose kariye iss function ( setTimeout(function(){ ) 
+// ne bahut saara kaam kara, kahin se network se jaake kuch
+// data laya , file system se kuch data laya , lekin actually
+// mei mujhe karna kya hai, karna to yeh hai ki actually mei
+// eventually jaake yeh jab promise (promiseThree) mai
+// consume karunga, 
+
+// const promiseThree = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+// 
+// }, 1000) 
+// })
+
+// promiseThree
+
+// likh liya promises(2).js file mei
+
+// uske (promiseThree) upar mai .then()
+// lagane wala hu
+
+// const promiseThree = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+// 
+// }, 1000) 
+// })
+
+// promiseThree.then()
+
+// likh liya promises(2).js file mei
+
+// to .then() ka yeh jo function hai (.then())
+// yahin pe (.then()) to mai saara kaam karaunga, 
+// isi ke (.then()) andar maine kaha
+// tha ki aapko saari value return hoti hai
+
+// const promiseThree = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+// 
+// }, 1000) 
+// })
+
+// promiseThree.then(function(){
+
+// })
+
+// likh liya promises(2).js file mei
+
+// but yahan se (as follows)
+
+// ( // const promiseThree = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+// 
+// }, 1000) 
+// }) )
+
+// yahan pe (as follows)
+
+// ( // promiseThree.then(function(){
+
+// }) )
+
+// values kaise pass karu, wo pass karne ka kaam
+// bhi humara resolve (resolve()) karega kyuki
+// resolve to lagana jaruri hai
+
+// to yeh resolve() humne lagaya
+
+// const promiseThree = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         resolve() 
+// }, 1000) 
+// })
+
+// promiseThree.then(function(){
+
+// })
+
+// likh liya promises(2).js file mei
+
+// 21:12
+
+// ab iss resolve ke andar actually mei parameters
+// mei aap data bhi pass kar sakte ho 
+
+// ( relate karo jo following humne thodi der pehle notes mei likha tha -- line 1178)
+// ( ab suppose kariye iss function ( setTimeout(function(){ ) 
+// ne bahut saara kaam kara, kahin se network se jaake kuch
+// data laya , file system se kuch data laya , )
+
+// jadatar jo data aapko pass hota hua dikhayi dega wo
+// ek object hoga iss tareh se - {} - resolve({})
+
+// const promiseThree = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         resolve({}) 
+// }, 1000) 
+// })
+
+// promiseThree.then(function(){
+
+// })
+
+// likh liya promises(2).js file mei
+
+// chaho to array pass karo aapka mann kare,
+// function pass kar do, aapka jo mann kare aap
+// pass karo
+
+// ab ek suppose kariye humne yahan pe ( resolve({}) )
+// username liya
+
+// const promiseThree = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         resolve({username:}) 
+// }, 1000) 
+// })
+
+// promiseThree.then(function(){
+
+// })
+
+// likh liya promises(2).js file mei
+
+// aur username hum lete hai yahan pe ( resolve({username:}) )
+// "Chai" , obvious si baat hai aur kya hi lenge
+
+// const promiseThree = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         resolve({username: "Chai"}) 
+// }, 1000) 
+// })
+
+// promiseThree.then(function(){
+
+// })
+
+// likh liya promises(2).js file mei
+
+// aur email bhi lete hai (21:33), to email
+// hai humara -- "chai@chaiaurcode.com"
+
+// const promiseThree = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         resolve({username: "Chai", email: "chai@chaiaurcode.com"}) 
+// }, 1000) 
+// })
+
+// promiseThree.then(function(){
+
+// })
+
+// likh liya promises(2).js file mei
+
+// theek hai, mera (Sir ka) nahi hai yeh domain ,
+// to example hi likh lete hai pata nahi kiske email
+// chala jayega (21:44) -- email: "chai@example.com"
+
+// const promiseThree = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         resolve({username: "Chai", email: "chai@example.com"}) 
+// }, 1000) 
+// })
+
+// promiseThree.then(function(){
+
+// })
+
+// likh liya promises(2).js file mei
+
+// theek hai to yeh humne le liya hai yahan pe
+// chai@example.com
+
+// ab baat yeh aati hai ki theek hai aapne resolve()
+// mei pass kar diya 
+// ( resolve({username: "Chai", email: "chai@example.com"}) )
+// but yahan pe (as follows)
+
+// ( // promiseThree.then(function(){
+
+// }) )
+
+// mai wo data lunga kaise, haa ji yeh interesting baat
+// hai ki kaise yeh data liya jayega (21:59)
+
+// dekhiye jaise hi aap bolte hai ki function ko
+// yahan pe ( promiseThree.then(function(){ )
+// aapne dot then (.then()) kar liya , to
+// resolve ( resolve({username: "Chai", email: "chai@example.com"})  )
+// aur iska ( promiseThree.then(function(){ ) connection
+// hai
+
+// to yahan pe ( promiseThree.then(function(){ mei () mei )
+// expect aap kar sakte ho by default ki kuch data
+// ayega, 
+
+// ab wo poora object hai 
+// ( resolve({username: "Chai", email: "chai@example.com"}) mei
+//  {username: "Chai", email: "chai@example.com"} poora object hai )
+
+// uss object ko maan lete hai ki hum uss object ko user
+// bula rahe hai
+
+// ( resolve({username: "Chai", email: "chai@example.com"}) mei
+//  {username: "Chai", email: "chai@example.com"} poora object hai
+//  {username: "Chai", email: "chai@example.com"} object ko user bula rahe hai )
+
+// const promiseThree = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         resolve({username: "Chai", email: "chai@example.com"}) 
+// }, 1000) 
+// })
+
+// promiseThree.then(function(user){
+
+// })
+
+// likh liya promises(2).js file mei
+
+// 22:11
+
+// to yahan pe ( promiseThree.then(function(user){ )
+// hum simply ek console.log() karke dekh lete hai
+// kya humare pas user mei print aati hai values
+
+// const promiseThree = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         resolve({username: "Chai", email: "chai@example.com"}) 
+// }, 1000) 
+// })
+
+// promiseThree.then(function(user){
+//       console.log(user)
+// })
+
+// likh liya promises(2).js file mei
+
+// theek hai save karte hai isko bhi run karke dekh
+// lete hai
+
+// node '.\09_advance_one\promises(2).js' in terminal
+
+// to ek second baad obviously hoga to dekhiye
+// Async 2 resolved to wo to upar ho gaya hai (see o/p)
+// but yahan pe (see o/p in terminal) ab mere pas 
+// wo data aa gaya hai ( { username: 'Chai', email: 'chai@example.com' } )
+
+// to yeh baat to confirm ho gayi hai ki jab bhi aapke
+// pas iss tareh ka syntax hai (22:31) (as follows)
+
+// ( // const promiseThree = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         resolve({username: "Chai", email: "chai@example.com"}) 
+// }, 1000) 
+// })
+
+// promiseThree.then(function(user){
+//       console.log(user)
+// }) )
+
+// hum jab jaise hi uska consumption karte hai (as follows)
+
+// ( // const promiseThree = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         resolve({username: "Chai", email: "chai@example.com"}) 
+// }, 1000) 
+// }) )
+
+// to resolve() ke andar jo bhi
+// ( resolve({username: "Chai", email: "chai@example.com"}) )
+// aap parameter pass karoge, wo parameter mujhe
+// yahan pe (as follows)
+
+// ( // promiseThree.then(function(user){
+//       console.log(user)
+// }) mei console.log(user) mei user ki taraf ishara kiya sir ne )
+
+// mil jata hai , usme koi bhi issue nahi hai
+// 22:39
+
+// theek hai to yeh to ho gaya humara basic ki kis
+// tareh se data consumption hota hai , values aati hai
+// aur yeh sab aati hai , but abhi bhi baaki hai
+// aisi baat nahi hai ki kaam ho gaya hai
+
+// ab hum humara fourth promise banate hai, 
+// ek ek karke har promise ke andar ek na ek nayi cheej hum
+// seekhte ja rahe hai, isliye yeh syntax mujhe (Sir ko)
+// jada achha lagta hai, to yeh ho gaye humare promiseFour
+// const promiseFour
+
+// const promiseFour 
+
+// likh liya promises(2).js file mei
+
+// yeh lijiye promiseFour kaise banega, wo hi
+// same humari kahani , usme to koi dikkat hai hi nahi
+// ki yeh lijiye Promise (23:03)
+
+// const promiseFour = new Promise()
+
+// likh liya promises(2).js file mei
+
+// iss bar to aap yaad bhi rakhenge ki uske ( new Promise() )
+// andar function hai,
+
+// const promiseFour = new Promise(function)
+
+// likh liya promises(2).js file mei
+
+// uske andar (function ke) resolve hai, reject hai,
+// aur yeh ho gaya kaam
+
+// const promiseFour = new Promise(function(resolve, reject){
+
+// })
+
+// likh liya promises(2).js file mei
+
+// achha theek hai ji, ab wapas se wo hi humara setTimeout() function
+// le lete hai ek bar, theek hai yeh ho gaya humara setTimeout()
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout()
+// })
+
+// likh liya promises(2).js file mei
+
+// aur yeh lijiye yeh hum le liya 1000 pe (1000 ms) , 2000 pe
+// (2000 ms) jaisa bhi aapka mann kare
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(, 1000)
+// })
+
+// likh liya promises(2).js file mei
+
+// yeh lijiye function bhi le liya aur yeh values bhi likh
+// li
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+// 
+// }, 1000)
+// })
+
+// likh liya promises(2).js file mei
+
+// theek hai ab kya karna hai ki ab iske andar kya karta hu
+// mai aapko ek error bhi deta hu
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error
+// }, 1000)
+// })
+
+// likh liya promises(2).js file mei
+
+// to suppose kariye, error true hai yani ki error
+// hai humare pas (23:33)
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+// }, 1000)
+// })
+
+// likh liya promises(2).js file mei
+
+// 23:34
+
+// ab error base checking pe karke mai bolunga ki
+// actually mei resolve hoga ya reject hoga
+
+// ab suppose kariye maine web request kari network request
+// kari ya file access karni chahi , 
+// file access ho gayi , to kuch bolunga , 
+// file access nahi ho payi , tab bhi to kuch bolna padega
+
+// 23:47
+
+// to uss hisab se karenge
+
+// to suppose kariye ki hum yahan pe conditional check (if)
+// laga dete hai
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (condition) {
+            
+//         } 
+// }, 1000)
+// })
+
+// likh liya promises(2).js file mei
+
+// ... to suppose kariye ki hum yahan pe conditional check (if)
+// laga dete hai -- ki agar error nahi hai (!error)
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+            
+//         } 
+// }, 1000)
+// })
+
+// likh liya promises(2).js file mei
+
+// 23:53
+
+// to kya karo, agar error nahi hai, to obvious si baat
+// hai resolve kar do cheejon ko, error nahi hai 
+// matlab ki resolve ho gayi hai (cheejein resolve ho gayi hai)
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve()
+//         } 
+// }, 1000)
+// })
+
+// likh liya promises(2).js file mei
+
+// 24:00
+
+// ab uske (resolve()) andar kya kara maine , 
+// yahan pe (resolve()) wapas se ek object pass
+// kar diya -- resolve({})
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({})
+//         } 
+// }, 1000)
+// })
+
+// likh liya promises(2).js file mei
+
+// ... ki suppose kariye kisi file mei jaake aye the
+// aap aur database bhi ho sakta hai uss file...
+// database bhi to file hi hai file hi to access kar
+// rahe hai (24:09)
+
+// to suppose kariye uska username jo hai wo
+// hitesh aaya
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "hitesh"})
+//         } 
+// }, 1000)
+// })
+
+// likh liya promises(2).js file mei
+
+// aur password jo aya humare pas, yeh lijiye
+// password aya "123", theek hai
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "hitesh", password: "123"})
+//         } 
+// }, 1000)
+// })
+
+// likh liya promises(2).js file mei
+
+// chaliye chota sa password hai, theek hai yeh
+// to tab kaam ayi cheejein jab aapke pas cheejein
+// resolve ho gayi 
+// (see if condition !error means no error means cheejein resolve ho gayi)
+
+// 24:25
+
+// varna else case mei bhi to kuch karna padega, 
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "hitesh", password: "123"})
+//         } else{
+    
+//         }
+// }, 1000)
+// })
+
+// likh liya promises(2).js file mei
+
+// to else case mei actually mei baat aati hai aapke rejection ki
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "hitesh", password: "123"})
+//         } else{
+//             reject()
+//         }
+// }, 1000)
+// })
+
+// likh liya promises(2).js file mei
+
+// kyuki itni der se hum ek keyword leke ghoom rahe hai
+// saath mei reject ( const promiseFour = new Promise(function(resolve, reject){ )
+// but usko (reject) use nahi kar rahe
+// 24:34
+
+// to yeh rejection kya hai error deta hai,
+// ab error bhi actually mei koi aisa kuch hawa mei to hai nahi
+// error bhi aapko dena hi padega
+
+// to aapko error kuch iss tareh se aap de sakte hai
+// agar aap chahein to -- reject('')
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "hitesh", password: "123"})
+//         } else{
+//             reject('')
+//         }
+// }, 1000)
+// })
+
+// likh liya promises(2).js file mei
+
+// 24:43
+
+// ki hum yahan pe de dete hai --
+// 'ERROR' 
+// aur bol dete hai -- Something went wrong
+// 'ERROR: Something went wrong'
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "hitesh", password: "123"})
+//         } else{
+//             reject('ERROR: Something went wrong')
+//         }
+// }, 1000)
+// })
+
+// likh liya promises(2).js file mei
+
+// but aapke liye obvious si baat hai yeh error
+// kuch achha nahi hai kuch bata hi nahi raha
+// detail mei kya ho raha hai, kya nahi ho raha
+// but abhi syntax se chalega
+
+// ab iss promise (promiseFour) ko kaise consume
+// karna hai, theek hai ji yeh bhi karke dekh
+// lete hai (24:58)
+
+// yeh promiseFour hai
+// promiseFour likh liya
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "hitesh", password: "123"})
+//         } else{
+//             reject('ERROR: Something went wrong')
+//         }
+// }, 1000)
+// })
+
+// promiseFour
+
+// likh liya promises(2).js file mei
+
+// ab yahan pe aati hai aapki callback actually mei
+// cheejein, to thoda sa mai aapko ek step aur aage leke
+// jaata hu (25:05)
