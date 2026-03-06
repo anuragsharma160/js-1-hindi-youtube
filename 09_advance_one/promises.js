@@ -2160,3 +2160,290 @@
 // likh liya promises(2).js file mei
 
 // ki aise to nahi ho raha hai (27:31)
+
+// to actually mei kya syntax hota hai ki
+// yeh jo .then() hai ( promiseFour.then((user) => { )
+// iski aap chaining kar sakte ho aur further down
+// to .then() ek aur bar aap laga sakte ho
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "hitesh", password: "123"})
+//         } else{
+//             reject('ERROR: Something went wrong')
+//         }
+// }, 1000)
+// })
+
+// promiseFour.then((user) => {
+//     console.log(user)
+//     return user.username
+// }).then()
+
+
+
+// likh liya promises(2).js file mei
+
+// wo hi same rahega , ki iske andar (2nd .then() ke)
+// bhi wo hi callback aata hai humare pas to
+// aap chaho to function use kar sakte ho,
+// chaho to arrow function use kar sakte ho 
+// jo bhi chahe
+
+// ab yahan pe mujhe pata hai ki yeh mera suppose
+// kariye ki arrow function hai , yeh lijiye
+// aapka arrow function
+
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "hitesh", password: "123"})
+//         } else{
+//             reject('ERROR: Something went wrong')
+//         }
+// }, 1000)
+// })
+
+// promiseFour.then((user) => {
+//     console.log(user)
+//     return user.username
+// }).then(() => {
+    
+// })
+
+// likh liya promises(2).js file mei
+
+// 27:49
+
+// ab yahan pe 
+// (2nd .then() ke arrow function ke () mei) 
+// jo value aa rahi hai wo kya aa rahi hai
+// isko bolte hai chaining , yani ki jo
+// upar wale .then() (1st .then()) se humare pas value
+// return hoke ayegi , wo hi aapke naye chain
+// mei ayegi
+
+// jab aap database connection karte hai na
+// tab yeh bahut jada kaam mei ayega ,
+// iss syntax ko achhe se abhi dhyan se samajh lijiyega
+
+// to yahan pe (2nd .then() ke arrow function ke () mei) 
+// aapne likha ki ab mujhe kya mil raha hai
+// return kya kar raha hai user.username ( return user.username )
+// to obvious si baat hai username hi return ho raha hai, (28:09)
+
+// to suppose kariye usko ( jo username return ho raha hai ) 
+// username hi bol lete hai, ya myUsername bol lete hai ya
+// fir jo bhi aapko bolna hai variable ka naam hai 
+// jo chahe boliye
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "hitesh", password: "123"})
+//         } else{
+//             reject('ERROR: Something went wrong')
+//         }
+// }, 1000)
+// })
+
+// promiseFour.then((user) => {
+//     console.log(user)
+//     return user.username
+// }).then((username) => {
+    
+// })
+
+// likh liya promises(2).js file mei
+
+// 28:15
+
+// aur yahan pe (inside 2nd .then() ke arrow function ke andar)
+// jab mai yeh console.log() karta hu isko, 
+// to actually mei username mere pas ayega
+// -- console.log(username)
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "hitesh", password: "123"})
+//         } else{
+//             reject('ERROR: Something went wrong')
+//         }
+// }, 1000)
+// })
+
+// promiseFour.then((user) => {
+//     console.log(user)
+//     return user.username
+// }).then((username) => {
+//     console.log(username)
+// })
+
+// likh liya promises(2).js file mei
+
+// 28:20
+
+// theek hai wapas se isko run karke dekhte hai ki
+// actually mei ho kya raha hai aur jo mai bol
+// raha hu wo ho bhi raha hai kya
+
+// node '.\09_advance_one\promises(2).js' in terminal
+
+// o/p ( Async task is completed
+// Promise consumed
+// Async task 2
+// Async 2 resolved
+// { username: 'Chai', email: 'chai@example.com' }
+// node:internal/process/promises:389
+//       new UnhandledPromiseRejection(reason);
+//       ^
+
+// UnhandledPromiseRejection: This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). The promise rejected with the reason "ERROR: Something went wrong".
+//     at throwUnhandledRejectionsMode (node:internal/process/promises:389:7)
+//     at processPromiseRejections (node:internal/process/promises:470:17)
+//     at process.processTicksAndRejections (node:internal/process/task_queues:96:32) {
+//   code: 'ERR_UNHANDLED_REJECTION'
+// }
+
+// Node.js v20.17.0 )
+
+
+// to humne run kara, achha wapas se humare pas errors aa rahi hai
+// ki theek hai aapke pas yeh jitna bhi sara process hai (see error)
+// aa... maine save nahi kara kya usko, 
+// i think humne save nahi kara...
+
+// actually mei hume catch (catch()) bhi dena padega kyuki
+// actually mei problem kya ho rahi hai ki humare
+// pas aa... rejection etc 
+// ( let error = true ,if (!error) { resolve({username: "hitesh", password: "123"}) } else reject('ERROR: Something went wrong') ) 
+// bhi aa rahe hai to actually
+// mei isko abhi mai karta hu par pehle isko complete
+// kar lete hai humare code ko kyuki sirf .then() laga ke
+// to kaam chalega nahi, (1st .then() and 2nd .then())
+
+// aa... , .catch() bhi lagana padega kyuki error bhi aa
+// rahi hai humare pas ,
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "hitesh", password: "123"})
+//         } else{
+//             reject('ERROR: Something went wrong')
+//         }
+// }, 1000)
+// })
+
+// promiseFour.then((user) => {
+//     console.log(user)
+//     return user.username
+// }).then((username) => {
+//     console.log(username)
+// }).catch()
+
+// likh liya promises(2).js file mei
+
+// catch (.catch()) ka bhi bahut aasaan kaam hai
+// kuch bhi nahi hai iske (.catch()) andar, yeh lijiye function
+// aya aapke pas
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "hitesh", password: "123"})
+//         } else{
+//             reject('ERROR: Something went wrong')
+//         }
+// }, 1000)
+// })
+
+// promiseFour.then((user) => {
+//     console.log(user)
+//     return user.username
+// }).then((username) => {
+//     console.log(username)
+// }).catch(function())
+
+// likh liya promises(2).js file mei
+
+// jo bhi value return hogi , usko hum
+// error bol lete hai ( .catch(function(error)) ), 
+// aapa mann kare err boliye , error boliye ,
+// jo bhi aapko bolna hai boliye
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "hitesh", password: "123"})
+//         } else{
+//             reject('ERROR: Something went wrong')
+//         }
+// }, 1000)
+// })
+
+// promiseFour.then((user) => {
+//     console.log(user)
+//     return user.username
+// }).then((username) => {
+//     console.log(username)
+// }).catch(function(error){
+
+// })
+
+// likh liya promises(2).js file mei
+
+// aur console.log() kara deta hu uss error ko
+// theek hai yeh lijiye maine error ko console.log
+// kara liya -- console.log(error)
+
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "hitesh", password: "123"})
+//         } else{
+//             reject('ERROR: Something went wrong')
+//         }
+// }, 1000)
+// })
+
+// promiseFour.then((user) => {
+//     console.log(user)
+//     return user.username
+// }).then((username) => {
+//     console.log(username)
+// }).catch(function(error){
+//     console.log(error) 
+// })
+
+// likh liya promises(2).js file mei
+
+// ab atleast properly mai handle kar raha hu ki errors
+// kya aa rahe hai, jo bhi values aa rahi hai usko properly
+// handle kar rahe hai, 
+
+// theek hai to chaliye, wapas se run karke dekhte hai ab isko
+
+// node '.\09_advance_one\promises(2).js' in terminal
+
+// o/p Async task is completed
+// Promise consumed
+// Async task 2
+// Async 2 resolved
+// { username: 'Chai', email: 'chai@example.com' }
+// ERROR: Something went wrong
+
+// ab isko run kara, thoda sa time laga ,
+// ab isne kaha ki -- ERROR: Something went wrong
+// 29:18
