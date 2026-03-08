@@ -2849,3 +2849,453 @@
 // The promise is either resolved or rejected
 
 // 31:34
+
+// to promise aapka chahe resolve ho chahe rejected ho
+// yeh finally ( .finally(() => console.log("The promise is either resolved or rejected")) mei .finally())
+// hota hi hota hai ( The promise is either resolved or rejected , see o/p )
+// to bada achha syntax hai bahut hi kaam aata hai yahan pe
+
+// achha theek hai yeh to ho gaye humare basic ki kis 
+// tareh se hota hai
+
+// ab kya hai ki iske andar ab interesting cheejon pe hum aate hai
+// jo ki shayad aapne nahi dekhi hogi, theek hai ji
+// promiseFive bhi to banayenge, haa ji itni jaldi thodi na
+// chord denge, promiseFour mei hai abhi to maja aana
+// start hua hai ab five ( promiseFive ) ke andar bhi
+// aate hai kuch aur nayi cheejon pe bhi discuss karte hai
+// theek hai
+
+// const promiseFive
+
+// likh liya promises(2).js file mei
+
+// promiseFive jo hai na wo bhi apne aap mei bahut interesting hai
+// to chaliye, to promiseFive pe aate hai, theek hai ji
+// yeh promiseFive humne banaya, 
+// wo hi same kahani new Promise() , yeh lijiye promise de dijiye
+
+// const promiseFive = new Promise()
+
+// likh liya promises(2).js file mei
+
+// yeh le lijiye function , aap arrow function bhi use kar sakte hai
+// koi dikkat wali baat nahi hai, mai thoda sa yeh function prefer
+// kar raha hu , samjhane ke taur pe iska (function(){}) syntax
+// achha hota hai thoda sa samajh mei aata hai, aa..., 2 minute lagti
+// hai dimag mei register hone mei, to yeh (function(){}) deta hai 2 minute , 
+// to theek hai
+
+// const promiseFive = new Promise(function(resolve, reject){})
+
+// likh liya promises(2).js file mei
+
+// yahan pe resolve ho gaya aur ek reject bhi ho gaya
+// theek hai ji aur yeh lijiye
+
+// const promiseFive = new Promise(function(resolve, reject){
+
+// })
+
+// likh liya promises(2).js file mei
+
+// ab kya karna hai hume, achha ab wapas se wo hi setTimeout etc
+// sara kaam karna hai to actually mei mai isko copy paste
+// kar leta hu taki thoda sa time bache humara
+// to yeh lijiye setTimeout maine liya yahan se 
+// (promiseFour se setTimeout copy kar liya)
+// as it is paste kar diya
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "hitesh", password: "123"})
+//         } else{
+//             reject('ERROR: Something went wrong')
+//         }
+//     }, 1000)    
+// })
+
+// likh liya promises(2).js file mei
+
+// 32:47
+
+// ab thoda sa hum errors etc aur yeh jitne bhi
+// values hai (see code of setTimeout) in sabko thoda sa
+// change karenge
+
+// isko (username: "hitesh" mei "hitesh" ko) bol dete hai "javascript"
+// aur password humara "123" hi rehne dete hai
+
+// error (see else{}, see reject) 
+// isko ( reject('ERROR: Something went wrong') ) hum
+// reject('ERROR: JS went wrong') likh dete hai taki atleast pata
+// lage ki humara konsa wala error aa raha hai (in terminal o/p)
+// konsa wala value reject ho rahi hai to yeh promiseFive ho gaya
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// })
+
+// likh liya promises(2).js file mei
+
+// 33:04
+
+// achha theek hai ab kya hai abhi tak aapne jo syntax
+// dekha , wo kya tha ki jab bhi aapke pas promise aa jaye
+// iss tareh se -- promiseFive (in next line) (const promiseFive = ...)
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// })
+
+// promiseFive
+
+// likh liya promises(2).js file mei
+
+// to promiseFive.then() laga do
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// })
+
+// promiseFive.then()
+
+// likh liya promises(2).js file mei
+
+// ab kya hai actually mei yeh real situation hai mai aapko
+// batata hu ki actually mei hua kya
+// ek bar mai (Sir) ek live class le raha tha
+// aur uske andar maine ek promise tha isi tareh se
+// uss promise ko maine async await se handle kar diya
+
+// ab wo bachha to ho gaya pareshan ki sir yeh kaise ho gaya,
+// are promise kya hai -- future mei hone wali ek cheej hi to hai
+
+// aur yeh koi guarantee nahi hai ki humesha aap usko (promise ko) .then()
+// .catch() se hi handle karoge (33:33)
+// nahi nahi , aisa nahi hai aapne jahan se bhi padha wo shayad
+// thoda sa half padha aapne, padhaya to sahi hoga jisne bhi
+// padhaya hoga
+
+// but actually mei aapko jaruri nahi hai ki humesha aap promise
+// .then() .catch() se hi karo, especially yeh topic kaafi
+// discuss hota hai jab aap database connection karte hai
+// 33:46
+
+// kuch log async await prefer karte hai, 
+// kuch log .then() karte hai 
+// aur kayi log aise bhi aake jidd te hai -- ki
+// nahi nahi mere favourite youtuber ne to bataya tha ki
+// .then() hota hai , dot aa..., async await to bahut bekar hai
+// nahi nahi aisa kuch bhi nahi hai (33:57)
+
+// aa..., aap .then() bhi use kar sakte hai yeh syntax bhi
+
+// to dekhiye .then() maine aapko syntax bataya aap use
+// kar sakte hai ( promiseFive.then() ) lekin ab hum
+// kya karte hai ispe ek dusra approach lagate hai
+// ki mai iss bar kuch aur karna chahta hu ki iss
+// promise yeh jo five hai (promiseFive) isko mai
+// dusri tareh se accept karna chahta hu ya isko karna
+// chahta hu
+
+// (promiseFive.then() ko backspace kar diya)
+
+// to ek aur humare pas ek syntax hota hai async await ka
+// syntax
+// async await kya hota hai exactly .then() .catch()
+// type se hi hai ki thodi der wait karta hai kaam ke
+// hone ka, agar wo (kaam) ho jata hai tab hi aage badhta hai (async await)
+// varna wahi pe aapko error de deta hai (34:26)
+
+// to isme kya hai ki thoda gracefully hum catch (.catch()) handle nahi
+// karte hai, yeh ek thoda sa iska (async await) issue rehta hai
+// but kayi jagah hume jaruri hota hai ki database connection hua
+// hi nahi to mujhe aage badhna hi nahi hai (34:34)
+// uss cases mei
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// })
+
+// async
+
+// likh liya promises(2).js file mei
+
+// to chaliye aapne ek function yahan pe declare kara
+// aur iss function ka naam hum le lete hai consumePromiseFive
+// -- async function consumePromiseFive
+// aur to kya hi naam denge yahan pe
+// -- async function consumePromiseFive(){}
+
+// ab promiseFive ko consume kaise karna hai (34:46)
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// })
+
+// async function consumePromiseFive(){
+
+// }
+
+// likh liya promises(2).js file mei
+
+// ab dekhiye jahan pe bhi async aa gaya 
+// ( async function consumePromiseFive(){ )
+// ab aap ek andar ( async function consumePromiseFive(){ ke andar)
+// ek aur naya keyword use kar sakte hai -- await
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// })
+
+// async function consumePromiseFive(){
+//     await
+// }
+
+// likh liya promises(2).js file mei
+
+// to humne kya kaha -- await
+// aur usko kaha ki ji await karte raho
+// kya await karte raho
+// yeh jo promiseFive hai
+// -- await promiseFive
+// yahan pe isko
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// })
+
+// async function consumePromiseFive(){
+//     await promiseFive
+// }
+
+// likh liya promises(2).js file mei
+
+// 34:57
+
+// ab kya hai ki aapne jaise hi await kara 
+// iss promiseFive ke liye (const promiseFive = ...)
+// to jo bhi isse (const promiseFive = ...) value hogi
+// wo aapke pass aa jayegi ab
+
+// ab value konsi ayegi 
+// ya to .then() se ayegi
+// ya .catch() se ayegi
+
+// ab dekhte hai kahan se value aati hai 
+// kaise aati hai usko bhi hum dekhte hai
+
+// 35:09
+
+// theek hai ji to yeh to ho gaya humare pas promiseFive
+// ( await promiseFive )
+// lekin isko ( await promiseFive ) ek variable mei
+// hold bhi to karna padega
+
+// to suppose kariye isko const de dete hai hum yahan pe
+// aur isko bol dete hai -- const response
+// const response = await promiseFive
+// theek hai ji
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// })
+
+// async function consumePromiseFive(){
+//     const response = await promiseFive
+// }
+
+// likh liya promises(2).js file mei
+
+// ... theek hai ji aapne response yahan pe handle kar liya hai
+// ( const response = await promiseFive )
+// (35:22)
+
+// promiseFive ke baad ; laga diya 
+// (no need aise hi, sir ne function(){} ka syntax galat likha tha
+// usko debugg karne ke chakkar mei)
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// });
+
+// async function consumePromiseFive(){
+//     const response = await promiseFive
+// }
+
+// likh liya promises(2).js file mei
+
+// to theek hai yeh humare pas response aa gaya
+// ( const response = await promiseFive )
+// ab isko hum jaate hai pehle console.log() ke andar
+// ki response kya aa raha hai aapke pas wo batayiye aap
+// -- console.log(response)
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// });
+
+// async function consumePromiseFive(){
+//     const response = await promiseFive
+//     console.log(response)
+// }
+
+// likh liya promises(2).js file mei
+
+// revision -- to yeh lijiye humne likha async
+// async , 
+// wo hi humara function 
+// async function
+// ab function kya hai humara wapas se consumePromiseFive
+// async function consumePromiseFive(){
+
+// }
+
+// ab iske andar kya karna hai, maine bataya tha aapko
+// aap await keyword use kar sakte hai (36:24)
+
+// async function consumePromiseFive(){
+//     await
+// }
+
+// kya await kar sakte hai ki humara yeh jo promiseFive hai
+// (const promiseFive = ...)
+// jo bhi isse (const promiseFive = ...) resolve hoke aye
+// ( const promiseFive = new Promise(function(resolve, reject){ see code)
+// (let error = true, if{resolve} else{reject} see code)
+// ab chahe error aye , chahe kya aye , 
+// mujhe pata to hai nahi ki kya aane wala hai,
+// bas mai uska wait kar raha hu 
+// (jo bhi iss promiseFive se resolve hoke aye mai uska wait kar raha hu)
+// 36:32
+
+// async function consumePromiseFive(){
+//     await promiseFive
+// }
+
+// achha ek cheej dhyaan rakhiyega promise (const promiseFive = ...) 
+// ek object hai, to isko ( await promiseFive ) aap 
+// iss tareh se ( await promiseFive() ) consume nahi karte ho
+// theek hai yeh eventual completion object hai but hai
+// to object hi
+// 36:40
+
+// ab isko ( await promiseFive ) hum yahan pe ek response
+// ke andar (const response) handle (store) kar lete hai
+// yeh lijiye response
+// const response = await promiseFive
+
+// async function consumePromiseFive(){
+//     const response = await promiseFive
+// }
+
+// ab response ( const response = await promiseFive ) ke
+// andar value kya ayegi, to yeh lijiye
+// console.log(response)
+
+// async function consumePromiseFive(){
+//     const response = await promiseFive
+//     console.log(response) 
+// }
+
+// ab sabse interesting baat yahan pe yeh hai ki jab bhi
+// yeh function ( async function consumePromiseFive(){ )
+// aap execute karwayenge,
+// abhi hi karwa lete hai -- consumePromiseFive()
+
+// 36:57
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// });
+
+// async function consumePromiseFive(){
+//     const response = await promiseFive
+//     console.log(response)
+// }
+
+// consumePromiseFive()
+
+// likh liya promises(2).js file mei
+
+// 36:57
