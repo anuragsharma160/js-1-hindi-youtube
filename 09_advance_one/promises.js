@@ -3554,3 +3554,151 @@
 // likh liya promises(2).js file mei
 
 // 38:41
+
+// try part mei mai try karta hu console.log(response) ki
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// });
+
+// async function consumePromiseFive() {
+//     try {
+//         const response = await promiseFive
+//         console.log(response);
+//     } catch (error) {
+        
+//     }
+// }
+
+// consumePromiseFive()
+
+// likh liya promises(2).js file mei
+
+// aur agar error aa gaya ( catch (error) {} )
+// to mai usko gracefully handle kar lunga iss bar
+// uske andar ( catch (error) {} ) console.log()
+// laga leta hu aur yeh lijiye 
+// error maine gracefully handle kar liya
+// jo bhi error mere pas aa raha tha
+// -- console.log(error)
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// });
+
+// async function consumePromiseFive() {
+//     try {
+//         const response = await promiseFive
+//         console.log(response);
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
+// consumePromiseFive()
+
+// likh liya promises(2).js file mei
+
+// ab iss situation mei kya code run hoga
+// chaliye dubara se karke dekhte hai
+
+// (38:55)
+
+// node '.\09_advance_one\promises(2).js' in terminal
+
+// o/p Async task is completed
+// Promise consumed
+// Async task 2
+// Async 2 resolved
+// { username: 'Chai', email: 'chai@example.com' }
+// ERROR: Something went wrong
+// The promise is either resolved or rejected
+// ERROR: JS went wrong
+
+// ('Error: JS went wrong' likh lena promiseFive ke setTimeout
+// ke else ke reject mei)
+
+// to iss bar humare pas gracefully error handle hua hai
+// -- ERROR: JS went wrong (see o/p)
+// bas itna sa hi antar aata hai
+
+// to dono mei se koi syntax galat nahi hai
+// aapko agar yeh .then() .catch() wala syntax (promiseFour example -- .finally() wala) 
+// easy lagta hai, to usme bhi aapne itna hi code
+// likhna hai (see promiseFour example -- .finally() wala)
+
+// agar aapko yeh jada easy lagta hai ki try catch 
+// (try {} catch (error) {} promiseFive example) ke baad mai karna chahu
+// to aap wo bhi kar sakte ho,
+// as such koi problem wali baat hi nahi hai
+
+// theek hai ab yahan pe ek chota sa aur yahan pe
+// hum experiment sort of kar lete hai
+
+// abhi humne dekha tha ki last video ke andar
+// humne ek json response etc kara tha to wo
+// bhi mai aapko dubara se kara deta hu
+
+// (bluebirdjs.com/docs/api-reference.html webpage pe aa gaye)
+
+// (new tab mei aa gaye browser mei)
+
+// aap chahein to wo ka wo hi response use kar sakte hai
+// github ka, 
+// chahein to aap yeh wala response
+// (https://jsonplaceholder.typicode.com/users)
+// bhi use kar sakte hai
+
+// abhi to humne khud ki bhi library bana li hai ek open source
+// kabhi uspe bhi baat karenge
+// (39:30)
+
+// but yahan pe 
+// (https://jsonplaceholder.typicode.com/users)
+// hum dekh sakte hai ki url hai jsonplaceholder.typicode.com/users
+// to yahan pe (https://jsonplaceholder.typicode.com/users)
+// bahut sare users mil jate hai 
+// (scroll down and see in https://jsonplaceholder.typicode.com/users)
+
+// kuch nahi hai basically array hai
+
+// ( [
+//   {
+//     "id": 1,
+//     "name": "Leanne Graham",
+//     "username": "Bret",
+//     "email": "Sincere@april.biz",
+//     "address": {
+//       "street": "Kulas Light",
+//       "suite": "Apt. 556",
+//       "city": "Gwenborough",
+//       "zipcode": "92998-3874",
+//       "geo": {
+//         "lat": "-37.3159",
+//         "lng": "81.1496"
+//       } 
+
+// see in https://jsonplaceholder.typicode.com/users)
+
+// jiske andar bahut sare users hai ,
+// to mai chahta hu yeh response 
+// (https://jsonplaceholder.typicode.com/users wala response)
+
+// aap chaho to wo hi github wala bhi use kar sakte ho koi
+// dikkat wali baat nahi hai, maine (sir ne) socha ek variety ho
+// jayegi to isliye maine kaam kar liya
+// 39:45
