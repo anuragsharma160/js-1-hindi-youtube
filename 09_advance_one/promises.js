@@ -3299,3 +3299,258 @@
 // likh liya promises(2).js file mei
 
 // 36:57
+
+// tab humare pas error nahi ayegi , pehle humne dekha
+// tha error aa rahi thi, kyu error aa rahi thi kyuki
+// aapne uss value... , uss data ke andar, uss variable ke andar
+// koi value ayi hi nahi thi aur aapne usko print karane
+// ki koshish kari
+
+// 37:08
+
+// kyuki aapne ek magical keyword isko de rakha hai async await
+
+// ( // async function consumePromiseFive(){
+//     const response = await promiseFive
+//     console.log(response)
+// } )
+
+// to wo error nahi ayegi yahan pe easily kaam ho jayega
+// chaliye isko print kara ke dekhte hai 2 - 3 methods ke
+// andar ki kaise values ho rahi hai kya value aa rahi hai
+// humare pas
+
+// node '.\09_advance_one\promises(2).js' in terminal
+
+// o/p Async task is completed
+// Promise consumed
+// Async task 2
+// Async 2 resolved
+// { username: 'Chai', email: 'chai@example.com' }
+// ERROR: Something went wrong
+// The promise is either resolved or rejected
+// node:internal/process/promises:389
+//       new UnhandledPromiseRejection(reason);
+//       ^
+
+// UnhandledPromiseRejection: This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). The promise rejected with the reason "ERROR: Something went wrong".
+//     at throwUnhandledRejectionsMode (node:internal/process/promises:389:7)
+//     at processPromiseRejections (node:internal/process/promises:470:17)
+//     at process.processTicksAndRejections (node:internal/process/task_queues:96:32) {
+//   code: 'ERR_UNHANDLED_REJECTION'
+// }
+
+// Node.js v20.17.0
+
+// (37:19)
+
+// to thoda sa yahan pe time laga (terminal o/p mei)
+// aur uske baad kya aaya humare pas --
+// The promise is either resolved or rejected (see o/p , under ERROR: Something went wrong)
+// theek hai yahan tak to humara kaam ho gaya
+
+// ( UnhandledPromiseRejection: This error originated either by throwing inside of an async function
+//  without a catch block, or by rejecting a promise which was not handled with .catch(). 
+// The promise rejected with the reason "ERROR: Something went wrong". 
+// see o/p)
+
+// This error originated either by throwing inside of an async function
+// without a catch block, -- to ek aur cheej seekhne ko mili, (37:32)
+
+// haa yeh database jab connectivity etc karte hai tab mai sikhata hu
+// ki actually mei agar aap iss tareh se 
+// ( This error originated either by throwing inside of an async function
+// without a catch block, (see o/p) mei catch block ko mouse drag highlight kiya sir ne )
+// database connection kar rahe ho
+
+// aur abhi hume pata hai yahan se error hi throw kiya hai humne true
+// ( let error = true if (!error) {resolve} else {reject} -- see code )
+
+// achha agar yahan pe error nahi aati kuch bhi (37:42)
+// false agar aata (let error = false)
+// to obvious si baat hai sab kuch badiya chalta
+// koi dikkat wali baat hi nahi thi kyuki aapne
+// async kara await kara
+
+// ( async function consumePromiseFive(){
+//     const response = await promiseFive
+//     console.log(response)
+// } )
+
+// aur aapka sara kaam ho gaya hai
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = false
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// });
+
+// async function consumePromiseFive(){
+//     const response = await promiseFive
+//     console.log(response)
+// }
+
+// consumePromiseFive()
+
+// likh liya promises(2).js file mei
+
+// node '.\09_advance_one\promises(2).js' in terminal
+
+// o/p Async task is completed
+// Promise consumed
+// Async task 2
+// Async 2 resolved
+// { username: 'Chai', email: 'chai@example.com' }
+// ERROR: Something went wrong
+// The promise is either resolved or rejected
+// { username: 'javascript', password: '123' }
+
+// 37:49
+
+// theek hai, to yeh dekhiye sara kaam ho gaya hai humare
+// pas javascript , 123 sab aa gaya hai
+// ( { username: 'javascript', password: '123' } see o/p )
+
+// (pehle wale promiseFive ke o/p mei agar error ho to correction
+// kar lena username: "javascript" karke code mei)
+
+// (37:54)
+
+// Lekin jab aapka iss tareh se promise designed hai (as follows)
+// aur wahan pe error aa sakti hai (let error = true)
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: Something went wrong')
+//         }
+//     }, 1000)    
+// });
+
+// async function consumePromiseFive() {
+//     const response = await promiseFive
+//     console.log(response);
+// }
+
+// consumePromiseFive()
+
+// likh liya promises(2).js file mei
+
+// ya fir aap suppose kariye ek network request
+// hi kar rahe the 
+// (await promiseFive mei promiseFive pe mouse drag highlight kiya sir ne)
+// aur uss network request ke andar agar
+// iss tareh se (as follows)
+
+// ( async function consumePromiseFive() {
+//     const response = await promiseFive
+//     console.log(response);
+// } )
+
+// values aa gayi hai (38:04)
+// to problem ho sakti hai
+// kyuki async await ka ek problem kya hai
+// wo directly errors ko handle nahi kar sakte hai
+
+// aur iss case mei agar humare pas error hai (let error = true)
+// to obvious si baat hai wo khud hi aapko suggest kar raha
+// hai (see terminal o/p)
+
+// node '.\09_advance_one\promises(2).js' in terminal
+
+// o/p Async task is completed
+// Promise consumed
+// Async task 2
+// Async 2 resolved
+// { username: 'Chai', email: 'chai@example.com' }
+// ERROR: Something went wrong
+// The promise is either resolved or rejected
+// node:internal/process/promises:389
+//       new UnhandledPromiseRejection(reason);
+//       ^
+
+// UnhandledPromiseRejection: This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). The promise rejected with the reason "ERROR: Something went wrong".
+//     at throwUnhandledRejectionsMode (node:internal/process/promises:389:7)
+//     at processPromiseRejections (node:internal/process/promises:470:17)
+//     at process.processTicksAndRejections (node:internal/process/task_queues:96:32) {
+//   code: 'ERR_UNHANDLED_REJECTION'
+// }
+
+// Node.js v20.17.0
+
+// ki aapne shayad yeh poori cheej ko (code ko) try catch (.catch()) (.then() .catch())
+// block mei wrap nahi kiya hai 
+// (see o/p -- UnhandledPromiseRejection: This error originated either by throwing inside of an async function without a catch block,
+//  or by rejecting a promise which was not handled with .catch(). The promise rejected with the reason "ERROR: Something went wrong".)
+
+// aapne direct hi usko handle kiya hai aur expect kiya hai
+// ki jab bhi yeh promise resolve hoga 
+// (await promiseFive mei promiseFive ko mouse drag highlight kiya sir ne)
+// aapke pas value 
+// ( const response = await promiseFive mei response ko mouse drag highlight kiya sir ne
+// as console.log(response) )
+// ayegi hi ayegi
+
+// 38:25
+
+// but kyuki rejection hua hai (let error = true, pe mouse cursor hover kiya sir ne)
+// to obvious si baat hai reject aya hai aapke pas ( else {reject('ERROR: JS went wrong')} )
+// 38:28
+// reject ne aapko error diya hai ( else {reject('ERROR: JS went wrong')} )
+// reject ka matlab hi error code hai
+
+// achha isko (iss code ko) kya kar sakte hai ,
+// poore ko aap try catch block mei kar dijiye (.catch())
+// ki theek hai async await to ho gaya hai
+
+// ( async function consumePromiseFive() {
+//     const response = await promiseFive
+//     console.log(response);
+// } )
+
+// iss code ko mai leta hu cut karta hu
+
+// ( async function consumePromiseFive() {
+//     const response = await promiseFive
+//     console.log(response);
+// }  mei 
+
+//     const response = await promiseFive
+//     console.log(response);
+
+// ko cut kar liya)
+
+// aur yahan pe ek bar try catch hum try kar lete hai
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: Something went wrong')
+//         }
+//     }, 1000)    
+// });
+
+// async function consumePromiseFive() {
+//     try {
+        
+//     } catch (error) {
+        
+//     }
+// }
+
+// consumePromiseFive()
+
+// likh liya promises(2).js file mei
+
+// 38:41
