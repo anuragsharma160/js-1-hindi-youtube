@@ -3702,3 +3702,464 @@
 // dikkat wali baat nahi hai, maine (sir ne) socha ek variety ho
 // jayegi to isliye maine kaam kar liya
 // 39:45
+
+// to iske liye hum ek method bana lete hai
+// aa..., async await method hi banayenge aur wahan pe
+// dekhenge ki kis tareh se values hoti hai
+// aur direct hi hum usko use kar sakte hai
+
+// theek hai to yeh humare next class ke liye kaam ayega
+// to mai aapko direct hi yahan pe bata deta hu thoda sa
+// agle ki class ki tayyari kar rahe hai yahan pe
+
+// to yeh koi consumption promise nahi hai but
+// behind the scene mai aapko batana chahta hu ki
+// itna jo sab humne padha wo actually mei kahan 
+// behind the scene lag raha hai
+
+// to aap kuch iss tareh ka kaam karenge
+// abhi pehle to humne dekha ki yeh jo
+// ApiRequest humare pas thi 
+// ( ApiRequest.html open karke dekh liya )
+// xhr etc yeh sab ho rahi thi (as follows)
+
+// ( console.log(xhr.readyState);
+    // if (xhr.readyState === 4) {
+    //     const data = JSON.parse(this.responseText)
+    //     console.log(typeof data);
+    //     console.log(data.followers);
+    // }    )
+
+// 
+
+// but yeh ( promises(2).js ka code ) 
+// jitna maine aapko bataya internal
+// detail promises etc yeh sab kya kaise ho raha hai
+// yeh itna sa code jo ab mai likhne wala hu
+// yeh hum agli class mei padhenge tab
+// aapko pata lagega ki actually mei
+// ho kya raha hai
+
+// 40:22
+
+// to ek aapne aysnc function likha
+// obvious si baat hai async hai matlab
+// andar aapke response kuch aane wala hai
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// });
+
+// async function consumePromiseFive() {
+//     try {
+//         const response = await promiseFive
+//         console.log(response);
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
+// consumePromiseFive()
+
+// async function
+
+// likh liya promises(2).js file mei
+
+// to usko ( async function ka naam )
+// mai bol deta hu -- getAllUsers
+
+// async function getAllUsers(){
+
+// }
+
+// theek hai ji sare users hum aapko fetch
+// karke yahan pe ( async function getAllUsers(){ )
+// de rahe hai 
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// });
+
+// async function consumePromiseFive() {
+//     try {
+//         const response = await promiseFive
+//         console.log(response);
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
+// consumePromiseFive()
+
+// async function getAllUsers(){
+
+// }
+
+// likh liya promises(2).js file mei
+
+// to uske liye aap kya use karoge 
+// ek fetch naam ki yahan pe library hi bol
+// sakte hai, library to kya hai
+// matlab pehle thi library , abhi to sirf ek
+// object hai
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// });
+
+// async function consumePromiseFive() {
+//     try {
+//         const response = await promiseFive
+//         console.log(response);
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
+// consumePromiseFive()
+
+// async function getAllUsers(){
+//     fetch()
+// }
+
+// likh liya promises(2).js file mei
+
+// but yahan pe ( fetch() ) dekhiye
+// yeh ( fetch() ) aapko wapas kya de raha hai
+// ek Promise wapas dega
+
+// (jaise hi fetch() likhoge to suggestion box mei
+// Promise<Response> likha hua hoga)
+
+// 40:46
+
+// theek hai to aap fetch ( fetch() ) use kar lijiye
+// yeh lijiye fetch()
+
+// fetch() ko chahiye hota hai sirf ek -- url
+// ( fetch('') likh liya )
+// aur bhi options lagte hai, but theek hai
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// });
+
+// async function consumePromiseFive() {
+//     try {
+//         const response = await promiseFive
+//         console.log(response);
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
+// consumePromiseFive()
+
+// async function getAllUsers(){
+//     fetch('https://jsonplaceholder.typicode.com/users')
+// }
+
+// likh liya promises(2).js file mei
+
+// ab kya hai obvious si baat hai fetch hai
+// network request hai time lagega to aap
+// sabse pehle isko
+// ( fetch('https://jsonplaceholder.typicode.com/users') )
+//  await karoge
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// });
+
+// async function consumePromiseFive() {
+//     try {
+//         const response = await promiseFive
+//         console.log(response);
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
+// consumePromiseFive()
+
+// async function getAllUsers(){
+//     await fetch('https://jsonplaceholder.typicode.com/users')
+// }
+
+// likh liya promises(2).js file mei
+
+// theek hai ji fir iska 
+// ( await fetch('https://jsonplaceholder.typicode.com/users') )
+// jo bhi response aa raha hai
+// aap ek response naam ke variable mei isko
+// ( await fetch('https://jsonplaceholder.typicode.com/users') )
+// hold kar lo, theek hai ji
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// });
+
+// async function consumePromiseFive() {
+//     try {
+//         const response = await promiseFive
+//         console.log(response);
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
+// consumePromiseFive()
+
+// async function getAllUsers(){
+//     const response = await fetch('https://jsonplaceholder.typicode.com/users')
+// }
+
+// likh liya promises(2).js file mei
+
+// ... theek hai ji, ab response naam ke variable mei
+// hold kar liya aapne
+
+// to actually mei yeh jo response aata hai fetch se 
+// aapko uska pehle type jaan na chahiye
+// bahut sare aur bhi kaam hai lekin
+// hum kya karte hai iss response ko
+// ( const response = await fetch('https://jsonplaceholder.typicode.com/users') )
+// seedha ka seedha bol dete hai ki aap
+// ek json ban jao
+
+// response.json() likh liya
+
+// kyuki abhi jo data aa raha hai wo string mei
+// aa raha hai
+
+// ( abhi means -- const response = await fetch('https://jsonplaceholder.typicode.com/users') )
+
+// (as aise cases mei most of the time data string mei aata hai , 
+// sir ne bataya tha pehle)
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// });
+
+// async function consumePromiseFive() {
+//     try {
+//         const response = await promiseFive
+//         console.log(response);
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
+// consumePromiseFive()
+
+// async function getAllUsers(){
+//     const response = await fetch('https://jsonplaceholder.typicode.com/users')
+//     response.json()
+// }
+
+// likh liya promises(2).js file mei
+
+// 41:18
+
+// ... kyuki abhi jo data aa raha hai wo string mei
+// aa raha hai
+
+// to aap uss string se koi value nahi nikaal
+// paaoge, to isliye mai usko bol deta hu 
+// direct hi aap json ban jaao ( response.json() )
+
+// aur bhi tarike hai json (json string) ko parse karne ke
+// stringify karne ke, aage jaake padhenge
+
+// abhi hum yahan pe kya karte hai simply const aur data
+// bol dete hai isko ( response.json() )
+// const data = response.json() likh liya
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// });
+
+// async function consumePromiseFive() {
+//     try {
+//         const response = await promiseFive
+//         console.log(response);
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
+// consumePromiseFive()
+
+// async function getAllUsers(){
+//     const response = await fetch('https://jsonplaceholder.typicode.com/users')
+//     const data = response.json()
+// }
+
+// likh liya promises(2).js file mei
+
+// theek hai ji data bol dete hai aapko
+// ( const data = response.json() )
+// aur console.log() kar do isko
+// ( const data = response.json() )
+// console.log(data) likh liya
+
+// ab obvious si baat hai iske fail hone
+// ke chance hai
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// });
+
+// async function consumePromiseFive() {
+//     try {
+//         const response = await promiseFive
+//         console.log(response);
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
+// consumePromiseFive()
+
+// async function getAllUsers(){
+//     const response = await fetch('https://jsonplaceholder.typicode.com/users')
+//     const data = response.json()
+//     console.log(data) 
+// }
+
+// likh liya promises(2).js file mei
+
+// obvious si baat hai try catch mei wrap
+// hi nahi kara isko
+
+// karenge wo bhi karenge but ek bar pehle dekhte hai ki
+// kya hota hai isko run karne se,
+// to yeh lijiye aapke -- getAllUsers()
+
+// getAllUsers() likh liya
+
+// to ab saare users isse ayenge ya nahi
+// ayenge, wo pehle hum dekh lete hai ki
+// yeh bhi kaam humara ho raha hai ki
+// nahi ho raha hai
+
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
+//         if (!error) {
+//             resolve({username: "javascript", password: "123"})
+//         } else{
+//             reject('ERROR: JS went wrong')
+//         }
+//     }, 1000)    
+// });
+
+// async function consumePromiseFive() {
+//     try {
+//         const response = await promiseFive
+//         console.log(response);
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
+// consumePromiseFive()
+
+// async function getAllUsers(){
+//     const response = await fetch('https://jsonplaceholder.typicode.com/users')
+//     const data = response.json()
+//     console.log(data) 
+// }
+
+// getAllUsers()
+
+// likh liya promises(2).js file mei
+
+// node '.\09_advance_one\promises(2).js' in terminal
+// 41:54
+
+// o/p Promise { <pending> }
+// Async task is completed
+// Promise consumed
+// Async task 2
+// Async 2 resolved
+// { username: 'Chai', email: 'chai@example.com' }
+// ERROR: Something went wrong
+// The promise is either resolved or rejected
+// ERROR: JS went wrong
+
+// to abhi humare pas dikha -- Promise { <pending> } (see o/p)
+// aur uske baad kya hua humare pas
+// getAllUsers etc sab kuch aya...
+// The promise is either resolved or rejected (see o/p)
+// ERROR: JS went wrong (see o/p)
+
+// Lekin jo actually mei kaam karna tha hume
+// yeh kaam to hua hi nahi, get all users ( getAllUsers() )
+// to aye hi nahi humare pas
+
+// achha get all users ( getAllUsers() ) aye nahi
+// to kaise ab kaam karna padega (42:11)
