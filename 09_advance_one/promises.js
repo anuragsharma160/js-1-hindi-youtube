@@ -4163,3 +4163,770 @@
 
 // achha get all users ( getAllUsers() ) aye nahi
 // to kaise ab kaam karna padega (42:11)
+
+// hmm... badi interesting cheej hai,
+// aap mei shayad kuch soch rahe honge
+// ki ek kaam karo isko (as follows)
+
+//     ( const response = await fetch('https://jsonplaceholder.typicode.com/users')
+//     const data = response.json()
+//     console.log(data) )
+
+// yahan se ( // async function getAllUsers(){ )
+// hatao (cut karo) aur isko bolo try catch ke andar
+// wrap kar dete hai
+// yeh lijiye try catch mei wrap kar diya
+
+// (try catch likh liya and uske andar jo cut kiya
+// wo paste kar diya)
+
+// async function getAllUsers(){
+//     try {
+//         const response = await fetch('https://jsonplaceholder.typicode.com/users')
+//         const data = response.json()
+//         console.log(data) 
+//     } catch (error) {
+        
+//     }
+// }
+
+// getAllUsers()
+
+// likh liya promises(2).js file mei
+
+// 42:22
+
+// yahan pe (try {} block mei) jo bhi code tha
+// humare pas yeh humne console.log() kara
+// liya
+
+// aur agar error aati hai ( catch(error){} )
+// to console.log() usko kara lete hai
+// ek error ka de dete hai -- "E: "
+// console.log("E: ")
+// aur uske baad hum yahan pe comma , laga ke humare
+// error ( catch(error){} ) ko bhi display kara dete hai
+// console.log("E: ", error)
+
+// 42:33
+
+// async function getAllUsers(){
+//     try {
+//         const response = await fetch('https://jsonplaceholder.typicode.com/users')
+//         const data = response.json()
+//         console.log(data) 
+//     } catch (error) {
+//         console.log("E: ", error)  
+//     }
+// }
+
+// getAllUsers()
+
+// likh liya promises(2).js file mei
+
+// theek hai ji chaliye maann li aapki
+// baat ki itna kara dete hai
+
+// ab kya hoga isko run karate hai to
+
+// node '.\09_advance_one\promises(2).js' in terminal
+
+// o/p Promise { <pending> }
+// Async task is completed
+// Promise consumed
+// Async task 2
+// Async 2 resolved
+// { username: 'Chai', email: 'chai@example.com' }
+// ERROR: Something went wrong
+// The promise is either resolved or rejected
+// ERROR: JS went wrong
+
+// thoda sa time liya (terminal) (await)
+// pending hua promise ( Promise { <pending> } see o/p )
+// lekin abhi bhi humare pas values to
+// ayi hi nahi (see o/p)
+
+// achha values kyu nahi ayi
+// humne to sara kaam kiya hai
+// abhi pehle to hum keh rahe the ki theek hai
+// yeh promises ho gaya catch ho gaya
+// ( async function consumePromiseFive() { )
+// await ho gaya 
+// ( async function getAllUsers(){ )
+// sara kaam ho gaya hai
+// 42:50
+
+// Lekin yeh values actually mei ayi kyu nahi
+// aapke pas , data response mei aya kyu nahi hai
+// ( const data = response.json() )
+// dekh sakte hai, dekh ke batayiye ek second
+// mei mujhe
+
+// achha ab jin logo ne yahan pe pause kiya
+// aur jinko thoda sa pata laga ki actually
+// mei yahan pe ( async function getAllUsers(){ )
+// kya galti hum kar rahe hai
+// bahut achhi baat hai
+
+// but jinko nahi pata laga unko mai (Sir)
+// wapas se remind karwa du
+// ki yahan pe (as follows)
+
+// ( const promiseOne = new Promise(function(resolve, reject){
+    // Do an async task (commented out)
+    // DB calls, cryptography, network (commented out)
+
+// mei 
+
+    // Do an async task (commented out)
+    // DB calls, cryptography, network (commented out))
+
+// yahan pe )
+
+// maine aapko kuch kaha tha
+// 43:10
+
+// ki kayi aisi cheejein hai jo ki time leti hai,
+// par aapko uss time pe wo cheej kya hai ki itni valuable
+// samajh nahi aa rahi thi
+
+// kyuki hume lagta hai 
+// database call hai,
+// network call hai,
+// yeh hi cheejein time leti hai
+
+// baki cheejein to time leti hi nahi hai
+// nahi aisa nahi hai cheejein time leti hai
+
+// 43:24
+
+// ab yahan pe jo humara yeh code hai (as follows)
+
+// ( async function getAllUsers(){
+//     try {
+//         const response = await fetch('https://jsonplaceholder.typicode.com/users')
+//         const data = response.json()
+//         console.log(data) 
+//     } catch (error) {
+//         console.log("E: ", error)
+//     }
+// }
+
+// getAllUsers()   )
+
+// actually mei iss code mei koi bhi problem nahi hai
+// 100 % working code hai (43:29)
+
+// infact aap iss response ko
+// ( const response = await fetch('https://jsonplaceholder.typicode.com/users') )
+// print karaoge 
+
+// ek minute ke liye mai isko (as follows)
+
+//         (   const data = response.json()
+//             console.log(data)    )
+
+// yahan pe hata deta hu (comment out kar dete hai)
+// sara ka sara yeh data ( const data = response.json() )
+
+// aur yahan pe aapko response print kara ke 
+// dikhata hu ( console.log(response) )
+// to aap dekhenge ki yeh code chalta hai actually mei
+// (43:40)
+
+// async function getAllUsers(){
+//     try {
+//         const response = await fetch('https://jsonplaceholder.typicode.com/users')
+//         console.log(response);
+//         const data = response.json() commented out
+//         console.log(data) commented out
+//     } catch (error) {
+//         console.log("E: ", error)
+//     }
+// }
+
+// getAllUsers()
+
+// response mai yahan pe leta hu (console.log(response);)
+// aur bas itna hi kar rahe hai hum aur dekhiye
+// kuch bhi change nahi kara hai
+// bas humne ek step pehle printing (console.log(response);)
+// kar di hai
+
+// node '.\09_advance_one\promises(2).js' in terminal
+
+// o/p Response {
+//   status: 200,
+//   statusText: 'OK',
+//   headers: Headers {
+//     date: 'Wed, 11 Mar 2026 11:16:09 GMT',
+//     'content-type': 'application/json; charset=utf-8',
+//     'content-length': '1847',
+//     connection: 'keep-alive',
+//     'access-control-allow-credentials': 'true',
+//     'cache-control': 'max-age=43200',
+//     'content-encoding': 'gzip',
+//     etag: 'W/"160d-1eMSsxeJRfnVLRBmYJSbCiJZ1qQ"',
+//     expires: '-1',
+//     nel: '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}',
+//     pragma: 'no-cache',
+//     'report-to': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=mAv1G17s3g850q8NRxnf3Um09KsUW1fB0krQ045A%2FPY%3D\\u0026sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d\\u0026ts=1772520177"}],"max_age":3600}',
+//     'reporting-endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=mAv1G17s3g850q8NRxnf3Um09KsUW1fB0krQ045A%2FPY%3D&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&ts=1772520177"',
+//     server: 'cloudflare',
+//     vary: 'Origin, Accept-Encoding',
+//     via: '2.0 heroku-router',
+//     'x-content-type-options': 'nosniff',
+//     'x-powered-by': 'Express',
+//     'x-ratelimit-limit': '1000',
+//     'x-ratelimit-remaining': '999',
+//     'x-ratelimit-reset': '1772520231',
+//     age: '16358',
+//     'accept-ranges': 'bytes',
+//     'cf-cache-status': 'HIT',
+//     'cf-ray': '9daa25363bdd243f-SIN',
+//     'alt-svc': 'h3=":443"; ma=86400'
+//   },
+//   body: ReadableStream { locked: false, state: 'readable', supportsBYOB: true },
+//   bodyUsed: false,
+//   ok: true,
+//   redirected: false,
+//   type: 'basic',
+//   url: 'https://jsonplaceholder.typicode.com/users'
+// }
+// Async task is completed
+// Promise consumed
+// Async task 2
+// Async 2 resolved
+// { username: 'Chai', email: 'chai@example.com' }
+// ERROR: Something went wrong
+// The promise is either resolved or rejected
+// ERROR: JS went wrong
+
+// to hum dekh sakte hai yahan pe (see o/p)
+// ki actually mei yeh jo printing aa rahi hai
+// poora response etc symbol thread yeh jo bhi values 
+// aa rahi hai (see o/p as follows)
+
+// ( Response {
+//   status: 200,
+//   statusText: 'OK',
+//   headers: Headers {
+//     date: 'Wed, 11 Mar 2026 11:16:09 GMT',
+//     'content-type': 'application/json; charset=utf-8',
+//     'content-length': '1847',
+//     connection: 'keep-alive',  ... see o/p) 
+
+// yeh aa to raha hai
+
+// Lekin response iss format mei hai (as follows)
+
+// ( Response {
+//   status: 200,
+//   statusText: 'OK',
+//   headers: Headers {
+//     date: 'Wed, 11 Mar 2026 11:16:09 GMT',
+//     'content-type': 'application/json; charset=utf-8',
+//     'content-length': '1847',
+//     connection: 'keep-alive',  ... see o/p) 
+
+// ab iss format (as follows)
+
+// ( Response {
+//   status: 200,
+//   statusText: 'OK',
+//   headers: Headers {
+//     date: 'Wed, 11 Mar 2026 11:16:09 GMT',
+//     'content-type': 'application/json; charset=utf-8',
+//     'content-length': '1847',
+//     connection: 'keep-alive',  ... see o/p) 
+
+// ko actually mei convert karna padega, yeh format abhi
+// ok hai theek hai lekin nahi chal raha hai ab yeh
+
+// actually mei problem kya hai jo mai aapko
+// batana chah raha hu wo yeh hai ki aap
+// isko le lijiye (as follows)
+
+        // ( const data = response.json()
+        //   console.log(data)   
+        
+    // ko comment on kar liya)
+
+// isko ( console.log(response); ) console.log()
+// hata dijiye (backspace kar diya)
+
+// async function getAllUsers(){
+//     try {
+//         const response = await fetch('https://jsonplaceholder.typicode.com/users')
+        
+//         const data = response.json()
+//         console.log(data) 
+//     } catch (error) {
+//         console.log("E: ", error)
+//     }
+// }
+
+// getAllUsers()
+
+// likh liya promises(2).js file mei (44:09)
+
+// ki aapka yeh jo response.json() hai
+// ( const data = response.json() )
+// yeh bhi actually mei convert hone mei time
+// lagta hai
+
+// to isko 
+// ( const data = response.json() )
+// bhi aapko await karana padega
+// ( const data = await response.json() , likh liya )
+
+// async function getAllUsers(){
+//     try {
+//         const response = await fetch('https://jsonplaceholder.typicode.com/users')
+        
+//         const data = await response.json()
+//         console.log(data) 
+//     } catch (error) {
+//         console.log("E: ", error)
+//     }
+// }
+
+// getAllUsers()
+
+// likh liya promises(2).js file mei (44:09)
+
+// haa ji itna sa bas issue hai (44:21)
+// haa ji to aisa nahi hai ki koi cheej kharaab hai
+// koi cheej galat hai, yeh ab aapke liye
+// ek perfect code ho gaya hai yahan pe
+// ki theek hai yeh wala code easily chalega
+// aur yeh hi achha syntax hai (44:29)
+
+// node '.\09_advance_one\promises(2).js' in terminal
+
+// o/p [
+//   {
+//     id: 1,
+//     name: 'Leanne Graham',
+//     username: 'Bret',
+//     email: 'Sincere@april.biz',
+//     address: {
+//       street: 'Kulas Light',
+//       suite: 'Apt. 556',
+//       city: 'Gwenborough',
+//       zipcode: '92998-3874',
+//       geo: [Object]
+//     },
+//     phone: '1-770-736-8031 x56442',
+//     website: 'hildegard.org',
+//     company: {
+//       name: 'Romaguera-Crona',
+//       catchPhrase: 'Multi-layered client-server neural-net',
+//       bs: 'harness real-time e-markets'
+//     }
+//   },
+//   {
+//     id: 2,
+//     name: 'Ervin Howell',
+//     username: 'Antonette',
+//     email: 'Shanna@melissa.tv',
+//     address: {
+//       street: 'Victor Plains',
+//       suite: 'Suite 879',
+//       city: 'Wisokyburgh',
+//       zipcode: '90566-7771',
+//       geo: [Object]
+//     },
+//     phone: '010-692-6593 x09125',
+//     website: 'anastasia.net',
+//     company: {
+//       name: 'Deckow-Crist',
+//       catchPhrase: 'Proactive didactic contingency',
+//       bs: 'synergize scalable supply-chains'
+//     }
+//   },
+//   {
+//     id: 3,
+//     name: 'Clementine Bauch',
+//     username: 'Samantha',
+//     email: 'Nathan@yesenia.net',
+//     address: {
+//       street: 'Douglas Extension',
+//       suite: 'Suite 847',
+//       city: 'McKenziehaven',
+//       zipcode: '59590-4157',
+//       geo: [Object]
+//     },
+//     phone: '1-463-123-4447',
+//     website: 'ramiro.info',
+//     company: {
+//       name: 'Romaguera-Jacobson',
+//       catchPhrase: 'Face to face bifurcated interface',
+//       bs: 'e-enable strategic applications'
+//     }
+//   },
+//   {
+//     id: 4,
+//     name: 'Patricia Lebsack',
+//     username: 'Karianne',
+//     email: 'Julianne.OConner@kory.org',
+//     address: {
+//       street: 'Hoeger Mall',
+//       suite: 'Apt. 692',
+//       city: 'South Elvis',
+//       zipcode: '53919-4257',
+//       geo: [Object]
+//     },
+//     phone: '493-170-9623 x156',
+//     website: 'kale.biz',
+//     company: {
+//       name: 'Robel-Corkery',
+//       catchPhrase: 'Multi-tiered zero tolerance productivity',
+//       bs: 'transition cutting-edge web services'
+//     }
+//   },
+//   {
+//     id: 5,
+//     name: 'Chelsey Dietrich',
+//     username: 'Kamren',
+//     email: 'Lucio_Hettinger@annie.ca',
+//     address: {
+//       street: 'Skiles Walks',
+//       suite: 'Suite 351',
+//       city: 'Roscoeview',
+//       zipcode: '33263',
+//       geo: [Object]
+//     },
+//     phone: '(254)954-1289',
+//     website: 'demarco.info',
+//     company: {
+//       name: 'Keebler LLC',
+//       catchPhrase: 'User-centric fault-tolerant solution',
+//       bs: 'revolutionize end-to-end systems'
+//     }
+//   },
+//   {
+//     id: 6,
+//     name: 'Mrs. Dennis Schulist',
+//     username: 'Leopoldo_Corkery',
+//     email: 'Karley_Dach@jasper.info',
+//     address: {
+//       street: 'Norberto Crossing',
+//       suite: 'Apt. 950',
+//       city: 'South Christy',
+//       zipcode: '23505-1337',
+//       geo: [Object]
+//     },
+//     phone: '1-477-935-8478 x6430',
+//     website: 'ola.org',
+//     company: {
+//       name: 'Considine-Lockman',
+//       catchPhrase: 'Synchronised bottom-line interface',
+//       bs: 'e-enable innovative applications'
+//     }
+//   },
+//   {
+//     id: 7,
+//     name: 'Kurtis Weissnat',
+//     username: 'Elwyn.Skiles',
+//     email: 'Telly.Hoeger@billy.biz',
+//     address: {
+//       street: 'Rex Trail',
+//       suite: 'Suite 280',
+//       city: 'Howemouth',
+//       zipcode: '58804-1099',
+//       geo: [Object]
+//     },
+//     phone: '210.067.6132',
+//     website: 'elvis.io',
+//     company: {
+//       name: 'Johns Group',
+//       catchPhrase: 'Configurable multimedia task-force',
+//       bs: 'generate enterprise e-tailers'
+//     }
+//   },
+//   {
+//     id: 8,
+//     name: 'Nicholas Runolfsdottir V',
+//     username: 'Maxime_Nienow',
+//     email: 'Sherwood@rosamond.me',
+//     address: {
+//       street: 'Ellsworth Summit',
+//       suite: 'Suite 729',
+//       city: 'Aliyaview',
+//       zipcode: '45169',
+//       geo: [Object]
+//     },
+//     phone: '586.493.6943 x140',
+//     website: 'jacynthe.com',
+//     company: {
+//       name: 'Abernathy Group',
+//       catchPhrase: 'Implemented secondary concept',
+//       bs: 'e-enable extensible e-tailers'
+//     }
+//   },
+//   {
+//     id: 9,
+//     name: 'Glenna Reichert',
+//     username: 'Delphine',
+//     email: 'Chaim_McDermott@dana.io',
+//     address: {
+//       street: 'Dayna Park',
+//       suite: 'Suite 449',
+//       city: 'Bartholomebury',
+//       zipcode: '76495-3109',
+//       geo: [Object]
+//     },
+//     phone: '(775)976-6794 x41206',
+//     website: 'conrad.com',
+//     company: {
+//       name: 'Yost and Sons',
+//       catchPhrase: 'Switchable contextually-based project',
+//       bs: 'aggregate real-time technologies'
+//     }
+//   },
+//   {
+//     id: 10,
+//     name: 'Clementina DuBuque',
+//     username: 'Moriah.Stanton',
+//     email: 'Rey.Padberg@karina.biz',
+//     address: {
+//       street: 'Kattie Turnpike',
+//       suite: 'Suite 198',
+//       city: 'Lebsackbury',
+//       zipcode: '31428-2261',
+//       geo: [Object]
+//     },
+//     phone: '024-648-3804',
+//     website: 'ambrose.net',
+//     company: {
+//       name: 'Hoeger LLC',
+//       catchPhrase: 'Centralized empowering task-force',
+//       bs: 'target end-to-end models'
+//     }
+//   }
+// ]
+// Async task is completed
+// Promise consumed
+// Async task 2
+// Async 2 resolved
+// { username: 'Chai', email: 'chai@example.com' }
+// ERROR: Something went wrong
+// The promise is either resolved or rejected
+// ERROR: JS went wrong
+
+// to dekhiye humare pas yeh values wapas se aa gayi hai
+// aa... jo bhi hum yahan pe print kara rahe the
+// id name
+
+//   (  {
+//      id: 10,
+//      name: 'Clementina DuBuque',
+//      username: 'Moriah.Stanton',   see o/p)
+
+// aa..., dummy data hi aata hai actually mei
+// yeh sara ka sara wo hi dummy data hai
+
+//   (  {
+//      id: 9,
+//      name: 'Glenna Reichert',
+//      username: 'Delphine',
+//      email: 'Chaim_McDermott@dana.io',  see o/p)
+
+// aap chaho to yahan pe 
+// ( https://jsonplaceholder.typicode.com/users )
+// bhi dekh sakte ho browser ke andar wo hi same
+// exact kaam hai (as follows)
+
+// (  [
+//   {
+//     "id": 1,
+//     "name": "Leanne Graham",
+//     "username": "Bret",
+//     "email": "Sincere@april.biz",
+//     "address": {
+//       "street": "Kulas Light",
+//       "suite": "Apt. 556",
+//       "city": "Gwenborough",
+//       "zipcode": "92998-3874",
+//       "geo": {
+//         "lat": "-37.3159",
+//         "lng": "81.1496"
+//       }
+//     },
+//     "phone": "1-770-736-8031 x56442",
+//     "website": "hildegard.org",
+//     "company": {
+//       "name": "Romaguera-Crona",
+//       "catchPhrase": "Multi-layered client-server neural-net",
+//       "bs": "harness real-time e-markets"
+//     }
+//   },
+//   {
+//     "id": 2,
+//     "name": "Ervin Howell",
+//     "username": "Antonette",
+//     "email": "Shanna@melissa.tv",
+//     "address": {
+//       "street": "Victor Plains",
+//       "suite": "Suite 879",
+//       "city": "Wisokyburgh",
+//       "zipcode": "90566-7771",
+//       "geo": {
+//         "lat": "-43.9509",
+//         "lng": "-34.4618"
+//       }
+//     },   see https://jsonplaceholder.typicode.com/users in browser)
+
+// 44:41
+
+// theek hai achha yeh to syntax
+// ( async function getAllUsers(){ )
+// aapko aa 
+// gaya samajh mei ki theek hai
+// lekin yeh to hua humara try catch ka syntax 
+
+// theek hai try catch bhi humne isi mei almost
+// kar liya hai
+
+// Lekin agar isi function 
+// ( async function getAllUsers(){ )
+// ko mujhe .then() .catch() format mei likhna
+// hota to kaise likhta
+
+// haa ji yeh bhi karke dekh lete hai, 
+// koi badi baat nahi hai yeh bhi
+
+// to isko (as follows)
+
+// (  async function getAllUsers(){
+//     try {
+//         const response = await fetch('https://jsonplaceholder.typicode.com/users')
+        
+//         const data = await response.json()
+//         console.log(data) 
+//     } catch (error) {
+//         console.log("E: ", error)
+//     }
+// }
+
+// getAllUsers()   )
+
+// comment out kar diya (44:58)
+
+// kyuki ab basic idea samajh mei aa gaya hai na
+// to basic idea jab aapko samajh mei aa jata hai
+// tab aap isko kisi method se likho kaise bhi
+// likho wo aap directly kar sakte ho koi itna
+// issue nahi hai
+
+// ab isi method ko ya isi kaam ko 
+// ( async function getAllUsers(){ )
+// mujhe exactly
+// karna tha basically idea to yeh hi hai
+// ki response ke andar values daal do
+// aur print kara do yeh hi mujhe chahiye
+// 45:19
+
+// to aap kya kar sakte ho seedhe hi bol sakte ho
+// ki yeh fetch jo hai na
+
+// fetch()
+
+// likh liya promises(2).js file mei
+
+// isko ( fetch() ) ek url denge abhi
+
+// fetch('')
+
+// likh liya promises(2).js file mei
+
+// kya url hai , url yahin se le lete hai hum
+// to yeh lijiye url le liya aapne
+// https://jsonplaceholder.typicode.com/users
+
+// aur bola ki yeh lo ji
+
+// fetch('https://jsonplaceholder.typicode.com/users')
+
+// likh liya promises(2).js file mei
+
+// ab mujhe pata hai iska
+// ( fetch('https://jsonplaceholder.typicode.com/users') )
+// response type kya aane wala hai -- promise hai
+
+// to yeh .then() laga diya
+
+// fetch('https://jsonplaceholder.typicode.com/users')
+// .then()
+
+// likh liya promises(2).js file mei
+
+// aur .then() hai to fail bhi ho sakta hai
+// .catch() bhi laga diya
+// (promise fail bhi ho sakta hai isliye .catch() bhi laga diya)
+
+// fetch('https://jsonplaceholder.typicode.com/users')
+// .then()
+// .catch()
+
+// likh liya promises(2).js file mei
+
+// aapka mann kare to finally() bhi laga lo
+// (means as follows ki jaise bhi kar lo)
+
+// ( fetch('https://jsonplaceholder.typicode.com/users')
+// .then()
+// .catch()
+// .finally()  )
+
+// 45:38
+
+// mujhe pata hai ki yahan pe (.then()) mujhe ek
+// function likhna hai, arrow function likh lein
+// thoda sa easy rahega,
+// yeh lijiye arrow function likh liya -- .then(() => {})
+
+// fetch('https://jsonplaceholder.typicode.com/users')
+// .then(() => {})
+// .catch()
+
+// likh liya promises(2).js file mei
+
+// ab iske andar ( .then(() => {}) , mei arrow function ke () ke andar) 
+// mujhe pata hai ki
+// data mujhe milne wala hai
+// kya data milne wala hai mujhe -- response
+
+// fetch('https://jsonplaceholder.typicode.com/users')
+// .then((response) => {})
+// .catch()
+
+// likh liya promises(2).js file mei
+
+// aap chahein to response boliye 
+// abc boliye
+// jo bhi boliye aap,
+// variable ka naam hai aur kuch bhi nahi hai
+
+// 45:55
+
+// auy yahan pe (as follows)
+
+// (  .then((response) => {} mei inside {})  )
+
+// jaake mai kya kar sakta hu isko (response ko)
+// return kar sakta hu response.json mei
+// return response.json() likh liya
+
+// fetch('https://jsonplaceholder.typicode.com/users')
+// .then((response) => {
+//     return response.json()
+// })
+// .catch()
+
+// likh liya promises(2).js file mei
+
+// theek hai ji yahan se maine json() response
+// return kar diya hai ( return response.json() )
+// 46:07
