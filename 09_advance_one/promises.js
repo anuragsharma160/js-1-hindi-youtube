@@ -5273,3 +5273,507 @@
 // ERROR: Something went wrong
 // The promise is either resolved or rejected
 // ERROR: JS went wrong
+
+// to yeh kiya to obvious si baat hai yahan pe (see o/p)
+// aap dekh sakte hai ki humara wo ka wo hi result (as follows)
+
+//     (  phone: '024-648-3804',
+//        website: 'ambrose.net',
+//        company: {
+//        name: 'Hoeger LLC',
+//        catchPhrase: 'Centralized empowering task-force',   see o/p)
+
+// aa raha hai
+
+// yeh sare to errors etc (as follows)
+
+// (  ERROR: Something went wrong
+//    The promise is either resolved or rejected
+//    ERROR: JS went wrong , see o/p)
+
+// wo sab hai kyuki wo (errors) ek second lagate hai tab tak
+// yeh sara kaam (as follows)
+
+// (  [
+//   {
+//     id: 1,
+//     name: 'Leanne Graham',
+//     username: 'Bret',
+//     email: 'Sincere@april.biz',
+//     address: {
+//       street: 'Kulas Light',
+//       suite: 'Apt. 556',
+//       city: 'Gwenborough',
+//       zipcode: '92998-3874',
+//       geo: [Object]
+//     },
+//     phone: '1-770-736-8031 x56442',
+//     website: 'hildegard.org',
+//     company: {
+//       name: 'Romaguera-Crona',
+//       catchPhrase: 'Multi-layered client-server neural-net',
+//       bs: 'harness real-time e-markets'
+//     }
+//   },
+//   {
+//     id: 2,
+//     name: 'Ervin Howell',
+//     username: 'Antonette',
+//     email: 'Shanna@melissa.tv',
+//     address: {
+//       street: 'Victor Plains',
+//       suite: 'Suite 879',
+//       city: 'Wisokyburgh',
+//       zipcode: '90566-7771',
+//       geo: [Object]
+//     },
+//     phone: '010-692-6593 x09125',
+//     website: 'anastasia.net',
+//     company: {
+//       name: 'Deckow-Crist',
+//       catchPhrase: 'Proactive didactic contingency',
+//       bs: 'synergize scalable supply-chains'
+//     }
+//   },
+//   {
+//     id: 3,
+//     name: 'Clementine Bauch',
+//     username: 'Samantha',
+//     email: 'Nathan@yesenia.net',
+//     address: {
+//       street: 'Douglas Extension',
+//       suite: 'Suite 847',
+//       city: 'McKenziehaven',
+//       zipcode: '59590-4157',
+//       geo: [Object]
+//     },
+//     phone: '1-463-123-4447',
+//     website: 'ramiro.info',
+//     company: {
+//       name: 'Romaguera-Jacobson',
+//       catchPhrase: 'Face to face bifurcated interface',
+//       bs: 'e-enable strategic applications'
+//     }
+//   },
+//   {
+//     id: 4,
+//     name: 'Patricia Lebsack',
+//     username: 'Karianne',
+//     email: 'Julianne.OConner@kory.org',
+//     address: {
+//       street: 'Hoeger Mall',
+//       suite: 'Apt. 692',
+//       city: 'South Elvis',
+//       zipcode: '53919-4257',
+//       geo: [Object]
+//     },
+//     phone: '493-170-9623 x156',
+//     website: 'kale.biz',
+//     company: {
+//       name: 'Robel-Corkery',
+//       catchPhrase: 'Multi-tiered zero tolerance productivity',
+//       bs: 'transition cutting-edge web services'
+//     }
+//   },
+//   {
+//     id: 5,
+//     name: 'Chelsey Dietrich',
+//     username: 'Kamren',
+//     email: 'Lucio_Hettinger@annie.ca',
+//     address: {
+//       street: 'Skiles Walks',
+//       suite: 'Suite 351',
+//       city: 'Roscoeview',
+//       zipcode: '33263',
+//       geo: [Object]
+//     },
+//     phone: '(254)954-1289',
+//     website: 'demarco.info',
+//     company: {
+//       name: 'Keebler LLC',
+//       catchPhrase: 'User-centric fault-tolerant solution',
+//       bs: 'revolutionize end-to-end systems'
+//     }
+//   },
+//   {
+//     id: 6,
+//     name: 'Mrs. Dennis Schulist',
+//     username: 'Leopoldo_Corkery',
+//     email: 'Karley_Dach@jasper.info',
+//     address: {
+//       street: 'Norberto Crossing',
+//       suite: 'Apt. 950',
+//       city: 'South Christy',
+//       zipcode: '23505-1337',
+//       geo: [Object]
+//     },
+//     phone: '1-477-935-8478 x6430',
+//     website: 'ola.org',
+//     company: {
+//       name: 'Considine-Lockman',
+//       catchPhrase: 'Synchronised bottom-line interface',
+//       bs: 'e-enable innovative applications'
+//     }
+//   },
+//   {
+//     id: 7,
+//     name: 'Kurtis Weissnat',
+//     username: 'Elwyn.Skiles',
+//     email: 'Telly.Hoeger@billy.biz',
+//     address: {
+//       street: 'Rex Trail',
+//       suite: 'Suite 280',
+//       city: 'Howemouth',
+//       zipcode: '58804-1099',
+//       geo: [Object]
+//     },
+//     phone: '210.067.6132',
+//     website: 'elvis.io',
+//     company: {
+//       name: 'Johns Group',
+//       catchPhrase: 'Configurable multimedia task-force',
+//       bs: 'generate enterprise e-tailers'
+//     }
+//   },
+//   {
+//     id: 8,
+//     name: 'Nicholas Runolfsdottir V',
+//     username: 'Maxime_Nienow',
+//     email: 'Sherwood@rosamond.me',
+//     address: {
+//       street: 'Ellsworth Summit',
+//       suite: 'Suite 729',
+//       city: 'Aliyaview',
+//       zipcode: '45169',
+//       geo: [Object]
+//     },
+//     phone: '586.493.6943 x140',
+//     website: 'jacynthe.com',
+//     company: {
+//       name: 'Abernathy Group',
+//       catchPhrase: 'Implemented secondary concept',
+//       bs: 'e-enable extensible e-tailers'
+//     }
+//   },
+//   {
+//     id: 9,
+//     name: 'Glenna Reichert',
+//     username: 'Delphine',
+//     email: 'Chaim_McDermott@dana.io',
+//     address: {
+//       street: 'Dayna Park',
+//       suite: 'Suite 449',
+//       city: 'Bartholomebury',
+//       zipcode: '76495-3109',
+//       geo: [Object]
+//     },
+//     phone: '(775)976-6794 x41206',
+//     website: 'conrad.com',
+//     company: {
+//       name: 'Yost and Sons',
+//       catchPhrase: 'Switchable contextually-based project',
+//       bs: 'aggregate real-time technologies'
+//     }
+//   },
+//   {
+//     id: 10,
+//     name: 'Clementina DuBuque',
+//     username: 'Moriah.Stanton',
+//     email: 'Rey.Padberg@karina.biz',
+//     address: {
+//       street: 'Kattie Turnpike',
+//       suite: 'Suite 198',
+//       city: 'Lebsackbury',
+//       zipcode: '31428-2261',
+//       geo: [Object]
+//     },
+//     phone: '024-648-3804',
+//     website: 'ambrose.net',
+//     company: {
+//       name: 'Hoeger LLC',
+//       catchPhrase: 'Centralized empowering task-force',
+//       bs: 'target end-to-end models'
+//     }
+//   }
+// ]
+//  see o/p  )
+
+// humara ho chuka tha
+// to yeh promise
+// 47:27
+
+// achha ab ek interesting cheej yahan pe 
+// mai aapko batana chahta hu jo agle video
+// mei kaam ayegi
+
+// (terminal ko maximize kar liya)
+
+// achha gaur se dekhiye (see in terminal) 
+// kya value pehle print ho rahi hai
+
+// chaliye isko (terminal ko) mai ek bar clean
+// karta hu poora ka poora aur aapko mai batata
+// hu yahan pe, actually mei hum yahan pe koi dusra
+// response le lein taki aapko aur thoda sa
+// samajh mei aye (47:46)
+
+// (ApiRequest.html file open kar li)
+
+// yeh API le lete hai poora mera ki API
+// ka response mujhe dikhaao
+
+// ( const requestUrl = 'https://api.github.com/users/anuragsharma160'
+// mei https://api.github.com/users/anuragsharma160 ko copy kar liya )
+
+// ( const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+// mei https://api.github.com/users/hiteshchoudhary ko copy kar liya )
+
+// 47:49
+
+// taki actually mei thoda short mei kaam ho jaye
+// ( promises(2).js file mei aa gaye )
+// aur aapko mai jo cheej samjhana chah raha hu
+// agle video ke liye wo aapko aur
+// samajh mei aye, badi interesting cheej hai wo
+
+// fetch('https://api.github.com/users/hiteshchoudhary')
+// .then((response) => {
+//     return response.json()
+// })
+// .then((data) => {
+//     console.log(data);
+// })
+// .catch((error) => console.log(error))
+
+// likh liya promises(2).js file mei
+
+// 47:56
+
+// abhi kyuki data bahut jada aa raha hai isliye
+// thoda sa samajh nahi aa raha, theek hai
+
+// (o/p mei data jada aa raha hai isliye samajh nahi aa raha)
+
+// achha dekhiye ek cheej dekhiyega ki yeh
+// fecth() to yahan pe hai
+// ( fetch('https://api.github.com/users/hiteshchoudhary') )
+// lekin maine upar ka koi code comment out
+// nahi kara hai (48:04)
+// wo setTimeout etc jitna bhi hai wo sab
+// ho raha hai wo abhi wapas se diagram sab ban ne wala
+// hai agle video mei
+// wo samajh mei ayega but yeh practical hai uska
+// uske wahan pe yeh kaam ayega
+
+// (terminal ko maximize kar liya)
+
+// (48:13)
+
+// node '.\09_advance_one\promises(2).js' in terminal
+
+// o/p {
+//   login: 'hiteshchoudhary',
+//   id: 11613311,
+//   node_id: 'MDQ6VXNlcjExNjEzMzEx',
+//   avatar_url: 'https://avatars.githubusercontent.com/u/11613311?v=4',
+//   gravatar_id: '',
+//   url: 'https://api.github.com/users/hiteshchoudhary',
+//   html_url: 'https://github.com/hiteshchoudhary',
+//   followers_url: 'https://api.github.com/users/hiteshchoudhary/followers',
+//   following_url: 'https://api.github.com/users/hiteshchoudhary/following{/other_user}',
+//   gists_url: 'https://api.github.com/users/hiteshchoudhary/gists{/gist_id}',
+//   starred_url: 'https://api.github.com/users/hiteshchoudhary/starred{/owner}{/repo}',
+//   subscriptions_url: 'https://api.github.com/users/hiteshchoudhary/subscriptions',
+//   organizations_url: 'https://api.github.com/users/hiteshchoudhary/orgs',
+//   repos_url: 'https://api.github.com/users/hiteshchoudhary/repos',
+//   events_url: 'https://api.github.com/users/hiteshchoudhary/events{/privacy}',
+//   received_events_url: 'https://api.github.com/users/hiteshchoudhary/received_events',
+//   type: 'User',
+//   user_view_type: 'public',
+//   site_admin: false,
+//   name: 'Hitesh Choudhary',
+//   company: null,
+//   blog: 'https://hitesh.ai',
+//   location: 'India',
+//   email: null,
+//   hireable: null,
+//   bio: 'I make coding videos on youtube and for courses. My youtube channel explains my work more. Check that out',
+//   twitter_username: 'hiteshdotcom',
+//   public_repos: 120,
+//   public_gists: 5,
+//   followers: 55587,
+//   following: 0,
+//   created_at: '2015-03-23T13:03:25Z',
+//   updated_at: '2026-02-05T17:51:40Z'
+// }
+// Async task is completed
+// Promise consumed
+// Async task 2
+// Async 2 resolved
+// { username: 'Chai', email: 'chai@example.com' }
+// ERROR: Something went wrong
+// The promise is either resolved or rejected
+// ERROR: JS went wrong
+
+// ab dekhiye sabse pehle kya hua ki
+// aapka yeh async await etc (as follows)
+
+// ( Async task is completed
+// Promise consumed
+// Async task 2
+// Async 2 resolved
+// { username: 'Chai', email: 'chai@example.com' }
+// ERROR: Something went wrong
+// The promise is either resolved or rejected
+// ERROR: JS went wrong  , see o/p)
+
+// yeh sab end mei ho raha hai,
+// code to sabse pehle likha tha wo
+// (means async await ka o/p end mei aa raha hai o/p mei
+// jabki async await ka code to sabse pehle likha tha wo)
+
+// 48:21
+
+// theek hai ji chaliye maan li aapki baat
+// aur yeh jitna hitesh choudhary ka jo data aa raha hai
+// (see o/p) github se yeh first aa raha hai 
+// (means yeh hitesh choudhary ka data github se o/p mei pehle
+// aa raha hai)
+// yeh kaise hua ji
+
+// yeh humara data hai poora ka poora 
+// yahan se leke aur yahan tak ka poora
+// data hai humare pas (see o/p as follows)
+// (hitesh choudhary ka data github se in o/p as follows)
+
+// (  {
+//   login: 'hiteshchoudhary',
+//   id: 11613311,
+//   node_id: 'MDQ6VXNlcjExNjEzMzEx',
+//   avatar_url: 'https://avatars.githubusercontent.com/u/11613311?v=4',
+//   gravatar_id: '',
+//   url: 'https://api.github.com/users/hiteshchoudhary',
+//   html_url: 'https://github.com/hiteshchoudhary',
+//   followers_url: 'https://api.github.com/users/hiteshchoudhary/followers',
+//   following_url: 'https://api.github.com/users/hiteshchoudhary/following{/other_user}',
+//   gists_url: 'https://api.github.com/users/hiteshchoudhary/gists{/gist_id}',
+//   starred_url: 'https://api.github.com/users/hiteshchoudhary/starred{/owner}{/repo}',
+//   subscriptions_url: 'https://api.github.com/users/hiteshchoudhary/subscriptions',
+//   organizations_url: 'https://api.github.com/users/hiteshchoudhary/orgs',
+//   repos_url: 'https://api.github.com/users/hiteshchoudhary/repos',
+//   events_url: 'https://api.github.com/users/hiteshchoudhary/events{/privacy}',
+//   received_events_url: 'https://api.github.com/users/hiteshchoudhary/received_events',
+//   type: 'User',
+//   user_view_type: 'public',
+//   site_admin: false,
+//   name: 'Hitesh Choudhary',
+//   company: null,
+//   blog: 'https://hitesh.ai',
+//   location: 'India',
+//   email: null,
+//   hireable: null,
+//   bio: 'I make coding videos on youtube and for courses. My youtube channel explains my work more. Check that out',
+//   twitter_username: 'hiteshdotcom',
+//   public_repos: 120,
+//   public_gists: 5,
+//   followers: 55587,
+//   following: 0,
+//   created_at: '2015-03-23T13:03:25Z',
+//   updated_at: '2026-02-05T17:51:40Z'
+// }  see o/p)
+
+// 48:44
+
+// to yeh data (as just above) sabse pehle run hua hai
+// aur yeh async aur task jo hai (see o/p as follows)
+
+// (  Async task is completed
+//    Promise consumed
+//    Async task 2
+//    Async 2 resolved
+//    { username: 'Chai', email: 'chai@example.com' }
+//    ERROR: Something went wrong
+//    The promise is either resolved or rejected
+//    ERROR: JS went wrong  , see o/p)
+
+// yeh baad mei aya (see o/p) (48:50)
+
+// achha ji yeh kaise ho gaya
+// kyuki upar ka code to pehle run ho jaana chahiye tha
+// (see upar ka code)
+// maan liya ki usne (upar ke code ne) ek second liya 
+// (see promiseOne ka setTimeout 1000 ms means 1 second)
+// but jaise hi code file run hui,
+// aa..., sab jagah to humne ek second ek second
+// nahi le rakha
+// 49:00
+
+// (see promiseFour .then() se leke .finally() tak 1 second
+// i.e. 1000 ms nahi hai )
+
+// aa..., yahan pe 
+// (see promiseFour .then() se leke .finally() tak 1 second
+// i.e. 1000 ms nahi hai )
+// bhi consume etc kar rakha hai,
+
+// maan liya chaliye ek second bhi le raha hai 
+// ( see befor async function consumePromiseFive() { , 1000 ms in setTimeout of const promiseFive = ... )
+// but ab tak to ho jaana chahiye tha wo kaam
+// jab tak hum itna neeche aye (as follows)
+
+// (  fetch('https://api.github.com/users/hiteshchoudhary')
+// .then((response) => {
+//     return response.json()
+// })
+// .then((data) => {
+//     console.log(data);
+// })
+// .catch((error) => console.log(error))  , see code)
+
+// tab tak bhi yeh wait kar raha hai
+// yeh kaise hua yeh to badi interesting cheej hai
+// (49:09)
+
+// agar iske baare mei charcha nahi kari
+// to maja kaise ayega
+
+// obvious si baat hai ab aap aye hai iss channel
+// pe to uske bare mei charcha bhi ki jayegi
+// lekin aapko pata laga ki actually mei
+// kitna behind the scene kaam ho raha hai
+
+// aur kis kis cheej pe socha ja sakta tha
+// isliye kehta hu dekhiye time lagate hai iss channel
+// pe hum aur javascript mei to especially time
+// laga rahe hai
+
+// but aapko bhi pata hai already hum surpass kar chuke hai koi
+// paid course koi kuch aas pass nahi adddd... raha hai
+
+// hum sabse end mei sabse depth mei jaa rahe hai
+// aur isiliye to aapne abhi tak subscribe aur share bhi
+// kar rahe hai
+
+// but ab hum kya karenge agle video mei
+// chalenge aur aapko kuch theoritical
+// explanation samjhaunga ki yeh jo actually mei
+// ho raha hai kya aapka yeh fetch etc yeh sab
+// kaise pehle kaam kar raha hai
+// inn sabke bare mei aapko aur detail mei bataunga
+
+// async await etc bhi batayenge 
+// but haa abhi iss point pe aap aa gaye hai
+// ki itna hi aapko actually mei proper
+// chahiye kisi bhi project ko ya kisi bhi
+// react ke course ko 
+// react native ke course ko
+// start karne ke liye
+// 50:00
+
+// hai abhi aur bhi bahut kuch in depth
+// wo hum karte rahenge continuously
+// but abhi aapke liye itna kaafi hai
+
+// Class End
+
+// 50:05
