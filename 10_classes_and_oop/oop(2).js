@@ -205,3 +205,485 @@
 // lagana hai ya ispe ( let myArray2 = [1, 2, 3, 5, 6, 6] )
 // loop lagana hai
 // (14:17)
+// to yeh jo difference ata hai ki kaise pata lagau ki mai
+// current context ki baat kar raha hu
+
+// context se matlab hai ki current cheejon ki baat kar raha hu
+// kyuki dekhiye Monday, Monday hota hai
+// iss week ka Monday alag hai,
+// last week ka Monday alag tha
+// alge week ka Monday alag ayega
+
+// to aapko context batana padega ki kis
+// Monday ki baat kar rahe hai aap
+
+// to wahan pe hi exactly humara this keyword 
+// kaam ata hai
+
+// to abhi suppose kariye aapne user (const user = {})
+// likha, lekin ho sakta hai aap ek aur user likh lete
+// (means hum user naam ka ek aur object likh lete ,
+// aisa possible hai same naam ke more than one objects likhe
+// ja sakte hai)
+
+// ab dono (dono user objects) ke andar method ka naam to same hai na map
+// to map to prototype mei chala gaya hai wahan pe
+// ab usko (map method ko) kaise pata lage ki 
+// aap kispe loop lagana chahte hai,
+// yeh function kahan pe run kar raha hai
+// uske parameters kitne hai
+// to unn sab kaamon ke liye this keyword use aata hai
+// (14:51)
+
+// achha this keyword se ghabrayiyega mat
+// prototype ke andar yeh actually mei
+// wahan jaake asli mei clear hota hai
+// ki kya value hai
+
+// abhi kya hai abhi ke liye sirf itna samajh lijiye
+// ki abhi ke liye, baad mei bataunga,
+// ki aap this keyword jab bhi use kar rahe hai to
+// aap current context ki baat kar rahe hai (see const user = {})
+// (means scope of {} of const user = {})
+
+// isko (const user = {}) Monday samajh lijiye
+// (means scope of {} of const user = {})
+// to abhi iss Monday ki baat kar raha hu
+// (const user = {}, means scope of {} of const user = {})
+// to inn teeno cheejon 
+// (username: "hitesh", loginCount: 8, signedIn: true,)
+// ki baat karunga
+
+// 15:10
+
+// kahin aur ki baat karunga user ke andar
+// (means same const user = {} naam ke dusre object ki
+// baat karunga) to unke Monday ki baat karunga, 
+// (means to unke i.e. dusre const user = {} ke username: loginCount: signedIn: ki baat karunga)
+
+// to aapko yahan pe (const user = {}) details
+// console.log ki jagah
+// ( console.log("Got user details from database"); )
+// agar maan lijiye kuch details print karani thi (15:18)
+// jaise suppose kariye aapko karna tha console.log
+// hi karna tha chaliye, console.log kar lete hai
+// but back ticks mei karna tha (console.log(``))
+
+// aur mujhe username dena tha , to `Username`
+// aur colon -- `Username:`
+// aur dollar -- `Username: ${}`
+// (console.log(`Username: ${}`))
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database"); commented out
+//         console.log(`Username: ${}`);
+        
+//     }
+// }
+
+// console.log(user.username);
+// console.log(user.getUserDetails());
+
+// likh liya
+
+// ab yahan pe agar aap username likh lete hai directly
+// console.log(`Username: ${username}`);
+// to dekhte hai kya hota hai
+// 15:33
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database"); commented out
+//         console.log(`Username: ${username}`);
+        
+//     }
+// }
+
+// console.log(user.username);
+// console.log(user.getUserDetails());
+
+// likh liya
+
+// pehle print karke dekhte hai ki maine to
+// username yahan se liya aur likh diya
+
+// o/p hitesh
+// C:\Users\MSI-GF-63\OneDrive\Desktop\JS-CHAI-AUR-CODE\10_classes_and_oop\oop.js:8
+//         console.log(`Username: ${username}`);
+//                                  ^
+
+// ReferenceError: username is not defined
+//     at Object.getUserDetails (C:\Users\MSI-GF-63\OneDrive\Desktop\JS-CHAI-AUR-CODE\10_classes_and_oop\oop.js:8:34)
+//     at Object.<anonymous> (C:\Users\MSI-GF-63\OneDrive\Desktop\JS-CHAI-AUR-CODE\10_classes_and_oop\oop.js:14:18)
+//     at Module._compile (node:internal/modules/cjs/loader:1469:14)
+//     at Module._extensions..js (node:internal/modules/cjs/loader:1548:10)
+//     at Module.load (node:internal/modules/cjs/loader:1288:32)
+//     at Module._load (node:internal/modules/cjs/loader:1104:12)
+//     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+//     at node:internal/main/run_main_module:28:49
+
+// Node.js v20.17.0
+
+// theek hai ji aapne username likha,
+// isne kaha -- username is not defined (see o/p)
+
+// 15:41
+
+// kaise nahi hai yeh username to defined hai
+// (username: "hitesh" , see code)
+// lekin actually mei kya hai ki usko pata hi nahi hai
+// konse username ki baat kar rahe ho
+
+// kyuki yeh 
+// ( (const user = {})
+// console.log(user.username);
+// console.log(user.getUserDetails()); )
+
+// jo sab aap likhte ho
+// actually mei yeh browser pe ya node ke kisi
+// ke pass jata hai, aur wahan pe bataya tha na
+// memory javascript engine ke andar sab rakha
+// jata hai ek ek karke
+
+// to jab rakha gaya to usne function 
+// ( getUserDetails: function(){
+        // console.log("Got user details from database");
+        // console.log(`Username: ${username}`);        
+    // } , see code)
+// ki detail to le li
+
+// yeh ( // console.log(`Username: ${username}`); ) sara 
+// rakh to diya
+
+// but usko pata hi nahi hai user variable kya hai
+// kyuki uss function ke andar bhi to execution context 
+// yaad aya... wo bana tha , (16:05)
+// aapne ab bola hi nahi usko ki bahar se bhi kuch saamaan
+// lena hai 
+
+// to bahar se jab aapko saamaan lena hai 
+// to uss execution context ko batana padta hai
+// ki mai apne saamaan ki baat kar raha hu
+// ( console.log(`Username: ${this.username}`); )
+// tab hum yahan pe this keyword use karte hai
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database");
+//         console.log(`Username: ${this.username}`);        
+//     }
+// }
+
+// console.log(user.username);
+// console.log(user.getUserDetails());
+
+// likh liya
+
+// 16:17
+
+// ab yeh this keyword yahan pe aa gaya
+// to humne run kara
+
+// o/p hitesh
+// Username: hitesh
+// undefined
+
+// to abki bar mujhe pata hai ki
+// username hitesh yahan pe aa gaya
+// ( Username: hitesh )
+
+// undefined (see o/p) ke bare mei baad mei baat karenge
+// ki kyu ho raha hai kyuki function ( getUserDetails: function(){ ) 
+// run kar rahe hai
+// console.log ( console.log(`Username: ${this.username}`); ) 
+// mei kuch aa nahi raha hai wahan pe
+// console.log apne aap mei to empty print ho raha hai
+// wo baad mei charcha karenge but theek hai abhi ke
+// liye humare pas itni values hai
+// (16:32) aur itna kar sakte hai
+
+// achha ab ek interesting cheej mai aapko batata hu
+// ki theek hai yahan pe to aapne kar diya hai 
+// lekin kya hota agar mai iss username ko bhi
+// comment ( comment out ) kara deta
+// ( console.log(`Username: ${this.username}`); ko comment out kar diya)
+
+// aur yahan pe ek console.log print karta ki mujhe 
+// to ab this ki value batao -- console.log(this)
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database"); commented out
+//         // console.log(`Username: ${this.username}`); commented out
+//         console.log(this);
+//     }
+// }
+
+// console.log(user.username);
+// console.log(user.getUserDetails());
+
+// likh liya
+
+// ki yahan pe this ki value kya hai
+// yeh bahut hi interesting cheej hai
+
+// ab yahan pe agar mai this ki value print karta hu
+// to ayega kya wo dekhiye
+
+// run in terminal
+
+// o/p hitesh
+// {
+//   username: 'hitesh',
+//   loginCount: 8,
+//   signedIn: true,
+//   getUserDetails: [Function: getUserDetails]
+// }
+// undefined
+
+// to isne mujhe kaha ki are current context 
+// jo ek word samajh mei nahi aata aksar logon
+// ko ki kis current context ki baat kar rahe hai to dekhiye
+// yeh raha aapka object (as follows)
+
+// ( {
+//   username: 'hitesh',
+//   loginCount: 8,
+//   signedIn: true,
+//   getUserDetails: [Function: getUserDetails]
+// } , 
+// see o/p)
+
+// yeh rahe current context (see object in o/p)
+// to jitna humara memory ke andar jo bhi value
+// tha wo sara ek hi saath rakha gaya aur isko (as follows)
+
+// ( {
+//   username: 'hitesh',
+//   loginCount: 8,
+//   signedIn: true,
+//   getUserDetails: [Function: getUserDetails]
+// } , 
+// see o/p)
+
+// sabke bare mei pata hai (17:09)
+
+// to aapne function ( getUserDetails: [Function: getUserDetails], see o/p )
+// ko bola ki yahan 
+
+// ( {
+//   username: 'hitesh',
+//   loginCount: 8,
+//   signedIn: true,
+//   getUserDetails: [Function: getUserDetails]
+// } , 
+// see o/p 
+// mei 
+//   username: 'hitesh',
+//   loginCount: 8,
+//   signedIn: true,
+// see o/p)
+
+// se jaake values lo
+// (17:12)
+
+// theek hai ab ek interesting cheej kya aati hai ki 
+// yeh to ho gaya aapka console.log ( console.log(this); )
+// but isko ek minute ke liye hum yahan pe
+// comment (comment out) kara dete hai
+// ( console.log(user.getUserDetails()); ko comment out kar diya )
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database");
+//         // console.log(`Username: ${this.username}`);
+//         console.log(this);
+//     }
+// }
+
+// console.log(user.username); 
+// console.log(user.getUserDetails()); commented out
+
+// likh liya
+
+// achha ek badi interesting cheej aati hai jo ki i think
+// sabhi logon ko pata honi chaiye but hoti nahi hai
+// (17:25)
+// wo yeh ki agar mai console.log yahan global context ke 
+// andar this mai print karaun -- console.log(this)
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database"); commented out
+//         // console.log(`Username: ${this.username}`); commented out
+//         console.log(this);
+//     }
+// }
+
+// console.log(user.username);
+// // console.log(user.getUserDetails()); commented out
+// console.log(this);
+
+// likh liya 
+
+// kyuki abhi global context mei hai 
+// (humara cursor global context mei hai)
+// function context mei to nahi hai execution mei
+// (17:33)
+// yahan pe value kya aati hai, yeh bada interesting hai
+
+// run in terminal
+
+// o/p hitesh
+// {}
+
+// to yahan pe dekhiye value aapke pas aati hai
+// empty paranthesis (empty curly braces {} , see o/p)
+// matlab abhi global context mei kuch nahi hai
+// (17:41)
+
+// Lekin yeh global context change hota hai
+// maine aapko bataya tha examples mei ki browser
+// se nikaal ke humne leke aye hai 
+// (js engine ko browser se nikaal ke leke aye hai)
+
+// yeh value (empty curly braces {} , see o/p) 
+// actually mei change hoti rehti hai
+// (browser console mei aa gaye and clear kar liya)
+// kyuki browser ke andar dekhiye bahut sari API access hai
+// fetch hai, browser request hai, DOM hai
+// bahut sari 50 cheejein hai yahan pe
+
+// (17:56)
+
+// to yahan pe (browser console mei) jab aap console.log karte hai
+// to actually mei aapke pass already log
+// ke andar bahut sara context hota hai
+
+// to yahan pe (browser console mei) jab aap
+// console.log(this) karoge (and press enter)
+// to aapko window object milta hai jo ki global object hai
+// (console.log(this) in browser console and enter)
+// (18:07)
+
+// aur uske (window object) andar humari 50 hajaar cheejein ho rahi hai
+// (18:10) (dropdown open and close window object)
+// jitna bhi cancelAnimationFrame, caches,
+// aa... 75 cheejein ho rahi hai ( dropdown open window object and see )
+
+// to by default browser mei jab run hota hai
+// tab aapka this ka value (console.log(this))
+// yani current context global context mei bahut sari cheejein
+// rakhi hui hai 
+
+// (18:20)
+
+// Lekin jab yahan pe (code editor mei) aa jate hai 
+// node environment ke andar tab humare pas kum (less) hai
+// (kum cheejein hai console.log(this) ke o/p mei means empty {}, see o/p)
+
+// achha ab ek problem pata hai kya aati hai
+// ki agar dekhiye yeh to maine user bana liya ek 
+// (const user = {}, see code)
+// aur kaam bhi apna achhe se kar liya hai
+// theek hai ji koi dikkat wali baat hai nahi usme
+// console.log(this) ko comment out kar diya
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database"); commented out
+//         // console.log(`Username: ${this.username}`); commented out
+//         console.log(this);
+//     }
+// }
+
+// console.log(user.username);
+// // console.log(user.getUserDetails()); commented out
+// // console.log(this); commented out
+
+// likh liya 
+
+// (18:34)
+
+// Lekin agar mere ko user two banana hai
+// to kya karna padega
+// koi aur option hi nahi hai
+// yeh (const user = {}) poora ka poora lena padega
+// (const user = {} ko copy and paste kar diya const user = {} ke neeche)
+// aur user two banana padega (const user2 = {})
+// (18:44)
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database");
+//         // console.log(`Username: ${this.username}`);
+//         console.log(this);
+//     }
+// }
+
+// const user2 = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database"); 
+//         // console.log(`Username: ${this.username}`);
+//         console.log(this);
+//     }
+// }
+
+// console.log(user.username);
+// // console.log(user.getUserDetails());
+// // console.log(this);
+
+// likh liya 
+
+// obvious si baat hai user2 (const user2 = {}) jab banega
+// to uske andar alag values dalegi
+// to har bar repeat karna possible nahi hai
+
+// suppose kariye mai ek structure bana raha tha data
+// ka database mei daalne ke liye ki username, loginCount
+// signedIn (see const user2 = {}) yeh sab mai daal dunga
+// method (getUserDetails: function(){} in const user2 = {})
+// chaliye nahi dalta hu, 
+// but har bar itna sara kaam (username, loginCount signedIn)
+// karna padega to uss kaam ko rokne ke liye
+// actually mei humare pas constructor functions aur yeh
+// sab aate hai
+
+// (19:03)
