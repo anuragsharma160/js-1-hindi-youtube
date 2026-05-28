@@ -687,3 +687,360 @@
 // sab aate hai
 
 // (19:03)
+
+// theek hai yeh to ho gaya basic
+// theek hai to yeh kaam ab aapko pata lag raha hai
+// kyu problem de raha hai hume
+// (const user2 = {} ko backspace kar diya)
+// theek hai
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database"); commented out
+//         // console.log(`Username: ${this.username}`); commented out
+//         console.log(this);
+//     }
+// }
+
+// console.log(user.username);
+// // console.log(user.getUserDetails()); commented out
+// // console.log(this); commented out
+
+// likh liya
+
+// ab aage chalte hai humare constructor function ke upar
+// kyuki humne notes mei dekha tha ki mai kuch cheejon ki baat
+// karunga, yeh cheejein to abhi humne object literal (see md file)
+// ke bare mei baat kari ki kya object hai literal humare pas
+// pehle bhi humne kari thi,
+
+// this keyword kya hota hai (console.log(this) in getUserDetails of const user = {})
+// alag alag context mei kya hota hai 
+// to object literal (see md file) ki sirf humne baat kari hai
+
+// ab baat karte hai av=ctually mei constructor function (see md file) ki
+// constructor function actually mei kya kya kar raha hai
+// kyu kar raha hai kaise kar raha hai
+
+// ab aapne constructor function kayi bar actually mei dekha hai
+// ab mai console.log hata deta hu sara kyuki jarurat nahi hai ab iski
+// (console.log(user.username) ko comment out kar diya)
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database"); commented out
+//         // console.log(`Username: ${this.username}`); commented out
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username); commented out
+// // console.log(user.getUserDetails()); commented out
+// // console.log(this); commented out
+
+// likh liya
+
+// to aapne agar yaad ho to humne kuch iss tareh
+// ka code bhi likha tha , humne bola tha ki 
+// promiseOne hai humare pas , to suppose kariye promiseOne
+// const promiseOne
+// aur bola tha new
+// const promiseOne = new
+// aur yeh Promise
+// const promiseOne = new Promise()
+// theek hai ji yeh promise iss tareh se likha tha
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database"); commented out
+//         // console.log(`Username: ${this.username}`); commented out
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username); commented out
+// // console.log(user.getUserDetails()); commented out
+// // console.log(this); commented out
+
+
+// const promiseOne = new Promise()
+
+// likh liya 
+
+// 19:53
+
+// ab kya baat thi humari yahan pe ki yeh jo
+// new keyword hai ( const promiseOne = new Promise() ) 
+// yeh actually mei aya kahan se aur yeh kya kaam kar raha hai
+// aur sirf yahin pe ( const promiseOne = new Promise() ) hi nahi
+// aapke pas aur bhi examples hai aise
+
+// jaise suppose kariye aap date lete hai tab bhi aap yu
+// bolte hai new date iss tareh se mujhe date do
+// const date = new Date()
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database"); commented out
+//         // console.log(`Username: ${this.username}`); commented out
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username); commented out
+// // console.log(user.getUserDetails()); commented out
+// // console.log(this); commented out
+
+
+// const promiseOne = new Promise()
+// const date = new Date()
+
+// likh liya 
+
+// 20:05
+
+// to yahan pe (const date = new Date()) bhi aata hai
+// yeh actually mei jo new keyword hai yeh actually mei
+// constructor function hai 
+
+// ab yeh constructor function karta kya hai, 
+// yeh sirf aapko allow karta hai ki aap matlab ek hi
+// object se, ek hi object literal se aap multiple instances
+// bana sako
+
+// dekhiye agar ek hi instance hoga to obvious si baat hai
+// mai to khush hu ki memory ke andar jada jagah nahi jaa rahi hai
+// sara kaam ho raha hai 
+
+// Lekin kayi aisi situation hoti hai especially jaise promise date
+// wahan pe hume naya instance hi chahiye, purani values ko
+// affect mat karo, this etc jo bol raha hu to apna apna context
+// rakho aap wahan pe, jo execution context hota hai
+
+// to yeh jo new keyword hai (const date = new Date())
+// yeh actually mei naya executional..., executional to nahi
+// but naya context banane ke liye humare pas kaam aata hai
+// aur isi ko ( const date = new Date() mei new ko )
+// hum constructor function bolte hai
+
+// 20:47
+
+// ab yeh constructor function kaam kaise aata hai
+// actually mei kaafi jagah aap iske saath interesting cheejein
+// kar sakte hai, batate hai jaise aapko
+// objects ke andar hi batate hai classes mei to abhi gaye nahi hai hum
+
+// ( following lines ko backspace kar diya
+// const promiseOne = new Promise()
+// const date = new Date()  )
+
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database"); commented out
+//         // console.log(`Username: ${this.username}`); commented out
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username); commented out
+// // console.log(user.getUserDetails()); commented out
+// // console.log(this); commented out
+
+// likh liya 
+
+// to kya hai suppose kariye ki aap ek function bana rahe hai
+// theek hai ji function bana rahe hai
+// ab yeh function ka naam hai User
+// function User
+
+// ab dekhiye interestingly classes to bana hi nahi raha hu
+// function bana raha hu, object bhi nahi bana raha ,
+// function bana raha hu , 
+
+// ab function hume pata hai
+// User banaya to function to ek hi bar run hota hai
+// uska to ek hi global execution context hota hai
+// wahin pe ho jata hai (21:15)
+
+// par suppose kariye agar maine ek User naam ka
+// function banaya, uske andar maine kaha ki aap mujhe
+// kya kya do username do
+
+// function User(username){}
+
+// aur kya do, aa..., aur kya hote hai loginCount de do
+// function User(username, loginCount){}
+
+// aur kya de do isLoggedIn
+// function User(username, loginCount, isLoggedIn){}
+
+// theek hai 3 values hi le lete hai isLoggedIn
+// yeh aapne 3 values le li
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database"); commented out
+//         // console.log(`Username: ${this.username}`); commented out
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username); commented out
+// // console.log(user.getUserDetails()); commented out
+// // console.log(this); commented out
+
+
+// function User(username, loginCount, isLoggedIn){
+
+// }
+
+// likh liya 
+
+// (21:35)
+
+// ab maine kaha ki inn 3 values (username, loginCount, isLoggedIn)
+// ko name mei set karna hai, 
+// theek hai to maine kaha ki mere pas ek already variable
+// hai username
+// function User(username, loginCount, isLoggedIn){
+//    username  
+// }
+
+// aur usme (jo username likha hai) aap assign kar do
+// ya fir myUsername , usme assign kar do yeh 
+// aap upar wala username (function ke parameter wala username)
+
+// function User(username, loginCount, isLoggedIn){
+//    username = username
+// }
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database"); commented out
+//         // console.log(`Username: ${this.username}`); commented out
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username); commented out
+// // console.log(user.getUserDetails()); commented out
+// // console.log(this); commented out
+
+
+// function User(username, loginCount, isLoggedIn){
+//    username = username
+// }
+
+// likh liya 
+
+// ab problem kya aati hai ki hume nahi pata ki yar yeh jo
+// aap mujhe pass kar rahe ho 
+// (function User(username, loginCount, isLoggedIn){} mei username)
+// yeh konsa wala username hai
+
+// aur yeh (username = username , mei left wala username) konsa,
+// kisme kya assign ho raha hai
+
+// to agar mai yahan pe likh du myusername (as follows)
+
+// function User(username, loginCount, isLoggedIn){
+//    myusername = username
+// }
+
+// to bada easily pata lag jayega ki haa theek hai
+// yeh wala username (myusername = username , mei myusername) aapka variable hai
+// yeh wala user (myusername = username , mei username) jo 
+// humare pass parameter pass hua uski value hai, argument hai
+// to kaam ho jayega
+
+// (22:05)
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database"); commented out
+//         // console.log(`Username: ${this.username}`); commented out
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username); commented out
+// // console.log(user.getUserDetails()); commented out
+// // console.log(this); commented out
+
+
+// function User(username, loginCount, isLoggedIn){
+//    myusername = username
+// }
+
+// likh liya 
+
+// Lekin aksar coding practice mei yeh dekha gaya hai ki
+// yeh dono ke naam hum same hi rakhte hai
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database"); commented out
+//         // console.log(`Username: ${this.username}`); commented out
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username); commented out
+// // console.log(user.getUserDetails()); commented out
+// // console.log(this); commented out
+
+
+// function User(username, loginCount, isLoggedIn){
+//    username = username
+// }
+
+// likh liya 
+
+// (22:09)
+
+// Lekin batayenge kaise ki mere andar ki variable konse
+// hai aur aap konse de rahe ho , 
+// to wapas se wo hi this keyword
+// (22:14)
