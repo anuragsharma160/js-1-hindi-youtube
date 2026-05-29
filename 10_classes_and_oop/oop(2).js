@@ -1044,3 +1044,178 @@
 // hai aur aap konse de rahe ho , 
 // to wapas se wo hi this keyword
 // (22:14)
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database"); commented out
+//         // console.log(`Username: ${this.username}`); commented out
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username); commented out
+// // console.log(user.getUserDetails()); commented out
+// // console.log(this); commented out
+
+
+// function User(username, loginCount, isLoggedIn){
+//    this.username = username
+// }
+
+// likh liya 
+
+// 22:14
+
+// to yeh syntax aap kaafi dekhoge -- this.username
+// yeh jo left hand side wali value hai
+// ( this.username )
+// yeh humara variable hai
+
+// aur jo right hand side wali value hai
+// ( username )
+// jo aap pass karke de rahe ho 
+// ( means jo function ka parameter aap pass karke de rahe ho )
+
+// (22:23)
+
+// theek hai to bada hi basic aap chaho to variable
+// ke naam alag likh do but fir bhi yeh this ka concept
+// to ayega
+
+// to actually mei this kya hai humne dekha bhi
+// ek object hai , object ke andar values daale
+// ja rahe hai tabhi to this.username, this.yeh ...
+// (object mei dot access method hota hai isliye this object hai)
+// (22:33)
+
+// abhi agar aapko yaad ho to just humne dekha tha na 
+// ek blank object hi to hai 
+// (pehle terminal mei o/p mei {} aa raha tha , humne dekha tha)
+// (22:36)
+// object ke andar jo bhi daalna hai this.yeh ... ,
+// this.wo ... karke daale jao , kya dikkat hai
+// (this.username = username)
+
+// theek hai to yeh ho gaya humara basic 
+// to loginCount bhi daal dete hai
+// this.loginCount =
+// yeh naya humne banaya hai , iske andar 
+// inject kar diya jo bhi aapne loginCount diya
+// this.loginCount = loginCount
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database");
+//         // console.log(`Username: ${this.username}`);
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username);
+// // console.log(user.getUserDetails());
+// // console.log(this);
+
+
+// function User(username, loginCount, isLoggedIn){
+//     this.username = username
+//     this.loginCount = loginCount
+// }
+
+// likh liya
+
+// theek hai koi dikkat nahi hai
+// this.isLoggedIn , yeh aapne diya
+// this.isLoggedIn =
+// aur jo aap pass kar rahe ho wo bhi maine
+// kar diya
+// this.isLoggedIn = isLoggedIn
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database");
+//         // console.log(`Username: ${this.username}`);
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username);
+// // console.log(user.getUserDetails());
+// // console.log(this);
+
+
+// function User(username, loginCount, isLoggedIn){
+//     this.username = username
+//     this.loginCount = loginCount
+//     this.isLoggedIn = isLoggedIn
+// }
+
+// likh liya
+
+// achha ab ek interesting cheej aapko batata hu
+// yahan se aap chaho to isko -- return this 
+// kar sakte ho
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database");
+//         // console.log(`Username: ${this.username}`);
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username);
+// // console.log(user.getUserDetails());
+// // console.log(this);
+
+
+// function User(username, loginCount, isLoggedIn){
+//     this.username = username
+//     this.loginCount = loginCount
+//     this.isLoggedIn = isLoggedIn
+
+//     return this
+// }
+
+// likh liya
+
+// return this karte hi kya hua, wo jo
+// object tha na ({}) aapne pass on kar diya ab
+
+// ab jo bhi iske saath (function User(username, loginCount, isLoggedIn){}) 
+// kuch khelega wo aaraam se iss poori values 
+
+// ( function User(username, loginCount, isLoggedIn){} /
+//     this.username = username
+//     this.loginCount = loginCount
+//     this.isLoggedIn = isLoggedIn ) 
+
+// ko access kar sakta hai
+
+// (23:11)
+
+// achha ab ek interesting cheej yeh hai
+// ki ab hum new keyword ka use karte hai
+
+// to isko bolte hai hum humara userOne
+// const userOne =
+// ab userOne kya kar raha hai hum jadatar 
+// abhi tak yeh hi khelte aye the User()
+// const userOne = User()
+// iss tareh se humne khela tha
+// (23:23)
