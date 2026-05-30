@@ -1219,3 +1219,248 @@
 // const userOne = User()
 // iss tareh se humne khela tha
 // (23:23)
+
+// aur values lete hai chaliye isi tareh se khelete hai
+// ek bar jo abhi tak hum samajhte aye hai seekhte aye hai
+// const userOne = User("hitesh",)
+// (username ki value "hitesh" le li, 
+// compare with previous function User(username, loginCount, isLoggedIn))
+// aa..., loginCount kitna hai 12 hai
+// const userOne = User("hitesh", 12,)
+// aur yeh isLoggedIn true hai
+// const userOne = User("hitesh", 12, true)
+
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database");
+//         // console.log(`Username: ${this.username}`);
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username);
+// // console.log(user.getUserDetails());
+// // console.log(this);
+
+
+// function User(username, loginCount, isLoggedIn){
+//     this.username = username
+//     this.loginCount = loginCount
+//     this.isLoggedIn = isLoggedIn
+
+//     return this
+// }
+
+// const userOne = User("hitesh", 12, true)
+
+// likh liya
+
+// theek hai ji userOne print karein
+// bilkul karenge, isme kya dikkat hai
+// console.log(userOne)
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database");
+//         // console.log(`Username: ${this.username}`);
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username);
+// // console.log(user.getUserDetails());
+// // console.log(this);
+
+
+// function User(username, loginCount, isLoggedIn){
+//     this.username = username
+//     this.loginCount = loginCount
+//     this.isLoggedIn = isLoggedIn
+
+//     return this
+// }
+
+// const userOne = User("hitesh", 12, true)
+
+// console.log(userOne);
+
+// likh liya
+
+// yeh lijiye print kiya
+// (run in terminal)
+// value kya ayi, wo sabse interesting hai
+
+// o/p <ref *1> Object [global] {
+//   global: [Circular *1],
+//   clearImmediate: [Function: clearImmediate],
+//   setImmediate: [Function: setImmediate] {
+//     [Symbol(nodejs.util.promisify.custom)]: [Getter]
+//   },
+//   clearInterval: [Function: clearInterval],
+//   clearTimeout: [Function: clearTimeout],
+//   setInterval: [Function: setInterval],
+//   setTimeout: [Function: setTimeout] {
+//     [Symbol(nodejs.util.promisify.custom)]: [Getter]
+//   },
+//   queueMicrotask: [Function: queueMicrotask],
+//   structuredClone: [Function: structuredClone],
+//   atob: [Getter/Setter],
+//   btoa: [Getter/Setter],
+//   performance: [Getter/Setter],
+//   fetch: [Function: fetch],
+//   crypto: [Getter],
+//   username: 'hitesh',
+//   loginCount: 12,
+//   isLoggedIn: true
+// }
+
+// value ayi humare pas ki poora ka poora yeh this 
+// print ho raha hai, kyuki usne return humare pas 
+// this kiya hai actually mei values to poora values
+// humare pas print ho gayi hai (see o/p)
+
+// dekhiye baki values jo aa rahi hai na
+// crypto getter setters fetch(see o/p)
+
+// ( atob: [Getter/Setter],
+// btoa: [Getter/Setter],
+// performance: [Getter/Setter],
+// fetch: [Function: fetch],
+// crypto: [Getter], see o/p)
+
+// yeh maine aapko bataya tha aati hai 
+// aap jaise hi node ke andar jaate hai to fetch
+// yahan pe (fetch: [Function: fetch], see o/p)
+// milta hi hai aapko
+
+// to inn sabko 
+
+// (atob: [Getter/Setter],
+//   btoa: [Getter/Setter],
+//   performance: [Getter/Setter],
+//   fetch: [Function: fetch],
+//   crypto: [Getter], see o/p)
+
+// hum ignore kar dete hai ek minute ke liye
+// hum sirf ispe jaate hai username, loginCount
+// issLoggedIn
+// (username: 'hitesh',
+//   loginCount: 12,
+//   isLoggedIn: true
+// } see o/p)
+
+// theek hai ji koi dikkat nahi hai itna to hume pata
+// hi tha ki isi ke andar yeh aane wale hai 
+// aur mai sari properties access bhi kar sakta hu
+// jaise .isLoggedIn, .loginCount, .username
+// ( console.log(userOne.isLoggedIn), 
+// console.log(userOne.loginCount), 
+// console.log(userOne.username) ) 
+// yehn basic hai koi dikkat wali baat nahi hai
+
+// (24:17)
+
+// achha problem kab aati hai ki suppose kariye
+// maine bola const userTwo =
+// aur userTwo ko bola ki aap bhi kya kariye
+// User se baniye
+// const userTwo = User()
+// Lekin iss bar "ChaiAurCode"
+// const userTwo = User("ChaiAurCode")
+// theek hai ji 
+// aur bola aap 11 ho (loginCount)
+// aur aap false ho (isLoggedIn)
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database");
+//         // console.log(`Username: ${this.username}`);
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username);
+// // console.log(user.getUserDetails());
+// // console.log(this);
+
+
+// function User(username, loginCount, isLoggedIn){
+//     this.username = username
+//     this.loginCount = loginCount
+//     this.isLoggedIn = isLoggedIn
+
+//     return this
+// }
+
+// const userOne = User("hitesh", 12, true)
+// const userTwo = User("ChaiAurCode", 11, false)
+
+// console.log(userOne);
+
+// likh liya
+
+// theek hai ji ab wapas se hum userOne ki
+// values print kara ke dekhte hai ki ab
+// kya hota hai (console.log(userOne))
+
+// run in terminal
+
+// o/p <ref *1> Object [global] {
+//   global: [Circular *1],
+//   clearImmediate: [Function: clearImmediate],
+//   setImmediate: [Function: setImmediate] {
+//     [Symbol(nodejs.util.promisify.custom)]: [Getter]
+//   },
+//   clearInterval: [Function: clearInterval],
+//   clearTimeout: [Function: clearTimeout],
+//   setInterval: [Function: setInterval],
+//   setTimeout: [Function: setTimeout] {
+//     [Symbol(nodejs.util.promisify.custom)]: [Getter]
+//   },
+//   queueMicrotask: [Function: queueMicrotask],
+//   structuredClone: [Function: structuredClone],
+//   atob: [Getter/Setter],
+//   btoa: [Getter/Setter],
+//   performance: [Getter/Setter],
+//   fetch: [Function: fetch],
+//   crypto: [Getter],
+//   username: 'ChaiAurCode',
+//   loginCount: 11,
+//   isLoggedIn: false
+// }
+
+// theek hai to isko run karaya 
+// are yeh kya ho gaya, yeh to expected hi nahi tha
+// ki username ke andar ChaiAurCode aa gaya hai 
+// kyuki dekhiye userTwo to aapne kabhi print hi nahi karaya
+// (see code -- console.log(userOne))
+
+// but userTwo ne kya kara values overwrite kar di
+// sari ki sari (see o/p)
+// ha ji sari ki sari value aapki over write kar di (see o/p)
+
+// ab ek baat batayiye kya yeh values jab over write ho rahi
+// hai achha lag raha hai (25:04)
+// yeh to poora ka poora code hi humara band baja dega agar
+// iss tareh se karne lage to
+
+// imagine kariye 10 - 15 programmer jab code
+// karte hai aur iss tareh se values over write karoge
+// to kya hoga, haa bahut problem ho jayegi
+
+// isiliye jo promises wala video tha usme mai
+// bar bar new keyword use kar raha tha bina aapko
+// samjhaye, ab samajh mei aya kya kahani hai (25:22)
