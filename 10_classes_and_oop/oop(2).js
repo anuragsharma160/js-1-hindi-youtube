@@ -1464,3 +1464,214 @@
 // isiliye jo promises wala video tha usme mai
 // bar bar new keyword use kar raha tha bina aapko
 // samjhaye, ab samajh mei aya kya kahani hai (25:22)
+
+// chaliye ab agar aapke kahani samajh mei aa gayi hai
+// ki yeh sab 
+
+// (  atob: [Getter/Setter],
+//   btoa: [Getter/Setter],
+//   performance: [Getter/Setter],
+//   fetch: [Function: fetch],
+//   crypto: [Getter],
+//   username: 'ChaiAurCode',
+//   loginCount: 11,
+//   isLoggedIn: false , see o/p )
+
+// kyu ho raha hai tab aapko samajh mei aa gaya
+// ki actually mei jo mai baat kar raha tha
+// constructor function ki (see md file)
+
+// constructor function kya karta hai aapko har
+// baar ek naya instance de deta hai , ek nayi
+// copy de deta hai
+
+// uss copy ke saath jo bhi aap kheloge , 
+// wo aapke hawale hai , aap jo likh rahe
+// ho wo aapke hawale hai,
+// original ya fir dusre usse effect nahi hote hai
+
+// (25:44)
+
+// to karna kuch nahi hai, bas yahan pe ek ek 
+// keyword add kar dena hai, itna jada bada bhari
+// keyword bhi nahi hai, sirf yahan pe ayiye aur bol
+// dijiye ki mujhe ( const userOne = User("hitesh", 12, true) )
+// to naya instance do bhai
+
+// const userOne = new User("hitesh", 12, true)
+
+// purana wala aap apne pas rakho, 
+// mujhe ( const userOne = User("hitesh", 12, true) )
+// naya do
+
+// mujhe ( const userTwo = User("ChaiAurCode", 11, false) ) 
+// bhi naya do
+
+// const userTwo = new User("ChaiAurCode", 11, false)
+
+// 25:55
+
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database");
+//         // console.log(`Username: ${this.username}`);
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username);
+// // console.log(user.getUserDetails());
+// // console.log(this);
+
+
+// function User(username, loginCount, isLoggedIn){
+//     this.username = username
+//     this.loginCount = loginCount
+//     this.isLoggedIn = isLoggedIn
+
+//     return this
+// }
+
+// const userOne = new User("hitesh", 12, true)
+// const userTwo = new User("ChaiAurCode", 11, false)
+
+// console.log(userOne);
+
+// likh liya
+
+// theek hai ab aapne sirf dekhiye, achha humne kuch object
+// nahi likha hai, class nahi likhi hai, bas hum sirf new 
+// keyword ka importance yahan pe jaan rahe hai
+
+// theek hai ji wapas se print kara lete hai
+// ( run in terminal )
+
+// o/p User { username: 'hitesh', loginCount: 12, isLoggedIn: true }
+
+// to abki baar kya hai User dekhiye (see o/p)
+// kaafi clean ho gaya hai, new keyword use kara to
+// wo faltu ka jo mess hai wo bhi nahi aa raha hai
+// kyuki usko pata hai nahi dena hai wo
+
+// Lekin username humare pass "hitesh" hai (see o/p)
+// aur yahin ki yahin aap dekh sakte hai
+// ki jo aap userTwo likh rahe hai (console.log(userTwo))
+// uski alag copy hai apne pas 
+// wo apna alag jo bhi usko khelna hai
+// wo apna alag khel raha hai
+
+// 26:21
+
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database");
+//         // console.log(`Username: ${this.username}`);
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username);
+// // console.log(user.getUserDetails());
+// // console.log(this);
+
+
+// function User(username, loginCount, isLoggedIn){
+//     this.username = username
+//     this.loginCount = loginCount
+//     this.isLoggedIn = isLoggedIn
+
+//     return this
+// }
+
+// const userOne = new User("hitesh", 12, true)
+// const userTwo = new User("ChaiAurCode", 11, false)
+
+// console.log(userOne);
+// console.log(userTwo);
+
+// likh liya
+
+// ( run in terminal )
+
+// o/p User { username: 'hitesh', loginCount: 12, isLoggedIn: true }
+// User { username: 'ChaiAurCode', loginCount: 11, isLoggedIn: false }
+
+// 26:21
+
+// to koi dikkat wali baat hi nahi hai yahan pe
+// to alag alag..., 
+// to hume yeh pata laga ki actually mei
+// constructor function (see md file)
+// kya karta hai 
+// yeh aapko har bar ek naya instance deta hai
+
+// achha ek cheej aur batata hu yahan pe
+// suppose kariye agar mai -- return this
+// nahi karta, tab kya hota
+
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database");
+//         // console.log(`Username: ${this.username}`);
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username);
+// // console.log(user.getUserDetails());
+// // console.log(this);
+
+
+// function User(username, loginCount, isLoggedIn){
+//     this.username = username
+//     this.loginCount = loginCount
+//     this.isLoggedIn = isLoggedIn
+
+//     // return this commented out
+// }
+
+// const userOne = new User("hitesh", 12, true)
+// const userTwo = new User("ChaiAurCode", 11, false)
+
+// console.log(userOne);
+// console.log(userTwo);
+
+// likh liya
+
+// ... tab kya hota,
+// tab kya values milti nahi milti
+// haa ji yeh bada interesting hai yeh bhi jaan na
+// jaruri hai aapko
+
+// 26:42
+
+// (run in terminal)
+
+// o/p User { username: 'hitesh', loginCount: 12, isLoggedIn: true }
+// User { username: 'ChaiAurCode', loginCount: 11, isLoggedIn: false }
+
+// dekhiye abhi bhi aapko mil raha hai (see o/p)
+// to aap -- return this
+// likhein ya nahi likhein , yeh explicitly...
+// nahi implicitly bolenge usko , 
+// theek hai to implicitly aapka define hota hi hai 
+
+// aapko karne ki jarurat nahi hai return hota hi hai
+// by default maan lo ki as such koi jarurat nahi hai
+// implicitly define hota hai 
+// but theek hai (27:00)
