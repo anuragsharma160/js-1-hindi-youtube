@@ -1675,3 +1675,135 @@
 // by default maan lo ki as such koi jarurat nahi hai
 // implicitly define hota hai 
 // but theek hai (27:00)
+// kyuki hume pata hai kya kar rahe hai
+// mai humesha believe karta hu ki verbose code likho
+// java jitna verbose nahi but itna to ki aapko
+// pata lage ki aap kya kar rahe ho
+// yahan pe kya ho raha hai, kaise values aa rahi hai
+// kaise values jaa rahi hai
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database");
+//         // console.log(`Username: ${this.username}`);
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username);
+// // console.log(user.getUserDetails());
+// // console.log(this);
+
+
+// function User(username, loginCount, isLoggedIn){
+//     this.username = username
+//     this.loginCount = loginCount
+//     this.isLoggedIn = isLoggedIn
+
+//     return this
+// }
+
+// const userOne = new User("hitesh", 12, true)
+// const userTwo = new User("ChaiAurCode", 11, false)
+
+// console.log(userOne);
+// console.log(userTwo);
+
+// likh liya
+
+// theek hai ab kya hai new keyword ke bare mei kuch
+// lines aap note karna chahein to kar lijiye
+// dekhiye jaise hi aap new keyword use karenge
+// ( const userOne = new User("hitesh", 12, true) )
+// to kya hota hai sabse pehle ek empty object ({})
+// create hota hai jisko instance bola jata hai
+
+// jaise ki abhi humne dekha node ke case mei this
+// kara to ek this empty keyword (empty object {}, see previous o/p) 
+// generate hua to bar bar this likhenge to bar bar
+// empty paranthesis (empty curly braces {}) generate 
+// honge jisko bolte hai ek naya object create hota hai
+// (27:32)
+
+// theek hai ab aapke pas ek naya object agar create ho
+// gaya hai, to uske baad kya hai step one mei likh
+// lijiye ki naya object humare pas create ho raha hai
+// Step 1 . Naya object humare pas create ho raha hai
+
+// second kya hai aapka yeh jo constructor function
+// hota hai wo likh ke bhi bataunga abhi mai aapko
+// par second step yeh hota hai ki aapka 
+// ek constructor function call hota hai  
+// new keyword ke karan
+
+// ab yeh kya karta hai jitne bhi aapke arguments etc
+// yeh sab uske andar pack karta hai aur aapko de deta hai
+// (27:54)
+
+// theek hai to third step mei kya hota hai
+// ki aapka yeh jo this keyword hai 
+// jo bhi aapne arguments etc likhe hai wo
+// sab uske andar inject ho jaate hai
+// (28:00)
+
+// aur fourth step mei aapko mil jate hai function
+// ke andar jaisa ki abhi hume mile
+
+// to yeh humara basic ek actually mei 
+// working mechanism hai jo internally yahan pe
+// chalta hai , to fourth step ka karnama hai
+// pehla ek object create hoga 
+// dusra jo bhi aapne yahan pe yeh sab likha hai
+
+// ( this.username = username
+    // this.loginCount = loginCount
+    // this.isLoggedIn = isLoggedIn 
+    // ,  see code)
+
+// wo sab uske andar pass on ho jayega
+
+// 3rd step ke andar jo aapka this create
+// hua hai uske andar add ho jayenge aur
+// aapko mil jayega
+// (28:20)
+
+// to 3 step , 4 step jaisa bhi aapka mann kare
+// wo boliye
+
+// to aab aapko multiple insstances etc sab
+// samajh mei aa gaya
+
+// achha ek cheej aur hai yahan pe yeh to humne
+// jo example likha hai (as follows)
+
+// ( function User(username, loginCount, isLoggedIn){
+//     this.username = username
+//     this.loginCount = loginCount
+//     this.isLoggedIn = isLoggedIn
+
+//     return this
+// } , 
+// see code)
+
+// wo likha hai sirf ki aap sare ke sare
+// properties hi hai
+
+//     ( this.username = username
+//     this.loginCount = loginCount
+//     this.isLoggedIn = isLoggedIn 
+// see code )
+
+// but aisa kuch nahi hai ki aapko koi
+// rok raha hai ki aap koi method (function)
+// nahi likh sakte 
+
+// jaise ki for example this.greeting
+// naam se aapne ek method bana diya
+// method hi bolenge yahan to , vaise to
+// hai to function , callback jo marji aye
+// (28:49)
+

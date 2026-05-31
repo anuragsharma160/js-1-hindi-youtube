@@ -20,7 +20,7 @@ function User(username, loginCount, isLoggedIn){
     this.loginCount = loginCount
     this.isLoggedIn = isLoggedIn
 
-    // return this
+    return this
 }
 
 const userOne = new User("hitesh", 12, true)
