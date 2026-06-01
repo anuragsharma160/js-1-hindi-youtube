@@ -1805,5 +1805,215 @@
 // naam se aapne ek method bana diya
 // method hi bolenge yahan to , vaise to
 // hai to function , callback jo marji aye
-// (28:49)
+// (28:49) boliye
 
+
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database");
+//         // console.log(`Username: ${this.username}`);
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username);
+// // console.log(user.getUserDetails());
+// // console.log(this);
+
+
+// function User(username, loginCount, isLoggedIn){
+//     this.username = username
+//     this.loginCount = loginCount
+//     this.isLoggedIn = isLoggedIn
+
+//     this.greeting = function(){
+
+//     }
+
+//     return this
+// }
+
+// const userOne = new User("hitesh", 12, true)
+// const userTwo = new User("ChaiAurCode", 11, false)
+
+// console.log(userOne);
+// console.log(userTwo);
+
+// likh liya
+
+// theek hai abhi aapne kaha ki mai yahan pe
+// console.log() karna chahta hu
+// yeh lijiye back ticks
+// console.log(``)
+// aur bol dete hai Welcome
+// console.log(`Welcome`)
+// aur inject kar dete hai ki
+// console.log(`Welcome ${}`)
+
+// ab hume pata hai ki this keyword use
+// karna hai kyuki current context
+// ki baat kar rahe hai
+// varna context change ho jayega bar bar
+
+// this.greeting = function(){
+//     console.log(`Welcome ${this}`);
+// }
+
+// to this.username
+
+// this.greeting = function(){
+//     console.log(`Welcome ${this.username}`);
+// }
+
+
+
+
+
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database");
+//         // console.log(`Username: ${this.username}`);
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username);
+// // console.log(user.getUserDetails());
+// // console.log(this);
+
+
+// function User(username, loginCount, isLoggedIn){
+//     this.username = username
+//     this.loginCount = loginCount
+//     this.isLoggedIn = isLoggedIn
+
+//     this.greeting = function(){
+//         console.log(`Welcome ${this.username}`);
+//     }
+
+//     return this
+// }
+
+// const userOne = new User("hitesh", 12, true)
+// const userTwo = new User("ChaiAurCode", 11, false)
+
+// console.log(userOne);
+// console.log(userTwo);
+
+// likh liya
+
+// theek hai ji to ab hume pata hai to 
+// aisi koi dikkat wali baat nahi hai
+// ab aap agar isko run karoge dubara se
+// ki kya cheejein hai to uske pas 
+// wo method ( greeting: [Function (anonymous)] , see o/p , in 2nd object) 
+// bhi available hai
+
+// run in terminal
+
+// o/p 
+// User {
+//   username: 'hitesh',
+//   loginCount: 12,
+//   isLoggedIn: true,
+//   greeting: [Function (anonymous)]
+// }
+// User {
+//   username: 'ChaiAurCode',
+//   loginCount: 11,
+//   isLoggedIn: false,
+//   greeting: [Function (anonymous)]
+// }
+
+// function hi hai 
+// ( greeting: [Function (anonymous)] , see o/p , in 2nd object )
+// obvious si baat hai jab pehli bar
+// yahan (in terminal o/p) dekhenge to uss function ki
+// sirf definition hi load hui hai
+// fir ek aur context load hoga
+// wo sari baatein kayi bar kar chuke hai
+// (29:26) to yahan pe...
+
+// ab actually mei baat kya aati hai
+// aapke iss constructor ki
+// achha ab ek bar yeh constructor available hai
+// to yeh kya property dekh sakta hu kya mai
+// yeh constructor actually mei hota hai kya
+// available, karke dekhte hai
+// (29:37)
+
+// agar mai yahan pe ( console.log(userOne) ) likhta hu
+// dot constructor ( console.log(userOne.constructor) )
+// to kya mujhe milta hai
+// haa highlight to ho raha hai matlab ki
+// keyword to hai yeh
+// ( console.log(userOne.constructor) mei constructor highlight ho raha hai)
+
+
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database");
+//         // console.log(`Username: ${this.username}`);
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username);
+// // console.log(user.getUserDetails());
+// // console.log(this);
+
+
+// function User(username, loginCount, isLoggedIn){
+//     this.username = username
+//     this.loginCount = loginCount
+//     this.isLoggedIn = isLoggedIn
+
+//     this.greeting = function(){
+//         console.log(`Welcome ${this.username}`);
+//     }
+
+//     return this
+// }
+
+// const userOne = new User("hitesh", 12, true)
+// const userTwo = new User("ChaiAurCode", 11, false)
+
+// console.log(userOne.constructor);
+// console.log(userTwo);
+
+// likh liya
+
+// ( hover over constructor in
+// console.log(userOne.constructor) then box will appear)
+// to constructor bol raha hai
+// -- This initial value of Object.prototype.constructor
+// achha itni dhur hoti hai
+// is the standard buit-in Object constructor
+
+// (29:52)
+
+// achha ji available hai chaliye
+// dekhte hai agar available hai to ki
+// aapke pas kya kya cheejein hai
+
+// run in terminal
+
+// actually mei kya hai ki mai baki sari
+// cheejon ko hata deta hu (comment out)
+// taki hum ek pe focus kar payein
+// (30:02)
