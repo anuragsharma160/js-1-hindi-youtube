@@ -2013,7 +2013,179 @@
 
 // run in terminal
 
-// actually mei kya hai ki mai baki sari
+// actually mei kya hai ki mai baki sab
 // cheejon ko hata deta hu (comment out)
-// taki hum ek pe focus kar payein
+// taki hum ek ke bare mei focus kar payein
 // (30:02)
+// comment out console.log(userTwo)
+
+// varna pata hi nahi lagega kahan pe kya print
+// ho raha hai, kahan pe kya console.log
+// ho raha hai
+
+
+
+// const user = {
+//     username: "hitesh",
+//     loginCount: 8,
+//     signedIn: true,
+
+//     getUserDetails: function(){
+//         // console.log("Got user details from database");
+//         // console.log(`Username: ${this.username}`);
+//         console.log(this);
+//     }
+// }
+
+// // console.log(user.username);
+// // console.log(user.getUserDetails());
+// // console.log(this);
+
+
+// function User(username, loginCount, isLoggedIn){
+//     this.username = username
+//     this.loginCount = loginCount
+//     this.isLoggedIn = isLoggedIn
+
+//     this.greeting = function(){
+//         console.log(`Welcome ${this.username}`);
+//     }
+
+//     return this
+// }
+
+// const userOne = new User("hitesh", 12, true)
+// const userTwo = new User("ChaiAurCode", 11, false)
+
+// console.log(userOne.constructor);
+// // console.log(userTwo); commented out
+
+// likh liya
+
+// run in terminal
+// maximize terminal
+
+// o/p [Function: User]
+
+// to dekhiye jaise hi humne usko run kara
+// ki yeh dijiye to uske andar aya kya hai
+// ek function aya hai -- ( [Function: User] , see o/p)
+// jo ki hai User (see o/p)
+
+// to constructor property hoti kya hai actually mei
+// kuch nahi hoti reference hoti hai aapke
+// khud hi ke bare mei
+
+// to dekhiye khud hi ke bare mei reference kaise hai
+// iss User ke bare mei hi -- ( function User(username, loginCount, isLoggedIn){} , see code)
+// (30:25)
+
+// to yeh hi aapka basically actually mei constructor
+// hota hai
+
+// achha yahan pe aap constructor ke baad yeh bhi
+// dekh sakte hai ki 
+// kya yeh do (2) userOne ( const userOne = new User("hitesh", 12, true) )
+// userTwo ( const userTwo = new User("ChaiAurCode", 11, false) )
+// alag alag hai kya
+// (30:34)
+
+// ek aur aapke pass method hota hai 
+// operator hota hai basically -- instance of
+// to aap chahein to iske bare mei thoda sa
+// google pe search karke padhiye 
+// wo jada achha rahega aapke liye 
+// kyuki kitna spoon feeding karayenge
+
+// to ek method hota hai -- 
+// (instanceof javascript in google search bar)
+// instanceof javascript mei dekhiyega
+
+// to yahan pe (mdn link) aapko uske bare mei detail
+// mil jayega achhe example bhi de rakhe hai wahan pe
+// thoda sa padhiyega
+
+// wo hi same kaam hai jo mai kar raha hu
+// (read under Try it) (30:55)
+// yahan pe ki aapne Car banayi ( function Car(make, model, year) { )
+// uska make model year rakha
+//   ( this.make = make;
+//   this.model = model;
+//   this.year = year; )
+
+// fir yeh new keyword rakha 
+// ( const auto = new Car("Honda", "Accord", 1998); )
+// aur instanceof se check kar sakte hai 
+// ( console.log(auto instanceof Car); )
+// ki aapke pas kya wo same
+// ( const auto = new Car("Honda", "Accord", 1998); )
+// hi instance hai kya 
+// (31:04)
+// auto ka hi instance hai kya
+// ( const auto = new Car("Honda", "Accord", 1998); )
+
+// aur new keyword ( const auto = new Car("Honda", "Accord", 1998); ) 
+// ke bagair ( console.log(auto instanceof Object); )
+// aap karte hai 
+// to kya hota hai 
+// (31:07)
+
+// to yeh basic basic hai aap chahein to isko
+// run kar sakte hai (click on Run in mdn)
+// ki true true aa raha hai
+
+// (31:12)
+
+// auragar isi tareh se ( function Car(make, model, year) { ) 
+// aur bhi bana lein to aur bhi aa sakta hai
+// to theek hai chaliye wapas chalte hai humare
+// charcha pe
+
+// code editor mei aa gaye
+
+// achha yahan pe aapka bahut sara 
+// encapsulation bhi ho raha hai,
+// abstraction bhi ho raha hai,
+// user (User -- function User(username, loginCount, isLoggedIn){ ) 
+// ko nahi pata ki
+// constructor method bhi hai
+// ( console.log(userOne.constructor); )
+// pehla abstraction to yeh hi hai
+
+// User (User -- function User(username, loginCount, isLoggedIn){ )
+// ko hi nahi pata greeting ( this.greeting = function(){ ) work kaise kar
+// raha hai internally, to yeh bhi abstraction
+// hai
+
+// encapsulation bhi yahin pe ( console.log(userOne.constructor); ) 
+// aapko dekhne ko mil raha hai ki
+// userOne ke andar humne sab kuch
+// encapsulate karke rakh diya
+// ( const userOne = new User("hitesh", 12, true) )
+// User (User -- function User(username, loginCount, isLoggedIn){ )
+// ( const userOne = new User("hitesh", 12, true) )
+// ko nahi matlab ki hitesh ab
+// username ( this.username = username )
+// ki property mei jaake store ho raha hai
+// ya kahan pe store ho raha hai
+// hume koi matlab bhi nahi hai usse
+// (31:41)
+
+// theek hai kaafi detail ho gayi humari
+// charcha ho gayi iss bare mei
+// chaliye i think aapko achha laga hoga video
+// ki kaise details aa rahi hai kya kaam ho raha hai
+
+// agle video mei aur hum charcha karenge classes ke
+// bare mei, thoda sa classes ke ab keywords
+// ko aur unko explore karenge but i think
+// aapke basics clear ho gaye hai
+
+// next charcha ke andar hum thoda sa prototype
+// aur, aur bhi inn properties ko discuss karenge
+
+// Class End
+
+
+
+
