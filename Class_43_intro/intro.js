@@ -250,7 +250,7 @@
 
 // (  close [[Prototype]]: Array(0) )
 // ki suppose kariye sabse pehle array tha
-// (  [[Prototype]]: Array(0) )
+// (  newHero )
 
 // (  open [[Prototype]]: Array(0) )
 // array ke andar prototype aya
@@ -261,3 +261,95 @@
 // object level ka prototype mila
 // (  [[Prototype]]: Object )
 // 7:02
+
+// ( open [[Prototype]]: Object )
+// aur iske baad further mujhe getters aur setters mujhe
+// proto mei mil rahe hai
+// ( get __proto__: ƒ __proto__()
+//   set __proto__: ƒ __proto__() )
+
+// but further wo jo object prototype aisa (  [[Prototype]]: Object )
+// dikh raha hai, wo dikhna band ho gaya hai
+// 7:09
+
+// haa ji ab isko actually mei hum diagram se samajh lete hai
+// to ek diagram yahan pe mai aapke liye chota sa bana deta hu
+// aa..., yahan pe hum bana dete hai
+
+// to actually mei kya hai ki aap object kuch bhi declare kariye
+// x y z chahe aap string declare kijiye ya array humne declare kara 
+// to abhi ke liye hum array le lete hai waise aap chahein to string
+// etc kuch bhi le sakte hai
+// 7:28
+
+// to javascript ke andar ek khaas baat kya hoti hai
+// ki jo bhi aap kaam kar rahe hai, wo actually mei further
+// humne dekha sab kuch hi javascript ke andar hai kya
+// javascript ke andar har cheej hi apne aap mei ek object hai
+
+// to array bhi actually mei ek object hi hai
+// javascript ke andar abhi mai bataunga kya kya cheej object
+// hoti hai , infact sab kuch hi object hota hai abhi thoda sa
+// surprise lenge (7:47)
+
+// Lekin object kisse declare hua hai matlab
+// object ka parent kon hai
+// to object ka jab aap parent dekhte hai actually mei
+// to uska koi parent nahi hota hai
+// uske andar jo properties hai jo sab hai
+// wo sab usi ki rehti hai
+// 7:57
+
+// to yahan pe jo prototype ka reference aata hai wo
+// actually mei ek null ka hi reference aata hai
+// getters , setters milte hai but yeh basic aapko
+// dekhna padega
+// 8:04
+
+// ab kya hai actually mei agar aap iske alawa bhi dekhenge
+// aapke strings bhi dekhenge , to aapke strings ka bhi yeh hi haal hai
+// ki string bhi actually mei kahan se aa raha hai
+// to yahan pe (string) bhi agar aap dekhenge to yeh bhi prototype kahan pe redirect
+// ho raha hai object pe hi ho raha hai aur object finally null
+// pe jaa raha hai (8:21)
+
+// to end of the day hum yeh keh sakte hai
+// ki javascript ke andar har ek cheej apne aap mei
+// object hai aur jo properties object (see diagram) ke pass available hai
+// wo sari properties strings (see diagram) ke pass bhi available hai
+// aur array (see diagram) ke pass bhi hai
+
+// usable hai ya nahi hai wo alag baat hai
+// lekin jaisa ki maine aapko bataya inheritance hai
+// to jo bhi aapko grandparent se mil raha hai wo
+// milega to hai hi aapko, aapko hi use karna hai , nahi karna hai
+// wo aapki ichha ke upar hai, aapki ichha anusaar hai
+// 8:42
+
+// to array (see diagram) ka bhi yeh hi hai
+// string (see diagram) ka bhi yeh hi hai
+// aur bhi jo kuch bhi dekhte hai wo sab aisa hi hai
+
+// achha ab ek badi interesting si baat yahan pe aati hai
+// ki mai yahan pe likhta hu, yeh sab to aapne (diagram)
+// likh liya 
+// lekin suppose kariye mai likhta hu yahan pe ek function
+// 8:54
+
+// haa ji, ab function kya hai, kya function object hai,
+// ya function , function hi hai, haa yeh ek badi interesting cheej hai
+// isko actually mei hume code likh ke hi samajhna padega
+// aise samajh mei nahi aata hai ki yahan pe kya bolna
+// chah raha hu mai aur kya hai
+
+// par chinta mat kijiye , video ke end tak aapko sara sab kuch samajh mei 
+// ayega, to chaliye ab hum chalte hai humare
+// code ki taraf kyuki code mei hi samajh mei aane wala hai
+// ek nayi file yahan pe banate hai
+// (10_classes_and_oop folder mei nayi file banate hai)
+// iss file ka naam hum rakh lete hai
+// Object hi rakh lete hai, kyuki object ke bare mei hi
+// samajh rahe hai to Object.js
+// 9:23
+
+// ( Make Object.js file in 10_classes_and_oop folder )
