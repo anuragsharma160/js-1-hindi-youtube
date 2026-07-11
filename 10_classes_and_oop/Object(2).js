@@ -226,3 +226,148 @@
 
 // 12:20
 
+// to wahan pe aapko null (see diagram) ka reference milta hai
+// prototype ( null (see diagram) ka reference milta hai as prototype )
+// to object (see diagram) ka jo prototype hai wo actually mei
+// null (see diagram) hi ho jata hai
+// vaise getters aur setters available hai aap chahe to aur
+// bhi reference daal sakte hai (in diagram) but nahi daalte
+// hai hum usually
+// 12:30
+
+// to yahan pe (in diagram) humare pas object (see diagram) mil gaya hai
+// (object as prototype of array / string)
+// aur yahan pe (in diagram) null (see diagram) mil gaya hai
+
+// to abhi aapko samajh mei aaya function (see diagram)
+// bhi ek tareh se technically hum keh sakte hai ki
+// yeh reference object ko bhi karta hai
+// (12:40)
+
+// humne abhi tak aisi functionality explore nahi kari kyuki
+// koi scenario hi nahi aya ,
+// but aisa hota hai, ho sakta hai , samjhe...
+
+// chaliye , ab aage chalte hai, thoda sa aur code likhte hai
+// yeh to thoda sa interesting aur surprising code ho gaya aapke
+// liye, lekin aur chalte hai thoda sa isko aur achhe se explain karne ke liye
+
+// ek function create karte hai jiska naam hum rakh dete hai
+// createUser
+// function createUser(){}
+// aa..., jada kuch khaas nahi karega, functionality
+// mei hume vaise bhi koi issue abhi hai nahi , business logic
+// pe abhi hum aye bhi nahi hai , jab ayenge tab ki tab dekhenge
+// function createUser(username, score){
+
+// }
+
+// 13:05
+
+// to yeh lijiye yeh humare pas ho gaya score (function parameter)
+// theek hai ji, ab kya hai ki obvious si baat hai
+// mujhe iske (function ke) andar do (2) variables yahan pe create
+// karne hai
+
+// Lekin yeh abhi tak mujhe actually mei samajh mei nahi aya achhe se
+// ki yeh this keyword ka mamla kya hai
+// kyuki this keyword bhi aapka prototype se hi juda hua hai
+// 13:19
+
+// aa..., diagrams mei hi jada achhe se samajh mei aa jata hai
+// jab theory blackboard etc pe likhte hai wahan pe but theek hai
+// abhi ke liye
+
+// function multiplyBy5(num){
+//    return num*5
+// }
+
+// multiplyBy5.power = 2
+
+// console.log(multiplyBy5(5))
+// console.log(multiplyBy5.power)
+// console.log(multiplyBy5.prototype)
+
+// function createUser(username, score){
+
+// }
+
+// likh liya 
+
+// 13:24
+
+// to humne kya jana ki agar mai yahan pe (inside function) 
+// ek username banau
+// function createUser(username, score){
+//     username
+// }
+
+// to yeh username maine jo variable andar function ke declare kara hai
+// aur jo parameter mei mujhe aya hai , 
+// dono ke beech mei confusion ho sakta hai
+// ( function ke andar wale variable username and 
+// function ke parameter wale username ke beech mei confusion ho sakta hai )
+// ki agar username = username likhunga
+// function createUser(username, score){
+//     username = username
+// }
+
+// to konsa wala mera hai, konsa wala yeh hai 
+// confusion ho sakta hai
+
+// to uss case mei kya karte hai,
+// hum yahan pe this keyword use kar lete hai
+// this.username
+// function createUser(username, score){
+//     this.username = username
+// }
+
+// 13:44
+
+// this se kya hai ki current context set hota hai
+// to yeh mai abhi bataunga aapko ki kya hota hai 
+// lekin actually mei abhi aap dekhenge
+// to hume ek empty paranthesis (empty curly braces see o/p) 
+// bhi mila hai
+
+// update code and run
+
+// function multiplyBy5(num){
+//    return num*5
+// }
+
+// multiplyBy5.power = 2
+
+// console.log(multiplyBy5(5))
+// console.log(multiplyBy5.power)
+// console.log(multiplyBy5.prototype)
+
+// function createUser(username, score){
+//     this.username = username
+// }
+
+// likh liya
+
+// o/p 25
+// 2
+// {}
+
+// yeh empty paranthesis (empty curly braces , see o/p) 
+// hai kya pata hai, jab maine usko bola dot prototype
+// ( console.log(multiplyBy5.prototype) , see code )
+// yeh actually mei aapke by default kuch context set hote hai
+// to by default jo context set hota hai prototype
+// ( console.log(multiplyBy5.prototype) , see code, mei prototype )
+// ka , yeh jo aapko yahan (o/p mei) dikh raha hai ( {} , see o/p )
+// yeh actually mei uss method ka this hai.
+// 14:06
+
+// wapas se batau ek bar (14:08)
+// thoda sa confusion ho gaya
+// haa ji chaliye jinko samajh mei aa gaya pehli bar mei...
+
+// actually mei yeh jo prototype hota hai
+// ( console.log(multiplyBy5.prototype) mei prototype , see code)
+// yeh sirf kuch methods nahi, uske saath saath aapko kuch
+// internal properties bhi deta hai
+// (14:18)
