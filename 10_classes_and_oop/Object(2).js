@@ -368,6 +368,182 @@
 
 // actually mei yeh jo prototype hota hai
 // ( console.log(multiplyBy5.prototype) mei prototype , see code)
-// yeh sirf kuch methods nahi, uske saath saath aapko kuch
+// yeh sirf kuch methods nahi, uske saath saath kuch aapko
 // internal properties bhi deta hai
 // (14:18)
+
+// to iss function ( function multiplyBy5(num){} ) 
+// ki bhi to kuch property hogi
+// jaise yahan pe ( function createUser(username, score){} )
+// bhi to likh rahe hai hum this.username (see code)
+// 14:22 (function ki properties means function ke andar ke variables)
+
+// Lekin yahan pe ( function multiplyBy5(num){} ) to seedha return kar diya
+// ( return num*5, see code)
+// but agar hoti to (agar function multiplyBy5(num){} ki properties hoti to)
+// num yahan pe ( function multiplyBy5(num){} ) bhi karta mai
+// this.num = num
+// tab bhi to kuch reference lete hi hum yahan pe ( function multiplyBy5(num){} )
+// 14:31
+
+// to uss case ke liye (agar this.num = num, hota function multiplyBy5(num){} ke andar) 
+// yahan pe ( function multiplyBy5(num){} )
+// iski bhi value hoti hai (14:33)
+
+// ab dekhiye yahan pe ( function multiplyBy5(num){} )
+// agar mai le leta hu -- this.num = num
+// to yahan pe ( function multiplyBy5(num){} ) 
+// bhi to kuch values mai leta
+
+// function multiplyBy5(num){
+//     this.num = num
+//     return num*5
+// }
+
+// multiplyBy5.power = 2
+
+// console.log(multiplyBy5(5))
+// console.log(multiplyBy5.power)
+// console.log(multiplyBy5.prototype)
+
+// function createUser(username, score){
+//     this.username = username
+// }
+
+// likh liya
+
+// theek hai to agar values mai iss tareh se leta
+// to agar mai isko run karau wapas se
+// (run in terminal)
+
+// o/p 25
+// 2
+// {}
+
+// to yahan pe ({} , see o/p) kuch na kuch reference to aana chahiye na
+// 14:47
+// to yeh reference ({} , see o/p) ke andar humare pas
+// this.num (this.num = num, see code) actually mei store hota hai
+// (14:50)
+
+// aur bhi kayi cheejein hoti hai,
+// (aur bhi kayi cheejein {} see o/p mei store hoti hai / aur bhi kayi cheejein hoti hai) 
+// abhi yahan pe ( function multiplyBy5(num){} ) actually mei...
+
+// achha ab aap keh rahe honge ki yeh this.num = num ( this.num = num, see code )
+// to mujhe yahan ({}, see o/p) dikha hi nahi,
+// nahi wo ( this.num = num, see code ) dikhega bhi nahi
+// kyuki uska ( this.num = num, see code ) reference aapko
+// lena padta hai, use karna padta hai,
+// uska ( this.num = num, see code ) context mai abhi aapko samjhaunga chinta mat kijiye
+// (15:01)
+
+// but abhi ke liye yeh maan sakte hai ki aapki
+// aur bhi jo prototype ki properties hoti hai
+// plus (+) jo this ka context hai wo bhi aapke
+// pas available hota hai yahan pe (15:08)
+
+// ( this.num = num , backspace kar liya )
+
+// function multiplyBy5(num){
+    
+//     return num*5
+// }
+
+// multiplyBy5.power = 2
+
+// console.log(multiplyBy5(5))
+// console.log(multiplyBy5.power)
+// console.log(multiplyBy5.prototype)
+
+// function createUser(username, score){
+//     this.username = username
+// }
+
+// likh liya
+
+// this pe jada chinta mat kijiye
+// achhe se samjhayenge aapko aur detail mei
+// example lene ke saath
+
+// aur ek hum le lete hai this.score
+// this.score =
+// aur isko bhi de dete hai score
+// this.score = score
+
+// function multiplyBy5(num){
+    
+//     return num*5
+// }
+
+// multiplyBy5.power = 2
+
+// console.log(multiplyBy5(5))
+// console.log(multiplyBy5.power)
+// console.log(multiplyBy5.prototype)
+
+// function createUser(username, score){
+//     this.username = username
+//     this.score = score
+// }
+
+// likh liya
+
+// chaliye ji itna kaam to ho gaya
+// ab yeh function ( function createUser(username, score){ ) 
+// ek bada hi aam function hai
+// koi dikkat wali baat nahi hai
+
+// Lekin kyuki maine aapko bataya 
+// just abhi (diagram mei aa gaye)
+// ki function bhi object hai (see diagram)
+// aur yahan pe aur bhi (object bhi) null (see diagram) 
+// humare pas available hai
+// 15:31
+
+// (browser console mei aa gaye, newHero array example)
+// to kya aisa possible hai ki
+// mai chahu to kuch functionalities bhi
+// inject karva saku (see newHero dropdown)
+
+// jaise mujhe pata hai array ke andar .length hota hai
+// (see under newHero dropdown , length: 2)
+// aur array maine declare kara (const newHero = [])
+// to prototype ( [[Prototype]]: Array(0) , see newHero dropdown)
+// se mujhe kuch functionalities milti hai
+// ( open [[Prototype]]: Array(0) )
+// by default
+
+// jaise ki suppose kariye mujhe milta hai 
+// .map , slice (see under [[Prototype]]: Array(0) dropdown)
+// aur yeh sab,
+// to kya mai meri functionality bhi inject kara sakta hu kisi
+// aise function ke andar, object hi to hai aakhirkaar
+// ( function object hi to hai aakhirkaar , see diagram)
+
+// 15:52
+
+// object mei properties hoti hai, 
+// (object mei variables hote hai i.e. key value pair)
+// aur ek koi property humara function hold kar legi
+// (aur ek koi variable humara function hold kar lega)
+
+// jaise yeh slice (see under [[Prototype]]: Array(0) dropdown)
+// bhi to ek property hai (slice, left hand side)
+// yeh function hai ( slice ka funnction , right hand side)
+
+// to kya mai mere functions declare kar sakta hu
+// haa ji bilkul kar sakte hai koi problem hi nahi hai usme
+// (code editor mei aa gaye)
+// 16:02
+
+// jaise suppose kariye aapne kaha ki yeh createUser aapka ek 
+// function hai
+// createUser
+// ab iske andar aap kya karte hai dot prototype lete hai
+// createUser.prototype
+// aur prototype ke andar jo aapka mann kare wo aap inject kar dijiye
+// createUser.prototype.
+// jaise suppose kariye mai kar deta hu iske andar increment
+// createUser.prototype.increment
+// 16:15
