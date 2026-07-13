@@ -769,3 +769,99 @@
 // }
 
 // 18:27
+
+
+
+
+// function multiplyBy5(num){
+    
+//     return num*5
+// }
+
+// multiplyBy5.power = 2
+
+// console.log(multiplyBy5(5))
+// console.log(multiplyBy5.power)
+// console.log(multiplyBy5.prototype)
+
+// function createUser(username, score){
+//     this.username = username
+//     this.score = score
+// }
+
+// createUser.prototype.increment = function(){
+//     this.score++
+// }
+
+// const chai = createUser("chai", 25)
+// const tea = createUser("tea", 250)
+
+// likh liya
+
+// theek hai to ab aapko yaad rahega
+// this matlab jis
+// to jisne bhi bulaya hai
+// uska kaam kar do current context ka
+
+// to ab yeh confusion hona uska
+// ( createUser / createUser.prototype.increment = function(){ )
+// dhoor ho gaya hai
+// to jisne bhi ( this.score++ , see code mei this. / this )
+// usko ( createUser / createUser.prototype.increment = function(){ )
+// bulaya hai, yeh ( createUser / createUser.prototype.increment = function(){ )
+// usi ka (const chai or const tea)
+// hi value (25 / 250)
+// increase karega
+
+// Lekin lekin abhi bhi problem solve nahi hui hai
+// yeh behind the scence hai bahut behind the scence hai javascript
+// ke
+
+// achha ab yeh itna mamla ho gaya 
+// ab aapko lag raha hoga ki theek hai ji
+// ab ek aur method bhi yahan pe inject kar lete hai
+// itna inject kar liya to ek method aur sahi isme kya hai
+// 18:52
+
+// to yeh lijiye createUser ho gaya
+// createUser
+// uske andar maine kaha dot prototype
+// createUser.prototype
+// aur printMe naam se aapne ek method bana diya
+// createUser.prototype.printMe
+// yeh lijiye function
+// createUser.prototype.printMe = function(){}
+// aur humne fatafat se ek method bana diya
+// createUser.prototype.printMe = function(){
+
+// }
+
+// 19:03
+
+// ab yeh method kya karta hai simply console.log karta hai
+// jada kuch karne ki jarurat hi nahi hai isko
+// createUser.prototype.printMe = function(){
+//     console.log();
+// }
+
+// back ticks le lete hai humare
+// createUser.prototype.printMe = function(){
+//     console.log(``);
+// }
+
+// aur bol dete hai isko ki -- score is
+// createUser.prototype.printMe = function(){
+//     console.log(`score is`);
+// }
+
+// aur yeh lijiye dollar sign -- ${}
+// createUser.prototype.printMe = function(){
+//     console.log(`score is ${}`);
+// }
+
+// aur score
+// createUser.prototype.printMe = function(){
+//     console.log(`score is ${score}`);
+// }
+
+// 19:15
