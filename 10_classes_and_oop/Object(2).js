@@ -547,3 +547,225 @@
 // jaise suppose kariye mai kar deta hu iske andar increment
 // createUser.prototype.increment
 // 16:15
+
+// ab increment kya hai ek function hai
+// createUser.prototype.increment = function(){}
+// yeh lijiye function aur yeh function ki ho gayi body
+// ab iss body ke andar kya karna chahte hai
+// mai score ko increase karana chahta hu
+
+// achha theek hai ji score ko increase kara dete hai
+// isko bol dete hai score++
+// createUser.prototype.increment = function(){
+//     score++
+// }
+
+
+
+
+
+
+
+// function multiplyBy5(num){
+    
+//     return num*5
+// }
+
+// multiplyBy5.power = 2
+
+// console.log(multiplyBy5(5))
+// console.log(multiplyBy5.power)
+// console.log(multiplyBy5.prototype)
+
+// function createUser(username, score){
+//     this.username = username
+//     this.score = score
+// }
+
+// createUser.prototype.increment = function(){
+//     score++
+// }
+
+// likh liya
+
+// theek ha ji bada hi basic sa mamla hai
+// achha yahan pe ( createUser.prototype.increment = function(){ )
+// kuch ab problem hai
+
+// 16:32
+
+// problem kya hai ki iss function ( function createUser(username, score){ )
+// ke andar mai yeh values 
+// ( function createUser(username, score){ mei (username, score) )
+// pas kar raha hu
+// ( means hum function createUser(username, score) ke andar 
+// username, score as values pas kar rahe hai, see code )
+
+// to suppose kariye iss function ( function createUser(username, score){ )
+// ke users alag alag ho sakte hai
+// to ek user to uska ho gaya -- chai, theek hai ji
+// const chai = 
+
+// chai ne bola ki createUser mai le raha hu
+// const chai = createUser()
+// aur createUser ka kya karo ki username le lo
+// ( function createUser(username, score){ )
+// to uska username chaliye ji -- chai le liya
+// const chai = createUser("chai")
+
+// 16:51
+
+// aur chai ka price le lete hai
+// ( aur chai ka score le lete hai )
+// ( function createUser(username, score){ )
+// to maan lijiye thodi mehangi chai hai 25 rupees ki le lijiye
+// const chai = createUser("chai", 25)
+
+// aur ek ho gaya humare pas -- tea
+// ( function createUser(username, score){} ka dusra user humare pas ho gaya tea )
+// const tea = 
+// yeh tea bhi createUser hi use kar raha hai
+// ( yeh tea user bhi function createUser(username, score){} ko hi use kar raha hai )
+// const tea = createUser()
+// aur createUser iss bar bol raha hai ki dekhiye
+// mera naam to tea hai
+// const tea = createUser("tea")
+// to obvious si baat hai tea ho gaya naam , to ab yeh
+// 250 ki ho gayi
+// const tea = createUser("tea", 250)
+// 17:07
+
+
+
+
+
+// function multiplyBy5(num){
+    
+//     return num*5
+// }
+
+// multiplyBy5.power = 2
+
+// console.log(multiplyBy5(5))
+// console.log(multiplyBy5.power)
+// console.log(multiplyBy5.prototype)
+
+// function createUser(username, score){
+//     this.username = username
+//     this.score = score
+// }
+
+// createUser.prototype.increment = function(){
+//     score++
+// }
+
+// const chai = createUser("chai", 25)
+// const tea = createUser("tea", 250)
+
+// likh liya
+
+// mehangi chai ho gayi
+
+// ab kyu maine prototype 
+// ( createUser.prototype.increment = function(){} , mei prototype, see code )
+// ke through yeh increment
+// ( createUser.prototype.increment = function(){} , mei increment, see code )
+// inject kar diya hai iske andar ( function createUser(username, score){} ke andar )
+
+// Lekin problem pata hai kya hai
+// problem yeh hai ki score (score++ , see code)
+// mai kiska badhau ab
+// 17:18
+
+// yeh thoda confuse ho jayega ab internally
+// ki increment method hai koi dikkat nahi hai
+// ( createUser.prototype.increment = function(){} , mei increment )
+// increment method chalega usme koi dikkat nahi hai
+
+// Lekin increment method ke saath ab mai...,
+// kyuki dono (const chai , const tea) 
+// ek hi to function ( function createUser(username, score){} )
+// use kar rahe hai
+// 17:29
+
+// aur function ( function createUser(username, score){} ) 
+// pe jaake upar se tapak ke
+// wo baith gaya hai apna method createUser... 
+// ( createUser.prototype.increment = function(){}, me increment )
+
+// to ab createUser 
+// ( createUser.prototype.increment = function(){} / function createUser(username, score){} )
+// ko kaise pata ki jab mai increment score 
+// ( score++ ) karunga to
+// 25 ko badhana hai ya ( const chai = createUser("chai", 25) )
+// 250 ko badhana hai ( const tea = createUser("tea", 250) )
+
+// 17:39
+
+// kyuki uske ( createUser ) pass context nahi hai
+// usko ( createUser ) idea nahi hai
+// ki kaise values ko mujhe increment karna hai 
+// ya kis value ko (25 ko ya 250 ko)
+// kisne mujhe call kiya hai
+// kyuki ho sakta hai koi bhi ( const chai or const tea ) call kar le
+
+// to yeh jo context hai dene ke liye
+// jaise obvious si baat hai na
+// aapko ek saath 2 awaaz laga di 
+// ek mummy ne , ek papa ne
+// to kiske pas jana hai
+// mummy ne awaaz lagai to mummy ke pas
+
+// to context samajh mei aata hai aapko
+// haa ji ki kisne awaaz diya,
+// to kisne bulaya hai
+// 18:00
+
+// to isiliye abhi kya hai ki 
+// iske pas (createUser / createUser.prototype.increment = function(){})
+// context (const chai or const tea)
+// hai hi nahi
+
+// to yeh context samjhaane ke liye
+// ki jisne bhi awaaz di
+// kyuki hardcode value to nahi likh sakta na
+// mai yahan pe ( score++ )
+// 18:07
+
+// ki aa..., chai ke andar jao
+// aur uska hi score badhao (as follows)
+// ( createUser.prototype.increment = function(){
+//     chaiscore++
+// } , see code)
+
+// ya fir tea ke andar jao 
+// aur uska hi score badhao (as follows)
+// ( createUser.prototype.increment = function(){
+//     teascore++
+// } , see code)
+
+// 18:13
+
+// hardcode value to le hi nahi sakta
+// to mai yahan (as follows)
+
+// ( createUser.prototype.increment = function(){
+//     score++
+// } , see code)
+
+// bol deta hu jisne bhi, 
+// theek hai this ko humesha 
+// yaad rakhne ka sabse easy best tarika hota hai
+// jisne bhi bulaya hai uske pas jao
+// 18:22
+
+// to this matlab jis
+// this.score++
+// to this ne bulaya hai
+// uska score badha do (as follows)
+
+// createUser.prototype.increment = function(){
+//     this.score++
+// }
+
+// 18:27
