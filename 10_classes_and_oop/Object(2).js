@@ -865,3 +865,298 @@
 // }
 
 // 19:15
+
+
+
+
+
+
+// function multiplyBy5(num){
+    
+//     return num*5
+// }
+
+// multiplyBy5.power = 2
+
+// console.log(multiplyBy5(5))
+// console.log(multiplyBy5.power)
+// console.log(multiplyBy5.prototype)
+
+// function createUser(username, score){
+//     this.username = username
+//     this.score = score
+// }
+
+// createUser.prototype.increment = function(){
+//     this.score++
+// }
+// createUser.prototype.printMe = function(){
+//     console.log(`score is ${score}`);
+// }
+
+// const chai = createUser("chai", 25)
+// const tea = createUser("tea", 250)
+
+// likh liya
+
+
+// achha wapas se score ( console.log(`score is ${score}`); )
+// ki problem , kiska score dikhau bhai...
+// chai ka ki tea ka (const chai or const tea)
+
+// haa ji jisne bhi bulaya, uska dikhao (uska score dikhao)
+// to obvious si baat hai jis ka matlab -- this -- this.score (as follows)
+// createUser.prototype.printMe = function(){
+//     console.log(`score is ${this.score}`);
+// }
+
+// comment mei likhte jayiyega yeh -- jis ka matlab this
+// to sabko pata rahega ki aap padh rahe hai aur humne kis
+// context mei isko (this) samjha hai
+
+// function multiplyBy5(num){
+    
+//     return num*5
+// }
+
+// multiplyBy5.power = 2
+
+// console.log(multiplyBy5(5))
+// console.log(multiplyBy5.power)
+// console.log(multiplyBy5.prototype)
+
+// function createUser(username, score){
+//     this.username = username
+//     this.score = score
+// }
+
+// createUser.prototype.increment = function(){
+//     this.score++
+// }
+// createUser.prototype.printMe = function(){
+//     console.log(`score is ${this.score}`);
+// }
+
+// const chai = createUser("chai", 25)
+// const tea = createUser("tea", 250)
+
+// likh liya
+
+// to this.score , ( console.log(`score is ${this.score}`); )
+// jisne bhi score poocha hai uska score bata do
+// theek hai to yeh ho gaya humara method
+// ( createUser.prototype.printMe = function(){ )
+
+// ab kya hai ki interesting si cheej hai
+// ki maine bola ki chai...
+// chai
+// chai backspace kar diya
+// achha jab array bhi declare karte ho to jo bhi
+// naam rakha hai aapne myArray
+// myArray
+// to usme aap aise jake likhte ho kya dot prototype
+// myArray.prototype
+// dot map()
+// myArray.pprototype.map()
+// iss tareh se likhte ho kya
+// 19:56
+
+// nahi iss tareh se ( myArray.prototype.map() )
+// nahi likhte ho aap kabhi bhi
+
+// jab bhi aap seedhe array pe jate ho (browser console newHero array example)
+// to seedha (20:00) bolte ho ki achha yeh jo
+// array hai newHero ( newHero dropdown open close )
+// seedha ispe map laga do
+
+// to dekho newHero hai humare pas yahan pe
+// newHero dropdown close ke neeche newHero , likh liya in browser console
+// newHero
+// yeh lijiye newHero
+// aur seedha hi map laga lete hai
+// newHero.map , likh liya in browser console
+// aur accessible hota hai
+// 20:10
+
+// to yeh ek feature hume deta hai javascript ki
+// dekhiye prototype ka kaam mai kar lunga behind the scene
+// ki usse upar se upar se jake khud dhoondh lunga
+// mai apne aap (20:16)
+
+// aapko bar bar nahi karna hai kyuki prototype ke andar
+// ek aur prototype hua to kitni bar likhoge
+// .prototype.prototype.prototype ................
+// aap to pareshan ho jaoge
+// to mai (javascript) yeh behind the scene kar lunga
+// yeh syntactical sugar mai (javascript) aapko dunga
+// aapko yeh bar bar prototype ( myArray.prototype.map() mei prototype ) 
+// likhne ki jarurat nahi hai
+// ( isliye aise -- myArray.prototype.map() nahi likhte )
+// 20:28
+
+// function multiplyBy5(num){
+    
+//     return num*5
+// }
+
+// multiplyBy5.power = 2
+
+// console.log(multiplyBy5(5))
+// console.log(multiplyBy5.power)
+// console.log(multiplyBy5.prototype)
+
+// function createUser(username, score){
+//     this.username = username
+//     this.score = score
+// }
+
+// createUser.prototype.increment = function(){
+//     this.score++
+// }
+// createUser.prototype.printMe = function(){
+//     console.log(`score is ${this.score}`);
+// }
+
+// const chai = createUser("chai", 25)
+// const tea = createUser("tea", 250)
+
+// myArray.prototype.map()
+
+// likh liya
+
+// myArray.prototype.map() ko backspace kar diya
+
+
+
+
+
+// function multiplyBy5(num){
+    
+//     return num*5
+// }
+
+// multiplyBy5.power = 2
+
+// console.log(multiplyBy5(5))
+// console.log(multiplyBy5.power)
+// console.log(multiplyBy5.prototype)
+
+// function createUser(username, score){
+//     this.username = username
+//     this.score = score
+// }
+
+// createUser.prototype.increment = function(){
+//     this.score++
+// }
+// createUser.prototype.printMe = function(){
+//     console.log(`score is ${this.score}`);
+// }
+
+// const chai = createUser("chai", 25)
+// const tea = createUser("tea", 250)
+
+// likh liya
+
+// to isi tareh se jab aap khud bhi inject karenge
+// ( myArray.prototype.map() ko backspace kar diya )
+// to aap kya kariye seedhe boliye chai 
+// chai
+// aur jo bhi aapko
+// method access karna hai 
+// chai.
+// ab wo seedha hi use kariye
+// 20:36
+
+// to suppose kariye yeh printMe ho gaya humare pas
+// chai.printMe
+// yeh lijiye
+// theek hai ab printMe 
+// ( createUser.prototype.printMe = function(){} )
+// use karne ke liye kya karna hai
+// chai.printMe()
+
+// kuch nahi yeh ( printMe , createUser.prototype.printMe = function(){} )
+// kuch value value to leta nahi hai
+// jaise increment ( createUser.prototype.increment = function(){} )
+// etc bhi koi value le nahi raha
+// chahe to de bhi sakte hai but yeh printMe
+// ho gaya ( chai.printMe() )
+// 20:47
+
+// function multiplyBy5(num){
+    
+//     return num*5
+// }
+
+// multiplyBy5.power = 2
+
+// console.log(multiplyBy5(5))
+// console.log(multiplyBy5.power)
+// console.log(multiplyBy5.prototype)
+
+// function createUser(username, score){
+//     this.username = username
+//     this.score = score
+// }
+
+// createUser.prototype.increment = function(){
+//     this.score++
+// }
+// createUser.prototype.printMe = function(){
+//     console.log(`score is ${this.score}`);
+// }
+
+// const chai = createUser("chai", 25)
+// const tea = createUser("tea", 250)
+
+// chai.printMe()
+
+// likh liya
+
+// ab ek problem ayi hai
+// haa problem kya aayi hai
+// yeh aapke interviews clear karayegi yeh problem
+// kayi bar
+
+// dekhiye ab kya hai ki mai iss code ko
+// run karata hu yahan pe
+
+// o/p 25
+// 2
+// {}
+// C:\Users\MSI-GF-63\OneDrive\Desktop\JS-CHAI-AUR-CODE\10_classes_and_oop\Object.js:27
+// chai.printMe()
+//      ^
+
+// TypeError: Cannot read properties of undefined (reading 'printMe')
+//     at Object.<anonymous> (C:\Users\MSI-GF-63\OneDrive\Desktop\JS-CHAI-AUR-CODE\10_classes_and_oop\Object.js:27:6)
+//     at Module._compile (node:internal/modules/cjs/loader:1469:14)
+//     at Module._extensions..js (node:internal/modules/cjs/loader:1548:10)
+//     at Module.load (node:internal/modules/cjs/loader:1288:32)
+//     at Module._load (node:internal/modules/cjs/loader:1104:12)
+//     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+//     at node:internal/main/run_main_module:28:49
+
+// Node.js v20.17.0
+
+// to yahan pe ek chota sa problem aya hai
+// Cannot read properties of undefined see o/p
+// achha ji abhi to aap bol rahe the ki aapko aise aise 
+// properties mil jati hai, yeh sab hota hai
+
+// achha problem kya hai properties inject hui hai
+// ( chai.printMe() , see o/p)
+
+// 21:09
+
+// aa..., aapka yeh jo function hai
+// ( createUser.prototype.printMe = function(){} / createUser.prototype.increment = function(){} )
+// uske andar prototype karke
+// ( createUser.prototype.printMe = function(){} / createUser.prototype.increment = function(){} , mei prototype)
+// uss object ke andar aap jaake dekhoge
+// to aapke pas uss function ke agar aap
+// poora prototype aap print karke dekhoge
+// to wahan pe aapke pas properties ayi hai 
+// 100 % ayi hai
+// 21:20
