@@ -1160,3 +1160,302 @@
 // to wahan pe aapke pas properties ayi hai 
 // 100 % ayi hai
 // 21:20
+// ... 100 % ayi hai , jab memories etc kholke dekhoge
+
+// Lekin jab aapne yeh 
+// function se ( const chai = createUser("chai", 25) , mei createUser se )
+// iske andar ( const chai = createUser("chai", 25) , mei chai ke andar )
+// values transfer kari, tab aapne usko bataya nahi
+// ki mere pas yeh (as follows)
+
+// ( createUser.prototype.increment = function(){
+//     this.score++
+// }
+// createUser.prototype.printMe = function(){
+//     console.log(`score is ${this.score}`);
+// }  , see code ( dono functions / dono functions mei se ek) )
+
+// additional properties ayi hai (21:33)
+// yeh batana padega
+
+// yeh batane ke liye sara kaam karta kon hai
+// yeh batane ka sara kaam actually mei new keyword karta hai
+// const chai = new createUser("chai", 25)
+
+// 21:39
+
+// haa ji to itni der se jo mai ramayan samjha raha tha aapko
+// uska saar yeh hi tha ki mujhe new keyword ka importance aapko samjhana tha
+// yeh sab to bada abhi achha lag raha tha ki
+// haa nahi nahi karke haa prototype bhi ho gaya yeh bhi ho gaya
+// sab ho gaya
+// but itna jada importance hai, significance hai new keyword ka
+// const chai = new createUser("chai", 25)
+
+// aur isi tareh se jab interview mei aap samjhaoge 
+// ki achha yeh lijiye example le raha hu , yeh sab maine kiya
+// Lekin yeh code nahi chal raha hai
+// nahi code chalna hi aapko interview mei select karata hai kyuki
+// aapko pata hona chahiye wo kyu nahi chal raha hai
+// 22:04
+
+// function multiplyBy5(num){
+    
+//     return num*5
+// }
+
+// multiplyBy5.power = 2
+
+// console.log(multiplyBy5(5))
+// console.log(multiplyBy5.power)
+// console.log(multiplyBy5.prototype)
+
+// function createUser(username, score){
+//     this.username = username
+//     this.score = score
+// }
+
+// createUser.prototype.increment = function(){
+//     this.score++
+// }
+// createUser.prototype.printMe = function(){
+//     console.log(`score is ${this.score}`);
+// }
+
+// const chai = new createUser("chai", 25)
+// const tea = createUser("tea", 250)
+
+// chai.printMe()
+
+// likh liya
+
+// ab jaise hi aapne yahan pe new keyword ek inject kar diya
+// ( const chai = new createUser("chai", 25) )
+// ab usko pata hai ki mujhe kya kya kaam karna hai
+// 22:11
+// behind the scene new ke kya kaam hote hai mai aapko
+// poora list mai dunga abhi chinta mat kijiye
+
+// but ab agar mai iss code ko run karta hu yahan pe
+
+// o/p 25
+// 2
+// {}
+// score is 25
+
+// to dekhiye usko pata hai -- score is 25 (see o/p)
+// 22:20
+
+// score 25 hi kyu hai uska ya fir price bol lijiye
+// score to yahan pe theek nahi hai price bol lete hai
+// kyuki chai ki price ki baat kar rahe hai hum
+// ( console.log(`price is ${this.score}`); )
+
+// function multiplyBy5(num){
+    
+//     return num*5
+// }
+
+// multiplyBy5.power = 2
+
+// console.log(multiplyBy5(5))
+// console.log(multiplyBy5.power)
+// console.log(multiplyBy5.prototype)
+
+// function createUser(username, score){
+//     this.username = username
+//     this.score = score
+// }
+
+// createUser.prototype.increment = function(){
+//     this.score++
+// }
+// createUser.prototype.printMe = function(){
+//     console.log(`price is ${this.score}`);
+// }
+
+// const chai = new createUser("chai", 25)
+// const tea = createUser("tea", 250)
+
+// chai.printMe()
+
+// likh liya
+
+// 22:27
+
+// to usko pata hai ki chai ka jo daam hai wo
+// 25 rupees hi hai yahan pe (see o/p)
+// run in terminal
+
+// o/p 25
+// 2
+// {}
+// price is 25
+
+// yeh ( price is 25, see o/p ) usko pata laga
+// Lekin yeh new keyword ( const chai = new createUser("chai", 25) , see code )
+// hata dein to usko pata hi nahi lag raha hai
+// 22:35
+
+// achha to new keyword ( const chai = new createUser("chai", 25) )
+// kuch na kuch to kar hi raha hai behind the scene
+// wapas se dekh lete hai yeh lijiye new keyword hataya
+// ( const chai = createUser("chai", 25) )
+
+// 22:40
+
+// function multiplyBy5(num){
+    
+//     return num*5
+// }
+
+// multiplyBy5.power = 2
+
+// console.log(multiplyBy5(5))
+// console.log(multiplyBy5.power)
+// console.log(multiplyBy5.prototype)
+
+// function createUser(username, score){
+//     this.username = username
+//     this.score = score
+// }
+
+// createUser.prototype.increment = function(){
+//     this.score++
+// }
+// createUser.prototype.printMe = function(){
+//     console.log(`price is ${this.score}`);
+// }
+
+// const chai = createUser("chai", 25)
+// const tea = createUser("tea", 250)
+
+// chai.printMe()
+
+// likh liya
+
+// aur yeh ka yeh same code aapne run kiya to
+
+// o/p 25
+// 2
+// {}
+// C:\Users\MSI-GF-63\OneDrive\Desktop\JS-CHAI-AUR-CODE\10_classes_and_oop\Object.js:27
+// chai.printMe()
+//      ^
+
+// TypeError: Cannot read properties of undefined (reading 'printMe')
+//     at Object.<anonymous> (C:\Users\MSI-GF-63\OneDrive\Desktop\JS-CHAI-AUR-CODE\10_classes_and_oop\Object.js:27:6)
+//     at Module._compile (node:internal/modules/cjs/loader:1469:14)
+//     at Module._extensions..js (node:internal/modules/cjs/loader:1548:10)
+//     at Module.load (node:internal/modules/cjs/loader:1288:32)
+//     at Module._load (node:internal/modules/cjs/loader:1104:12)
+//     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+//     at node:internal/main/run_main_module:28:49
+
+// Node.js v20.17.0
+
+// ..... aur yeh ka yeh same code aapne run kiya to
+// usne kaha are... sir kya kya kya pooch rahe ho yeh sab,
+// yeh sab to mujhe pata hi nahi hai (see o/p)
+
+// kyuki kabhi createUser ( function createUser(username, score){} )
+// ke andar iss tareh ki cheejein (as follows)
+
+// ( createUser.prototype.increment = function(){
+//     this.score++
+// }
+// createUser.prototype.printMe = function(){
+//     console.log(`price is ${this.score}`);
+// } , see code )
+
+// aapne by default di hi nahi thi
+// (means createUser.prototype.increment = function(){}
+// and createUser.prototype.printMe = function(){} 
+// aapne function createUser(username, score){} ke andar by default di hi nahi thi, see code )
+
+// 22:49
+
+// agar aap yahin pe ( function createUser(username, score){} ke andar )
+// direct de dete ( means aap createUser.prototype.increment = function(){}
+// and createUser.prototype.printMe = function(){} , direct
+// function createUser(username, score){} ke andar de dete )
+// to wo le leta ki theek hai
+// function ke andar ek aur function ho sakta hai
+// koi burai nahi hai uske andar
+
+// to new keyword actually mei kaam to humare pas kaafi kar raha hai
+// to yeh lijiye humne ek new keyword 
+// laga diya
+// const chai = new createUser("chai", 25)
+// 23:01
+
+// function multiplyBy5(num){
+    
+//     return num*5
+// }
+
+// multiplyBy5.power = 2
+
+// console.log(multiplyBy5(5))
+// console.log(multiplyBy5.power)
+// console.log(multiplyBy5.prototype)
+
+// function createUser(username, score){
+//     this.username = username
+//     this.score = score
+// }
+
+// createUser.prototype.increment = function(){
+//     this.score++
+// }
+// createUser.prototype.printMe = function(){
+//     console.log(`price is ${this.score}`);
+// }
+
+// const chai = new createUser("chai", 25)
+// const tea = createUser("tea", 250)
+
+// chai.printMe()
+
+// likh liya
+
+// ek aur baar finally run karke dekh lete hai
+// ki kaise ho raha hai
+
+// o/p 25
+// 2
+// {}
+// price is 25
+
+// ab maine banaye hai aapke liye thode se notes
+// aa..., jo mai aapko direct isi file ke andar de deta hu
+// aur thoda sa unko study bhi kar lete hai
+// kyuki yeh aapke interviews etc mei kaafi jagah kaam ayenge
+
+// 23:13
+
+// yeh jo poora text maine aapko diya hai
+// yeh actually mei hai poora new keyword ki functionality
+// vaise to higher level hai , aap chahein to isko
+// skip bhi kar sakte hai
+
+// jo log extraordinary tayiyari kar rahe hai javascript
+// ki SDE 2 se 3 mei jaane ki jump ki koshish
+// kar rahe hai to expect karo yeh question to
+// aapse poocha hi jayega
+// beginners mei rarely poocha jata hai
+// ya fir koi hifi company ke liye aap target kar rahe ho
+// to fir poocha hi jayega
+// 23:32
+
+// to behind the scene kya kya hota hai aapke new keyword mei
+// ki ek new object create hota hai
+// -- The new keyword initiate the creation of a new javascript object.
+// 23:40
+
+// theek hai ji jaise hi aapne new keyword diya
+// ( const chai = new createUser("chai", 25) , mei new , see code)
+// to yeh jo chai hai
+// ( const chai = new createUser("chai", 25) , mei chai , see code)
+// yeh chai to banega hi banega
+// 23:44
