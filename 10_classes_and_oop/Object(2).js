@@ -1459,3 +1459,139 @@
 // ( const chai = new createUser("chai", 25) , mei chai , see code)
 // yeh chai to banega hi banega
 // 23:44
+// but aapka ek new object create hota hai
+
+// ab uss new object ka ek reference hona chahiye
+// to abhi humne uss new object ka reference diya hai
+// ki yeh function (as follows)
+
+// ( function createUser(username, score){
+//     this.username = username
+//     this.score = score
+// } , see code)
+
+// hi humara reference hai to function ki properties 
+// to uske ( const chai = new createUser("chai", 25) ) andar do hi do 
+// but ek naya object ( const chai = new createUser("chai", 25) ) create karo
+// 23:56
+
+// ab new object create hone ke saath saath maine aapko padhaya
+// property... yeh jo prototype hai
+// bahut important hai
+
+// to naya object bana hai to object to prototype
+// se linked hoga hi hoga
+// theek hai to -- A prototype is linked: The newly created object
+// gets linked to a prototype property of the constructor function.
+// constructor functions pe bhi hum ayenge abhi eventually
+// 24:15
+
+// but yeh javascript ka tarika hai , 
+// javascript classes ke through constructor function nahi deti hai
+// javascript new keyword ke through constructor function deti hai
+// haa ji new keyword lagaya matlab jo classes ke andar
+// aap object ke saath karte ho, (in other programming languages / javascript)
+// new keyword laga ke ek naya instance initiate / instantiate kar dete ho object
+// yeh sara kaam aapka new ke saath hota hai
+// 24:30
+
+// yeh ek approach hai
+// yeh hi approach saalon (for years) tak chali ayi thi
+// Lekin fir logo ko laga ki yar thoda confusing ho jate hai
+// itna depth mei koi jata nahi hai to ek kaam karo
+// aa..., ki jo baki developers aate hai
+// unke benifit ke liye seedha class keyword ka hi syntax de do
+// 24:42
+
+// isiliye maine iss video mei classes nahi li
+// classes next video mei lunga
+// pehle aapko samajh mei to aye behind the scene
+// to actually mei yeh hi kaam hai
+// iske upar wrapper laga diya gaya hai bas
+
+// theek hai to humare pas constructor function hota hai
+// -- This means that it has access to properties and methods
+// defined on the constructor's prototype.
+
+// to yeh jo hum kar paa rahe hai na upar
+// ( createUser.prototype.increment = function(){} and createUser.prototype.printMe = function(){} )
+// yeh prototype etc
+// ( createUser.prototype.increment = function(){} and createUser.prototype.printMe = function(){} , mei prototype)
+// kar rahe hai , yeh abhi tak hawa mei tha
+// 25:00
+// jab aapne new keyword lagaya ( const chai = new createUser("chai", 25) , mei new )
+// tab usne kaha achha achha ab mujhe
+// assemble karna hai, to fir usne ek object liya (take hand towards ourselve gesture kiya sir ne)
+// uss object ke andar ek prototype inject kara
+// fir aapne kaha ki are prototype to inject kar diya
+// ( createUser.prototype.increment = function(){} and createUser.prototype.printMe = function(){} , mei prototype)
+// maine kuch method bhi define kare hai
+// ( createUser.prototype.increment = function(){} and createUser.prototype.printMe = function(){} , 
+// mei increment and printMe are methods)
+// fir uss method ko define kara
+
+// fir uske baad bola ki achha to iske (as follows)
+
+// ( function createUser(username, score){
+//     this.username = username
+//     this.score = score
+// } , see code)
+
+// basis pe banana hai, fir iske (just above function) basis pe banta hai
+// 25:16 
+
+// theek hai, fir uske baad constructor obvious si baat hai
+// ban gaya to constructor call bhi hoga
+// -- The constructor function is called with the
+// specified argument and this is bound to the newly created object
+// If no explicit return value is specified from the constructor,
+// Javascript assumes this, the newly created object,
+// to be the intended return value.
+// 25:34
+
+// to yeh sab jada aapke detail mei nahi padhne ka hai aapko abhi
+// jinko samajh mei aa raha hai advance part wo theek hai
+// but aap itna dekh lijiye ki constructor ke andar prototype
+// link hota hai aur uske baad constructor ko call kar diya jata hai
+// jisse aapke sare jo this context wale hai na 
+// this.username, this.score
+// wo sab uske saath inject hoke aur kar diye jate hai
+// 25:49
+
+// aur finally aapko ek naya object wapas de diya jata hai
+// jo ki hume chai 
+// ( const chai = new createUser("chai", 25) , mei chai , see code)
+// ke andar de diya gaya
+
+// to haa ji ek chota sa keyword 3 letter hai maatr
+// literally 3 letter hai
+// aur itna sab kuch kar jate hai behind the scene
+// 26:01
+
+// haa, haa, thoda sa tensed hai but theek hai ummeed
+// karta hu ki aapko bhi achha lag raha hoga ki haa kaafi
+// kuch yahan pe mil raha hai samajhne ko bhi aur yeh bhi
+// takreeban aadha ghanta mei hume sirf ek keyword samajh mei
+// aya hai -- new ( const chai = new createUser("chai", 25) , mei new )
+
+// ab dekhiye itni fursat to chaiaurcode pe hi milti hai
+// chai ke saath hi code pe milti hai
+// paid courses ya kahin pe bhi aur hote to itni fursat nahi milti
+// itna detail mei aaraam se samjhane ki
+
+// theek hai yeh to aa gaya hai ab aapko samajh mei
+// ab iska ek thoda sa aur easy example jo mai
+// aksar classes etc mei bhi leta hu
+// to wo mai aapke saath yahan pe share kar deta hu
+// taki aapko aur samajh mei aye
+// 26:33
+
+// ( Object.js file ko close kar diya )
+
+// theek hai yeh example hum purely purely
+// lenge prototype ko samajhne ke liye
+
+// 10_classes_and_oop folder mei Prototype.js naam
+// se new file bana li
+
+// 26:40
