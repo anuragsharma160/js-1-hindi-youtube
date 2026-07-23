@@ -455,4 +455,186 @@
 // kya mere pas koi aisa method access available hai
 // heroPower.hitesh()
 // 32:14
+// ki mat dot hitesh ( heroPower.hitesh() ) kar saku
 
+
+// let myName = "hitesh     " commented out
+// let mychannel = "chai     " commented out
+
+// console.log(myName.trueLength) commented out
+
+
+// let myHeros = ["thor", "spiderman"]
+
+
+// let heroPower = {
+//     thor: "hammer",
+//     spiderman: "sling",
+
+//     getSpiderPower: function(){
+//         console.log(`Spidy power is ${this.spiderman}`);
+//     }
+// }
+
+// heroPower.hitesh() 
+
+// likh liya
+
+// hmmm..., bada hi interesting hai yeh to
+// question, ki yahan pe agar dot hitesh ( heroPower.hitesh() )
+// karoge to kya kuch result ayega
+// chaliye ek bar chalke dekh lete hai ki
+// jab hum iss tareh se koi bhi object ( let heroPower = {} )
+// declare karte hai to yahan pe (browser console) chalte hai
+
+// yeh object humne declare kara 
+// ( in browser console yeh array newHero humne declare kara )
+// ek object bhi declare kar lete hai
+// 32:30
+// aa..., suppose kariye isko ( newHero.map ) to hata dete hai
+// const test object
+// const testObj
+// aur yeh lijiye object -- {}
+// const testObj = {}
+// ( const testObj = {} likh in browser console )
+
+// iske andar ek daal dete hai username
+// const testObj = {username}
+// ek value dali (username), hazaar value dali
+// kya farak padta hai
+// const testObj = {username: "hitesh"}
+// ek value daal ke
+
+// const testObj = {username: "hitesh"} likh ke enter kiya in browser console
+// undefined aya
+
+// to iske ( testObj = {username: "hitesh"} ) andar aapko kuch
+// testObj jo hai
+// testObj likh ke enter kiya in browser console
+// iske andar (testObj dropdown open kiya) koi
+// aisa hitesh naam ka koi function hai kya
+// yahan pe available
+// (testObj dropdown open kiya and check kiya)
+// username hai bas ek sirf ( username: "hitesh" )
+// 32:50
+
+// iske ( testObj ) prototype (  [[Prototype]]: Object  )
+// mei kuch hitesh naam ka available hai kya
+// (  [[Prototype]]: Object , open kiya  )
+// hmmm..., yahan pe to kuch available hai nahi
+// 32:55
+
+// but kya mai meri taraf se inject kar sakta hu
+// (but kya mai meri taraf se hitesh naam ka function
+// testObj ke andar inject kar sakta hu)
+// just humne dekha , kar sakte ho aap directly
+// (code editor mei aa gaye)
+
+// to... kar ke dekhein...
+// chaliye ji karke dekhte hai aisa ho sakta hai kya
+// 33:04
+
+// to iss bar aapne abhi tak dekha tha ki hum har
+// cheej kya kar rahe the heroPower.prototype
+
+// let myName = "hitesh     " commented out
+// let mychannel = "chai     " commented out
+
+// console.log(myName.trueLength) commented out
+
+
+// let myHeros = ["thor", "spiderman"]
+
+
+// let heroPower = {
+//     thor: "hammer",
+//     spiderman: "sling",
+
+//     getSpiderPower: function(){
+//         console.log(`Spidy power is ${this.spiderman}`);
+//     }
+// }
+
+// heroPower.prototype
+
+// heroPower.hitesh()
+
+// likh liya
+
+// nahi nahi nahi nahi
+// heroPower.prototype ko backspace kar diya
+// mai to chahta hu ki kabhi bhi koi bhi
+// agar object bhi declare ho
+// to kya karo base uss object ke andar hi declare kar do
+
+// ( browser console mei aa gaye )
+// to suppose karo hum yahan pe aye 
+// (function array string object null diagram mei aye)
+// humne uss object (object , see diagram) ke andar hi 
+// kuch extra super power agar daal di to
+// function array string (see diagram)
+// sab object se hote huye hi to guzar rahe hai (see diagram)
+// sabke pas (function array string , see diagram) power aa jani chahiye
+// 33:25
+
+// hmmm..., technically to aani chahiye
+// chaliye dekhte hai karke
+// (code editor mei aa gaye)
+
+// ki agar mai kya karu mujhe pata hai ki
+// Object datatype aise access kar sakta hu mai
+// Object
+
+
+// let myName = "hitesh     " commented out
+// let mychannel = "chai     " commented out
+
+// console.log(myName.trueLength) commented out
+
+
+// let myHeros = ["thor", "spiderman"]
+
+
+// let heroPower = {
+//     thor: "hammer",
+//     spiderman: "sling",
+
+//     getSpiderPower: function(){
+//         console.log(`Spidy power is ${this.spiderman}`);
+//     }
+// }
+
+// Object
+
+// heroPower.hitesh()
+
+// likh liya
+
+// 33:32
+
+// ... ki agar mai kya karu mujhe pata hai ki
+// Object datatype aise access kar sakta hu mai
+// Object 
+// 33:32
+// aa..., mere pas available hai (Object datatype mere pas available hai)
+
+// factory functions bhi available hai yahan pe
+// jaise dot create etc yeh sab hote hai
+// Object.create
+// haa factory functions bolte hai inko ( Object.create mei create ko )
+// isse jada kuch bhi nahi hai isme
+// factory function matlab uska ( Object.create mei Object ka )
+// by default function jisko create karne ke liye use aata hai
+// (hover over create in Object.create)
+// 33:44
+
+// (Object.create mei .create ko backspace kar diya)
+// Object
+// theek hai to Object hai mere pas
+// Object
+// iska (Object ka) prototype bhi access hai mere pas
+// Object.prototype
+// theek hai ji hota hi hai aapke pas
+// 33:49
+// aur uske andar aap laga do ek method hitesh()
+// Object.prototype.hitesh()

@@ -15,3 +15,7 @@ let heroPower = {
         console.log(`Spidy power is ${this.spiderman}`);
     }
 }
+
+Object
+
+heroPower.hitesh()
