@@ -16,6 +16,13 @@ let heroPower = {
     }
 }
 
-Object
+Object.prototype.hitesh = function(){
+    console.log(`hitesh is present in all objects`);
+}
 
-heroPower.hitesh()
+Array.prototype.heyHitesh = function(){
+    console.log(`Hitesh says hello`);
+}
+
+// heroPower.hitesh()
+myHeros.hitesh()

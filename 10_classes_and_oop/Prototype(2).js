@@ -636,5 +636,265 @@
 // Object.prototype
 // theek hai ji hota hi hai aapke pas
 // 33:49
-// aur uske andar aap laga do ek method hitesh()
-// Object.prototype.hitesh()
+// aur uske andar aap laga do ek method hitesh
+// Object.prototype.hitesh
+
+// theek hai ji ab yeh function kya kehta hai ki
+// yeh lijiye function aa gaya hai humare pas
+// aur yeh lijiye
+// Object.prototype.hitesh = function(){
+
+// }
+
+// ab yeh function karta kya hai kuch nahi
+// -- hitesh is present in all object
+// theek hai ji yeh bhi dekh lete hai
+// to bolta hai -- hitesh is present in all objects
+// Object.prototype.hitesh = function(){
+//     console.log(`hitesh is present in all objects`);
+// }
+
+
+
+// let myName = "hitesh     " commented out
+// let mychannel = "chai     " commented out
+
+// console.log(myName.trueLength) commented out
+
+
+// let myHeros = ["thor", "spiderman"]
+
+
+// let heroPower = {
+//     thor: "hammer",
+//     spiderman: "sling",
+
+//     getSpiderPower: function(){
+//         console.log(`Spidy power is ${this.spiderman}`);
+//     }
+// }
+
+// Object.prototype.hitesh = function(){
+//     console.log(`hitesh is present in all objects`);
+// }
+
+// heroPower.hitesh()
+
+// likh liya
+
+// theek hai ji
+// to ab to technically kyuki heroPower 
+// ( heroPower.hitesh() , mei heroPower )
+// bhi kya hai kahan se aya hai
+// object se hi to aya hai
+// yeh ( let heroPower = {} ) object hi to hai
+// (34:18)
+
+// to technically iske pas ( let heroPower = {} )
+// available hona chahiye
+// ( technically iske pas ( let heroPower = {} ) 
+// hitesh function ( Object.prototype.hitesh = function(){} ) hona chahiye )
+// haa ji hona to chahiye
+// dekh lete hai, hai ki nahi
+// wo abhi pata lag jayega
+
+// run in terminal
+
+// o/p hitesh is present in all objects
+
+// to haa ji -- hitesh is present in all objects
+// (see o/p)
+// badi interesting baat hai yeh to
+// 34:34
+// achha abhi maine just ek diagram mei bataya
+// (see diagram -- function array string object null)
+// ki almost sabhi cheejein object se hoti hui jati hai
+// (see diagram)
+// aur fir object ka koi aur super prototype
+// nahi hota hai wahan pe (see null in diagram)
+
+// but array (see diagram) bhi to abhi aapne bola tha ki
+// yeh (array, see diagram) bhi to object se hi jayega (see diagram)
+// aisa hai kya... , dekh lete hai
+// (code editor mei aa gaye)
+
+// to yahan pe ek array declare kar hi rakha hai aapne
+// myHeros naam ka ( let myHeros = ["thor", "spiderman"] )
+// to..., theory ke hisab se to
+// ( let heroPower = {} dropdown close kar diya )
+// aapke myHeros ( let myHeros = ["thor", "spiderman"] )
+// ke pas bhi yeh hitesh
+// ( heroPower.hitesh() / Object.prototype.hitesh = function(){} )
+// wali power honi chahiye
+// 34:58
+
+// to dekh lete hai
+// isko ( heroPower.hitesh() ) to kar dete hai comment
+// ( comment out ) kyuki iska ( heroPower.hitesh() )
+// to pata lag gaya hai
+// aur yeh jo myHeros hai ( let myHeros = ["thor", "spiderman"] )
+// myHeros
+// dekh lete hai iske pas bhi yeh hitesh wali power available hai kya
+// ya function available hai kya ( Object.prototype.hitesh = function(){} )
+// myHeros.hitesh()
+// yeh bhi dekh lete hai koi problem hi nahi hai
+// 35:09
+
+// let myName = "hitesh     " commented out
+// let mychannel = "chai     " commented out
+
+// console.log(myName.trueLength) commented out
+
+
+// let myHeros = ["thor", "spiderman"]
+
+
+// let heroPower = {
+//     thor: "hammer",
+//     spiderman: "sling",
+
+//     getSpiderPower: function(){
+//         console.log(`Spidy power is ${this.spiderman}`);
+//     }
+// }
+
+// Object.prototype.hitesh = function(){
+//     console.log(`hitesh is present in all objects`);
+// }
+
+// heroPower.hitesh() commented out
+// myHeros.hitesh()
+
+// likh liya
+
+// abhi ek bar aur check kar lete hai clean karte
+// hai (terminal clean) , run karte hai
+
+// o/p hitesh is present in all objects
+
+// haa ji yeh to baat sahi nikli (see o/p)
+// ki aapne prototype... ( Object.prototype.hitesh = function(){} )
+// to aapne kiya kya yahan pe 
+// (function array string object null diagram mei aa gaye)
+// aapne bada hi interesting kaam kiya
+// aapne seedha top level ki heirarchy access kar li (object in diagram)
+// aur bola ki -- object, aapke andar (object ko bola ki aapke ke andar)
+// ek kaam karta hu ek nayi property add kar deta hu
+// aur iss property ko aap access kar sakte hai
+// (35:29)
+
+// theek hai to array (see diagram) ke pas bhi property chali gayi
+// string (see diagram) ke pas bhi property chali gayi
+// sabke pas hi chali gayi
+// (code editor mei aa gaye)
+
+// haa ji theory mei to yeh hi hai
+// aur hai bhi yeh hi actually mei
+// ki aapne sabhi ko yeh power de di
+// theek hai ji yahan tak to baat theek hai
+
+// Lekin ab mai kya chahta hu ek aur test karna chahta hu
+// ki agar mai power ( Object.prototype.hitesh = function(){} ) 
+// sirf array ( let myHeros = ["thor", "spiderman"] ) ko du
+// to kya yeh power ( Object.prototype.hitesh = function(){} ) 
+// object (see function array string object null)
+// ke pass bhi by default chali jati hai
+
+// hmmm..., dekhiye prototype ka kya hai yahan (see array in diagram)
+// power milegi to theek hai
+// nahi to usko (power ko) yahan (see object in diagram)
+// check karega (prototype check karega)
+// theek hai agar nahi mili to aur upar (see null in diagram)
+// check karta jayega
+
+// but agar power aapne inject hi yahin (see array in diagram)
+// kari hai, to kya wo power object (see object in diagram)
+// ke pas bhi honi chahiye
+// 36:03
+// yeh bada interesting question hai chaliye
+// karke dekh lete hai
+// (code editor mei aa gaye)
+
+// array ke andar kuch bhi inject karna hai to aapko
+// pata hai aap kya kar sakte ho -- Array
+// Array
+// dot prototype
+// Array.prototype
+// aur dot isko (new power / function example) heyHitesh de dete hai
+// Array.prototype.heyHitesh
+// arrayHitesh de dete hai
+// ya heyHitesh de dete hai
+// Array.prototype.heyHitesh
+
+// isko bhi ek function de dete hai
+// Array.prototype.heyHitesh = function(){
+
+// }
+// aur isko function ko bol dete hai kuch aur
+// to console.log() kar lete hai yahan pe
+// Array.prototype.heyHitesh = function(){
+//     console.log();
+// }
+// aur console.log bol dete hai -- ``
+// suppose kariye ki -- `Hitesh says hello`
+// Array.prototype.heyHitesh = function(){
+//     console.log(`Hitesh says hello`);
+// }
+// 36:29
+
+
+// let myName = "hitesh     " commented out
+// let mychannel = "chai     " commented out
+
+// console.log(myName.trueLength) commented out
+
+
+// let myHeros = ["thor", "spiderman"]
+
+
+// let heroPower = {
+//     thor: "hammer",
+//     spiderman: "sling",
+
+//     getSpiderPower: function(){
+//         console.log(`Spidy power is ${this.spiderman}`);
+//     }
+// }
+
+// Object.prototype.hitesh = function(){
+//     console.log(`hitesh is present in all objects`);
+// }
+
+// Array.prototype.heyHitesh = function(){
+//     console.log(`Hitesh says hello`);
+// }
+
+// heroPower.hitesh() commented out
+// myHeros.hitesh()
+
+// likh liya
+
+
+
+
+// theek hai ji yeh bol diya hai
+// ab technically to kya hai ki aapka jo
+// yeh myHeros hai ( let myHeros = ["thor", "spiderman"] )
+// myHeros
+// iske pas to access hona chahiye heyHitesh ka
+// myHeros.heyHitesh()
+// theek hai ji
+
+// Lekin jo humara heroPower hai ( let heroPower = {} )
+// myHeros.heyHitesh()
+// heroPower
+// uske pas yeh heyHitesh ka access nahi hona chahiye
+// myHeros.heyHitesh()
+// heroPower.heyHitesh()
+// theory mei to atleast
+// kyuki obvious si baat hai
+// aa..., down the line (see diagram) chain
+// neeche wale (see diagram) ko to access de diya hai
+// upar wale (see diagram) ko apne aap thodi na mil jata hai
+// Lekin agar (36:51)
+
