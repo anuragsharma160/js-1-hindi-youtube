@@ -896,5 +896,337 @@
 // aa..., down the line (see diagram) chain
 // neeche wale (see diagram) ko to access de diya hai
 // upar wale (see diagram) ko apne aap thodi na mil jata hai
-// Lekin agar (36:51)
+// Lekin agar (36:51) top level (see diagram) pe hi de diya hai
+// to sab wahin se pas hoke jaa rahe hai (see diagram)
+// to unko sabko mil jata hai (see diagram)
 
+
+
+// let myName = "hitesh     " commented out
+// let mychannel = "chai     " commented out
+
+// console.log(myName.trueLength) commented out
+
+
+// let myHeros = ["thor", "spiderman"]
+
+
+// let heroPower = {
+//     thor: "hammer",
+//     spiderman: "sling",
+
+//     getSpiderPower: function(){
+//         console.log(`Spidy power is ${this.spiderman}`);
+//     }
+// }
+
+// Object.prototype.hitesh = function(){
+//     console.log(`hitesh is present in all objects`);
+// }
+
+// Array.prototype.heyHitesh = function(){
+//     console.log(`Hitesh says hello`);
+// }
+
+// heroPower.hitesh() commented out
+// myHeros.hitesh()
+// myHeros.heyHitesh()
+// heroPower.heyHitesh()
+
+// likh liya
+
+
+// chaliye run karke dekh lete hai
+// abhi errors se pata lag jayega kya kya ho raha hai
+// ( run in terminal )
+
+// o/p hitesh is present in all objects
+// Hitesh says hello
+// C:\Users\MSI-GF-63\OneDrive\Desktop\JS-CHAI-AUR-CODE\10_classes_and_oop\Prototype.js:30
+// heroPower.heyHitesh()
+//           ^
+
+// TypeError: heroPower.heyHitesh is not a function
+//     at Object.<anonymous> (C:\Users\MSI-GF-63\OneDrive\Desktop\JS-CHAI-AUR-CODE\10_classes_and_oop\Prototype.js:30:11)
+//     at Module._compile (node:internal/modules/cjs/loader:1469:14)
+//     at Module._extensions..js (node:internal/modules/cjs/loader:1548:10)
+//     at Module.load (node:internal/modules/cjs/loader:1288:32)
+//     at Module._load (node:internal/modules/cjs/loader:1104:12)
+//     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+//     at node:internal/main/run_main_module:28:49
+
+// Node.js v20.17.0
+
+// haa ek error jo expected thi
+// ki yeh jo heroPower hai ( TypeError: heroPower.heyHitesh is not a function , see o/p )
+// ( let heroPower = {} ) ( heroPower.heyHitesh() , see o/p and see code)
+// iske pas hitesh (heyHitesh) ( Array.prototype.heyHitesh = function(){} )
+// ka access to nahi hai , heyHitesh ka access to nahi hai
+// theek hai ji maan li aapki baat
+// 37:07
+
+// yahan pe ( heroPower.heyHitesh() ) 
+// aapka code fail ho gaya hai 
+// ( heroPower.heyHitesh() ko comment out kar diya )
+// to isko humne save karke rakh liya hai
+// sorry comment (comment out) karke rakh liya hai
+
+
+
+// let myName = "hitesh     " comment out
+// let mychannel = "chai     " comment out
+
+// console.log(myName.trueLength) comment out
+
+
+// let myHeros = ["thor", "spiderman"]
+
+
+// let heroPower = {
+//     thor: "hammer",
+//     spiderman: "sling",
+
+//     getSpiderPower: function(){
+//         console.log(`Spidy power is ${this.spiderman}`);
+//     }
+// }
+
+// Object.prototype.hitesh = function(){
+//     console.log(`hitesh is present in all objects`);
+// }
+
+// Array.prototype.heyHitesh = function(){
+//     console.log(`Hitesh says hello`);
+// }
+
+// heroPower.hitesh() comment out
+// myHeros.hitesh()
+// myHeros.heyHitesh()
+// heroPower.heyHitesh() comment out
+
+// likh liya
+
+// run in terminal
+
+// o/p hitesh is present in all objects
+// Hitesh says hello
+
+// ab yahan pe -- Hitesh says hello (see o/p)
+// haa ji array ke pas to power hai
+// ( Array.prototype.heyHitesh = function(){} )
+// ( let myHeros = ["thor", "spiderman"] )
+// ( myHeros.heyHitesh() )
+
+// Lekin yeh dhyan rakhiyega ki aapne
+// array ( let myHeros = ["thor", "spiderman"] ) 
+// ko hi power ( Array.prototype.heyHitesh = function(){} ) di hai
+// (function array string object null diagram mei aa gaye)
+// aise function (see diagram) string (see diagram)
+// inn sabke pas power ( Array.prototype.heyHitesh = function(){} )
+// nahi ayi hai (see diagram)
+// yeh bhai bhai (function , array , string see diagram) hai 
+// aise aapas mei share nahi karte
+// (aise apas mei power share nahi karte)
+
+// Lekin haa jis path (Array ---> Object---> Null , see diagram) se hote huye jayenge
+// uss path ko hi power de denge
+// to obvious si baat hai yeh sab hoga
+// (37:26)
+// (code editor mei aa gaye)
+
+// achha ab yahan pe humne path ki power
+// ki baat to kar li hai
+// ek choti si baat aur kar lete hai hum yahan pe
+// thodi si inheritance ki
+// inheritance
+// yeh bhi bada hi basic sa easy sa topic hai
+// inheritance comment out
+
+// aapke thoda sa share kar deta hu to aapko
+// thoda sa aur idea mil jayega
+// aa..., bada hi basic hai aisa kuch khaas isme hai nahi
+// but aapko ek hi bar mei samajh mei aa jayega
+
+// to suppose kariye maine ek teacher liya
+// const Teacher
+// yeh lijiye ek object hai teacher
+// const Teacher = {
+
+// }
+// aur isko ek power di ya functionality de di
+// ki aap teacher ho to video bana sakte ho 
+// vaise jaruri nahi ki sare teacher hai to video hi
+// bana sakein
+// ya jo sare log video banate hai wo bhi teacher ho
+// to but theek hai
+// inheritance comment out
+
+
+// const Teacher = {
+//     makeVideo: true
+// }
+
+// aapne diya makeVideo , aur true usko de diya
+// 38:02
+// ab aapko chahiye ki ek teaching assistant bhi ho
+// kyuki usually lagta hai agar professional level mei
+// padha rahe ho to teaching support lagta hai
+// inheritance comment out
+
+
+// const Teacher = {
+//     makeVideo: true
+// }
+
+// const TeachingSupport
+
+// yeh lijiye teaching support
+// inheritance comment out
+
+
+// const Teacher = {
+//     makeVideo: true
+// }
+
+// const TeachingSupport = {
+
+// }
+
+// iska ( const TeachingSupport = {} ) kaam hai
+// ki mujhe pehle batao ki aap ho
+// ki nahi ho yahan pe
+// to available ho gaya,  
+// inheritance comment out
+
+
+// const Teacher = {
+//     makeVideo: true
+// }
+
+// const TeachingSupport = {
+//     isAvailable:
+// }
+
+// theek hai isAvailable: abhi kya hai
+// abhi to hire hi nahi hua ( isAvailable: false )
+// theek hai to false hai
+// inheritance comment out
+
+
+// const Teacher = {
+//     makeVideo: true
+// }
+
+// const TeachingSupport = {
+//     isAvailable: false
+// }
+
+// 38:18
+
+// aur bhi do (2) properties hume lagegi iss example ko
+// samajhne ke liye but isi tareh ki hum banate jayenge
+// to... TA Support bhi chahiye hota hai jo questions etc
+// ke answer kare, to TASupport , yeh lijiye
+// support ( TASupport ) bhi ek object le liya
+// inheritance comment out
+
+
+// const Teacher = {
+//     makeVideo: true
+// }
+
+// const TeachingSupport = {
+//     isAvailable: false
+// }
+
+// const TASupport = {
+
+// }
+
+// ab pehle ke time mei aise hi hota tha
+// koi classes etc to hoti nahi thi
+// to object hi banate the har cheej ka
+// aur aise hi object ke andar hi
+// properties (variables i.e. key value pair)  ,
+// functions (methods) add karte the
+// to yeh thoda purane style ka code hai
+// to kum (less) jagah milega aapko
+// 38:42
+
+// to TASupport ka kaam kya hai
+// ek to assignment banana
+// makeAssignment:
+// theek hai aur mere (sir ke) saath mei hai to 
+// JS ke assignment banane padenge
+// inheritance comment out
+
+
+// const Teacher = {
+//     makeVideo: true
+// }
+
+// const TeachingSupport = {
+//     isAvailable: false
+// }
+
+// const TASupport = {
+//     makeAssignment: 'JS Assignment'
+// }
+
+// theek hai ji aur kya kya property de sakte hai
+// fullTime hai ki nahi yeh bhi pooch lete hai
+// ki aap fullTime ho ya partTime ho
+// to abhi to mere pas fullTime true hai
+// inheritance comment out
+
+
+// const Teacher = {
+//     makeVideo: true
+// }
+
+// const TeachingSupport = {
+//     isAvailable: false
+// }
+
+// const TASupport = {
+//     makeAssignment: 'JS Assignment',
+//     fullTime: true
+// }
+
+// theek hai
+// ab kya hai itna kaam to theek tha
+// Lekin jaise ki maine aapko bataya
+// har object apne aap mei ek alag instance hai
+// to aisa nahi hai ki aapas mei koi cheejein
+// share kar rahe hai
+// sabki alag alag properties (variables i.e. key value pair) hai
+// default properties to sabke pas hai object ki
+// jaise dot length (Object.length)
+// ya jo bhi properties hoti hai
+// 39:14
+// aa..., proto etc (Object.prototype)
+
+// Lekin humne yeh dekha abhi bhi
+// ki kuch default properties to hai humare pas
+// (browser console mei aa gaye testObj example)
+// (see default properties in [[Prototype]]: Object , dropdown)
+// but aisa to nahi hai na ki aapne
+// ( [[Prototype]]: Object , dropdown close kar diya)
+// kisi testObj ke andar abhi yeh rakha hitesh
+// ( {username: 'hitesh'} in testObj dropdown )
+// 39:25
+// to ab sare object ko hitesh mil gaya hai wahan pe
+// username mei
+// (means sare object ke username mei hitesh nahi mila)
+// nahi nahi aisa to nahi hua sabko alag alag milta hai
+
+// (code editor mei aa gaye)
+// Lekin koi aisi situation hai
+// jahan pe aap information exchange karna chahte ho ki
+// inn dono object ko aapas mei hum link karte hai
+// 39:36
+
+// to abhi humne dekha aisi cheejein link karne ke liye
+// humare pas prototype hai ( Object.prototype.hitesh = function(){} , see code)
+// to haa ji prototype hai
+// 39:40

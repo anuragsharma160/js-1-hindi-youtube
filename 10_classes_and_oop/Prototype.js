@@ -26,3 +26,5 @@ Array.prototype.heyHitesh = function(){
 
 // heroPower.hitesh()
 myHeros.hitesh()
+myHeros.heyHitesh()
+// heroPower.heyHitesh()
