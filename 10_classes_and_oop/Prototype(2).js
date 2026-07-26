@@ -1227,6 +1227,82 @@
 // 39:36
 
 // to abhi humne dekha aisi cheejein link karne ke liye
-// humare pas prototype hai ( Object.prototype.hitesh = function(){} , see code)
+// humare pas prototype hai 
+// ( Object.prototype.hitesh = function(){} / Array.prototype.heyHitesh = function(){} , see code)
 // to haa ji prototype hai
 // 39:40
+
+// ab pehle ke time pe kya hota tha
+// ki actually mei isko hum ek property
+// hi maante the
+// abhi bhi yeh property hi hai
+// (browser console mei aa gaye testObj example)
+// agar aap isko open karke dekhoge
+// ( [[Prototype]]: Object , dropdown open kar liya)
+// to aapko dikh jayegi yahan pe
+// actually mei array mei jada...
+// yeh rahi (scroll down and see)
+// yeh jo aapke pas property hai
+// underscore underscore proto i.e. __proto
+// ( __proto__: (...) , see under [[Prototype]]: Object , dropdown )
+// yeh actually mei yeh hi same property hai jo yahan pe
+// (browser console mei under any Object dropdown / [[Prototype]]: Object , dropdown) 
+// available hoti hai
+// 39:56
+
+// to isko
+// ( __proto__: (...) , see under [[Prototype]]: Object , dropdown , testObj example, see browser console)
+// aap directly access kar sakte ho
+// dot notation se bhi (Object.__proto__)
+// (code edito mei aa gaye)
+// aur chaho to ek special keyword hai
+// to usi ko (dot notation ko) over write karne wala hai
+// but thoda sa difficult hai dekhiye
+// yeh mai maanta hu ki yeh jo syntax hai
+// bahut hi weird hai
+// underscore underscore
+// __
+// fir proto
+// __proto
+// fir underscore underscore
+// __proto__
+
+// inheritance comment out
+
+
+// const Teacher = {
+//     makeVideo: true
+// }
+
+// const TeachingSupport = {
+//     isAvailable: false
+// }
+
+// const TASupport = {
+//     makeAssignment: 'JS Assignment',
+//     fullTime: true
+//     __proto__
+// }
+
+// pata nahi kyu rakha gaya hai
+// (pata nahi kyu rakha gaya hai naya syntax i.e. __proto__)
+// kaise rakha gaya (40:13)
+// samajhne mei difficult hota hai
+// koi sirf agar dekh hi raha hai to
+// usko yeh hi yaad nahi rehta ki
+// do (2) underscore hai ( __proto__ )
+// to yeh thoda sa problem hai
+
+// to yahan pe ( __proto__ ) aap colon laga ke
+// __proto__:
+// aur bol sakte ho ki dekho ek kaam karo
+// aapka jo prototype ( __proto__: ) hai na
+// (40:24)
+// usko reference kar do humare teaching support se
+// ( const TeachingSupport = {} )
+// kyuki jo yeh TASupport hai na yeh TeachingSupport
+// jitna iski yeh sari properties bhi aap borrow kar lo
+// (means aap yani TASupport, TeachingSupport ki properties bhi 
+// borrow kar lo)
+// __proto__: TeachingSupport
+// (40:30)
