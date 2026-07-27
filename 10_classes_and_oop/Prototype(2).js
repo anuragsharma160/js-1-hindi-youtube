@@ -1338,8 +1338,8 @@
 
 // const TASupport = {
 //     makeAssignment: 'JS Assignment',
-//     fullTime: true
-//     __proto__
+//     fullTime: true,
+//     __proto__: TeachingSupport
 // }
 
 // Teacher
@@ -1377,8 +1377,8 @@
 
 // const TASupport = {
 //     makeAssignment: 'JS Assignment',
-//     fullTime: true
-//     __proto__
+//     fullTime: true,
+//     __proto__: TeachingSupport
 // }
 
 // Teacher.__proto__ =
@@ -1429,8 +1429,8 @@
 
 // const TASupport = {
 //     makeAssignment: 'JS Assignment',
-//     fullTime: true
-//     __proto__
+//     fullTime: true,
+//     __proto__: TeachingSupport
 // }
 
 // Teacher.__proto__ = User
@@ -1441,3 +1441,83 @@
 // access kar sakte ho
 // to yeh hi humara prototypal inheritance hai
 // 41:37
+
+// achha yeh wala jo approach hai na yeh thoda sa
+// outdated hai, aapko naye code bases mei yeh aisi
+// approaches nahi milegi ( Teacher.__proto__ = User , __proto__: TeachingSupport , see code)
+// but aisa nahi hai ki hoti hi nahi hai
+// approaches milti hai
+// aisa bhi (just above code jaisa) kayi jagah
+// aapko codebase etc mei milega
+
+// 41:49
+
+
+
+// let myName = "hitesh     " comment out
+// let mychannel = "chai     " comment out
+
+// console.log(myName.trueLength) comment out
+
+
+// let myHeros = ["thor", "spiderman"]
+
+
+// let heroPower = {
+//     thor: "hammer",
+//     spiderman: "sling",
+
+//     getSpiderPower: function(){
+//         console.log(`Spidy power is ${this.spiderman}`);
+//     }
+// }
+
+// Object.prototype.hitesh = function(){
+//     console.log(`hitesh is present in all objects`);
+// }
+
+// Array.prototype.heyHitesh = function(){
+//     console.log(`Hitesh says hello`);
+// }
+
+// heroPower.hitesh() comment out
+// myHeros.hitesh()
+// myHeros.heyHitesh()
+// heroPower.heyHitesh() comment out
+
+// inheritance comment out
+
+// const User = {
+//     name: "chai",
+//     email: "chai@google.com"
+// }
+
+// const Teacher = {
+//     makeVideo: true
+// }
+
+// const TeachingSupport = {
+//     isAvailable: false
+// }
+
+// const TASupport = {
+//     makeAssignment: 'JS Assignment',
+//     fullTime: true,
+//     __proto__: TeachingSupport
+// }
+
+// Teacher.__proto__ = User
+
+// likh liya
+
+
+
+
+// Lekin hume jo nayi approach hai
+// hume jo naye object ke andar code mei (ke) andar milegi
+// wo hai humara modern syntax
+// modern syntax comment out
+
+// yeh wala (modern syntax) abhi sab log yeh hi use karte hai
+// mai bhi yeh hi use karta hu
+// (41:58)
