@@ -1298,11 +1298,146 @@
 // aur bol sakte ho ki dekho ek kaam karo
 // aapka jo prototype ( __proto__: ) hai na
 // (40:24)
-// usko reference kar do humare teaching support se
+// usko reference kar do humare teaching support se bhi
 // ( const TeachingSupport = {} )
 // kyuki jo yeh TASupport hai na yeh TeachingSupport
-// jitna iski yeh sari properties bhi aap borrow kar lo
+// jitna iski (TeachingSupport) yeh sari properties bhi aap (TASupport) borrow kar lo
 // (means aap yani TASupport, TeachingSupport ki properties bhi 
 // borrow kar lo)
 // __proto__: TeachingSupport
 // (40:30)
+
+// to jaise hi ab aapne yeh ( __proto__: TeachingSupport ) kara
+// bas ho gaya aapka kaam 
+// ab aap TASupport ( const TASupport = {} ) se jo bhi aap further
+// new karke jaise bhi object banaoge
+// to uske (jo new object banayenge) pas aapko yeh ( const TASupport = {} / const TeachingSupport = {} )
+// mil jayega access
+// ( kyuki humne __proto__: TeachingSupport kiya hai to const TASupport = {} / const TeachingSupport = {}
+// ka access hume mil jayega )
+
+// achha aisa itna hi nahi hai ki aisa nahi hai ki 
+// har bar andar hi jake karna hai , 
+// ( means har bar const TASupport = {} (or any object) ke andar hi jake karna hai )
+// aap iska (TASupport / TeachingSupport / any object) access bahar bhi le sakte ho
+// ( const TASupport = {} ke bahar bhi access le sakte ho )
+// jaise humare pas yeh Teacher bhi to hai
+// ( const Teacher = {} )
+// 40:47
+
+// inheritance comment out
+
+
+// const Teacher = {
+//     makeVideo: true
+// }
+
+// const TeachingSupport = {
+//     isAvailable: false
+// }
+
+// const TASupport = {
+//     makeAssignment: 'JS Assignment',
+//     fullTime: true
+//     __proto__
+// }
+
+// Teacher
+
+// to Teacher ke bhi aap wapas se dot laga ke
+// Teacher.
+// wo hi fir , fir se same kahani underscore underscore
+// Teacher.__
+// proto
+// Teacher.__proto
+// underscore underscore
+// Teacher.__proto__
+
+// aur isko ( Teacher.__proto__ ) bana ke aap
+// Teacher.__proto__ = 
+// aur bhi access etc properties ka de sakte ho
+// to suppose kariye ek user bhi bana hi lete hai
+// kyuki har ek aadmi ek user to hoga hi hoga
+// 41:01
+// to const User = { }
+
+// inheritance comment out
+
+// const User = {
+
+// }
+
+// const Teacher = {
+//     makeVideo: true
+// }
+
+// const TeachingSupport = {
+//     isAvailable: false
+// }
+
+// const TASupport = {
+//     makeAssignment: 'JS Assignment',
+//     fullTime: true
+//     __proto__
+// }
+
+// Teacher.__proto__ =
+
+
+// aur user ke andar kuch properties daal dete hai
+// kyuki login etc ke liye to name isko (const User = {}) bhi chahiyega
+// to isko bol dete hai jo bhi username
+// chai de dete hai iska naam, sabka naam chai hai aaj
+
+// const User = {
+//     name: "chai",
+// }
+
+// theek hai aur email bhi de dete hai
+// to yeh lijiye email hai iska chai@google.com
+// haa ji humare chai wale log google mei kaam kar rahe hai
+
+// const User = {
+//     name: "chai",
+//     email: "chai@google.com"
+// }
+
+// theek hai ji lo to yeh ho gaya
+// to teacher ko bhi mujhe prototype
+// yahan pe assign karna hai
+// ( Teacher.__proto__ = i.e. const Teacher = {} ko )
+// to Teacher bhi User ( const User = {} ) 
+// ki sari properties access kar sakta hai
+// Teacher.__proto__ = User
+// 41:27
+
+
+// inheritance comment out
+
+// const User = {
+//     name: "chai",
+//     email: "chai@google.com"
+// }
+
+// const Teacher = {
+//     makeVideo: true
+// }
+
+// const TeachingSupport = {
+//     isAvailable: false
+// }
+
+// const TASupport = {
+//     makeAssignment: 'JS Assignment',
+//     fullTime: true
+//     __proto__
+// }
+
+// Teacher.__proto__ = User
+
+// theek hai ji , yeh hi inheritance hai
+// yeh hi prototypal inheritance hai
+// ki aap kaise kisi aur ki properties ko
+// access kar sakte ho
+// to yeh hi humara prototypal inheritance hai
+// 41:37
