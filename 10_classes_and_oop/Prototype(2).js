@@ -1521,3 +1521,64 @@
 // yeh wala (modern syntax) abhi sab log yeh hi use karte hai
 // mai bhi yeh hi use karta hu
 // (41:58)
+// seedha access karo aapke Object ko
+// modern syntax comment out
+// Object
+
+// Object ke andar aapko dikhega 
+// (browser console mei aa gaye testObj example, [[Prototype]]: Object dropdown mei)
+// yahan pe ab nayi properties aapke pas aa gayi hai
+// propertyIsEnumerable
+// ( propertyIsEnumerable: ƒ propertyIsEnumerable() )
+// isPrototypeOf
+// ( isPrototypeOf: ƒ isPrototypeOf() )
+// hasOwnProperty
+// ( hasOwnProperty: ƒ hasOwnProperty() )
+// yeh sara ka sara ( [[Prototype]]: Object , dropdown mei of testObj example in browser console)
+// aapka modern structure hi hai yahan pe (modern syntax)
+
+// theek hai jitni bhi aapko mil rahi hai
+// aapke pas setters 
+// (set __proto__: ƒ __proto__())
+// getters
+// (get __proto__: ƒ __proto__())
+// sab kuch hai
+
+// (code editor mei aa gaye)
+// to ek special hume yahan pe method diya gaya hai
+// jiska naam hai setPrototypeOf
+// modern syntax comment out
+// Object.setPrototypeOf
+
+// yeh ( setPrototypeOf method ) kya karta hai (hover over setPrototypeOf)
+// sets the prototype of a specified object o (alphabet letter)
+// to object proto or null.
+// Basically behind the scene wo hi underscore underscore proto
+// ( __proto__: TeachingSupport / Teacher.__proto__ = User ) chal raha hai
+// but yeh ( setPrototypeOf method ) thoda sa syntax achha hai
+// isliye use karte hai
+// 42:30
+// aur (ab) aapko internal detail bhi pata hai
+// modern syntax comment out
+// Object.setPrototypeOf()
+
+// to yahan pe ( Object.setPrototypeOf() mei in () )
+// do (2) aapse leta hai ki (2 arguments leta hai, hover and see)
+// ki kiski property kiske andar hume inject karni hai
+// to obvious si baat hai lijiye hum kya karte hai
+// TeachingSupport ko access de dete hai
+// ki aap ( TeachingSupport ) sari property access kar lo
+// modern syntax comment out
+// Object.setPrototypeOf(TeachingSupport,)
+// Teacher ki bhi
+// modern syntax comment out
+// Object.setPrototypeOf(TeachingSupport, Teacher)
+// 42:42
+
+// theek hai to Teacher 
+// ( Object.setPrototypeOf(TeachingSupport, Teacher) mei Teacher )
+// ki property yeh 
+// ( Object.setPrototypeOf(TeachingSupport, Teacher) mei TeachingSupport ) 
+// access kar leta hai
+// 42:45
+
