@@ -51,3 +51,6 @@ const TASupport = {
 }
 
 Teacher.__proto__ = User
+
+// modern syntax
+Object.setPrototypeOf(TeachingSupport, Teacher)

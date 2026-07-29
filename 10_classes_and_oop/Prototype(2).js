@@ -1581,4 +1581,158 @@
 // ( Object.setPrototypeOf(TeachingSupport, Teacher) mei TeachingSupport ) 
 // access kar leta hai
 // 42:45
+// to theek hai yeh hi aapka prototypal inheritance hai
+// ki kis tareh ( Object.setPrototypeOf(TeachingSupport, Teacher) ) 
+// se aap khud bhi inheritance karwa sakte ho
+
+// classes ke andar thode se keyword alag ho jate hai
+// extend etc but behind the scene wo hi prototype hi
+// chal raha hai , syntactic sugar hai , 
+// aur jadatar senior developers ko bhi nahi pata hai ki aisa kuch
+// ho raha hai, bade bade code likh rahe hai wo bhi
+// aur chal bhi rahe hai achhe, par koi dikkat wali
+// baat hi nahi hai
+// 43:03
+
+// ab jisko andar ghus ke itna PHD karna hai wo to
+// kare baki kyu hi dekhe itna sab
+
+
+
+// let myName = "hitesh     " comment out
+// let mychannel = "chai     " comment out
+
+// console.log(myName.trueLength) comment out
+
+
+// let myHeros = ["thor", "spiderman"]
+
+
+// let heroPower = {
+//     thor: "hammer",
+//     spiderman: "sling",
+
+//     getSpiderPower: function(){
+//         console.log(`Spidy power is ${this.spiderman}`);
+//     }
+// }
+
+// Object.prototype.hitesh = function(){
+//     console.log(`hitesh is present in all objects`);
+// }
+
+// Array.prototype.heyHitesh = function(){
+//     console.log(`Hitesh says hello`);
+// }
+
+// heroPower.hitesh() comment out
+// myHeros.hitesh()
+// myHeros.heyHitesh()
+// heroPower.heyHitesh() comment out
+
+// inheritance comment out
+
+// const User = {
+//     name: "chai",
+//     email: "chai@google.com"
+// }
+
+// const Teacher = {
+//     makeVideo: true
+// }
+
+// const TeachingSupport = {
+//     isAvailable: false
+// }
+
+// const TASupport = {
+//     makeAssignment: 'JS Assignment',
+//     fullTime: true,
+//     __proto__: TeachingSupport
+// }
+
+// Teacher.__proto__ = User
+
+// modern syntax comment out
+// Object.setPrototypeOf(TeachingSupport, Teacher)
+
+// likh liya
+
+// chaliye yeh hi sab to aapko aa gaya
+// samajh mei , 
+// ab yeh sara jab maine inheritance bataya 
+// ( inheritance comment out and below content under inheritance heading )
+// usse ( inheritance comment out ) pehle
+// hi shayad aapko idea lag gaya hoga
+// ki hum jo problem solve karna chah
+// rahe the yahan pe wo kaise kar sakte hai
+// 43:16 
+
+// to basically mai chah kya raha tha ki
+// string (as follows)
+// ( let myName = "hitesh     "
+//   let mychannel = "chai     "  , see code)
+// ke andar mujhe ek property mil jaye direct
+// hi truelength ( console.log(myName.trueLength) , see code )
+// method (function) actually mei property (variable i.e. key value pair)
+// nahi method
+
+// property bhi le sakte hai ki ek property bhi add kar do
+// method bhi add kar do
+// method wo uss property ko update kar de
+// 43:27
+// theek hai wo bhi ho sakta hai
+// but mai chahta hu directly mujhe method mil jaye
+// yahan pe ( console.log(myName.trueLength) )
+
+// to abhi aapko shayad idea lag gaya hoga kaise kare
+// to sari strings (as follows)
+// ( let myName = "hitesh     "
+//   let mychannel = "chai     " , see code )
+// ko wo sari superpower dene ke liye
+// kya karna padega
+
+// to suppose kariye let yahan pe ek hum le lete hai
+// anotherUsername
+// let anotherUsername =
+// aur isko le lete hai iss bar "ChaiAurCode"
+// let anotherUsername = "ChaiAurCode"
+// aur bahut sare spaces ke saath
+// let anotherUsername = "ChaiAurCode     "
+// theek hai ji
+// ab iske ( let anotherUsername = "ChaiAurCode     " )
+// hi saath hume karna hai
+// ( means let anotherUsername = "ChaiAurCode     " string hai
+// aur iske saath hi hume truelength type method jaisa kuch karna hai )
+
+// to yeh lijiye seedha uthayiye string ko
+// let anotherUsername = "ChaiAurCode     "
+
+// String
+// ki theek hai ji string aapki seedhe prototype ko access
+// hum kar sakte hai
+// kyuki knowledge hai ab hume
+// let anotherUsername = "ChaiAurCode     "
+
+// String.prototype
+// aur iske ( String.prototype ) baad ek aur property (method i.e. function) 
+// inject kar dete hai
+// iske andar trueLength
+// property nahi , method hi inject karenge
+// yeh lijiye kar diya
+// let anotherUsername = "ChaiAurCode     "
+
+// String.prototype.trueLength
+
+// ab to aapko pata hi hai kya karna hai 
+// uske ( String.prototype.trueLength ) andar
+// let anotherUsername = "ChaiAurCode     "
+
+// String.prototype.trueLength = function
+// basic andar ( String.prototype.trueLength = function , mei function ke andar ) 
+// functionality to jo bhi hogi
+// wo hogi hi usko to avoid nahi kar sakte 
+// but abstraction to de hi sakte hai
+// 44:15
+
 
