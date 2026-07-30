@@ -1735,4 +1735,311 @@
 // but abstraction to de hi sakte hai
 // 44:15
 
+// let anotherUsername = "ChaiAurCode     "
 
+// String.prototype.trueLength = function(){
+
+// }
+// to sabse important cheej, ab yahan pe jinko thoda bahut
+// this (this keyword) ke andar abhi bhi confusion tha na
+// wo yahan ( String.prototype.trueLength = function(){} mei inside function ke {} )
+// se dhoor kar lo
+// let anotherUsername = "ChaiAurCode     "
+
+// String.prototype.trueLength = function(){
+//     console.log();
+// }
+
+// seedha bolo ki actually mei yeh back ticks diye
+// console.log(``)
+// dollar sign lo
+// console.log(`${}`)
+// aur bolo this
+// console.log(`${this}`)
+// dot
+// console.log(`${this.}`)
+// aur yahan pe access kar lo 
+// seedha ki this.name actually mei hai kya
+// kyuki name property wahan pe aa rahi hai 
+// ( let anotherUsername = "ChaiAurCode     " ) 
+// to this.name hum yahan pe le lete hai by default
+// let anotherUsername = "ChaiAurCode     "
+
+// String.prototype.trueLength = function(){
+//     console.log(`${this.name}`);
+// }
+
+// baki aap chaho to ek aur console.log
+// bhi kar sakte ho ki sirf this batao
+// mujhe yahan pe ( i.e. console.log(`${this}`) )
+// this ka reference kya hai
+// to pehle this ka reference le lenge ( i.e. console.log(`${this}`) )
+// fir this.name le lenge ( console.log(`${this.name}`); )
+// let anotherUsername = "ChaiAurCode     "
+
+// String.prototype.trueLength = function(){
+//     console.log(`${this}`);
+//     console.log(`${this.name}`);
+// }
+
+// 44:45
+// theek hai actually mei yeh name ( console.log(`${this.name}`); ) 
+// bhi kayi bar aapne dekha hoga
+// aapke browser's editor mei cut hoke aata hai to
+// wo bhi mai batata hu kaise aata hai
+// 44:51
+
+// theek hai ab main kaam bhi to kar le
+// console.log() ke andar
+// console.log()
+// to back ticks le lete hai
+// console.log(``)
+// aur mai chahta tha ki -- True Length is
+// mere ko poora message chahiye tha
+// -- True Length is:
+// console.log(`True Length is:`)
+// aur uske baad kaam to dekhiye wo hi hoga
+// jo pehle humne declare kiya tha
+// console.log(`True Length is: ${}`)
+// ki yeh this se access kar lo jo bhi aa raha hai
+// console.log(`True Length is: ${this}`)
+// (means this se access kar lo jo bhi this se aa raha hai 
+// -- console.log(`True Length is: ${this}`))
+
+// usko (jo bhi this se aa raha hai) pehle trim kar do
+// -- console.log(`True Length is: ${this.trim}`))
+// jo bhi call kar raha hai
+// -- console.log(`True Length is: ${this.trim()}`))
+// uske baad yeh dot length wali property access kar lo
+// -- console.log(`True Length is: ${this.trim().length}`))
+
+// 45:15
+// let anotherUsername = "ChaiAurCode     "
+
+// String.prototype.trueLength = function(){
+//     console.log(`${this}`);
+//     console.log(`${this.name}`);
+//     console.log(`True Length is: ${this.trim().length}`)
+// }
+
+// theek hai
+// 45:16
+// to karke dekh lete hai ab
+// to yeh humara jo anotherUsername hai
+// anotherUsername
+// iske andar
+// anotherUsername.
+// trueLength wali property (property nahi method / function)
+// aa jani chahiye
+// yeh lijiye trueLength
+// anotherUsername.trueLength
+// aur yeh run karaya
+// anotherUsername.trueLength()
+// ( trueLength function hai to usko run / execute karaya -- trueLength() )
+// 45:27
+
+// let anotherUsername = "ChaiAurCode     "
+
+// String.prototype.trueLength = function(){
+//     console.log(`${this}`);
+//     console.log(`${this.name}`);
+//     console.log(`True Length is: ${this.trim().length}`)
+// }
+
+// anotherUsername.trueLength()
+
+// to theek hai aa..., 
+// kahin kuch print kara rahe hai kya hum aur kuch bhi
+// console.log yahan pe 
+// ( myHeros.hitesh()
+// myHeros.heyHitesh() , see code)
+// print ho rahe hai
+// inko bhi hata dete hai
+
+// to as follows
+// ( myHeros.hitesh()
+// myHeros.heyHitesh() , see code)
+// ko comment out kar diya
+// taki actually mei ek hi response aye
+// humare pas yeh ( anotherUsername.trueLength() , see code)
+
+
+
+
+// let myName = "hitesh     " comment out
+// let mychannel = "chai     " comment out
+
+// console.log(myName.trueLength) comment out
+
+
+// let myHeros = ["thor", "spiderman"]
+
+
+// let heroPower = {
+//     thor: "hammer",
+//     spiderman: "sling",
+
+//     getSpiderPower: function(){
+//         console.log(`Spidy power is ${this.spiderman}`);
+//     }
+// }
+
+// Object.prototype.hitesh = function(){
+//     console.log(`hitesh is present in all objects`);
+// }
+
+// Array.prototype.heyHitesh = function(){
+//     console.log(`Hitesh says hello`);
+// }
+
+// heroPower.hitesh() comment out
+// myHeros.hitesh() comment out
+// myHeros.heyHitesh() comment out
+// heroPower.heyHitesh() comment out
+
+// inheritance comment out
+
+// const User = {
+//     name: "chai",
+//     email: "chai@google.com"
+// }
+
+// const Teacher = {
+//     makeVideo: true
+// }
+
+// const TeachingSupport = {
+//     isAvailable: false
+// }
+
+// const TASupport = {
+//     makeAssignment: 'JS Assignment',
+//     fullTime: true,
+//     __proto__: TeachingSupport
+// }
+
+// Teacher.__proto__ = User
+
+// modern syntax comment out
+// Object.setPrototypeOf(TeachingSupport, Teacher)
+
+// let anotherUsername = "ChaiAurCode     "
+
+// String.prototype.trueLength = function(){
+//     console.log(`${this}`);
+//     console.log(`${this.name}`);
+//     console.log(`True Length is: ${this.trim().length}`)
+// }
+
+// anotherUsername.trueLength()
+
+// likh liya
+
+// theek hai ji chaliye isko run karke dekhte hai ab
+// kya mamla aa raha hai humare saamne
+// (run in terminal)
+
+// o/p ChaiAurCode     
+// undefined
+// True Length is: 11
+
+// to humne kaha -- True Length is: 11 (see o/p)
+// humare pas aa raha hai
+// theek hai
+// 45:44
+
+// achha ab ek cheej aap dekhiyega
+// aa..., yahan pe mere pas aa raha hai
+// undefined (see o/p) 
+// aur yeh bhi ( ChaiAurCode , see o/p )
+
+// achha kaafi cheejein aur bhi aa rahi hai 
+// to obvious si baat hai isko ( console.log(`${this}`); )
+// ek bar comment (comment out) kar lete hai
+// aur ek ek karke cheejon ko samajhte hai
+// kya kya aa raha hai
+
+// let myName = "hitesh     " comment out
+// let mychannel = "chai     " comment out
+
+// console.log(myName.trueLength) comment out
+
+
+// let myHeros = ["thor", "spiderman"]
+
+
+// let heroPower = {
+//     thor: "hammer",
+//     spiderman: "sling",
+
+//     getSpiderPower: function(){
+//         console.log(`Spidy power is ${this.spiderman}`);
+//     }
+// }
+
+// Object.prototype.hitesh = function(){
+//     console.log(`hitesh is present in all objects`);
+// }
+
+// Array.prototype.heyHitesh = function(){
+//     console.log(`Hitesh says hello`);
+// }
+
+// heroPower.hitesh() comment out
+// myHeros.hitesh() comment out
+// myHeros.heyHitesh() comment out
+// heroPower.heyHitesh() comment out
+
+// inheritance comment out
+
+// const User = {
+//     name: "chai",
+//     email: "chai@google.com"
+// }
+
+// const Teacher = {
+//     makeVideo: true
+// }
+
+// const TeachingSupport = {
+//     isAvailable: false
+// }
+
+// const TASupport = {
+//     makeAssignment: 'JS Assignment',
+//     fullTime: true,
+//     __proto__: TeachingSupport
+// }
+
+// Teacher.__proto__ = User
+
+// modern syntax comment out
+// Object.setPrototypeOf(TeachingSupport, Teacher)
+
+// let anotherUsername = "ChaiAurCode     "
+
+// String.prototype.trueLength = function(){
+//     console.log(`${this}`); comment out
+//     console.log(`${this.name}`);
+//     console.log(`True Length is: ${this.trim().length}`)
+// }
+
+// anotherUsername.trueLength()
+
+// likh liya
+
+// (run in terminal)
+
+// o/p undefined
+// True Length is: 11
+
+// to yahan pe dekhiye mere pas aya undefined (see o/p)
+// obvious si baat hai this.name ( console.log(`${this.name}`); )
+// ka humare pas access nahi tha isliye
+// pehle ke time pe hota tha
+// abhi isko ( console.log(`${this.name}`); ) chord
+// dijiye, chaliye mai isko ( console.log(`${this.name}`); )
+// hata hi deta hu , ispe charcha nahi karenge
+// ( console.log(`${this.name}`); ko backspace kar diya )
+// obsolete property hai vaise bhi
+// 46:04

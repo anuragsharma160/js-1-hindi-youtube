@@ -25,8 +25,8 @@ Array.prototype.heyHitesh = function(){
 }
 
 // heroPower.hitesh()
-myHeros.hitesh()
-myHeros.heyHitesh()
+// myHeros.hitesh()
+// myHeros.heyHitesh()
 // heroPower.heyHitesh()
 
 // inheritance
@@ -54,3 +54,13 @@ Teacher.__proto__ = User
 
 // modern syntax
 Object.setPrototypeOf(TeachingSupport, Teacher)
+
+let anotherUsername = "ChaiAurCode     "
+
+String.prototype.trueLength = function(){
+    // console.log(`${this}`);
+    console.log(`${this.name}`);
+    console.log(`True Length is: ${this.trim().length}`)
+}
+
+anotherUsername.trueLength()
