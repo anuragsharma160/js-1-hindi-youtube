@@ -2043,3 +2043,335 @@
 // ( console.log(`${this.name}`); ko backspace kar diya )
 // obsolete property hai vaise bhi
 // 46:04
+
+
+
+// let myName = "hitesh     " comment out
+// let mychannel = "chai     " comment out
+
+// console.log(myName.trueLength) comment out
+
+
+// let myHeros = ["thor", "spiderman"]
+
+
+// let heroPower = {
+//     thor: "hammer",
+//     spiderman: "sling",
+
+//     getSpiderPower: function(){
+//         console.log(`Spidy power is ${this.spiderman}`);
+//     }
+// }
+
+// Object.prototype.hitesh = function(){
+//     console.log(`hitesh is present in all objects`);
+// }
+
+// Array.prototype.heyHitesh = function(){
+//     console.log(`Hitesh says hello`);
+// }
+
+// heroPower.hitesh() comment out
+// myHeros.hitesh() comment out
+// myHeros.heyHitesh() comment out
+// heroPower.heyHitesh() comment out
+
+// inheritance comment out
+
+// const User = {
+//     name: "chai",
+//     email: "chai@google.com"
+// }
+
+// const Teacher = {
+//     makeVideo: true
+// }
+
+// const TeachingSupport = {
+//     isAvailable: false
+// }
+
+// const TASupport = {
+//     makeAssignment: 'JS Assignment',
+//     fullTime: true,
+//     __proto__: TeachingSupport
+// }
+
+// Teacher.__proto__ = User
+
+// modern syntax comment out
+// Object.setPrototypeOf(TeachingSupport, Teacher)
+
+// let anotherUsername = "ChaiAurCode     "
+
+// String.prototype.trueLength = function(){
+//     console.log(`${this}`); comment out
+//     console.log(`True Length is: ${this.trim().length}`)
+// }
+
+// anotherUsername.trueLength()
+
+// likh liya
+
+// ab yahan pe aa jate hai this ( console.log(`${this}`); )
+// ke upar 
+// ( console.log(`${this}`); ko comment on kar liya )
+
+
+
+
+// let myName = "hitesh     " comment out
+// let mychannel = "chai     " comment out
+
+// console.log(myName.trueLength) comment out
+
+
+// let myHeros = ["thor", "spiderman"]
+
+
+// let heroPower = {
+//     thor: "hammer",
+//     spiderman: "sling",
+
+//     getSpiderPower: function(){
+//         console.log(`Spidy power is ${this.spiderman}`);
+//     }
+// }
+
+// Object.prototype.hitesh = function(){
+//     console.log(`hitesh is present in all objects`);
+// }
+
+// Array.prototype.heyHitesh = function(){
+//     console.log(`Hitesh says hello`);
+// }
+
+// heroPower.hitesh() comment out
+// myHeros.hitesh() comment out
+// myHeros.heyHitesh() comment out
+// heroPower.heyHitesh() comment out
+
+// inheritance comment out
+
+// const User = {
+//     name: "chai",
+//     email: "chai@google.com"
+// }
+
+// const Teacher = {
+//     makeVideo: true
+// }
+
+// const TeachingSupport = {
+//     isAvailable: false
+// }
+
+// const TASupport = {
+//     makeAssignment: 'JS Assignment',
+//     fullTime: true,
+//     __proto__: TeachingSupport
+// }
+
+// Teacher.__proto__ = User
+
+// modern syntax comment out
+// Object.setPrototypeOf(TeachingSupport, Teacher)
+
+// let anotherUsername = "ChaiAurCode     "
+
+// String.prototype.trueLength = function(){
+//     console.log(`${this}`);
+//     console.log(`True Length is: ${this.trim().length}`)
+// }
+
+// anotherUsername.trueLength()
+
+// likh liya
+
+// to this ( console.log(`${this}`); )
+// hume access de kis cheej ka raha hai
+// yeh sabse important baat hai
+
+// run in terminal
+
+// o/p ChaiAurCode     
+// True Length is: 11
+
+// to this ( console.log(`${this}`); ) ke andar
+// mujhe kya mila -- ChaiAurCode (see o/p)
+// kyu mila , kyuki anotherUsername 
+// ( anotherUsername.trueLength() , mei anotherUsername )
+// ke andar reference ( let anotherUsername = "ChaiAurCode     " ) 
+// hi ChaiAurCode ka tha  
+// 46:16
+
+// ab suppose kariye ab iss property (property nahi method i.e. trueLength) 
+// ko hum direct use karenge
+// theek hai to yeh kariye "hitesh"
+// "hitesh"
+// aur kyuki string  ( "hitesh" ) hai 
+// sari strings ke andar inject kar liye
+// to dot
+// "hitesh".
+// trueLength
+// "hitesh".trueLength
+// yeh lijiye
+// "hitesh".trueLength()
+// (trueLength function hai to function ko run / execute karne ke liye () lagaya)
+
+// aur ek aur le lete hai yahan pe aur kya le
+// "tea" "icetea" actually mei icetea bhi meri favourite hai "iceTea"
+// "hitesh".trueLength()
+// "iceTea"
+// aur yahan pe ( "iceTea" ) bhi maine access liya
+// dot trueLength()
+// "hitesh".trueLength()
+// "iceTea".trueLength()
+// to ab gaur se dekhne wali baat yeh hai
+// ki humare pas this ( console.log(`${this}`); ) ke andar reference kya hai
+// maine bola na current context jo bula raha hai
+// jisne call kiya wo hi this ( console.log(`${this}`); ) hai
+
+// to jis ka matlab this ( console.log(`${this}`); )
+// to yahan pe ( "hitesh".trueLength() ) kisne call kiya hai
+// -- "hitesh" ne
+// yahan pe ( "iceTea".trueLength() ) kisne call kiya
+// -- "iceTea" ne
+// yahan pe ( anotherUsername.trueLength() ) kisne call kiya
+// -- anotherUsername ne ( anotherUsername.trueLength() mei anotherUsername ne )
+// matlab ki "ChaiAurCode     " ( let anotherUsername = "ChaiAurCode     " )
+// 46:55 usne ( let anotherUsername = "ChaiAurCode     " , mei "ChaiAurCode     " ) 
+// reference kiya hai aapko
+
+// to yeh hi actually mei matlab hai this
+// ka isse jada kuch hai bhi nahi complex
+// (47:01)
+
+
+
+
+// let myName = "hitesh     " comment out
+// let mychannel = "chai     " comment out
+
+// console.log(myName.trueLength) comment out
+
+
+// let myHeros = ["thor", "spiderman"]
+
+
+// let heroPower = {
+//     thor: "hammer",
+//     spiderman: "sling",
+
+//     getSpiderPower: function(){
+//         console.log(`Spidy power is ${this.spiderman}`);
+//     }
+// }
+
+// Object.prototype.hitesh = function(){
+//     console.log(`hitesh is present in all objects`);
+// }
+
+// Array.prototype.heyHitesh = function(){
+//     console.log(`Hitesh says hello`);
+// }
+
+// heroPower.hitesh() comment out
+// myHeros.hitesh() comment out
+// myHeros.heyHitesh() comment out
+// heroPower.heyHitesh() comment out
+
+// inheritance comment out
+
+// const User = {
+//     name: "chai",
+//     email: "chai@google.com"
+// }
+
+// const Teacher = {
+//     makeVideo: true
+// }
+
+// const TeachingSupport = {
+//     isAvailable: false
+// }
+
+// const TASupport = {
+//     makeAssignment: 'JS Assignment',
+//     fullTime: true,
+//     __proto__: TeachingSupport
+// }
+
+// Teacher.__proto__ = User
+
+// modern syntax comment out
+// Object.setPrototypeOf(TeachingSupport, Teacher)
+
+// let anotherUsername = "ChaiAurCode     "
+
+// String.prototype.trueLength = function(){
+//     console.log(`${this}`);
+//     console.log(`True Length is: ${this.trim().length}`)
+// }
+
+// anotherUsername.trueLength()
+// "hitesh".trueLength()
+// "iceTea".trueLength()
+
+// likh liya
+
+// run in terminal
+
+// o/p ChaiAurCode     
+// True Length is: 11
+// hitesh
+// True Length is: 6
+// iceTea
+// True Length is: 6
+
+// to dekhiye ChaiAurCode hai (see o/p)
+// yahan pe hitesh hai (see o/p)
+// yahan pe iceTea hai (see o/p)
+// aur isi vajeh se properly aapko answer bhi mil paa raha hai
+
+// theek hai to yeh aapka basics hai 
+// vaise to dekhiye prototypes aur inke
+// andar jaye to mai aur bhi depth mei ja sakta hu
+// aapke execution context ko open kar sakte hai
+// wahan ek ek global memory local memory
+// wo sab dekh sakte hai ki kahan kya access hai 
+// but abhi ke liye itna hi kaafi hai
+// i think kaafi detail mei humne baat kar li
+
+// behind the scene dhyan rakhiyega aapka 
+// sara yeh hi chal raha hai 
+// yeh jo aap jitna bhi soch rahe hai classes etc
+// object oriented padhayenge nahi padhayenge
+// javascript mei
+// actually mei aapka java ka object oriented
+// javascript ka object oriented yahan khatam ho gaya hai
+
+// ab to mai aapko jo bataunga classes etc
+// wo sab syntax hai
+// wo to cover karne wali baat hai
+// aapka poora theoritical aur behind the scene
+// jitna bhi javascript hai wo yahan khatam hota hai actually mei
+
+// ab to syntax hai, syntax to dekhte jayiye, bas karte jayiye
+// aur bas ho jata hai kaam
+// chaliye to i think aapko
+// kaafi achha laga hoga
+// yeh video bhi humara kaafi bada ho gaya hai
+// almost 1 ghante ka video ho gaya hai
+
+// aur aapne share abhi tak bhi nahi kara
+// ek like bhi abhi tak nahi kara kuch
+// logo ne to subscribe tak nahi kara
+// series roj dekh rahe hai subscribe bhi nahi kar rahe hai
+// to thoda motivation down ja raha hai uss chakkar mei
+// thoda sa dhyan rakhiyega uska bhi
+// chaliye milte hai agle hi aise video mei
+
+// Class End
+
