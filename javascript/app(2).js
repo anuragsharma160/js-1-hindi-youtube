@@ -2151,4 +2151,1080 @@
 // to uske pas bhi Person ki sari properties inherit hokar aa jayegi
 // to multiple classes (Engineer Doctor) bhi same class (Person) se properties ko
 // inherit kar sakti hai 
-// 38:31 
+// 38:31
+
+// ===================================================================================
+
+// and yahan par ek aur cheej hai
+// for eg har Person (class Person{}) ke liye
+// agar generally humara jo work hai
+// ek work function agar hum Person (class Person{})
+// mei bhi define karte hai
+
+// class Person{
+//     eat(){
+//         console.log("eat");
+//     }
+
+//     sleep(){
+//         console.log("sleep");
+//     }
+
+//     work(){
+//         console.log("do nothing");
+//     }
+// }
+
+// class Engineer extends Person{
+//     work(){
+//         console.log("solve problems, build something");
+//     }
+// }
+
+// class Doctor extends Person{
+//     work(){
+//         console.log("treats patients");
+//     }
+// }
+
+// let shradhaObj = new Engineer();
+
+// aur Engineer class ke andar bhi apna work function hai
+// same naam ka work function
+
+// to jab bhi humari Parent class and child class ke andar
+// same function (same naam ke function) hote hai
+// to uss case mei child class wala function invoke hota hai
+// jaise for eg if i have my engineer object jiske andar
+// hum work ko call karenge
+// shradhaObj.work() in bc and enter
+// solve problems, build something
+// undefined
+// to humesha humari child class wala function invoke hoga
+
+// Note -- If child and parent have same method, child's
+// method will be used [Method overriding]
+
+// iss concept ko hum kehte hai method overriding
+// override ka matlab hota hai kisi dusri cheej ko cover
+// kar lena
+// to basically child ka jo method hai wo strong ho jata hai
+// wo parent wale method ko cover kar leta hai
+// to basically overrides it
+
+// ============================================================================
+
+// Hum chahein to apni iss Person class ke andar ek
+// constructor bhi create kar sakte hai
+
+// constructor ke andar ek naya variable set kar denge
+// this.species
+// species kya hoti hai har Person ki species humare
+// pas hoti hai -- "homo sapiens"
+// to wo hi value hum store karne wale hai
+// this.species = "homo sapiens";
+
+
+
+// class Person{
+//     constructor(){
+//         this.species = "homo sapiens";
+//     }
+
+//     eat(){
+//         console.log("eat");
+//     }
+
+//     sleep(){
+//         console.log("sleep");
+//     }
+
+//     work(){
+//         console.log("do nothing");
+//     }
+// }
+
+// class Engineer extends Person{
+//     work(){
+//         console.log("solve problems, build something");
+//     }
+// }
+
+// class Doctor extends Person{
+//     work(){
+//         console.log("treats patients");
+//     }
+// }
+
+// let shradhaObj = new Engineer();
+
+// to jo bhi Person class banegi (class Person{})
+// Person class ki agar koi bhi object banti hai
+// 39:56
+// for eg if i write let p1 = new Person(); in bc and enter
+// undefined
+// to jo humare pas p1 ayega
+// p1 in bc and enter
+// Person {species: 'homo sapiens'}
+// (open and see in bc)
+// p1 ke andar ek species aa jayegi ( species: "homo sapiens" )
+// aur sare functions aa jayenge (open prototype and see in bc)
+// kisi bhi person ke (40:12)
+
+// but agar hum likhte hai e1
+// let e1 in bc
+// yani engineer ki banate hai ( class Engineer extends Person{} )
+// let e1 = new Engineer(); in bc and enter
+// undefined
+// to engineer ke andar bhi... (e1 ke andar bhi)
+// e1 in bc and enter
+// Engineer {species: 'homo sapiens'}
+// humare pas species wala jo property hai
+// wo ayegi (open and see in bc) (species: "homo sapiens")
+// 40:25
+
+// ab Engineer (Engineer class) ke andar to as such humne
+// species define nahi ki
+// par kyuki hum Parent (Parent class -- Person lass) 
+// ki sari ki sari properties and methods inherit kar rahe hai
+// to jo properties Person (Parent class -- Person lass) ke pas hogi
+// wo sari ki sari properties humari Engineer (Engineer class)
+// ke pas bhi hogi
+// to iss e1 object ( let e1 = new Engineer(); ) ke andar bhi 
+// hume same properties dekhne ko milti hai
+// 40:42
+
+// ======================================================================================
+
+// Super Keyword
+
+// Next hum baat karne wale hai ek aur interesting and
+// important keyword ke bare mei which is called the super keyword
+
+// ab super keyword is used to call the constructor
+// of its parent class to access the parent's properties and methods
+
+// kabhi kabhar humare pas aisi condition aa jati hai
+// jisme hume child class se kya karna padta hai
+// parent class ki properties ko directly access karna padta hai
+// ya fir parent ke constructor ko call karna padta hai
+
+// to uss case mei parent ke constructor ko call karne ke liye
+// hum super keyword ko use karte hai (41:10)
+// super matlab humse jo ek level upar hai
+// to parents ek level upar hote hai
+// to super keyword ko we are going to use
+
+// ab uske liye js ke andar kya hota hai
+// wo mai ek bar aapko dikhata hu
+
+// for eg yeh sleep (sleep function) yahan se hata dete hai
+// work (work function) hata dete hai
+
+// class Person{
+//     constructor(){
+//         this.species = "homo sapiens";
+//     }
+
+//     eat(){
+//         console.log("eat");
+//     }
+
+// }
+
+// class Engineer extends Person{
+//     work(){
+//         console.log("solve problems, build something");
+//     }
+// }
+
+// class Doctor extends Person{
+//     work(){
+//         console.log("treats patients");
+//     }
+// }
+
+// let shradhaObj = new Engineer();
+
+// yeh simple si humne Person naam ki class banayi hui hai
+// iss class ke andar constructor species naam ki value
+// ko initialize kar raha hai aur ek eat function hai
+
+// ab agar hum ne Engineer class banayi ( class Engineer extends Person{} )
+// to iss Engineer class mei Person ki bhi sari ki sari
+// properties aa jayengi 
+// plus Engineer ke pas apni kuch additional
+// properties ho sakti hai
+// foe eg yahan se abhi ke liye yeh Doctor hata dete hai
+// and yeh humari ek Engineer object ho gayi ( let shradhaObj = new Engineer(); )
+// as follows
+
+// class Person{
+//     constructor(){
+//         this.species = "homo sapiens";
+//     }
+
+//     eat(){
+//         console.log("eat");
+//     }
+
+// }
+
+// class Engineer extends Person{
+//     work(){
+//         console.log("solve problems, build something");
+//     }
+// }
+
+// let shradhaObj = new Engineer();
+
+// ya ise engineer object (engObj) keh dete hai as follows
+
+
+
+
+// class Person{
+//     constructor(){
+//         this.species = "homo sapiens";
+//     }
+
+//     eat(){
+//         console.log("eat");
+//     }
+
+// }
+
+// class Engineer extends Person{
+//     work(){
+//         console.log("solve problems, build something");
+//     }
+// }
+
+// let engObj = new Engineer();
+
+// ab jaise Person class ke pas apna
+// constructor hai, vaise hi Engineer class ke
+// pas bhi apna ek constructor ho sakta hai
+// to constructor mei ( constructor in Engineer class ) 
+// koi bhi kaam ho sakta hai
+// jaise for eg if i make a new variable branch 
+// (this.branch in constructor of Engineer)
+// to hum keh sakte hai har Engineer ne apni jo b.tech
+// ki hogi wo kisi branch mei ki hogi
+// koi chemical engineer hoga
+// koi mechanical engineer hoga
+// to har kisi ki apni branch hoti hai
+// (branch in parameter of constructor of Engineer)
+
+// to yahan par constructor kya karega
+// apna ek variable le lega 
+// (branch in parameter of constructor of Engineer)
+// jisko hum kahenge this.branch
+// this.branch = branch;
+// yani har ek Engineer ke pas apni ek special
+// property hogi branch naam se
+// jisko hum save karwa sakte hai
+// 42:34
+
+// class Person{
+//     constructor(){
+//         this.species = "homo sapiens";
+//     }
+
+//     eat(){
+//         console.log("eat");
+//     }
+
+// }
+
+// class Engineer extends Person{
+//     constructor(branch){
+//         this.branch = branch
+//     }
+//     work(){
+//         console.log("solve problems, build something");
+//     }
+// }
+
+// let engObj = new Engineer();
+
+// 42:34
+
+// ab hum ek naya engineer create kar rahe hai
+// ( let engObj = new Engineer(); )
+// for eg this ( let engObj = new Engineer(); )
+// is a chemical engineer
+// ( let engObj = new Engineer("chemical"); )
+
+// class Person{
+//     constructor(){
+//         this.species = "homo sapiens";
+//     }
+
+//     eat(){
+//         console.log("eat");
+//     }
+
+// }
+
+// class Engineer extends Person{
+//     constructor(branch){
+//         this.branch = branch
+//     }
+//     work(){
+//         console.log("solve problems, build something");
+//     }
+// }
+
+// let engObj = new Engineer("chemical engg");
+
+// chemical engineer hum create karne ki koshish kar rahe hai
+// to yeh ( let engObj = new Engineer("chemical engg"); mei "chemical engg" ) 
+// unki branch aa gayi
+// ab iss code mei as such dekh ke hume koi problem dikhayi nahi de rahi
+// this is a very normal code jisko humne likha hai
+
+// par jaise hi isko save karke hum run karenge
+// (save and run in bc)
+
+// app.js:204 Uncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+    // at new Engineer (app.js:204:9)
+    // at app.js:211:14
+
+// humare pas ek error ayega (see in bc)
+
+// error kya keh raha hai -- Must call super constructor
+// in derived class before accessing 'this' or returning from
+// derived constructor
+
+// ab yahan par yeh derived shabdh ka kya matlab hai (43:05)
+// jab bhi hum inheritance ki baat karte hai
+// humare pass ek parent class hoti hai
+// aur usse humari child class kuch property inherit karti hai
+// to yeh jo child class hai ise hum programming ke andar
+// derived class kehte hai
+// derived yani jo kisi se hokar ayi hai
+// kisi se kuch lekar ayi hai
+// (43:24)
+
+// to basically yahan par (bc) kaha jaa raha hai ki hume
+// super constructor ko call karna padta hai derived class mei
+// before accessing (before accessing 'this') yani 'this' ko use
+// karne se pehle ya derived ke constructor se return karne se
+// pehle
+
+// yani agar humari derived class mei 
+// matlab iss child class ke andar
+// agar hum koi constructor banate hai
+// to wo constructor kya karega
+// uss constructor ka jaruri hai ki wo super (super keyword)
+// ko use karke parent class ke constructor ko pehle call kare
+// (43:50)
+
+// to agar hume iss error (see in bc)
+// se bachna hai
+// to har bar hum apne constructor (class Engineer constructor)
+// ke andar kya karenge
+// hum sabse pehli cheej jo kar rahe hote hai
+// usually codes ke andar wo hum super keyword ko
+// likhte hai (as follows)
+
+    // constructor(branch){
+    //     super
+    //     this.branch = branch
+    // }
+
+//  and iss tareh se wahan paranthesis lagate hai (as follows)
+
+    // constructor(branch){
+    //     super()
+    //     this.branch = branch
+    // }
+
+// to basically yeh tarika (just above) hota hai
+// to invoke parent class constructor
+
+    // constructor(branch){
+    //     super() // to invoke parent class constructor
+    //     this.branch = branch
+    // }
+
+
+
+
+
+
+
+
+// class Person{
+//     constructor(){
+//         this.species = "homo sapiens";
+//     }
+
+//     eat(){
+//         console.log("eat");
+//     }
+
+// }
+
+// class Engineer extends Person{
+//     constructor(branch){
+//         super() // to invoke parent class constructor
+//         this.branch = branch
+//     }
+//     work(){
+//         console.log("solve problems, build something");
+//     }
+// }
+
+// let engObj = new Engineer("chemical engg");
+
+
+
+// to super yeh jo humne likha hai ( super() )
+// yeh basically hum apne iss constructor ( parent class ke constructor )
+    
+    // constructor(){
+    //     this.species = "homo sapiens";
+    // }
+
+// ko call karne ki koshish kar rahe hai (44:16)
+// jaise hi iss constructor ( parent class ke constructor ) 
+// ko hum call karenge , vaise hi humare liye this.species
+// (this.species = "homo sapiens";) yeh jo cheej hai
+// yeh set ho jayegi
+// 44:21
+
+// ab ise hum save kar sakte hai
+// refresh in bc
+// and now if i try to print my engineer Object
+// ( let engObj = new Engineer("chemical engg"); )
+// engObj in bc and enter
+// Engineer {species: 'homo sapiens', branch: 'chemical engg'}
+// to humare pas Engineer ke andar (dropdown open and see)
+// branch bhi aa gayi
+// (branch: "chemical engg" , in bc)
+// species bhi aa gayi
+// (species: "homo sapiens" , in bc)
+// Person (parent class) ki sari ki sari humare pas
+// functions aa gaye (open [[Prototype]]: Person and see)
+// (open [[Prototype]]: Object and see)
+
+// ab sequence hume exactly pata karna hai ki
+// konsa constructor pehle call hua
+// to uska best tarika yeh hai ki
+// sabse pehle yahan pe (inside Engineer constructor)
+// print karwa lo console.log("enter child constructor")
+
+// copy (copy console.log("enter child constructor"))
+// aur yahan (inside Person constructor)
+// humne likh diya console.log("enter parent constructor")
+
+// aur yahan (inside Engineer constructor) hum likh dete hai
+// console.log("exit child constructor")
+
+
+
+
+
+// class Person{
+//     constructor(){
+//         console.log("enter parent constructor");
+//         this.species = "homo sapiens";
+//     }
+
+//     eat(){
+//         console.log("eat");
+//     }
+
+// }
+
+// class Engineer extends Person{
+//     constructor(branch){
+//         console.log("enter child constructor");
+//         super(); // to invoke parent class constructor
+//         this.branch = branch
+//         console.log("exit child constructor");
+//     }
+//     work(){
+//         console.log("solve problems, build something");
+//     }
+// }
+
+// let engObj = new Engineer("chemical engg");
+
+// save and refresh in bc
+// enter child constructor
+// enter parent constructor
+// exit child constructor
+
+// to basically kya sequence hai (45:08)
+// sabse pehle to hum child constructor ke andar enter karenge
+// (bc o/p)
+// yani jaise hi hum kisi naye Engineer object ko create karte hai
+// child class ke object ko create karte hai
+// ( let engObj = new Engineer("chemical engg"); )
+// to sabse pehle to hum isi constructor ( Engineer class constructor )
+
+    // constructor(branch){
+    //     console.log("enter child constructor");
+    //     super(); // to invoke parent class constructor
+    //     this.branch = branch
+    //     console.log("exit child constructor");
+    // }
+
+// ke andar jate hai
+// uske baad kya hota hai jaise hi super se ( super(), see code )
+// hum apne parent ke constructor ko invoke karenge
+
+    // constructor(){
+    //     console.log("enter parent constructor");
+    //     this.species = "homo sapiens";
+    // }
+
+// hum yahan par (as follows) aa jayenge
+
+    // constructor(){
+    //     console.log("enter parent constructor");
+    //     this.species = "homo sapiens";
+    // }
+
+// to humare liye print hokar ayega 
+// -- "enter parent constructor" (see 2nd line in bc o/p)
+// fir hum parent constructor se sare ke sare
+// kaam kar lenge (as follows)
+
+        // console.log("enter parent constructor");
+        // this.species = "homo sapiens";
+
+// fir hum wapas yahan par (Engineer class constructor, this.branch = branch) 
+// aa rahe honge
+// and iss bar hum sare kaam kar lenge
+// child constructor ke (as follows)
+
+        // this.branch = branch
+        // console.log("exit child constructor");
+
+// and fir hum yahan se ( console.log("exit child constructor"); )
+// exit kar jayenge
+
+// to generally constructor (Engineer class constructor) 
+// ke andar this ko ( this.branch = branch )
+// use karne se pehle (45:40)
+// ya fir exit karne se pehle ( console.log("exit child constructor"); )
+// hume kya karna hota hai 
+// hume apne super constructor ko call karna hota hai ( super() )
+// agar hum iss line (super()) ko yahan se hata denge
+// to humare pas ek error aa jayega
+
+// =======================================================================================
+
+// also ek aur interesting cheej hum kar sakte hai
+// (45:50)
+// yeh console ke jo statements hai inko ek bar
+// yahan se hata lete hai
+
+// class Person{
+//     constructor(){
+//         this.species = "homo sapiens";
+//     }
+
+//     eat(){
+//         console.log("eat");
+//     }
+
+// }
+
+// class Engineer extends Person{
+//     constructor(branch){
+//         super(); // to invoke parent class constructor
+//     }
+//     work(){
+//         console.log("solve problems, build something");
+//     }
+// }
+
+// let engObj = new Engineer();
+
+// for eg humari yeh jo Person ki class hai
+// iss Person class ke andar hume pata hai 
+// har ek Person ke pas apna naam to ho hi sakta hai
+// to hum chahte hai ki Person class ki jab bhi object
+// create ho (46:08)
+// to uske andar constructor mei ek name naam ki cheej pas ho
+
+    // constructor(name){
+    //     this.species = "homo sapiens";
+    // }
+
+// and uske basis par hum ek property bana dein iske 
+// liye this.name = name;
+
+    // constructor(name){
+    //     this.species = "homo sapiens";
+    //     this.name = name;
+    // }
+
+
+
+
+
+
+
+// class Person{
+//     constructor(name){
+//         this.species = "homo sapiens";
+//         this.name = name;
+//     }
+
+//     eat(){
+//         console.log("eat");
+//     }
+
+// }
+
+// class Engineer extends Person{
+//     constructor(branch){
+//         super(); // to invoke parent class constructor
+//     }
+//     work(){
+//         console.log("solve problems, build something");
+//     }
+// }
+
+// let engObj = new Engineer();
+
+// to har Person ka apna ek naam hona chahiye
+// to jab hum ek Engineer (Engineer class) 
+// type ka person banayenge
+// ( let engObj = new Engineer(); )
+// yani jab hum ek naya Engineer banayenge to
+// hum yahan par kya kar sakte hai, 
+// uss Engineer ka naam (name, see code) set kar sakte hai
+// for eg Engineer ka naam hai shradha
+// let engObj = new Engineer("shradha");
+// to yahan par (Engineer ke constructor ke parameter mei)
+// humare pas ek variable aa jayega name
+
+// class Person{
+//     constructor(name){
+//         this.species = "homo sapiens";
+//         this.name = name;
+//     }
+
+//     eat(){
+//         console.log("eat");
+//     }
+
+// }
+
+// class Engineer extends Person{
+//     constructor(name){
+//         super(); // to invoke parent class constructor
+//     }
+//     work(){
+//         console.log("solve problems, build something");
+//     }
+// }
+
+// let engObj = new Engineer("shradha");
+
+// 46:33
+
+// ab iss name value (as follows) ko
+// class Engineer extends Person{
+//     constructor(name){
+//         super(); // to invoke parent class constructor
+//     }
+// iss name value ki access humare pas iss Engineer (Engineer class)
+// ke andar to hai hi
+
+// par agar hume iss name value (as follows)
+// class Engineer extends Person{
+//     constructor(name){
+//         super(); // to invoke parent class constructor
+//     }
+// ko constructor se (Engineer ke constructor se)
+// iss constructor (Person ke constructor) (as follows)
+// class Person{
+//     constructor(name){
+//         this.species = "homo sapiens";
+//         this.name = name;
+//     }
+
+// ke andar pas karna hai , to same methods (variable/parameter)
+// ko hum apne super ke andar pas kar sakte hai (as follows)
+// class Engineer extends Person{
+//     constructor(name){
+//         super(name); // to invoke parent class constructor
+//     }
+// 46:47
+
+// class Person{
+//     constructor(name){
+//         this.species = "homo sapiens";
+//         this.name = name;
+//     }
+
+//     eat(){
+//         console.log("eat");
+//     }
+
+// }
+
+// class Engineer extends Person{
+//     constructor(name){
+//         super(name); // to invoke parent class constructor
+//     }
+//     work(){
+//         console.log("solve problems, build something");
+//     }
+// }
+
+// let engObj = new Engineer("shradha");
+
+// lets save it
+// refresh in bc
+// and iss bar hum apni Engineer object ko print karwate hai
+// engObj in bc and enter
+// Engineer {species: 'homo sapiens', name: 'shradha'}
+// to yahan par (open and see in bc)
+// name mei humare pas aa jayega shradha
+// (name: "shradha" , in bc)
+// 46:54
+
+// but agar yahan par super ke andar humne name ko pass
+// nahi kiya
+
+// class Person{
+//     constructor(name){
+//         this.species = "homo sapiens";
+//         this.name = name;
+//     }
+
+//     eat(){
+//         console.log("eat");
+//     }
+
+// }
+
+// class Engineer extends Person{
+//     constructor(name){
+//         super(); // to invoke parent class constructor
+//     }
+//     work(){
+//         console.log("solve problems, build something");
+//     }
+// }
+
+// let engObj = new Engineer("shradha");
+
+// ...but agar yahan par super ke andar humne name ko pass
+// nahi kiya, to uss case mei kya hoga
+// engObj in bc and enter
+// Engineer {species: 'homo sapiens', name: undefined}
+// uss case mei humari jo 
+// engineer object hogi (engObj in bc)
+// uske andar name ke andar (dropdown open and see in bc)
+// name ke andar humare pass undefined ayega
+// (see in bc)
+// (name: undefined)
+
+// kyu kyuki name (as follows)
+// class Engineer extends Person{
+//     constructor(name){
+//         super(); // to invoke parent class constructor
+//     }
+// humne Engineer ko to de hi diya
+// but wo finally apne Parent class (as follows)
+// class Person{
+//     constructor(name){
+//         this.species = "homo sapiens";
+//         this.name = name;
+//     }
+
+//     eat(){
+//         console.log("eat");
+//     }
+
+// }
+// ko pass karne ke liye hume kya karna padega
+// super ko call karna padega (super())
+// aur super ke andar apne uss variable (parameter -- name)
+// ko pass karna padega (super(name))
+
+// class Person{
+//     constructor(name){
+//         this.species = "homo sapiens";
+//         this.name = name;
+//     }
+
+//     eat(){
+//         console.log("eat");
+//     }
+
+// }
+
+// class Engineer extends Person{
+//     constructor(name){
+//         super(name); // to invoke parent class constructor
+//     }
+//     work(){
+//         console.log("solve problems, build something");
+//     }
+// }
+
+// let engObj = new Engineer("shradha");
+
+// to isiliye super keyword kaafi important
+// hota hai jab bhi inheritance ho rahi hoti hai
+// 47:19
+
+// inheritance ke time pe agar child class ko parent class
+// ke constructor ko kuch important information pass on
+// karni hoti hai to wo pass on hoti hai through
+// this super keyword
+
+// =============================================================================
+
+// iske alawa super ko hum apni jo parent class hoti hai
+// uske kuch kuch methods ko invoke karne ke liye bhi use kar sakte hai
+
+// for eg yeh jo work class hai (work method -- work(){} in Engineer class)
+// har Engineer kya karta hai pehle eat (eat(){} in Person class)
+// karta hai fir work karta hai for eg
+// this is an example
+
+// to yahan par (inside work(){}) agar mujhe sabse pehle
+// super class ke 
+// (super class means parent class, derived class means child class)
+// eat method (eat(){}) ko call karna hai
+// to uske liye hum likhenge -- super.eat();
+// ( work(){} ke andar super.eat() isliye likha hai 
+// kyuki har Engineer pehle eat karta hai fir work karta hai 
+// to work method eat method pe depend karta hai )
+
+// class Person{
+//     constructor(name){
+//         this.species = "homo sapiens";
+//         this.name = name;
+//     }
+
+//     eat(){
+//         console.log("eat");
+//     }
+
+// }
+
+// class Engineer extends Person{
+//     constructor(name){
+//         super(name); // to invoke parent class constructor
+//     }
+//     work(){
+//         super.eat();
+//         console.log("solve problems, build something");
+//     }
+// }
+
+// let engObj = new Engineer("shradha");
+
+// save and refresh in bc
+// iss bar hum likhein engObj.work() in bc and enter
+// eat
+// solve problems, build something
+// undefined
+// to iss case mei pehle eat hoga (o/p in bc)
+// uske baad humara work complete ho raha hoga (o/p in bc)
+
+// but agar yahin par (inside work(){}) hum likhte sirf eat();
+
+// class Person{
+//     constructor(name){
+//         this.species = "homo sapiens";
+//         this.name = name;
+//     }
+
+//     eat(){
+//         console.log("eat");
+//     }
+
+// }
+
+// class Engineer extends Person{
+//     constructor(name){
+//         super(name); // to invoke parent class constructor
+//     }
+//     work(){
+//         eat();
+//         console.log("solve problems, build something");
+//     }
+// }
+
+// let engObj = new Engineer("shradha");
+
+// save and refresh in bc
+// engObj.work() in bc and enter
+// app.js:296 Uncaught ReferenceError: eat is not defined
+//     at Engineer.work (app.js:296:9)
+//     at <anonymous>:1:8
+// to iss case mei humare pas error aa jata 
+// why because eat is not defined
+// (kiska eat super ka eat)
+// 48:07
+
+// to isilye jo super class yani
+// parent class ke methods and properties hote hai unko
+// directly aise (eat()) access nahi kar sakte
+// to uske liye hume super keyword ke through unko access karna hota hai
+// (super.eat())
+
+// class Person{
+//     constructor(name){
+//         this.species = "homo sapiens";
+//         this.name = name;
+//     }
+
+//     eat(){
+//         console.log("eat");
+//     }
+
+// }
+
+// class Engineer extends Person{
+//     constructor(name){
+//         super(name); // to invoke parent class constructor
+//     }
+//     work(){
+//         super.eat();
+//         console.log("solve problems, build something");
+//     }
+// }
+
+// let engObj = new Engineer("shradha");
+
+// so that is why this keyword (super) is really really
+// important, interviews ke andar 
+// Method overriding kya hoti hai
+// super keyword kaise kaam karta hai
+// inheritance kya hoti hai
+// extends keyword kisliye use hota hai
+// yeh sare ke sare aise sawaal hai jo humse
+// js ke interviews ke andar pooche ja sakte hai
+
+// =======================================================================================
+
+// Ab next hum baat karne wale hai about our
+// practice questions 
+// practice questions ke andar (48:36)
+// sabse pehla question hai :
+
+// Q1. You are creating a website for your college
+// Hume uske liye create karni hai class called User
+// with 2 properties name and email
+// har ek user ke liye name hoga
+// har ek user ke liye email hoga
+// It also has a method called viewData()
+// that allows user to view website data.
+// to iss case mei website ka kyuki data 
+// to hai nahi to viewData ke liye hum
+// sirf print karwa denge
+// yani kuch console.log karwa denge iss method
+// ke andar (viewData())
+// to yeh ek viewData() naam ka hume method banana
+// hai ki har jo user hai
+// iss class (User class) ke jitne bhi object honge
+// sare ke sare website ke data ko view kar payein
+// dekh payein
+
+// code editor
+
+// hum ek class create karenge called User
+
+// class User{
+
+// }
+
+// har class ke andar hum apna constructor bana
+// sakte hai
+
+// class User{
+//     constructor(){
+
+//     }
+// }
+
+// ab constructor ke andar har User ke liye uska 
+// name and email hoga
+// yeh jo name and email ki information hai ise hum le lenge
+// in this constructor as an argument (parameter)
+
+// class User{
+//     constructor(name, email){
+
+//     }
+// }
+
+// hum likh sakte hai this.name = name
+// and this.email = email
+
+// class User{
+//     constructor(name, email){
+//         this.name = name
+//         this.email = email
+//     }
+// }
+
+// iske saath mei humare pas ek method hoga called
+// viewData(){}
+
+// class User{
+//     constructor(name, email){
+//         this.name = name
+//         this.email = email
+//     }
+
+//     viewData(){
+
+//     }
+// }
+
+// viewData ke andar hum simply
+// console.log kar sakte hai
+// some data, yahan hum apne data
+// ko print karwa sakte hai
+// this is my website data
+
+// class User{
+//     constructor(name, email){
+//         this.name = name
+//         this.email = email
+//     }
+
+//     viewData(){
+//         console.log("website data");
+//     }
+// }
+
+// ya infact hum chahein to koi ek
+// normal sa variable bana sakte hai
+// let DATA = "secret information"
+// iss tarike ka kuch DATA naam ka humne variable bana liya
+
+// let DATA = "secret information"
+
+// class User{
+//     constructor(name, email){
+//         this.name = name
+//         this.email = email
+//     }
+
+//     viewData(){
+//         console.log("website data");
+//     }
+// }
+
+// this is a very simple example 
+// generally websites ke andar data iss tareh se
+// store nahi hota hai
+// yeh mai bahut basic cheej aapko dikha raha hu
+// (50:32)
