@@ -305,3 +305,70 @@
 // Ab next hum baat karne wale hai about our
 // practice questions 
 
+// Q.1
+
+// let DATA = "secret information"
+
+// class User{
+//     constructor(name, email){
+//         this.name = name
+//         this.email = email
+//     }
+
+//     viewData(){
+//         console.log("data =", DATA);
+//     }
+// }
+
+// let student1 = new User("shradha", "abc@email.com");
+// let student2 = new User("aman", "aman@email.com");
+
+// let teacher1 = new User("Dean", "dean@college.com");
+
+// =====================================================================================
+
+// Better approach for Q.1
+
+// User parent class
+// student child class (extends keyword)
+// teacher child class (extends keyword)
+
+// =========================================================================================
+
+// Next humare pas ek aur part hai isi practice
+// question ka
+
+// Q.2 Create a new class called admin
+// which inherits from User.
+// Add a new method called editdata
+// to Admin that allows it to edit website data
+
+
+let DATA = "secret information"
+
+class User{
+    constructor(name, email){
+        this.name = name
+        this.email = email
+    }
+
+    viewData(){
+        console.log("data =", DATA);
+    }
+}
+
+class Admin extends User {
+    constructor(name, email){
+        super(name, email)
+    }
+    editData(){
+        DATA = "some new value"
+    }
+}
+
+let student1 = new User("shradha", "abc@email.com");
+let student2 = new User("aman", "aman@email.com");
+
+let teacher1 = new User("Dean", "dean@college.com");
+
+let admin1 = new Admin("admin", "admin@college.com");

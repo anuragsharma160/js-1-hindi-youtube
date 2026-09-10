@@ -3228,3 +3228,453 @@
 // store nahi hota hai
 // yeh mai bahut basic cheej aapko dikha raha hu
 // (50:32)
+// par haa yahan par agar hum view data (method)
+// karna chahte hai to DATA ko dikhane ke liye
+// hum likh sakte hai
+// console.log("data =", DATA)
+
+
+
+
+// let DATA = "secret information"
+
+// class User{
+//     constructor(name, email){
+//         this.name = name
+//         this.email = email
+//     }
+
+//     viewData(){
+//         console.log("data =", DATA);
+//     }
+// }
+
+
+// save
+// and ab hum chahein to apne liye apne User object
+// ko bana sakte hai (object using User class)
+// let suppose humare pas student1 hai
+// humare kyuki college ki website hai to student1
+// ban sakta hai, student1 humara naya User hai
+// let student1 = new User();
+
+
+
+
+// let DATA = "secret information"
+
+// class User{
+//     constructor(name, email){
+//         this.name = name
+//         this.email = email
+//     }
+
+//     viewData(){
+//         console.log("data =", DATA);
+//     }
+// }
+
+// let student1 = new User();
+
+// iske baad student2 aya , student2 is also a new User
+// let student2 = new User();
+// humare pas student3 aya, do (2) students le lete hai
+// (do (2) hi students le lete hai)
+
+// let DATA = "secret information"
+
+// class User{
+//     constructor(name, email){
+//         this.name = name
+//         this.email = email
+//     }
+
+//     viewData(){
+//         console.log("data =", DATA);
+//     }
+// }
+
+// let student1 = new User();
+// let student2 = new User();
+
+// har student ke liye uska name and email hona chahiye
+// (this.name = name , this.email = email, see code)
+// to yahan par ( student1 and student2 mei ) hum name
+// (51:05) pas kar sakte hai
+// let suppose the first student (student1) is "shradha" (name ka argument)
+// the email is abc@email.com (email ka argument)
+// some fake email
+// and dusra (student2) we can write "aman" (name ka argument)
+// email is aman@email.com (email ka argument)
+
+// let DATA = "secret information"
+
+// class User{
+//     constructor(name, email){
+//         this.name = name
+//         this.email = email
+//     }
+
+//     viewData(){
+//         console.log("data =", DATA);
+//     }
+// }
+
+// let student1 = new User("shradha", "abc@email.com");
+// let student2 = new User("aman", "aman@email.com");
+
+// yeh humare pas 2 emails aa gaye
+// 2 users aa gaye
+// ab inn users ka data print karne ke liye
+// we can simply write humara jo student1 hai
+// uska data print ho jaye humare liye
+// student1 in bc and enter
+// User {name: 'shradha', email: 'abc@email.com'}
+// to yeh student1 aa gaya (open and see in bc)
+// student1 ke pas email bhi hai , (email: "abc@email.com", in bc)
+// name bhi hai (name: "shradha", in bc)
+// saath ke saath function bhi hai ( open [[Prototype]]: Object , in bc)
+
+// agar student1 chahe to data (viewData) ko view kar sakta hai
+// student1.viewData() in bc and enter
+// data = secret information
+// undefined
+// to kya hua data humare liye print hokar aa gaya
+
+// aise hi student2 bhi data ko view kar sakta hai
+// aur sirf students hi nahi honge (student1 , student2)
+// college ki website hai agar to usme sirf
+// students user hi nahi honge
+// teachers bhi user ho sakte hai
+// to let teacher1 = new User()
+// aur teachers ke bhi kuch kuch name ho sakte hai
+// jaise ho sakta hai college ke andar there is some "Dean" (name ka argument)
+// and unki koi email ho dean@college.com (email ka argument)
+
+// let DATA = "secret information"
+
+// class User{
+//     constructor(name, email){
+//         this.name = name
+//         this.email = email
+//     }
+
+//     viewData(){
+//         console.log("data =", DATA);
+//     }
+// }
+
+// let student1 = new User("shradha", "abc@email.com");
+// let student2 = new User("aman", "aman@email.com");
+
+// let teacher1 = new User("Dean", "dean@college.com");
+
+// save
+// to humari jo teacher1 hogi
+// agar teacher1 ko viewData karna hai (method)
+// teacher1.viewData() in bc and enter
+// data = secret information
+// undefined
+// to teacher bhi data ko view kar sakti hai 
+// website ke upar
+// agar student ko data view karna hai
+// student1.viewData() in bc and enter
+// data = secret information
+// undefined
+// to student bhi apna jo data hai use view kar sakte hai website ke upar
+// 52:28
+// It will work both ways
+// to iss tareh se alag alag tarike ke jo Users hai (students , teachers)
+// unko hum yahan create kar sakte hai
+
+// =======================================================================================
+
+// vaise aur ek better yani level up karne ka tarika hoga
+// ki student naam ki ek aur class banayi jaye (in addition to User class)
+// jisme student ke hisab se
+// extra information ho 
+// aur wo iss User class ko inherit (using extends keyword)
+// kare , iski (User class) properties ko inherit kare
+
+// fir ek teacher ki alag class banayi jaye (using extends keyword)
+// (in addition to User class and student class)
+// jo iski (User class ki) properties ko inherit kare
+// fir teacher (teacher class) ke pass yeh sare functions (User class ke sare functions and properties)
+// to honge hi
+// plus extra functions honge 
+// jaise marks ko update kar paane ki access
+
+// student (student class) ke pass yeh sare functions (User class ke sare functions and properties)
+// to honge hi
+// plus extra functions honge
+// jaise apna chahe to address update
+// kar sakta hai student
+// apna chahe to naam change
+// kar sakta hai student
+// to uss tarike se ek poora system hai 
+// jo banaya ja sakta hai
+// classes and objects ke around
+// 53:06
+
+// =============================================================================================================
+
+// Next humare pas ek aur part hai isi practice
+// question ka
+
+// Q.2 Create a new class called Admin
+// which inherits from User.
+// Add a new method called editData
+// to Admin that allows it to edit website data
+
+// 53:18
+
+// yani hume ek nayi class banani hai apne liye
+// called Admin jo humare User class se
+// inherit kare values ( properties and functions )
+// to Class Admin extends User class
+// class Admin extends User {}
+// aur yahan par kya hoga extends ke baad
+// we have to add a new method called
+// editData
+
+// iske ( class Admin extends User {} ) andar
+// editData naam ka ek naya method hoga jo humare
+// data ko edit kar payega
+// jaise yeh jo DATA variable hai ( let DATA = "secret information" )
+// ise basically edit kar payega
+
+// let DATA = "secret information"
+
+// class User{
+//     constructor(name, email){
+//         this.name = name
+//         this.email = email
+//     }
+
+//     viewData(){
+//         console.log("data =", DATA);
+//     }
+// }
+
+// class Admin extends User {
+//     editData(){
+//         DATA
+//     }
+// }
+
+// let student1 = new User("shradha", "abc@email.com");
+// let student2 = new User("aman", "aman@email.com");
+
+// let teacher1 = new User("Dean", "dean@college.com");
+
+// aur yahan par DATA ki value ko hum kuch bhi 
+// kar sakte hai -- "some new value"
+// class Admin extends User {
+//     editData(){
+//         DATA = "some new value"
+//     }
+
+// lets suppose this (as follows)
+//     editData(){
+//         DATA = "some new value"
+//     }
+// is the new edited value of DATA
+// 53:52
+
+// ab yeh cheej hume dhyaan rakhni hai ki
+// humara jo User hai (User class)
+// wo humne basic level ka
+// ek User banaya hai (User class)
+// jisko edit ( editData(){} ) access nahi de rakhi 
+
+// 54:00
+
+// par kyuki Admin hai ( class Admin extends User {} )
+// Admin sari cheejein edit kar sakte hai ( editData(){} )
+// to use ( class Admin extends User {} ) 
+// humne edit access ( editData(){} ) di hai
+
+// to wo yahan pe ( class Admin extends User {} )
+// ek tarike se hum depict karne ki koshish
+// kar rahe hai using classes and objects 
+
+// let DATA = "secret information"
+
+// class User{
+//     constructor(name, email){
+//         this.name = name
+//         this.email = email
+//     }
+
+//     viewData(){
+//         console.log("data =", DATA);
+//     }
+// }
+
+// class Admin extends User {
+//     editData(){
+//         DATA = "some new value"
+//     }
+// }
+
+// let student1 = new User("shradha", "abc@email.com");
+// let student2 = new User("aman", "aman@email.com");
+
+// let teacher1 = new User("Dean", "dean@college.com");
+
+// 54:09
+
+// to ab hum ek naya user bana sakte hai 
+// we can call this user admin1
+// let admin1 = new Admin();
+// ab yeh jo admin hai ( let admin1 = new Admin(); )
+// agar hum ise simply iss tareh ( let admin1 = new Admin(); )
+// se create karenge
+// although iss tareh ( let admin1 = new Admin(); )
+// se create karna possible hai
+
+// let DATA = "secret information"
+
+// class User{
+//     constructor(name, email){
+//         this.name = name
+//         this.email = email
+//     }
+
+//     viewData(){
+//         console.log("data =", DATA);
+//     }
+// }
+
+// class Admin extends User {
+//     editData(){
+//         DATA = "some new value"
+//     }
+// }
+
+// let student1 = new User("shradha", "abc@email.com");
+// let student2 = new User("aman", "aman@email.com");
+
+// let teacher1 = new User("Dean", "dean@college.com");
+
+// let admin1 = new Admin();
+
+// save and refresh in bc
+// no error in bc
+// admin1 ko print karwayenge
+// admin1 in bc and enter
+// Admin {name: undefined, email: undefined}
+// to bhi error nahi ayega
+// but admin1 ke pas
+// (dropdown open and see in bc)
+// email and name nahi hai
+// email: undefined in bc
+// name: undefined in bc
+// kyuki unn variables (email and name) ko humne pass hi nahi kiya
+
+// to isiliye jab admin ko create kar rahe hai
+// ( let admin1 = new Admin(); )
+// to yahan pe ( let admin1 = new Admin(); mei in () )
+// hume name and email pass karna padega
+// to isko (name argument ko) keh dete hai -- admin
+// isko (email argument ko) keh dete hai -- admin@college.com
+// let admin1 = new Admin("admin", "admin@college.com");
+// to yeh information aa gayi (just above line)
+
+// par yeh information process karne ke liye 
+// hume ek constructor chahiye, 
+// to yahan ( class Admin extends User {} )
+// hume uss constructor ko create karna padega (54:54)
+// jiske pass kya aa raha hai
+// jiske pass humara name (constructor mei name as parameter)
+// and email aa raha hai (constructor mei email as parameter)
+
+// aur jab bhi hum child class ( class Admin extends User {} )
+// ke andar constructor ko create karte hai
+// hume parent ke ( class User{ )
+// constructor ko call karna padta hai
+// 55:07
+
+// aur parent ke constructor ko call karne ke liye
+// hum apne super keyword ka use karte hai
+// (super in Admin class constructor)
+// jisme hum pass kar denge apna name and email 
+// (-- super(name, email) in Admin class constructor)
+
+
+
+// let DATA = "secret information"
+
+// class User{
+//     constructor(name, email){
+//         this.name = name
+//         this.email = email
+//     }
+
+//     viewData(){
+//         console.log("data =", DATA);
+//     }
+// }
+
+// class Admin extends User {
+//     constructor(name, email){
+//         super(name, email)
+//     }
+//     editData(){
+//         DATA = "some new value"
+//     }
+// }
+
+// let student1 = new User("shradha", "abc@email.com");
+// let student2 = new User("aman", "aman@email.com");
+
+// let teacher1 = new User("Dean", "dean@college.com");
+
+// let admin1 = new Admin("admin", "admin@college.com");
+
+// ise ab save kar lete hai
+// refresh in bc
+// admin1 in bc and enter
+// Admin {name: 'admin', email: 'admin@college.com'}
+// ab admin ke andar
+// name and email aa gaya hai
+// (dropdown open and see in bc)
+// email: "admin@college.com" in bc
+// name: "admin" in bc
+
+// saath ke saath admin chahe (admin1)
+// jaise abhi DATA ki value kya hai
+// DATA in bc and enter
+// 'secret information'
+// DATA ki value yeh hai ( 'secret information' )
+
+// Lekin admin (admin1, admin class) data ko change
+// kar sakta hai (editData(){})
+// admin1 chahe to apne
+// data ko edit kar sakta hai
+// admin1.editData() in bc and enter
+// undefined
+
+// to ab agar hum DATA ki value ko check karenge
+// DATA in bc and enter
+// 'some new value'
+// to it will be some new value
+// (DATA variable ko new value assign kar di in editData(){} function)
+
+// 55:36
+
+// to iss tareh se humari classes and objects
+// kaam karti hai logically js ke programs ke andar
+// ab yeh to ho gaya humara practice questions and this was
+// all about classes and objects jisme hum
+// inheritance , super , new 
+// bahut sare different different...
+// extends keywords ko dekha
+// different concepts ko dekha 
+// jaise inheritance ho gaya
+// jaise method overriding ho gaya
+
+// iske alawa ek aur programming ka
+// ek general concept hota hai jo
+// mai aapke saath share karna chah raha hu
+// 56:00
