@@ -344,31 +344,60 @@
 // to Admin that allows it to edit website data
 
 
-let DATA = "secret information"
+// let DATA = "secret information"
 
-class User{
-    constructor(name, email){
-        this.name = name
-        this.email = email
-    }
+// class User{
+//     constructor(name, email){
+//         this.name = name
+//         this.email = email
+//     }
 
-    viewData(){
-        console.log("data =", DATA);
-    }
+//     viewData(){
+//         console.log("data =", DATA);
+//     }
+// }
+
+// class Admin extends User {
+//     constructor(name, email){
+//         super(name, email)
+//     }
+//     editData(){
+//         DATA = "some new value"
+//     }
+// }
+
+// let student1 = new User("shradha", "abc@email.com");
+// let student2 = new User("aman", "aman@email.com");
+
+// let teacher1 = new User("Dean", "dean@college.com");
+
+// let admin1 = new Admin("admin", "admin@college.com");
+
+// =======================================================================================
+
+// Error Handling
+
+// try-catch
+
+// try {
+//     ... normal code
+// } catch (err) { // err is error object
+//     ... handling error
+// }
+
+let a = 5;
+let b = 10;
+console.log("a = ", a);
+console.log("b = ", b);
+console.log("a+b = ", a+b);
+try{
+    console.log("a+b = ", a+c); // error
+} catch(err) {
+    console.log(err);
 }
 
-class Admin extends User {
-    constructor(name, email){
-        super(name, email)
-    }
-    editData(){
-        DATA = "some new value"
-    }
-}
-
-let student1 = new User("shradha", "abc@email.com");
-let student2 = new User("aman", "aman@email.com");
-
-let teacher1 = new User("Dean", "dean@college.com");
-
-let admin1 = new Admin("admin", "admin@college.com");
+console.log("a+b = ", a+b);
+console.log("a+b = ", a+b);
+console.log("a+b = ", a+b);
+console.log("a+b = ", a+b);
+console.log("a+b = ", a+b);

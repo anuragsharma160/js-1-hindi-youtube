@@ -3674,7 +3674,324 @@
 // jaise inheritance ho gaya
 // jaise method overriding ho gaya
 
+// =============================================================================
+
+// Error Handling
+
 // iske alawa ek aur programming ka
 // ek general concept hota hai jo
 // mai aapke saath share karna chah raha hu
 // 56:00
+// which is related to error handling
+
+// jaise agar aapne js ke code
+// mei notice kiya ho
+// ki...
+// vaise this topic is not related to
+// classes and objects
+// yeh alag hi topic hai related to error handling
+
+// jaise agar hum apne code ke andar
+// bahut sari lines of code likhte hai
+// for eg pehle humne koi calculation kari
+// ya ek variable bana diya let a = 5
+// let a = 5
+
+// fir humne ek variable bana diya let b = 10
+// iss tareh se
+// let a = 5
+// let b = 10
+
+// fir hum console.log karwa rahe hai
+// a =
+// yahan humne a ki value ko print karwa diya
+// let a = 5
+// let b = 10
+// console.log("a = ", a)
+
+// isi tareh se hum console.log
+// karwa rahe hai b =
+// aur humne b ki value ko print karwa diya
+// let a = 5
+// let b = 10
+// console.log("a = ", a)
+// console.log("b = ", b)
+
+// fir hum console.log karwa rahe hai -- a+b = a+b
+// let a = 5
+// let b = 10
+// console.log("a = ", a)
+// console.log("b = ", b)
+// console.log("a+b = ", a+b)
+
+// and isi tarike se bahut lamba code
+// likha hua hai jiske andar bahut
+// sari lines of code hai
+// let a = 5
+// let b = 10
+// console.log("a = ", a)
+// console.log("b = ", b)
+// console.log("a+b = ", a+b)
+// console.log("a+b = ", a+b)
+// console.log("a+b = ", a+b)
+// console.log("a+b = ", a+b)
+// console.log("a+b = ", a+b)
+// console.log("a+b = ", a+b)
+// console.log("a+b = ", a+b)
+
+// and kayde se yeh sari ki sari lines of code
+// humare liye print hokar aani chahiye (see in bc)
+// a =  5
+// b =  10
+// a+b =  15
+// a+b =  15
+// a+b =  15
+// a+b =  15
+// a+b =  15
+// a+b =  15
+// a+b =  15
+
+// but maan lete hai code ke beech mei
+// humne kahin error kar diya line number 6 pe
+// (2nd a+b) humse kuch error ho gaya
+
+// let a = 5
+// let b = 10
+// console.log("a = ", a)
+// console.log("b = ", b)
+// console.log("a+b = ", a+b)
+// console.log("a+b = ", a+b) // error
+// console.log("a+b = ", a+b)
+// console.log("a+b = ", a+b)
+// console.log("a+b = ", a+b)
+// console.log("a+b = ", a+b)
+// console.log("a+b = ", a+b)
+
+// kya error ho gaya
+// error basically ho gaya ki yahan (2nd a+b)
+// maine a+c likh diya
+// aur c kya hai c koi variable exist hi nahi karta
+
+// let a = 5
+// let b = 10
+// console.log("a = ", a)
+// console.log("b = ", b)
+// console.log("a+b = ", a+b)
+// console.log("a+b = ", a+c) // error
+// console.log("a+b = ", a+b)
+// console.log("a+b = ", a+b)
+// console.log("a+b = ", a+b)
+// console.log("a+b = ", a+b)
+// console.log("a+b = ", a+b)
+
+// to iss case mei kya hoga
+// hum jaise hi refresh karenge (in bc)
+// a =  5
+// b =  10
+// a+b =  15
+// Uncaught ReferenceError: c is not defined
+//     at app.js:393:25
+// (open and see in bc)
+// yahan par line number 6 par
+// humare pas error aa jayega (57:10)
+// error aa raha hai c is not defined
+
+// theek hai humare pas error aa gaya
+// but error aane ki vajeh se js ke andar
+// jo baki ka sara ka sara code hota hai
+// wo run karna band kar deta hai
+
+// yani sirf shuruat ki teen lines hi print hui (see in bc)
+// iske (error line a+c ke) baad wala jo code hai
+// wo kabhi execute hi nahi hua
+// even though inn lines (error line a+c ke baad ki lines)
+// ke andar koi error nahi tha
+// par fir bhi yeh lines (error line a+c ke baad ki lines) 
+// kabhi execute nahi hoti
+// 57:28
+
+// to isiliye yeh jo error (error line a+c)
+// aate hai,
+// randomly code ke andar error aana possible hai
+// errors aa sakte hai code ke andar
+// to isiliye errors ko handle karna bhi bahut
+// jada jaruri hota hai
+
+// aur error handling ke liye js ke andar
+// we have something called try-catch
+// inhe hum try-catch blocks bhi kehte hai
+
+// try-catch
+
+// try {
+//     ... normal code
+// } catch (err) { // err is error object
+//     ... handling error
+// }
+
+// jab bhi hume kisi code ke liye aisa lagta hai ki
+// iss code ke andar koi error aa sakta hai
+// hume nahi pata exactly ayega ya nahi ayega
+// although hum to humesha hope karte hai ki
+// humare code ke andar koi error na aye
+
+// but agar hume kabhi aisa lagta hai ki
+// iss code ke andar koi na koi error aa sakta hai
+// ho sakta hai koi variable aisa ho jo initialize na hua ho
+// ya kuch aur problem ho sakti hai
+
+// to uss code ko jo humara normal code hota hai
+// uss code ko hum ek try block ke andar likhte hai
+// (58:10)
+// to simply agar hume shak hai
+// ki iss line (error line a+c) ke andar
+// koi error aa sakta hai 
+// to hum simply kya karenge
+// ek try block banayenge (as follows)
+
+// let a = 5
+// let b = 10
+// console.log("a = ", a)
+// console.log("b = ", b)
+// console.log("a+b = ", a+b)
+// try{
+    
+// }
+// console.log("a+b = ", a+c) // error
+// console.log("a+b = ", a+b)
+// console.log("a+b = ", a+b)
+// console.log("a+b = ", a+b)
+// console.log("a+b = ", a+b)
+// console.log("a+b = ", a+b)
+
+
+// yeh try humara ek keyword hai
+// aur yeh hum ne ek block bana liya (try{})
+// aur iske andar (try{} ke andar) hum apni iss line (error line a+c) 
+// ko of code ko likhte hai
+// 58:23
+
+// let a = 5;
+// let b = 10;
+// console.log("a = ", a);
+// console.log("b = ", b);
+// console.log("a+b = ", a+b);
+// try{
+//     console.log("a+b = ", a+c); // error
+// }
+
+// console.log("a+b = ", a+b);
+// console.log("a+b = ", a+b);
+// console.log("a+b = ", a+b);
+// console.log("a+b = ", a+b);
+// console.log("a+b = ", a+b);
+
+// ab jaise hi hum try block banayenge
+// uske saath hume ek catch block banana padega
+// aur catch block ke andar basically hum apne
+// error ko catch kar lete hai
+
+// let a = 5;
+// let b = 10;
+// console.log("a = ", a);
+// console.log("b = ", b);
+// console.log("a+b = ", a+b);
+// try{
+//     console.log("a+b = ", a+c); // error
+// } catch() {
+    
+// }
+
+// console.log("a+b = ", a+b);
+// console.log("a+b = ", a+b);
+// console.log("a+b = ", a+b);
+// console.log("a+b = ", a+b);
+// console.log("a+b = ", a+b);
+
+
+// to try ke andar jitna bhi code hota hai
+// agar uss code (try ke andar wale code) 
+// ke andar error aa gaya
+// to wahi se hum apne catch block 
+// ke andar chale jate hai
+// aur catch block ka kaam hota hai 
+// to handle our errors (58:41)
+
+// so catch block is basically
+// to handle our errors
+// aur catch block ke andar ek special
+// argument (parameter) hum le sakte hai
+// error argument (err) 
+// jo humari error object hoti hai
+// ki exactly kya error aya
+
+// to iss bar yahan par ( catch() {} mei in () ) 
+// hum ek argument (parameter)
+// le sakte hai error (err)
+// aur yahan ( inside catch(){} )
+// console.log karwa sakte hai hum apne 
+// error object ko
+
+// let a = 5;
+// let b = 10;
+// console.log("a = ", a);
+// console.log("b = ", b);
+// console.log("a+b = ", a+b);
+// try{
+//     console.log("a+b = ", a+c); // error
+// } catch(err) {
+//     console.log(err);
+// }
+
+// console.log("a+b = ", a+b);
+// console.log("a+b = ", a+b);
+// console.log("a+b = ", a+b);
+// console.log("a+b = ", a+b);
+// console.log("a+b = ", a+b);
+
+// to agar hume iss line (error line a+c) 
+// ke upar shak hai ki yahan par error aa sakta hai
+// to ise humne try ke andar likh diya (see code)
+// aur catch ke andar hum error ko catch kar sakte hai (see code)
+// 59:06
+
+// although hum to yeh hope karenge
+// ki try ke andar jitna bhi code likha hai (error line a+c, see code)
+// uske andar koi error na aye
+// catch ke andar hume kabhi jana na pade
+// hume catch ki jarurat hi na pade (see code)
+// par for some scenarios we do it in programming
+
+// isko refresh kar lete hai (in bc)
+// a =  5
+// b =  10
+// a+b =  15
+// app.js:396 ReferenceError: c is not defined
+//     at app.js:394:29
+// a+b =  15
+// a+b =  15
+// a+b =  15
+// a+b =  15
+// a+b =  15
+
+// iss bar refresh kiya to kya hua
+// yahan par (in bc) humara error humare liye
+// print hokar aa gaya (ReferenceError in bc)
+// yeh (ReferenceError in bc) error nahi hai
+// yeh (ReferenceError in bc) console.log ka statement hai
+// jisne humare error ko print karwa diya hai
+// par baki ka code (after RefrenceError in bc)
+// vaise ki vaise chal raha hai
+// 59:30
+
+// iss bar humara code rukha nahi
+// kyu, kyuki humne apne try catch block
+// ko use kar liya (see code) 
+// jahan hume shak tha ki yahan par
+// koi error aa sakta hai
+// 59:35
+
+// So this was all about Classes Objects
+// inheritance , error handling
+
+// Class End
