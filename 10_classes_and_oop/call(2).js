@@ -355,3 +355,342 @@
 // jinse aap explicitly jaake unn methods ko call
 // kar sakte hai jinme se ek hai dot call
 // (9:19)
+// SetUsername.call(username)
+// ab yeh call method kya karta hai, ( hover call in SetUsername.call(username) ) 
+// calls a method of an object, substituting
+// another for the current object
+// yeh sab chordo kya hai 
+// yeh sab ki kahani mai aapko samjha dunga 
+// kya hai bada complex likh rakha hai
+
+// but actually mei call likhne ke baad ( SetUsername.call(username) )
+// yahan pe actually mei wo ( function SetUsername(username){ ) call ho raha hai
+// technically call ho raha hai
+
+// function SetUsername(username){
+//     // complex DB calls
+//     this.username = username
+// }
+
+// function createUser(username, email, password){
+//     SetUsername.call(username)
+    
+//     this.email = email
+//     this.password = password
+// }
+
+// const chai = new createUser("username", "chai@fb.com", "123")
+// console.log(chai);
+
+// vaise to aap chaho to yahan pe ( function SetUsername(username){ ke andar ) 
+// console.log bhi laga lete hai, 
+// taki thoda sa aapko
+// idea mil jaye ki actually mei cheejein 
+// ho bhi rahi hai ki nahi ho rahi
+// to isko hum likh dete hai called -- console.log("called")
+
+// function SetUsername(username){
+//     // complex DB calls
+//     this.username = username
+//     console.log("called");
+// }
+
+// function createUser(username, email, password){
+//     SetUsername.call(username)
+    
+//     this.email = email
+//     this.password = password
+// }
+
+// const chai = new createUser("username", "chai@fb.com", "123")
+// console.log(chai);
+
+
+// theek hai ji ab isko hatate hai
+// ( remove .call from SetUsername.call(username) )
+// to aap dekhenge actually mei call to ho raha hai
+// but koi kaam ka call nahi ho raha
+// hai wo actually mei
+
+// function SetUsername(username){
+//     // complex DB calls
+//     this.username = username
+//     console.log("called");
+// }
+
+// function createUser(username, email, password){
+//     SetUsername(username)
+    
+//     this.email = email
+//     this.password = password
+// }
+
+// const chai = new createUser("username", "chai@fb.com", "123")
+// console.log(chai);
+
+// save and run in terminal
+// o/p called
+// createUser { email: 'chai@fb.com', password: '123' }
+
+// ok thodi si aur jitni clarity aaye utna hi achha hai
+// dekhiye call to ho raha hai 
+// ( see o/p -- called )
+// ( function SetUsername(username){ call to ho raha hai )
+// theek hai ji bol diya call ho raha hai
+
+// lekin abhi ( SetUsername(username) ) 
+// to aapne kaha ki yeh ( function SetUsername(username){ ) 
+// call nahi ho raha
+// dekhiye call to ho raha hai uska execution context bhi hai
+// Lekin problem kya aa rahi hai
+// problem yeh aa rahi hai
+// (diagram mei aa gaye)
+// ki jaise hi yeh hua (callme() - 5th box from bottom)
+// call hua theek hai run ho gaya
+
+// ab usne kaha theek hai ji run ho gaya
+// to isko (callme() - 5th box from bottom) hatana hai
+// to yeh hataya (callme() ko hataya from 5th box from bottom)
+// aur iska (callme()) jo execution context ( 5th box from bottom )
+// hai yeh bhi hata diya
+// to uske (execution context) andar jitne bhi
+// variables (variables of callme()) declare hue the
+// wo gayab (10:12)
+
+// ab theek hai wo gayab ho gaye
+// to yahan tak (4th box from bottom) 
+// to kabhi pahunche hi nahi na
+// yeh (4th box from bottom) to humara outer function tha
+// to yahan pe (4th box from bottom) kabhi pahuche hi nahi hai
+
+// (code editor mei aa gaye)
+// ha ji to execute hoke ( SetUsername(username) ) aise ki aise gayab
+// thodi na kar dena hai uska ( function SetUsername(username){ )
+// reference hold karke rakhna hai
+
+// to reference hold karne ke liye actually mei
+// jo method aata hai wo aata hai dot call
+// SetUsername.call(username)
+
+// function SetUsername(username){
+//     // complex DB calls
+//     this.username = username
+//     console.log("called");
+// }
+
+// function createUser(username, email, password){
+//     SetUsername.call(username)
+    
+//     this.email = email
+//     this.password = password
+// }
+
+// const chai = new createUser("username", "chai@fb.com", "123")
+// console.log(chai);
+
+// ... to reference hold karne ke liye actually mei
+// jo method aata hai wo aata hai dot call
+// SetUsername.call(username)
+// aur bhi hai .bind bhi hai 
+// aur bhi hai methods
+
+// Lekin iss scenario mei (see entire code)
+// iss situation mei
+// kyuki mujhe sirf uska ( function SetUsername(username){ )
+// reference hold karke rakhna hai
+// isliye mai dot call use kar raha hu ( SetUsername.call(username) )
+
+// ab kya hai ki sirf run hi karana tha 
+// ( console.log("called"); see code ) ( SetUsername(username) )
+// wo problem to maine dekh liya wo to hai hi nahi
+// ha theek hai yeh bhi maan liya aapki baat
+// 10:45
+
+// Lekin wo jo reference hold karake rakhna hai na
+// ki uske ( function SetUsername(username){ ) andar 
+// jo bhi variable declare ho rahe hai
+// ya jo bhi function call ho rahe hai ya execution ho raha hai
+// usse ( function SetUsername(username){ ) 
+// jo value return mil rahi hai wo bhi to chahiye
+// na mujhe, aisa thodi na hai ki execution context hat gaya
+// to bas baat khatam, aisa thodi na hota hai
+// to aapko execution context wahan dena padega
+
+// ab sirf aapne agar dot call likha hai wahan pe 
+// ( SetUsername.call(username) )
+// to bhi kaam nahi hoga actually mei
+// call hoga wo ( function SetUsername(username){ )
+// lekin actually mei aapko object 
+// ( see object in o/p -- createUser { email: 'chai@fb.com', password: '123' } ) 
+// mei koi change nahi milega
+// save and run in terminal
+// o/p called
+// createUser { email: 'chai@fb.com', password: '123' }
+
+// ... lekin actually mei aapko object mei koi change nahi milega
+// kyuki ab hume pata lag gayi hai
+// main problem ki call ho raha hai (see o/p -- called)
+// Lekin uske 
+// ( see object in o/p -- createUser { email: 'chai@fb.com', password: '123' } ) 
+// andar jo bhi variables ho rahe hai username etc
+// wo sab hat te hi gayab ho ja rahe hai
+
+// to iske liye kya karna padega
+// usko ( function SetUsername(username){ / function createUser(username, email, password){) 
+// ek reference dena padega ki
+// yar yeh jo aap ( function SetUsername(username){ ) 
+// set kar rahe ho na jitna bhi
+// as follows
+
+// function SetUsername(username){
+//     // complex DB calls
+//     this.username = username
+//     console.log("called");
+// }
+
+// mei 
+
+//     // complex DB calls
+//     this.username = username
+//     console.log("called");
+
+// yeh aap ( function SetUsername(username){ )
+// khud ke this ( this.username = username, mei this ) 
+// mei mat karo
+// kyuki mujhe pata hai har function
+// ka apne aap mei ek this hota hai 
+// uss this ke andar aur bhi values add kari ja sakti hai
+
+// Lekin mai keh raha hu ki yar
+// yeh jo aapka ( function SetUsername(username){ )
+// this ( this.username = username, mei this ) hai na 
+// yeh actually mei gayab ho jayega
+// to isko ( function SetUsername(username){ ke andar this.username = username, mei this )
+// use mat karo
+
+// mai ( function createUser(username, email, password){ )
+// aapko apna this deta hu reference...
+// this kya hai global ek object hi to hai
+// aur hai kya, kabhi browser mei windows ho jata hai,
+// node js mei yeh...
+// (11:38)
+
+// to usko ( function SetUsername(username){ ) 
+// mai ( function createUser(username, email, password){ ) 
+// apna this de deta hu yahan pe
+// to ek kaam karo yeh this le lo aap
+// SetUsername.call(this, username)
+
+
+
+// function SetUsername(username){
+//     // complex DB calls
+//     this.username = username
+//     console.log("called");
+// }
+
+// function createUser(username, email, password){
+//     SetUsername.call(this, username)
+    
+//     this.email = email
+//     this.password = password
+// }
+
+// const chai = new createUser("username", "chai@fb.com", "123")
+// console.log(chai);
+
+// haa ji yeh this ( SetUsername.call(this, username) mei this ) 
+// kya hota hai
+// jab bhi aap call ( ( SetUsername.call(this, username) mei call ) )
+// use karte ho to first parameter (argument)
+// aap this ( SetUsername.call(this, username) mei this ) 
+// optionally chaho to pass kar sakte ho
+
+// jaise hi ab maine usko this diya
+// ( SetUsername.call(this, username) mei this )
+// to wo kya kahega , theek hai baki syntax same rahega as follows
+// ( function SetUsername(username){
+//     // complex DB calls
+//     this.username = username
+//     console.log("called");
+// } )
+
+// Lekin mai ( function SetUsername(username){ )
+// mera this ( this.username = username ) use nahi karunga
+// mai ( function SetUsername(username){ )
+// aapka ( function createUser(username, email, password){ )
+// wala this ( SetUsername.call(this, username) ) use karunga
+// aur this ( SetUsername.call(this, username) ) se kya hai
+// current context mil raha hai
+
+// wo context jaise hi aapko mila 
+// yahan pe ( SetUsername.call(this, username) mei this )
+// 12:01
+// to usne kya kaha ki theek hai
+// ab mai (as follows)
+// ( function SetUsername(username){
+//     // complex DB calls
+//     this.username = username
+//     console.log("called");
+// } )
+// gayab ho jau to ho jau
+
+// but ek tareh se bol gaya ki
+// mere ( function SetUsername(username){ ) 
+// saamaan ab aapke ( function createUser(username, email, password){ ) 
+// hue
+// to mai ( function SetUsername(username){ ) 
+// to chala iss duniya se
+// mere saamaan aap ( function createUser(username, email, password){ ) 
+// rakh lo (12:10)
+
+// theek hai ji to chaliye ab dekhte hai
+// ki kaam hua ki nahi hua
+// to ab isko wapas se run kara ke dekhte hai 
+// save and run
+
+// function SetUsername(username){
+//     // complex DB calls
+//     this.username = username
+//     console.log("called");
+// }
+
+// function createUser(username, email, password){
+//     SetUsername.call(this, username)
+    
+//     this.email = email
+//     this.password = password
+// }
+
+// const chai = new createUser("chai", "chai@fb.com", "123")
+// console.log(chai);
+
+// save and run
+// o/p called
+// createUser { username: 'chai', email: 'chai@fb.com', password: '123' }
+
+// ab run karaya to dekhiye username set ho gaya hai (see o/p -- { username: 'chai')
+// to yeh jo this ki kahani hai na context
+// pas karne ki ( SetUsername.call(this, username) ) 
+// yeh bahut hoti hai
+
+// actually mei bind ki to aur bhi jada kahani
+// hoti thi react ke andar kabhi wo bhi sunayenge
+// aapko fursat ke andar
+// but abhi aapko samajh mei aa gaya hai ki
+// actually mei call humara jo method hai
+// ( SetUsername.call(this, username) )
+
+// kabhi bhi ab aapse interview mei poche
+// ki call ho kya raha hai 
+// to ab aap sirf yeh nahi bologe rata rataya
+// step ki this yeh...
+// call jo hai humara current execution context
+// kisi aur function ko pas kar deta hai
+
+// technically sahi ho, 
+// Lekin jab poora itna example (see entire code)
+// doge achhe se samjhaoge
+// to konsa interview nahi nikalne wala sir aapka
+
+// Class End
