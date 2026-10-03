@@ -29,4 +29,8 @@ const masalaChai = new User("masalaChai")
 
 masalaChai.logMe()
 
-console.log(chai === masalaChai);
+// console.log(chai === masalaChai);
+// console.log(chai === Teacher);
+
+// console.log(chai instanceof Teacher);
+console.log(chai instanceof User);

@@ -576,3 +576,188 @@
 // dono ek nahi hai
 // (17:58)
 
+// theek hai ji aap keh rahe hai to
+// ek nahi honge
+// achha kya yeh jo chai hai
+// chai humne banayi hai Teacher se
+// theek hai ji
+// kya humari chai equal hai iss Teacher ke
+
+// class User {
+//     constructor(username){
+//         this.username = username
+//     }
+
+//     logMe(){
+//         console.log(`USERNAME is ${this.username}`);
+//     }
+// }
+
+// class Teacher extends User{
+//         constructor(username, email, password){
+//             super(username)
+//             this.email = email
+//             this.password = password
+//         }
+
+//         addCourse(){
+//             console.log(`A new course was added by ${this.username}`);
+//         }
+// }
+
+// const chai = new Teacher("chai", "chai@teacher.com", "123")
+
+// // chai.addCourse()
+// chai.logMe()
+
+// const masalaChai = new User("masalaChai")
+
+// masalaChai.logMe()
+
+// // console.log(chai === masalaChai);
+// console.log(chai === Teacher);
+
+
+// yeh bhi pooch hi lete hai
+// save and run
+// o/p USERNAME is chai
+// USERNAME is masalaChai
+// false
+
+// to obvious si baat hai false hai
+// wo bhi equal nahi hai
+// to obvious si baat hai uska (Teacher) 
+// ek instance hoke aya hai (chai)
+// wo exact thodi na leke aya hu
+// to equal to kaise hogi
+
+// Lekin wo aapko check karne ke liye
+// kya usi (Teacher) se yeh (chai) bani hai
+// kya uska (Teacher) instance hai (chai)
+// to ek aapko keyword diya gaya hai directly
+// kya yeh chai instance hai Teacher ka
+// console.log(chai instanceof Teacher);
+
+
+
+
+// class User {
+//     constructor(username){
+//         this.username = username
+//     }
+
+//     logMe(){
+//         console.log(`USERNAME is ${this.username}`);
+//     }
+// }
+
+// class Teacher extends User{
+//         constructor(username, email, password){
+//             super(username)
+//             this.email = email
+//             this.password = password
+//         }
+
+//         addCourse(){
+//             console.log(`A new course was added by ${this.username}`);
+//         }
+// }
+
+// const chai = new Teacher("chai", "chai@teacher.com", "123")
+
+// // chai.addCourse()
+// chai.logMe()
+
+// const masalaChai = new User("masalaChai")
+
+// masalaChai.logMe()
+
+// // console.log(chai === masalaChai);
+// // console.log(chai === Teacher);
+
+// console.log(chai instanceof Teacher);
+
+// o/p USERNAME is chai
+// USERNAME is masalaChai
+// true
+
+// to aap poch sakte hai wahan pe
+// to ab jaise hi mai puchunga usne bola
+// true
+// ha wo (chai) uska (Teacher) instance hai
+
+// ab Teacher bhi to ek instance hi hai
+// kiska instance hai User ka
+// to kya yeh bhi baat sahi hai kya
+// console.log(chai instanceof User);
+
+
+
+// class User {
+//     constructor(username){
+//         this.username = username
+//     }
+
+//     logMe(){
+//         console.log(`USERNAME is ${this.username}`);
+//     }
+// }
+
+// class Teacher extends User{
+//         constructor(username, email, password){
+//             super(username)
+//             this.email = email
+//             this.password = password
+//         }
+
+//         addCourse(){
+//             console.log(`A new course was added by ${this.username}`);
+//         }
+// }
+
+// const chai = new Teacher("chai", "chai@teacher.com", "123")
+
+// // chai.addCourse()
+// chai.logMe()
+
+// const masalaChai = new User("masalaChai")
+
+// masalaChai.logMe()
+
+// // console.log(chai === masalaChai);
+// // console.log(chai === Teacher);
+
+// // console.log(chai instanceof Teacher);
+// console.log(chai instanceof User);
+
+
+// save and run
+// o/p USERNAME is chai
+// USERNAME is masalaChai
+// true
+// to theek hai yeh bhi poch lete hai
+// to haa ji yeh baat bhi sahi hai
+// kyuki actually mei instance (Teacher ka) 
+// fir uska (User) instance 
+// to actually mei hai to wahin se na
+// aa to wahin se raha hai
+
+// to yeh to ho gayi humari basic baat ki
+// theek hai iss tareh se hota hai
+// to aur bhi hum yahan pe aate hai
+// ki aur bhi (19:04)
+// ek aur aapke saath topic
+// discuss kar lete hai
+// ek aur nayi file banate hai
+
+// to yahan pe kuch aapke pas static properties
+// bhi hoti hai
+// static prop bol dete hai
+// make staticprop.js file in 10_classes_and_oop folder
+// properties ko short mei prop
+// bhi bolte hai
+// abhi jab hum js... react etc mei
+// baat karenge tab prop prop bahut bolunga
+// 19:19
+
+// move to file staticprop.js
