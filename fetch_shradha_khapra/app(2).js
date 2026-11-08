@@ -187,6 +187,116 @@
 // yani ek link ke upar request bhej rahe hote hai
 // (5:04)
 
+// to APIs are nothing but endpoints
+// jo humare url endpoints hote hai
+// yani jaise koi link hota hai uske upar
+// humne request bhej di jaise for eg
+// hum google.com par jana chahte hai
+// (google.com in browser search and enter)
+// to jaise hi humne google.com likha (and enter)
+// hum iss page par aa gaye (after enter)
+
+// to humare browser ne kya kiya
+// humare browser ne google.com ko
+// request bheji, 
+// to google ke server ke pas request gayi hogi
+// usne fir response mei hume yeh page bhej diya
+// (jo page google.com and enter ke baad mila hai)
+
+// isi tarike ka system APIs ke saath hota hai ki
+// humare system ko kuch request bhejni padegi
+// API ke endpoint ko aur endpoint yani wo jo link hai (5:32)
+// wo fir hume kuch data return back karke dega
+
+// ab eg ke liye humare pas bahut sari APIs hoti hai
+// maine ek link aapke liye already save karke rakha hai
+// so this is a page jahan pe kaafi sari APIs humare pas
+// available hai
+// https://free-apis.github.io/#/browse
+
+// jaise Anime se related ho gayi (Anime API)
+// Anti-Malware , Computers , Finance
+// bahut sari different different APIs
+// yahan par available hai
+// hum koi bhi ek random API choose kar sakte hai
+
+// so let us go with this Cat Facts API
+// jo hume cats se related facts jo hai
+// wo return karke degi
+// ab yeh jo API hai iska hum github ka
+// page bhi dekh sakte hai (View on Github option pe click kiya, old option)
+// documentation bhi dekh sakte hai
+// scroll down and click on API documentation / Start developing!
+// ( option not available -- so go to -- https://alexwohlbruck.github.io/cat-facts/docs/ for API documentation)
+
+// iss page par hum aa gaye (6:06) ( API documentation )
+// to basically documentation ke andar likha hua hai
+// Base URL for all endpoints https://cat-fact.herokuapp.com
+// yani sare ke sare jo link hai isse ( https://cat-fact.herokuapp.com )
+// shuru honge, to heroku par yeh hosted hai
+// aur endpoint mei hum /facts jab lagayenge (see under Endpoints heading -- /facts)
+// to humare pas cat se related koi random fact ayega (6:19)
+
+// base url yani shuru wala link
+// to yeh humne shuru wala link likha
+// https://cat-fact.herokuapp.com in browser
+// aur /facts jaise hi hum enter karenge
+// https://cat-fact.herokuapp.com/facts in browser
+// vaise hi kya hoga, kuch data humare pas return hokar aya
+// (array uske andar object -- array of objects in black screen)
+// (nahi aya to dusri API try kar lena)
+// 6:28
+
+// ab yeh data (just above) (array uske andar object -- array of objects in black screen)
+// kis form mei hai
+// hum agar thoda sa zoom in karein
+// so this is basically an array
+// yeh array form mei hai kyuki bahar square brackets
+// lage hue hai
+// aur andar kuch objects hai
+
+// par abhi iss data (array of objects in black screen) 
+// ke andar kya hai
+// usse hume jada matlab nahi rakhna
+// hume ek cheej notice karni hai ki
+// haa kuch data (array of objects in black screen)
+// humare pas return hoke aa raha hai
+// jab hum kisko request bhej rahe hai
+// jab hum iss link -- https://cat-fact.herokuapp.com/facts
+// ko request bhej rahe hai
+
+// to yeh -- https://cat-fact.herokuapp.com/facts
+// basically humara API endpoint hai
+// yani humara URL hai
+// jisko hume request bhejni padegi
+// apni API se data wapas lane ke liye
+// 6:54
+
+// ab yeh to hai browser se directly request bhejna
+// (6:57)
+// jab bhi hum apne browser ke upar koi bhi
+// link paste karte hai
+// jaise hum google.com likhte hai
+// amazon.com likhte hai
+// to humara browser automatically request bhej deta hai
+// uss link ke pas uss server ke pas
+
+// ab hum seekh rahe honge
+// ki wo kaam jo browser humare liye karta aa raha tha
+// aaj tak, wo hum apne javascript ke code se kaise kar sakte hai
+// (7:13)
+
+// (dogs api use kar lena as cats api is not working -- base url, endpoints)
+// to uske liye yeh jo link hai ise copy kar lete hai
+// copy this link -- https://cat-fact.herokuapp.com/facts
+// lets go to our code
+// code ke andar humne index.html already banai hui hai
+// humare pas boiler plate code hai
+// jisko humne app.js se connect kiya hai
+// (7:23)
+// yeh humari app.js hai
+// (7:25)
+
 // ============================================================================
 
 
@@ -195,12 +305,13 @@
 // iske andar ek variable bana lete hai URL
 // const URL = https://cat-fact.herokuapp.com/facts
 
-// const URL ke andra humara yeh jo link tha jiske upar
+// const URL ke andar humara yeh jo link tha jiske upar
 // request bhejne se browser ko data mil raha tha
 // usse hum bhi apni javascript ke code ke through
 // data pana chahte hai, to iss link ko hum save kar lete hai
 
 // aur basically jo hume api call karni hai wo iss link ko
+// ( const URL = https://cat-fact.herokuapp.com/facts )
 // hume call karni hai aur wahan se humare pas data ayega
 // 7:43
 
@@ -237,7 +348,7 @@
 // aur isko likhne ka syntax yeh hota hai ki hum fetch method likhte hai
 // --- fetch()
 // aur uske andar apna url likhte hai, url yani apna link
-// aur itna likhne se automatically humara code iss link (url)
+// aur itna likhne se ( fetch(url) ) automatically humara code iss link (url)
 // ke upar ek request bhej deta hai,
 // -- fetch( url )
 
@@ -253,7 +364,7 @@
 // let promise = fetch( url, [options] )
 
 // jinko (promises ko) humne theoritically seekha tha pichle chapter mei
-// ab baat kar rahe honge kaise wo promises actual apis hume
+// ab baat kar rahe honge ki kaise wo promises actual apis hume
 // return kar rahi hoti hai (9:17)
 
 // url ke saath fetch method ke andar kuch kuch options bhi hote hai
@@ -269,7 +380,7 @@
 
 // fetch(URL);
 
-// aur fetch hume kuch value return karega, yeh jo value hai ( fetch(URL) )
+// aur fetch ( fetch(URL); ) hume kuch value return karega, yeh jo value hai ( fetch(URL) )
 // this value is going to be a promise -- let promise = fetch(URL)
 
 // const URL = "https://cat-fact.herokuapp.com/facts"
