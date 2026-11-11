@@ -1,4 +1,8 @@
-const URL = "https://cat-fact.herokuapp.com/facts"
+// const URL = "https://dogapi.dog/api/v2/breeds"
+const URL = "https://jsonplaceholder.typicode.com/users"
 
-let promise = fetch(URL)
-console.log(promise);
+const getFacts = async () => {
+    console.log("getting data .....");
+    let response = await fetch(URL)
+    console.log(response);
+}

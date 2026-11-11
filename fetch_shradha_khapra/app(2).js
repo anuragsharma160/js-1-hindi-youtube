@@ -400,5 +400,175 @@
 // save and see in broser console
 // (koi dusra url le lo)
 
+// refresh in bc
+// refresh kiya to kya print hua , humare liye
+// promise print hua (in bc)
+// dropdown open promise and see in bc
 
+// promise mei shuruaat mei jab 
+// promise print hua tab tak pending tha (see in bc, before dropdown open)
+// par data aa gaya, to matlab promise humara fulfill ho gaya 
+// ( dropdown open promise and see in bc )
 
+// aur response mei humare pas kya aya hai
+// ( dropdown open [[PromiseResult]]: Response )
+// response mei humare pas yeh sari cheejein ayi hai
+// (10:03)
+
+// yani humare pas response ki kuch body ayi hai
+// kuch headers aye hai jinke andar
+// aur information humare pas hogi
+// ( dropdown open headers in [[PromiseResult]]: Response )
+// ( dropdown open [[Prototype]]: Headers in headers in [[PromiseResult]]: Response )
+// status aya hai 200
+// status 200 ka matlab hota hai successful request
+// yani jo data aap chahte the wo aapko return karke mil gaya hai
+
+// statusText mei aya hai OK (mam ke OK aya hai)
+// statusText mei aya hai "" (mam ke OK aya hai)
+// and iss url "https://jsonplaceholder.typicode.com/users" 
+// par basically humne request bheji thi (see in bc)
+
+// iske andar bhi humare pas response hai
+// ( dropdown open [[Prototype]]: Response and see )
+// ( dropdown close )
+// yani kuch theek response humare pas print hokar aya hai
+
+// (code editor mei aa gaye)
+// ab agar hume pata hai ki jab bhi hum promises ( let promise = fetch(URL) )
+// ko use karte hai
+// humare pas multiple tarike hote hai promises se result nikalne ke
+// ek tarika hota hai promise chaining jisme hum
+// .then() .catch() inn sabko use kar rahe hote hai
+
+// par usse bhi ek aur better tarika humne nikala tha
+// which was using async await
+// to hum async await se apni iss API call ko
+// execute kar rahe honge
+
+// ab async await ko use karne ke liye hume ek
+// asynchronous function banana padega
+// iss function ko keh dete hai getFacts
+// kyuki hum cat facts get karne ki koshish kar rahe hai
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+
+// let promise = fetch(URL)
+// console.log(promise);
+
+// const getFacts = () => {
+    
+// }
+
+// aur isi (asynchronous function) ke andar hum apna poora yeh kaam karne wale hai
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+
+// const getFacts = () => {
+//     let promise = fetch(URL)
+//     console.log(promise);
+// }
+
+// aur basically kyuki hum yahan promises ( let promise = fetch(URL) )
+// ke saath deal kar rahe hai
+// to hume async banana padega apne iss function ko
+// to arrow function ko async banane ke liye
+// aage hum async likh dete hai
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+
+// const getFacts = async () => {
+//     let promise = fetch(URL)
+//     console.log(promise);
+// }
+
+// 11:08
+
+// aur kyuki yeh ( let promise = fetch(URL) , mei fetch(URL) ) humara asynchronous kaam hai
+// kisi bhi API ko call karke usse data mangwana
+// asynchronous kaam hai
+// kyuki ho sakta hai API kuch time le data lane mei
+// to iske ( let promise = fetch(URL) , mei fetch(URL) ) 
+// saamne hum likh denge await
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+
+// const getFacts = async () => {
+//     let promise = await fetch(URL)
+//     console.log(promise);
+// }
+
+// kyuki iss kaam ( let promise = await fetch(URL), mei fetch(URL) ) 
+// ko time lag sakta hai
+// aur jab ek bar promise ( let promise = await fetch(URL) )
+// humara resolve ho jayega
+// tabhi hum jo bhi data isne ( let promise = await fetch(URL), mei await fetch(URL) ) 
+// return kiya hoga
+// uss data ko print karwa rahe honge ( console.log(promise); )
+// 11:28
+
+// ab yahan se ( let promise = await fetch(URL) ) jo bhi cheej
+// return hoti hai,
+// use generally hum kya kehte hai programming ke andar
+// use hum apna response kehte hai
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+
+// const getFacts = async () => {
+//     let response = await fetch(URL)
+//     console.log(response);
+// }
+
+// ki humne API ko call lagai ( let response = await fetch(URL), mei await fetch(URL) )
+// aur API ne hume kya bheja API ne hume humara
+// response bheja ( let response = await fetch(URL), mei response )
+// aur uss response ko hum print karwa sakte hai
+// ( console.log(response); )
+
+// in fact yahan (before fetch line) console.log bhi karwa sakte hai
+// getting data .....
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response);
+// }
+
+// save and refresh in bc
+// ab hume getFacts ko call karna padega
+// getFacts() in bc and enter
+// o/p getting data .....
+// Promise {<pending>}
+// aya fir 1 sec pause ke baad
+// Response print hua bc mei
+
+// jaise hi call karenge pehle aya getting data .....
+// and ek cheej notice ki hogi aapne
+// humare liye promise print ho gaya
+// Promise {<pending>} in bc
+// par yeh final data (Response in bc)
+// humare liye print hone mei thoda sa thoda sa (1 sec)
+// delay aya 
+// (12:01)
+
+// yehi delay hota hai jo asynchronous programming chal
+// rahi hai usko dikhata hai
+// refresh karenge in bc
+// lets call getFacts again
+// getsFacts() in bc and enter
+
+// ( o/p getting data .....
+// Promise {<pending>}
+// aya fir 1 sec pause ke baad
+// Response print hua bc mei )
+
+// thoda sa delay aya (0.1 sec)
+// aur fir humare pas yeh cheej (Response in bc)
+// aakar print hui
+// to iss cheej (Response in bc) ke andar
+// dropdown open Response in bc
+// yeh humara proper response hai (from type: 'cors' to [[Prototype]]: Response)
+// jo humari API se humare pas aya hai
+// 12:15
