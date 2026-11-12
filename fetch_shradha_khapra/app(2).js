@@ -568,7 +568,436 @@
 // aur fir humare pas yeh cheej (Response in bc)
 // aakar print hui
 // to iss cheej (Response in bc) ke andar
-// dropdown open Response in bc
+// (dropdown open Response in bc)
 // yeh humara proper response hai (from type: 'cors' to [[Prototype]]: Response)
 // jo humari API se humare pas aya hai
 // 12:15
+
+// (dropdown close Response)
+// and ek aur interesting cheej aapne notice ki hogi
+// ki even though hum apni API ko request bhej rahe hai
+// (code editor mei aa gaye)
+// par data humare pas jo return hokar aa raha hai
+// uski vajeh se humara page reload nahi ho raha
+// (see browser)
+
+// generally nayi jo information aati hai page
+// ke upar wo page ke reload hone ke baad aati hai
+// par jab bhi hum API calls kar rahe hote hai internally
+// to humara page bilkul bhi reload nahi ho raha (see browser)
+// and run time pe sari ki sari information update ho rahi hai
+// 12:36
+
+// (dropdown open Response in bc)
+// yeh jo Response hai , yeh runtime pe update ho raha hai
+// to kuch kuch cheejon ko summarize karte hai
+// basically humne yeh dekha ki
+// fetch API se kaise hum ek request bhej rahe hai
+// aur hume kuch data recieve ho raha hai
+
+// aur iske andar request and response objects ko hum use karte hai
+// to yeh jo cheej yahan par print ho rahi hai (as follows)
+// (let response = await fetch(URL)
+// console.log(response); see code)
+// yeh jo response hai jab hum ise print kar rahe hai
+// (see in bc)
+// yeh Response exactly kya hai (open Response in bc)
+// this Response is an object
+
+// kyuki iske (Response in bc) ke andar prototype bhi hume dikhayi
+// de raha hai
+// ( open [[Prototype]]: Response in Response in bc)
+// yeh Response prototype ke upar based ek object hai
+// jiske andar kaafi sari different different values hai
+// (close dropdown in bc)
+
+// (code editor mei aa gaye)
+// hum chahein to apni yeh jo response hai (as follows)
+// (let response = await fetch(URL)
+// console.log(response); see code)
+// iska status print karwa sakte hai
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response.status);
+// }
+
+// save and refresh in bc
+// getFacts() in bc and enter
+// (o/p getting data .....
+// Promise {<pending>}
+// 200)
+// iss bar sirf response ka status print hoga which is 200
+// yani sari cheejein ok chali gayi
+
+// isi tarike se hum dusri values ko bhi print karwa sakte hai
+// ( console.log(response.status); see code by changing status )
+// so Response is an object
+// to humari API jo calls hai
+// wo request response object ke upar call karti hai
+
+// fetch() method is used to fetch a resource or data
+// aur fetch method ko hum iss tareh se use kar rahe hote hai
+// as follows
+// ( let promise = fetch(url , [options]) )
+
+// ab jab bhi fetch method ko hum use karte hai
+// aur hum koi bhi options use nahi bhejte
+// ( let promise = fetch(url , [options]) )
+// to fetch method ek particular type ki request
+// create karta hai aur iss request ko hum
+// kehte hai humari GET request
+// 13:38
+
+// humare pas request ki terms mei jab bhi
+// hum network request ki baat karte hai yani ki
+// internet ke upar jo bhi hum request bhej rahe hote hai
+// uske andar humare pas different different types hote hai
+// GET request, DELETE request, PUT request
+// bahut sare different different types hote hai
+
+// wo request jo sirf data lane ka kaam karti hai
+// jinka kaam hota hai bas kuch data humare pas kahin
+// se return hoke aa jaye
+// kisi server se return hoke aa jaye
+// kisi API se return hokar aa jaye
+// unn request ko hum GET request kehte hai
+
+// vaise hi ab yahan par (see code till yet)
+// jo humne request bheji hai that is
+// a GET request
+// by default ya maximum time jab hum 
+// fetch API ko use karte hai ,
+// hum GET request ke liye hi use kar rahe hote hai
+
+// ab yahan par kyuki API ko hume kuch data
+// nahi bhejna, 
+// hume simply kya karna hai
+// sirf data recieve karna hai (see code till yet)
+// isiliye yeh request humari GET request ki category mei
+// aati hai (see code till yet)
+// 14:20
+
+// and ek aur interesting cheej yahan par note karne wali
+// hai ki jab hum response ko print karwa rahe hai
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response);
+// }
+
+// if we look at this response
+// bc mei aa gaye
+// getFacts() in bc and enter
+// ( getting data .....
+// Promise {<pending>}
+// Response {type: 'cors', url: 'https://jsonplaceholder.typicode.com/users', redirected: false, status: 200, ok: true, …} )
+
+// open Response in bc
+// this is (after open Response in bc) not an accurate response
+// humare pas Response mei hum expect kya kar rahe the
+// hum expect kar rahe the ki
+// iss tarike ka humare pas kuch ayega (as follows)
+
+// [
+//   {
+//     "id": 1,
+//     "name": "Leanne Graham",
+//     "username": "Bret",
+//     "email": "Sincere@april.biz",
+//     "address": {
+//       "street": "Kulas Light",
+//       "suite": "Apt. 556",
+//       "city": "Gwenborough",
+//       "zipcode": "92998-3874",
+//       "geo": {
+//         "lat": "-37.3159",
+//         "lng": "81.1496"
+//       }
+//     },
+//     "phone": "1-770-736-8031 x56442",
+//     "website": "hildegard.org",
+//     "company": {
+//       "name": "Romaguera-Crona",
+//       "catchPhrase": "Multi-layered client-server neural-net",
+//       "bs": "harness real-time e-markets"
+//     }
+//   },
+//   {
+//     "id": 2,
+//     "name": "Ervin Howell",
+//     "username": "Antonette",
+//     "email": "Shanna@melissa.tv",
+//     "address": {
+//       "street": "Victor Plains",
+//       "suite": "Suite 879",
+//       "city": "Wisokyburgh",
+//       "zipcode": "90566-7771",
+//       "geo": {
+//         "lat": "-43.9509",
+//         "lng": "-34.4618"
+//       }
+//     },
+//     "phone": "010-692-6593 x09125",
+//     "website": "anastasia.net",
+//     "company": {
+//       "name": "Deckow-Crist",
+//       "catchPhrase": "Proactive didactic contingency",
+//       "bs": "synergize scalable supply-chains"
+//     }
+//   },
+//   {
+//     "id": 3,
+//     "name": "Clementine Bauch",
+//     "username": "Samantha",
+//     "email": "Nathan@yesenia.net",
+//     "address": {
+//       "street": "Douglas Extension",
+//       "suite": "Suite 847",
+//       "city": "McKenziehaven",
+//       "zipcode": "59590-4157",
+//       "geo": {
+//         "lat": "-68.6102",
+//         "lng": "-47.0653"
+//       }
+//     },
+//     "phone": "1-463-123-4447",
+//     "website": "ramiro.info",
+//     "company": {
+//       "name": "Romaguera-Jacobson",
+//       "catchPhrase": "Face to face bifurcated interface",
+//       "bs": "e-enable strategic applications"
+//     }
+//   },
+//   {
+//     "id": 4,
+//     "name": "Patricia Lebsack",
+//     "username": "Karianne",
+//     "email": "Julianne.OConner@kory.org",
+//     "address": {
+//       "street": "Hoeger Mall",
+//       "suite": "Apt. 692",
+//       "city": "South Elvis",
+//       "zipcode": "53919-4257",
+//       "geo": {
+//         "lat": "29.4572",
+//         "lng": "-164.2990"
+//       }
+//     },
+//     "phone": "493-170-9623 x156",
+//     "website": "kale.biz",
+//     "company": {
+//       "name": "Robel-Corkery",
+//       "catchPhrase": "Multi-tiered zero tolerance productivity",
+//       "bs": "transition cutting-edge web services"
+//     }
+//   },
+//   {
+//     "id": 5,
+//     "name": "Chelsey Dietrich",
+//     "username": "Kamren",
+//     "email": "Lucio_Hettinger@annie.ca",
+//     "address": {
+//       "street": "Skiles Walks",
+//       "suite": "Suite 351",
+//       "city": "Roscoeview",
+//       "zipcode": "33263",
+//       "geo": {
+//         "lat": "-31.8129",
+//         "lng": "62.5342"
+//       }
+//     },
+//     "phone": "(254)954-1289",
+//     "website": "demarco.info",
+//     "company": {
+//       "name": "Keebler LLC",
+//       "catchPhrase": "User-centric fault-tolerant solution",
+//       "bs": "revolutionize end-to-end systems"
+//     }
+//   },
+//   {
+//     "id": 6,
+//     "name": "Mrs. Dennis Schulist",
+//     "username": "Leopoldo_Corkery",
+//     "email": "Karley_Dach@jasper.info",
+//     "address": {
+//       "street": "Norberto Crossing",
+//       "suite": "Apt. 950",
+//       "city": "South Christy",
+//       "zipcode": "23505-1337",
+//       "geo": {
+//         "lat": "-71.4197",
+//         "lng": "71.7478"
+//       }
+//     },
+//     "phone": "1-477-935-8478 x6430",
+//     "website": "ola.org",
+//     "company": {
+//       "name": "Considine-Lockman",
+//       "catchPhrase": "Synchronised bottom-line interface",
+//       "bs": "e-enable innovative applications"
+//     }
+//   },
+//   {
+//     "id": 7,
+//     "name": "Kurtis Weissnat",
+//     "username": "Elwyn.Skiles",
+//     "email": "Telly.Hoeger@billy.biz",
+//     "address": {
+//       "street": "Rex Trail",
+//       "suite": "Suite 280",
+//       "city": "Howemouth",
+//       "zipcode": "58804-1099",
+//       "geo": {
+//         "lat": "24.8918",
+//         "lng": "21.8984"
+//       }
+//     },
+//     "phone": "210.067.6132",
+//     "website": "elvis.io",
+//     "company": {
+//       "name": "Johns Group",
+//       "catchPhrase": "Configurable multimedia task-force",
+//       "bs": "generate enterprise e-tailers"
+//     }
+//   },
+//   {
+//     "id": 8,
+//     "name": "Nicholas Runolfsdottir V",
+//     "username": "Maxime_Nienow",
+//     "email": "Sherwood@rosamond.me",
+//     "address": {
+//       "street": "Ellsworth Summit",
+//       "suite": "Suite 729",
+//       "city": "Aliyaview",
+//       "zipcode": "45169",
+//       "geo": {
+//         "lat": "-14.3990",
+//         "lng": "-120.7677"
+//       }
+//     },
+//     "phone": "586.493.6943 x140",
+//     "website": "jacynthe.com",
+//     "company": {
+//       "name": "Abernathy Group",
+//       "catchPhrase": "Implemented secondary concept",
+//       "bs": "e-enable extensible e-tailers"
+//     }
+//   },
+//   {
+//     "id": 9,
+//     "name": "Glenna Reichert",
+//     "username": "Delphine",
+//     "email": "Chaim_McDermott@dana.io",
+//     "address": {
+//       "street": "Dayna Park",
+//       "suite": "Suite 449",
+//       "city": "Bartholomebury",
+//       "zipcode": "76495-3109",
+//       "geo": {
+//         "lat": "24.6463",
+//         "lng": "-168.8889"
+//       }
+//     },
+//     "phone": "(775)976-6794 x41206",
+//     "website": "conrad.com",
+//     "company": {
+//       "name": "Yost and Sons",
+//       "catchPhrase": "Switchable contextually-based project",
+//       "bs": "aggregate real-time technologies"
+//     }
+//   },
+//   {
+//     "id": 10,
+//     "name": "Clementina DuBuque",
+//     "username": "Moriah.Stanton",
+//     "email": "Rey.Padberg@karina.biz",
+//     "address": {
+//       "street": "Kattie Turnpike",
+//       "suite": "Suite 198",
+//       "city": "Lebsackbury",
+//       "zipcode": "31428-2261",
+//       "geo": {
+//         "lat": "-38.2386",
+//         "lng": "57.2232"
+//       }
+//     },
+//     "phone": "024-648-3804",
+//     "website": "ambrose.net",
+//     "company": {
+//       "name": "Hoeger LLC",
+//       "catchPhrase": "Centralized empowering task-force",
+//       "bs": "target end-to-end models"
+//     }
+//   }
+// ]
+
+// 14:37
+
+// yani jab humara browser request bhej raha hai
+// browser bhi GET request hi bhej raha hai
+// yahan par (browser mei) jab hum normally koi bhi link paste karte hai
+// browser ke andar, to by default GET request jati hai
+
+// to browser jab GET request bhej raha hai
+// to uske pas yeh sab (array of objects) aa raha hai
+// haa browser ke pas bhi status hai (use another api)
+// (14:49)
+// browser ke pass bhi dusri cheejein hai
+// par yeh (browser) yeh (array of objects) print karwa raha hai
+
+// par hume jo Response mil raha hai (see in bc, open Response)
+// that is something like this (as shown in bc, open Response)
+// ab isme se (as shown in bc, open Response)
+// cat facts yani jo data hume actually chahiye tha
+// wo hume dikhayi nahi de raha
+
+// to basically yeh data isliye dikhayi nahi de raha (as shown in bc, open Response)
+// kyuki yeh data (as shown in bc, open Response)
+// ek alag format mei hai
+// jisko hum abhi read nahi kar paa rahe
+// 15:05
+
+// ab iss cheej ko samajhne ke liye
+// hume kuch terms ko samajhna padega
+// sabse pehli term jisko hum samajhne wale hai
+// i understand ki yeh terms AJAX ho gaya
+// JSON ho gaya
+// yeh terms bahut difficult lagti hai shuruaat mei
+// dekhne mei par inke matlab bahut aasaan hai
+
+// ek bar humne yeh dekh liya ki haa iss term ka yeh matlab
+// hai to bahut easy hoga humare liye remember karna
+// kuch terms ko hum samjhenge aur fir
+// jaanenge ki hum jo response print karwa rahe hai (in bc)
+// wo sahi kyu nahi print hokar aa raha
+
+// sabse pehli term hai humare pas AJAX
+// AJAX ka matlab hota hai
+// AJAX is asynchronous javascript and XML
+// AJAX is Asynchronous JS and XML
+// pehle jamaane mei yani pehle jab
+// humare pas modern js nahi hoti thi
+// kaafi sare concepts nahi hote the
+// to pehle network request kaise jati thi
+
+// network request yani jaise abhi humne apni
+// API ko request bheji hai
+// pehle humare pas agar koi data aana hota tha
+// to wo XML files ki form mei humare pas aa raha hota tha
+// yani pehle agar hum kisi API ko
+// request bhejte to jo data ka
+// format hota wo XML hota tha
+// 15:56
+
+// par aaj ki date mei XML bahut kum (less)
+// hota hai data ka format
+// generally jo humara data
+// aata hai wo JSON format mei aata hai
+// 16:03
