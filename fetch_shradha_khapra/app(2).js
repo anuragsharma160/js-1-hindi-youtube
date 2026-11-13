@@ -1001,3 +1001,134 @@
 // generally jo humara data
 // aata hai wo JSON format mei aata hai
 // 16:03
+
+// ab yahan data format kehne ka kya matlab hai
+// jaise for eg aapka ek dost hai
+// aap apne dost ko kuch bhi money send karna chahte ho
+// to money ko aap different different formats
+// ke andar send kar sakte ho
+// aap chaho to apne dost ko cash bhi de sakte ho
+// use aap chaho to directly net banking se paise
+// transfer kar sakte hai
+// nahi to hum chahein to UPI bhi kar sakte hai
+
+// to at the end ja to wo hi data raha hai
+// ja to money hi raha hai
+// but wo different different formats ke andar
+// ja raha hai
+
+// to formats alag ho gaye to uss data ke saath deal karne
+// ki technique bhi alag ho jayegi
+// agar directly cash diya hai
+// to use wo directly use kar payenge
+// agar UPI diya hai aur dost
+// ko cash chahiye to unhe jakar kahin se
+// ATM se uss cheej ko withdraw karna padega
+
+// to iss tarike se data ka format change ho jata hai
+// par at the end data wahi jata hai
+// pehle data jata tha XML format mei
+// aajkal data jata hai JSON format mei
+// ab JSON format ka kya matlab hai
+// JSON is javascript object notation
+
+// yani jo data ja raha hoga
+// wo javascript objects jaisa hume dikhayi dega
+// isiliye iska naam JSON hota hai
+// to humare code mei (see code)
+// yeh jo response humare pas ( console.log(response) )
+// aa raha hai (see bc Response)
+// yeh kis format mei hai
+// yeh JSON  format mei hai
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response); // JSON format
+// }
+
+// JSON format js object jaisa format hota hai
+// yani yeh jo cheej yahan par print hoke aa rahi hai
+// (open bc Response)
+// yeh humari js object jaisa format hai
+// but this is (Response in bc) not js object
+// bas yeh uss jaisa dikhayi deta hai
+// (17:13)
+
+// ab as a js developer kyuki hum js ke saath
+// already deal kar rahe the hume already js aati hai
+// to humare liye JSON data ko parse karna
+// uske saath deal karna kaafi aasaan hota hai
+// as compared to XML data
+
+// nahi to hume XML bhi alag se jaake seekhni padti
+// par aaj ki date mei sirf JSON ke andar hi hota hai 
+// (data JSON ke andar hi hota hai)
+// to XML ko hume seekhne ki jarurat nahi padti
+// to aajkal jo maximum APIs use kar rahe hote hai
+// wo kyuki JSON format ke andar data return karti hai
+// to unn APIs ko hum AJAJ bhi keh sakte hai
+
+// to AJAJ kehne ka basic matlab hoga
+// Asynchronous Javascript And JSON ( AJAJ )
+// kyuki XML ko JSON ne replace kar liya hai
+// but AJAJ kyuki sunnne mei bahut weird lagta hai
+// to it is not really a very popular term
+// hum aaj bhi jo humara exchange hota hai
+// network request jati hai
+// response aata hai use aaj bhi hum AJAX hi kehte hai
+// (18:00)
+// ( kehna AJAJ chahiye )
+
+// even though XML ki jagah humare pas JSON aa gaya hai
+// par agar aap word sunte hai AJAX
+// to uska matlab yeh hi hai
+// ki hum API calls jo humne karke dekha abhi fetch API se
+// isi ki hum baat kar rahe hai
+// hum network pe kuch request bhejein
+// aur humare pas kahin se kuch response aa raha hai
+// and that is using AJAX (AJAJ)
+// (18:15)
+
+// ab humara API ko call karne ka process kaise work karta hai
+// sabse pehle humari API ko jaise hi humne request bheji
+// humare pas kuch Response aata hai
+// aur yeh jo Response hota hai yeh JSON format ke andar hota hai
+// 1. Response (JSON)
+// hume ise JSON format se js object ke andar convert
+// karna padta hai
+// to yeh humara second step hota hai
+// 2. JS object
+// jab hum iss response ko ek usable format ke andar
+// convert karenge
+
+// ab wo convert karne ke liye hum ek special method
+// use karte hai which is called JSON method
+// ab yeh jo JSON method hai yeh bhi ek asynchronous method hota hai
+// jaise fetch API ka jab hum fetch method use kar rahe hai
+// fetch method asynchronous hota hai
+// promise return karta hai
+
+// vaise hi JSON method bhi asynchronous method hota hai
+// promise return karta hai (18:54)
+// to it ( json() method ) returns a second promise
+// already response aa gaya fetch se (1. Response (JSON) ) 
+// fetch ne first promise return kiya
+
+// .json() ( json() method ) kya karega
+// second promise return karega
+// that ( second promise ) resolves with the result
+// of parsing the response (1. Response (JSON) ) body text as JSON
+// (Input is JSON, output is JS object)
+// 19:08
+
+// yani hum iss json() method ko input mei JSON dete hai (1. Response (JSON) )
+// aur yeh output mei hume javascript object 
+// yani usable data return karke deta hai
+
+// to json() method se hum apna actual usable
+// data nikalte hai Response object (bc Response) ke through
+// to ise ( json() method ) use karne ke liye
+// what we can do is (19:22)
