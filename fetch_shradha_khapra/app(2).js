@@ -1132,3 +1132,380 @@
 // data nikalte hai Response object (bc Response) ke through
 // to ise ( json() method ) use karne ke liye
 // what we can do is (19:22)
+// ( code editor mei aa gaye )
+// hum apne jo bhi humara response hota hai
+// ( response likh liya )
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response); // JSON format
+//     response
+// }
+
+// ... hum apne jo bhi humara response hota hai
+// ( response likh liya )
+// uske ( response likha ) upar dot json()
+// ko call lagate hai
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response); // JSON format
+//     response.json()
+// }
+
+// aur kyuki dot json() ( response.json() )
+// humare pas asynchronous hai
+// to ise ( response.json() ) hum kya karenge 
+// ise bhi hum await karenge
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response); // JSON format
+//     await response.json()
+// }
+
+// aur isse ( await response.json() )
+// jo bhi data return hokar ayega
+// use hum yahan par save karwa lenge
+// ( let data = await response.json() )
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response); // JSON format
+//     let data = await response.json()
+// }
+
+// aur ab finally hum console.log
+// karke print karwa sakte hai apne
+// data ko
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response); // JSON format
+//     let data = await response.json()
+//     console.log(data);
+// }
+
+// aur yeh jo data hoga ( console.log(data) , mei data )
+// yeh humara usable data hoga
+// (19:45)
+
+// to response.json() , .json() kya karta hai
+// second promise return karta hai
+// isiliye hum yahan par await ko use karte hai
+// ( let data = await response.json() )
+
+// isko save and refresh in bc
+// getFacts() in bc and enter
+// ( getting data .....
+// Promise {<pending>}
+// Response {type: 'cors', url: 'https://jsonplaceholder.typicode.com/users', redirected: false, status: 200, ok: true, …}
+// (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}] )
+
+// sabse pehle humare pas first data aya
+// ( Response in bc )
+// ( open Response in bc )
+// yeh first data ( Response in bc )
+// kya hai yeh humara response hai (console.log(response), see code)
+// iss Response se ( Response in bc )
+// humne usable data ( array of objects in bc ) nikala
+// ( open array of objects )
+
+// yeh ( array of objects in bc ) humara usable data hai
+// usable data ( array of objects in bc )
+// mei kya hai ek array hai ( array of objects in bc )
+// jiska size hai equal to 5 ( mam ka 5 hai, humara 10 hai , different API)
+// ( open array of objects )
+// yani length hai equal to 5 ( 10 )
+
+// aur iske ( array of objects in bc )
+// andar per index jake ( open 0 in bc in array of objects in bc )
+// hum kuch kuch data jo hai
+// usko retrieve kar sakte hai
+// (20:13)
+// (close all dropdowns in bc)
+
+// jaise hum data zero ko print karwana chahein
+// data[0] in bc and enter
+// ( Uncaught ReferenceError: data is not defined
+//     at <anonymous>:1:1 )
+// ( error aya isliye code editor mei aa gaye )
+// ok uske liye ( data[0] ) hume ise data ( let data = await response.json() ) 
+// ko global banana padega
+
+// to what we can do is
+// yahin se (console.log(data)) 
+// hum apne data of zero ko print karwa sakte hai
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response); // JSON format
+//     let data = await response.json()
+//     console.log(data[0]);
+// }
+
+// save and refresh in bc
+// lets call getFacts() and enter in bc
+// ( getting data .....
+// Promise {<pending>}
+// Response {type: 'cors', url: 'https://jsonplaceholder.typicode.com/users', redirected: false, status: 200, ok: true, …}
+// {id: 1, name: 'Leanne Graham', username: 'Bret', email: 'Sincere@april.biz', address: {…}, …} )
+
+// getFacts() se yeh humara data of zero aa gaya
+// ( {id: 1, name: 'Leanne Graham', username: 'Bret', email: 'Sincere@april.biz', address: {…}, …} ) in bc )
+// ( open {id: 1, name: 'Leanne Graham', username: 'Bret', email: 'Sincere@april.biz', address: {…}, …} ) in bc )
+
+// ab data of zero ke andar bahut sari information hai
+// ( open {id: 1, name: 'Leanne Graham', username: 'Bret', email: 'Sincere@april.biz', address: {…}, …} ) in bc )
+// hume yeh text chahiye (mam ke mei hai humare mei nahi, different API)
+// yeh text kya hai 
+// yeh hai cats se related fact
+// to dot text if i do
+// (console.log(data[0].text);)
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response); // JSON format
+//     let data = await response.json()
+//     console.log(data[0].name);
+// }
+
+// save and refresh in bc
+// getFacts() in bc and enter
+// ( getting data .....
+// Promise {<pending>}
+// Response {type: 'cors', url: 'https://jsonplaceholder.typicode.com/users', redirected: false, status: 200, ok: true, …}
+// Leanne Graham )
+
+// Leanne Graham 
+// to yeh fact (cat fact) (name) aa gaya
+// which is related to cats
+// this ( Leanne Graham ) was the actual data
+// that we required from the API
+
+// ab humne to API ke andar jake
+// cat related , dog related
+// koi facts store nahi kiye
+// (20:54)
+
+// aise hi joke se related
+// bahut sari APIs hoti hai jo hume
+// joke return karti hai
+// random joke hum generate karwa sakte hai
+
+// to iss tarike ka data hai (see in bc)
+// jo humari APIs se return hokar aata hai
+// aur ab iss data ko hum use kar sakte hai
+// hum chahein to ise apne html page ke andar 
+// print karwa sakte hai
+
+// ( code editor mei aa gaye in index.html )
+// jaise for eg i can connect it to some random paragraph
+// p tag in index.html just above script tag
+// isko id de dete hai class ki
+// aur class nahi isko hum fact ki id de dete hai
+
+
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title>API Calls</title>
+//     <!-- <link rel="stylesheet" href="style.css"> -->
+// </head>
+// <body>
+//     <p id="fact"></p>
+//     <script src="app.js"></script>
+// </body>
+// </html>
+
+// ( app.js mei aa gaye )
+// and yahan par (below const URL)
+// hum likh sakte hai const factPara =
+// const factPara = document.querySelector("")
+// aur iske andar hum fact ko use kar lenge
+// const factPara = document.querySelector("#fact")
+
+
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+// const factPara = document.querySelector("#fact")
+
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response); // JSON format
+//     let data = await response.json()
+//     console.log(data[0].name);
+// }
+
+
+// aur jaise hi humare pas yeh text aa jayega ( console.log(data[0].name); , mei name, mam ka text )
+// hum kya karne wale hai
+// ( backspace console.log(data[0].name); )
+// factPara ke andar
+// factPara
+// dot innerText
+// factPara.innerText
+// innerText ko set kar denge to this value ( data[0].name); )
+// factPara.innerText = data[0].name);
+
+
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+// const factPara = document.querySelector("#fact")
+
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response); // JSON format
+//     let data = await response.json()
+//     factPara.innerText = data[0].name
+// }
+
+
+// save and refresh in bc
+// jaise hi getFacts ko call lagayenge
+// getFacts() in bc and enter
+// getting data .....
+// Promise {<pending>}
+// Response {type: 'cors', url: 'https://jsonplaceholder.typicode.com/users', redirected: false, status: 200, ok: true, …}
+// Leanne Graham in webpage
+
+// to humare pas kya aa gaya (in webpage)
+// cat related ek random fact (name Leanne Graham)
+// humare pas print hokar aa gaya
+// (21:56)
+
+// ( index.html mei aa gaye )
+// ab hum chahein to ek button bhi yahan par create kar sakte hai
+// jaise for eg if i create a button
+// ek button create kar dete hai (just above p tag)
+// button tag
+// and ise id de dete hai
+// lets give it an id of btn
+// write text -- Get a Fact , inside button tag
+
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title>API Calls</title>
+//     <!-- <link rel="stylesheet" href="style.css"> -->
+// </head>
+// <body>
+//     <button id="btn">Get a Fact</button>
+//     <p id="fact"></p>
+//     <script src="app.js"></script>
+// </body>
+// </html>
+
+// (app.js mei aa gaye)
+// to iss button ko yahan par access kar sakte hai (using DOM methods)
+// id humare pas ho jayegi btn
+// const btn = document.querySelector("#btn")
+
+
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+// const factPara = document.querySelector("#fact")
+// const btn = document.querySelector("#btn")
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response); // JSON format
+//     let data = await response.json()
+//     factPara.innerText = data[0].name
+// }
+
+// and iss button ke upar ek event listener add kar dete hai
+// btn.addEventListener()
+// ki jaise hi button ko click kiya jaye
+// btn.addEventListener("click")
+// vaise hi kya hona chahiye
+// vaise hi humara yeh jo getFacts wala function hai
+// yeh run hona chahiye (callBack function ka reference)
+// btn.addEventListener("click", getFacts)
+
+// aur jaise hi getFacts run hoga
+// vaise hi kya hoga humare liye kuch data aa jayega (see getFacts code)
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+// const factPara = document.querySelector("#fact")
+// const btn = document.querySelector("#btn")
+
+// btn.addEventListener("click", getFacts)
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response); // JSON format
+//     let data = await response.json()
+//     factPara.innerText = data[0].name
+// }
+
+
+// isko save kar lete hai refresh in bc
+// ( app.js:6 Uncaught ReferenceError: Cannot access 'getFacts' before initialization )
+// getFacts ko hume upar add karna padega basically
+// (getFacts yani function ki definition ko function ke execution call se pehle rakhna padega)
+// to yeh jo event listener hai ise neeche add kar dete hai
+
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+// const factPara = document.querySelector("#fact")
+// const btn = document.querySelector("#btn")
+
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response); // JSON format
+//     let data = await response.json()
+//     factPara.innerText = data[0].name
+// }
+
+// btn.addEventListener("click", getFacts)
+
+// save and refresh in bc
+// ab apne html par aate hai
+// (webpage par aate hai)
+// jaise hi iss button ko click karenge
+// Click on -- Get a Fact
+// ( getting data .....
+// app.js:10 
+// Response {type: 'cors', url: 'https://jsonplaceholder.typicode.com/users', redirected: false, status: 200, ok: true, …}
+// Leanne Graham in webpage )
+
+// vaise hi internally get fact ho raha hai
+// wait kar raha hai wo fact ka (see bc)
+// aur ek dum se jaise hi API call successful ho gayi 
+// humare page ke upar humare pas yeh information 
+// ( Leanne Graham in webpage ) print hokar aa gayi
+// 22:56
