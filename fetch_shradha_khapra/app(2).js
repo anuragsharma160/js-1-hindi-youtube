@@ -1496,7 +1496,7 @@
 // save and refresh in bc
 // ab apne html par aate hai
 // (webpage par aate hai)
-// jaise hi iss button ko click karenge
+// jaise hi iss button ko hum click karenge
 // Click on -- Get a Fact
 // ( getting data .....
 // app.js:10 
@@ -1509,3 +1509,501 @@
 // humare page ke upar humare pas yeh information 
 // ( Leanne Graham in webpage ) print hokar aa gayi
 // 22:56
+
+// (code editor mei aa gaye)
+// hum chahte to data of one ko bhi print karwa sakte the
+// factPara.innerText = data[1].name
+// kyuki humare pas 5 ( 10 ) facts aa rahe hai cat related
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+// const factPara = document.querySelector("#fact")
+// const btn = document.querySelector("#btn")
+
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response); // JSON format
+//     let data = await response.json()
+//     factPara.innerText = data[1].name
+// }
+
+// btn.addEventListener("click", getFacts)
+
+// save and refresh in bc
+// click on -- Get a Fact button in browser
+// Get a Fact ko call lagaya (click kiya)
+// ( getting data ..... 
+// Response {type: 'cors', url: 'https://jsonplaceholder.typicode.com/users', redirected: false, status: 200, ok: true, …}
+// Ervin Howell in webpage )
+// wait kiya aur fir humare pas cat se related (mam ke)
+// ek aur random fact aa gaya ( Ervin Howell in webpage )
+
+// hum chahein to data of 2 bhi print karwa sakte hai
+// factPara.innerText = data[2].name
+
+
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+// const factPara = document.querySelector("#fact")
+// const btn = document.querySelector("#btn")
+
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response); // JSON format
+//     let data = await response.json()
+//     factPara.innerText = data[2].name
+// }
+
+// btn.addEventListener("click", getFacts)
+
+// save and refresh in bc
+// click on Get a Fact button in browser
+// Get a Fact ko click kiya
+// ( getting data .....
+// Response {type: 'cors', url: 'https://jsonplaceholder.typicode.com/users', redirected: false, status: 200, ok: true, …}
+// Clementine Bauch in webpage )
+
+// jaise hi aya humare pas fact ( Clementine Bauch in webpage )
+// to wo fact humare screen ke upar
+// print hokar aa gaya ( Clementine Bauch in webpage )
+
+// to iss tarike se APIs ko hum 
+// call karte hai using fetch API
+// ( let response = await fetch(URL) )
+// fetch API kya karti hai
+// humare liye kuch data lekar aati hai
+// ab yeh data readable format mei nahi hai
+// ( console.log(response); // JSON format )
+
+// isko ( console.log(response); // JSON format )
+// readable karne ke liye .json() method ko hum call lagate hai
+// ( let data = await response.json() )
+// wo ( .json() method ) ise ( console.log(response); // JSON format , mei response ko )
+// readable banata hai
+// jisko ( readable format yani js object ko )
+// hum use kar sakte hai
+// ( factPara.innerText = data[2].name )
+
+// use karne ka matlab hai
+// apne kisi html element ke upar use ( readable format yani js object ko )
+// hum paste kar sakte hai
+// yani innerText ke andar
+// innerHtml ke andar dikha sakte hai
+// ( factPara.innerText = data[2].name )
+
+// wahi same kaam humne kar liya
+// to iss tarike se humari API calls
+// kaam karti hai js ke andar
+
+// ab yeh jo sara kaam jo humne async await se kiya (see code)
+// isi sare kaam ko hum promise chaining
+// se bhi kar sakte the ( .then() .catch() )
+// yani simply what we could have done is
+// ( 23:51 )
+
+// yahan pe ( below getFacts arrow function ) 
+// ek aur function bana lete hai
+// lets make getFacts ya ise function bana dete hai
+// function getFacts(){}
+// aur iss wale ( getFacts arrow function ) 
+// ko comment out kar dete hai
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+// const factPara = document.querySelector("#fact")
+// const btn = document.querySelector("#btn")
+
+
+// // const getFacts = async () => {
+// //     console.log("getting data .....");
+// //     let response = await fetch(URL)
+// //     console.log(response); // JSON format
+// //     let data = await response.json()
+// //     factPara.innerText = data[2].name
+// // }
+
+// function getFacts(){
+    
+// }
+
+// btn.addEventListener("click", getFacts)
+
+// yahi same kaam promise chain ( .then() .catch() ) 
+// se karte to kya hota
+// sabse pehle hume fetch API ko call karni hoti
+// using URL
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+// const factPara = document.querySelector("#fact")
+// const btn = document.querySelector("#btn")
+
+
+// // const getFacts = async () => {
+// //     console.log("getting data .....");
+// //     let response = await fetch(URL)
+// //     console.log(response); // JSON format
+// //     let data = await response.json()
+// //     factPara.innerText = data[2].name
+// // }
+
+// function getFacts(){
+//     fetch(URL)
+// }
+
+// btn.addEventListener("click", getFacts)
+
+// ab yeh fetch API ( fetch(URL) )
+// hume kuch response return karke deti
+// ( response yani promise )
+// (24:15)
+// to .then() iske ( fetch(URL) )
+// upar hum laga rahe hote
+
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+// const factPara = document.querySelector("#fact")
+// const btn = document.querySelector("#btn")
+
+
+// // const getFacts = async () => {
+// //     console.log("getting data .....");
+// //     let response = await fetch(URL)
+// //     console.log(response); // JSON format
+// //     let data = await response.json()
+// //     factPara.innerText = data[2].name
+// // }
+
+// function getFacts(){
+//     fetch(URL).then()
+// }
+
+// btn.addEventListener("click", getFacts)
+
+
+
+// aur .then() mei humare pas kuch result aata
+// ( .then() ke andar callBack function
+// & callBack function ke parameter mei result recieve hota )
+
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+// const factPara = document.querySelector("#fact")
+// const btn = document.querySelector("#btn")
+
+
+// // const getFacts = async () => {
+// //     console.log("getting data .....");
+// //     let response = await fetch(URL)
+// //     console.log(response); // JSON format
+// //     let data = await response.json()
+// //     factPara.innerText = data[2].name
+// // }
+
+// function getFacts(){
+//     fetch(URL).then(() => {
+        
+//     })
+// }
+
+// btn.addEventListener("click", getFacts)
+
+// lets call it result -- res
+// or we can call it response
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+// const factPara = document.querySelector("#fact")
+// const btn = document.querySelector("#btn")
+
+
+// // const getFacts = async () => {
+// //     console.log("getting data .....");
+// //     let response = await fetch(URL)
+// //     console.log(response); // JSON format
+// //     let data = await response.json()
+// //     factPara.innerText = data[2].name
+// // }
+
+// function getFacts(){
+//     fetch(URL).then((response) => {
+
+//     })
+// }
+
+// btn.addEventListener("click", getFacts) 
+
+// yeh jo humare pas response aata
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+// const factPara = document.querySelector("#fact")
+// const btn = document.querySelector("#btn")
+
+
+// // const getFacts = async () => {
+// //     console.log("getting data .....");
+// //     let response = await fetch(URL)
+// //     console.log(response); // JSON format
+// //     let data = await response.json()
+// //     factPara.innerText = data[2].name
+// // }
+
+// function getFacts(){
+//     fetch(URL).then((response) => {
+//         response
+//     })
+// }
+
+// btn.addEventListener("click", getFacts)
+
+// iss response ( jo .then ke andar likha hai )
+// ke upar hume kya karna padta
+// iss response ko hume dubara se
+// parse karna padta
+
+// parse karne ka matlab hai 
+// data ka format change karna
+// jaise UPI se cash mei convert kar sakte hai
+// cash se debit ke andar convert kar sakte hai
+// vaise hi hum yahan (.then ke andar response)
+// data ka format change karte
+
+// yeh jo humara response hai (.then ke andar ka response)
+// kyuki yeh (.then ke andar ka response) JSON format mei hai
+// to yeh jo .then() hai
+// chaining ke liye
+// yeh ( 1st .then() ) 
+// return karega response.json() ko
+// 24:48
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+// const factPara = document.querySelector("#fact")
+// const btn = document.querySelector("#btn")
+
+
+// // const getFacts = async () => {
+// //     console.log("getting data .....");
+// //     let response = await fetch(URL)
+// //     console.log(response); // JSON format
+// //     let data = await response.json()
+// //     factPara.innerText = data[2].name
+// // }
+
+// function getFacts(){
+//     fetch(URL).then((response) => {
+//         return response.json()
+//     })
+// }
+
+// btn.addEventListener("click", getFacts)
+
+// aur jaise hi response.json() return hoga
+// yahan pe (1st .then() ke baad)
+// ek aur .then() lagaya jayega
+// jiske andar final data 
+// humare pas return hokar ayega
+// ( response.json() ko data bol diya 2nd .then ke callBack function ke parameter mei )
+// 24:55
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+// const factPara = document.querySelector("#fact")
+// const btn = document.querySelector("#btn")
+
+
+// // const getFacts = async () => {
+// //     console.log("getting data .....");
+// //     let response = await fetch(URL)
+// //     console.log(response); // JSON format
+// //     let data = await response.json()
+// //     factPara.innerText = data[2].name
+// // }
+
+// function getFacts(){
+//     fetch(URL).then((response) => {
+//         return response.json()
+//     }).then((data) => {
+
+//     })
+// }
+
+// btn.addEventListener("click", getFacts)
+
+// aur fir hum kya karenge console.log kar denge
+// apne data ko -- console.log(data)
+
+// const URL = "https://jsonplaceholder.typicode.com/users"
+// const factPara = document.querySelector("#fact")
+// const btn = document.querySelector("#btn")
+
+
+// // const getFacts = async () => {
+// //     console.log("getting data .....");
+// //     let response = await fetch(URL)
+// //     console.log(response); // JSON format
+// //     let data = await response.json()
+// //     factPara.innerText = data[2].name
+// // }
+
+// function getFacts(){
+//     fetch(URL).then((response) => {
+//         return response.json()
+//     }).then((data) => {
+//         console.log(data);
+//     })
+// }
+
+// btn.addEventListener("click", getFacts)
+
+// prettier format kar liya
+
+// const URL = "https://jsonplaceholder.typicode.com/users";
+// const factPara = document.querySelector("#fact");
+// const btn = document.querySelector("#btn");
+
+// // const getFacts = async () => {
+// //     console.log("getting data .....");
+// //     let response = await fetch(URL)
+// //     console.log(response); // JSON format
+// //     let data = await response.json()
+// //     factPara.innerText = data[2].name
+// // }
+
+// function getFacts() {
+//   fetch(URL)
+//     .then((response) => {
+//       return response.json();
+//     })
+//     .then((data) => {
+//       console.log(data);
+//     });
+// }
+
+// btn.addEventListener("click", getFacts);
+
+// isko ek bar kar lete hai save
+// to yeh kya ho gayi
+// yeh promise chaining ho gayi
+// console.log(data) karne ke saath saath
+// hum yeh cheej ( factPara.innerText = data[2].name ) 
+// jo hai ise print karwa sakte hai
+
+// const URL = "https://jsonplaceholder.typicode.com/users";
+// const factPara = document.querySelector("#fact");
+// const btn = document.querySelector("#btn");
+
+// // const getFacts = async () => {
+// //     console.log("getting data .....");
+// //     let response = await fetch(URL)
+// //     console.log(response); // JSON format
+// //     let data = await response.json()
+// //     factPara.innerText = data[2].name
+// // }
+
+// function getFacts() {
+//   fetch(URL)
+//     .then((response) => {
+//       return response.json();
+//     })
+//     .then((data) => {
+//       console.log(data);
+//       factPara.innerText = data[2].name
+//     });
+// }
+
+// btn.addEventListener("click", getFacts);
+
+// save kiya
+// refresh kiya in bc
+// Get a Fact button pe click kiya
+// ( (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// Clementine Bauch in web browser )
+
+// Get a Fact kiya to humare pas
+// yeh cheej ( Clementine Bauch in web browser ) 
+// print hokar aa gayi
+
+// yani kaam wo hi same ho raha hai
+// iss tarike se (.then() .catch(), see code)
+// se bhi kaam kiya jaa sakta hai
+// but yahan pe (.then() .catch(), see code)
+// aapko khud hi samajh mei aa gaya hoga ki
+// yeh code ( const getFacts = async () => {} )
+// jo humne likha tha
+// as compared to this code ( .then() .catch() wala code, see code )
+// our previous code ( const getFacts = async () => {} )
+// was much simpler and much easier to read
+// 25:26
+
+// kaafi jagah aapko dekhne ko milega
+// ki fetch APIs ke andar ya different different jagah
+// jahan se bhi promise return ho raha hai
+// wahan pe iss tarike se ( .then() .catch() see code ) 
+// .then() karke chaining hi hogi
+
+// usme as such koi problem nahi hai
+// as such koi galat baat nahi hai
+// yeh bhi code ( .then() .catch() code ) 
+// bilkul sahi run karega humare liye
+
+// but ek better tarika hoga apne
+// code ko async await ko use karke likhne ka
+// ( const getFacts = async () => {} )
+// kyuki this is ( const getFacts = async () => {} )
+// just simpler to understand
+
+// hume pata hai yahan ( let response = await fetch(URL) ) 
+// await ho rahi hai cheejein
+// yahan bhi ( let data = await response.json() )
+// await ho rahi hai cheejein
+// to yeh ( const getFacts = async () => {} )
+// jada readable code humare liye hota hai
+
+// isiliye humne pehle promise chains padhi thi
+// fir humne async await ko padha tha
+// to yeh to ho gaya everything related to API calls
+// ab API calls ke andar kaafi sari
+// cheejein hai jinko hum jake aur detail mei padh sakte hai
+// 26:02
+
+// inme se ek topic humare pas hota hai
+// regarding request and response
+// sabse pehli cheej jo hume pata honi chahiye
+// jab bhi koi API call jati hai
+// ya jab bhi hum kisi server ko request bhejte hai
+// ki request jo hai
+// uske andar kuch kuch http verbs hote hai
+// 26:15
+
+// i hope http ki fullform bachpan se hum sabne
+// padhi hoti hai computer science ke andar
+// school ke andar computer science naam ka
+// subject hota hai
+// HTTP stands for Hyper Text Transfer Protocol
+
+// Protocol kehne ka matlab hai kuch rules
+// yani internet ke upar jo hum request bhej rahe hote hai
+// wo generally hum http par bhejte hai
+// to yeh kuch rules hote hai
+// request response bhejne ke
+
+// ab kya kya rules hote hai internally usme
+// hume nahi jana hai
+// basically http ke andar
+// verbs naam ki ek cheej hoti hai jo hume
+// batati hai ki hum kis tarike ki
+// request bhej rahe hai
+
+// we can go to this mdn page
+// and read about more http verbs
+// ( http request methods mdn in google search )
+// yahan par agar hum jayenge
+// to http request ke andar kuch
+// methods hote hai ya inko
+// hum kuch verbs bol sakte hai
+// matlab kis tarike ki request humne bheji
+// 27:01
+
+// isme se sabse popular jo hum generally
+// fetch API mei use karte hai
+// humari GET request hoti hai (see GET in mdn)
+// 
