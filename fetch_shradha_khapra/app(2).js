@@ -2006,4 +2006,219 @@
 // isme se sabse popular jo hum generally
 // fetch API mei use karte hai
 // humari GET request hoti hai (see GET in mdn)
-// 
+// GET request ka kaam hota hai
+// to get some data
+// yani it should only be used to retrieve some data
+// kuch data agar hume kahin se lekar aana hai
+// uske liye hum GET request bhejte hai
+
+// iske alawa humare pas POST request bhi hoti hai
+// (see POST in mdn)
+// POST request basically hum bhejte hai
+// to send some data
+// hume jab kuch data specific data
+// send karna hota hai
+// uske liye POST request
+
+// agar hume kuch data delete karna hai
+// to uske liye hum DELETE request bhejte hai
+// (see DELETE in mdn)
+
+// for eg aap apne instagram account par jayenge
+// agar aap apne instagram account 
+// ko delete karna chahte hai
+// deactivate karna chahte hai
+// to wahan par jo delete button hoga
+// humari app ke andar jo delete button hota hai
+// instagram ki website ke upar
+// ya facebook ki website ke upar jo delete button hota hai
+// jab uss button ko hum click karte hai
+// to jab internally request
+// jati hai that is a delete request
+// that is not a get request or a post request
+// it is a proper DELETE request
+// 27:48
+
+// agar hume kuch update karna hai
+// for eg instagram ke upar jake 
+// hum apna username update karna chahte hai
+// to uske liye generally ho sakta hai
+// PATCH request jaye
+// (see PATCH in mdn)
+
+// PATCH request yani already humara poora data
+// stored hoga instagram ke pas
+// usme agar hum kuch change karna chahte hai
+// to uske liye PATCH request
+// hum bhejte hai
+
+// to iss tarike se bahut sari different different
+// request hoti hai humare pas
+// par humara jo main focus rahega
+// wo humari GET request par rahega
+// kyuki generally fetch APIs
+// ko hum apni GET request ke liye use karte hai
+// (28:13)
+
+// second cheej jiska hume pata hona chahiye
+// wo hai Response Status Code
+// ek cheej hum notice karenge yahan pe
+// jab humne API call ki
+// ki API ke andar
+// iss promise chaining ko hata dete hai
+// ( .then() .catch() code ko backspace kar diya )
+
+// const URL = "https://jsonplaceholder.typicode.com/users";
+// const factPara = document.querySelector("#fact");
+// const btn = document.querySelector("#btn");
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response); // JSON format
+//     let data = await response.json()
+//     factPara.innerText = data[2].name
+// }
+
+// btn.addEventListener("click", getFacts);
+
+// save in bc
+// click on Get a Fact button in browser
+// ( getting data .....
+// Response {type: 'cors', url: 'https://jsonplaceholder.typicode.com/users', redirected: false, status: 200, ok: true, …}
+// Clementine Bauch in webpage )
+
+// and yahan par jab humare pas Response aa raha hai (bc)
+// ( open Response in bc )
+// to Response ke andar we have something
+// called status ( status: 200 , in bc )
+// status ke andar humne baat ki 
+// ki 200 status ka matlab hota hai
+// everything was OK
+
+// agar kuch error aa jata hai
+// to ho sakta hai kuch 500 status
+// humare pas aa jaye
+// 404 aa jaye
+// iss tarike ke bahut sare different status hote hai
+// 28:41
+
+// ab yeh status code ka kya matlab hota hai
+// ( Response Status Code )
+// uske liye hum mdn ke iss page par ja sakte hai
+// ( HTTP request methods mdn page pe aa gaye )
+// ( https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status )
+// to http ke andar bahut sare
+// response status codes hote hai 
+// ( see mdn heading HTTP response status codes )
+// jo response (bc Response) ke andar batate hai
+// ki request ka kya response raha
+
+// generally 200 ka matlab hota hai
+// successful response ( see mdn 200-299 )
+// yani sari cheejein sahi work kar gayi
+// agar client side pe kuch error aata hai
+// ( 4. Client error responses (400 – 499) , see mdn )
+// yani agar humne galat tarike se request bheji
+
+// ya hum jis page ko
+// jis API ko request bhej rahe hai
+// wo API exist hi nahi karti
+// to humare pas 404 eror ayega
+// 29:09 ( see mdn 400 - 499 )
+
+// ( code editor mei aa gaye )
+// for eg yahan yeh link
+// iss link ke upar hum request bhej rahe the
+// ( const URL = "https://jsonplaceholder.typicode.com/users"; see code )
+// yahan ( const URL = "https://jsonplaceholder.typicode.com/users"; see code )
+// mai facts/shradha kar du ( mam ke )
+// (users/shradha) (humare)
+// ( const URL = "https://jsonplaceholder.typicode.com/users/shradha"; )
+
+
+
+// const URL = "https://jsonplaceholder.typicode.com/users/shradha";
+// const factPara = document.querySelector("#fact");
+// const btn = document.querySelector("#btn");
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response); // JSON format
+//     let data = await response.json()
+//     factPara.innerText = data[2].name
+// }
+
+// btn.addEventListener("click", getFacts);
+
+// yeh koi valid link nahi hai
+// ( const URL = "https://jsonplaceholder.typicode.com/users/shradha"; see code )
+// aisa koi link unhone nahi banaya hua
+// to ab save and refresh in bc
+// to ab save and refresh karke when i will click on Get a Fact button
+
+// click on Get a Fact in browser
+// ( getting data .....
+//  GET https://jsonplaceholder.typicode.com/users/shradha 404 (Not Found)
+//  Response {type: 'cors', url: 'https://jsonplaceholder.typicode.com/users/shradha', redirected: false, status: 404, ok: false, …}
+//  Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'name')
+//     at HTMLButtonElement.getFacts (app.js:11:34) )
+
+// to yahan pe error ayegi (see bc)
+// kya error aa raha hai
+// with a status code of 400
+// ( GET https://jsonplaceholder.typicode.com/users/shradha 404 (Not Found) , in bc)
+// open Response in bc
+// yahan dekhenge hum
+// status mei aa raha hai 400 (404)
+// (open Response and see)
+
+// 400 status code kehta hai bad request
+// ( statusText: "Bad Request" , open Response in bc , mam ke )
+// 29:33
+// yani humne jo request karne ki koshish
+// ki wo galat request hai
+// wo hume nahi karni chahiye thi
+
+// isi tarike se aapne ek famous code
+// suna hoga 404
+// 404 ka matlab hota hai
+// page not found
+
+// aur agar maan lo API
+// ke andar hi kuch error aa raha hai
+// humne to sab kuch sahi kiya
+// par API mei hi kuch error aa gaya
+// fail ho gayi
+// server fail ho gaya
+// to uss time pe
+// 500 related errors aate hai
+// ( 5. Server error responses (500 – 599) , see mdn )
+// jo server error ke liye errors hote hai
+
+// jaise agar Amazon ka
+// server fail ho jayega to
+// humare pas jo status code ayega
+// that will start with 5 ( 500, 505, etc )
+// jo dikhata hai ki humne kuch galat
+// nahi kiya
+// server ki taraf se
+// ya API ki taraf se kuch galat hua hai
+
+// to yeh alag alag status codes hote hai
+// par isme generally humare pas 200 hi aa
+// raha hota hai successful ke liye
+// to that is good
+// agar inn cheejon ko aapko detail
+// mei padhna hai
+// maine dono mdn ke pages aapko dikha
+// diye hai
+// hum jakar mdn ke upar inhe detail mei
+// padh sakte hai
+// koi as such bahut mushkil
+// cheej nahi hai
+// bahut aasaan cheej hai padhne ke liye
+// and in fact i think
+// you should go and read it
+// 30:22
