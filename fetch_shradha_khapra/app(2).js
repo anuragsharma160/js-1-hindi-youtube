@@ -2222,3 +2222,146 @@
 // and in fact i think
 // you should go and read it
 // 30:22
+
+// ek aur cheej important hoti hai ki
+// jab bhi hum request ya response ki baat karte hai
+// ya jab bhi hum koi request bhejte hai
+// ya humare pas koi response aa raha hota hai
+// to uske andar ek headers naam ki cheej hoti hai
+
+// headers ke andar hum apni extra information
+// bhejte hai
+// to http response headers ke andar yani jab
+// humare pas response aata hai
+// response ka header hota hai
+// ya hum koi request bhejte hai
+// request ka bhi header hota hai
+
+// to response mei jab header aa raha hai
+// uske andar humara kya content ka type hai
+// kya status code hai iss tarike se alag alag
+// information stored hoti hai
+
+// jaise for eg humne yahan par ek bad request create ki
+// (see code till yet) ( see bc , open Response , statusText: "Bad Request" , mam ke )
+// to yahan par headers ke andar
+// ( open Response in bc and see headers ) 
+// kayi sari different different information hogi
+
+// iske alawa agar hum sahi request bhi bhejte hai
+// lets remove this (remove /shradha from URL)
+
+// const URL = "https://jsonplaceholder.typicode.com/users";
+// const factPara = document.querySelector("#fact");
+// const btn = document.querySelector("#btn");
+
+// const getFacts = async () => {
+//     console.log("getting data .....");
+//     let response = await fetch(URL)
+//     console.log(response); // JSON format
+//     let data = await response.json()
+//     factPara.innerText = data[2].name
+// }
+
+// btn.addEventListener("click", getFacts);
+
+// save in bc
+// click on Get a Fact button
+// ( getting data .....
+// Response {type: 'cors', url: 'https://jsonplaceholder.typicode.com/users', redirected: false, status: 200, ok: true, …} )
+// ( open Response in bc and see headers )
+
+// to yeh humare headers hote hai
+// jinke andar additional information hoti hai
+// to jab bhi aap header word suno APIs ke andar
+// uska matlab hota hai kuch additional information 
+// hai jo shayad response ke saath aa rahi hai
+// jo shayad hum request ke saath bhej rahe hai
+
+// to this was all about the basics of API calling
+// isme ek chota sa homework problem hai
+// task hai jo mai aapko dena chahunga
+// which is to learn how to send a POST Request
+// using fetch API
+// fetch API hi aapko use karni padegi
+// mai bata bhi deta hu thoda sa
+
+// ( Sending POST request )
+// fetch API ke andar hum apna ek
+// URL isi tarike se likhenge
+// fetch(URL)
+// plus hum kuch additional options
+// ko use kar rahe honge
+// fetch(URL, options)
+
+// to aap chaho to isko
+// homework task ko solve karne ke liye
+// basically we have to search for
+// fetch API mdn in browser
+// fetch API mdn par hum jayenge
+
+// aur yahan par methods (see mdn left side index)
+// ke andar hum fetch ke andar jayenge
+// ( https://developer.mozilla.org/en-US/docs/Web/API/fetch , mam ka link )
+// ( above link paste enter ke baad 
+// yeh link -- https://developer.mozilla.org/en-US/docs/Web/API/Window/fetch 
+// khul raha hai )
+// ( Methods ke under mei click on Window.fetch() )
+// 31:45
+
+// fetch ke andar jayenge
+// to yahan par options naam ki cheej hai ( see mdn )
+// options ke andar humare pas method naam ki cheej hoti hai ( see mdn )
+// to option ke andar jab hum
+// request ke method ko POST mei change kar dete hai ( fetch(URL, options) )
+// to humare pas kya hota hai
+// POST request chali jati hai
+// ( mdn page updated, search on your own )
+
+// to iss chapter ke andar jab hum
+// apna project ek bar build kar lenge
+// to uske baad hume jake apne iss homework task
+// ko complete karna hai
+// jisme hum identify karenge ki
+// fetch ( fetch(URL, options) ) ke andar
+// kya kya options hume change karne
+// padte hai to send a successful
+// POST request to some API
+
+// to ab APIs ko use karke hum
+// apne liye build karne wale hai
+// ek currency converter
+// ab yeh currency converter kya hota hai
+// jaise for eg hume jaan na hai
+// ki one dollar ki rupees mei kya
+// value hogi
+
+// to uske liye hume exchange rate pata
+// hona chahiye , Dollar yani USD and 
+// Indian Rupee yani INR ka
+// to isi tarike se ek currency
+// se dusri currency mei agar hum
+// convert karte hai to kitni value nikalkar
+// ayegi uss cheej ko
+// uss ek app ko hum build karne wale hai
+// using html css and javascript
+
+// ab isko use karne ke liye
+// hum apni exchange rate ki kayi
+// sari different APIs available hai online
+// unme se ek free API ko use kar rahe honge
+// 32:44
+
+// to sabse pehle hum apne html part ke upar
+// focus karenge
+// fir hum css par focus karenge
+// and finally hum apne javascript ke code
+// ke upar focus karenge
+
+// 32:51
+
+// Move to folder fetch_project
+
+// humne boiler plate code already generate kiya
+// hua hai apne ek index.html file ke andar
+// 

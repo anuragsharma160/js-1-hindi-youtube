@@ -1,5 +1,5 @@
 // const URL = "https://dogapi.dog/api/v2/breeds"
-const URL = "https://jsonplaceholder.typicode.com/users/shradha";
+const URL = "https://jsonplaceholder.typicode.com/users";
 const factPara = document.querySelector("#fact");
 const btn = document.querySelector("#btn");
 
