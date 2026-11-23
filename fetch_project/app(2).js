@@ -228,3 +228,332 @@
 // to aapko dikh raha hoga
 // ki upar uske (url mei) argument dikhayi de rahe hai
 // 39:36
+// to yeh form ka default behaviour hota hai
+// aur jaise hi isko click kar rahe hai (button ko)
+// page humara dubara bar bar bar bar reload ho raha hai
+// abhi ke liye iss cheej ko completely ignore karna hai
+// par basically yeh humara basic layout hai apne form ka
+
+// ab basic layout humne create kar liya
+// saath ke saath ek aur cheej hum kar sakte hai
+// we can add some icon in between
+// yani yeh From aur To ke beech mei
+// hum koi icon add kar sakte hai
+
+// icon ke liye we can go to font awesome
+// fontawesome.com/icons
+// fontawesome ke andar humare pas kaafi icons
+// hote hai
+// plus we also have font awesome cdn
+// font awesome cdn in browser search
+
+// hum iss link par ja sakte hai
+// https://cdnjs.com/libraries/font-awesome
+// hum iss link ko (1st highlighted link)
+// copy link tag ko copy karenge
+// aur ise yahan par (below css file link)
+// paste kar denge apne head ke andar
+
+// to yeh humara link hota hai jisse kaafi sare
+// freely available icons hote hai jinko
+// hum use kar sakte hai
+// ab icons ko use kahan se karna hai
+// yeh humari font awesome ki website hoti hai
+// fontawesome.com/icons
+// jahan se hum apne free and open source icons
+// ko use karenge
+// to basically we can search for exchange
+// yeh wala free icon hai jise hum use karne wale hai
+// (40:38)
+// ( copy i tag )
+
+// lets paste it yahan par (between From and To select-container in html)
+// From and To ke beech mei
+// ab iss poore layout (browser) ko hume achhe se convert karna hai
+// to our currency converter
+
+// css part
+// to apni style.css ko open kar lete hai
+// cools jaisi kisi bhi website par jakar apne liye
+// ek palette generate kar sakte hai
+// to kaafi sare different colors ke combination
+// hume mil jayenge
+// to aisa hi ek combination mam ne
+// generate kiya hai #f4e4ba
+// 42:07
+
+// 51:46
+// ab hume 2 kaam karne hai
+// apne javascript ke andar
+// sabse pehla yahan (from select ( USD ) in browser)
+// par hume sirf 4 countries hi nahi dikhani
+// hume sari ki sari countries dikhani hai
+
+// jaise hi hum country change karein
+// humara flag change hona chahiye
+// aur jaise hi iss button (Get Exchange Rate)
+// ko click kiya jaye
+// vaise hi poora conversion ho
+// aur wo cheej hume yahan pe ( 1USD = 80INR )
+// aake dikhayi de
+
+// to iss tarike ka proper
+// jo fully functional app hai
+// usko hum prepare karna chahte hai
+
+// to uske liye already humne 2 javascript file
+// banayi hui hai
+// ek javascript file hai -- codes.js ke naam se
+// jiske andar humne sari ki countries ki list
+// prepare ki hui hai jisme country ka code hai (RHS)
+// plus humari country ki country ki currency hai (LHS)
+// (see codes.js)
+
+// yeh wali file (codes.js) aapko already neeche
+// description box ke andar mil rahi hogi
+// to ise jakar hum create kar sakte hai
+// nahi to aap chahte hai ki aapko 4-5 countries
+// ke saath hi start karna hai 
+// to you can also copy the countries directly (from codes.js)
+// aap directly bhi apni khud ki file bana sakte hai (like codes.js)
+
+// iss file file (codes.js) ke andar hum as such koi
+// kaam nahi karenge
+// sara kaam hum apni app.js ke andar kar rahe honge
+// ab dono files ( app.js and codes.js ) ko pehle index.html
+// se connect bhi kar lete hai
+
+// body tag (body closing tag) se just pehle
+// we will write a script (script tag)
+// jiske andar source (src) mei hum pehle codes.js
+// ko include karenge
+
+// uske baad script mei source (src) mei hum apne
+// app.js ko include karenge
+
+// javascript part
+// ab yahan aa jate hai apni app.js ke andar
+// 53:00
+// ab finally hum apne app.js ke andar
+// javascript ke logic ko likhna start karenge
+
+// apne js ke code mei sabse pehle apni API
+// jise hum use karne wale hai
+// use dekh lete hai
+// we are going to use this currency API
+// ( https://github.com/fawazahmed0/currency-api#readme -- old link )
+// ( https://github.com/fawazahmed0/exchange-api -- new link )
+
+// jo hume iss link (just above link) 
+// par yahan pe github ke upar
+// iss page par available mil jayegi
+// and yeh raha iska link 
+// ( https://github.com/fawazahmed0/currency-api#readme -- old link )
+// ( https://github.com/fawazahmed0/exchange-api -- new link )
+// ( 53:21 )
+
+// API ke read me mei basically we have our end points
+// to humare pas different different end points hai
+// basic format yeh rahega humare API ke URL ka
+// ( https://github.com/fawazahmed0/exchange-api -- new link )
+// ( URL Structure:
+// https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@{date}/{apiVersion}/{endpoint} )
+// 53:29
+
+// hum iss API ke andar kaafi sari different services hai
+// ( scroll down in -- https://github.com/fawazahmed0/exchange-api -- new link )
+// hum iss service ko use karna chahte hai
+// ( /currencies/{currencyCode}/{currencyCode}
+// Get the currency value for EUR to JPY:
+// https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur/jpy.json -- old website )
+// ( see migration guide if required )
+// basically jab hume ek currency se dusri currency 
+// ke andar convert karna hai
+
+// to iss link ko ek bar copy kar lete hai
+// ( /currencies/{currencyCode}/{currencyCode}
+// Get the currency value for EUR to JPY:
+// https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur/jpy.json -- old website )
+// ( see migration guide if required )
+// ( our link -- https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr )
+// yahan par kya aa raha hai
+// hum EURO se i think this is Japanese Yen
+// (JPY currency in browser search)
+// yes this is one Japanese Yen
+// jiske andar convert karne ki koshish ki ja rahi hai
+
+// to iss link par hum ja sakte hai
+// ( /currencies/{currencyCode}/{currencyCode}
+// Get the currency value for EUR to JPY:
+// https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur/jpy.json -- old website )
+// ( see migration guide if required )
+// ( just above link is not working )
+// 53:55
+// (our link -- https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr )
+
+// aur yeh hume date return karega (mam ka link)
+// last updated date for the exchange rate
+// and saath ke saath kya exchange rate hai ( "rate":92.68 , see browser )
+// Euro se Japanese Yen ka wo hume dikha raha hai (mam ke)
+
+// agar hume for eg agar hume chahiye ki hum
+// USD se yani Dollar se Indian Rupee ke andar
+// convert karna chahte hai to
+// (our link -- https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr )
+// yeh humare pass aa gaya hai exchange rate
+// yeh 14th December ko update hua hai (mam ke)
+// exchange rate is 83 Rupees (mam ke)
+// ( change required currencies in url )
+
+// to iss tarike se yeh jo humara link hai
+// ( /currencies/{currencyCode}/{currencyCode}
+// Get the currency value for EUR to JPY:
+// https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur/jpy.json -- old website )
+// ( see migration guide if required )
+// ( just above link is not working )
+// ( our link -- https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr )
+// ise hum copy kar sakte hai
+// (code editor mei aa gaye)
+
+// and we can create a variable called BASE_URL
+// BASE_URL ke andar hum yeh link paste kar lenge
+// const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr"
+
+// ab iss link ke andar currencies ke baad (mam ke lnk mei)
+// yahan par vaise to USD hai, yahan par INR hai 
+// par yeh yahan par baad mei hum apne variables ko
+// likhne wale hai
+// abhi ke liye ise (mam ke URL ko) itna hi hum chord sakte hai
+// and we can save it
+// 54:37
+
+// sabse pehle yahan par aa jate hai (browser UI)
+// and apne options ko populate karte hai (currency options ko)
+// basically sare ke sare options ko hum populate karenge
+// to apni index.html se hum select karne wale hai
+// apna dropdown (class = dropdown)
+
+// to dropdown =
+// const dropdown =
+// document.querySelector()
+// const dropdown = document.querySelector()
+// and we are going to select the dropdown class
+// const dropdown = document.querySelector(".dropdown")
+
+// in fact dropdown ke andar jo humare selects hai (see html)
+// const dropdown = document.querySelector(".dropdown select")
+// ise hum dropdowns hi keh dete hai
+// const dropdowns = document.querySelector(".dropdown select")
+// querySelectorAll se dropdown ke sare select
+// const dropdowns = document.querySelectorAll(".dropdown select")
+
+// ya basically 2 selects hai humare pas dropdowns ke andar
+// 2 dropdowns hai (see html) , unko humne select kar liya hai
+// aur unhi ke upar hum ek loop chala lenge
+
+// const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr"
+
+// const dropdowns = document.querySelectorAll(".dropdown select")
+
+// ...aur unhi ke upar hum ek loop chala lenge (for of loop)
+// const select of dropdowns
+// for (const select of dropdowns) {
+    
+// }
+// yeh humari select aa gayi (see loop)
+// yeh loop run karne se pehle
+// ek bar hum apni country list ko access karna chahte hai
+
+// const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr"
+
+
+// const dropdowns = document.querySelectorAll(".dropdown select")
+
+
+
+// // for (const select of dropdowns) {
+    
+// // }
+
+// ...ek bar hum apni country list ko access karna chahte hai
+// konsi country list jo humare codes.js ke andar
+// yeh countryList variable hai ( const countryList = {} )
+// ek bar ise access karke hum print karwa ke dekhna chahte hai
+
+// to let code in countryList (for in loop)
+// for (const code in countryList) {
+    
+// }
+// console.log
+// for (const code in countryList) {
+//     console.log();
+// }
+// humare sare ke sare code humare pas print hokar aa jaye
+// for (const code in countryList) {
+//     console.log(code);
+// }
+
+
+
+
+// const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr"
+
+
+// const dropdowns = document.querySelectorAll(".dropdown select")
+
+// for (const code in countryList) {
+//     console.log(code);
+// }
+
+// // for (const select of dropdowns) {
+    
+// // }
+
+
+
+
+
+// save in browser
+// go to bc
+// to bc ke andar humare pas sare ke sare
+// codes available hai (see bc)
+// 56:07
+
+// apne codes (keys) ke saath hum countryList ke andar
+// uss code ka ( uss key ka ) , 
+// yani country ka code ( value ) bhi print karwa sakte hai
+// countryList[code]
+// 56:14
+// for (const code in countryList) {
+//     console.log(code, countryList[code]);
+// }
+
+// yeh ( console.log(code, countryList[code]); mei code ) 
+// basically humara currency code hai (key hai)
+// yeh ( console.log(code, countryList[code]); mei countryList[code] ) 
+// humara country code hai (value hai)
+
+
+// const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr"
+
+
+// const dropdowns = document.querySelectorAll(".dropdown select")
+
+// for (const code in countryList) {
+//     console.log(code, countryList[code]);
+// }
+
+// // for (const select of dropdowns) {
+    
+// // }
+
+// save and refresh in bc
+// (AED AE
+// AFN AF
+// XCD AG
+// ALL AL
+// ...
+// ...)
+// to yeh humara currency code aa gaya (AED)
+// yeh humara country code aa gaya (AE)
+// 56:21
