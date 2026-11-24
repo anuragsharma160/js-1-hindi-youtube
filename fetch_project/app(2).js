@@ -557,3 +557,470 @@
 // to yeh humara currency code aa gaya (AED)
 // yeh humara country code aa gaya (AE)
 // 56:21
+
+// jaise iske ( bc o/p ) andar agar hum India ka example lein
+// to India ke liye the currency code is INR (see bc -- INR IN)
+// but the country code is IN yani India
+// to yeh sari values ( console.log(code, countryList[code]); )
+// humare pas accessible hai
+
+// ise (for in loop ko) hum cut kar lete hai
+// and yahan par (for of loop mei) akar
+// apne select ke andar (for of loop mei)
+// hum ek ek country code ke liye 
+// apna option add karenge
+// ( for in loop ko cut karke for of loop mei paste kar liya )
+
+// const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr"
+
+
+// const dropdowns = document.querySelectorAll(".dropdown select")
+
+
+
+// for (const select of dropdowns) {
+//     for (const code in countryList) {
+//     console.log(code, countryList[code]);
+// }    
+// }
+
+// ab option kaise add karenge
+// ( console.log(code, countryList[code]); line ko backspace kar liya )
+// hum ek naya element create karne wale hai
+// let newOption =
+// document.createElement()
+// aur hum ek option type ka element hai
+// jise create karenge
+// document.createElement("option")
+// let newOption = document.createElement("option")
+
+// iss newOption ke andar
+// newOption.
+// sabse pehle to humara jo innerText hoga
+// newOption.innerText
+// yahan par ise currency code (currCode) kar dete hai
+// ( iterator of for in loop )
+
+// const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr"
+
+
+// const dropdowns = document.querySelectorAll(".dropdown select")
+
+
+
+// for (const select of dropdowns) {
+//     for (const currCode in countryList) {
+    
+// }    
+// }
+
+// ...iss newOption ke andar
+// newOption.
+// sabse pehle to humara jo innerText hoga
+// newOption.innerText
+// yahan par ise currency code (currCode) kar dete hai
+// ( iterator of for in loop )
+
+// that will ( newOption.innerText = )
+// basically be equal to currency code ( currCode )
+// newOption.innerText = currCode
+
+// saath ke saath jo humara newOption ka value hogi
+// newOption.innerText = currCode
+// newOption.value
+// that will ( newOption.value ) also be equal to
+// currency code ( currCode )
+// let newOption = document.createElement("option")
+// newOption.innerText = currCode
+// newOption.value = currCode
+
+
+
+// const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr"
+
+
+// const dropdowns = document.querySelectorAll(".dropdown select")
+
+
+
+// for (const select of dropdowns) {
+//     for (const currCode in countryList) {
+//         let newOption = document.createElement("option")
+//         newOption.innerText = currCode
+//         newOption.value = currCode
+// }    
+// }
+
+// and iss newOption ko hum kahan par add karenge
+// iss newOption ko hum apne select ( for of loop ke iterator )
+// ke andar add karenge
+// yani iss select ke andar ( for (const select of dropdowns) {} )
+
+// to select ke andar
+// select.
+// hum dot append kar denge 
+// select.append()
+// apne currency... ya newOption ko
+// select.append(newOption)
+
+
+// const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr"
+
+
+// const dropdowns = document.querySelectorAll(".dropdown select")
+
+
+
+// for (const select of dropdowns) {
+//     for (const currCode in countryList) {
+//         let newOption = document.createElement("option")
+//         newOption.innerText = currCode
+//         newOption.value = currCode
+//         select.append(newOption)
+// }    
+// }
+
+// to basically sari jo humari countries ki list thi 
+// ( const countryList = {} in codes.js )
+// unn sabko individual options ke andar convert
+// kar rahe hai ( see code ) aur 
+// select ke andar unn options ko hum add kar rahe hai
+// ( select.append(newOption) )
+// 57:33
+
+// save and refresh in browser
+// now if i look at it (dropdown select)
+// to iss bar humare pas sari ki sari
+// countries humare select (first select dropdown in browser)
+// ke andar available hai
+
+// iss dusre select (second select dropdown in browser)
+// ke andar bhi sari ki sari countries humare pas
+// available hai
+
+// to yeh humare pas sari countries aa gayi
+// ab hum chahein to apne index.html se
+// yeh jo sare ke sare humare options hai (inside select name = "from")
+// inhe remove kar sakte hai
+// ( backspace all option tags inside select name = "from" )
+// iss part ko remove kar lete hai
+
+// and inn options ko hum remove kar lete hai
+// ( backspace all option tags inside select name = "from"/to )
+
+// save in browser
+// to yeh humare pas countries aa gayi hai
+// yeh humare pas countries aa gayi hai
+// (in both select in browser)
+
+// ab shuruaat mei hum chahte hai
+// left mei humare pas USD aye (1st select in browser)
+// aur right mei humare pas India (INR) aye (2nd select in browser)
+// to inn dono (USD and INR) ko hum select karwana chahte hai
+
+// to uske logic ke liye hum ek variable create kar sakte hai
+// let i = 0 ( before for of loop )
+// hume pata hai 2 hi dropdowns hai humare pas
+// to yahan par basically...
+// ya in fact select ko i believe 
+// humne kuch na kuch id di hogi
+// (see index.html)
+
+// yeh jo humara 1st select hai isko
+// humne name diya hai from (see index.html)
+// achha 1st select ko name dena hai from
+// 2nd select ko hum name denge to
+
+// to yahan (app.js)
+// hum ek logic add kar sakte hai 
+// ( backspace let i = 0; before for of loop )
+// that is -- if select ka jo name hai
+// ( for of loop ke iterator select ka )
+// that is equal to from
+// if(select.name === "from")
+
+// and
+// if(select.name === "from" &&)
+// agar humara currency ka code ( currCode ) is equal to USD
+// if(select.name === "from" && currCode === "USD")
+// if(select.name === "from" && currCode === "USD"){}
+
+// to hum kya karenge newOption ke andar
+// if(select.name === "from" && currCode === "USD"){
+//     newOption.
+// }
+// hum selected ko
+// if(select.name === "from" && currCode === "USD"){
+//     newOption.selected
+// }
+// likh denge as "selected"
+// if(select.name === "from" && currCode === "USD"){
+//     newOption.selected = "selected"
+// }
+
+
+
+
+// const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr"
+
+
+// const dropdowns = document.querySelectorAll(".dropdown select")
+
+
+
+// for (const select of dropdowns) {
+//     for (const currCode in countryList) {
+//         let newOption = document.createElement("option")
+//         newOption.innerText = currCode
+//         newOption.value = currCode
+//         if(select.name === "from" && currCode === "USD"){
+//             newOption.selected = "selected"
+//         }
+//         select.append(newOption)
+//     }    
+// }
+
+
+// to uss case mei ab hume USD dikhayi dega from ke andar
+// save and refresh in browser
+// humare pas USD aa gaya (1st select mei)
+
+// isi tarike se right mei agar hum INR
+// karna chahte hai
+// to else
+// else 
+// aur iss logic (if ke code block) ko copy kar lete hai
+// if(select.name === "from" && currCode === "USD"){
+//     newOption.selected = "selected"
+// } else if(select.name === "from" && currCode === "USD"){
+//     newOption.selected = "selected"
+// }
+
+// agar select ka name -- to hai
+// select.name === "to"
+// aur currency ka code (currCode) INR hai
+// select.name === "to" && currCode === "INR"
+// to hum use select kar lenge ( newOption.selected = "selected" )
+// if(select.name === "from" && currCode === "USD"){
+//     newOption.selected = "selected"
+// } else if(select.name === "to" && currCode === "INR"){
+//     newOption.selected = "selected"
+// }
+
+
+
+// const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr"
+
+
+// const dropdowns = document.querySelectorAll(".dropdown select")
+
+
+
+// for (const select of dropdowns) {
+//     for (const currCode in countryList) {
+//         let newOption = document.createElement("option")
+//         newOption.innerText = currCode
+//         newOption.value = currCode
+//         if(select.name === "from" && currCode === "USD"){
+//             newOption.selected = "selected"
+//         } else if(select.name === "to" && currCode === "INR"){
+//             newOption.selected = "selected"
+//         } 
+//         select.append(newOption)
+//     }    
+// }
+
+// save and refresh in browser
+// to shuruaat mei jiske saath hum start karenge
+// that will be USD to INR conversion
+// uske baad hum chahein to kuch bhi change kar sakte hai
+// 59:24
+
+// also hum chahtein hai ki jaise hi country ka naam change ho
+// yani yahan pe (1st select) agar humne INR kiya hai
+// to humare pas flag bhi change hona chahiye
+// to hum ek naya function bana lete hai
+// const
+// isko hum bol denge updateFlag
+// const updateFlag
+
+// to updateFlag ke liye ek function bana lete hai
+// const updateFlag = () => {}
+// to hum chahte hai jab bhi humara select
+// ( for (const select of dropdowns) {} , mei select )
+// change ho
+
+// to yahan likh dete hai select 
+// ( for (const select of dropdowns) {} , mei select )
+// par hum ek event Listener add kar denge ki
+// jab bhi humara select change ho
+// select.addEventListener("change")
+// uss case mei
+// select.addEventListener("change", () => {})
+
+// humare pas event listeners mei event object hoti hai (evt)
+// select.addEventListener("change", (evt) => {})
+// uss case mei hum updateFlag ko call lagayange
+// select.addEventListener("change", (evt) => {
+//     updateFlag()
+// })
+// with our event.target (evt.target)
+// select.addEventListener("change", (evt) => {
+//     updateFlag(evt.target)
+// })
+// 1:00:00
+
+// target hota hai basically jab bhi humne
+// kuch bhi change kiya to kahan par change
+// aya wo hum updateFlag (new function) ko
+// pass kar denge
+
+// const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr"
+
+
+// const dropdowns = document.querySelectorAll(".dropdown select")
+
+
+
+// for (const select of dropdowns) {
+//     for (const currCode in countryList) {
+//         let newOption = document.createElement("option")
+//         newOption.innerText = currCode
+//         newOption.value = currCode
+//         if(select.name === "from" && currCode === "USD"){
+//             newOption.selected = "selected"
+//         } else if(select.name === "to" && currCode === "INR"){
+//             newOption.selected = "selected"
+//         } 
+//         select.append(newOption)
+//     }
+    
+//     select.addEventListener("change", (evt) => {
+//         updateFlag(evt.target)
+//     })
+// }
+
+// const updateFlag = () => {}
+
+// to yeh humare pass element aa jayega
+// const updateFlag = (element) => {}
+// shuruaat mei kya karenge
+// sirf console.log karwa lete hai apne
+// element ko
+// const updateFlag = (element) => {
+//     console.log(element);
+// }
+
+
+
+// const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr"
+
+
+// const dropdowns = document.querySelectorAll(".dropdown select")
+
+
+
+// for (const select of dropdowns) {
+//     for (const currCode in countryList) {
+//         let newOption = document.createElement("option")
+//         newOption.innerText = currCode
+//         newOption.value = currCode
+//         if(select.name === "from" && currCode === "USD"){
+//             newOption.selected = "selected"
+//         } else if(select.name === "to" && currCode === "INR"){
+//             newOption.selected = "selected"
+//         } 
+//         select.append(newOption)
+//     }
+    
+//     select.addEventListener("change", (evt) => {
+//         updateFlag(evt.target)
+//     })
+// }
+
+// const updateFlag = (element) => {
+//     console.log(element);
+// }
+
+
+// save and refresh in browser
+// go to browser console
+// lets suppose hum USD se INR mei change karte hai (1st select mei)
+// jaise hi select kiya vaise hi humare pas
+// aa gaya select (select tag in bc)
+
+// yani humne yahan pe (select, select tag in bc)
+// change kiya hai
+// ( open and close select tag in bc ) 
+// to humare pas wo
+// element aa gaya (select tag in bc)
+// ab iss element (select tag in bc)
+// ke basis par hum kuch bhi changes kar sakte hai
+
+// to sabse pehle to
+// (backspace console.log(element);)
+// const updateFlag = (element) => {
+    
+// }
+// element se hum apna
+// currency code (currCode) extract karenge
+
+// const updateFlag = (element) => {
+//     let currCode    
+// }
+
+// currency code (currCode) hoga humare
+// element ki value -- element.value
+
+// const updateFlag = (element) => {
+//     let currCode = element.value   
+// }
+
+// currency code (currCode) ko hum chahein
+// to print bhi karwa sakte hai -- console.log(currCode)
+
+// const updateFlag = (element) => {
+//     let currCode = element.value   
+//     console.log(currCode);
+// }
+
+
+
+// const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr"
+
+
+// const dropdowns = document.querySelectorAll(".dropdown select")
+
+
+
+// for (const select of dropdowns) {
+//     for (const currCode in countryList) {
+//         let newOption = document.createElement("option")
+//         newOption.innerText = currCode
+//         newOption.value = currCode
+//         if(select.name === "from" && currCode === "USD"){
+//             newOption.selected = "selected"
+//         } else if(select.name === "to" && currCode === "INR"){
+//             newOption.selected = "selected"
+//         } 
+//         select.append(newOption)
+//     }
+    
+//     select.addEventListener("change", (evt) => {
+//         updateFlag(evt.target)
+//     })
+// }
+
+// const updateFlag = (element) => {
+//     let currCode = element.value
+//     console.log(currCode);
+// }
+
+// save in browser
+// to yahan (1st select) agar hum INR select karte hai
+// (INR in bc)
+// to humara currency code hoga INR (see bc)
+// yahan (1st select) agar humne EURO select kiya
+// (EUR in bc)
+// to currency code will be EUR (see bc)
+// (1:00:56)
