@@ -2,6 +2,7 @@ const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr"
 
 
 const dropdowns = document.querySelectorAll(".dropdown select")
+const btn = document.querySelector("form button")
 
 
 
@@ -25,5 +26,8 @@ for (const select of dropdowns) {
 
 const updateFlag = (element) => {
     let currCode = element.value
-    console.log(currCode);
+    let countryCode = countryList[currCode]
+    let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`
+    let img = element.parentElement.querySelector("img")
+    img.src = newSrc
 }

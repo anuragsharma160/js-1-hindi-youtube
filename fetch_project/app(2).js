@@ -1024,3 +1024,347 @@
 // (EUR in bc)
 // to currency code will be EUR (see bc)
 // (1:00:56)
+
+// to currency code (currCode) humare pas successfully aa raha hai
+// ( console.log(currCode) backspace kar diya )
+// ab currency code ( let currCode = element.value )
+// ke basis par hume basically apni nayi
+// image lekar aani hai ( currency ke according flag image )
+
+// currency code ( let currCode = element.value ) se
+// hum country code ( let countryCode =  (new variable) )
+// lekar ayenge
+// const updateFlag = (element) => {
+//     let currCode = element.value
+//     let countryCode =
+// }
+
+// country code ( let countryCode = ) kya hoga
+// country code hoga countryList ke andar
+// ( const countryList = {} in codes.js )
+// countryList[currCode]
+
+// const updateFlag = (element) => {
+//     let currCode = element.value
+//     let countryCode = countryList[currCode]
+// }
+
+// 1:01:11
+
+// to INR ke liye country code will be IN
+// EURO ke liye country code will be i believe EU
+
+// const updateFlag = (element) => {
+//     let currCode = element.value
+//     let countryCode = countryList[currCode] // IN, EU
+// }
+
+// iss tarike se humare pas country code aa jayega
+
+// const updateFlag = (element) => {
+//     let currCode = element.value
+//     let countryCode = countryList[currCode]
+// }
+
+// aur humara link kya hoga -- new source link
+// ( let newSrc = (new variable) )
+// humare pas hone wala hai
+// index.html mei jayenge aur iss link
+// ( https://flagsapi.com/US/flat/64.png )
+// ko copy kar lete hai
+
+// const updateFlag = (element) => {
+//     let currCode = element.value
+//     let countryCode = countryList[currCode]
+//     let newSrc = `https://flagsapi.com/US/flat/64.png`
+// }
+
+// iss link ( https://flagsapi.com/US/flat/64.png )
+// ke andar basically hume iss cheej
+// ( https://flagsapi.com/US/flat/64.png , mei US )
+// ko change karna hai
+// yeh ( https://flagsapi.com/US/flat/64.png , mei US ) 
+// humara country code banne wala hai
+// 1:01:33
+
+// to yahan par ( https://flagsapi.com/US/flat/64.png , mei US )  
+// apna variable likh dete hai
+// country code ( const countryList = {} , see codes.js )
+// ( https://flagsapi.com/${countryCode}/flat/64.png )
+
+// const updateFlag = (element) => {
+//     let currCode = element.value
+//     let countryCode = countryList[currCode]
+//     let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`
+// }
+
+// ise kar lete hai save
+// and apni image ko kaise access karenge
+// abhi element ( const updateFlag = (element) => {} )
+// ke andar humare pas kya hai
+// element ke andar humare pas select hai (see js code / index.html)
+// to select ke andar image kahan par aati hai
+
+// (see index.html)
+// yeh humara select hai
+// (inside from div -- <select name="from">)
+// to basically hume select ke parent mei jana hai
+// ( <select name="from"> ka parent select-container hai , see index.html )
+// jo humara select ka container hai ( select-container )
+// uske andar hume image ( <img src="https://flagsapi.com/US/flat/64.png" alt="" /> )
+// ko jake select karna hai
+// (1:01:56)
+
+// (app.js)
+// to yahan par jo humara element hai
+// ( const updateFlag = (element) => { )
+
+// const updateFlag = (element) => {
+//     let currCode = element.value
+//     let countryCode = countryList[currCode]
+//     let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`
+//     element
+// }
+
+// uske ( jo element likha hai ) hum parent
+// par jane wale hai
+// yani parentElement par jayenge
+// element.parentElement
+
+// const updateFlag = (element) => {
+//     let currCode = element.value
+//     let countryCode = countryList[currCode]
+//     let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`
+//     element.parentElement
+// }
+
+// and fir parentElement par hum querySelector()
+// add karne wale hai for our 
+// image ( img ) ( <img src="https://flagsapi.com/US/flat/64.png" alt="" /> , see index.html )
+
+// const updateFlag = (element) => {
+//     let currCode = element.value
+//     let countryCode = countryList[currCode]
+//     let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`
+//     element.parentElement.querySelector("img")
+// }
+
+// to humare pas image aa jayegi
+// ( element.parentElement.querySelector("img") )
+// and iss image ke liye ( element.parentElement.querySelector("img") )
+// to let img = element.parentElement.querySelector("img")
+
+// const updateFlag = (element) => {
+//     let currCode = element.value
+//     let countryCode = countryList[currCode]
+//     let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`
+//     let img = element.parentElement.querySelector("img")
+// }
+
+// and iss image ( let img = element.parentElement.querySelector("img") )
+// ke andar
+// img
+
+// const updateFlag = (element) => {
+//     let currCode = element.value
+//     let countryCode = countryList[currCode]
+//     let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`
+//     let img = element.parentElement.querySelector("img")
+//     img
+// }
+
+// ...and iss image ( let img = element.parentElement.querySelector("img") )
+// ke andar
+// img
+// source ko (src)
+// img.src
+
+// const updateFlag = (element) => {
+//     let currCode = element.value
+//     let countryCode = countryList[currCode]
+//     let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`
+//     let img = element.parentElement.querySelector("img")
+//     img.src
+// }
+
+// ...and iss image ( let img = element.parentElement.querySelector("img") )
+// ke andar
+// img
+// source ko ( src , src attribute , see index.html )
+// img.src
+// hum change karke kar denge 
+// apna new source ( newSrc )
+// img.src = newSrc
+
+// const updateFlag = (element) => {
+//     let currCode = element.value
+//     let countryCode = countryList[currCode]
+//     let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`
+//     let img = element.parentElement.querySelector("img")
+//     img.src = newSrc
+// }
+
+// re-write full code
+
+// const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr"
+
+
+// const dropdowns = document.querySelectorAll(".dropdown select")
+
+
+
+// for (const select of dropdowns) {
+//     for (const currCode in countryList) {
+//         let newOption = document.createElement("option")
+//         newOption.innerText = currCode
+//         newOption.value = currCode
+//         if(select.name === "from" && currCode === "USD"){
+//             newOption.selected = "selected"
+//         } else if(select.name === "to" && currCode === "INR"){
+//             newOption.selected = "selected"
+//         } 
+//         select.append(newOption)
+//     }
+    
+//     select.addEventListener("change", (evt) => {
+//         updateFlag(evt.target)
+//     })
+// }
+
+// const updateFlag = (element) => {
+//     let currCode = element.value
+//     let countryCode = countryList[currCode]
+//     let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`
+//     let img = element.parentElement.querySelector("img")
+//     img.src = newSrc
+// }
+
+// itne part ko kar lete hai save
+// and refresh in browser
+// to ek bar USD se INR mei convert (select)
+// karte hai in 1st select in browser
+// humara flag change ho gaya
+
+// EURO mei convert (select) karte hai
+// humara flag change ho gaya
+
+// if we convert it to Japanese Yen (JPY)
+// humara flag change ho gaya
+
+// Nepal Rupee (NPR)
+// flag change ho gaya
+
+// to iss tarike se
+// ab hum currency ko jaise hi yahan
+// pe (1st select) dusri
+// currency koi select kar rahe hai
+// lets suppose i select KZT
+// to humara flag change ho gaya (1st select)
+
+// (2nd select) GTQ
+// humara flag change ho gaya
+// and iss tarike se humare pas
+// different different flags available ho rahe hai
+
+// ab flag to humne change kar liya
+// par basically ab mujhe chahiye ki
+// ki mai 100 USD ko ( Enter Amount )
+// if i want it to convert it into INR
+// to wo kis tarike se convert karenge
+
+// to Get Exchange Rate par jaise hi click kare
+// to humare pas exchange rate aana chahiye
+// uss cheej par hum kaam karne wale hai
+// 1:03:08
+
+// to humara jo button hoga
+// use select kar lete hai
+// const btn
+// is equal to
+// const btn =
+// document.querySelector()
+// const btn = document.querySelector()
+// humare pas humare form ka button aa jayega
+// const btn = document.querySelector("form button")
+// ( below const dropdowns = ... )
+
+// and iss button ( const btn = document.querySelector("form button") )
+// ke upar hum apna event listener add karenge
+// btn.addEventListener()
+// click jaise hi kiya humne apne button ko
+// btn.addEventListener("click")
+// to humara button click ho jayega
+// btn.addEventListener("click", () => {
+
+// })
+
+// humare pas kuch event (evt) aa jayega
+// btn.addEventListener("click", (evt) => {
+
+// })
+
+// sabse pehle to hum karne wale hai
+// event dot prevent default
+// btn.addEventListener("click", (evt) => {
+//     evt.preventDefault()
+// })
+
+// event dot prevent default ( evt.preventDefault() )
+// se kya hoga
+// basically form jo hota hai
+// form jab submit hota hai
+// ( click on Get Exchange Rate )
+// to uska default behaviour hota hai
+// ki page refresh hoga
+// yahan par (in browser url)
+// iss tarike se yeh cheejein 
+// ( http://127.0.0.1:5500/fetch_project/index.html?from=USD&to=INR mei ?from=USD&to=INR / from=USD&to=INR )
+// dikhayi degi
+
+// hume yeh sari cheejein nahi chahiye
+// ( http://127.0.0.1:5500/fetch_project/index.html?from=USD&to=INR mei ?from=USD&to=INR / from=USD&to=INR )
+// hum chahte hai button ke click karne par
+// jo bhi kaam automatically ho
+// rahe the unme se ab kuch bhi
+// kaam na ho ( evt.preventDefault() )
+
+// jo bhi kaam hoga wo hum karwayenge
+// to ab ise ek bar refresh kar lete hai
+// (reload browser)
+// lets remove this part
+// ( http://127.0.0.1:5500/fetch_project/index.html?from=USD&to=INR mei ?from=USD&to=INR ko backspace 
+// kar liya in browser url )
+
+// to ab jaise hi hum Get Exchange Rate
+// par click karenge
+// ab humare pas koi bhi change nahi ho raha
+// ( see browser url -- http://127.0.0.1:5500/fetch_project/index.html )
+// ( evt.preventDefault() , see code )
+// matlab kuch bhi kaam nahi ho raha
+
+// to sare kaam jo the unko
+// humne prevent kar liya hai
+// ( evt.preventDefault() , see code )
+
+// ab hume jo kaam karwana hai
+// ( 1:04:13 )
+// use hum karwana start karenge
+// sabse pehle to humne jo bhi amount enter ki hogi
+// ( Enter Amount in browser )
+// chahe wo 100 hai
+// wo 1 hai wo 1000 hai
+// uss amount ko hum access karne wale hai
+
+// to let amount =
+// let amount =
+// document.querySelector()
+// let amount = document.querySelector()
+// apne form ke andar se apne
+// input ko chahein to hum access kar sakte hai
+// let amount = document.querySelector("form input")
+
+// nahi to ya apne dot amount se
+// apne input ko access kar lenge
+// let amount = document.querySelector(".amount input")
+// yeh humare pas humari amount aa gayi
+// 1:04:38
