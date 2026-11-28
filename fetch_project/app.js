@@ -1,4 +1,4 @@
-const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr"
+const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate"
 
 
 const dropdowns = document.querySelectorAll(".dropdown select")
@@ -31,3 +31,13 @@ const updateFlag = (element) => {
     let img = element.parentElement.querySelector("img")
     img.src = newSrc
 }
+
+btn.addEventListener("click", (evt) => {
+    evt.preventDefault()
+    let amount = document.querySelector(".amount input")
+    let amtVal = amount.value
+    if(amtVal === "" || amtVal < 0){
+    amtVal = 1
+    amount.value = "1"
+}
+})

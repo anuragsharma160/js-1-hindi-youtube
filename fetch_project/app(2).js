@@ -1366,5 +1366,274 @@
 // nahi to ya apne dot amount se
 // apne input ko access kar lenge
 // let amount = document.querySelector(".amount input")
-// yeh humare pas humari amount aa gayi
+// yeh ( let amount = document.querySelector(".amount input") ) 
+// humare pas humari amount aa gayi
 // 1:04:38
+
+// btn.addEventListener("click", (evt) => {
+//     evt.preventDefault()
+//     let amount = document.querySelector(".amount input")
+// })
+
+// aur amount ki value ko bhi hum print karwa sakte hai
+// to let amount value ( new variable let amtVal )
+// let amtVal =
+// amount dot
+// let amtVal = amount.
+// value
+// let amtVal = amount.value
+
+// btn.addEventListener("click", (evt) => {
+//     evt.preventDefault()
+//     let amount = document.querySelector(".amount input")
+//     let amtVal = amount.value
+// })
+
+// ise chahein to console.log karwa sakte hai
+// hum apni amount value ko (amtVal)
+// console.log(amtVal)
+
+// btn.addEventListener("click", (evt) => {
+//     evt.preventDefault()
+//     let amount = document.querySelector(".amount input")
+//     let amtVal = amount.value
+//     console.log(amtVal)
+// })
+
+// Re-write full code
+
+
+// const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr"
+
+
+// const dropdowns = document.querySelectorAll(".dropdown select")
+// const btn = document.querySelector("form button")
+
+
+
+// for (const select of dropdowns) {
+//     for (const currCode in countryList) {
+//         let newOption = document.createElement("option")
+//         newOption.innerText = currCode
+//         newOption.value = currCode
+//         if(select.name === "from" && currCode === "USD"){
+//             newOption.selected = "selected"
+//         } else if(select.name === "to" && currCode === "INR"){
+//             newOption.selected = "selected"
+//         } 
+//         select.append(newOption)
+//     }
+    
+//     select.addEventListener("change", (evt) => {
+//         updateFlag(evt.target)
+//     })
+// }
+
+// const updateFlag = (element) => {
+//     let currCode = element.value
+//     let countryCode = countryList[currCode]
+//     let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`
+//     let img = element.parentElement.querySelector("img")
+//     img.src = newSrc
+// }
+
+// btn.addEventListener("click", (evt) => {
+//     evt.preventDefault()
+//     let amount = document.querySelector(".amount input")
+//     let amtVal = amount.value
+//     console.log(amtVal)
+// })
+
+// save and refresh in browser
+// jaise hi form submit karenge
+// (form submit means -- Click on Get Exchange Rate button)
+// (100 in bc)
+// amount value (amtVal) humare pas aa gayi (100 in bc)
+
+// agar yahan pe maine 760 kiya hota
+// (760 in Enter Amount)
+// Click on Get Exchange Rate button
+// 760 in bc
+// to amount value (amtVal) aa jati 760
+// 760 in bc
+
+// achha yahan par (Enter Amount)
+// hum chahte to ise (Enter Amount)
+// khaali (empty) bhi chord sakte the
+// empty Enter Amount and click on Get Exchange Rate button
+// No o/p in bc
+// to humare pas empty aati amount ( No o/p in bc )
+
+// ya hum chahte to -5 iss tarike ka kuch kar sakte the
+// (-5 in Enter Amount and click on Get Exchange Rate button )
+// -5 in bc
+// to -5 aata
+// -5 in bc
+// to uske liye hum ek condition add kar sakte hai ki
+// agar if my amount value (amtVal)
+// if(amtVal)
+// is empty
+// if(amtVal === "")
+// ya fir (or)
+// if(amtVal === "" ||)
+// humari jo amount value hai (amtVal)
+// if(amtVal === "" || amtVal)
+// agar wo less than zero hai
+// if(amtVal === "" || amtVal < 0)
+
+// ya less than 1 , less than 1 keh dete hai
+// if(amtVal === "" || amtVal < 1)
+// 1:05:26
+// less than 1 hai
+// if(amtVal === "" || amtVal < 1){
+
+// }
+
+// to uss case mei automatically
+// hum kya karenge amount value ko (amtVal)
+// set kar denge to 1 ( amtVal = 1 )
+// if(amtVal === "" || amtVal < 0){
+//     amtVal = 1
+// }
+
+// and amount dot value ko (amount.value)
+// bhi set kar denge to the string 1 ( "1" )
+// (amount.value = "1")
+
+// if(amtVal === "" || amtVal < 0){
+//     amtVal = 1
+//     amount.value = "1"
+// }
+
+// write if conditional inside event listener
+
+// btn.addEventListener("click", (evt) => {
+//     evt.preventDefault()
+//     let amount = document.querySelector(".amount input")
+//     let amtVal = amount.value
+//     if(amtVal === "" || amtVal < 0){
+//     amtVal = 1
+//     amount.value = "1"
+// }
+// })
+
+// Re-write full code
+
+// const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr"
+
+
+// const dropdowns = document.querySelectorAll(".dropdown select")
+// const btn = document.querySelector("form button")
+
+
+
+// for (const select of dropdowns) {
+//     for (const currCode in countryList) {
+//         let newOption = document.createElement("option")
+//         newOption.innerText = currCode
+//         newOption.value = currCode
+//         if(select.name === "from" && currCode === "USD"){
+//             newOption.selected = "selected"
+//         } else if(select.name === "to" && currCode === "INR"){
+//             newOption.selected = "selected"
+//         } 
+//         select.append(newOption)
+//     }
+    
+//     select.addEventListener("change", (evt) => {
+//         updateFlag(evt.target)
+//     })
+// }
+
+// const updateFlag = (element) => {
+//     let currCode = element.value
+//     let countryCode = countryList[currCode]
+//     let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`
+//     let img = element.parentElement.querySelector("img")
+//     img.src = newSrc
+// }
+
+// btn.addEventListener("click", (evt) => {
+//     evt.preventDefault()
+//     let amount = document.querySelector(".amount input")
+//     let amtVal = amount.value
+//     if(amtVal === "" || amtVal < 0){
+//     amtVal = 1
+//     amount.value = "1"
+// }
+// })
+
+// save and refresh
+// ab yahan par (Enter Amount)
+// if i write -5
+// (-5 in Enter Amount)
+// aur jaise hi enter kiya (click on Get Exchange Rate button)
+// wo reset ho jayega to 1 (1 in Enter Amount)
+
+// agar humne yahan par (Enter Amount)
+// khaali chord diya
+// (nothing in Enter Amount)
+// and click on Get Exchange Rate Button
+// to dubara reset ho jayega to 1
+// (1 in Enter Amount)
+
+// yeh ek change (if conditional part, see code)
+// hum chota sa yahan par kar sakte hai
+// in fact hum number bhi bana sakte hai
+// apne input type ko
+
+// ab yahan par hum apne liye ek URL create
+// karenge
+// const URL =
+// lets create a URL
+// URL kisse create karenge
+// apne iss base URL se
+// ( const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr" , see code )
+
+// to humare pas humara BASE_URL hoga
+// const URL = `BASE_URL`
+// and base url ke andar ( const URL = `BASE_URL` )
+// const URL = `BASE_URL/`
+
+// basically yeh wala jo part hai
+// usd/inr.json wala part ( /usd/inr.json ) (mam ka BASE_URL alag hai, different API)
+// (humara BASE_URL as follows)
+// ( const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr" , )
+
+// (mam ka BASE_URL as follows)
+// ( const BASE_URL = https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd/inr.json )
+
+// iss part ko hum hata dete hai
+// ( const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr" , mei /usd/inr ko backspace kar diya )
+// 1:06:14
+
+// and yahan ( const URL = `BASE_URL/` )
+// hume apni from wali currency likhni hai
+// const URL = `BASE_URL/${}`
+// const URL = `BASE_URL/${fromCurr}`
+
+// slash
+// const URL = `BASE_URL/${fromCurr}/`
+
+// and fir hume apni
+// const URL = `BASE_URL/${fromCurr}/${}`
+
+// to wali currency likhni hai
+// const URL = `BASE_URL/${fromCurr}/${toCurr}`
+
+// dot json
+// const URL = `BASE_URL/${fromCurr}/${toCurr}.json`
+// (mam ka API url alag hai)
+// (hume shayad dot json --> .json , nahi likhna)
+// const URL = `BASE_URL/${fromCurr}/${toCurr}.json` or `BASE_URL/${fromCurr}/${toCurr}`
+
+// (humara BASE_URL as follows)
+// ( const BASE_URL = "https://api.frankfurter.dev/v2/providers/ecb/rate/usd/inr" , )
+
+// (mam ka BASE_URL as follows)
+// ( const BASE_URL = https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd/inr.json )
+
+// 1:06:27
+
+
+
